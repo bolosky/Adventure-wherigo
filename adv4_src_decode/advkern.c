@@ -79,7 +79,8 @@ long addressOfBeginningOfBuffer;
 long firstAddressAfterEndOfBuffer;
 #endif 
 #endif 
-char *i4[100]; short t0[100]; char z0[100]; short r3;
+char *commandTokens[100]; short commandTokenLength[100]; char z0[100]; 
+short nTokensInCommand;
 #define w1 73
 long dataFileOffset; 
 long l3; 
@@ -168,13 +169,13 @@ void errorReadingDataFile() {
 	(void)fclose(data_file); if (log_file) (void)fclose(log_file); exit(1);
 } 
 
-void printMessage(p4, y4, c7) int p4; int y4; int c7; 
+void printMessage(flags, y4, c7) int flags; int y4; int c7; 
 { 
 	int i6; 
 	int y5; 
 	int b4; 
 	int a2; 
-	int p5; 
+	int dereference_through_object_type_3; 
 	int e5; 
 	int endCommandWhenDone;
 #ifdef x5
@@ -202,50 +203,50 @@ void printMessage(p4, y4, c7) int p4; int y4; int c7;
 	b5 = '\376'; // -2
 	w4 = '\375'; // -3
 	
-	if (p4 < 64) 
+	if (flags < 64)
 		endCommandWhenDone = 0;
 	else { 
 		endCommandWhenDone = 1;
-		p4 -= 64; 
+		flags -= 64;
 	}
 #ifdef l7
-	if (p4 < 32) 
+	if (flags < 32)
 		t6 = 0; 
 	else { 
-		p4 -= 32; 
+		flags -= 32;
 		t6 = 1; 
 	}
 #endif
 #ifdef x5
-	if (p4 < 16) 
+	if (flags < 16)
 		n3 = 0; 
 	else { 
-		p4 -= 16; 
+		flags -= 16;
 		n3 = 1; 
 	}
 #endif
-	if (p4 < 8) 
+	if (flags < 8)
 		a2 = 0; 
 	else 
 	{ 
-		p4 -= 8; 
+		flags -= 8;
 		a2 = 1; 
 	} 
 	
-	if (p4 < 4) 
+	if (flags < 4)
 		e5 = 0; 
 	else {
-		p4 -= 4; 
+		flags -= 4;
 		e5 = 1;
 	} 
 	
-	if (p4 < 2) 
-		p5 = 0; 
+	if (flags < 2)
+		dereference_through_object_type_3 = 0; 
 	else { 
-		p4 -= 2; 
-		p5 = 1; 
+		flags -= 2;
+		dereference_through_object_type_3 = 1; 
 	} 
-	b4 = p4;
+	b4 = flags;
 
 #ifdef x5
 	if (isObjectFlagSet(v5, x5)) 
@@ -255,7 +256,7 @@ void printMessage(p4, y4, c7) int p4; int y4; int c7;
 	if (isObjectFlagSet(v5, l7)) 
 		t6 = 1;
 #endif 
-	if (p5) 
+	if (dereference_through_object_type_3) 
 		y4 = object_type_3_buffer[y4]; 
 	c8 = c7; 
 
@@ -319,7 +320,7 @@ void printMessage(p4, y4, c7) int p4; int y4; int c7;
 	} else if (i8 == b5) 
 		i8 = getByteOfDataFile(dataFileOffset = n5); 
 	else if (i8	== w4) {
-		if (p4) {
+		if (flags) {
 			(void)sprintf(n4, "%d", c7); 
 			j7 = n4 - 1; 
 			while (*(++j7)!= '\0') 
@@ -471,15 +472,15 @@ void w5(int g5)
 #else 
 	k1 = e0[i9]; r2 = e0[o2];
 #endif 
-	m2 = (r3 != 0 && i4[r3] && z0[r3] == ','); 
+	m2 = (nTokensInCommand != 0 && commandTokens[nTokensInCommand] && z0[nTokensInCommand] == ','); 
 
-	if (z0[r3] == '.') {
+	if (z0[nTokensInCommand] == '.') {
 		object_type_3_buffer[i9] = -1; 
 		object_type_3_buffer[o2] = -1;
 	} 
 
 g6: 
-	if (i4[r3] == NULL) {
+	if (commandTokens[nTokensInCommand] == NULL) {
 		if (u1[0] != '\0' && u1[0] != '\n') 
 			(void) strncpy(h1, u1, 160); 
 
@@ -512,17 +513,17 @@ g6:
 		} // while command[0] == '\0' || command[0] == '\n'
 		(void)write_char_to_term_and_log('\n'); 
 b8: 
-		u3(); 
-		r3 = 0; 
+		tokenizeCommand(); 
+		nTokensInCommand = 0; 
 		object_type_3_buffer[i9] = -1; 
 		object_type_3_buffer[o2] = -1; 
 		object_type_3_buffer[v5] = 0;
 	} // if NULL
 g7: 
 	u4(&q5, &k4, &d7); 
-	r3++; 
+	nTokensInCommand++; 
 
-	if (q5 == w6 && (z0[r3] == ' ' || z0[r3] == ',')) 
+	if (q5 == w6 && (z0[nTokensInCommand] == ' ' || z0[nTokensInCommand] == ',')) 
 		goto g7;
 #ifdef i1
 	if (k4 == i1) {
@@ -540,8 +541,8 @@ g7:
 			(void)strncpy(u1, h1, 160); 
 			goto b8;
 		} else {
-			r3--; 
-			while (z0[++r3] == ' '); 
+			nTokensInCommand--; 
+			while (z0[++nTokensInCommand] == ' '); 
 			object_type_3_buffer[i9] = k1; 
 			object_type_3_buffer[o2] = r2; 
 			return;
@@ -556,29 +557,29 @@ g7:
 		object_type_3_buffer[i9] = k1; 
 		object_type_3_buffer[o2] = k4; 
 		if (k4 == i11 || k4 == c13) 
-			(void) strncpy(x2, i4[r3 - 1], 20); 
+			(void) strncpy(x2, commandTokens[nTokensInCommand - 1], 20); 
 		else (void)c11(x2, d7);
 		object_type_3_buffer[v5] = 2; 
 		goto z3;
 	} 
 	object_type_3_buffer[i9] = k4; 
 	if (k4 == i11 || k4 == c13)
-		(void) strncpy(b1, i4[r3 - 1], 20); 
+		(void) strncpy(b1, commandTokens[nTokensInCommand - 1], 20); 
 	else 
 		(void)c11(b1, d7); 
 
 	object_type_3_buffer[v5]= 1; 
 
 b9: 
-	if (z0[r3] == ' ') {
+	if (z0[nTokensInCommand] == ' ') {
 		u4(&q5, &k4, &d7); 
-		r3++; 
+		nTokensInCommand++; 
 		if (q5 == w6) 
 			goto b9; 
 		object_type_3_buffer[o2] = k4; 
-		b6 = (k4 == i11 || k4 == c13) ? i4[r3 - 1] : &KilobyteInputBuffer[d7];
+		b6 = (k4 == i11 || k4 == c13) ? commandTokens[nTokensInCommand - 1] : &KilobyteInputBuffer[d7];
 		if (k4 == i11 || k4 == c13) 
-			(void) strncpy(x2, i4[r3 - 1], 20); 
+			(void) strncpy(x2, commandTokens[nTokensInCommand - 1], 20); 
 		else 
 			(void)c11(x2, d7); 
 		object_type_3_buffer[v5] = 2;
@@ -591,7 +592,7 @@ z3:
 	modifyObjectFlag('c', v5, f1); 
 	if (object_type_3_buffer[i9] == i11 || object_type_3_buffer[i9] == c13 || object_type_3_buffer[o2] == i11
 		|| object_type_3_buffer[o2] == c13) 
-		i4[r3] = NULL; 
+		commandTokens[nTokensInCommand] = NULL; 
 	else if (object_type_3_buffer[v5] == 2 && (isObjectFlagSet(object_type_3_buffer[o2],
 			OBJECT_TYPE_2_FLAG)) && !(isObjectFlagSet(object_type_3_buffer[i9], OBJECT_TYPE_2_FLAG))) {
 		
@@ -605,11 +606,11 @@ z3:
 	
 	b1[19] = '\0'; 
 	x2[19] = '\0'; 
-	if (z0[r3] == ' ') {
-		if (strcmp(i4[r3], "and") == 0 && z0[++r3] == ' ') 
-			z0[r3] = ','; 
+	if (z0[nTokensInCommand] == ' ') {
+		if (strcmp(commandTokens[nTokensInCommand], "and") == 0 && z0[++nTokensInCommand] == ' ') 
+			z0[nTokensInCommand] = ','; 
 		else 
-			while (z0[++r3] == ' ');
+			while (z0[++nTokensInCommand] == ' ');
 	} 
 	return; 
 } 
@@ -766,7 +767,7 @@ int y10(g5) int g5; { char s5[10]; char
 						  printf("Data file does not belong to this program!\n"); 
 					  return (1);
 		} 
-		i4[0] = NULL; 
+		commandTokens[0] = NULL; 
 
 		for (objectId = OBJECT_TYPE_0_MIN_ID; objectId <= OBJECT_TYPE_0_MAX_ID; objectId++)
 			modifyObjectFlag('s', objectId, OBJECT_TYPE_0_FLAG);
@@ -784,6 +785,13 @@ int y10(g5) int g5; { char s5[10]; char
 				(void)fprintf(log_file,
 						  "\n<%s: random seed %lu>\n", TITLE, e2); return (0);
 	} 
+
+	void BJBMessage(int a, int b, int c) 
+	{
+		printf("printMessage(%d, %d, %d): ", a, b, c);
+		printMessage(a, b, c);
+		printf("\n");
+	}
 			  
 	main(argc, argv)
 		int argc; char *argv[]; 
@@ -801,7 +809,7 @@ int y10(g5) int g5; { char s5[10]; char
 				return (1);
 		} 
 
-		{
+		if (0) {
 			int i;
 			for (i = 0; i <= OBJECT_TYPE_3_MAX_ID; i++) {
 				printf("Message #%d:\n", i);
@@ -810,9 +818,19 @@ int y10(g5) int g5; { char s5[10]; char
 			}
 		}
 
-		x7(); 
 
-		(void)setjmp(done_with_command); 
+		x7();
+
+		BJBMessage(13, 1052, 700); // BJB
+		BJBMessage(12, 813, 101);	// 76->12 so it doesn't exit
+		BJBMessage(12, 1489, 669);
+		BJBMessage(0, 1514, 0); // 64->0 so it doesn't exit
+		BJBMessage(0, 815, 0);// 64->0 so it doesn't exit
+		BJBMessage(0, 1495, 0);// 64->0 so it doesn't exit
+		BJBMessage(0, 816, 0);// 64->0 so it doesn't exit
+		BJBMessage(12, 813, 100);// 76->12 so it doesn't exit
+
+		(void)setjmp(done_with_command);
 			  
 		if (should_exit) {
 			return (0); 
@@ -823,25 +841,52 @@ int y10(g5) int g5; { char s5[10]; char
 		while (1) 
 			u6(); 
 	} // main
+
+
 			  
-			  u3() {
-				  short d10; char p7
-				  (); r3 = 0; c4 = command; while (1) {
-					  i4[r3] = NULL; if ((z0[r3] = p7()) ==
-						  '\n') return; i4[r3] = c4; d10 = 0; while (*c4 != ' ' && *c4 != ',' &&
-							  *c4 != ';' && *c4 != '.' && *c4 != '\n') {
-						  if (*c4 >= 'A' && *c4 <= 'Z')
-							  *c4 += 'a' - 'A'; c4++; d10++;
-					  } t0[r3] = d10; r3++;
-				  }
-			  } char p7() {
-				  char
-					  w8; w8 = ' '; while (*c4 == ' ' || *c4 == ',' || *c4 == ';' || *c4 == '.'
-						  || *c4 == '\n') {
-					  if (*c4 != ' ') { w8 = *c4; if (w8 == ';') w8 = '.'; }
-					  *c4 = '\0'; if (w8 == '\n') return w8; c4++;
-				  } return w8;
-			  } 
+	tokenizeCommand() {
+				  
+		short d10; 
+		char p7(); 
+		nTokensInCommand = 0; 
+		c4 = command; 
+				  
+		while (1) {
+			commandTokens[nTokensInCommand] = NULL; 
+			if ((z0[nTokensInCommand] = p7()) == '\n') return; 
+
+			commandTokens[nTokensInCommand] = c4; 
+			d10 = 0; 
+					  
+			while (*c4 != ' ' && *c4 != ',' && *c4 != ';' && *c4 != '.' && *c4 != '\n') {
+				if (*c4 >= 'A' && *c4 <= 'Z')
+					*c4 += 'a' - 'A'; 
+				c4++; 
+				d10++;
+			} // while
+			commandTokenLength[nTokensInCommand] = d10; 
+			nTokensInCommand++;
+		} // while
+	} 
+			  
+	char p7() {
+		char w8; 
+		w8 = ' ';
+
+		while (*c4 == ' ' || *c4 == ',' || *c4 == ';' || *c4 == '.' || *c4 == '\n') {
+			if (*c4 != ' ') { 
+				w8 = *c4; 
+				if (w8 == ';') 
+					w8 = '.'; 
+			}
+			*c4 = '\0'; 
+			if (w8 == '\n') 
+				return w8; 
+			c4++;
+		} // while
+
+		return w8;
+	} 
 			  
 u4(q5, k4, d7) int *q5; int *k4; long *d7; 
 { 
@@ -849,27 +894,31 @@ u4(q5, k4, d7) int *q5; int *k4; long *d7;
 	int g9; 
 	int i14; 
 	long a5; 
-	char *b6; 
+	char *nextByteToMatch; 
 	long d11; 
 	
 	s6 = -1; 
 	j9 = d12 + 1; 
-	while (j9 > s6 + 1) {
+	while (j9 > s6 + 1) { // binary search through the command list
 		nLocates++;
 		x8 = (s6 + j9) / 2;
 		if (getByteOfDataFile(a5 = b12[x8]) == '!') 
-			a5++; b6 = i4[r3];
-		while (getByteOfDataFile(a5) == *b6) 
-			if (*b6 != '\0') { 
-				b6++; 
-				a5++; 
-			} else break; 
+			a5++; 
+
+		nextByteToMatch = commandTokens[nTokensInCommand];
 		
-		if (getByteOfDataFile(a5) < *b6 && *b6 != '\0') 
+		while (getByteOfDataFile(a5) == *nextByteToMatch) 
+			if (*nextByteToMatch != '\0') { 
+				nextByteToMatch++; 
+				a5++; 
+			} 
+			else 
+				break; 
+		
+		if (getByteOfDataFile(a5) < *nextByteToMatch && *nextByteToMatch != '\0') 
 			s6 = x8; 
 		else 
 			j9 = x8;
-
 	} 
 	
 	*k4 = i11; 
@@ -879,7 +928,7 @@ u4(q5, k4, d7) int *q5; int *k4; long *d7;
 	g9 = i11; 
 	
 	while (s6 < j9) {
-		b6 = i4[r3]; 
+		nextByteToMatch = commandTokens[nTokensInCommand]; 
 		if (getByteOfDataFile(a5 = b12[s6]) == '!')
 		{
 			a5++; 
@@ -888,15 +937,15 @@ u4(q5, k4, d7) int *q5; int *k4; long *d7;
 		else 
 			i14 = 0; 
 		d11 = a5;
-		while (*b6 == getByteOfDataFile(d11)) 
-			if (*b6	== '\0') 
+		while (*nextByteToMatch == getByteOfDataFile(d11)) 
+			if (*nextByteToMatch	== '\0') 
 				break; 
 			else { 
 				d11++; 
-				b6++; 
+				nextByteToMatch++; 
 			} 
 			
-			if (*b6 != '\0') 
+			if (*nextByteToMatch != '\0') 
 				break; 
 			if (!i14 || getByteOfDataFile(d11) == '\0') {
 				*q5 = a6[s6]; 
@@ -922,13 +971,29 @@ u4(q5, k4, d7) int *q5; int *k4; long *d7;
 			  
 			  
 			  int g10(b2, t4) int b2; int t4; { if
-				  (m5(b2, t4)) return (1); if (q8(b2, t4)) return (1); return (0); } int m5
-				  (b2, t4) int b2; int t4; { if (b2 > OBJECT_TYPE_0_MAX_ID) return (0); if (j0[b2] != r5) return
-				  (0); if (t4 < 0) return (1); if (t4 < 1024) {
-				  if (object_type_3_buffer[b2] == t4) return
-					  (1);
-			  }
-				  else if (isObjectFlagSet(b2, t4 - 1024)) return (1); return (0); } int q8(b2, t4)
+				  (isItemAtLocation(b2, t4)) return (1); if (q8(b2, t4)) return (1); return (0); } 
+			  
+int isItemAtLocation (int itemId, int location) 
+{ 
+	if (itemId > OBJECT_TYPE_0_MAX_ID)
+	return (0); 
+
+	if (j0[itemId] != r5)
+		return (0); 
+
+	if (location < 0)
+		return (1); 
+			  
+	if (location < 1024) {
+		if (object_type_3_buffer[itemId] == location)
+			return (1);
+	} else if (isObjectFlagSet(itemId, location - 1024))
+		return (1); 
+
+	return (0); 
+} 
+			  
+			  int q8(b2, t4)
 					  int b2; int t4; { if (b2 > OBJECT_TYPE_0_MAX_ID) return (0); if (t4 != -1) if (t4 < 1024)
 			  {
 				  if (object_type_3_buffer[b2] != t4) return (0);
@@ -939,39 +1004,132 @@ u4(q5, k4, d7) int *q5; int *k4; long *d7;
 			  if (!(isObjectFlagSet(b2, m4))) return (0); if (j0[b2] + 1 == object_type_3_buffer[w9]) return (1);
 #endif
 			  return (0); }
-#ifndef NOVARARGS
-			  p9(m6, a7, l10) int m6, a7, l10; { int *z1; int h6; int b2; int w10; if
-				  (a7 < 0) goto s7; z1 = &l10; h6 = 0; while (!h6) {
-				  if ((w10 = *z1++) < 0)
-				  {
-					  w10 = -w10; h6 = 1;
-				  } if (m1(w10)) goto s7;
-			  } return;
-#else 
+
 			  p9(m6, a7, l10, u7, v8, l11, h7, s8, v9, p10, t9, h8, b13, v10, a8, b14) int m6, a7, l10, u7, v8, l11, h7, s8, v9, p10, t9, h8, b13, v10, a8, b14;
-			  { int w10; if (a7 < 0) goto s7; if ((w10 = l10) < 0) w10 = -w10; if (m1
-			  (w10)) goto s7; else if (l10 < 0) return; if ((w10 = u7) < 0) w10 = -w10;
-			  if (m1(w10)) goto s7; else if (u7 < 0) return; if ((w10 = v8) < 0) w10
-				  = -w10; if (m1(w10)) goto s7; else if (v8 < 0) return; if ((w10 = l11)
-					  < 0) w10 = -w10; if (m1(w10)) goto s7; else if (l11 < 0) return; if ((w10
-						  = h7) < 0) w10 = -w10; if (m1(w10)) goto s7; else if (h7 < 0) return; if
-						  ((w10 = s8) < 0) w10 = -w10; if (m1(w10)) goto s7; else if (s8 < 0) return;
-			  if ((w10 = v9) < 0) w10 = -w10; if (m1(w10)) goto s7; else if (v9 < 0)
-				  return; if ((w10 = p10) < 0) w10 = -w10; if (m1(w10)) goto s7; else if
-				  (p10 < 0) return; if ((w10 = t9) < 0) w10 = -w10; if (m1(w10)) goto s7;
-				  else if (t9 < 0) return; if ((w10 = h8) < 0) w10 = -w10; if (m1(w10)) goto
-					  s7; else if (h8 < 0) return; if ((w10 = b13) < 0) w10 = -w10; if (m1(w10))
-				  goto s7; else if (b13 < 0) return; if ((w10 = v10) < 0) w10 = -w10; if (m1
-				  (w10)) goto s7; else if (v10 < 0) return; if ((w10 = a8) < 0) w10 = -w10;
-			  if (m1(w10)) goto s7; else if (a8 < 0) return; if ((w10 = b14) < 0) w10
-				  = -w10; if (m1(w10)) goto s7; return;
-#endif 
+			  { 
+				  int w10; 
+				  
+				  if (a7 < 0) goto s7; 
+				  if ((w10 = l10) < 0) 
+					  w10 = -w10; 
+				  if (m1(w10)) 
+					  goto s7; 
+				  else if (l10 < 0) 
+					  return; 
+				  
+				  if ((w10 = u7) < 0) 
+					  w10 = -w10;
+			  
+				  if (m1(w10)) 
+					  goto s7; 
+				  else if (u7 < 0) 
+					  return; 
+				  
+				  if ((w10 = v8) < 0) 
+					  w10 = -w10; 
+				  
+				  if (m1(w10)) 
+					  goto s7; 
+				  else if (v8 < 0) 
+					  return; 
+				  
+				  if ((w10 = l11) < 0) 
+					  w10 = -w10; 
+				  
+				  if (m1(w10)) 
+					  goto s7; 
+				  else if (l11 < 0) 
+					  return; 
+				  
+				  if ((w10 = h7) < 0) 
+					  w10 = -w10; 
+				  
+				  if (m1(w10)) 
+					  goto s7; 
+				  else if (h7 < 0) 
+					  return; 
+				  
+				  if ((w10 = s8) < 0) 
+					  w10 = -w10; 
+				  
+				  if (m1(w10)) 
+					  goto s7; 
+				  else if (s8 < 0) 
+					  return;
+			  
+				  if ((w10 = v9) < 0) 
+					  w10 = -w10; 
+				  
+				  if (m1(w10)) 
+					  goto s7; 
+				  else if (v9 < 0)
+					return; 
+				  
+				  if ((w10 = p10) < 0) 
+					  w10 = -w10; 
+				  
+				  if (m1(w10)) 
+					  goto s7; 
+				  else if (p10 < 0) 
+					  return; 
+				  
+				  if ((w10 = t9) < 0) 
+					  w10 = -w10; 
+				  
+				  if (m1(w10)) 
+					  goto s7;
+				  else if (t9 < 0) 
+					  return; 
+				  
+				  if ((w10 = h8) < 0) 
+					  w10 = -w10; 
+				  
+				  if (m1(w10)) 
+					  goto s7; 
+				  else if (h8 < 0) 
+					  return; 
+				  
+				  if ((w10 = b13) < 0) 
+					  w10 = -w10; 
+				  
+				  if (m1(w10))
+					goto s7; 
+				  else if (b13 < 0) 
+					  return; 
+				  
+				  if ((w10 = v10) < 0) 
+					  w10 = -w10; 
+				  
+				  if (m1(w10)) 
+					  goto s7; 
+				  else if (v10 < 0) 
+					  return; 
+				  
+				  if ((w10 = a8) < 0) 
+					  w10 = -w10;
+			  
+				  if (m1(w10)) 
+					  goto s7; 
+				  else if (a8 < 0) 
+						return; 
+				  
+				  if ((w10 = b14) < 0) 
+					  w10 = -w10; 
+
+				  if (m1(w10)) 
+					  goto s7; 
+				  
+				  return;
+
 		  s7: object_type_3_buffer[p11] = object_type_3_buffer[w9]; *getObjectPointer(p11) = -1; object_type_3_buffer[w9] = m6; *getObjectPointer(w9) = -1;
 #if defined (f2) && defined (v5)
 			  modifyObjectFlag('s', v5, f2);
 #endif
 			  if (a7 < -2) a7 = -a7; if (a7 > 0) printMessage(0, a7, 0); if (a7 != -1) longjmp
-			  (done_with_command, 1); return; } s9(b2, t4) int b2, t4; { j0[b2] = (t4 <= OBJECT_TYPE_1_MAX_ID || t4 ==
+			  (done_with_command, 1); return; } 
+			  
+			  
+			  s9(b2, t4) int b2, t4; { j0[b2] = (t4 <= OBJECT_TYPE_1_MAX_ID || t4 ==
 				  r5) ? t4 : object_type_3_buffer[t4];
 #if defined (g11) && defined (v5)
 			  modifyObjectFlag('s', v5, g11);
@@ -1043,6 +1201,6 @@ u4(q5, k4, d7) int *q5; int *k4; long *d7;
 			  } 
 			  
 			  void g12() {
-				  v0 = 0; i4[r3]
+				  v0 = 0; commandTokens[nTokensInCommand]
 					  = NULL; return;
 			  }

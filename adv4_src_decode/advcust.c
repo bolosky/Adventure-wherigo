@@ -28,7 +28,7 @@ extern FILE *log_file;
 void adv_data_path(data_path)
 char *data_path;
 {
-#define DATA_DIR "C:\\adventure\\adv4_src_decode\\"                       /* Defined as current dir     */
+#define DATA_DIR "C:\\adventure\\"                       /* Defined as current dir     */
 	/* Redefine as appropriate!   */
 	int len;
 

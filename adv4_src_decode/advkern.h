@@ -8,3 +8,10 @@ extern int(*command_dispatch_table[])();
 extern v0;
 #endif
 
+#define printBlankLine() printMessage(0, 776, 0)
+
+#define ITEM_CAGE	100
+#define ITEM_BIRD	101
+#define ITEM_ROD	102
+
+
