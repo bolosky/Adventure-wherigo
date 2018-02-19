@@ -8,11 +8,25 @@ int x7()
 	return; 
 } 
 
-int u6() { s34(); s35(); return; } int KilobyteInputBuffer2()
+int u6() { 
+	s34(); 
+	s35(); 
+	return; 
+} 
+
+int KilobyteInputBuffer2()
 {
 	w27(); z28(); return;
-} int q33() { y24(); v46(); x35(); return; } int
-n9() { f22(); n26(); return; } int z21() { e32(); u33(); return; } int e20()
+} int q33() { y24(); v46(); x35(); return; } 
+
+int command_in_building_141() 
+{ 
+	f22(); 
+	n26(); 
+	return; 
+} 
+
+int z21() { e32(); u33(); return; } int e20()
 {
 	b31(); p39(); return;
 } int x12() { q37(); u30(); return; } int i37()

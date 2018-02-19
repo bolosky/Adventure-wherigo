@@ -136,8 +136,13 @@ p2(q3, b2, t4, j4, s1, y1, c5, y2, e4, l4, l5, v3, t5, w2, q4, b3) int q3, b2, t
 (1); if (!m1(w2)) return (0); if (q4 == -1) return (1); if (!m1(q4)) return
 (0); if (b3 == -1) return (1); if (!m1(b3)) return (0); return (1); }
 #endif 
-int d2(i5) int i5; { int p3; e2 = (((e2 << 10) + e2) / 13) & 32767; return
-(p3 = e2 % i5); }
+
+int cheezy_rand(i5) int i5; { 
+	int p3; 
+	e2 = (((e2 << 10) + e2) / 13) & 32767; 
+	return (p3 = e2 % i5); 
+}
+
 #define d3 100
 char getByteOfDataFile(long whichByteToGet) 
 {
@@ -821,14 +826,17 @@ int y10(g5) int g5; { char s5[10]; char
 
 		x7();
 
-		BJBMessage(13, 1052, 700); // BJB
-		BJBMessage(12, 813, 101);	// 76->12 so it doesn't exit
-		BJBMessage(12, 1489, 669);
-		BJBMessage(0, 1514, 0); // 64->0 so it doesn't exit
-		BJBMessage(0, 815, 0);// 64->0 so it doesn't exit
-		BJBMessage(0, 1495, 0);// 64->0 so it doesn't exit
-		BJBMessage(0, 816, 0);// 64->0 so it doesn't exit
-		BJBMessage(12, 813, 100);// 76->12 so it doesn't exit
+		BJBMessage(64-64, 843, 0); // BJB
+		BJBMessage(78-64, 677, 674);
+		BJBMessage(0, 812, 0);
+		BJBMessage(64-64, 798, 0);
+		BJBMessage(0, 1335, 0);
+		BJBMessage(0, 1337, 0);
+		BJBMessage(0, 939, 0);
+		BJBMessage(0, 812, 0);
+		BJBMessage(0, 805, 0);
+		BJBMessage(0, 791, 0);
+		BJBMessage(0, 997, 0);
 
 		(void)setjmp(done_with_command);
 			  
@@ -838,8 +846,10 @@ int y10(g5) int g5; { char s5[10]; char
 				(void)fclose(log_file);
 		} 
 			  
-		while (1) 
-			u6(); 
+		while (1) {
+			printf("Current location: %d\n", object_type_3_buffer[PLAYER_LOCATION]);
+			u6();
+		}
 	} // main
 
 
@@ -999,134 +1009,148 @@ int isItemAtLocation (int itemId, int location)
 				  if (object_type_3_buffer[b2] != t4) return (0);
 			  }
 					  else if (!(isObjectFlagSet(b2, t4 - 1024))) return
-						  (0); if (j0[b2] == object_type_3_buffer[w9]) return (1);
+						  (0); if (j0[b2] == object_type_3_buffer[PLAYER_LOCATION]) return (1);
 #ifdef m4
-			  if (!(isObjectFlagSet(b2, m4))) return (0); if (j0[b2] + 1 == object_type_3_buffer[w9]) return (1);
+			  if (!(isObjectFlagSet(b2, m4))) return (0); if (j0[b2] + 1 == object_type_3_buffer[PLAYER_LOCATION]) return (1);
 #endif
 			  return (0); }
 
-			  p9(m6, a7, l10, u7, v8, l11, h7, s8, v9, p10, t9, h8, b13, v10, a8, b14) int m6, a7, l10, u7, v8, l11, h7, s8, v9, p10, t9, h8, b13, v10, a8, b14;
-			  { 
-				  int w10; 
+p9(m6, a7, l10, u7, v8, l11, h7, s8, v9, p10, t9, h8, b13, v10, a8, b14) int m6, a7, l10, u7, v8, l11, h7, s8, v9, p10, t9, h8, b13, v10, a8, b14;
+{ 
+	int w10; 
 				  
-				  if (a7 < 0) goto s7; 
-				  if ((w10 = l10) < 0) 
-					  w10 = -w10; 
-				  if (m1(w10)) 
-					  goto s7; 
-				  else if (l10 < 0) 
-					  return; 
+	if (a7 < 0) goto s7; 
+	if ((w10 = l10) < 0) 
+		w10 = -w10; 
+	if (m1(w10)) 
+		goto s7; 
+	else if (l10 < 0) 
+		return; 
 				  
-				  if ((w10 = u7) < 0) 
-					  w10 = -w10;
+	if ((w10 = u7) < 0) 
+		w10 = -w10;
 			  
-				  if (m1(w10)) 
-					  goto s7; 
-				  else if (u7 < 0) 
-					  return; 
+	if (m1(w10)) 
+		goto s7; 
+	else if (u7 < 0) 
+		return; 
 				  
-				  if ((w10 = v8) < 0) 
-					  w10 = -w10; 
+	if ((w10 = v8) < 0) 
+		w10 = -w10; 
 				  
-				  if (m1(w10)) 
-					  goto s7; 
-				  else if (v8 < 0) 
-					  return; 
+	if (m1(w10)) 
+		goto s7; 
+	else if (v8 < 0) 
+		return; 
 				  
-				  if ((w10 = l11) < 0) 
-					  w10 = -w10; 
+	if ((w10 = l11) < 0) 
+		w10 = -w10; 
 				  
-				  if (m1(w10)) 
-					  goto s7; 
-				  else if (l11 < 0) 
-					  return; 
+	if (m1(w10)) 
+		goto s7; 
+	else if (l11 < 0) 
+		return; 
 				  
-				  if ((w10 = h7) < 0) 
-					  w10 = -w10; 
+	if ((w10 = h7) < 0) 
+		w10 = -w10; 
 				  
-				  if (m1(w10)) 
-					  goto s7; 
-				  else if (h7 < 0) 
-					  return; 
+	if (m1(w10)) 
+		goto s7; 
+	else if (h7 < 0) 
+		return; 
 				  
-				  if ((w10 = s8) < 0) 
-					  w10 = -w10; 
+	if ((w10 = s8) < 0) 
+		w10 = -w10; 
 				  
-				  if (m1(w10)) 
-					  goto s7; 
-				  else if (s8 < 0) 
-					  return;
+	if (m1(w10)) 
+		goto s7; 
+	else if (s8 < 0) 
+		return;
 			  
-				  if ((w10 = v9) < 0) 
-					  w10 = -w10; 
+	if ((w10 = v9) < 0) 
+		w10 = -w10; 
 				  
-				  if (m1(w10)) 
-					  goto s7; 
-				  else if (v9 < 0)
-					return; 
+	if (m1(w10)) 
+		goto s7; 
+	else if (v9 < 0)
+	return; 
 				  
-				  if ((w10 = p10) < 0) 
-					  w10 = -w10; 
+	if ((w10 = p10) < 0) 
+		w10 = -w10; 
 				  
-				  if (m1(w10)) 
-					  goto s7; 
-				  else if (p10 < 0) 
-					  return; 
+	if (m1(w10)) 
+		goto s7; 
+	else if (p10 < 0) 
+		return; 
 				  
-				  if ((w10 = t9) < 0) 
-					  w10 = -w10; 
+	if ((w10 = t9) < 0) 
+		w10 = -w10; 
 				  
-				  if (m1(w10)) 
-					  goto s7;
-				  else if (t9 < 0) 
-					  return; 
+	if (m1(w10)) 
+		goto s7;
+	else if (t9 < 0) 
+		return; 
 				  
-				  if ((w10 = h8) < 0) 
-					  w10 = -w10; 
+	if ((w10 = h8) < 0) 
+		w10 = -w10; 
 				  
-				  if (m1(w10)) 
-					  goto s7; 
-				  else if (h8 < 0) 
-					  return; 
+	if (m1(w10)) 
+		goto s7; 
+	else if (h8 < 0) 
+		return; 
 				  
-				  if ((w10 = b13) < 0) 
-					  w10 = -w10; 
+	if ((w10 = b13) < 0) 
+		w10 = -w10; 
 				  
-				  if (m1(w10))
-					goto s7; 
-				  else if (b13 < 0) 
-					  return; 
+	if (m1(w10))
+	goto s7; 
+	else if (b13 < 0) 
+		return; 
 				  
-				  if ((w10 = v10) < 0) 
-					  w10 = -w10; 
+	if ((w10 = v10) < 0) 
+		w10 = -w10; 
 				  
-				  if (m1(w10)) 
-					  goto s7; 
-				  else if (v10 < 0) 
-					  return; 
+	if (m1(w10)) 
+		goto s7; 
+	else if (v10 < 0) 
+		return; 
 				  
-				  if ((w10 = a8) < 0) 
-					  w10 = -w10;
+	if ((w10 = a8) < 0) 
+		w10 = -w10;
 			  
-				  if (m1(w10)) 
-					  goto s7; 
-				  else if (a8 < 0) 
-						return; 
+	if (m1(w10)) 
+		goto s7; 
+	else if (a8 < 0) 
+		return; 
 				  
-				  if ((w10 = b14) < 0) 
-					  w10 = -w10; 
+	if ((w10 = b14) < 0) 
+		w10 = -w10; 
 
-				  if (m1(w10)) 
-					  goto s7; 
+	if (m1(w10)) 
+		goto s7; 
 				  
-				  return;
+	return;
 
-		  s7: object_type_3_buffer[p11] = object_type_3_buffer[w9]; *getObjectPointer(p11) = -1; object_type_3_buffer[w9] = m6; *getObjectPointer(w9) = -1;
+s7: 
+	object_type_3_buffer[p11] = object_type_3_buffer[PLAYER_LOCATION]; 
+	*getObjectPointer(p11) = -1; 
+	object_type_3_buffer[PLAYER_LOCATION] = m6; 
+	*getObjectPointer(PLAYER_LOCATION) = -1;
+
 #if defined (f2) && defined (v5)
-			  modifyObjectFlag('s', v5, f2);
+	modifyObjectFlag('s', v5, f2);
 #endif
-			  if (a7 < -2) a7 = -a7; if (a7 > 0) printMessage(0, a7, 0); if (a7 != -1) longjmp
-			  (done_with_command, 1); return; } 
+
+	if (a7 < -2) 
+		a7 = -a7; 
+			  
+	if (a7 > 0) 
+		printMessage(0, a7, 0); 
+			  
+	if (a7 != -1) 
+		longjmp(done_with_command, 1); 
+	return; 
+} 
 			  
 			  
 			  s9(b2, t4) int b2, t4; { j0[b2] = (t4 <= OBJECT_TYPE_1_MAX_ID || t4 ==

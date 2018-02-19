@@ -21,7 +21,7 @@
 #define w6 25
 #define d12 614
 #define r5 486
-#define w9 671
+#define PLAYER_LOCATION 671
 #define p11 672
 #define v5 697
 #define i9 669

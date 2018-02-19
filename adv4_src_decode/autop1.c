@@ -5,17 +5,33 @@
 #pragma warning(disable:4715) // not all control paths return a value
 #include "advkern.h"
 int r29() {
-	b26(); if (object_type_3_buffer[699] == 0) {
-		if ((168 <= object_type_3_buffer[671] && object_type_3_buffer[671] <= 193)
-			&& !(isObjectFlagSet(t11(671), 11))) {
-			printMessage(64, 843, 0);
-		} if (m1(528)) {
+	b26(); 
+	if (object_type_3_buffer[699] == 0) {
+		if ((168 <= object_type_3_buffer[671] && object_type_3_buffer[671] <= 193) && !(isObjectFlagSet(t11(671), 11))) {
+			printMessage(64, 843, 0); // You  have  crawled around in some little passages and wound up back where you started from.
+		} 
+		
+		if (m1(528)) {
 			l12(1, 674, 670);
 		}
-		else { l12(1, 674, 669); } object_type_3_buffer[677] = d2(797 - 792 + 1) + 792; printMessage(78, 677, 674);
-	} if (d2(100) < 25 && object_type_3_buffer[w9] != 393 && object_type_3_buffer[717] < 3) { printMessage(0, 812, 0); die(); } printMessage(64, 798, 0);
-} int t37() {
-	s9(118, 485); printMessage(0, 1092, 0); object_type_3_buffer[677] = d2(1099 - 1093 + 1) + 1093;
+		else { 
+			l12(1, 674, 669); 
+		} 
+		
+		object_type_3_buffer[677] = cheezy_rand(797 - 792 + 1) + 792; 
+		printMessage(78, 677, 674);
+	} 
+	
+	if (cheezy_rand(100) < 25 && object_type_3_buffer[PLAYER_LOCATION] != 393 && object_type_3_buffer[717] < 3) { 
+		printMessage(0, 812, 0); // You fell into a pit and broke every bone in your body!
+		die(); 
+	} 
+	
+	printMessage(64, 798, 0); // You have run into a wall of rock and can go no further in this direction.
+} 
+
+int t37() {
+	s9(118, 485); printMessage(0, 1092, 0); object_type_3_buffer[677] = cheezy_rand(1099 - 1093 + 1) + 1093;
 	printMessage(2, 677, 0); if (g10(33, -1)) { l12(0, 118, 8); s9(33, 485); }
 	else {
 		if (g10(134, -1))
@@ -42,24 +58,24 @@ int r29() {
 		printMessage(0, 118, 0);
 	} longjmp(done_with_command, 1);
 } int t38() {
-	if (isItemAtLocation(118, -1) && d2(100) < 10)
+	if (isItemAtLocation(118, -1) && cheezy_rand(100) < 10)
 	{
 		printMessage(0, 1091, 0); s9(118, 485); die();
 	}
 } int t39() {
 	b26(); if (object_type_3_buffer[699] == 0)
 	{
-		l12(1, 700, 134); object_type_3_buffer[700] += 2; object_type_3_buffer[700] = d2(object_type_3_buffer[700]); object_type_3_buffer[700] -= 1; if
+		l12(1, 700, 134); object_type_3_buffer[700] += 2; object_type_3_buffer[700] = cheezy_rand(object_type_3_buffer[700]); object_type_3_buffer[700] -= 1; if
 			(object_type_3_buffer[700] < 1) {
 			return 0;
 		} printMessage(13, 784, 700); l12(1, 701, 721); object_type_3_buffer[701] -= object_type_3_buffer[705];
 		object_type_3_buffer[701] *= 5; if (isObjectFlagSet(134, 14)) { object_type_3_buffer[701] -= 20; } object_type_3_buffer[728] += object_type_3_buffer[701]; object_type_3_buffer[728]
 			+= 35; object_type_3_buffer[728] /= object_type_3_buffer[700]; if (object_type_3_buffer[64] == 2) {
-			object_type_3_buffer[701] = d2(5); if (object_type_3_buffer[701] > 0)
+			object_type_3_buffer[701] = cheezy_rand(5); if (object_type_3_buffer[701] > 0)
 			{
 				f3(677, 786); object_type_3_buffer[677] += object_type_3_buffer[701]; printMessage(15, 677, 700); return 0;
 			}
-		} if (d2(100) < object_type_3_buffer[728]
+		} if (cheezy_rand(100) < object_type_3_buffer[728]
 			|| isObjectFlagSet(134, 13)) {
 			printMessage(13, 785, 700); modifyObjectFlag('c', 134, 13);
 		}
@@ -71,14 +87,14 @@ int r29() {
 } int o21() {
 	if (isItemAtLocation(t11(object_type_3_buffer[670]), -1)) {
 		if (m1(557)) {
-			s9(object_type_3_buffer[670], w9);
+			s9(object_type_3_buffer[670], PLAYER_LOCATION);
 		} if (g10(134, -1)) {
 			l12(1, 699, 721); object_type_3_buffer[699] -= object_type_3_buffer[705]; object_type_3_buffer[699] *= 5; l12(1, 700, 134);
 			object_type_3_buffer[700] += 2; object_type_3_buffer[700] *= 15; object_type_3_buffer[699] += object_type_3_buffer[700]; if (m1(115) || m1(547))
 			{
 				if (!(m1(115) && m1(547))) { object_type_3_buffer[699] += 15; }
-			} if (d2(100) < object_type_3_buffer[699]) {
-				if (d2(100) < 5 && !(isObjectFlagSet(t11(710), 8))) {
+			} if (cheezy_rand(100) < object_type_3_buffer[699]) {
+				if (cheezy_rand(100) < 5 && !(isObjectFlagSet(t11(710), 8))) {
 					printMessage(12, 952, 670); modifyObjectFlag('s', t11(710), 8);
 				}
 				else { printMessage(0, 951, 0); } l12(0, 704, 1); r27(); if (object_type_3_buffer[134] > 0) {
@@ -95,14 +111,14 @@ int r29() {
 				if (object_type_3_buffer[38] == 0) {
 					if (m1(557)) {
 						if (m1(115)) { l12(0, 115, 1); printMessage(64, 974, 0); } printMessage(64, 1102, 0);
-					} if (d2(100) < 50) { printMessage(64, 1103, 0); } printMessage(0, 1104, 0); die();
+					} if (cheezy_rand(100) < 50) { printMessage(64, 1103, 0); } printMessage(0, 1104, 0); die();
 				} printMessage(76, 975, 38);
 			} if (g10(22, -1)) { printMessage(64, 967, 0); } if (g10(24, -1)) {
 				if (m1(547)) {
 					printMessage(12, 1115, 670);
 					die();
 				} if (m1(115)) { printMessage(12, 1116, 670); die(); } modifyObjectFlag('c', 323, 8); s9(24, 485);
-				s9(116, w9); l12(0, 733, 6); modifyObjectFlag('c', 323, 5); printMessage(64, 1117, 0);
+				s9(116, PLAYER_LOCATION); l12(0, 733, 6); modifyObjectFlag('c', 323, 5); printMessage(64, 1117, 0);
 			} if (g10(17, -1))
 			{
 				printMessage(76, 1137, 670);
@@ -161,86 +177,86 @@ int s30() { if (object_type_3_buffer[697] > 1) { printMessage(12, 1040, 670); } 
 int n24() {
 	if (m1(101) || m1(38)) {
 		return 0;
-	} l12(0, 677, 0); if (object_type_3_buffer[w9] == 140) {
+	} l12(0, 677, 0); if (object_type_3_buffer[PLAYER_LOCATION] == 140) {
 		f3(677, 1200); f3(676, 485);
-	} if (object_type_3_buffer[w9] == 150) { f3(677, 1201); f3(676, 151); } if (object_type_3_buffer[w9] == 152) {
+	} if (object_type_3_buffer[PLAYER_LOCATION] == 150) { f3(677, 1201); f3(676, 151); } if (object_type_3_buffer[PLAYER_LOCATION] == 152) {
 		f3(677, 1202);
 		f3(676, 224);
-	} if (object_type_3_buffer[w9] == 153) { f3(677, 1202); f3(676, 224); } if (object_type_3_buffer[w9] == 156)
+	} if (object_type_3_buffer[PLAYER_LOCATION] == 153) { f3(677, 1202); f3(676, 224); } if (object_type_3_buffer[PLAYER_LOCATION] == 156)
 	{
 		f3(677, 1201); f3(676, 159);
-	} if (object_type_3_buffer[w9] == 157) {
+	} if (object_type_3_buffer[PLAYER_LOCATION] == 157) {
 		f3(677, 1201); f3(676, 158);
-	} if (object_type_3_buffer[w9] == 160) { f3(677, 1203); f3(676, 198); } if (object_type_3_buffer[w9] == 165) {
+	} if (object_type_3_buffer[PLAYER_LOCATION] == 160) { f3(677, 1203); f3(676, 198); } if (object_type_3_buffer[PLAYER_LOCATION] == 165) {
 		f3(677, 1201);
 		f3(676, 237);
-	} if (object_type_3_buffer[w9] == 166) { f3(677, 1201); f3(676, 237); } if (object_type_3_buffer[w9] == 199)
+	} if (object_type_3_buffer[PLAYER_LOCATION] == 166) { f3(677, 1201); f3(676, 237); } if (object_type_3_buffer[PLAYER_LOCATION] == 199)
 	{
 		f3(677, 1201); f3(676, 200);
-	} if (object_type_3_buffer[w9] == 201) {
+	} if (object_type_3_buffer[PLAYER_LOCATION] == 201) {
 		f3(677, 1203); f3(676, 202);
-	} if (object_type_3_buffer[w9] == 193) { f3(677, 1201); f3(676, 149); } if (object_type_3_buffer[w9] == 210) {
+	} if (object_type_3_buffer[PLAYER_LOCATION] == 193) { f3(677, 1201); f3(676, 149); } if (object_type_3_buffer[PLAYER_LOCATION] == 210) {
 		f3(677, 1204);
 		f3(676, 209);
-	} if (object_type_3_buffer[w9] == 211) { f3(677, 1204); f3(676, 207); } if (object_type_3_buffer[w9] == 215)
+	} if (object_type_3_buffer[PLAYER_LOCATION] == 211) { f3(677, 1204); f3(676, 207); } if (object_type_3_buffer[PLAYER_LOCATION] == 215)
 	{
 		f3(677, 1205); f3(676, 216);
-	} if (object_type_3_buffer[w9] == 221) {
+	} if (object_type_3_buffer[PLAYER_LOCATION] == 221) {
 		f3(677, 1204); f3(676, 213);
-	} if (object_type_3_buffer[w9] == 224) { f3(677, 1206); f3(676, 485); } if (object_type_3_buffer[w9] == 230) {
+	} if (object_type_3_buffer[PLAYER_LOCATION] == 224) { f3(677, 1206); f3(676, 485); } if (object_type_3_buffer[PLAYER_LOCATION] == 230) {
 		f3(677, 1207);
 		f3(676, 224);
-	} if (object_type_3_buffer[w9] == 238) { f3(677, 1204); f3(676, 176); } if (object_type_3_buffer[w9] == 239
-		|| object_type_3_buffer[w9] == 240) {
+	} if (object_type_3_buffer[PLAYER_LOCATION] == 238) { f3(677, 1204); f3(676, 176); } if (object_type_3_buffer[PLAYER_LOCATION] == 239
+		|| object_type_3_buffer[PLAYER_LOCATION] == 240) {
 		f3(677, 1215); f3(676, 485);
-	} if (object_type_3_buffer[w9] == 242) {
+	} if (object_type_3_buffer[PLAYER_LOCATION] == 242) {
 		f3(677, 1204);
 		f3(676, 485);
-	} if (object_type_3_buffer[w9] == 244) { f3(677, 1208); f3(676, 485); } if (object_type_3_buffer[w9] == 245)
+	} if (object_type_3_buffer[PLAYER_LOCATION] == 244) { f3(677, 1208); f3(676, 485); } if (object_type_3_buffer[PLAYER_LOCATION] == 245)
 	{
 		f3(677, 1208); f3(676, 485);
-	} if (object_type_3_buffer[w9] == 252) {
+	} if (object_type_3_buffer[PLAYER_LOCATION] == 252) {
 		f3(677, 1209); f3(676, 485);
-	} if (object_type_3_buffer[w9] == 253) { f3(677, 1209); f3(676, 485); } if (object_type_3_buffer[w9] == 261) {
+	} if (object_type_3_buffer[PLAYER_LOCATION] == 253) { f3(677, 1209); f3(676, 485); } if (object_type_3_buffer[PLAYER_LOCATION] == 261) {
 		f3(677, 1210);
 		f3(676, 260);
-	} if (object_type_3_buffer[w9] == 463) { f3(677, 1214); f3(676, 485); } if (object_type_3_buffer[w9] == 262)
+	} if (object_type_3_buffer[PLAYER_LOCATION] == 463) { f3(677, 1214); f3(676, 485); } if (object_type_3_buffer[PLAYER_LOCATION] == 262)
 	{
 		f3(677, 1211); f3(676, 255);
-	} if (object_type_3_buffer[w9] == 265) {
+	} if (object_type_3_buffer[PLAYER_LOCATION] == 265) {
 		f3(677, 1212); f3(676, 266);
-	} if (object_type_3_buffer[w9] == 266) { f3(677, 1212); f3(676, 267); } if (object_type_3_buffer[w9] == 267) {
+	} if (object_type_3_buffer[PLAYER_LOCATION] == 266) { f3(677, 1212); f3(676, 267); } if (object_type_3_buffer[PLAYER_LOCATION] == 267) {
 		f3(677, 1212);
 		f3(676, 268);
-	} if (object_type_3_buffer[w9] == 325) { f3(677, 1201); f3(676, 485); } if (object_type_3_buffer[w9] == 326)
+	} if (object_type_3_buffer[PLAYER_LOCATION] == 325) { f3(677, 1201); f3(676, 485); } if (object_type_3_buffer[PLAYER_LOCATION] == 326)
 	{
 		f3(677, 1201); f3(676, 485);
-	} if (object_type_3_buffer[w9] == 327) {
+	} if (object_type_3_buffer[PLAYER_LOCATION] == 327) {
 		f3(677, 1213); f3(676, 328);
-	} if (object_type_3_buffer[w9] == 365) { f3(677, 1201); f3(676, 485); } if (object_type_3_buffer[w9] == 376) {
+	} if (object_type_3_buffer[PLAYER_LOCATION] == 365) { f3(677, 1201); f3(676, 485); } if (object_type_3_buffer[PLAYER_LOCATION] == 376) {
 		f3(677, 1214);
 		f3(676, 377);
-	} if (object_type_3_buffer[w9] == 382) { f3(677, 1209); f3(676, 485); } if (object_type_3_buffer[w9] == 204)
+	} if (object_type_3_buffer[PLAYER_LOCATION] == 382) { f3(677, 1209); f3(676, 485); } if (object_type_3_buffer[PLAYER_LOCATION] == 204)
 	{
 		f3(677, 1204); f3(676, 203);
-	} if (object_type_3_buffer[w9] == 395) {
+	} if (object_type_3_buffer[PLAYER_LOCATION] == 395) {
 		f3(677, 954); f3(676, 394);
-	} if (object_type_3_buffer[w9] == 408) { f3(677, 954); f3(676, 203); } if ((399 <= object_type_3_buffer[671] && object_type_3_buffer[671] <= 404))
+	} if (object_type_3_buffer[PLAYER_LOCATION] == 408) { f3(677, 954); f3(676, 203); } if ((399 <= object_type_3_buffer[671] && object_type_3_buffer[671] <= 404))
 	{
 		f3(677, 954); l12(1, 676, 671); object_type_3_buffer[676] -= 1;
-	} if (object_type_3_buffer[w9] == 394) {
+	} if (object_type_3_buffer[PLAYER_LOCATION] == 394) {
 		l12(0, 677, 1);
-	} if (object_type_3_buffer[w9] == 151) {
+	} if (object_type_3_buffer[PLAYER_LOCATION] == 151) {
 		f3(677, 1680); if (isObjectFlagSet(t11(670), 11)) {
 			object_type_3_buffer[677] += 1;
 		} f3(676, 150);
-	} if (object_type_3_buffer[677] == 0) { return 0; } if (object_type_3_buffer[w9] == 394) {
+	} if (object_type_3_buffer[677] == 0) { return 0; } if (object_type_3_buffer[PLAYER_LOCATION] == 394) {
 		q36();
 	}
 	else { printMessage(14, 677, 670); s9(object_type_3_buffer[670], object_type_3_buffer[676]); } if (m1(53)) {
 		s9(53, 485);
 		s9(54, object_type_3_buffer[676]); if (!(j0[54] == 485)) { printMessage(64, 1216, 0); }
-	} if (object_type_3_buffer[w9] == 151)
+	} if (object_type_3_buffer[PLAYER_LOCATION] == 151)
 	{
 		if (m1(44)) { l12(0, 154, 1); l12(0, 7, 1); printMessage(64, 1682, 0); }
 	} if (m1(111))
@@ -256,7 +272,7 @@ int n24() {
 	} if
 		(m1(100) && isItemAtLocation(ITEM_BIRD, -1)) {
 		s9(101, object_type_3_buffer[676]); if (!(j0[101] == 485)) {
-			if (object_type_3_buffer[w9] == 151)
+			if (object_type_3_buffer[PLAYER_LOCATION] == 151)
 			{
 				l12(0, 700, 1);
 			}
@@ -267,7 +283,7 @@ int n24() {
 		b26(); if (object_type_3_buffer[699] > 0) {
 			printMessage(64, 805, 0);
 		}
-	} if (object_type_3_buffer[w9] == 151) { printBlankLine(); } longjmp(done_with_command, 1);
+	} if (object_type_3_buffer[PLAYER_LOCATION] == 151) { printBlankLine(); } longjmp(done_with_command, 1);
 } int u26() {
 	if (object_type_3_buffer[697] == 1)
 	{
@@ -277,17 +293,17 @@ int n24() {
 		{
 			return 0;
 		} l12(1, 699, 705); object_type_3_buffer[699] -= object_type_3_buffer[721]; object_type_3_buffer[699] *= 5; object_type_3_buffer[699]
-			+= 60; if (d2(100) < object_type_3_buffer[699]) { printMessage(12, 1220, 670); die(); } printMessage(76, 1221, 670);
+			+= 60; if (cheezy_rand(100) < object_type_3_buffer[699]) { printMessage(12, 1220, 670); die(); } printMessage(76, 1221, 670);
 	}
 } int y22() {
-	object_type_3_buffer[732] += 1; if (d2(100) < 40) {
+	object_type_3_buffer[732] += 1; if (cheezy_rand(100) < 40) {
 		object_type_3_buffer[732] -= 2; if (object_type_3_buffer[732] < 0)
 		{
 			l12(0, 732, 1);
 		}
 	} f3(677, 1237); object_type_3_buffer[677] += object_type_3_buffer[732]; printBlankLine(); if (object_type_3_buffer[732] == 7)
 	{
-		if (object_type_3_buffer[w9] == 420 || object_type_3_buffer[w9] == 421) { object_type_3_buffer[677] += 1; } if (isItemAtLocation(110, -1)) {
+		if (object_type_3_buffer[PLAYER_LOCATION] == 420 || object_type_3_buffer[PLAYER_LOCATION] == 421) { object_type_3_buffer[677] += 1; } if (isItemAtLocation(110, -1)) {
 			s9(110, 484);
 		} p9(419, -1); printMessage(2, 677, 0); die();
 	} printMessage(2, 677, 0);
@@ -299,7 +315,7 @@ int n24() {
 			l12(0, 135, 0);
 		}
 		else {
-			if (d2(100) < 20 || !(isObjectFlagSet(27, 14))) {
+			if (cheezy_rand(100) < 20 || !(isObjectFlagSet(27, 14))) {
 				modifyObjectFlag('s', 135, 14);
 			} l12(0, 135, 5); p9(139, -1361);
 		} return 0;
@@ -308,7 +324,7 @@ int n24() {
 		if (!(isObjectFlagSet(27, 14))) { printMessage(0, 1307, 0); } s9(83, object_type_3_buffer[671]); s9(135, 140); l12(0, 135, 4);
 		s9(88, 485); return 0;
 	} if (isItemAtLocation(50, -1)) {
-		l12(0, 135, 2); object_type_3_buffer[757] = d2(60 - 40 + 1) + 40;
+		l12(0, 135, 2); object_type_3_buffer[757] = cheezy_rand(60 - 40 + 1) + 40;
 		printMessage(8, 1305, 0); printMessage(0, 1308, 0); s9(50, 484); if (!(isObjectFlagSet(385, 4))) {
 			l12(0, 733, 3);
 		}
@@ -316,7 +332,7 @@ int n24() {
 	else {
 		if (object_type_3_buffer[135] == 0) {
 			if (isObjectFlagSet(135, 4) && !isItemAtLocation(110, -1) && !(isObjectFlagSet(135, 13))
-				&& d2(100) < 10) {
+				&& cheezy_rand(100) < 10) {
 				printMessage(0, 1315, 0); modifyObjectFlag('s', 135, 13); return 0;
 			}
 			else {
@@ -326,11 +342,11 @@ int n24() {
 						&& object_type_3_buffer[675] != 99) {
 						if (isObjectFlagSet(t11(675), 16)) {
 							z5(700, 675); if (object_type_3_buffer[700] < 2) {
-								s9(object_type_3_buffer[675], w9);
+								s9(object_type_3_buffer[675], PLAYER_LOCATION);
 								object_type_3_buffer[701] += 1;
 							}
 						}
-						else { s9(object_type_3_buffer[675], w9); object_type_3_buffer[701] += 1; }
+						else { s9(object_type_3_buffer[675], PLAYER_LOCATION); object_type_3_buffer[701] += 1; }
 					}
 				} if (g10(110, -1))
 				{
@@ -339,7 +355,7 @@ int n24() {
 					s9(110, 484); p9(412, -1309);
 				}
 				else {
-					l12(0, 135, 1); object_type_3_buffer[757] = d2(10 - 6 + 1) + 6; object_type_3_buffer[758] = d2(10 - 8 + 1) + 8; p9(384, -1310);
+					l12(0, 135, 1); object_type_3_buffer[757] = cheezy_rand(10 - 6 + 1) + 6; object_type_3_buffer[758] = cheezy_rand(10 - 8 + 1) + 8; p9(384, -1310);
 				}
 			}
 		} if (object_type_3_buffer[135] == 1) {
@@ -354,7 +370,7 @@ int n24() {
 			printMessage(0, 1262, 0);
 		} if (object_type_3_buffer[757] < 1) {
 			l12(0, 699, 9); object_type_3_buffer[699]
-				+= object_type_3_buffer[757]; if (object_type_3_buffer[699] < 1) { l12(0, 699, 1); } object_type_3_buffer[699] *= 10; if (d2(100) < object_type_3_buffer[699])
+				+= object_type_3_buffer[757]; if (object_type_3_buffer[699] < 1) { l12(0, 699, 1); } object_type_3_buffer[699] *= 10; if (cheezy_rand(100) < object_type_3_buffer[699])
 			{
 				printMessage(0, 1312, 0);
 			}
@@ -367,17 +383,17 @@ int n24() {
 } int h28() {
 	object_type_3_buffer[759] -= object_type_3_buffer[705]; if (object_type_3_buffer[759] < 155 && object_type_3_buffer[759]>135)
 	{
-		printMessage(0, 1341, 0); object_type_3_buffer[759] = d2(135 - 110 + 1) + 110;
+		printMessage(0, 1341, 0); object_type_3_buffer[759] = cheezy_rand(135 - 110 + 1) + 110;
 	}
 	else {
 		if (object_type_3_buffer[759] < 60 &&
 			object_type_3_buffer[759]>40) {
-			printMessage(0, 1342, 0); object_type_3_buffer[759] = d2(39 - 25 + 1) + 25;
+			printMessage(0, 1342, 0); object_type_3_buffer[759] = cheezy_rand(39 - 25 + 1) + 25;
 		}
 		else {
 			if (object_type_3_buffer[759] < 0)
 			{
-				printMessage(0, 1343, 0); object_type_3_buffer[759] = d2(650 - 550 + 1) + 550; die();
+				printMessage(0, 1343, 0); object_type_3_buffer[759] = cheezy_rand(650 - 550 + 1) + 550; die();
 			}
 		}
 	}
@@ -428,8 +444,8 @@ int n24() {
 	} printMessage(76, 818, 91);
 } int v38() {
 	l12(0, 117, 0);
-	if (m1(557) && object_type_3_buffer[w9] != 393 && !g10(121, -1)) { n24(); } printMessage(0, 1510, 0); s9(117, w9);
-	if (object_type_3_buffer[w9] == 393) { e24(); } if (g10(121, -1)) {
+	if (m1(557) && object_type_3_buffer[PLAYER_LOCATION] != 393 && !g10(121, -1)) { n24(); } printMessage(0, 1510, 0); s9(117, PLAYER_LOCATION);
+	if (object_type_3_buffer[PLAYER_LOCATION] == 393) { e24(); } if (g10(121, -1)) {
 		s9(117, 485); s9(121, 485);
 		printMessage(64, 1151, 0);
 	} longjmp(done_with_command, 1);
@@ -447,7 +463,7 @@ int n24() {
 		printMessage(2, 699, 0); if (object_type_3_buffer[699] < object_type_3_buffer[701]) { if (!(y10(944))) { return 0; } }
 	}
 }
-int v39() { object_type_3_buffer[677] = d2(852 - 847 + 1) + 847; printMessage(78, 677, 669); } int o23() {
+int v39() { object_type_3_buffer[677] = cheezy_rand(852 - 847 + 1) + 847; printMessage(78, 677, 669); } int o23() {
 	f3(677, 1591);
 	object_type_3_buffer[677] += object_type_3_buffer[11]; printMessage(2, 677, 0); object_type_3_buffer[11] += 1; if (object_type_3_buffer[11] > 2) {
 		l12(0, 11, 0);
@@ -531,7 +547,7 @@ int v39() { object_type_3_buffer[677] = d2(852 - 847 + 1) + 847; printMessage(78
 		return 0; printMessage(64, 776, 0);
 } 
 
-int command_look() {
+int command_outside_building_136() {
 	if (m1(571)) {
 		if (m1(141)) {
 			printMessage(64, 1639, 0);
@@ -558,7 +574,7 @@ int command_look() {
 	} 
 	
 	if (m1(6)) { 
-		printMessage(72, 1458, 526); 
+		printMessage(72, 1458, 526);  // The building may have had a proper door once, but if so, it is long gone.  If you want to get in, why not just go in?
 	}
 } 
 
@@ -570,25 +586,50 @@ int r32()
 } int o26()
 {
 	u28(); if (!p2(538, 93, -1)) return 0; printMessage(76, 1129, 670);
-} int f22() {
-	if
-		(m1(6)) {
-		printMessage(72, 1458, 527);
-	} if (m1(639)) { printMessage(64, 1586, 0); } if (m1(638))
+} 
+
+int f22() {
+	if(m1(6)) {
+		printMessage(72, 1458, 527); // The building may have had a proper door once, but if so, it is long gone.  If you want to get out, why not just go out?
+	} 
+	
+	if (m1(639)) { 
+		printMessage(64, 1586, 0); // I  really  don't know what you are getting at.  The spring is a source of water.  Nothing more to it.  If you want to get into the cave, I  suggest you look elsewhere.
+	} 
+	
+	if (m1(638))
 	{
-		printMessage(64, 1585, 0);
-	} if (!p2(571, 141, -1)) return 0; printMessage(64, 1639, 0);
-} int n26()
+		printMessage(64, 1585, 0); // No,  no...  a misunderstanding.  "Well house" does not imply a "well". It just means that the spring wells out within the house.  There is no  well to be seen here.  I hope I am making myself clear enough for you.
+	} 
+	
+	if (!p2(571, 141, -1)) 
+		return 0; 
+	
+	printMessage(64, 1639, 0);  // It's  no  architectural  miracle  - just a simple brick structure with no windows, serving as a well house for a large spring.
+} 
+
+int n26()
 {
-	if (m1(571)) { return 0; } p9(136, 0, 136, 527, -520); if (object_type_3_buffer[717] < 2) {
+	if (m1(571)) { 
+		return 0; 
+	} 
+	p9(136, 0, 136, 527, -520); 
+	
+	if (object_type_3_buffer[717] < 2) {
 		p9(147, object_type_3_buffer[685], -497);
-		p9(163, object_type_3_buffer[685], -501);
-	} if (!k3(626, 600, -1)) return 0; printMessage(64, 1026, 0);
+		p9(LOCATION_Y2, object_type_3_buffer[685], -501);
+	} 
+	
+	if (!k3(626, 600, -1)) 
+		return 0; 
+	
+	printMessage(64, 1026, 0);  // The  stream  flows out through a pair of 1 foot diameter sewer pipes.  It would be advisable to leave via the exit.
 }
+
 int f23() {
 	if (m1(571)) { return 0; } p9(136, 0, 599, 514, 515, -521); p9(460, 0, -516);
 	p9(454, 0, -517); p9(451, 0, -519); p9(450, 0, 520, -622); if (m1(523)) {
-		if (d2(100) < 50)
+		if (cheezy_rand(100) < 50)
 		{
 			p9(450, -2);
 		} p9(460, -2);
@@ -610,7 +651,7 @@ int f23() {
 	else { p9(136, 0, -141); p9(144, 0, -144); } p9(142, 0, 599, -514);
 	p9(144, 0, 600, 640, 518, -144); p9(460, 0, -515); p9(454, 0, -516); p9(455, 0, -517);
 	p9(452, 0, -519); p9(451, 0, 520, -622); p9(450, 0, -521); if (m1(523)) {
-		if (d2(100) < 50)
+		if (cheezy_rand(100) < 50)
 		{
 			p9(451, -2);
 		} p9(454, -2);
@@ -635,7 +676,7 @@ int f23() {
 	p9(452, 0, 520, -622); p9(451, 0, -521); if (m1(141)) {
 		f3(679, 436); f3(678, 136);
 		h31();
-	} if (m1(523)) { if (d2(100) < 50) { p9(455, -2); } p9(452, -2); } p9(143, 0, 599, 514, -143);
+	} if (m1(523)) { if (cheezy_rand(100) < 50) { p9(455, -2); } p9(452, -2); } p9(143, 0, 599, 514, -143);
 	if (!k3(526, 524, 526, -1)) return 0; if (object_type_3_buffer[4] == 1) { p9(145, -2); } printMessage(64, 899, 0);
 } int p13() {
 	if (m1(571)) { return 0; } p9(146, 0, 627, 146, 526, -520); p9(150, 0, -150);
@@ -759,7 +800,7 @@ n27() {
 			l12(0, 7, 0);
 		}
 		else { printMessage(64, 1016, 0); }
-	} if (m1(519) && d2(100) < 66) {
+	} if (m1(519) && cheezy_rand(100) < 66) {
 		l12(1, 681, 676);
 		printMessage(64, 843, 0);
 	} p9(object_type_3_buffer[676], -2);
@@ -783,7 +824,7 @@ n27() {
 		return 0; if (object_type_3_buffer[8] == 0) { printMessage(64, 903, 0); } h30(); p9(152, -2);
 } int a10()
 {
-	if (m1(571)) { return 0; } p9(155, 0, 518, 527, -628); p9(163, 0, 514, -163);
+	if (m1(571)) { return 0; } p9(155, 0, 518, 527, -628); p9(LOCATION_Y2, 0, 514, -163);
 	p9(198, 0, 524, -621); p9(198, 0, -621);
 } int s12() {
 	if (m1(571)) {
@@ -805,10 +846,10 @@ n27() {
 		modifyObjectFlag('s', t11(710), 4); printMessage(64, 934, 0);
 	} p9(141, -object_type_3_buffer[685]);
 } int v11() {
-	p9(163, 0, 524, -163);
+	p9(LOCATION_Y2, 0, 524, -163);
 	p9(151, 0, -523);
 } int k6() {
-	p9(163, 0, 516, -163); b30(); if (!p2(531, -1))
+	p9(LOCATION_Y2, 0, 516, -163); b30(); if (!p2(531, -1))
 		return 0; printMessage(0, 1014, 0); p9(237, -1); die();
 } int o6() {
 	if (m1(571)) {
@@ -879,12 +920,12 @@ d16() {
 } int d17() {
 	p9(202, 0, -516);
 	p9(208, 0, -520); p9(209, 0, -209); if (m1(521)) {
-		if (d2(100) < 50) {
+		if (cheezy_rand(100) < 50) {
 			printMessage(64, 843, 0);
 		} p9(226, -2);
-	} if (!k3(514, 518, 523, 524, -1)) return 0; if (d2(100) < 65) {
+	} if (!k3(514, 518, 523, 524, -1)) return 0; if (cheezy_rand(100) < 65) {
 		printMessage(64, 929, 0);
-	} p9(235, 0, -524); if (d2(100) < 75) {
+	} p9(235, 0, -524); if (cheezy_rand(100) < 75) {
 		p9(213, 0, -514); p9(201, 0, -523);
 		p9(209, 0, -518);
 	}
@@ -893,7 +934,7 @@ d16() {
 	}
 } int o7() {
 	p9(207, 0, -515); p9(157, 0, -520); p9(218, 0, -148); p9(225, 0, 516, -225);
-	p9(226, 0, -226); if (!k3(521, 518, -1)) return 0; if (d2(100) < 33) {
+	p9(226, 0, -226); if (!k3(521, 518, -1)) return 0; if (cheezy_rand(100) < 33) {
 		p9(218, 0, -518);
 		p9(226, 0, -521);
 	}
@@ -946,7 +987,7 @@ d16() {
 			}
 			else {
 				if (m1(101)) {
-					s9(101, w9); l12(0, 101, 0);
+					s9(101, PLAYER_LOCATION); l12(0, 101, 0);
 					printMessage(64, 1567, 0);
 				} if (m1(95)) {
 					if (object_type_3_buffer[95] == 1) { printMessage(0, 1569, 0); }
@@ -1061,9 +1102,9 @@ v40() { p9(159, 0, 516, 524, -598); p9(222, 0, -520); } int f24() {
 		return 0;
 	} p9(229, 0, 515, 229, -526); if (m1(228)) {
 		if (isItemAtLocation(55, -1)) {
-			s9(55, w9);
+			s9(55, PLAYER_LOCATION);
 			printMessage(0, 1581, 0);
-		} p9(163, -2);
+		} p9(LOCATION_Y2, -2);
 	} if (!k3(520, 625, 227, -1)) return 0; l12(1, 699, 705);
 	if (isItemAtLocation(55, -1)) { object_type_3_buffer[699] -= 1; } if (isItemAtLocation(58, -1)) { object_type_3_buffer[699] -= 1; } if (object_type_3_buffer[699] == 0)
 	{
@@ -1101,7 +1142,7 @@ e13() {
 	if (m1(520)) { modifyObjectFlag('c', t11(735), 2); p9(236, -2); } if (!k3(514, 518, 516, 523, 524, 515, 521, 517, 519, -1))
 		return 0; if (isObjectFlagSet(t11(735), 2)) { l12(0, 700, 50); }
 		else { l12(0, 700, 95); }
-		if (d2(100) < object_type_3_buffer[700]) { p9(236, -2); } p9(235, -2);
+		if (cheezy_rand(100) < object_type_3_buffer[700]) { p9(236, -2); } p9(235, -2);
 } int e14() {
 	p9(210, 0, -518);
 	p9(239, 0, 514, -239); if (!k3(10, 641, -1)) return 0; printMessage(64, 950, 0);
@@ -1110,8 +1151,8 @@ e13() {
 	p9(212, 0, -520); b30(); if (!p2(531, -1)) return 0; printMessage(0, 1014, 0); p9(237, -1);
 	die();
 } int n14() {
-	p9(211, 0, -514); if (m1(524) && d2(100) < 67) {
-		if (d2(100) < 50)
+	p9(211, 0, -514); if (m1(524) && cheezy_rand(100) < 67) {
+		if (cheezy_rand(100) < 50)
 		{
 			p9(176, -2);
 		} p9(171, -2);
