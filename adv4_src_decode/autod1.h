@@ -22,7 +22,7 @@
 #define d12 614
 #define r5 486
 #define PLAYER_LOCATION 671
-#define p11 672
+#define PREVIOUS_LOCATION 672
 #define v5 697
 #define i9 669
 #define o2 670
@@ -40,5 +40,5 @@
 #define OBJECT_TYPE_0_FLAG 0
 #define OBJECT_TYPE_1_FLAG 1
 #define OBJECT_TYPE_2_FLAG 2
-#define m1(X) (object_type_3_buffer[669]==X || object_type_3_buffer[670]==X)
+#define currentCommandContains(X) (object_type_3_buffer[669]==X || object_type_3_buffer[670]==X)
 

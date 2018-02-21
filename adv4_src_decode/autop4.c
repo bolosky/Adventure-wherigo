@@ -5,12 +5,12 @@
 #pragma warning(disable:4715) // not all control paths return a value
 #include "advkern.h"
 int i40() {
-	if (isObjectFlagSet(t11(710), 5)) { l12(0, 716, 0); p9(object_type_3_buffer[671], -777); } printMessage(64, 858, 0);
+	if (isObjectFlagSet(t11(710), 5)) { l12(0, 716, 0); processMoveCommand(object_type_3_buffer[671], -777); } printMessage(64, 858, 0);
 } int k20() { printMessage(0, 1258, 0); printMessage(64, 1675, 0); } int i32() {
 	if (object_type_3_buffer[697] > 1)
 	{
 		(*command_by_location_dispatch_table[490])();
-	} if (object_type_3_buffer[PLAYER_LOCATION] == 141 || object_type_3_buffer[PLAYER_LOCATION] == 205) { printMessage(64, 1557, 0); } printMessage(64, 1259, 0);
+	} if (object_type_3_buffer[PLAYER_LOCATION] == LOCATION_BUILDING || object_type_3_buffer[PLAYER_LOCATION] == 205) { printMessage(64, 1557, 0); } printMessage(64, 1259, 0);
 } int x26() { printMessage(64, 1260, 0); } int r24() {
 	if (object_type_3_buffer[697] == 1) {
 		if (j0[85] == 485)
@@ -37,16 +37,16 @@ int i40() {
 	{
 		return 0;
 	} if (!(isItemAtLocation(116, -1) || isItemAtLocation(115, -1))) { printMessage(64, 1326, 0); } if (!(isObjectFlagSet(t11(670), 0)
-		|| m1(122))) {
+		|| currentCommandContains(122))) {
 		printMessage(64, 915, 0);
-	} if (m1(122)) { printMessage(64, 1345, 0); } if (m1(75)
+	} if (currentCommandContains(122)) { printMessage(64, 1345, 0); } if (currentCommandContains(75)
 		&& g10(75, -1)) {
 		printMessage(64, 1327, 0);
-	} if (m1(11)) {
+	} if (currentCommandContains(11)) {
 		if (object_type_3_buffer[PLAYER_LOCATION] == 159) {
 			printMessage(64, 1328, 0);
 		} if (object_type_3_buffer[PLAYER_LOCATION] == 156 && object_type_3_buffer[11] > 0) { printMessage(64, 1328, 0); }
-	} if (m1(86)) {
+	} if (currentCommandContains(86)) {
 		if (object_type_3_buffer[PLAYER_LOCATION] == 388)
 		{
 			if (object_type_3_buffer[86] == 0) { printMessage(64, 1304, 0); } if (object_type_3_buffer[86] == 1) {
@@ -56,7 +56,7 @@ int i40() {
 		}
 	}
 } int j32() {
-	if (!m1(90)) return; if
+	if (!currentCommandContains(90)) return; if
 		(isItemAtLocation(90, -1)) {
 		if (isObjectFlagSet(t11(671), 7)) { printMessage(64, 1338, 0); } if ((399 <= object_type_3_buffer[671] &&
 			object_type_3_buffer[671] <= 404)) {
@@ -75,7 +75,7 @@ int i40() {
 	}
 	else { printMessage(12, 1027, 670); } longjmp(done_with_command, 1);
 } int d32() {
-	if ((m1(34) ||
+	if ((currentCommandContains(34) ||
 		object_type_3_buffer[697] == 1) && g10(34, -1)) {
 		if (isObjectFlagSet(39, 4) && !(isObjectFlagSet(97, 4))) {
 			modifyObjectFlag('s', 97, 4);
@@ -86,7 +86,7 @@ int i40() {
 			0;
 	} if (isObjectFlagSet(t11(670), 2)) { printMessage(64, 915, 0); } if (g10(t11(object_type_3_buffer[670]), -1)) {
 		if
-			(m1(134) && g10(134, -1)) {
+			(currentCommandContains(134) && g10(134, -1)) {
 			if (object_type_3_buffer[717] == 3) { printMessage(0, 1373, 0); }
 			else {
 				printMessage(0, 835, 0);
@@ -94,7 +94,7 @@ int i40() {
 		} printMessage(64, 915, 0);
 	}
 } int g29() {
-	if (!m1(39)) return; if (g10(39, -1)
+	if (!currentCommandContains(39)) return; if (g10(39, -1)
 		&& object_type_3_buffer[39] < 3) {
 		l12(0, 698, 400); l12(0, 39, 3); printMessage(64, 1359, 0);
 	} printMessage(64, 1358, 0);
@@ -102,7 +102,7 @@ int i40() {
 	if
 		(object_type_3_buffer[697] == 2) {
 		if (g10(t11(object_type_3_buffer[670]), -1)) {
-			if (object_type_3_buffer[717] == 3 && m1(134)) {
+			if (object_type_3_buffer[717] == 3 && currentCommandContains(134)) {
 				printMessage(0, 1373, 0); die();
 			} printMessage(64, 915, 0);
 		}
@@ -127,16 +127,16 @@ int i40() {
 			z5(700, 670); if (object_type_3_buffer[700] > 1) {
 				printMessage(76, 1418, 670);
 			}
-		} if (m1(52)) { printMessage(64, 1417, 0); } if (!(isItemAtLocation(t11(object_type_3_buffer[670]), -1))) {
+		} if (currentCommandContains(52)) { printMessage(64, 1417, 0); } if (!(isItemAtLocation(t11(object_type_3_buffer[670]), -1))) {
 			if (object_type_3_buffer[705] < object_type_3_buffer[721]
 				|| isObjectFlagSet(t11(670), 12)) {
 				s9(object_type_3_buffer[670], r5); h29();
 			}
 			else { printMessage(64, 897, 0); }
 		} if
-			(m1(47)) {
+			(currentCommandContains(47)) {
 			printMessage(64, 1423, 0);
-		} c16(670, 2); modifyObjectFlag('s', t11(670), 12); if (m1(43))
+		} c16(670, 2); modifyObjectFlag('s', t11(670), 12); if (currentCommandContains(43))
 		{
 			if (isObjectFlagSet(43, 14)) { printMessage(12, 1489, 669); printMessage(12, 1490, 670); }
 			else {
@@ -147,14 +147,14 @@ int i40() {
 		else { printMessage(12, 1489, 669); printMessage(12, 1490, 670); } longjmp(done_with_command, 1);
 	}
 } int v30() {
-	if (m1(101) && isItemAtLocation(ITEM_BIRD, -1)) { s27(); longjmp(done_with_command, 1); } if
+	if (currentCommandContains(101) && isItemAtLocation(ITEM_BIRD, -1)) { s27(); longjmp(done_with_command, 1); } if
 		(object_type_3_buffer[697] == 1) {
 		return 0;
 	} if (!(isObjectFlagSet(t11(670), 16))) { printMessage(64, 915, 0); } z5(700, 670);
 	if (object_type_3_buffer[700] < 2 || !isItemAtLocation(t11(object_type_3_buffer[670]), -1)) { printMessage(64, 1419, 0); } if (!(object_type_3_buffer[705] < object_type_3_buffer[721]))
 	{
 		printMessage(64, 897, 0);
-	} if (!(m1(64))) { modifyObjectFlag('c', t11(670), 12); } if (m1(43)) {
+	} if (!(currentCommandContains(64))) { modifyObjectFlag('c', t11(670), 12); } if (currentCommandContains(43)) {
 		l12(1, 699, 43); if (object_type_3_buffer[699] > 1) {
 			l12(0, 43, 1); if (object_type_3_buffer[699] < 9) {
 				if (!(object_type_3_buffer[699] == 3
@@ -174,9 +174,9 @@ int i40() {
 	if (object_type_3_buffer[697] == 1)
 	{
 		if (g10(16, -1)) {
-			if (object_type_3_buffer[PLAYER_LOCATION] == 165) { p9(166, -1); }
+			if (object_type_3_buffer[PLAYER_LOCATION] == 165) { processMoveCommand(166, -1); }
 			else {
-				p9(165, -1);
+				processMoveCommand(165, -1);
 			} modifyObjectFlag('c', t11(697), 0); modifyObjectFlag('c', 16, 14); printMessage(64, 1081, 0);
 		} if (g10(10, -1)) {
 			printMessage(64, 1430, 0);
@@ -185,10 +185,10 @@ int i40() {
 } int o19() {
 	if (object_type_3_buffer[697] == 2)
 	{
-		if (!(m1(70) || m1(108) || m1(134) || m1(88))) { printMessage(64, 915, 0); }
+		if (!(currentCommandContains(70) || currentCommandContains(108) || currentCommandContains(134) || currentCommandContains(88))) { printMessage(64, 915, 0); }
 	} if (g10(88, -1))
 	{
-		if (object_type_3_buffer[697] == 1 || m1(88)) { printMessage(64, 1054, 0); }
+		if (object_type_3_buffer[697] == 1 || currentCommandContains(88)) { printMessage(64, 1054, 0); }
 	} if (g10(70, -1) || g10(108, -1)
 		|| g10(134, -1)) {
 		printMessage(64, 1433, 0);
@@ -215,7 +215,7 @@ g31() { f3(700, 1471); f3(701, 1473); c28(); longjmp(done_with_command, 1); } in
 		printMessage(64, 1481, 0);
 	} if (q8(101, -1)) { printMessage(76, 1478, 101); } if (g10(116, -1)) {
 		printMessage(76, 1478, 116);
-	} if (isObjectFlagSet(t11(671), 7) && object_type_3_buffer[PLAYER_LOCATION] != 141) { printMessage(64, 1482, 0); } if (object_type_3_buffer[PLAYER_LOCATION] == 432
+	} if (isObjectFlagSet(t11(671), 7) && object_type_3_buffer[PLAYER_LOCATION] != LOCATION_BUILDING) { printMessage(64, 1482, 0); } if (object_type_3_buffer[PLAYER_LOCATION] == 432
 		|| object_type_3_buffer[PLAYER_LOCATION] == 250 || object_type_3_buffer[PLAYER_LOCATION] == 249 || object_type_3_buffer[PLAYER_LOCATION] == 296 || object_type_3_buffer[PLAYER_LOCATION] == 463 || object_type_3_buffer[PLAYER_LOCATION] == 324)
 	{
 		printMessage(64, 1479, 0);
@@ -232,7 +232,7 @@ g31() { f3(700, 1471); f3(701, 1473); c28(); longjmp(done_with_command, 1); } in
 			if (isObjectFlagSet(t11(671), 9)) {
 				if ((object_type_3_buffer[PLAYER_LOCATION] == 428 || object_type_3_buffer[PLAYER_LOCATION] == 427) && isObjectFlagSet(91, 14)) {
 					printMessage(64, 1658, 0);
-				} if (m1(123) && object_type_3_buffer[123] == 2) { printMessage(64, 1657, 0); } printMessage(64, 1656, 0);
+				} if (currentCommandContains(123) && object_type_3_buffer[123] == 2) { printMessage(64, 1657, 0); } printMessage(64, 1656, 0);
 			} printMessage(64, 1653, 0);
 		} printMessage(64, 915, 0);
 	} if ((object_type_3_buffer[PLAYER_LOCATION] == 427 || object_type_3_buffer[PLAYER_LOCATION] == 428) && isObjectFlagSet(91, 14)) {
@@ -264,14 +264,14 @@ g31() { f3(700, 1471); f3(701, 1473); c28(); longjmp(done_with_command, 1); } in
 	} if (y10(1684)) { modifyObjectFlag('s', t11(735), 5); printMessage(64, 1685, 0); }
 	printMessage(64, 1687, 0);
 } int u22() {
-	if (!m1(60)) return; if (g10(60, -1)) {
+	if (!currentCommandContains(60)) return; if (g10(60, -1)) {
 		if (object_type_3_buffer[60] == 1)
 		{
 			printMessage(72, 1688, 1);
 		} l12(0, 60, 1); printMessage(72, 1689, 1);
 	}
 } int l31() {
-	if (!m1(60))
+	if (!currentCommandContains(60))
 		return; if (g10(60, -1)) {
 		if (object_type_3_buffer[60] == 0) { printMessage(72, 1688, 0); } if (isItemAtLocation(60, -1))
 		{
@@ -510,13 +510,13 @@ g31() { f3(700, 1471); f3(701, 1473); c28(); longjmp(done_with_command, 1); } in
 		printMessage(0, 781, 0);
 		if (y10(1556)) { f3(700, 1554); f3(701, 1555); c28(); }
 	} l12(0, 711, 1999);
-	p9(136, -1); printBlankLine();
+	processMoveCommand(136, -1); printBlankLine();
 } 
 
 int s34() {
 	object_type_3_buffer[699] = cheezy_rand(100); 
 	if (isObjectFlagSet(t11(697), 6) && object_type_3_buffer[PLAYER_LOCATION] == 393) {
-		if (m1(535) || m1(557)) { 
+		if (currentCommandContains(535) || currentCommandContains(557)) { 
 			e24(); 
 		}
 	} 
@@ -532,7 +532,7 @@ int s34() {
 	if (isObjectFlagSet(t11(697), 0))
 	{
 		object_type_3_buffer[713] += 1; 
-		if (object_type_3_buffer[PLAYER_LOCATION] == 155) { 
+		if (object_type_3_buffer[PLAYER_LOCATION] == LOCATION_MT_KING) { 
 			l12(1, 681, 672); 
 		} 
 		
@@ -583,7 +583,7 @@ int s34() {
 		
 		if (isObjectFlagSet(t11(672), 11) && j0[134] == object_type_3_buffer[672] && !(isObjectFlagSet(t11(710), 5))) {
 			if (cheezy_rand(100) < 97) {
-				p9(object_type_3_buffer[672], -1); 
+				processMoveCommand(object_type_3_buffer[672], -1); 
 				modifyObjectFlag('c', t11(697), 0);
 				printMessage(0, 782, 0); // A little dwarf with a big knife blocks your way.
 				return 0;
@@ -783,7 +783,7 @@ int s35() {
 			}
 		} else {
 			printMessage(0, 1500, 0); // You  feel  several bites on your legs.  You try to protect them, but more rats sink their teeth into your arms, then one leaps from the sewage  and hangs   onto   your  ear,  weighing  you  down,  now  they  are  at  your throat.............
-			p9(419, -1); 
+			processMoveCommand(419, -1); 
 			if (isItemAtLocation(110, -1)) { 
 				s9(110, 484); 
 			} 
@@ -869,7 +869,7 @@ int s35() {
 		modifyObjectFlag('c', 16, 13);
 	} 
 	
-	if (isObjectFlagSet(t11(710), 9) && !m1(503))
+	if (isObjectFlagSet(t11(710), 9) && !currentCommandContains(503))
 	{
 		modifyObjectFlag('c', t11(710), 9);
 	} 
@@ -904,7 +904,7 @@ int s35() {
 			
 			modifyObjectFlag('s', t11(697), 7);
 			
-			if ((cheezy_rand(100) < 40 || object_type_3_buffer[43] > 9 || object_type_3_buffer[43] == 2) && object_type_3_buffer[43] != 7 || m1(541)) {
+			if ((cheezy_rand(100) < 40 || object_type_3_buffer[43] > 9 || object_type_3_buffer[43] == 2) && object_type_3_buffer[43] != 7 || currentCommandContains(541)) {
 				object_type_3_buffer[43] += 1; 
 				if (object_type_3_buffer[43] > 19) { 
 					die(); 
@@ -924,7 +924,7 @@ int s35() {
 	object_type_3_buffer[714] -= 1; 
 	object_type_3_buffer[712] += 1; 
 	
-	if (m1(489)) { 
+	if (currentCommandContains(489)) { 
 		(*command_by_location_dispatch_table[489])(); 
 		longjmp(done_with_command, 1); 
 	} 
@@ -950,11 +950,11 @@ int s35() {
 		longjmp(done_with_command, 1);
 	} 
 	
-	if (m1(493)) { 
+	if (currentCommandContains(493)) { 
 		s30(); 
 	} 
 	
-	if (m1(3)) { 
+	if (currentCommandContains(3)) { 
 		c29(); 
 	} 
 	
@@ -973,7 +973,7 @@ int s35() {
 		}
 	} 
 	
-	if (m1(520) && m1(528)) {
+	if (currentCommandContains(520) && currentCommandContains(528)) {
 		object_type_3_buffer[729] += 1; if (object_type_3_buffer[729] == 5)
 		{
 			f3(700, 528); 
@@ -989,7 +989,7 @@ int s35() {
 		a28(); 
 	} 
 	
-	if (m1(524) && object_type_3_buffer[697] > 1) {
+	if (currentCommandContains(524) && object_type_3_buffer[697] > 1) {
 		if (isObjectFlagSet(t11(670), 0) && isObjectFlagSet(t11(670), 3)) {
 			printMessage(64, 1664, 0); // You 'D' means 'DOWN', not 'DROP'...  remember?  Try again.
 		}
@@ -999,7 +999,7 @@ int s35() {
 		t40();
 	} 
 	
-	if (!(m1(493) && object_type_3_buffer[697] > 1 && !(495 <= object_type_3_buffer[670] && object_type_3_buffer[670] <= 512))) {
+	if (!(currentCommandContains(493) && object_type_3_buffer[697] > 1 && !(495 <= object_type_3_buffer[670] && object_type_3_buffer[670] <= 512))) {
 		(*command_by_location_dispatch_table[object_type_3_buffer[671]])();
 	} 
 	
@@ -1018,44 +1018,44 @@ int s35() {
 	else
 	{
 		if (object_type_3_buffer[717] == 3) {
-			if (m1(662)) { 
+			if (currentCommandContains(662)) { 
 				printMessage(64, 1515, 0); 
 			} 
 			
 			g32(); 
 			
-			if (m1(102))
+			if (currentCommandContains(102))
 			{
 				u24();
 			}
 		} 
 		
-		if (m1(73)) {
+		if (currentCommandContains(73)) {
 			if (object_type_3_buffer[PLAYER_LOCATION] == 225 || object_type_3_buffer[PLAYER_LOCATION] == 392 || object_type_3_buffer[PLAYER_LOCATION] == 429)
 			{
 				s9(73, object_type_3_buffer[671]);
 			}
 		} 
 		
-		if (m1(662)) { 
+		if (currentCommandContains(662)) { 
 			printMessage(64, 1516, 0); 
 		} 
 		
-		if (m1(601)) {
+		if (currentCommandContains(601)) {
 			printMessage(64, 799, 0);
 		} 
 		
-		if (m1(147)) { 
+		if (currentCommandContains(147)) { 
 			r28(); 
 			longjmp(done_with_command, 1); 
 		} 
 		
-		if (m1(69)) { 
+		if (currentCommandContains(69)) { 
 			printMessage(64, 1275, 0); 
 		}
 		
 		if (isObjectFlagSet(t11(671), 13)) { 
-			if (m1(112) || m1(560)) { 
+			if (currentCommandContains(112) || currentCommandContains(560)) { 
 				printMessage(64, 1542, 0); 
 			} 
 		} 
@@ -1064,7 +1064,7 @@ int s35() {
 		r31(); 
 		
 		if (isObjectFlagSet(t11(669), 0)) {
-			if (m1(112) && isObjectFlagSet(t11(671), 9) || g10(t11(object_type_3_buffer[669]), -1))
+			if (currentCommandContains(112) && isObjectFlagSet(t11(671), 9) || g10(t11(object_type_3_buffer[669]), -1))
 			{
 				printMessage(12, 1023, 669); 
 				modifyObjectFlag('s', t11(697), 5);

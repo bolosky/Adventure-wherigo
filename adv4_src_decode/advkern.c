@@ -111,30 +111,80 @@ int k3(a1) int a1; { int *z1; z1 = &a1; while (*z1 >= 0) {
 z1 = &a1; while (*z1 >= 0) { if (!m1(*z1)) return (0); else z1 += 1; }
 return (1); }
 #else 
-int k3(q3, b2, t4, j4, s1, y1, c5, y2, e4, l4, l5, v3, t5, w2, q4, b3) int q3, b2, t4, j4, s1, y1, c5, y2, e4, l4, l5, v3, t5, w2, q4, b3;
-{ if (q3 == -1) return (0); if (m1(q3)) return (1); if (b2 == -1) return
-(0); if (m1(b2)) return (1); if (t4 == -1) return (0); if (m1(t4)) return
-(1); if (j4 == -1) return (0); if (m1(j4)) return (1); if (s1 == -1) return
-(0); if (m1(s1)) return (1); if (y1 == -1) return (0); if (m1(y1)) return
-(1); if (c5 == -1) return (0); if (m1(c5)) return (1); if (y2 == -1) return
-(0); if (m1(y2)) return (1); if (e4 == -1) return (0); if (m1(e4)) return
-(1); if (l4 == -1) return (0); if (m1(l4)) return (1); if (l5 == -1) return
-(0); if (m1(l5)) return (1); if (v3 == -1) return (0); if (m1(v3)) return
-(1); if (t5 == -1) return (0); if (m1(t5)) return (1); if (w2 == -1) return
-(0); if (m1(w2)) return (1); if (q4 == -1) return (0); if (m1(q4)) return
-(1); if (b3 == -1) return (0); if (m1(b3)) return (1); return (0); } int
-p2(q3, b2, t4, j4, s1, y1, c5, y2, e4, l4, l5, v3, t5, w2, q4, b3) int q3, b2, t4, j4, s1, y1, c5, y2, e4, l4, l5, v3, t5, w2, q4, b3;
-{ if (q3 == -1) return (1); if (!m1(q3)) return (0); if (b2 == -1) return
-(1); if (!m1(b2)) return (0); if (t4 == -1) return (1); if (!m1(t4)) return
-(0); if (j4 == -1) return (1); if (!m1(j4)) return (0); if (s1 == -1) return
-(1); if (!m1(s1)) return (0); if (y1 == -1) return (1); if (!m1(y1)) return
-(0); if (c5 == -1) return (1); if (!m1(c5)) return (0); if (y2 == -1) return
-(1); if (!m1(y2)) return (0); if (e4 == -1) return (1); if (!m1(e4)) return
-(0); if (l4 == -1) return (1); if (!m1(l4)) return (0); if (l5 == -1) return
-(1); if (!m1(l5)) return (0); if (v3 == -1) return (1); if (!m1(v3)) return
-(0); if (t5 == -1) return (1); if (!m1(t5)) return (0); if (w2 == -1) return
-(1); if (!m1(w2)) return (0); if (q4 == -1) return (1); if (!m1(q4)) return
-(0); if (b3 == -1) return (1); if (!m1(b3)) return (0); return (1); }
+int currentCommandIsOneOf(q3, b2, t4, j4, s1, y1, c5, y2, e4, l4, l5, v3, t5, w2, q4, b3) int q3, b2, t4, j4, s1, y1, c5, y2, e4, l4, l5, v3, t5, w2, q4, b3;
+{ 
+	if (q3 == -1) return (0); 
+	if (currentCommandContains(q3)) return (1); 
+	if (b2 == -1) return (0); 
+	if (currentCommandContains(b2)) return (1); 
+	if (t4 == -1) return (0); 
+	if (currentCommandContains(t4)) return (1); 
+	if (j4 == -1) return (0); 
+	if (currentCommandContains(j4)) return (1); 
+	if (s1 == -1) return (0); 
+	if (currentCommandContains(s1)) return (1); 
+	if (y1 == -1) return (0); 
+	if (currentCommandContains(y1)) return (1); 
+	if (c5 == -1) return (0); 
+	if (currentCommandContains(c5)) return (1); 
+	if (y2 == -1) return (0); 
+	if (currentCommandContains(y2)) return (1); 
+	if (e4 == -1) return (0); 
+	if (currentCommandContains(e4)) return (1); 
+	if (l4 == -1) return (0); 
+	if (currentCommandContains(l4)) return (1); 
+	if (l5 == -1) return(0); 
+	if (currentCommandContains(l5)) return (1); 
+	if (v3 == -1) return (0); 
+	if (currentCommandContains(v3)) return(1); 
+	if (t5 == -1) return (0); 
+	if (currentCommandContains(t5)) return (1); 
+	if (w2 == -1) return(0); 
+	if (currentCommandContains(w2)) return (1); 
+	if (q4 == -1) return (0); 
+	if (currentCommandContains(q4)) return(1); 
+	if (b3 == -1) return (0); 
+	if (currentCommandContains(b3)) return (1); 
+	return (0); 
+} 
+
+int
+currentCommandIsNotOneOf(q3, b2, t4, j4, s1, y1, c5, y2, e4, l4, l5, v3, t5, w2, q4, b3) int q3, b2, t4, j4, s1, y1, c5, y2, e4, l4, l5, v3, t5, w2, q4, b3;
+{ 
+	if (q3 == -1) return (1); 
+	if (!currentCommandContains(q3)) return (0); 
+	if (b2 == -1) return(1); 
+	if (!currentCommandContains(b2)) return (0); 
+	if (t4 == -1) return (1); 
+	if (!currentCommandContains(t4)) return(0); 
+	if (j4 == -1) return (1); 
+	if (!currentCommandContains(j4)) return (0); 
+	if (s1 == -1) return(1); 
+	if (!currentCommandContains(s1)) return (0); 
+	if (y1 == -1) return (1); 
+	if (!currentCommandContains(y1)) return(0); 
+	if (c5 == -1) return (1); 
+	if (!currentCommandContains(c5)) return (0); 
+	if (y2 == -1) return(1); 
+	if (!currentCommandContains(y2)) return (0); 
+	if (e4 == -1) return (1); 
+	if (!currentCommandContains(e4)) return(0); 
+	if (l4 == -1) return (1); 
+	if (!currentCommandContains(l4)) return (0); 
+	if (l5 == -1) return(1); 
+	if (!currentCommandContains(l5)) return (0); 
+	if (v3 == -1) return (1); 
+	if (!currentCommandContains(v3)) return(0); 
+	if (t5 == -1) return (1); 
+	if (!currentCommandContains(t5)) return (0); 
+	if (w2 == -1) return(1); 
+	if (!currentCommandContains(w2)) return (0); 
+	if (q4 == -1) return (1); 
+	if (!currentCommandContains(q4)) return(0); 
+	if (b3 == -1) return (1); 
+	if (!currentCommandContains(b3)) return (0); 
+	return (1); 
+}
 #endif 
 
 int cheezy_rand(i5) int i5; { 
@@ -826,14 +876,14 @@ int y10(g5) int g5; { char s5[10]; char
 
 		x7();
 
-		BJBMessage(64-64, 843, 0); // BJB
-		BJBMessage(78-64, 677, 674);
-		BJBMessage(0, 812, 0);
-		BJBMessage(64-64, 798, 0);
-		BJBMessage(0, 1335, 0);
-		BJBMessage(0, 1337, 0);
-		BJBMessage(0, 939, 0);
-		BJBMessage(0, 812, 0);
+		BJBMessage(64-64, 1599, 0); // BJB
+		BJBMessage(64-64, 804, 0);
+		BJBMessage(0, 1395, 0);
+		BJBMessage(0, 777, 0);
+		BJBMessage(0, 1558, 0);
+		BJBMessage(0, 1450, 0);
+		BJBMessage(0, 802, 0);
+		BJBMessage(0, 828, 0);
 		BJBMessage(0, 805, 0);
 		BJBMessage(0, 791, 0);
 		BJBMessage(0, 997, 0);
@@ -1015,139 +1065,142 @@ int isItemAtLocation (int itemId, int location)
 #endif
 			  return (0); }
 
-p9(m6, a7, l10, u7, v8, l11, h7, s8, v9, p10, t9, h8, b13, v10, a8, b14) int m6, a7, l10, u7, v8, l11, h7, s8, v9, p10, t9, h8, b13, v10, a8, b14;
+processMoveCommand(destinationLocation, messageIdToPrint, l10, u7, v8, l11, h7, s8, v9, p10, t9, h8, b13, v10, a8, b14) int destinationLocation, messageIdToPrint, l10, u7, v8, l11, h7, s8, v9, p10, t9, h8, b13, v10, a8, b14;
 { 
 	int w10; 
 				  
-	if (a7 < 0) goto s7; 
+	if (messageIdToPrint < 0) 
+		goto doMove;
+
 	if ((w10 = l10) < 0) 
 		w10 = -w10; 
-	if (m1(w10)) 
-		goto s7; 
+
+	if (currentCommandContains(w10)) 
+		goto doMove;
 	else if (l10 < 0) 
 		return; 
 				  
 	if ((w10 = u7) < 0) 
 		w10 = -w10;
 			  
-	if (m1(w10)) 
-		goto s7; 
+	if (currentCommandContains(w10)) 
+		goto doMove;
 	else if (u7 < 0) 
 		return; 
 				  
 	if ((w10 = v8) < 0) 
 		w10 = -w10; 
 				  
-	if (m1(w10)) 
-		goto s7; 
+	if (currentCommandContains(w10)) 
+		goto doMove;
 	else if (v8 < 0) 
 		return; 
 				  
 	if ((w10 = l11) < 0) 
 		w10 = -w10; 
 				  
-	if (m1(w10)) 
-		goto s7; 
+	if (currentCommandContains(w10)) 
+		goto doMove;
 	else if (l11 < 0) 
 		return; 
 				  
 	if ((w10 = h7) < 0) 
 		w10 = -w10; 
 				  
-	if (m1(w10)) 
-		goto s7; 
+	if (currentCommandContains(w10)) 
+		goto doMove;
 	else if (h7 < 0) 
 		return; 
 				  
 	if ((w10 = s8) < 0) 
 		w10 = -w10; 
 				  
-	if (m1(w10)) 
-		goto s7; 
+	if (currentCommandContains(w10)) 
+		goto doMove;
 	else if (s8 < 0) 
 		return;
 			  
 	if ((w10 = v9) < 0) 
 		w10 = -w10; 
 				  
-	if (m1(w10)) 
-		goto s7; 
+	if (currentCommandContains(w10)) 
+		goto doMove;
 	else if (v9 < 0)
-	return; 
+		return; 
 				  
 	if ((w10 = p10) < 0) 
 		w10 = -w10; 
 				  
-	if (m1(w10)) 
-		goto s7; 
+	if (currentCommandContains(w10)) 
+		goto doMove;
 	else if (p10 < 0) 
 		return; 
 				  
 	if ((w10 = t9) < 0) 
 		w10 = -w10; 
 				  
-	if (m1(w10)) 
-		goto s7;
+	if (currentCommandContains(w10)) 
+		goto doMove;
 	else if (t9 < 0) 
 		return; 
 				  
 	if ((w10 = h8) < 0) 
 		w10 = -w10; 
 				  
-	if (m1(w10)) 
-		goto s7; 
+	if (currentCommandContains(w10)) 
+		goto doMove;
 	else if (h8 < 0) 
 		return; 
 				  
 	if ((w10 = b13) < 0) 
 		w10 = -w10; 
 				  
-	if (m1(w10))
-	goto s7; 
+	if (currentCommandContains(w10))
+		goto doMove;
 	else if (b13 < 0) 
 		return; 
 				  
 	if ((w10 = v10) < 0) 
 		w10 = -w10; 
 				  
-	if (m1(w10)) 
-		goto s7; 
+	if (currentCommandContains(w10)) 
+		goto doMove;
 	else if (v10 < 0) 
 		return; 
 				  
 	if ((w10 = a8) < 0) 
 		w10 = -w10;
 			  
-	if (m1(w10)) 
-		goto s7; 
+	if (currentCommandContains(w10)) 
+		goto doMove;
 	else if (a8 < 0) 
 		return; 
 				  
 	if ((w10 = b14) < 0) 
 		w10 = -w10; 
 
-	if (m1(w10)) 
-		goto s7; 
+	if (currentCommandContains(w10)) 
+		goto doMove;
 				  
 	return;
 
-s7: 
-	object_type_3_buffer[p11] = object_type_3_buffer[PLAYER_LOCATION]; 
-	*getObjectPointer(p11) = -1; 
-	object_type_3_buffer[PLAYER_LOCATION] = m6; 
+doMove: 
+	object_type_3_buffer[PREVIOUS_LOCATION] = object_type_3_buffer[PLAYER_LOCATION]; 
+	*getObjectPointer(PREVIOUS_LOCATION) = -1; 
+	object_type_3_buffer[PLAYER_LOCATION] = destinationLocation; 
 	*getObjectPointer(PLAYER_LOCATION) = -1;
 
 #if defined (f2) && defined (v5)
 	modifyObjectFlag('s', v5, f2);
 #endif
 
-	if (a7 < -2) 
-		a7 = -a7; 
+	if (messageIdToPrint < -2) 
+		messageIdToPrint = -messageIdToPrint; 
 			  
-	if (a7 > 0) 
-		printMessage(0, a7, 0); 
+	if (messageIdToPrint > 0) 
+		printMessage(0, messageIdToPrint, 0); 
 			  
-	if (a7 != -1) 
+	if (messageIdToPrint != -1) 
 		longjmp(done_with_command, 1); 
 	return; 
 } 

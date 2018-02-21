@@ -41,10 +41,21 @@ int z21() { e32(); u33(); return; } int e20()
 } int t30() { b33(); z29(); p42(); p43(); z30(); return; } int w22()
 {
 	d37(); d38(); return;
-} int t32() { j45(); c33(); return; } int b23()
+} int t32() { j45(); c33(); return; } 
+
+int b23()
 {
-	p38(); o28(); c31(); return;
-} int d14() { r32(); o26(); return; } 
+	processInventoryCommand(); 
+	o28(); 
+	c31(); 
+	return;
+} 
+
+int d14() { 
+	r32(); 
+	o26(); 
+	return; 
+} 
 
 int q34() {
 	r34(); 

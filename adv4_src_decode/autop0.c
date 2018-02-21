@@ -7,7 +7,7 @@
 int d34() {
 	if (isObjectFlagSet(t11(670), 16)) {
 		z5(700, 670); if (object_type_3_buffer[700] > 1) {
-			if (m1(64))
+			if (currentCommandContains(64))
 			{
 				l12(0, 64, 1);
 			}
@@ -103,7 +103,7 @@ int d34() {
 			s9(object_type_3_buffer[675], object_type_3_buffer[676]); l12(0, 701, 1);
 		}
 	} if (object_type_3_buffer[701] == 0) { printMessage(0, 1231, 0); }
-	p9(object_type_3_buffer[676], -2);
+	processMoveCommand(object_type_3_buffer[676], -2);
 } int j36() {
 	*getObjectPointer(675) = -1; object_type_3_buffer[675] = OBJECT_TYPE_0_MIN_ID - 1; while (++object_type_3_buffer[675] <= OBJECT_TYPE_0_MAX_ID)
 	{
@@ -179,12 +179,12 @@ y20() {
 } int z24() {
 	l12(1, 702, 670); if (object_type_3_buffer[697] == 1 || (513 <= object_type_3_buffer[669] && object_type_3_buffer[669] <= 522)) {
 		l12(1, 702, 669);
-	} if (object_type_3_buffer[701] == 0) { modifyObjectFlag('s', t11(671), 8); p9(object_type_3_buffer[678], -1); }
+	} if (object_type_3_buffer[701] == 0) { modifyObjectFlag('s', t11(671), 8); processMoveCommand(object_type_3_buffer[678], -1); }
 	else {
 		if (object_type_3_buffer[701] == object_type_3_buffer[702])
 		{
-			p9(object_type_3_buffer[678], -2);
-		} p9(object_type_3_buffer[679], -2);
+			processMoveCommand(object_type_3_buffer[678], -2);
+		} processMoveCommand(object_type_3_buffer[679], -2);
 	}
 } int j37() {
 	if (isObjectFlagSet(t11(671), 7))
@@ -280,7 +280,7 @@ y20() {
 	}
 } int a27()
 {
-	if (cheezy_rand(100) < 20) { p9(434, -2); } p9(432, -2);
+	if (cheezy_rand(100) < 20) { processMoveCommand(434, -2); } processMoveCommand(432, -2);
 } int u23() {
 	if (isObjectFlagSet(116, 13))
 	{
@@ -348,17 +348,17 @@ int g32() {
 	} if (!(isObjectFlagSet(t11(675), 0))) { return 0; } if (g10(t11(object_type_3_buffer[675]), -1)) {
 		return
 			0;
-	} if (m1(102)) {
+	} if (currentCommandContains(102)) {
 		if (isObjectFlagSet(102, 4) && g10(104, -1) && !g10(102, -1)) {
 			return
 				0;
 		}
-	} if (!(isObjectFlagSet(t11(675), 13) || isObjectFlagSet(t11(675), 14))) { return 0; } if (m1(27))
+	} if (!(isObjectFlagSet(t11(675), 13) || isObjectFlagSet(t11(675), 14))) { return 0; } if (currentCommandContains(27))
 	{
 		return 0;
 	} if (isObjectFlagSet(t11(675), 13)) { if (!(object_type_3_buffer[PLAYER_LOCATION] == 378)) { return 0; } }
-	else { if (!(object_type_3_buffer[PLAYER_LOCATION] == 379)) { return 0; } } if (m1(534)) {
-		if (m1(134)) {
+	else { if (!(object_type_3_buffer[PLAYER_LOCATION] == 379)) { return 0; } } if (currentCommandContains(534)) {
+		if (currentCommandContains(134)) {
 			printMessage(64, 915, 0);
 		} if (isObjectFlagSet(t11(675), 4)) { printMessage(76, 1378, 670); } if (object_type_3_buffer[705] < object_type_3_buffer[721])
 		{
@@ -384,7 +384,7 @@ int g32() {
 	} printMessage(76, 829, 147);
 } int u24()
 {
-	if (m1(534)) {
+	if (currentCommandContains(534)) {
 		if (q8(102, -1)) { return 0; } if (isItemAtLocation(104, -1)) {
 			printMessage(76, 813, 670);
 		} if (!(g10(104, -1))) {
@@ -399,15 +399,15 @@ int g32() {
 			l12(0, 673, 0); printMessage(12, 1489, 669); printMessage(76, 1490, 670);
 		} g12(); printMessage(64, 897, 0);
 	}
-	if (m1(535) || m1(557)) {
+	if (currentCommandContains(535) || currentCommandContains(557)) {
 		if (isItemAtLocation(ITEM_ROD,-1)) { return 0; } if (isItemAtLocation(104, -1))
 		{
 			s9(104, PLAYER_LOCATION); printMessage(12, 1489, 669); printMessage(76, 1490, 670);
 		} printMessage(76, 1027, 670);
 	} if
-		(m1(547)) {
+		(currentCommandContains(547)) {
 		if (isItemAtLocation(ITEM_ROD,-1) || isItemAtLocation(104, -1)) { printMessage(64, 828, 0); } printMessage(76, 1027, 670);
-	} if (m1(571)) {
+	} if (currentCommandContains(571)) {
 		if (g10(102, -1) && !isItemAtLocation(104, -1) || isItemAtLocation(ITEM_ROD,-1)) {
 			printMessage(76, 1541, 670);
 		}
@@ -520,12 +520,17 @@ int g32() {
 	} 
 	printBlankLine();
 	r7();
-} int b28() {
+} 
+
+int b28() {
 	if (object_type_3_buffer[14] < 8) {
-		object_type_3_buffer[14]
-			= cheezy_rand(8);
-	} object_type_3_buffer[15] = cheezy_rand(8); if (g10(99, 1)) { s9(15, 484); }
-	else {
+		object_type_3_buffer[14] = cheezy_rand(8);
+	} 
+	
+	object_type_3_buffer[15] = cheezy_rand(8); 
+	if (g10(99, 1)) { 
+		s9(15, 484); 
+	} else {
 		s9(15, 256);
 		if (object_type_3_buffer[PLAYER_LOCATION] == 256 && !(isObjectFlagSet(t11(697), 0))) { 
 			printMessage(0, 15, 0); // A glow of light is visible through the fog to the north.
@@ -547,7 +552,7 @@ int die() {
 	} 
 	
 	if (object_type_3_buffer[PLAYER_LOCATION] == 432 || object_type_3_buffer[PLAYER_LOCATION] == 256) {
-		p9(485, -1);
+		processMoveCommand(485, -1);
 	} 
 	l12(0, 17, 0); 
 	s9(17, 484); 
@@ -625,7 +630,7 @@ int die() {
 			s9(14, 255); 
 			l12(0, 14, 8);
 			b28(); 
-			p9(141, -1); 
+			processMoveCommand(LOCATION_BUILDING, -1); 
 			l12(0, 672, 0); 
 			s9(99, 136); 
 			
@@ -880,7 +885,7 @@ int e28() {
 	}
 	else { l12(0, 700, 4); } if (isItemAtLocation(111, t11(object_type_3_buffer[700]))) {
 		l12(0, 111, 2); if (g10(134, -1)
-			&& m1(557)) {
+			&& currentCommandContains(557)) {
 			modifyObjectFlag('s', 134, 14); if (object_type_3_buffer[134] == 1) { printMessage(76, 1062, 670); } printMessage(76, 1063, 670);
 		} printMessage(76, 875, 670);
 	} if (isItemAtLocation(114, t11(object_type_3_buffer[700]))) {
@@ -940,7 +945,7 @@ int e28() {
 	if (object_type_3_buffer[20] > 0) { printMessage(64, 976, 0); } if (y10(836))
 	{
 		l12(0, 20, 1); s9(60, 247); s9(117, 247); modifyObjectFlag('c', 20, 6); *getObjectPointer(675) = -1; object_type_3_buffer[675] = OBJECT_TYPE_0_MIN_ID - 1;
-		while (++object_type_3_buffer[675] <= OBJECT_TYPE_0_MAX_ID) { if (q8(t11(object_type_3_buffer[675]), -1)) { s9(object_type_3_buffer[675], 247); } } p9(247, -1446);
+		while (++object_type_3_buffer[675] <= OBJECT_TYPE_0_MAX_ID) { if (q8(t11(object_type_3_buffer[675]), -1)) { s9(object_type_3_buffer[675], 247); } } processMoveCommand(247, -1446);
 	} printMessage(12, 1222, 669); printMessage(76, 1223, 670);
 } int d35() {
 	if (object_type_3_buffer[717] < 3) {
@@ -1021,7 +1026,7 @@ int e28() {
 			modifyObjectFlag('c', t11(676), 4);
 		}
 	} modifyObjectFlag('s', 461, 4); modifyObjectFlag('s', 243, 4); l12(0, 717, 3); l12(0, 143, 1);
-	l12(0, 716, 999); l12(0, 672, 0); p9(378, -2);
+	l12(0, 716, 999); l12(0, 672, 0); processMoveCommand(378, -2);
 } int i45() {
 	*getObjectPointer(675) = -1; object_type_3_buffer[675] = OBJECT_TYPE_0_MIN_ID - 1;
 	while (++object_type_3_buffer[675] <= OBJECT_TYPE_0_MAX_ID) {
@@ -1144,12 +1149,12 @@ int e28() {
 		}
 	} l12(1, 724, 716);
 } int x30() {
-	if (m1(113))
+	if (currentCommandContains(113))
 	{
 		w24();
-	} if (m1(112)) { r26(); } if (object_type_3_buffer[697] == 1) {
+	} if (currentCommandContains(112)) { r26(); } if (object_type_3_buffer[697] == 1) {
 		if ((533 <= object_type_3_buffer[669] &&
-			object_type_3_buffer[669] <= 570) || m1(493)) {
+			object_type_3_buffer[669] <= 570) || currentCommandContains(493)) {
 			modifyObjectFlag('s', t11(697), 5); printMessage(76, 1038, 669);
 		} if ((615 <= object_type_3_buffer[669]
 			&& object_type_3_buffer[669] <= 629)) {
@@ -1166,7 +1171,7 @@ int e28() {
 	else {
 		if (object_type_3_buffer[697] == 2 && isObjectFlagSet(t11(670), 0))
 		{
-			if (m1(112) && isObjectFlagSet(t11(671), 9)) { printMessage(64, 1588, 0); } if (g10(t11(object_type_3_buffer[670]), -1))
+			if (currentCommandContains(112) && isObjectFlagSet(t11(671), 9)) { printMessage(64, 1588, 0); } if (g10(t11(object_type_3_buffer[670]), -1))
 			{
 				printMessage(12, 1504, 669); printMessage(12, 1505, 670);
 			}
@@ -1174,7 +1179,7 @@ int e28() {
 		}
 		else {
 			if ((630 <= object_type_3_buffer[670] && object_type_3_buffer[670] <= 663)) {
-				if (m1(550)) { printMessage(0, 915, 0); }
+				if (currentCommandContains(550)) { printMessage(0, 915, 0); }
 				else
 				{
 					if ((630 <= object_type_3_buffer[670] && object_type_3_buffer[670] <= 659)) { printMessage(12, 818, 670); }
@@ -1251,11 +1256,11 @@ int e28() {
 } 
 
 int p36() {
-	if (isObjectFlagSet(t11(671), 14) && !m1(580) || !(isObjectFlagSet(t11(671), 8))) {
+	if (isObjectFlagSet(t11(671), 14) && !currentCommandContains(COMMAND_HELP) || !(isObjectFlagSet(t11(671), 8))) {
 		return 0;
 	} 
 	l12(0, 677, 0); 
-	if (object_type_3_buffer[PLAYER_LOCATION] == 434 && m1(580)) {
+	if (object_type_3_buffer[PLAYER_LOCATION] == 434 && currentCommandContains(COMMAND_HELP)) {
 		l12(0, 720, 0); 
 		printMessage(64, 1474, 0);
 	} 
@@ -1271,7 +1276,7 @@ int p36() {
 	if (object_type_3_buffer[PLAYER_LOCATION] == 155 && g10(7, -1))
 	{
 		if (isObjectFlagSet(t11(735), 0)) {
-			if (!(m1(580) && !(isObjectFlagSet(t11(671), 14)))) {
+			if (!(currentCommandContains(COMMAND_HELP) && !(isObjectFlagSet(t11(671), 14)))) {
 				f3(677, 1579);
 			}
 		}
@@ -1306,7 +1311,7 @@ int p36() {
 	} 
 	
 	if ((271 <= object_type_3_buffer[671] && object_type_3_buffer[671] <= 289)) {
-		if (m1(580) && !(isObjectFlagSet(t11(671), 14)))
+		if (currentCommandContains(COMMAND_HELP) && !(isObjectFlagSet(t11(671), 14)))
 		{
 			return 0;
 		} else { 
@@ -1332,7 +1337,7 @@ int p36() {
 	
 	if (object_type_3_buffer[PLAYER_LOCATION] == 254) {
 		if (isObjectFlagSet(t11(735), 1)) {
-			if (!(m1(580) && !(isObjectFlagSet(t11(671), 14))))
+			if (!(currentCommandContains(COMMAND_HELP) && !(isObjectFlagSet(t11(671), 14))))
 			{
 				f3(677, 1512);
 			}
@@ -1353,7 +1358,7 @@ int p36() {
 	} 
 	
 	if (object_type_3_buffer[PLAYER_LOCATION] == 259) {
-		if (m1(580)) {
+		if (currentCommandContains(COMMAND_HELP)) {
 			f3(677, 1452);
 		} else { 
 			return 0; 
