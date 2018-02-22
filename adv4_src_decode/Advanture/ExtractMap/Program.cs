@@ -56,6 +56,9 @@ namespace ExtractMap
 
             var routineToRegionNumberMap = new Dictionary<string, int>();    // Maps dispatch routine name -> location.  Maps to -1 if name is used more than once.
 
+            routineToRegionNumberMap.Add("r32", 137);   // This is not in the mapping table, but is called from the function in the mapping table.
+            routineToRegionNumberMap.Add("f23", 142);
+
             bool inRegion = false;
             int arrayIndex = 0;
             for (int i = 0; i < autod3Lines.Count(); i++)
@@ -90,7 +93,24 @@ namespace ExtractMap
             Console.WriteLine("Found " + routineToRegionNumberMap.Count() + " unique identifiers in " + arrayIndex + " lines.");
 
             string[] files = { @"c:\adventure-wherigo\adv4_src_decode\autop0.c", @"c:\adventure-wherigo\adv4_src_decode\autop1.c", @"c:\adventure-wherigo\adv4_src_decode\autop2.c", @"c:\adventure-wherigo\adv4_src_decode\autop3.c",
-                @"c:\adventure-wherigo\adv4_src_decode\autop4.c", "@c:\adventure-wherigo\adv4_src_decode\autop5.c", @"c:\adventure-wherigo\adv4_src_decode\advkern.c" };
+                @"c:\adventure-wherigo\adv4_src_decode\autop4.c", @"c:\adventure-wherigo\adv4_src_decode\autop5.c", @"c:\adventure-wherigo\adv4_src_decode\advkern.c" };
+
+            var map = new Dictionary<int, Dictionary<string, string>>();    // Maps current location to direction -> new location.  
+            var directions = new List<string>();    // All directions we've seen
+
+            //
+            // Add in the canonical directions here, so that they're first in the list.
+            //
+            directions.Add("COMMAND_NORTH");
+            directions.Add("COMMAND_SOUTH");
+            directions.Add("COMMAND_EAST");
+            directions.Add("COMMAND_WEST");
+            directions.Add("COMMAND_NORTHEAST");
+            directions.Add("COMMAND_NORTHWEST");
+            directions.Add("COMMAND_SOUTHEAST");
+            directions.Add("COMMAND_SOUTHWEST");
+            directions.Add("COMMAND_UP");
+            directions.Add("COMMAND_DOWN");
 
             foreach (var file in files)
             {
@@ -99,11 +119,7 @@ namespace ExtractMap
                 // We now present the world's cheeziest C parser.
                 //
                 int curlyBraceDepth = 0;
-
                 int currentLocation = -1;
-
-                var map = new Dictionary<int, Dictionary<string, int>>();    // Maps current location to direction -> new location.  
-
                 string token;
 
                 while (null != (token = GetNextToken(inputFile)))
@@ -127,23 +143,15 @@ namespace ExtractMap
                     } else if (curlyBraceDepth == 0 && routineToRegionNumberMap.ContainsKey(token))
                     {
                         currentLocation = routineToRegionNumberMap[token];
-                    } else if (token == "processMoveCommand")
+                    } else if (currentLocation != -1 && token == "processMoveCommand")
                     {
-                        if (GetNextToken(inputFile) != ")")
+                        if (GetNextToken(inputFile) != "(")
                         {
                             Console.WriteLine("Missing open paren location " + currentLocation);
                             continue;
                         }
 
-                        int destination;
-                        try
-                        {
-                            destination = Convert.ToInt32(GetNextToken(inputFile));
-                        } catch (FormatException)
-                        {
-                            Console.WriteLine("Unable to parse destination for location " + currentLocation);
-                            continue;
-                        }
+                        var destination = GetNextToken(inputFile);
 
                         if (GetNextToken(inputFile) != ",")
                         {
@@ -154,8 +162,109 @@ namespace ExtractMap
                         GetNextToken(inputFile); // Message
                         GetNextToken(inputFile); // Comma
 
-                        
+                        if (!map.ContainsKey(currentLocation)) {
+                            map.Add(currentLocation, new Dictionary<string, string>());
+                        }
+
+                        while (true) {
+                            var direction = GetNextToken(inputFile);
+                            if (direction == ",")
+                            {
+                                continue;
+                            }
+
+                            if (direction == "-")   // Negative numbers signal the last input to this varargs function.
+                            {
+                                direction = GetNextToken(inputFile);
+                            }
+
+                            if (direction == null)
+                            {
+                                Console.WriteLine("Unexpected EOF processing " + currentLocation);
+                                break;
+                            }
+
+                            if (direction == ")")
+                            {
+                                break;
+                            }
+
+                            if (map[currentLocation].ContainsKey(direction))
+                            {
+                                if (map[currentLocation][direction] != destination)
+                                {
+                                    Console.WriteLine("Multiple destinations " + currentLocation + " " + direction + "-> (" + map[currentLocation][direction] + ", " + destination + ")");
+                                }
+                            } else
+                            {
+                                map[currentLocation].Add(direction, destination);
+                                if (!directions.Contains(direction))
+                                {
+                                    directions.Add(direction);
+                                }
+                            }
+                        } // tokens in a processMoveCommand
+                    } // parsing a processMoveCommand
+                } // tokens of an input file
+            } // All input files
+
+            Console.WriteLine("Total of " + map.Count() + " sources and " + directions.Count() + " directions");
+
+
+            var outputFile = new StreamWriter(@"c:\adventure-wherigo\GeneratedMap.txt");
+            outputFile.Write("From Location");
+            foreach (var direction in directions)
+            {
+                if (direction.StartsWith("COMMAND_"))
+                {
+                    outputFile.Write("\t" + direction.Substring(8));
+                }
+                else
+                {
+                    outputFile.Write("\t" + direction);
+                }
+            }
+            outputFile.WriteLine();
+
+            foreach (var locationEntry in map)
+            {
+                var fromLocation = locationEntry.Key;
+                var outArcs = locationEntry.Value;
+
+                outputFile.Write(fromLocation);
+
+                foreach (var direction in directions)
+                {
+                    if (outArcs.ContainsKey(direction))
+                    {
+                        if (outArcs[direction].StartsWith("LOCATION_"))
+                        {
+                            outputFile.Write("\t" + outArcs[direction].Substring(9));
+                        }
+                        else
+                        {
+                            outputFile.Write("\t" + outArcs[direction]);
+                        }
+                    } else
+                    {
+                        outputFile.Write("\t");
                     }
+                }
+                outputFile.WriteLine();
+            }
+
+            outputFile.Close();
+
+            foreach (var regionEntry in routineToRegionNumberMap)
+            {
+                if (regionEntry.Value == -1)
+                {
+                    continue;
+                }
+
+                if (!map.ContainsKey(regionEntry.Value))
+                {
+                    Console.WriteLine("Found region with no map info.  Region number " + regionEntry.Value + ", routine " + regionEntry.Key);
                 }
             }
         }
