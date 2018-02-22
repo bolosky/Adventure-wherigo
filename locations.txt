@@ -1,0 +1,328 @@
+136	You're at end of road again.
+137	You're at hill in road.
+138	You're at the east end of the ravine.
+139	You're at the west end of the ravine.
+140	You're at the magnificent view.
+141	You're inside building.
+142	You're in valley.
+143	You're at slit in streambed.
+144	You're outside grate.
+145	You're below the grate.
+146	You're in cobble crawl.
+147	You're in debris room.
+148	You are in an awkward sloping east/west canyon.
+149	You're in bird chamber.
+150	You're at top of small pit.
+151	You're in Hall of Mists.
+152	You're on east bank of fissure.
+153	You are on the west side of the fissure in the Hall of Mists.
+154	You're in nugget of gold room.
+155	You're in Hall of Mt King.
+156	You're at west end of Twopit room.
+157	You're at east end of Twopit room.
+158	You're in east pit.  There is a small pool of oil here.
+159	You're in west pit.
+160	You're in a low N/S passage.
+161	You are in the south side chamber.
+162	You're in the west side chamber.
+163	You're at "Y2".
+164	You are in a jumble of rock, with cracks everywhere.
+165	You're at window on pit.
+166	You're at window on pit.
+167	You're at west end of Hall of Mists.
+168	You are in a maze of twisty little passages, all alike. Exits lead in all directions.
+169	You are in a maze of twisty little passages, all alike. Exits lead in all directions.
+170	You are in a maze of twisty little passages, all alike. Exits lead in all directions.
+171	You are in a maze of twisty little passages, all alike. Exits lead in all directions.
+172	You are in a maze of twisty little passages, all alike. Exits lead in all directions.
+173	You are in a maze of twisty little passages, all alike. Exits lead in all directions.
+174	You are in a maze of twisty little passages, all alike. Exits lead in all directions.
+175	You are in a maze of twisty little passages, all alike. Exits lead in all directions.
+176	You are in a maze of twisty little passages, all alike. Exits lead in all directions.
+177	You are in a maze of twisty little passages, all alike. Exits lead in all directions.
+178	You are in a maze of twisty little passages, all alike. Exits lead in all directions.
+179	You are in a maze of twisty little passages, all alike. Exits lead in all directions.
+180	You are in a maze of twisty little passages, all alike. Exits lead in all directions.
+181	You are in a maze of twisty little passages, all alike. Exits lead in all directions.
+182	Dead end.  The only exit is west.
+183	Dead end.  The only exit is west.
+184	Dead end.  The only exit is west.
+185	Dead end.  The only exit is east.
+186	Dead end.  The only exit is east.
+187	Dead end.  The only exit is east.
+188	Dead end.  The only exit is up.
+189	Dead end.  The only exit is up.
+190	Dead end.  The only exit is up.
+191	Dead end.  The only exit is south.
+192	Dead end.  The only exit is south-east.
+193	You're at brink of pit.
+194	You're at east end of long hall.
+195	You're at west end of long hall.
+196	You are at a crossover of a high N/S passage and a low E/W one.
+197	Dead  end  passage.  Scratched on a rock is the message, "Stand where the statue gazes, and make use of the proper tool."
+198	You're in dirty passage.
+199	You are on the brink of a small clean climbable pit.
+200	You are at the pit's bottom with a stream nearby.
+201	You're in dusty rock room.
+202	You're at complex junction.
+203	You're in the chapel.
+204	You're in the recess in the beams.
+205	You're in the side chamber of the chapel.
+206	207	You're back at Bedquilt.
+208	You're in Swiss cheese room.
+209	You're in Slab room.
+210	You are in a secret N/S canyon above a large room.
+211	You are in a secret N/S canyon above a sizable passage.
+212	You're at junction of three secret canyons.
+213	You are in a large low room.  Crawls lead north, SE, and SW.
+214	Dead end crawl.
+215	You're in secret E/W canyon above tight canyon.
+216	You are at a wide place in a very tight N/S canyon.
+217	The canyon here becomes too tight to go further south.
+218	You are in a tall E/W canyon.
+219	The canyon runs into a mass of boulders -- dead end.
+220	You're in narrow corridor.
+221	You're at steep incline above large room.
+222	You're in Giant room.
+223	You are at one end of an immense north/south passage.
+224	You're in cavern with waterfall.
+225	You're in soft room.
+226	You're in Oriental room.
+227	You're in alcove.
+228	You're in Plover room.
+229	You're in Dark room.
+230	You're in misty cavern.
+231	You're in arched hall.
+232	You're in Shell room.
+233	You are in a long sloping corridor with ragged sharp walls.
+234	You are in a cul-de-sac about eight feet across.
+235	You're in anteroom.
+236	You're at Witt's End.
+237	You're in mirror canyon.
+238	You're at top of stalactite.
+239	You're on southern edge of reservoir.
+240	You are at the northern end of the reservoir.
+241	You're in small, warm chamber.
+242	You're on balcony above treasure chamber.
+243	You are in the middle of a gray, misty nowhere.
+244	You're on SW side of chasm.
+245	You're on NE side of chasm.
+246	You're in sloping corridor.
+247	You are in a secret canyon which exits to the north and east.
+248	You are in a secret canyon which exits to the north and east.
+249	You're in corridor.
+250	You're at fork in path.
+251	You're at junction with warm walls.
+252	You're at breath-taking view.
+253	You're at the south end of the Valley of the Stone Faces.
+254	You're at north end of the Valley of the Stone Faces.
+255	You're at south end of fog-filled room.
+256	
+257	You're in foggy room by cairn of rocks.
+258	You're in nondescript chamber.
+259	You're in room with pentagram.
+260	You're at the end of the crack, at the bottom of the chimney.
+261	You're in lava tube at top of chimney.
+262	You're at steep slide in lava tube.
+263	You're in rough and narrow passage.
+264	You're in rough passage to the north of the basilisk's den.
+265	You're in passage by steps.
+266	You're on the steps.
+267	You're at exit on steps.
+268	You're in the storage room.
+269	You're at "Y2"?
+270	You are in a jumble of rock, with cracks everywhere.
+271	You are in the catacombs.  Enchanted tunnels lead in all directions.
+272	You are in the catacombs.  Enchanted tunnels lead in all directions.
+273	You are in the catacombs.  Enchanted tunnels lead in all directions.
+274	You are in the catacombs.  Enchanted tunnels lead in all directions.
+275	You are in the catacombs.  Enchanted tunnels lead in all directions.
+276	You are in the catacombs.  Enchanted tunnels lead in all directions.
+277	You are in the catacombs.  Enchanted tunnels lead in all directions.
+278	You are in the catacombs.  Enchanted tunnels lead in all directions.
+279	You are in the catacombs.  Enchanted tunnels lead in all directions.
+280	You are in the catacombs.  Enchanted tunnels lead in all directions.
+281	You are in the catacombs.  Enchanted tunnels lead in all directions.
+282	You are in the catacombs.  Enchanted tunnels lead in all directions.
+283	You are in the catacombs.  Enchanted tunnels lead in all directions.
+284	You are in the catacombs.  Enchanted tunnels lead in all directions.
+285	You are in the catacombs.  Enchanted tunnels lead in all directions.
+286	You are in the catacombs.  Enchanted tunnels lead in all directions.
+287	You are in the catacombs.  Enchanted tunnels lead in all directions.
+288	You are in the catacombs.  Enchanted tunnels lead in all directions.
+289	You are in the catacombs by the stone portal.
+290	You're at west end of Audience Hall.
+291	You're at east end of Audience Hall.
+292	You're in winding passage
+293	You're in golden chamber.
+294	You're in Arabesque room.
+295	You're in room with translucent walls.
+296	You're in chamber of boulders.
+297	You're in limestone passage.
+298	You are at entrance of the barren room.
+299	You are in the barren room.
+300	You are in a maze of twisty little passages, all different. Exits lead in all directions.
+301	You  are in a little maze of twisting passages, all different. Exits lead in all directions.
+302	You  are in a maze of twisting little passages, all different. Exits lead in all directions.
+303	You are in a little maze of twisty passages, all different. Exits lead in all directions.
+304	You  are in a twisting maze of little passages, all different. Exits lead in all directions.
+305	You  are in a twisting little maze of passages, all different. Exits lead in all directions.
+306	You are in a twisty little maze of passages, all different. Exits lead in all directions.
+307	You are in a twisty maze of little passages, all different. Exits lead in all directions.
+308	You are in a little twisty maze of passages, all different. Exits lead in all directions.
+309	You  are in a maze of little twisting passages, all different. Exits lead in all directions.
+310	You are in a maze of little twisty passages, all different. Exits lead in all directions.
+311	Dead end.
+312	You're in sandstone chamber.
+313	You're in the Morion room.
+314	You're in room with vaulted ceiling.
+315	You're in Peelgrunt room.
+316	You are standing in a wide, north-and-south corridor.
+317	You're at bend in wide corridor.
+318	You're in Tool room.
+319	You're at division in passage.
+320	You're in sandstone cubicle.
+321	You're in spherical room.
+322	You're in low tunnel with irregular ceiling.
+323	You're in large room with glassy walls.
+324	You're in the Sorcerer's Lair.
+325	You're at brink of bottomless pit.
+326	You're on southern edge of bottomless pit.
+327	You're in Ice room.
+328	You're at bottom of icy slide.
+329	You  are  in  an  intricate network of ice tunnels.  Exits lead north and west.
+330	You are in an intricate network of ice tunnels.  The only exit is south.
+331	You  are  in an intricate network of ice tunnels.  Exits lead north, east and west.
+332	You  are  in  an  intricate network of ice tunnels.  Exits lead north and south.
+333	You  are  in  an  intricate network of ice tunnels.  Exits lead north and east.
+334	You are in an intricate network of ice tunnels.  The only exit is south.
+335	You  are  in  an  intricate  network of ice tunnels.  Exits lead east and west.
+336	You are in an intricate network of ice tunnels.  Exits lead northeast and south.
+337	You  are in an intricate network of ice tunnels.  Exits lead north, south and west.
+338	You are in an intricate network of ice tunnels.  The only exit is north.
+339	You are in an intricate network of ice tunnels.  The only exit is north.
+340	You  are  in an intricate network of ice tunnels.  Exits lead north, east and south.
+341	You  are  in  an  intricate network of ice tunnels.  Exits lead south and northwest.
+342	You  are  in  an  intricate  network of ice tunnels.  Exits lead east and west.
+343	You  are  in  an intricate network of ice tunnels.  Exits lead northeast, south and west.
+344	You  are  in  an  intricate network of ice tunnels.  Exits lead north and south.
+345	You are in an intricate network of ice tunnels.  The only exit is north.
+346	You are in an intricate network of ice tunnels.  The only exit is north.
+347	You  are  in an intricate network of ice tunnels.  Exits lead east, south and northwest.
+348	You  are  in  an  intricate network of ice tunnels.  Exits lead north and south.
+349	You  are  in  an  intricate  network of ice tunnels.  Exits lead east and west.
+350	You are in an intricate network of ice tunnels.  Exits lead northeast and south.
+351	You are in an intricate network of ice tunnels.  Exits lead north, south, west and northwest.
+352	You  are  in  an  intricate network of ice tunnels.  Exits lead north and west.
+353	You  are  in  an  intricate network of ice tunnels.  Exits lead north and east.
+354	You  are  in  an  intricate  network of ice tunnels.  Exits lead east and south.
+355	You are in an intricate network of ice tunnels.  Exits lead southeast and northwest.
+356	You  are  in  an  intricate  network of ice tunnels.  Exits lead east and west.
+357	You  are  in  an intricate network of ice tunnels.  Exits lead northeast, south and west.
+358	You are in an intricate network of ice tunnels.  Exits lead north, south, west and northwest.
+359	You  are  in  an  intricate network of ice tunnels.  Exits lead north and northwest.
+360	You  are  in  an  intricate network of ice tunnels.  Exits lead north and southeast.
+361	You  are  in  an  intricate  network of ice tunnels.  Exits lead east and south.
+362	You  are  in  an  intricate network of ice tunnels.  Exits lead north and southeast.
+363	You  are  in an intricate network of ice tunnels.  Exits lead east, south and northwest.
+364	You're in small, icy chamber.
+365	You're on eastern side of bottomless pit.
+366	You're in narrow, twisting crack.
+367	You're at north end of tight passage.
+368	You're at south end of tight passage.
+369	You're in very small chamber.
+370	You're in coral passage.
+371	You're at bend in arched coral corridor.
+372	You're at fork in arched coral passage.
+373	You're at entrance to the Jonah room.
+374	You're at south end of the Jonah room.
+375	You're in the Fourier passage.
+376	You're on shelf of rock above beach.
+377	You're on beach.
+378	You're at the northeast end of the repository.
+379	You're at the southwest end of the repository.
+380	You're at the northeast end of the repository.
+381	You're in a dark hole.
+382	You're on tiny platform above volcano.
+383	You're in the living quarters.
+384	You're in the dungeon.
+385	You  are  in  a  tangled  web of intersecting passages.  Exits are north, east, west, up and down.
+386	You  are  in  a  tangled  web of intersecting passages.  Exits are north, east, south, west, up and down.
+387	You  are  in  a  tangled  web of intersecting passages.  Exits are north, east, south, west, up and down.
+388	You  are  in  a  tangled  web of intersecting passages.  Exits are north, east, west and up.
+389	You  are  in  a  tangled  web of intersecting passages.  Exits are north, east, south, west, up and down.
+390	You  are  in  a  tangled  web of intersecting passages.  Exits are north, east, south, west, up and down.
+391	You're in the basement.
+392	You're at the curtain entrance.
+393	You're in the cellar.
+394	You're at the cellar view.
+395	You're at the halfway stage on the spiral staircase.
+396	You're west of the causeway.
+397	You're east of the causeway.
+398	You're at the bottom of the stone steps.
+399	You  are  part  way  up  a flight of stone steps gradually curving out of sight.
+400	You  are  at  a  window part way up a flight of stone steps.  The view is quite beautiful - a lake with rolling green meadows beyond it,  gradually rising to large snow-capped mountains.
+401	You  are  on  a  landing.   Stone  steps lead both up and down, gradually twisting out of sight.
+402	You  are  at  a  window part way up a flight of stone steps.  The view is quite beautiful - a deep ravine  with  a  raging  torrent  tumbling  over rapids.
+403	You  are  on  a  landing  by  a  massive  door with a large notice on it: 'DWARVES STORES - NO  ACCESS'.   Stone  steps  lead  both  up  and  down, gradually twisting out of sight.
+404	You  are  at  a  window part way up a flight of stone steps.  The view is quite beautiful - below you is a cliff, an enraged sea battering  at  its base.
+405	You're in the earthen passage.
+406	You're in the disused well.
+407	You're in the crypt.
+408	You're in the chamber above the chapel.
+409	You're at the south end of the long low attic.
+410	You're at the north end of the long low attic.
+411	You're in the thieves den.
+412	You're in the pantry.
+413	You're in the unsafe passage.
+414	You're at the end of the very unsafe tunnel.
+415	You're in the very low room.
+416	You're in the bones room.
+417	You're in the inclined shaft.
+418	You're in the inclined shaft above the north/south culvert.
+419	You're at the sea-view.
+420	You're in the north/south culvert.
+421	You are at the south end of the culvert.
+422	You  are at a junction of 3 sewer pipes which go southeast, southwest and north.
+423	You're in the large sewer pipe.
+424	Dead end.  The sewer pipe has become too narrow.
+425	You're at the partially collapsed junction of 3 sewer pipes.
+426	Dead end.  The sewer pipe has become too narrow.
+427	You  are  in  a  maze of twisting passages through which streams cascade. Exits lead in all directions.
+428	You  are  in  a  maze of twisting passages through which streams cascade. Exits lead in all directions.
+429	You're in the low bare cavern.
+430	You're in the low, long passage.
+431	You're in the large cavern.
+432	You're in the swirling mist.
+433	You're in the dank cave.
+434	You're by the rock in the mist.
+435	You're in the dwarves' stores.
+436	You're at the end of the valley.
+437	You're in an open forest, northeast of the path.
+438	You're in an open forest, southwest of the path.
+439	You  are  in  an open forest which seems to grow denser and darker to the south and west.
+440	You are in an open forest north of the road.
+441	You  are in an open sunlit forest which to the north seems to grow denser and darker.
+442	You  are  in  an  open  sunlit  forest  growing  denser and darker in the northern direction.
+443	You  are in an open sunlit forest which appears to grow denser and darker to the north and east.
+444	You are in an open sunlit forest becoming rather gloomier to northeast.
+445	You  are in an open sunlit forest which seems to become denser and darker in the northern and eastern directions.
+446	You are in an open sunlit forest which to the east appears to grow denser and darker.
+447	You  are  in  an open sunlit forest which seems to get rather gloomier to southeast.
+448	You  are  in an open sunlit forest rapidly growing gloomy and dark to the east and south.
+449	You are in an open sunlit forest rapidly growing denser and darker to the east and south.
+450	You are in an open forest, west of a deep valley.  To the west the forest seems to become denser and darker.
+451	You are in an open forest, west of a deep valley.  To the west the forest appears to become gloomy and dark.
+452	You are in an open forest, west of a deep valley.  To the west the forest soon becomes denser and darker.
+453	You  are in an open forest, west of a deep valley.  To the west and south the forest seems to grow denser and gloomier.
+454	You  are  in  an  open  forest,  east of a deep valley.  To southeast the forest seems to grow gloomier and denser.
+455	You are in an open forest, east of a deep valley.  To the east the forest rapidly becomes denser and darker.
+456	You  are in an open forest, east of a deep valley.  To the east and south the forest appears to grow dark and gloomy.
+457	You're on the path.
+458	You are in an open forest north of the building.
+459	You are in an open forest east of the building.
+460	You are in an open forest south of the building.
+461	You appear to be lost in a dark and gloomy forest.
+462	You are in the safe.
+463	You're on the narrow basalt shelf.
+482	You're in a dark hole.

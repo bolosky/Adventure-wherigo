@@ -49,6 +49,30 @@ namespace ExtractMap
 
             return nextToken;
         }
+
+        static string ListOfStringsToValues(IEnumerable<string> inputEnumerable)
+        {
+            var input = inputEnumerable.ToList();
+
+            if (input.Count() == 0)
+            {
+                return "";
+            }
+
+            if (input.Count() == 1)
+            {
+                return input[0];
+            }
+
+            var retVal = "{" + input[0];
+            for (int i = 1; i < input.Count(); i++)
+            {
+                retVal += ", " + input[i];
+            }
+
+            return retVal + "}";
+        }
+
         static void Main(string[] args)
         {
 
@@ -210,9 +234,12 @@ namespace ExtractMap
 
             Console.WriteLine("Total of " + map.Count() + " sources and " + directions.Count() + " directions");
 
+            var locationDescriptions = new Dictionary<int, string>();
+            File.ReadAllLines(@"c:\Adventure-wherigo\locations.txt").ToList().ForEach(x => locationDescriptions.Add(Convert.ToInt32(x.Split('\t')[0]), x.Split('\t')[1]));
+
 
             var outputFile = new StreamWriter(@"c:\adventure-wherigo\GeneratedMap.txt");
-            outputFile.Write("From Location");
+            outputFile.Write("From Location\tdescription\tRoutine(s)");
             foreach (var direction in directions)
             {
                 if (direction.StartsWith("COMMAND_"))
@@ -231,7 +258,14 @@ namespace ExtractMap
                 var fromLocation = locationEntry.Key;
                 var outArcs = locationEntry.Value;
 
-                outputFile.Write(fromLocation);
+                outputFile.Write(fromLocation + "\t");
+
+                if (locationDescriptions.ContainsKey(fromLocation))
+                {
+                    outputFile.Write(locationDescriptions[fromLocation]);
+                }
+
+                outputFile.Write("\t" + ListOfStringsToValues(routineToRegionNumberMap.Where(x => x.Value == fromLocation).Select(x => x.Key)));
 
                 foreach (var direction in directions)
                 {

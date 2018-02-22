@@ -888,6 +888,17 @@ int y10(g5) int g5; { char s5[10]; char
 		BJBMessage(0, 791, 0);
 		BJBMessage(0, 997, 0);
 
+#if 0	// Create the locations file.  You have to edit it by hand to take out the line breaks for the long descriptions and the empty string ones
+		log_file = fopen("c:\\adventure-wherigo\\locations.txt", "w");
+		for (int i = 136; i < 483; i++) {
+			fprintf(log_file, "%d\t", i);
+			printMessage(0, i, 0);
+		}
+		fclose(log_file);
+		log_file = NULL;
+#endif // 0
+
+
 		(void)setjmp(done_with_command);
 			  
 		if (should_exit) {
