@@ -1,288 +1,290 @@
-From Location	description	Routine(s)	NORTH	SOUTH	EAST	WEST	NORTHEAST	NORTHWEST	SOUTHEAST	SOUTHWEST	UP	DOWN	136	526	141	600	626	622	457	138	599	144	640	143	627	146	150	147	527	620	623	229	625	213	148	[	685	]	529	628	163	532	209	621	5	164	598	207	232	225	226	10	239	224	249	221	228	518	520	514	241	242	515	517	519	524	246	523	21	516	250	619	298	ENTER	521	151	328	498	616	375	373	259	261	260	315	294	295	PLUGH	412	BUILDING	142
-136	You're at end of road again.	command_outside_building_136	440	142	BUILDING	137	458	457	460	450	137	142	137	BUILDING	BUILDING	142	142	440	457	138																																																																							
-137	You're at hill in road.	{r32, d14}	457	450	END_OF_ROAD		440	438	142	461			END_OF_ROAD		END_OF_ROAD			440																																																																									
-142	You're in valley.	{f23, r8}	END_OF_ROAD		460	450	END_OF_ROAD	END_OF_ROAD	454	451								450			END_OF_ROAD																																																																						
-143	You're at slit in streambed.	j11	142	144	454	451	460	450	455	452					END_OF_ROAD	144		451			142	144	144																																																																				
-144	You're outside grate.	r9	143	436	455	452	454	451	456	453								452			143			143																																																																			
-145	You're below the grate.	p13				146								146											146	146	150	147																																																															
-146	You're in cobble crawl.	j12			145	147								147													150	147	145	145	145	147																																																											
-147	You're in debris room.	t13			146	148					148			148								144			146	146	150				145		146	146	148	BUILDING	BUILDING	BUILDING																																																					
-148	You are in an awkward sloping east/west canyon.	l16			147	149					149	147		149								144					150	147			145																																																												
-149	You're in bird chamber.	h9			148	150																144					150	147			145		150		148																																																								
-151	You're in Hall of Mists.	u9	155	154	312	152						155																											152	152	164																																																		
-156	You're at west end of Twopit room.	q10			157	209						159															159															157	209																																																
-158	You're in east pit.  There is a small pool of oil here.	n10									157																		157																																																														
-159	You're in west pit.	c18									156																		156																																																														
-153	You are on the west side of the fissure in the Hall of Mists.	p14				167																																																																																					
-160	You're in a low N/S passage.	a10	Y2	155								198																	155											155	Y2			198																																															
-161	You are in the south side chamber.	s12	155									395																	155											155					395																																														
-162	You're in the west side chamber.	j13			MT_KING	196					196																		MT_KING											MT_KING																																																			
-163	You're at "Y2".	n11		160	164	165																														BUILDING	BUILDING	BUILDING								164																																													
-164	You are in a jumble of rock, with cracks everywhere.	v11									151	Y2																													Y2																																																		
-165	You're at window on pit.	k6			Y2																																				Y2																																																		
-199	You are on the brink of a small clean climbable pit.	l17				198						200													198		200																				200																																												
-200	You are at the pit's bottom with a stream nearby.	x13									199																		199																		199																																												
-201	You're in dusty rock room.	y11			198							202																					198											202				207																																											
-167	You're at west end of Hall of Mists.	g13		168	153	194					168														194								168														168																																												
-168	You are in a maze of twisty little passages, all alike. Exits lead in all directions.	z7	168	171	169	178					167																																																																																
-169	You are in a maze of twisty little passages, all alike. Exits lead in all directions.	p15		170	171	168																																																																																					
-170	You are in a maze of twisty little passages, all alike. Exits lead in all directions.	j14	191	173	169							189																																																																															
-171	You are in a maze of twisty little passages, all alike. Exits lead in all directions.	r10	169	185	182	168					181	181																																																																															
-182	Dead end.  The only exit is west.	q11				171																							171																																																														
-185	Dead end.  The only exit is east.	p16			171																								171																																																														
-189	Dead end.  The only exit is up.	j15									170																		170																																																														
-172	You are in a maze of twisty little passages, all alike. Exits lead in all directions.	k7			173	174																																																																																					
-173	You are in a maze of twisty little passages, all alike. Exits lead in all directions.	d16		175	170	172						174																																																																															
-174	You are in a maze of twisty little passages, all alike. Exits lead in all directions.	o5		176	175	172					173																																																																																
-175	You are in a maze of twisty little passages, all alike. Exits lead in all directions.	r11	177	175	174	173					176	188																																																																															
-183	Dead end.  The only exit is west.	w12				176																							176																																																														
-177	You are in a maze of twisty little passages, all alike. Exits lead in all directions.	g14	177		193	175						190																																																																															
-190	Dead end.  The only exit is up.	g15									177																		177																																																														
-193	You're at brink of pit.	j17	179	186	180	177						149																																			149																																												
-186	Dead end.  The only exit is east.	i17			193																								193																																																														
-194	You're at east end of long hall.	z9	196		167	195					167	196													167																			196																																															
-195	You're at west end of long hall.	h11	196	300	194																																																																																						
-196	You are at a crossover of a high N/S passage and a low E/W one.	w13	197	195	162	194																																																																																					
-197	Dead  end  passage.  Scratched on a rock is the message, "Stand where the statue gazes, and make use of the proper tool."	m8		196																									196																																																														
-202	You're at complex junction.	r13	232		235	207					201																																				201	207	232																																										
-207		d17	213	209	202	208					201	235																															209																																																
-208	You're in Swiss cheese room.	o7		218	225	157	207	226																											218															225	226																																								
-157	You're at east end of Twopit room.	m7			208	156						158															158															156																																																	
-209	You're in Slab room.	j18	207	156							210																																				210	207																																											
-210	You are in a secret N/S canyon above a large room.	i18	237	247								209																															209									237	239																																						
-211	You are in a secret N/S canyon above a sizable passage.	y12	212	238								207																					207																																																										
-212	You're at junction of three secret canyons.	f5	166	211					207																																																																																		
-213	You are in a large low room.  Crawls lead north, SE, and SW.	v14	214						226	246																																						207			226																																								
-214	Dead end crawl.	d18		213																					213				213																																																														
-215	You're in secret E/W canyon above tight canyon.	t14			MT_KING							216																																																																															
-216	You are at a wide place in a very tight N/S canyon.	w14	218	217																																																																																							
-217	The canyon here becomes too tight to go further south.	d19	216																																																																																								
-218	You are in a tall E/W canyon.	v15	208	483	216	219								483											208																																																																		
-483		q31	218																										218																																																														
-219	The canyon runs into a mass of boulders -- dead end.	q13		218																																																																																							
-178	You are in a maze of twisty little passages, all alike. Exits lead in all directions.	v12	168	178	184	178																																																																																					
-184	Dead end.  The only exit is west.	h10				178																							178																																																														
-191	Dead end.  The only exit is south.	e10		170																									170																																																														
-179	You are in a maze of twisty little passages, all alike. Exits lead in all directions.	v13		193	180	187																																																																																					
-180	You are in a maze of twisty little passages, all alike. Exits lead in all directions.	z8	193			179		192																																																																																			
-187	Dead end.  The only exit is east.	n12			179																								179																																																														
-188	Dead end.  The only exit is up.	q12									175																		175																																																														
-181	You are in a maze of twisty little passages, all alike. Exits lead in all directions.	c19									171	171																																																																															
-221	You're at steep incline above large room.	o8	224									213																					224														213							224																																					
-222	You're in Giant room.	s13	223	220	322																																																		220																																				
-223	You are at one end of an immense north/south passage.	v17		222																													222																																																										
-224	You're in cavern with waterfall.	e11		223		221																							223																											221																																			
-226	You're in Oriental room.	l18	230			213			208		230														213																													230																																					
-230	You're in misty cavern.	s14		226		227																																													226																																								
-227	You're in alcove.	t15						230																																														230																																					
-228	You're in Plover room.	t16					229							229																		229																																																											
-229	You're in Dark room.	e12		228																									228																												228																																		
-231	You're in arched hall.	i19			370						370	232																																					232																																										
-232	You're in Shell room.	p17				231					231	233																												231															233																																				
-233	You are in a long sloping corridor with ragged sharp walls.	f6									232	234																																					232																																										
-234	You are in a cul-de-sac about eight feet across.	m10									233																		233																				232						233																																				
-235	You're in anteroom.	e13		203		207	413				202																																																																																
-300	You are in a maze of twisty little passages, all different. Exits lead in all directions.	t19	310	302	308	309	304	307	305	303	306	195																																																																															
-236	You're at Witt's End.	q14																																																																																									
-237	You're in mirror canyon.	e14	239	210																																																	239																																						
-166	You're at window on pit.	a11				212																																																																																					
-238	You're at top of stalactite.	n14	211																																																																																								
-301	You  are in a little maze of twisting passages, all different. Exits lead in all directions.	q18	303	311	304	308	307	305	306	302	310	309																																																																															
-239	You're on southern edge of reservoir.	s15																																																		237						237	397																																
-240	You are at the northern end of the reservoir.	u10																															241																											241	241	242																													
-241	You're in small, warm chamber.	c20																																																			240					240				242	242																												
-192	Dead end.  The only exit is south-east.	j16																																																														180																											
-244	You're on SW side of chasm.	c21																																																					246										246	246	246																								
-246	You're in sloping corridor.	l19																											213					213																													244		213	213		244	244																						
-247	You are in a secret canyon which exits to the north and east.	f7																											210																															210																															
-248	You are in a secret canyon which exits to the north and east.	i20																											215																																									215																					
-245	You're on NE side of chasm.	r14																																																					249								249								250	252	298																		
-249	You're in corridor.	p18																																																									245										245	250	250	252	298																		
-250	You're at fork in path.	y14																																																					249				249				251	297		297			245			252	298																		
-251	You're at junction with warm walls.	q15																							296																																	250		252										296	250	252																			
-252	You're at breath-taking view.	k9																											251				251																									251													250																				
-296	You're in chamber of boulders.	b17																							251				251																														251												250	252																			
-297	You're in limestone passage.	r16																																																								298		250						298		250			250	252	298																		
-298	You are at entrance of the barren room.	h12																																																									297									297		299	250	252	299	299																	
-299	You are in the barren room.	h13																											298																														298												250	252																			
-302	You  are in a maze of twisting little passages, all different. Exits lead in all directions.	o12																																																								310	300	309			306	303	305	308		307		301					304																
-303	You are in a little maze of twisty passages, all different. Exits lead in all directions.	q19																																																								305	306	304			308	301	307	310		302		309					300																
-304	You  are in a twisting maze of little passages, all different. Exits lead in all directions.	c23																																																								301	303	308			305	310	306	302		300		307					309																
-305	You  are in a twisting little maze of passages, all different. Exits lead in all directions.	q20																																																								308	310	302			300	304	301	307		309		306					303																
-306	You are in a twisty little maze of passages, all different. Exits lead in all directions.	t20																																																								304	307	300			309	302	308	303		301		305					310																
-307	You are in a twisty maze of little passages, all different. Exits lead in all directions.	m14																																																								306	302	301			310	309	304	305		303		300					308																
-309	You  are in a maze of little twisting passages, all different. Exits lead in all directions.	g20																																																								307	305	306			303	308	310	300		304		302					301																
-310	You are in a maze of little twisty passages, all different. Exits lead in all directions.	p20																																																								309	304	305			301	307	300	306		308		303					302																
-311	Dead end.	v19																											301																															301																															
-312	You're in sandstone chamber.	h14																											151																														151							320										151															
-313	You're in the Morion room.	m15																											MT_KING																													MT_KING																																	
-314	You're in room with vaulted ceiling.	g21																																																																																									
-316	You are standing in a wide, north-and-south corridor.	x18																																																								MT_KING		317																															
-317	You're at bend in wide corridor.	x19																																																								316	316	318			318							318					316																
-318	You're in Tool room.	KilobyteInputBuffer0																											317																													317																																	
-319	You're at division in passage.	f8																																																								MT_KING		321										320																					
-320	You're in sandstone cubicle.	i24																											319																										319			319										312		312																					
-321	You're in spherical room.	m16																											319																										319					319																															
-322	You're in low tunnel with irregular ceiling.	a17																																																								222		323																															
-323	You're in large room with glassy walls.	x20																																																								322																																	
-324	You're in the Sorcerer's Lair.	h15																																																									323											325																					
-325	You're at brink of bottomless pit.	v20																																																									326	324										365																					
-326	You're on southern edge of bottomless pit.	p21																																																										325				327																											
-327	You're in Ice room.	o13																																																																328				328					326		328														
-328	You're at bottom of icy slide.	h16																																																								332																	335																
-329	You  are  in  an  intricate network of ice tunnels.  Exits lead north and west.	b18																																																									331	330																															
-331	You  are  in an intricate network of ice tunnels.  Exits lead north, east and west.	KilobyteInputBuffer1																																																									333	332										329																					
-332	You  are  in  an  intricate network of ice tunnels.  Exits lead north and south.	e16																																																								331		328																															
-333	You  are  in  an  intricate network of ice tunnels.  Exits lead north and east.	n17																																																										334										331																					
-334	You are in an intricate network of ice tunnels.  The only exit is south.	f9																																																								333																																	
-335	You  are  in  an  intricate  network of ice tunnels.  Exits lead east and west.	x21																																																									336											328																					
-336	You are in an intricate network of ice tunnels.  Exits lead northeast and south.	c24																																																								337					335																												
-337	You  are in an intricate network of ice tunnels.  Exits lead north, south and west.	l20																																																								338	340	336																															
-338	You are in an intricate network of ice tunnels.  The only exit is north.	a18																																																										337																															
-339	You are in an intricate network of ice tunnels.  The only exit is north.	o14																																																										340																															
-340	You  are  in an intricate network of ice tunnels.  Exits lead north, east and south.	s17																																																								339		341										337																					
-341	You  are  in  an  intricate network of ice tunnels.  Exits lead south and northwest.	c25																																																								340																	342																
-342	You  are  in  an  intricate  network of ice tunnels.  Exits lead east and west.	f10																																																									343											341																					
-343	You  are  in  an intricate network of ice tunnels.  Exits lead northeast, south and west.	q21																																																								344	347				342																												
-344	You  are  in  an  intricate network of ice tunnels.  Exits lead north and south.	w18																																																								345		343																															
-345	You are in an intricate network of ice tunnels.  The only exit is north.	e17																																																										344																															
-346	You are in an intricate network of ice tunnels.  The only exit is north.	d23																																																										348																															
-347	You  are  in an intricate network of ice tunnels.  Exits lead east, south and northwest.	s18																																																								348												343					349																
-348	You  are  in  an  intricate network of ice tunnels.  Exits lead north and south.	b19																																																								346		347																															
-349	You  are  in  an  intricate  network of ice tunnels.  Exits lead east and west.	f11																																																									350											347																					
-350	You are in an intricate network of ice tunnels.  Exits lead northeast and south.	z10																																																								351					349																												
-351	You are in an intricate network of ice tunnels.  Exits lead north, south, west and northwest.	s19																																																								352	354	350															355																
-353	You  are  in  an  intricate network of ice tunnels.  Exits lead north and east.	i25																																																										354										352																					
-354	You  are  in  an  intricate  network of ice tunnels.  Exits lead east and south.	r17																																																								353												351																					
-355	You are in an intricate network of ice tunnels.  Exits lead southeast and northwest.	p22																																																														351											356																
-356	You  are  in  an  intricate  network of ice tunnels.  Exits lead east and west.	m17																																																									357											355																					
-357	You  are  in  an intricate network of ice tunnels.  Exits lead northeast, south and west.	z11																																																								358	363				356																												
-358	You are in an intricate network of ice tunnels.  Exits lead north, south, west and northwest.	n18																																																								359	361	357															362																
-359	You  are  in  an  intricate network of ice tunnels.  Exits lead north and northwest.	a19																																																										358															360																
-360	You  are  in  an  intricate network of ice tunnels.  Exits lead north and southeast.	b20																																																										361				359																											
-361	You  are  in  an  intricate  network of ice tunnels.  Exits lead east and south.	i26																																																								360												358																					
-362	You  are  in  an  intricate network of ice tunnels.  Exits lead north and southeast.	p23																																																										363				358																											
-363	You  are  in an intricate network of ice tunnels.  Exits lead east, south and northwest.	g22																																																								362												357					364																
-364	You're in small, icy chamber.	q22																																			327	327																																363								327													
-365	You're on eastern side of bottomless pit.	k12																																																										325			366																366												
-366	You're in narrow, twisting crack.	s20																																																														367	365																										
-367	You're at north end of tight passage.	c26																																																									366																																
-368	You're at south end of tight passage.	z12																							369																																	369		367																															
-369	You're in very small chamber.	r18																							368				368																															368																															
-370	You're in coral passage.	r19																																																									231																																
-371	You're at bend in arched coral corridor.	q23																																																										372																															
-372	You're at fork in arched coral passage.	n19																																																								371		375										373										375	373										
-375	You're in the Fourier passage.	f12																																																															376										372																
-376	You're on shelf of rock above beach.	v21																																											377														375							377																									
-373	You're at entrance to the Jonah room.	u14																																																								374	372																																
-253	You're at the south end of the Valley of the Stone Faces.	a12																																																										254																															
-254	You're at north end of the Valley of the Stone Faces.	x14																																																								253		263			292												255																
-255	You're at south end of fog-filled room.	m11																																																								254																																	
-256		x15																																																																																									
-257	You're in foggy room by cairn of rocks.	a13																																																																																									
-258	You're in nondescript chamber.	i21																																																										259																						259									
-260	You're at the end of the crack, at the bottom of the chimney.	t17																																													261											259										261											259			259	261								
-261	You're in lava tube at top of chimney.	x16																																													260											262								260									463		262						262	260							
-262	You're at steep slide in lava tube.	n15																																																								255		261						255											255						260	260							
-263	You're in rough and narrow passage.	o9																																																								254																																	
-265	You're in passage by steps.	m13																																											266													264		315						266																			315						
-315	You're in Peelgrunt room.	y15																																																																																									
-266	You're on the steps.	o10																																											267																					267		265																							
-267	You're at exit on steps.	a14																											269																268															269						268		266																							
-268	You're in the storage room.	s16																																											267																							267																							
-269	You're at "Y2"?	q16																																		382	382	382																				267	271											270																					
-270	You are in a jumble of rock, with cracks everywhere.	b16																																																									269							269		271																							
-290	You're at west end of Audience Hall.	u12																																																									281											291																					
-291	You're at east end of Audience Hall.	g18																																																									290																																
-292	You're in winding passage	w16																																																										293															254																
-293	You're in golden chamber.	k11																																																								292					294												295											294	295				
-294	You're in Arabesque room.	e15																											293																													293																																	
-295	You're in room with translucent walls.	g19																																																																																									
-382	You're on tiny platform above volcano.	q26																																			269	269																			269																															269			
-243	You are in the middle of a gray, misty nowhere.	g16																																																								243	243	243			243	243	243	243		243		243					243																
-289	You are in the catacombs by the stone portal.	p19																																																																																									
-395	You're at the halfway stage on the spiral staircase.	o16																																																																394		161																							
-394	You're at the cellar view.	s21																																											395																							395																							
-203	You're in the chapel.	k8																																													204												205	235						407		408																							
-205	You're in the side chamber of the chapel.	m9																											203																																									203																					
-383	You're in the living quarters.	t21																																																								385		384										412																					
-204	You're in the recess in the beams.	n13																											203																																					203																									
-384	You're in the dungeon.	w19																																																								383																																	
-385	You  are  in  a  tangled  web of intersecting passages.  Exits are north, east, west, up and down.	f13																																																									389	383						387		390		386																			412		
-386	You  are  in  a  tangled  web of intersecting passages.  Exits are north, east, south, west, up and down.	k13																																																								387	389	385						386		388		386																					
-387	You  are  in  a  tangled  web of intersecting passages.  Exits are north, east, south, west, up and down.	u15																																																								388	385	386						387		389		387																					
-389	You  are  in  a  tangled  web of intersecting passages.  Exits are north, east, south, west, up and down.	t22																																																								388	389	390						387		389		385																					
-390	You  are  in  a  tangled  web of intersecting passages.  Exits are north, east, south, west, up and down.	h18																																																								388	389	389						386		389		385																					
-391	You're in the basement.	i28																																											392													393										392						393																	
-392	You're at the curtain entrance.	m18																																																225																391		412						225	225																
-397	You're east of the causeway.	z14																																								396											239					239	396					239						239																					
-398	You're at the bottom of the stone steps.	a20																											408																		399													408								399																							
-399	You  are  part  way  up  a flight of stone steps gradually curving out of sight.	k14																																													400																			398		400																							
-400	You  are  at  a  window part way up a flight of stone steps.  The view is quite beautiful - a lake with rolling green meadows beyond it,  gradually rising to large snow-capped mountains.	z15																																													401																			399		401																							
-401	You  are  on  a  landing.   Stone  steps lead both up and down, gradually twisting out of sight.	p24																																																																																									
-402	You  are  at  a  window part way up a flight of stone steps.  The view is quite beautiful - a deep ravine  with  a  raging  torrent  tumbling  over rapids.	h19																																													403																			401		403																							
-403	You  are  on  a  landing  by  a  massive  door with a large notice on it: 'DWARVES STORES - NO  ACCESS'.   Stone  steps  lead  both  up  and  down, gradually twisting out of sight.	g23																																													404																			402		404																							
-404	You  are  at  a  window part way up a flight of stone steps.  The view is quite beautiful - below you is a cliff, an enraged sea battering  at  its base.	k15																																																																403																									
-405	You're in the earthen passage.	s22																																																								406								406																									
-406	You're in the disused well.	k16																																																										405								405																							
-407	You're in the crypt.	i29																											203																203																							203																							
-408	You're in the chamber above the chapel.	z16																																											203													398	412	409						203																							412		
-409	You're at the south end of the long low attic.	m19																																																								408		410					412																								412		
-410	You're at the north end of the long low attic.	m20																																																								409		411														411																	
-411	You're in the thieves den.	q27																											409																													410																																	
-412	You're in the pantry.	q28																																											392														383	392			409			392				408																					
-413	You're in the unsafe passage.	k17																																																								235		414																															
-414	You're at the end of the very unsafe tunnel.	x22																																																								413																																	
-415	You're in the very low room.	t23																			416																																						416																																
-416	You're in the bones room.	d24																											415																																					415				415																					
-420	You're in the north/south culvert.	g24																																																								421		419																															
-419	You're at the sea-view.	f14																											420																													420																																	
-421	You are at the south end of the culvert.	p25																																																								422	426	420				422	425					422					426																
-422	You  are at a junction of 3 sewer pipes which go southeast, southwest and north.	x23																																																										421				423	423																										
-423	You're in the large sewer pipe.	q29																																																								424		422				424																											
-424	Dead end.  The sewer pipe has become too narrow.	h20																											423																															423																															
-425	You're at the partially collapsed junction of 3 sewer pipes.	z17																																																													421																												
-426	Dead end.  The sewer pipe has become too narrow.	z18																											421																																									421																					
-429	You're in the low bare cavern.	f15																																																									225	430																															
-430	You're in the low, long passage.	i31																																																								429		431																															
-431	You're in the large cavern.	h21																																																										432					430																										
-433	You're in the dank cave.	v24																																																																																									
-434	You're by the rock in the mist.	w20																																																																																									
-435	You're in the dwarves' stores.	r20																											403																																																														
-140	You're at the magnificent view.	d15																	139	139									139																																			139																											
-138	You're at the east end of the ravine.	s11																																																									139					457																											
-139	You're at the west end of the ravine.	i16																																																																				138					140																
-457	You're on the path.	f18																437		138																																						137	438	437			441	136	438					440					138																
-458	You are in an open forest north of the building.	y17																442																																									440	442			443	459	136					444					441															136	
-459	You are in an open forest east of the building.	f19																446																																								447		444			445	448	460					446					458															136	
-460	You are in an open forest south of the building.	u16																454																																								454	VALLEY				459	449	143	VALLEY				447					136															136	
-436	You're at the end of the valley.	f16																453				144		143																																			453	144			455							456					452															136	VALLEY
-437	You're in an open forest, northeast of the path.	t25																																																								457	461	461			461	440	457					441					461																
-438	You're in an open forest, southwest of the path.	l21																																																								461	461				457	137	461					457					439																
-439	You  are  in  an open forest which seems to grow denser and darker to the south and west.	v25																																																								461	461	461			438	461	461					438					461																
-441	You  are in an open sunlit forest which to the north seems to grow denser and darker.	g25																																																								440	437	461			461	458	457					442					461																
-442	You  are  in  an  open  sunlit  forest  growing  denser and darker in the northern direction.	l22																																																								458	441	461			461	444	440					443					461																
-443	You  are in an open sunlit forest which appears to grow denser and darker to the north and east.	n20																																																								444	442	461			461	445	458					461					461																
-444	You are in an open sunlit forest becoming rather gloomier to northeast.	v26																																																								459	458	443			461	446						445					442																
-445	You  are in an open sunlit forest which seems to become denser and darker in the northern and eastern directions.	t26																																																								446	444	461			461	461	459					461					443																
-446	You are in an open sunlit forest which to the east appears to grow denser and darker.	q30																																																								448	459	445			461	461	447					461					444																
-447	You  are  in  an open sunlit forest which seems to get rather gloomier to southeast.	s23																																																								449	460	459			446	461	454					448																					
-448	You  are  in an open sunlit forest rapidly growing gloomy and dark to the east and south.	KilobyteInputBuffer3																																																								461	447	446			461	461	449					461					459																
-449	You are in an open sunlit forest rapidly growing denser and darker to the east and south.	g26																																																								461	454	447			448	461	455					461					460																
-450	You are in an open forest, west of a deep valley.  To the west the forest seems to become denser and darker.	p26																																																								451	461	136			136	143	461	VALLEY				VALLEY					461																VALLEY
-451	You are in an open forest, west of a deep valley.  To the west the forest appears to become gloomy and dark.	s24																																																								452	461	450			VALLEY	144	461	143				143					461																143
-452	You are in an open forest, west of a deep valley.  To the west the forest soon becomes denser and darker.	m21																																																								453	461	451			143	436	461	144				144					461																144
-453	You  are in an open forest, west of a deep valley.  To the west and south the forest seems to grow denser and gloomier.	g27																																																								461	461	452			144	461	461	436				436					461																436
-454	You  are  in  an  open  forest,  east of a deep valley.  To southeast the forest seems to grow gloomier and denser.	d26																																																								455	143	460			447	461	144	143				449					VALLEY																143
-455	You are in an open forest, east of a deep valley.  To the east the forest rapidly becomes denser and darker.	e19																																																								456	144	454			449	461	436	144				461					143																144
-456	You  are in an open forest, east of a deep valley.  To the east and south the forest appears to grow dark and gloomy.	f17																																																								461	436	455			461	461	461	436				461					144																436
-461	You appear to be lost in a dark and gloomy forest.	m22																																																																																									
-463	You're on the narrow basalt shelf.	v27																																																																				261													261								
-378	You're at the northeast end of the repository.	q24																																																															379																										
-380	You're at the northeast end of the repository.	q25																																																													381		379																										
-379	You're at the southwest end of the repository.	i27																																																																																									
-381	You're in a dark hole.	h17																																																								482	482	482			482		380			482																							
-482	You're in a dark hole.	l23																																																																																									
-580		e22																																		136	136	136																																																					
-565		p31																																																																																									
-603		u18																																																																																									
+From Location	description	Routine(s)	NORTH	SOUTH	EAST	WEST	NORTHEAST	NORTHWEST	SOUTHEAST	SOUTHWEST	UP	DOWN	136	526	141	600	626	622	457	138	527	685	]	497	501	599	144	640	143	627	146	150	147	620	623	229	625	213	148	[	529	628	163	532	209	621	5	164	598	207	232	225	226	10	239	224	249	221	228	518	520	514	241	242	515	517	519	524	246	523	21	516	250	619	298	ENTER	521	151	328	498	616	375	373	259	261	260	315	294	295	PLUGH	412	BUILDING	142
+136	You're at end of road again.	command_outside_building_136	440	142	BUILDING	137	458	457	460	450	137	142	137	BUILDING	BUILDING	142	142	440	457	138																																																																									
+137	You're at hill in road.	{r32, d14}	457	450	END_OF_ROAD		440	438	142	461			END_OF_ROAD		END_OF_ROAD			440																																																																											
+141	You're inside building.	{n26, command_in_building_141}				END_OF_ROAD							END_OF_ROAD								END_OF_ROAD	147	147	147	Y2																																																																				
+142	You're in valley.	{f23, r8}	END_OF_ROAD		460	450	END_OF_ROAD	END_OF_ROAD	454	451								450								END_OF_ROAD																																																																			
+143	You're at slit in streambed.	j11	142	144	454	451	460	450	455	452					END_OF_ROAD	144		451								142	144	144																																																																	
+144	You're outside grate.	r9	143	436	455	452	454	451	456	453								452								143			143																																																																
+145	You're below the grate.	p13				146								146																146	146	150	147																																																												
+146	You're in cobble crawl.	j12			145	147								147							145											150	147	145	145	147																																																									
+147	You're in debris room.	t13			146	148					148			148								BUILDING	BUILDING				144			146	146	150			145		146	146	148	BUILDING																																																					
+148	You are in an awkward sloping east/west canyon.	l16			147	149					149	147		149													144					150	147		145																																																										
+149	You're in bird chamber.	h9			148	150																					144					150	147		145		150		148																																																						
+150	You're at top of small pit.	{u29, z6}			149							151															144						147		145		149																																																								
+151	You're in Hall of Mists.	u9	155	154	312	152						155																													152	152	164																																																		
+156	You're at west end of Twopit room.	q10			157	209						159																				159												157	209																																																
+158	You're in east pit.  There is a small pool of oil here.	n10									157										157																																																																								
+159	You're in west pit.	c18									156										156																																																																								
+153	You are on the west side of the fissure in the Hall of Mists.	p14				167																																																																																							
+160	You're in a low N/S passage.	a10	Y2	155								198									155																					155	Y2			198																																															
+161	You are in the south side chamber.	s12	155									395									155																					155					395																																														
+162	You're in the west side chamber.	j13			MT_KING	196					196										MT_KING																					MT_KING																																																			
+163	You're at "Y2".	n11		160	164	165																BUILDING	BUILDING																	BUILDING								164																																													
+164	You are in a jumble of rock, with cracks everywhere.	v11									151	Y2																															Y2																																																		
+165	You're at window on pit.	k6			Y2																																						Y2																																																		
+199	You are on the brink of a small clean climbable pit.	l17				198						200																		198		200																	200																																												
+200	You are at the pit's bottom with a stream nearby.	x13									199										199																												199																																												
+201	You're in dusty rock room.	y11			198							202																									198									202				207																																											
+167	You're at west end of Hall of Mists.	g13		168	153	194					168																			194							168												168																																												
+168	You are in a maze of twisty little passages, all alike. Exits lead in all directions.	z7	168	171	169	178					167																																																																																		
+169	You are in a maze of twisty little passages, all alike. Exits lead in all directions.	p15		170	171	168																																																																																							
+170	You are in a maze of twisty little passages, all alike. Exits lead in all directions.	j14	191	173	169							189																																																																																	
+171	You are in a maze of twisty little passages, all alike. Exits lead in all directions.	r10	169	185	182	168					181	181																																																																																	
+182	Dead end.  The only exit is west.	q11				171															171																																																																								
+185	Dead end.  The only exit is east.	p16			171																171																																																																								
+189	Dead end.  The only exit is up.	j15									170										170																																																																								
+172	You are in a maze of twisty little passages, all alike. Exits lead in all directions.	k7			173	174																																																																																							
+173	You are in a maze of twisty little passages, all alike. Exits lead in all directions.	d16		175	170	172						174																																																																																	
+174	You are in a maze of twisty little passages, all alike. Exits lead in all directions.	o5		176	175	172					173																																																																																		
+175	You are in a maze of twisty little passages, all alike. Exits lead in all directions.	r11	177	175	174	173					176	188																																																																																	
+183	Dead end.  The only exit is west.	w12				176															176																																																																								
+177	You are in a maze of twisty little passages, all alike. Exits lead in all directions.	g14	177		193	175						190																																																																																	
+190	Dead end.  The only exit is up.	g15									177										177																																																																								
+193	You're at brink of pit.	j17	179	186	180	177						149																																					149																																												
+186	Dead end.  The only exit is east.	i17			193																193																																																																								
+194	You're at east end of long hall.	z9	196		167	195					167	196																		167																196																																															
+195	You're at west end of long hall.	h11	196	300	194																																																																																								
+196	You are at a crossover of a high N/S passage and a low E/W one.	w13	197	195	162	194																																																																																							
+197	Dead  end  passage.  Scratched on a rock is the message, "Stand where the statue gazes, and make use of the proper tool."	m8		196																	196																																																																								
+202	You're at complex junction.	r13	232		235	207					201																																						201	207	232																																										
+207		d17	213	209	202	208					201	235																																	209																																																
+208	You're in Swiss cheese room.	o7		218	225	157	207	226																															218													225	226																																								
+157	You're at east end of Twopit room.	m7			208	156						158																				158												156																																																	
+209	You're in Slab room.	j18	207	156							210																																						210	207																																											
+210	You are in a secret N/S canyon above a large room.	i18	237	247								209																																	209									237	239																																						
+211	You are in a secret N/S canyon above a sizable passage.	y12	212	238								207																									207																																																								
+212	You're at junction of three secret canyons.	f5	166	211					207																																																																																				
+213	You are in a large low room.  Crawls lead north, SE, and SW.	v14	214						226	246																																								207			226																																								
+214	Dead end crawl.	d18		213																	213									213																																																															
+215	You're in secret E/W canyon above tight canyon.	t14			MT_KING							216																																																																																	
+216	You are at a wide place in a very tight N/S canyon.	w14	218	217																																																																																									
+217	The canyon here becomes too tight to go further south.	d19	216																																																																																										
+218	You are in a tall E/W canyon.	v15	208	483	216	219								483																208																																																															
+483		q31	218																		218																																																																								
+219	The canyon runs into a mass of boulders -- dead end.	q13		218																																																																																									
+178	You are in a maze of twisty little passages, all alike. Exits lead in all directions.	v12	168	178	184	178																																																																																							
+184	Dead end.  The only exit is west.	h10				178															178																																																																								
+191	Dead end.  The only exit is south.	e10		170																	170																																																																								
+179	You are in a maze of twisty little passages, all alike. Exits lead in all directions.	v13		193	180	187																																																																																							
+180	You are in a maze of twisty little passages, all alike. Exits lead in all directions.	z8	193			179		192																																																																																					
+187	Dead end.  The only exit is east.	n12			179																179																																																																								
+188	Dead end.  The only exit is up.	q12									175										175																																																																								
+181	You are in a maze of twisty little passages, all alike. Exits lead in all directions.	c19									171	171																																																																																	
+221	You're at steep incline above large room.	o8	224									213																									224												213							224																																					
+222	You're in Giant room.	s13	223	220	322																																																				220																																				
+223	You are at one end of an immense north/south passage.	v17		222																																	222																																																								
+224	You're in cavern with waterfall.	e11		223		221															223																																					221																																			
+226	You're in Oriental room.	l18	230			213			208		230																			213																										230																																					
+230	You're in misty cavern.	s14		226		227																																															226																																								
+227	You're in alcove.	t15						230																																																230																																					
+228	You're in Plover room.	t16					229							229																						229																																																									
+229	You're in Dark room.	e12		228																	228																																						228																																		
+231	You're in arched hall.	i19			370						370	232																																							232																																										
+232	You're in Shell room.	p17				231					231	233																														231															233																																				
+233	You are in a long sloping corridor with ragged sharp walls.	f6									232	234																																							232																																										
+234	You are in a cul-de-sac about eight feet across.	m10									233										233																														232						233																																				
+235	You're in anteroom.	e13		203		207	413				202																																																																																		
+300	You are in a maze of twisty little passages, all different. Exits lead in all directions.	t19	310	302	308	309	304	307	305	303	306	195																																																																																	
+236	You're at Witt's End.	q14																																																																																											
+237	You're in mirror canyon.	e14	239	210																																																			239																																						
+166	You're at window on pit.	a11				212																																																																																							
+238	You're at top of stalactite.	n14	211																																																																																										
+301	You  are in a little maze of twisting passages, all different. Exits lead in all directions.	q18	303	311	304	308	307	305	306	302	310	309																																																																																	
+239	You're on southern edge of reservoir.	s15																																																				237						237	397																																
+240	You are at the northern end of the reservoir.	u10																																			241																									241	241	242																													
+241	You're in small, warm chamber.	c20																																																					240					240				242	242																												
+192	Dead end.  The only exit is south-east.	j16																																																																180																											
+244	You're on SW side of chasm.	c21																																																							246										246	246	246																								
+246	You're in sloping corridor.	l19																			213																	213																											244		213	213		244	244																						
+247	You are in a secret canyon which exits to the north and east.	f7																			210																																									210																															
+248	You are in a secret canyon which exits to the north and east.	i20																			215																																																			215																					
+245	You're on NE side of chasm.	r14																																																							249								249								250	252	298																		
+249	You're in corridor.	p18																																																											245										245	250	250	252	298																		
+250	You're at fork in path.	y14																																																							249				249				251	297		297			245			252	298																		
+251	You're at junction with warm walls.	q15																												296																														250		252										296	250	252																			
+252	You're at breath-taking view.	k9																			251																251																							251													250																				
+296	You're in chamber of boulders.	b17																			251									251																															251												250	252																			
+297	You're in limestone passage.	r16																																																										298		250						298		250			250	252	298																		
+298	You are at entrance of the barren room.	h12																																																											297									297		299	250	252	299	299																	
+299	You are in the barren room.	h13																			298																																								298												250	252																			
+302	You  are in a maze of twisting little passages, all different. Exits lead in all directions.	o12																																																										310	300	309			306	303	305	308		307		301					304																
+303	You are in a little maze of twisty passages, all different. Exits lead in all directions.	q19																																																										305	306	304			308	301	307	310		302		309					300																
+304	You  are in a twisting maze of little passages, all different. Exits lead in all directions.	c23																																																										301	303	308			305	310	306	302		300		307					309																
+305	You  are in a twisting little maze of passages, all different. Exits lead in all directions.	q20																																																										308	310	302			300	304	301	307		309		306					303																
+306	You are in a twisty little maze of passages, all different. Exits lead in all directions.	t20																																																										304	307	300			309	302	308	303		301		305					310																
+307	You are in a twisty maze of little passages, all different. Exits lead in all directions.	m14																																																										306	302	301			310	309	304	305		303		300					308																
+309	You  are in a maze of little twisting passages, all different. Exits lead in all directions.	g20																																																										307	305	306			303	308	310	300		304		302					301																
+310	You are in a maze of little twisty passages, all different. Exits lead in all directions.	p20																																																										309	304	305			301	307	300	306		308		303					302																
+311	Dead end.	v19																			301																																									301																															
+312	You're in sandstone chamber.	h14																			151																																								151							320										151															
+313	You're in the Morion room.	m15																			MT_KING																																							MT_KING																																	
+314	You're in room with vaulted ceiling.	g21																																																																																											
+316	You are standing in a wide, north-and-south corridor.	x18																																																										MT_KING		317																															
+317	You're at bend in wide corridor.	x19																																																										316	316	318			318							318					316																
+318	You're in Tool room.	KilobyteInputBuffer0																			317																																							317																																	
+319	You're at division in passage.	f8																																																										MT_KING		321										320																					
+320	You're in sandstone cubicle.	i24																			319																																				319			319										312		312																					
+321	You're in spherical room.	m16																			319																																				319					319																															
+322	You're in low tunnel with irregular ceiling.	a17																																																										222		323																															
+323	You're in large room with glassy walls.	x20																																																										322																																	
+324	You're in the Sorcerer's Lair.	h15																																																											323											325																					
+325	You're at brink of bottomless pit.	v20																																																											326	324										365																					
+326	You're on southern edge of bottomless pit.	p21																																																												325				327																											
+327	You're in Ice room.	o13																																																																		328				328					326		328														
+328	You're at bottom of icy slide.	h16																																																										332																	335																
+329	You  are  in  an  intricate network of ice tunnels.  Exits lead north and west.	b18																																																											331	330																															
+331	You  are  in an intricate network of ice tunnels.  Exits lead north, east and west.	KilobyteInputBuffer1																																																											333	332										329																					
+332	You  are  in  an  intricate network of ice tunnels.  Exits lead north and south.	e16																																																										331		328																															
+333	You  are  in  an  intricate network of ice tunnels.  Exits lead north and east.	n17																																																												334										331																					
+334	You are in an intricate network of ice tunnels.  The only exit is south.	f9																																																										333																																	
+335	You  are  in  an  intricate  network of ice tunnels.  Exits lead east and west.	x21																																																											336											328																					
+336	You are in an intricate network of ice tunnels.  Exits lead northeast and south.	c24																																																										337					335																												
+337	You  are in an intricate network of ice tunnels.  Exits lead north, south and west.	l20																																																										338	340	336																															
+338	You are in an intricate network of ice tunnels.  The only exit is north.	a18																																																												337																															
+339	You are in an intricate network of ice tunnels.  The only exit is north.	o14																																																												340																															
+340	You  are  in an intricate network of ice tunnels.  Exits lead north, east and south.	s17																																																										339		341										337																					
+341	You  are  in  an  intricate network of ice tunnels.  Exits lead south and northwest.	c25																																																										340																	342																
+342	You  are  in  an  intricate  network of ice tunnels.  Exits lead east and west.	f10																																																											343											341																					
+343	You  are  in  an intricate network of ice tunnels.  Exits lead northeast, south and west.	q21																																																										344	347				342																												
+344	You  are  in  an  intricate network of ice tunnels.  Exits lead north and south.	w18																																																										345		343																															
+345	You are in an intricate network of ice tunnels.  The only exit is north.	e17																																																												344																															
+346	You are in an intricate network of ice tunnels.  The only exit is north.	d23																																																												348																															
+347	You  are  in an intricate network of ice tunnels.  Exits lead east, south and northwest.	s18																																																										348												343					349																
+348	You  are  in  an  intricate network of ice tunnels.  Exits lead north and south.	b19																																																										346		347																															
+349	You  are  in  an  intricate  network of ice tunnels.  Exits lead east and west.	f11																																																											350											347																					
+350	You are in an intricate network of ice tunnels.  Exits lead northeast and south.	z10																																																										351					349																												
+351	You are in an intricate network of ice tunnels.  Exits lead north, south, west and northwest.	s19																																																										352	354	350															355																
+353	You  are  in  an  intricate network of ice tunnels.  Exits lead north and east.	i25																																																												354										352																					
+354	You  are  in  an  intricate  network of ice tunnels.  Exits lead east and south.	r17																																																										353												351																					
+355	You are in an intricate network of ice tunnels.  Exits lead southeast and northwest.	p22																																																																351											356																
+356	You  are  in  an  intricate  network of ice tunnels.  Exits lead east and west.	m17																																																											357											355																					
+357	You  are  in  an intricate network of ice tunnels.  Exits lead northeast, south and west.	z11																																																										358	363				356																												
+358	You are in an intricate network of ice tunnels.  Exits lead north, south, west and northwest.	n18																																																										359	361	357															362																
+359	You  are  in  an  intricate network of ice tunnels.  Exits lead north and northwest.	a19																																																												358															360																
+360	You  are  in  an  intricate network of ice tunnels.  Exits lead north and southeast.	b20																																																												361				359																											
+361	You  are  in  an  intricate  network of ice tunnels.  Exits lead east and south.	i26																																																										360												358																					
+362	You  are  in  an  intricate network of ice tunnels.  Exits lead north and southeast.	p23																																																												363				358																											
+363	You  are  in an intricate network of ice tunnels.  Exits lead east, south and northwest.	g22																																																										362												357					364																
+364	You're in small, icy chamber.	q22																				327	327																																																	363								327													
+365	You're on eastern side of bottomless pit.	k12																																																												325			366																366												
+366	You're in narrow, twisting crack.	s20																																																																367	365																										
+367	You're at north end of tight passage.	c26																																																											366																																
+368	You're at south end of tight passage.	z12																												369																														369		367																															
+369	You're in very small chamber.	r18																			368									368																																368																															
+370	You're in coral passage.	r19																																																											231																																
+371	You're at bend in arched coral corridor.	q23																																																												372																															
+372	You're at fork in arched coral passage.	n19																																																										371		375										373										375	373										
+375	You're in the Fourier passage.	f12																																																																	376										372																
+376	You're on shelf of rock above beach.	v21																																													377														375							377																									
+373	You're at entrance to the Jonah room.	u14																																																										374	372																																
+253	You're at the south end of the Valley of the Stone Faces.	a12																																																												254																															
+254	You're at north end of the Valley of the Stone Faces.	x14																																																										253		263			292												255																
+255	You're at south end of fog-filled room.	m11																																																										254																																	
+256		x15																																																																																											
+257	You're in foggy room by cairn of rocks.	a13																																																																																											
+258	You're in nondescript chamber.	i21																																																												259																						259									
+260	You're at the end of the crack, at the bottom of the chimney.	t17																																															261											259										261											259			259	261								
+261	You're in lava tube at top of chimney.	x16																																															260											262								260									463		262						262	260							
+262	You're at steep slide in lava tube.	n15																																																										255		261						255											255						260	260							
+263	You're in rough and narrow passage.	o9																																																										254																																	
+265	You're in passage by steps.	m13																																													266													264		315						266																			315						
+315	You're in Peelgrunt room.	y15																																																																																											
+266	You're on the steps.	o10																																													267																					267		265																							
+267	You're at exit on steps.	a14																			269																										268															269						268		266																							
+268	You're in the storage room.	s16																																													267																							267																							
+269	You're at "Y2"?	q16																				382	382																	382																				267	271											270																					
+270	You are in a jumble of rock, with cracks everywhere.	b16																																																											269							269		271																							
+290	You're at west end of Audience Hall.	u12																																																											281											291																					
+291	You're at east end of Audience Hall.	g18																																																											290																																
+292	You're in winding passage	w16																																																												293															254																
+293	You're in golden chamber.	k11																																																										292					294												295											294	295				
+294	You're in Arabesque room.	e15																			293																																							293																																	
+295	You're in room with translucent walls.	g19																																																																																											
+382	You're on tiny platform above volcano.	q26																				269	269																																				269																															269			
+243	You are in the middle of a gray, misty nowhere.	g16																																																										243	243	243			243	243	243	243		243		243					243																
+289	You are in the catacombs by the stone portal.	p19																																																																																											
+395	You're at the halfway stage on the spiral staircase.	o16																																																																		394		161																							
+394	You're at the cellar view.	s21																																													395																							395																							
+203	You're in the chapel.	k8																																															204												205	235						407		408																							
+205	You're in the side chamber of the chapel.	m9																			203																																																			203																					
+383	You're in the living quarters.	t21																																																										385		384										412																					
+204	You're in the recess in the beams.	n13																			203																																															203																									
+384	You're in the dungeon.	w19																																																										383																																	
+385	You  are  in  a  tangled  web of intersecting passages.  Exits are north, east, west, up and down.	f13																																																											389	383						387		390		386																			412		
+386	You  are  in  a  tangled  web of intersecting passages.  Exits are north, east, south, west, up and down.	k13																																																										387	389	385						386		388		386																					
+387	You  are  in  a  tangled  web of intersecting passages.  Exits are north, east, south, west, up and down.	u15																																																										388	385	386						387		389		387																					
+389	You  are  in  a  tangled  web of intersecting passages.  Exits are north, east, south, west, up and down.	t22																																																										388	389	390						387		389		385																					
+390	You  are  in  a  tangled  web of intersecting passages.  Exits are north, east, south, west, up and down.	h18																																																										388	389	389						386		389		385																					
+391	You're in the basement.	i28																																													392													393										392						393																	
+392	You're at the curtain entrance.	m18																																																		225																391		412						225	225																
+397	You're east of the causeway.	z14																																										396											239					239	396					239						239																					
+398	You're at the bottom of the stone steps.	a20																			408																												399													408								399																							
+399	You  are  part  way  up  a flight of stone steps gradually curving out of sight.	k14																																															400																			398		400																							
+400	You  are  at  a  window part way up a flight of stone steps.  The view is quite beautiful - a lake with rolling green meadows beyond it,  gradually rising to large snow-capped mountains.	z15																																															401																			399		401																							
+401	You  are  on  a  landing.   Stone  steps lead both up and down, gradually twisting out of sight.	p24																																																																																											
+402	You  are  at  a  window part way up a flight of stone steps.  The view is quite beautiful - a deep ravine  with  a  raging  torrent  tumbling  over rapids.	h19																																															403																			401		403																							
+403	You  are  on  a  landing  by  a  massive  door with a large notice on it: 'DWARVES STORES - NO  ACCESS'.   Stone  steps  lead  both  up  and  down, gradually twisting out of sight.	g23																																															404																			402		404																							
+404	You  are  at  a  window part way up a flight of stone steps.  The view is quite beautiful - below you is a cliff, an enraged sea battering  at  its base.	k15																																																																		403																									
+405	You're in the earthen passage.	s22																																																										406								406																									
+406	You're in the disused well.	k16																																																												405								405																							
+407	You're in the crypt.	i29																			203																										203																							203																							
+408	You're in the chamber above the chapel.	z16																																													203													398	412	409						203																							412		
+409	You're at the south end of the long low attic.	m19																																																										408		410					412																								412		
+410	You're at the north end of the long low attic.	m20																																																										409		411														411																	
+411	You're in the thieves den.	q27																			409																																							410																																	
+412	You're in the pantry.	q28																																													392														383	392			409			392				408																					
+413	You're in the unsafe passage.	k17																																																										235		414																															
+414	You're at the end of the very unsafe tunnel.	x22																																																										413																																	
+415	You're in the very low room.	t23																								416																																			416																																
+416	You're in the bones room.	d24																			415																																															415				415																					
+420	You're in the north/south culvert.	g24																																																										421		419																															
+419	You're at the sea-view.	f14																			420																																							420																																	
+421	You are at the south end of the culvert.	p25																																																										422	426	420				422	425					422					426																
+422	You  are at a junction of 3 sewer pipes which go southeast, southwest and north.	x23																																																												421				423	423																										
+423	You're in the large sewer pipe.	q29																																																										424		422				424																											
+424	Dead end.  The sewer pipe has become too narrow.	h20																			423																																									423																															
+425	You're at the partially collapsed junction of 3 sewer pipes.	z17																																																															421																												
+426	Dead end.  The sewer pipe has become too narrow.	z18																			421																																																			421																					
+429	You're in the low bare cavern.	f15																																																											225	430																															
+430	You're in the low, long passage.	i31																																																										429		431																															
+431	You're in the large cavern.	h21																																																												432					430																										
+433	You're in the dank cave.	v24																																																																																											
+434	You're by the rock in the mist.	w20																																																																																											
+435	You're in the dwarves' stores.	r20																			403																																																																								
+140	You're at the magnificent view.	d15																	139	139	139																																													139																											
+138	You're at the east end of the ravine.	s11																																																											139					457																											
+139	You're at the west end of the ravine.	i16																																																																						138					140																
+457	You're on the path.	f18																437		138																																								137	438	437			441	136	438					440					138																
+458	You are in an open forest north of the building.	y17																442																																											440	442			443	459	136					444					441															136	
+459	You are in an open forest east of the building.	f19																446																																										447		444			445	448	460					446					458															136	
+460	You are in an open forest south of the building.	u16																454																																										454	VALLEY				459	449	143	VALLEY				447					136															136	
+436	You're at the end of the valley.	f16																453									144		143																																453	144			455							456					452															136	VALLEY
+437	You're in an open forest, northeast of the path.	t25																																																										457	461	461			461	440	457					441					461																
+438	You're in an open forest, southwest of the path.	l21																																																										461	461				457	137	461					457					439																
+439	You  are  in  an open forest which seems to grow denser and darker to the south and west.	v25																																																										461	461	461			438	461	461					438					461																
+441	You  are in an open sunlit forest which to the north seems to grow denser and darker.	g25																																																										440	437	461			461	458	457					442					461																
+442	You  are  in  an  open  sunlit  forest  growing  denser and darker in the northern direction.	l22																																																										458	441	461			461	444	440					443					461																
+443	You  are in an open sunlit forest which appears to grow denser and darker to the north and east.	n20																																																										444	442	461			461	445	458					461					461																
+444	You are in an open sunlit forest becoming rather gloomier to northeast.	v26																																																										459	458	443			461	446						445					442																
+445	You  are in an open sunlit forest which seems to become denser and darker in the northern and eastern directions.	t26																																																										446	444	461			461	461	459					461					443																
+446	You are in an open sunlit forest which to the east appears to grow denser and darker.	q30																																																										448	459	445			461	461	447					461					444																
+447	You  are  in  an open sunlit forest which seems to get rather gloomier to southeast.	s23																																																										449	460	459			446	461	454					448																					
+448	You  are  in an open sunlit forest rapidly growing gloomy and dark to the east and south.	KilobyteInputBuffer3																																																										461	447	446			461	461	449					461					459																
+449	You are in an open sunlit forest rapidly growing denser and darker to the east and south.	g26																																																										461	454	447			448	461	455					461					460																
+450	You are in an open forest, west of a deep valley.  To the west the forest seems to become denser and darker.	p26																																																										451	461	136			136	143	461	VALLEY				VALLEY					461																VALLEY
+451	You are in an open forest, west of a deep valley.  To the west the forest appears to become gloomy and dark.	s24																																																										452	461	450			VALLEY	144	461	143				143					461																143
+452	You are in an open forest, west of a deep valley.  To the west the forest soon becomes denser and darker.	m21																																																										453	461	451			143	436	461	144				144					461																144
+453	You  are in an open forest, west of a deep valley.  To the west and south the forest seems to grow denser and gloomier.	g27																																																										461	461	452			144	461	461	436				436					461																436
+454	You  are  in  an  open  forest,  east of a deep valley.  To southeast the forest seems to grow gloomier and denser.	d26																																																										455	143	460			447	461	144	143				449					VALLEY																143
+455	You are in an open forest, east of a deep valley.  To the east the forest rapidly becomes denser and darker.	e19																																																										456	144	454			449	461	436	144				461					143																144
+456	You  are in an open forest, east of a deep valley.  To the east and south the forest appears to grow dark and gloomy.	f17																																																										461	436	455			461	461	461	436				461					144																436
+461	You appear to be lost in a dark and gloomy forest.	m22																																																																																											
+463	You're on the narrow basalt shelf.	v27																																																																						261													261								
+378	You're at the northeast end of the repository.	q24																																																																	379																										
+380	You're at the northeast end of the repository.	q25																																																															381		379																										
+379	You're at the southwest end of the repository.	i27																																																																																											
+381	You're in a dark hole.	h17																																																										482	482	482			482		380			482																							
+482	You're in a dark hole.	l23																																																																																											
+580		e22																				136	136																	136																																																					
+565		p31																																																																																											
+603		u18																																																																																											

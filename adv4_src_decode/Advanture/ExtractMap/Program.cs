@@ -82,6 +82,9 @@ namespace ExtractMap
 
             routineToRegionNumberMap.Add("r32", 137);   // This is not in the mapping table, but is called from the function in the mapping table.
             routineToRegionNumberMap.Add("f23", 142);
+            routineToRegionNumberMap.Add("n26", 141);
+            routineToRegionNumberMap.Add("u29", 150);
+            routineToRegionNumberMap.Add("p27", 150);
 
             bool inRegion = false;
             int arrayIndex = 0;

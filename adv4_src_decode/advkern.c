@@ -876,9 +876,9 @@ int y10(g5) int g5; { char s5[10]; char
 
 		x7();
 
-		BJBMessage(64-64, 1599, 0); // BJB
-		BJBMessage(64-64, 804, 0);
-		BJBMessage(0, 1395, 0);
+		BJBMessage(64-64, 1470, 0); // BJB
+		BJBMessage(76-64, 818, 14);
+		BJBMessage(12, 818, 670);
 		BJBMessage(0, 777, 0);
 		BJBMessage(0, 1558, 0);
 		BJBMessage(0, 1450, 0);

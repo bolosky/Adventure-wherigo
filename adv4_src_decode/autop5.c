@@ -76,7 +76,16 @@ int w11() { n27(); m25(); return; } int v16() {
 	u31(); d36(); t44(); q39(); n30(); p41(); u32(); b32(); return;
 } int k10() { h32(); q38(); return; } int y16() {
 	r33(); w28(); return;
-} int z6() { u29(); y23(); p37(); return; } int t31() {
+} 
+
+int z6() { 
+	u29(); 
+	y23(); 
+	p37(); 
+	return; 
+} 
+
+int t31() {
 	p44(); o30(); return;
 } int c27() { q40(); o29(); m26(); x36(); c34(); return; } int z19() {
 	m27();

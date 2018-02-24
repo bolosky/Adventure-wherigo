@@ -88,7 +88,9 @@ int p39() {
 		|| object_type_3_buffer[PLAYER_LOCATION] == 144 || object_type_3_buffer[PLAYER_LOCATION] == 141) {
 		printMessage(64, 844, 0);
 	} printMessage(64, 845, 0);
-} int e9()
+} 
+
+int e9()
 {
 	if (!(g10(111, 4) || g10(114, 4) || g10(113, -1))) {
 		if (isItemAtLocation(118, -1)) {
@@ -106,7 +108,8 @@ int p39() {
 		}
 	} if (currentCommandContains(6)) {
 		o25(); if (object_type_3_buffer[6] == 0) {
-			l12(0, 6, 1); printMessage(64, 919, 0);
+			l12(0, 6, 1); 
+			printMessage(64, 919, 0);
 		} printMessage(12, 1489, 113); printMessage(76, 1490, 6);
 	} if (currentCommandContains(11)) { o25(); printMessage(64, 917, 0); }
 	if (currentCommandContains(72)) { o25(); l12(0, 72, 1); printMessage(64, 1693, 0); } if (currentCommandContains(115)) {
@@ -114,17 +117,29 @@ int p39() {
 	} if (currentCommandContains(116)) {
 		f3(701, 1704); if (object_type_3_buffer[116] == 0) { object_type_3_buffer[701] += 1; } printMessage(66, 701, 0);
 	}
-} int f26() {
-	if (!currentCommandContains(11)) return; if (g10(11, -1)) {
-		if (isItemAtLocation(114, 3) ||
-			isItemAtLocation(111, 3)) {
-			if (!(isItemAtLocation(111, 3))) { l12(0, 114, 2); printMessage(64, 1366, 0); } l12(0, 111, 2);
+} 
+int f26() {
+	if (!currentCommandContains(11)) 
+		return; 
+
+	if (g10(11, -1)) {
+		if (isItemAtLocation(114, 3) || isItemAtLocation(111, 3)) {
+			if (!(isItemAtLocation(111, 3))) { 
+				l12(0, 114, 2); 
+				printMessage(64, 1366, 0); // Your flask is now empty, but I don't think that trickle of water is going to do anything much.
+			} 
+			l12(0, 111, 2);
 			o23();
+		} else { 
+			printMessage(12, 1027, 669);  // You have no !
 		}
-		else { printMessage(12, 1027, 669); }
-	}
-	else { printMessage(12, 818, 670); } longjmp(done_with_command, 1);
-} int p40() {
+	} else { 
+		printMessage(12, 818, 670); // I see no  here.
+	} 
+	longjmp(done_with_command, 1);
+} 
+
+int p40() {
 	if (!currentCommandContains(6)) return; if (g10(6, -1)) {
 		if (isItemAtLocation(114, 3) || isItemAtLocation(111, 3))
 		{
@@ -938,12 +953,17 @@ v33() {
 {
 	if (object_type_3_buffer[PLAYER_LOCATION] == 408) { printMessage(64, 1435, 0); } if (g10(18, -1)) { printMessage(64, 780, 0); }
 	printMessage(76, 818, 18);
-} int f4() {
-	if (object_type_3_buffer[PLAYER_LOCATION] == 255 || object_type_3_buffer[PLAYER_LOCATION] == 256 || object_type_3_buffer[PLAYER_LOCATION] == 257)
+} 
+
+int f4() {
+	if (object_type_3_buffer[PLAYER_LOCATION] == 255 || object_type_3_buffer[PLAYER_LOCATION] == 256 || object_type_3_buffer[PLAYER_LOCATION] == 257) // south end of fog filled room, ?, foggy room by cairn of rocks
 	{
-		printMessage(64, 1470, 0);
-	} printMessage(76, 818, 14);
-} int m27() {
+		printMessage(64, 1470, 0); //  A real pea-souper.  Dead easy to get lost in.
+	} 
+	printMessage(76, 818, 14); // I see no fog here.
+} 
+
+int m27() {
 	if (!currentCommandIsOneOf(501, 497, 498, 504, 503, 500,
 		505, 496, 506, 499, 511, 502, 579, 510, 509, 508, 507, 581, -1)) return 0; (*command_by_location_dispatch_table[object_type_3_buffer[670]])();
 	longjmp(done_with_command, 1);

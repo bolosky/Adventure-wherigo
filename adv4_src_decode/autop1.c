@@ -711,7 +711,8 @@ l16() {
 		processMoveCommand(144, 0, -144);
 	}
 	else { processMoveCommand(145, 899, -144); }
-} int u29() {
+} 
+int u29() {
 	if (object_type_3_buffer[154] == 0) {
 		if (isItemAtLocation(44, -1))
 		{
