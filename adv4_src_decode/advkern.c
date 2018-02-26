@@ -876,7 +876,7 @@ int y10(g5) int g5; { char s5[10]; char
 
 		x7();
 
-		BJBMessage(64-64, 1470, 0); // BJB
+		BJBMessage(64-64, 1553, 0); // BJB
 		BJBMessage(76-64, 818, 14);
 		BJBMessage(12, 818, 670);
 		BJBMessage(0, 777, 0);
@@ -1222,10 +1222,32 @@ doMove:
 #if defined (g11) && defined (v5)
 			  modifyObjectFlag('s', v5, g11);
 #endif
-			  return; } l12(b2, t4, j4) int b2, t4, j4; { object_type_3_buffer[t4] = b2 ? object_type_3_buffer[j4] : j4; if
-				  (t4 < OBJECT_TYPE_3_MIN_ID) return; if (b2 && j4 >= OBJECT_TYPE_3_MIN_ID && j4 <= OBJECT_TYPE_3_MAX_ID) *getObjectPointer(t4) = *getObjectPointer(j4); else
-				  if (*getObjectPointer(t4) == -1) *getObjectPointer(t4) = 0; return; } f3(b2, t4) int b2, t4; { object_type_3_buffer[b2]
-					  = t4; *getObjectPointer(b2) = -1; h3[b2] = h3[t4]; return; } z5(b2, t4) int b2, t4;
+			  return; } 
+			  
+l12(int b2, int t4, int j4) 
+{ 
+	object_type_3_buffer[t4] = b2 ? object_type_3_buffer[j4] : j4; 
+
+	if (t4 < OBJECT_TYPE_3_MIN_ID) 
+		return; 
+
+	if (b2 && j4 >= OBJECT_TYPE_3_MIN_ID && j4 <= OBJECT_TYPE_3_MAX_ID) 
+		*getObjectPointer(t4) = *getObjectPointer(j4); 
+	else if (*getObjectPointer(t4) == -1) 
+		*getObjectPointer(t4) = 0; 
+	
+	return; 
+} 
+			  
+f3(int b2, int t4)
+{ 
+	object_type_3_buffer[b2] = t4; 
+	*getObjectPointer(b2) = -1; 
+	h3[b2] = h3[t4]; 
+	return; 
+} 
+
+z5(b2, t4) int b2, t4;
 			  { object_type_3_buffer[b2] = object_type_3_buffer[object_type_3_buffer[t4]]; return; } c16(b2, t4) int b2, t4; { object_type_3_buffer[object_type_3_buffer[b2]]
 				  = (t4 > OBJECT_TYPE_3_MAX_ID || t4 < OBJECT_TYPE_3_MIN_ID) ? t4 : object_type_3_buffer[t4]; return; } t10(b2, t4) int b2, t4;
 			  { object_type_3_buffer[b2] = j0[(t4 < OBJECT_TYPE_3_MIN_ID || t4 > OBJECT_TYPE_3_MAX_ID) ? t4 : object_type_3_buffer[t4]]; *getObjectPointer(b2) = -1; return;

@@ -73,6 +73,23 @@ namespace ExtractMap
             return retVal + "}";
         }
 
+        class OutputRecord : IComparable<OutputRecord>
+        {
+            public OutputRecord(int location_, string line_)
+            {
+                location = location_;
+                line = line_;
+            }
+
+            public int CompareTo(OutputRecord peer)
+            {
+                return line.CompareTo(peer.line);
+            }
+
+            public readonly int location;
+            public readonly string line;
+        }
+
         static void Main(string[] args)
         {
 
@@ -85,6 +102,20 @@ namespace ExtractMap
             routineToRegionNumberMap.Add("n26", 141);
             routineToRegionNumberMap.Add("u29", 150);
             routineToRegionNumberMap.Add("p27", 150);
+            routineToRegionNumberMap.Add("q37", 152);
+            routineToRegionNumberMap.Add("u30", 152);
+
+            var commandAliases = new Dictionary<string, string>();
+            commandAliases.Add("514", "COMMAND_NORTH");
+            commandAliases.Add("515", "COMMAND_NORTHEAST");
+            commandAliases.Add("516", "COMMAND_EAST");
+            commandAliases.Add("517", "COMMAND_SOUTHEAST");
+            commandAliases.Add("518", "COMMAND_SOUTH");
+            commandAliases.Add("519", "COMMAND_SOUTHWEST");
+            commandAliases.Add("520", "COMMAND_WEST");
+            commandAliases.Add("521", "COMMAND_NORTHWEST");
+            commandAliases.Add("523", "COMMAND_UP");
+            commandAliases.Add("524", "COMMAND_DOWN");
 
             bool inRegion = false;
             int arrayIndex = 0;
@@ -216,6 +247,11 @@ namespace ExtractMap
                                 break;
                             }
 
+                            if (commandAliases.ContainsKey(direction))
+                            {
+                                direction = commandAliases[direction];
+                            }
+
                             if (map[currentLocation].ContainsKey(direction))
                             {
                                 if (map[currentLocation][direction] != destination)
@@ -241,8 +277,50 @@ namespace ExtractMap
             File.ReadAllLines(@"c:\Adventure-wherigo\locations.txt").ToList().ForEach(x => locationDescriptions.Add(Convert.ToInt32(x.Split('\t')[0]), x.Split('\t')[1]));
 
 
+
+
+            var outputRecords = new List<OutputRecord>();
+
+
+
+            foreach (var locationEntry in map)
+            {
+                var fromLocation = locationEntry.Key;
+                var outArcs = locationEntry.Value;
+
+                string line = fromLocation + "\t";
+
+                if (locationDescriptions.ContainsKey(fromLocation))
+                {
+                    line += locationDescriptions[fromLocation];
+                }
+
+                line += "\t" + ListOfStringsToValues(routineToRegionNumberMap.Where(x => x.Value == fromLocation).Select(x => x.Key));
+
+                foreach (var direction in directions)
+                {
+                    if (outArcs.ContainsKey(direction))
+                    {
+                        if (outArcs[direction].StartsWith("LOCATION_"))
+                        {
+                            line += "\t" + outArcs[direction].Substring(9);
+                        }
+                        else
+                        {
+                            line += "\t" + outArcs[direction];
+                        }
+                    } else
+                    {
+                        line += "\t";
+                    }
+                }
+
+                outputRecords.Add(new OutputRecord(fromLocation, line));
+            }
+
             var outputFile = new StreamWriter(@"c:\adventure-wherigo\GeneratedMap.txt");
             outputFile.Write("From Location\tdescription\tRoutine(s)");
+
             foreach (var direction in directions)
             {
                 if (direction.StartsWith("COMMAND_"))
@@ -256,39 +334,8 @@ namespace ExtractMap
             }
             outputFile.WriteLine();
 
-            foreach (var locationEntry in map)
-            {
-                var fromLocation = locationEntry.Key;
-                var outArcs = locationEntry.Value;
-
-                outputFile.Write(fromLocation + "\t");
-
-                if (locationDescriptions.ContainsKey(fromLocation))
-                {
-                    outputFile.Write(locationDescriptions[fromLocation]);
-                }
-
-                outputFile.Write("\t" + ListOfStringsToValues(routineToRegionNumberMap.Where(x => x.Value == fromLocation).Select(x => x.Key)));
-
-                foreach (var direction in directions)
-                {
-                    if (outArcs.ContainsKey(direction))
-                    {
-                        if (outArcs[direction].StartsWith("LOCATION_"))
-                        {
-                            outputFile.Write("\t" + outArcs[direction].Substring(9));
-                        }
-                        else
-                        {
-                            outputFile.Write("\t" + outArcs[direction]);
-                        }
-                    } else
-                    {
-                        outputFile.Write("\t");
-                    }
-                }
-                outputFile.WriteLine();
-            }
+            outputRecords.Sort();
+            outputRecords.ForEach(x => outputFile.WriteLine(x.line));
 
             outputFile.Close();
 

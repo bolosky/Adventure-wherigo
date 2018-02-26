@@ -973,7 +973,7 @@ int s35() {
 		}
 	} 
 	
-	if (currentCommandContains(520) && currentCommandContains(528)) {
+	if (currentCommandContains(COMMAND_WEST) && currentCommandContains(528)) {
 		object_type_3_buffer[729] += 1; if (object_type_3_buffer[729] == 5)
 		{
 			f3(700, 528); 
@@ -989,7 +989,7 @@ int s35() {
 		a28(); 
 	} 
 	
-	if (currentCommandContains(524) && object_type_3_buffer[697] > 1) {
+	if (currentCommandContains(COMMAND_DOWN) && object_type_3_buffer[697] > 1) {
 		if (isObjectFlagSet(t11(670), 0) && isObjectFlagSet(t11(670), 3)) {
 			printMessage(64, 1664, 0); // You 'D' means 'DOWN', not 'DROP'...  remember?  Try again.
 		}
