@@ -107,16 +107,36 @@ int i40() {
 			} printMessage(64, 915, 0);
 		}
 	}
-} int v34() {
-	if (object_type_3_buffer[717] == 3 &&
-		isObjectFlagSet(104, 4)) {
-		if (j0[104] == 485) { printMessage(64, 1401, 0); } if (g10(104, -1)) {
-			printMessage(0, 1374, 0);
+} 
+
+int blast_command() {
+	if (object_type_3_buffer[717] == 3 && isObjectFlagSet(104, 4)) {
+		if (j0[104] == 485) { 
+			printMessage(64, 1401, 0); // I think enough is enough.
+		} 
+		
+		if (g10(104, -1)) {
+			printMessage(0, 1374, 0); // There  is  a  loud  explosion.   Being  foolishly near its epicentre, you suddenly find yourself splashed across the walls of the cave.
 			die();
-		} if (object_type_3_buffer[PLAYER_LOCATION] == 378) { printMessage(0, 1375, 0); die(); } modifyObjectFlag('s', 381, 4); f3(672, 380);
-		s9(104, 485); s9(134, 485); s9(82, object_type_3_buffer[671]); printMessage(64, 1376, 0);
-	} printMessage(64, 864, 0);
-} int u20() { printMessage(64, 1382, 0); } int KilobyteInputBuffer9() {
+		} 
+		
+		if (object_type_3_buffer[PLAYER_LOCATION] == 378) { 
+			printMessage(0, 1375, 0); // There  is a loud explosion at the other end of the repository and the far wall collapses, burying the snakes in the rubble.  A river of molten lava pours in through the hole, destroying everything in its  path,  including you.  (Not even cinders remain!).
+			die(); 
+		} 
+		
+		modifyObjectFlag('s', 381, 4); 
+		f3(672, 380);
+		s9(104, 485); 
+		s9(134, 485); 
+		s9(82, object_type_3_buffer[671]); 
+		printMessage(64, 1376, 0); // There  is  a  loud  explosion  at  the  other end of the repository and a section of the far wall collapses, burying the  dwarves  in  the  rubble. The  settling dust reveals a dark hole leading northeast. When the air is finally clear, a snow-white golden-horned unicorn walks out of  the  hole and,  gracefully  picking  its  way  through  the heaps of rubble, calmly approaches you.
+	} 
+	
+	printMessage(64, 864, 0); // Blasting requires dynamite
+} 
+
+int u20() { printMessage(64, 1382, 0); } int KilobyteInputBuffer9() {
 	if (object_type_3_buffer[697] == 1 || !(isObjectFlagSet(t11(670), 0)))
 	{
 		return 0;
@@ -950,7 +970,7 @@ int s35() {
 		longjmp(done_with_command, 1);
 	} 
 	
-	if (currentCommandContains(493)) { 
+	if (currentCommandContains(COMMAND_SAY)) { 
 		s30(); 
 	} 
 	
@@ -999,7 +1019,7 @@ int s35() {
 		t40();
 	} 
 	
-	if (!(currentCommandContains(493) && object_type_3_buffer[697] > 1 && !(495 <= object_type_3_buffer[670] && object_type_3_buffer[670] <= 512))) {
+	if (!(currentCommandContains(COMMAND_SAY) && object_type_3_buffer[697] > 1 && !(495 <= object_type_3_buffer[670] && object_type_3_buffer[670] <= 512))) {
 		(*command_by_location_dispatch_table[object_type_3_buffer[671]])();
 	} 
 	

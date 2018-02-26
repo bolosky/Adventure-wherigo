@@ -17,7 +17,14 @@ int u6() {
 int KilobyteInputBuffer2()
 {
 	w27(); z28(); return;
-} int q33() { y24(); v46(); x35(); return; } 
+} 
+
+int command_break() { 
+	y24(); 
+	v46(); 
+	x35(); 
+	return; 
+} 
 
 int command_in_building_141() 
 { 

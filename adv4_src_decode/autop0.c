@@ -1154,7 +1154,7 @@ int e28() {
 		w24();
 	} if (currentCommandContains(112)) { r26(); } if (object_type_3_buffer[697] == 1) {
 		if ((533 <= object_type_3_buffer[669] &&
-			object_type_3_buffer[669] <= 570) || currentCommandContains(493)) {
+			object_type_3_buffer[669] <= 570) || currentCommandContains(COMMAND_SAY)) {
 			modifyObjectFlag('s', t11(697), 5); printMessage(76, 1038, 669);
 		} if ((615 <= object_type_3_buffer[669]
 			&& object_type_3_buffer[669] <= 629)) {

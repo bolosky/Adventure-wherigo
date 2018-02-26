@@ -22,6 +22,7 @@ extern v0;
 #define LOCATION_Y2				163
 
 #define COMMAND_BUILDING		141	// interestingly, same as LOCATION_BUILDING
+#define COMMAND_SAY				493
 #define COMMAND_XYZZY			497
 #define COMMAND_PLUGH			501
 #define COMMAND_FEE				510
@@ -36,7 +37,16 @@ extern v0;
 #define COMMAND_UP				523
 #define COMMAND_DOWN			524
 #define COMMAND_ENTER			526
+#define COMMAND_EXIT			527
+#define COMMAND_RETREAT			530
+#define COMMAND_JUMP			531
 #define COMMAND_TAKE			534
+#define COMMAND_CLOSE			538	// Also lock
+#define COMMAND_CHANGE			563
+#define COMMAND_BREAK			564
+#define COMMAND_BRIEF			574
 #define COMMAND_HELP			580
 #define COMMAND_INVENTORY		594
+#define COMMAND_BLAST			597
+#define COMMAND_CLIMB			598
 

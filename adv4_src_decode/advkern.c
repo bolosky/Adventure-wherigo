@@ -576,6 +576,7 @@ b8:
 	} // if NULL
 g7: 
 	u4(&q5, &k4, &d7); 
+/*BJB*/ printf("k4 = %d\n", k4);
 	nTokensInCommand++; 
 
 	if (q5 == w6 && (z0[nTokensInCommand] == ' ' || z0[nTokensInCommand] == ',')) 
@@ -876,10 +877,10 @@ int y10(g5) int g5; { char s5[10]; char
 
 		x7();
 
-		BJBMessage(64-64, 1553, 0); // BJB
-		BJBMessage(76-64, 818, 14);
-		BJBMessage(12, 818, 670);
-		BJBMessage(0, 777, 0);
+		BJBMessage(64-64, 1401, 0); // BJB
+		BJBMessage(0, 1374, 0);
+		BJBMessage(0, 1375, 0);
+		BJBMessage(64-64, 1376, 0);
 		BJBMessage(0, 1558, 0);
 		BJBMessage(0, 1450, 0);
 		BJBMessage(0, 802, 0);
