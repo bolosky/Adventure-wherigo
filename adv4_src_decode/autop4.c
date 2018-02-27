@@ -11,28 +11,47 @@ int i40() {
 	{
 		(*command_by_location_dispatch_table[490])();
 	} if (object_type_3_buffer[PLAYER_LOCATION] == LOCATION_BUILDING || object_type_3_buffer[PLAYER_LOCATION] == 205) { printMessage(64, 1557, 0); } printMessage(64, 1259, 0);
-} int x26() { printMessage(64, 1260, 0); } int r24() {
+} int x26() { printMessage(64, 1260, 0); } 
+
+int r24() {
 	if (object_type_3_buffer[697] == 1) {
 		if (j0[85] == 485)
 		{
-			printMessage(64, 1520, 0);
-		} if (g10(85, -1)) { printMessage(64, 1302, 0); } if (isObjectFlagSet(t11(671), 3)
-			|| isObjectFlagSet(t11(671), 5) || isObjectFlagSet(t11(671), 7)) {
-			if (g10(87, -1) || object_type_3_buffer[PLAYER_LOCATION] == 205 ||
-				g10(20, -1)) {
-				l12(0, 701, 0); l12(0, 700, 30); y20();
-			}
-			else {
-				printMessage(0, 1520, 0);
-			} longjmp(done_with_command, 1);
-		} t10(701, 85); object_type_3_buffer[701] -= object_type_3_buffer[671]; if (object_type_3_buffer[701] < 0) {
-			object_type_3_buffer[701]
-				*= -1;
-		} object_type_3_buffer[701] -= 1; object_type_3_buffer[701] *= 3; l12(1, 700, 701); object_type_3_buffer[700] += object_type_3_buffer[701];
+			printMessage(64, 1520, 0); // Your hoot echoes in the distance, but otherwise nothing happens.
+		} 
+		
+		if (g10(85, -1)) { 
+			printMessage(64, 1302, 0); // Nearby an owl cries "HOOT".
+		} 
+		
+		if (isObjectFlagSet(t11(671), 3) || isObjectFlagSet(t11(671), 5) || isObjectFlagSet(t11(671), 7)) {
+			if (g10(87, -1) || object_type_3_buffer[PLAYER_LOCATION] == 205 ||	g10(20, -1)) {
+				l12(0, 701, 0); 
+				l12(0, 700, 30); 
+				y20();
+			} else {
+				printMessage(0, 1520, 0); // Your hoot echoes in the distance, but otherwise nothing happens.
+			} 
+			longjmp(done_with_command, 1);
+		} 
+
+		t10(701, 85); 
+		object_type_3_buffer[701] -= object_type_3_buffer[671]; 
+		if (object_type_3_buffer[701] < 0) {
+			object_type_3_buffer[701] *= -1;
+		} 
+		object_type_3_buffer[701] -= 1; 
+		object_type_3_buffer[701] *= 3; 
+		l12(1, 700, 701); 
+		object_type_3_buffer[700] += object_type_3_buffer[701];
 		y20();
-	}
-	else { printMessage(0, 858, 0); } longjmp(done_with_command, 1);
-} int p29() {
+	} else { 
+		printMessage(0, 858, 0);  // Huh??
+	} 
+	longjmp(done_with_command, 1);
+} 
+
+int p29() {
 	if (object_type_3_buffer[697] == 1)
 	{
 		return 0;
@@ -993,7 +1012,7 @@ int s35() {
 		}
 	} 
 	
-	if (currentCommandContains(COMMAND_WEST) && currentCommandContains(528)) {
+	if (currentCommandContains(COMMAND_WEST) && currentCommandContains(COMMAND_GO)) {
 		object_type_3_buffer[729] += 1; if (object_type_3_buffer[729] == 5)
 		{
 			f3(700, 528); 
