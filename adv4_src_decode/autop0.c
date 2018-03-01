@@ -407,7 +407,7 @@ int g32() {
 	} if
 		(currentCommandContains(547)) {
 		if (isItemAtLocation(ITEM_ROD,-1) || isItemAtLocation(104, -1)) { printMessage(64, 828, 0); } printMessage(76, 1027, 670);
-	} if (currentCommandContains(571)) {
+	} if (currentCommandContains(COMMAND_LOOK)) {
 		if (g10(102, -1) && !isItemAtLocation(104, -1) || isItemAtLocation(ITEM_ROD,-1)) {
 			printMessage(76, 1541, 670);
 		}

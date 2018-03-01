@@ -85,8 +85,8 @@ int w11() { n27(); m25(); return; } int v16() {
 	r33(); w28(); return;
 } 
 
-int z6() { 
-	u29(); 
+int command_top_of_small_pit_150() { 
+	move_from_top_of_small_pit(); 
 	y23(); 
 	p37(); 
 	return; 

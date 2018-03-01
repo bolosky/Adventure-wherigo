@@ -4,7 +4,7 @@ int u8(); extern int s10(); extern int x11(); extern int e9(); extern int
 command_outside_building_136(); extern int d14(); extern int s11(); extern int i16(); extern int d15();
 extern int command_in_building_141(); extern int r8(); extern int j11(); extern int r9(); extern
 int p13(); extern int j12(); extern int t13(); extern int l16(); extern
-int h9(); extern int z6(); extern int u9(); extern int x12(); extern int
+int h9(); extern int command_top_of_small_pit_150(); extern int u9(); extern int x12(); extern int
 p14(); extern int c17(); extern int w11(); extern int q10(); extern int
 m7(); extern int n10(); extern int c18(); extern int a10(); extern int s12();
 extern int j13(); extern int n11(); extern int v11(); extern int k6(); extern
@@ -265,7 +265,7 @@ int (*command_by_location_dispatch_table[])()= {
 	t13,	// 147
 	l16,	// 148
 	h9,	// 149
-	z6,	// 150
+	command_top_of_small_pit_150,	// 150
 	u9,	// 151
 	x12,	// 152
 	p14,	// 153
@@ -792,7 +792,7 @@ command_noop,command_noop,command_noop,command_noop,command_noop,command_noop,co
 command_noop,command_noop,command_noop,command_noop,command_noop,command_noop,command_noop,s10,command_noop,command_noop,command_noop, command_noop,command_noop,command_noop,command_noop,command_noop,command_noop,command_noop,command_noop,command_noop,command_noop,command_noop,
 command_noop,command_noop,command_noop,command_noop,command_noop,command_noop,command_noop,command_noop,command_noop,command_noop,command_noop, command_noop,command_noop,command_noop,command_noop,command_noop,command_noop,command_noop,command_noop,command_noop,command_noop,command_noop,
 command_noop,command_noop,x11,e9,command_noop,command_noop,command_noop,command_noop,command_noop,command_noop,command_noop, command_noop,command_noop,command_noop,command_noop,command_noop,command_noop,command_noop,command_noop,command_noop,command_noop,command_noop,
-command_noop,command_noop,command_noop,command_noop,command_outside_building_136,d14,s11,i16,d15,n9,r8, j11,r9,p13,j12,t13,l16,h9,z6,u9,x12,p14,
+command_noop,command_noop,command_noop,command_noop,command_outside_building_136,d14,s11,i16,d15,n9,r8, j11,r9,p13,j12,t13,l16,h9,command_top_of_small_pit_150,u9,x12,p14,
 c17,w11,q10,m7,n10,c18,a10,s12,j13,n11,v11, k6,a11,g13,z7,p15,j14,r10,k7,d16,o5,r11,
 r12,g14,v12,v13,z8,c19,q11,w12,h10,p16,i17, n12,q12,j15,g15,e10,j16,j17,z9,h11,w13,m8,
 o6,l17,x13,y11,r13,k8,n13,m9,command_noop,d17,o7, j18,i18,y12,f5,v14,d18,t14,w14,d19,v15,q13,

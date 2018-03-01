@@ -392,7 +392,7 @@ int h34()
 			} if (object_type_3_buffer[698] > 0) {
 				l12(0, 99, 1); printMessage(8, 825, 1); if (!(isObjectFlagSet(t11(671), 3)))
 				{
-					if (g10(85, -1)) { h23(); } l12(0, 697, 1); (*command_by_location_dispatch_table[571])();
+					if (g10(85, -1)) { h23(); } l12(0, 697, 1); (*command_by_location_dispatch_table[COMMAND_LOOK])();
 				} b28();
 			}
 			else
