@@ -34,7 +34,7 @@ char *u0 = NULL;
 #include "advkern.h"
 int v0; jmp_buf done_with_command; 
 int object_type_3_buffer[OBJECT_TYPE_3_MAX_ID]; 
-int j0[OBJECT_TYPE_0_MAX_ID + 1]; 
+int item_location[OBJECT_TYPE_0_MAX_ID + 1]; 
 short object_type_0_buffer[OBJECT_TYPE_0_SIZE_IN_SHORTS * (OBJECT_TYPE_0_MAX_ID - OBJECT_TYPE_0_MIN_ID+ 1)]; 
 short object_type_1_buffer[OBJECT_TYPE_1_SIZE_IN_SHORTS * (OBJECT_TYPE_1_MAX_ID - OBJECT_TYPE_1_MIN_ID + 1)]; 
 short object_type_2_buffer[OBJECT_TYPE_2_SIZE_IN_SHORTS * (OBJECT_TYPE_3_MAX_ID - OBJECT_TYPE_2_MIN_ID + 1)]; 
@@ -328,7 +328,7 @@ void printMessage(flags, y4, c7) int flags; int y4; int c7;
 	else if (t6) 
 		dataFileOffset = c10[y4];
 #endif
-	else if (y4 > OBJECT_TYPE_0_MAX_ID || j0[y4] == r5) 
+	else if (y4 > OBJECT_TYPE_0_MAX_ID || item_location[y4] == r5) 
 		dataFileOffset = y8[y4]; 
 	else 
 		dataFileOffset = i10[y4]; 
@@ -719,8 +719,8 @@ int y10(g5) int g5; { char s5[10]; char
 			1, u5); e7 = OBJECT_TYPE_0_MAX_ID; (void)fwrite(&e7, sizeof(int), 1, u5); e7 = OBJECT_TYPE_1_MAX_ID; (void)
 			fwrite(&e7, sizeof(int), 1, u5); e7 = OBJECT_TYPE_2_MAX_ID; (void)fwrite(&e7, sizeof(int),
 				1, u5); e7 = OBJECT_TYPE_3_MAX_ID; (void)fwrite(&e7, sizeof(int), 1, u5); (void)fwrite
-				(object_type_3_buffer, sizeof(int), sizeof(object_type_3_buffer) / sizeof(int), u5); (void)fwrite(j0, sizeof
-				(int), sizeof(j0) / sizeof(int), u5); (void)fwrite(object_type_0_buffer, sizeof(short),
+				(object_type_3_buffer, sizeof(int), sizeof(object_type_3_buffer) / sizeof(int), u5); (void)fwrite(item_location, sizeof
+				(int), sizeof(item_location) / sizeof(int), u5); (void)fwrite(object_type_0_buffer, sizeof(short),
 					sizeof(object_type_0_buffer) / sizeof(short), u5); (void)fwrite(object_type_1_buffer, sizeof(short), sizeof
 					(object_type_1_buffer) / sizeof(short), u5); (void)fwrite(object_type_2_buffer, sizeof(short), sizeof(object_type_2_buffer)
 						/ sizeof(short), u5); (void)fclose(u5); if (ferror(u5)) {
@@ -738,7 +738,7 @@ int y10(g5) int g5; { char s5[10]; char
 			object_type_3_buffer[c14] = 2; (void)
 				fclose(u5); return (0);
 		} (void)fread(object_type_3_buffer, sizeof(int), sizeof(object_type_3_buffer) /
-			sizeof(int), u5); (void)fread(j0, sizeof(int), sizeof(j0) / sizeof
+			sizeof(int), u5); (void)fread(item_location, sizeof(int), sizeof(item_location) / sizeof
 			(int), u5); (void)fread(object_type_0_buffer, sizeof(short), sizeof(object_type_0_buffer) / sizeof(short),
 				u5); (void)fread(object_type_1_buffer, sizeof(short), sizeof(object_type_1_buffer) / sizeof(short), u5);
 		(void)fread(object_type_2_buffer, sizeof(short), sizeof(object_type_2_buffer) / sizeof(short), u5); if
@@ -764,9 +764,9 @@ int y10(g5) int g5; { char s5[10]; char
 	for (i6 = r0; i6 <= n1; i6++)
 #endif 
 #ifdef m4
-		if ((j0[i6] == d8 || (d8 != r5 && isObjectFlagSet(i6, m4) && j0[i6] + 1 == d8)) &&
+		if ((item_location[i6] == d8 || (d8 != r5 && isObjectFlagSet(i6, m4) && item_location[i6] + 1 == d8)) &&
 #else
-			if (j0[i6] == d8 &&
+			if (item_location[i6] == d8 &&
 #endif
 				(q5 < 0 || isObjectFlagSet(i6, q5))) {
 			if (k5 >= 0) return; k5 = i6; if (p4) break;
@@ -882,12 +882,12 @@ int y10(g5) int g5; { char s5[10]; char
 		BJBMessage(0, 858, 0);
 		BJBMessage(64-64, 1376, 0);
 		BJBMessage(0, 1558, 0);
-		BJBMessage(0, 1450, 0);
-		BJBMessage(0, 802, 0);
-		BJBMessage(0, 828, 0);
-		BJBMessage(0, 805, 0);
-		BJBMessage(0, 791, 0);
-		BJBMessage(0, 997, 0);
+		BJBMessage(64-64, 1369, 0);
+		BJBMessage(64-64, 910, 0);
+		BJBMessage(64-64, 1368, 0);
+		BJBMessage(0, 843, 0);
+		BJBMessage(64-64, 1016, 0);
+		BJBMessage(0, 843, 0);
 
 #if 0	// Create the locations file.  You have to edit it by hand to take out the line breaks for the long descriptions and the empty string ones
 		log_file = fopen("c:\\adventure-wherigo\\locations.txt", "w");
@@ -1042,15 +1042,23 @@ u4(q5, k4, d7) int *q5; int *k4; long *d7;
 } 
 			  
 			  
-			  int g10(b2, t4) int b2; int t4; { if
-				  (isItemAtLocation(b2, t4)) return (1); if (q8(b2, t4)) return (1); return (0); } 
+int g10(int b2, int t4) 
+{ 
+	if (isItemAtLocation(b2, t4)) 
+		return (1); 
+	
+	if (q8(b2, t4)) 
+		return (1); 
+	
+	return (0); 
+} 
 			  
 int isItemAtLocation (int itemId, int location) 
 { 
 	if (itemId > OBJECT_TYPE_0_MAX_ID)
 	return (0); 
 
-	if (j0[itemId] != r5)
+	if (item_location[itemId] != r5)
 		return (0); 
 
 	if (location < 0)
@@ -1065,17 +1073,31 @@ int isItemAtLocation (int itemId, int location)
 	return (0); 
 } 
 			  
-			  int q8(b2, t4)
-					  int b2; int t4; { if (b2 > OBJECT_TYPE_0_MAX_ID) return (0); if (t4 != -1) if (t4 < 1024)
-			  {
-				  if (object_type_3_buffer[b2] != t4) return (0);
-			  }
-					  else if (!(isObjectFlagSet(b2, t4 - 1024))) return
-						  (0); if (j0[b2] == object_type_3_buffer[PLAYER_LOCATION]) return (1);
+int q8(int b2, int t4)
+{ 
+	if (b2 > OBJECT_TYPE_0_MAX_ID) 
+		return (0); 
+	
+	if (t4 != -1) 
+		if (t4 < 1024)
+		{
+			if (object_type_3_buffer[b2] != t4) 
+				return (0);
+		} else if (!(isObjectFlagSet(b2, t4 - 1024))) 
+			return (0); 
+		
+		if (item_location[b2] == object_type_3_buffer[PLAYER_LOCATION]) 
+			return (1);
+
 #ifdef m4
-			  if (!(isObjectFlagSet(b2, m4))) return (0); if (j0[b2] + 1 == object_type_3_buffer[PLAYER_LOCATION]) return (1);
+		if (!(isObjectFlagSet(b2, m4))) 
+			return (0); 
+		
+		if (item_location[b2] + 1 == object_type_3_buffer[PLAYER_LOCATION]) 
+			return (1);
 #endif
-			  return (0); }
+		return (0); 
+}
 
 processMoveCommand(destinationLocation, messageIdToPrint, l10, u7, v8, l11, h7, s8, v9, p10, t9, h8, b13, v10, a8, b14) int destinationLocation, messageIdToPrint, l10, u7, v8, l11, h7, s8, v9, p10, t9, h8, b13, v10, a8, b14;
 { 
@@ -1218,12 +1240,17 @@ doMove:
 } 
 			  
 			  
-			  s9(b2, t4) int b2, t4; { j0[b2] = (t4 <= OBJECT_TYPE_1_MAX_ID || t4 ==
-				  r5) ? t4 : object_type_3_buffer[t4];
+			  
+set_object_location(int objectId, int newLocationId)  
+{ 
+	item_location[objectId] = (newLocationId <= OBJECT_TYPE_1_MAX_ID || newLocationId == r5) ? newLocationId : object_type_3_buffer[newLocationId];
+
 #if defined (g11) && defined (v5)
-			  modifyObjectFlag('s', v5, g11);
+	modifyObjectFlag('s', v5, g11);
 #endif
-			  return; } 
+			  
+	return; 
+} 
 			  
 l12(int b2, int t4, int j4) 
 { 
@@ -1249,10 +1276,22 @@ f3(int b2, int t4)
 } 
 
 z5(b2, t4) int b2, t4;
-			  { object_type_3_buffer[b2] = object_type_3_buffer[object_type_3_buffer[t4]]; return; } c16(b2, t4) int b2, t4; { object_type_3_buffer[object_type_3_buffer[b2]]
-				  = (t4 > OBJECT_TYPE_3_MAX_ID || t4 < OBJECT_TYPE_3_MIN_ID) ? t4 : object_type_3_buffer[t4]; return; } t10(b2, t4) int b2, t4;
-			  { object_type_3_buffer[b2] = j0[(t4 < OBJECT_TYPE_3_MIN_ID || t4 > OBJECT_TYPE_3_MAX_ID) ? t4 : object_type_3_buffer[t4]]; *getObjectPointer(b2) = -1; return;
-			  } 
+{ 
+	object_type_3_buffer[b2] = object_type_3_buffer[object_type_3_buffer[t4]]; 
+	return; 
+} 
+
+c16(b2, t4) int b2, t4; { 
+	object_type_3_buffer[object_type_3_buffer[b2]] = (t4 > OBJECT_TYPE_3_MAX_ID || t4 < OBJECT_TYPE_3_MIN_ID) ? t4 : object_type_3_buffer[t4]; 
+	return; 
+} 
+
+t10(b2, t4) int b2, t4;
+{ 
+	object_type_3_buffer[b2] = item_location[(t4 < OBJECT_TYPE_3_MIN_ID || t4 > OBJECT_TYPE_3_MAX_ID) ? t4 : object_type_3_buffer[t4]]; 
+	*getObjectPointer(b2) = -1; 
+	return;
+} 
 			  
 			  int t11(b2) int b2; // Not quite sure about this, because I can't see how getObkjectPointer could return -1
 			  { 

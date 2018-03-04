@@ -77,7 +77,13 @@ int q34() {
 	return;
 } 
 
-int w11() { n27(); m25(); return; } int v16() {
+int hall_of_mt_king_155() { 
+	n27(); 
+	move_from_mt_king(); 
+	return; 
+} 
+
+int v16() {
 	v40(); f24(); return;
 } int m24() {
 	u31(); d36(); t44(); q39(); n30(); p41(); u32(); b32(); return;

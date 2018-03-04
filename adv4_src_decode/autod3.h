@@ -5,7 +5,7 @@ command_outside_building_136(); extern int d14(); extern int s11(); extern int i
 extern int command_in_building_141(); extern int r8(); extern int j11(); extern int r9(); extern
 int p13(); extern int j12(); extern int t13(); extern int l16(); extern
 int h9(); extern int command_top_of_small_pit_150(); extern int u9(); extern int x12(); extern int
-p14(); extern int c17(); extern int w11(); extern int q10(); extern int
+p14(); extern int c17(); extern int hall_of_mt_king_155(); extern int q10(); extern int
 m7(); extern int n10(); extern int c18(); extern int a10(); extern int s12();
 extern int j13(); extern int n11(); extern int v11(); extern int k6(); extern
 int a11(); extern int g13(); extern int z7(); extern int p15(); extern int
@@ -17,7 +17,7 @@ int n12(); extern int q12(); extern int j15(); extern int g15(); extern
 int e10(); extern int j16(); extern int j17(); extern int z9(); extern int
 h11(); extern int w13(); extern int m8(); extern int o6(); extern int l17();
 extern int x13(); extern int y11(); extern int r13(); extern int k8(); extern
-int n13(); extern int m9(); extern int d17(); extern int o7(); extern int
+int n13(); extern int m9(); extern int bedquilt_207(); extern int command_swiss_cheese_208(); extern int
 j18(); extern int i18(); extern int y12(); extern int f5(); extern int v14();
 extern int d18(); extern int t14(); extern int w14(); extern int d19();
 extern int v15(); extern int q13(); extern int v16(); extern int o8(); extern
@@ -43,7 +43,7 @@ g19(); extern int b17(); extern int r16(); extern int h12(); extern int
 h13(); extern int t19(); extern int q18(); extern int o12(); extern int
 q19(); extern int c23(); extern int q20(); extern int t20(); extern int
 m14(); extern int d22(); extern int g20(); extern int p20(); extern int
-v19(); extern int h14(); extern int m15(); extern int g21(); extern int
+v19(); extern int h14(); extern int m15(); extern int command_vaulted_ceiling_316(); extern int
 y15(); extern int x18(); extern int x19(); extern int KilobyteInputBuffer0(); extern int
 f8(); extern int i24(); extern int m16(); extern int a17(); extern int x20();
 extern int h15(); extern int v20(); extern int p21(); extern int o13();
@@ -270,7 +270,7 @@ int (*command_by_location_dispatch_table[])()= {
 	x12,	// 152
 	p14,	// 153
 	c17,	// 154
-	w11,	// 155
+	hall_of_mt_king_155,	// 155
 	q10,	// 156
 	m7,	// 157
 	n10,	// 158
@@ -322,8 +322,8 @@ int (*command_by_location_dispatch_table[])()= {
 	n13,	// 204
 	m9,	// 205
 	command_noop,	// 206
-	d17,	// 207
-	o7,	// 208
+	bedquilt_207,	// 207
+	command_swiss_cheese_208,	// 208
 	j18,	// 209
 	i18,	// 210
 	y12,	// 211
@@ -429,7 +429,7 @@ int (*command_by_location_dispatch_table[])()= {
 	v19,	// 311
 	h14,	// 312
 	m15,	// 313
-	g21,	// 314
+	command_vaulted_ceiling_316,	// 314
 	y15,	// 315
 	x18,	// 316
 	x19,	// 317
@@ -793,14 +793,14 @@ command_noop,command_noop,command_noop,command_noop,command_noop,command_noop,co
 command_noop,command_noop,command_noop,command_noop,command_noop,command_noop,command_noop,command_noop,command_noop,command_noop,command_noop, command_noop,command_noop,command_noop,command_noop,command_noop,command_noop,command_noop,command_noop,command_noop,command_noop,command_noop,
 command_noop,command_noop,x11,e9,command_noop,command_noop,command_noop,command_noop,command_noop,command_noop,command_noop, command_noop,command_noop,command_noop,command_noop,command_noop,command_noop,command_noop,command_noop,command_noop,command_noop,command_noop,
 command_noop,command_noop,command_noop,command_noop,command_outside_building_136,d14,s11,i16,d15,n9,r8, j11,r9,p13,j12,t13,l16,h9,command_top_of_small_pit_150,u9,x12,p14,
-c17,w11,q10,m7,n10,c18,a10,s12,j13,n11,v11, k6,a11,g13,z7,p15,j14,r10,k7,d16,o5,r11,
+c17,hall_of_mt_king_155,q10,m7,n10,c18,a10,s12,j13,n11,v11, k6,a11,g13,z7,p15,j14,r10,k7,d16,o5,r11,
 r12,g14,v12,v13,z8,c19,q11,w12,h10,p16,i17, n12,q12,j15,g15,e10,j16,j17,z9,h11,w13,m8,
-o6,l17,x13,y11,r13,k8,n13,m9,command_noop,d17,o7, j18,i18,y12,f5,v14,d18,t14,w14,d19,v15,q13,
+o6,l17,x13,y11,r13,k8,n13,m9,command_noop,bedquilt_207,command_swiss_cheese_208, j18,i18,y12,f5,v14,d18,t14,w14,d19,v15,q13,
 v16,o8,s13,v17,e11,b15,l18,t15,t16,e12,s14, i19,p17,f6,m10,e13,q14,e14,n14,s15,u10,c20,
 y13,g16,c21,r14,l19,f7,i20,p18,y14,q15,k9, a12,x14,m11,x15,a13,i21,k10,t17,x16,n15,o9,
 m12,m13,o10,a14,s16,q16,b16,d20,i22,a15,u11, g17,i23,t18,c22,w15,n16,q17,r15,a16,d21,x17,
 v18,o11,j19,p19,u12,g18,w16,k11,e15,g19,b17, r16,h12,h13,t19,q18,o12,q19,c23,q20,t20,m14,
-d22,g20,p20,v19,h14,m15,g21,y15,x18,x19,KilobyteInputBuffer0, f8,i24,m16,a17,x20,h15,v20,p21,o13,h16,b18,
+d22,g20,p20,v19,h14,m15,command_vaulted_ceiling_316,y15,x18,x19,KilobyteInputBuffer0, f8,i24,m16,a17,x20,h15,v20,p21,o13,h16,b18,
 w17,KilobyteInputBuffer1,e16,n17,f9,x21,c24,l20,a18,o14,s17, c25,f10,q21,w18,e17,d23,s18,b19,f11,z10,s19,
 u13,i25,r17,p22,m17,z11,n18,a19,b20,i26,p23, g22,q22,k12,s20,c26,z12,r18,r19,q23,n19,u14,
 o15,f12,v21,KilobyteInputBuffer2,q24,i27,q25,h17,q26,t21,w19, f13,k13,u15,z13,t22,h18,i28,m18,v22,s21,o16,

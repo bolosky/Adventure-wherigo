@@ -15,7 +15,7 @@ int i40() {
 
 int r24() {
 	if (object_type_3_buffer[697] == 1) {
-		if (j0[85] == 485)
+		if (item_location[85] == 485)
 		{
 			printMessage(64, 1520, 0); // Your hoot echoes in the distance, but otherwise nothing happens.
 		} 
@@ -69,7 +69,7 @@ int p29() {
 		if (object_type_3_buffer[PLAYER_LOCATION] == 388)
 		{
 			if (object_type_3_buffer[86] == 0) { printMessage(64, 1304, 0); } if (object_type_3_buffer[86] == 1) {
-				s9(88, object_type_3_buffer[671]); l12(0, 86, 2);
+				set_object_location(88, object_type_3_buffer[671]); l12(0, 86, 2);
 				printMessage(64, 1323, 0);
 			} printMessage(64, 1329, 0);
 		}
@@ -85,7 +85,7 @@ int p29() {
 			}
 		} if (isObjectFlagSet(t11(671), 5) || object_type_3_buffer[715] == 0) { printMessage(64, 1340, 0); } if (object_type_3_buffer[134] < object_type_3_buffer[715])
 		{
-			l12(1, 700, 715); object_type_3_buffer[700] -= object_type_3_buffer[134]; printMessage(13, 1339, 700); s9(134, object_type_3_buffer[671]);
+			l12(1, 700, 715); object_type_3_buffer[700] -= object_type_3_buffer[134]; printMessage(13, 1339, 700); set_object_location(134, object_type_3_buffer[671]);
 			l12(1, 134, 715); b26(); if (object_type_3_buffer[699] == 0) { modifyObjectFlag('s', 134, 14); printMessage(0, 134, 0); }
 		}
 		else {
@@ -98,7 +98,7 @@ int p29() {
 		object_type_3_buffer[697] == 1) && g10(34, -1)) {
 		if (isObjectFlagSet(39, 4) && !(isObjectFlagSet(97, 4))) {
 			modifyObjectFlag('s', 97, 4);
-			s9(97, object_type_3_buffer[671]); printMessage(64, 1357, 0);
+			set_object_location(97, object_type_3_buffer[671]); printMessage(64, 1357, 0);
 		} printMessage(64, 828, 0);
 	} if (!(object_type_3_buffer[697] == 2)) {
 		return
@@ -130,7 +130,7 @@ int p29() {
 
 int blast_command() {
 	if (object_type_3_buffer[717] == 3 && isObjectFlagSet(104, 4)) {
-		if (j0[104] == 485) { 
+		if (item_location[104] == 485) { 
 			printMessage(64, 1401, 0); // I think enough is enough.
 		} 
 		
@@ -146,9 +146,9 @@ int blast_command() {
 		
 		modifyObjectFlag('s', 381, 4); 
 		f3(672, 380);
-		s9(104, 485); 
-		s9(134, 485); 
-		s9(82, object_type_3_buffer[671]); 
+		set_object_location(104, 485); 
+		set_object_location(134, 485); 
+		set_object_location(82, object_type_3_buffer[671]); 
 		printMessage(64, 1376, 0); // There  is  a  loud  explosion  at  the  other end of the repository and a section of the far wall collapses, burying the  dwarves  in  the  rubble. The  settling dust reveals a dark hole leading northeast. When the air is finally clear, a snow-white golden-horned unicorn walks out of  the  hole and,  gracefully  picking  its  way  through  the heaps of rubble, calmly approaches you.
 	} 
 	
@@ -169,7 +169,7 @@ int u20() { printMessage(64, 1382, 0); } int KilobyteInputBuffer9() {
 		} if (currentCommandContains(52)) { printMessage(64, 1417, 0); } if (!(isItemAtLocation(t11(object_type_3_buffer[670]), -1))) {
 			if (object_type_3_buffer[705] < object_type_3_buffer[721]
 				|| isObjectFlagSet(t11(670), 12)) {
-				s9(object_type_3_buffer[670], r5); h29();
+				set_object_location(object_type_3_buffer[670], r5); h29();
 			}
 			else { printMessage(64, 897, 0); }
 		} if
@@ -514,22 +514,22 @@ g31() { f3(700, 1471); f3(701, 1473); c28(); longjmp(done_with_command, 1); } in
 	modifyObjectFlag('s', 425, 13); modifyObjectFlag('s', 426, 13); l12(0, 760, 1); f3(682, 203); object_type_3_buffer[756] = cheezy_rand(300 - 150 + 1) + 150;
 	l12(0, 733, 1); object_type_3_buffer[761] = cheezy_rand(30 - 15 + 1) + 15; object_type_3_buffer[759] = cheezy_rand(800 - 650 + 1) + 650; object_type_3_buffer[763]
 		= cheezy_rand(160 - 120 + 1) + 120; l12(0, 762, -1); f3(684, 1348); *getObjectPointer(675) = -1; object_type_3_buffer[675] = OBJECT_TYPE_0_MIN_ID - 1;
-	while (++object_type_3_buffer[675] <= OBJECT_TYPE_0_MAX_ID) { s9(object_type_3_buffer[675], 484); object_type_3_buffer[700] = cheezy_rand(100); } s9(98, 141);
-	s9(99, 141); s9(4, 144); s9(100, 146); s9(102, 147); s9(5, 150); s9(101, 149);
-	s9(6, 223); s9(105, 225); s9(7, 155); s9(8, 152); s9(106, 232); s9(108, 236);
-	s9(110, 484); s9(111, 140); s9(11, 159); s9(12, 156); s9(13, 238); s9(16, 165);
-	s9(18, 226); s9(20, 247); s9(21, 244); s9(22, 244); s9(38, 299); s9(30, 252);
-	s9(34, 311); s9(40, 225); s9(44, 154); s9(45, 153); s9(46, 160); s9(47, 161);
-	s9(48, 162); s9(50, 222); s9(51, 224); s9(53, 226); s9(55, 228); s9(58, 229);
-	s9(124, 229); s9(61, 296); s9(63, 299); s9(65, 374); s9(42, 377); s9(41, 377);
-	s9(52, 313); s9(118, 321); s9(119, 433); s9(66, 346); s9(68, 369); s9(35, 314);
-	s9(32, 370); s9(33, 367); s9(116, 434); s9(24, 323); s9(36, 291); s9(37, 291);
-	s9(56, 291); s9(43, 462); s9(31, 254); s9(14, 256); s9(57, 239); s9(67, 295);
-	s9(114, 294); s9(25, 263); s9(103, 268); s9(62, 242); s9(26, 240); s9(78, 393);
-	s9(79, 394); s9(86, 388); s9(87, 388); s9(92, 411); s9(89, 419); s9(91, 421);
-	s9(135, 383); s9(80, 416); s9(85, 205); s9(81, 204); s9(75, 203); s9(76, 419);
-	s9(77, 393); s9(70, 312); s9(120, 140); s9(71, 434); s9(90, 435); s9(95, 463);
-	s9(72, 393); s9(120, 140); s9(93, 137); s9(123, 318); s9(121, 484); s9(113, 158);
+	while (++object_type_3_buffer[675] <= OBJECT_TYPE_0_MAX_ID) { set_object_location(object_type_3_buffer[675], 484); object_type_3_buffer[700] = cheezy_rand(100); } set_object_location(98, 141);
+	set_object_location(99, 141); set_object_location(4, 144); set_object_location(100, 146); set_object_location(102, 147); set_object_location(5, 150); set_object_location(101, 149);
+	set_object_location(6, 223); set_object_location(105, 225); set_object_location(7, 155); set_object_location(8, 152); set_object_location(106, 232); set_object_location(108, 236);
+	set_object_location(110, 484); set_object_location(111, 140); set_object_location(11, 159); set_object_location(12, 156); set_object_location(13, 238); set_object_location(16, 165);
+	set_object_location(18, LOCATION_ORIENTAL); set_object_location(20, 247); set_object_location(21, 244); set_object_location(22, 244); set_object_location(38, 299); set_object_location(30, 252);
+	set_object_location(34, 311); set_object_location(40, 225); set_object_location(44, 154); set_object_location(45, 153); set_object_location(46, 160); set_object_location(47, 161);
+	set_object_location(48, 162); set_object_location(50, 222); set_object_location(51, 224); set_object_location(53, LOCATION_ORIENTAL); set_object_location(55, 228); set_object_location(58, 229);
+	set_object_location(124, 229); set_object_location(61, 296); set_object_location(63, 299); set_object_location(65, 374); set_object_location(42, 377); set_object_location(41, 377);
+	set_object_location(52, 313); set_object_location(118, 321); set_object_location(119, 433); set_object_location(66, 346); set_object_location(68, 369); set_object_location(35, 314);
+	set_object_location(32, 370); set_object_location(33, 367); set_object_location(116, 434); set_object_location(24, 323); set_object_location(36, 291); set_object_location(37, 291);
+	set_object_location(56, 291); set_object_location(43, 462); set_object_location(31, 254); set_object_location(14, 256); set_object_location(57, 239); set_object_location(67, 295);
+	set_object_location(114, 294); set_object_location(25, 263); set_object_location(103, 268); set_object_location(62, 242); set_object_location(26, 240); set_object_location(ITEM_ORB, 393);
+	set_object_location(79, 394); set_object_location(86, 388); set_object_location(87, 388); set_object_location(92, 411); set_object_location(89, 419); set_object_location(91, 421);
+	set_object_location(135, 383); set_object_location(80, 416); set_object_location(85, 205); set_object_location(81, 204); set_object_location(75, 203); set_object_location(76, 419);
+	set_object_location(77, 393); set_object_location(70, 312); set_object_location(120, 140); set_object_location(71, 434); set_object_location(90, 435); set_object_location(95, 463);
+	set_object_location(72, 393); set_object_location(120, 140); set_object_location(93, 137); set_object_location(123, 318); set_object_location(121, 484); set_object_location(113, 158);
 	modifyObjectFlag('s', 4, 6); modifyObjectFlag('s', 5, 6); modifyObjectFlag('s', 8, 6); modifyObjectFlag('s', 12, 6); modifyObjectFlag('s', 16, 6); modifyObjectFlag('s', 20, 6);
 	modifyObjectFlag('s', 21, 6); modifyObjectFlag('s', 22, 6); modifyObjectFlag('s', 23, 6); modifyObjectFlag('s', 32, 6); modifyObjectFlag('s', 35, 6); modifyObjectFlag('s', 14, 6);
 	modifyObjectFlag('s', 30, 6); modifyObjectFlag('s', 25, 6); modifyObjectFlag('s', 75, 6); modifyObjectFlag('s', 95, 6); modifyObjectFlag('s', 72, 6); l12(0, 114, 1);
@@ -576,7 +576,7 @@ int s34() {
 		} 
 		
 		if ((437 <= object_type_3_buffer[671] && object_type_3_buffer[671] <= 461)) {
-			s9(122, object_type_3_buffer[671]);
+			set_object_location(122, object_type_3_buffer[671]);
 		} 
 		
 		if (object_type_3_buffer[134] > 0) {
@@ -584,13 +584,13 @@ int s34() {
 				if (cheezy_rand(100) < 15) {
 					object_type_3_buffer[134] -= 1; 
 					if (object_type_3_buffer[134] == 0) {
-						s9(134, 484);
+						set_object_location(134, 484);
 					}
 				}
 			} else {
-				if (!(j0[134] == object_type_3_buffer[671] || j0[134] == object_type_3_buffer[672])) {
+				if (!(item_location[134] == object_type_3_buffer[671] || item_location[134] == object_type_3_buffer[672])) {
 					l12(0, 134, 0);
-					s9(134, 484);
+					set_object_location(134, 484);
 				}
 			}
 		} 
@@ -611,7 +611,7 @@ int s34() {
 	
 	if (isObjectFlagSet(t11(697), 0)) {
 		if (g10(95, -1) && object_type_3_buffer[95] > 1) {
-			if (j0[95] == object_type_3_buffer[671])
+			if (item_location[95] == object_type_3_buffer[671])
 			{
 				l12(0, 95, 3);
 			}
@@ -620,7 +620,7 @@ int s34() {
 			}
 		}
 		
-		if (isObjectFlagSet(t11(672), 11) && j0[134] == object_type_3_buffer[672] && !(isObjectFlagSet(t11(710), 5))) {
+		if (isObjectFlagSet(t11(672), 11) && item_location[134] == object_type_3_buffer[672] && !(isObjectFlagSet(t11(710), 5))) {
 			if (cheezy_rand(100) < 97) {
 				processMoveCommand(object_type_3_buffer[672], -1); 
 				modifyObjectFlag('c', t11(697), 0);
@@ -665,8 +665,8 @@ int s34() {
 		h23(); 
 	} 
 	
-	if (!(j0[121] == 484 || j0[121] == 485)) {
-		s9(121, object_type_3_buffer[671]); 
+	if (!(item_location[121] == 484 || item_location[121] == 485)) {
+		set_object_location(121, object_type_3_buffer[671]); 
 		if (object_type_3_buffer[121] > 0) {
 			b26(); 
 			if (object_type_3_buffer[699] == 0)
@@ -725,7 +725,7 @@ int s34() {
 		modifyObjectFlag('s', t11(671), 4); 
 		if (!(object_type_3_buffer[134] < 1)) {
 			if (!(isObjectFlagSet(t11(671), 7) || isObjectFlagSet(t11(671), 5))) {
-				s9(134, object_type_3_buffer[671]);
+				set_object_location(134, object_type_3_buffer[671]);
 			}
 		} 
 		
@@ -745,8 +745,8 @@ int s34() {
 	} else {
 		if (!(isObjectFlagSet(t11(672), 3)))
 		{
-			if (!(j0[99] == object_type_3_buffer[672] && object_type_3_buffer[99] == 1)) {
-				if (!(j0[95] == object_type_3_buffer[672] && object_type_3_buffer[95] != 1))
+			if (!(item_location[99] == object_type_3_buffer[672] && object_type_3_buffer[99] == 1)) {
+				if (!(item_location[95] == object_type_3_buffer[672] && object_type_3_buffer[95] != 1))
 				{
 					if ((isItemAtLocation(58, -1) || cheezy_rand(100) < 25) && !(isObjectFlagSet(t11(710), 6)) && object_type_3_buffer[717] < 3) {
 						printMessage(0, 812, 0); // You fell into a pit and broke every bone in your body!
@@ -789,7 +789,7 @@ int s34() {
 		t39();
 	} 
 	
-	if (j0[99] == 485 && object_type_3_buffer[PLAYER_LOCATION] == 136 && object_type_3_buffer[717] < 4) {
+	if (item_location[99] == 485 && object_type_3_buffer[PLAYER_LOCATION] == 136 && object_type_3_buffer[717] < 4) {
 		printMessage(0, 997, 0);  // There's  not  much  point  in  wandering  around  out here, and you can't explore the cave without a lamp.  So let's just call it a day.
 		l12(0, 718, 1);
 		a29();
@@ -824,7 +824,7 @@ int s35() {
 			printMessage(0, 1500, 0); // You  feel  several bites on your legs.  You try to protect them, but more rats sink their teeth into your arms, then one leaps from the sewage  and hangs   onto   your  ear,  weighing  you  down,  now  they  are  at  your throat.............
 			processMoveCommand(419, -1); 
 			if (isItemAtLocation(110, -1)) { 
-				s9(110, 484); 
+				set_object_location(110, 484); 
 			} 
 			l12(0, 91, 0);
 			die();
@@ -1072,7 +1072,7 @@ int s35() {
 		if (currentCommandContains(73)) {
 			if (object_type_3_buffer[PLAYER_LOCATION] == 225 || object_type_3_buffer[PLAYER_LOCATION] == 392 || object_type_3_buffer[PLAYER_LOCATION] == 429)
 			{
-				s9(73, object_type_3_buffer[671]);
+				set_object_location(73, object_type_3_buffer[671]);
 			}
 		} 
 		

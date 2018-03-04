@@ -1,0 +1,1069 @@
+######################################
+Hints for Adventure 660 (Adventure 4+)
+by Arthur DiBianca
+amended, with author's permission
+by Mike Arnautov
+
+hint file version 1.0 (9/12/97)
+          version 1.1 (22/2/04)
+######################################
+
+
+These hints are based on Mike Arnautov's 660-point ADVENTURE4+, version
+10.09. They are organized like a UHS file or Infocom's InvisiClues.
+The questions are all listed together first. I've included a few fakes.
+Try to read the answers item by item to avoid getting more information
+than you want.
+
+I am assuming that readers do not have previous experience with 
+Crowther and Woods's 350-point Adventure or its various descendants.
+Many of the hints given here will also apply to those earlier games.
+
+If you have any questions or suggestions, send an email to
+<adibianca@logicfactory.com> or to <mla@britishlibrary.net>.
+
+Enjoy!
+
+
+Question List
+=============
+
+A. General Questions
+ Can I restore my saved games without having to wait?
+ I'm dying of thirst? What do I do?
+ I'm running out of light! What can I do?
+ What do I do about these little dwarves?
+ A pirate stole my treasure. How can I get it back?
+ What should I do with the dwarf's horn?
+
+B. Above Ground
+ What am I doing here?
+ How do I get into the cave?
+ How do I get past the wizard's gate?
+ What's the meaning of the wooden notice?
+
+C. Hall of Mists and Vicinity
+ How do I get past the snake?
+ How can I keep the bird from being frightened?
+ How do I get past the dragon?
+ How do I get the Persian rug?
+ How do I get the gold nugget out of the cave?
+ What does the hollow voice mean?
+ How do I get across the fissure?
+ How do I navigate the maze of passages, all different?
+ How do I navigate the maze of passages, all alike?
+ What does the message in the sandstone chamber mean?
+ How do I get the flute from the shadowy figure?
+
+D. Anteroom and Vicinity
+ What are the magazines for?
+ How do I get out of Witt's End?
+ How do I get the tusk out of the very low room?
+ How do I navigate the maze of passages with streams?
+ How do I turn the spoon into a treasure?
+ What is the rope in the chapel for?
+ How can I get out of the giant's dungeon?
+ What do I do in the giant's living quarters?
+ How do I get past the spider?
+ How do I get the mask in the thieves den?
+ How do I get the orb from the cellar?
+ What do the images in the orb mean?
+ What is the crypt for?
+ How do I get into the storage room in the tower?
+ How do I get past the dwarves at the top of the stairs?
+ What is special about the chalice?
+
+E. Bedquilt and Vicinity
+ Can I get around the Bedquilt area more easily?
+ How do I keep the vase from shattering?
+ How do I get a light source into the room past the emerald?
+ What do I do with the clam?
+ How do I get past the quicksand?
+ How do I cross the reservoir?
+ How do I get the sword in the stone?
+ How can I keep from losing objects in the valuation room?
+
+F. The Plant and Beyond
+ What do I do with the little plant?
+ How do I get past the rusted door?
+ How do I get past the ogre?
+ Is there anything to do in the Sorcerer's Lair?
+ How do I get past the sheets of slime?
+ How do I get out of the maze of ice tunnels?
+
+G. The Troll and Beyond
+ How do I get past the troll?
+ How do I get back across the wooden bridge?
+ Is there anything to do in the volcano room?
+ What do I do at the minotaur statue?
+ How do I get away from the gooseberry goblins?
+ How do I get through the fog?
+ What is the pentagram for?
+ How can I get the starstone after I drop it?
+ How can I get back past the basilisk?
+ How do I get out of the catacombs?
+ How do I get the skeleton's sceptre past the bridge?
+ How do I learn all skeleton keys?
+ What is the Djinn's word for?
+
+H. The End Game
+ The cave is closing! What should I do?
+ The cave has closed. What's going on here?
+ I'm surrounded by gray mist. What do I do?
+ I'm back at end of road again. What do I do?
+
+I. Super Spoilers
+ What are all the magic words?
+ What are all the treasures?
+ How do I get all the points?
+
+
+Questions and Answers
+=====================
+
+A. General Questions
+--------------------
+
+Can I restore my saved games without having to wait?
+
+ - With the MS-DOS version, you can change your computer's time to
+   be more than 30 minutes past the save time. Or you can change the time
+   in the save file to be earlier. Changing the byte at position 0C (hex) 
+   to a value of 0 always seems to work.
+
+
+I'm dying of thirst? What do I do?
+
+ - Drink some water.
+
+ - There are various places in the game (including the building) that
+   make good water sources. You can also carry one drink's worth in the
+   bottle.
+
+ - And the flask also takes a small amount of water.
+
+
+I'm running out of light! What can I do?
+
+ - You could make sure you finish the game before your lantern dies.
+
+ - You could buy some batteries in the 'all different' maze.
+
+ - You could use the appropriate magic words. They will give your lamp
+   a one-time boost good for several hundred moves.
+
+ - Harnessing electricity is a kind of sorcery.
+
+ - There are a couple of words you may have seen that suggest a famous
+   person often associated with electricity.
+
+ - They're found in the Sorcerer's Lair. Type them as separate commands.
+
+ - Don't do it until your lamp is out of power.
+
+ - Drop your lamp first. 
+
+
+What do I do about these little dwarves?
+
+ - If you could just get them on your side, you could have one heck
+   of a party.
+
+ - But they're set in their ways. 
+
+ - The first dwarf that attacks you drops an axe. Get it, then throw it
+   whenever there are dwarves attacking you.
+
+ - Throwing the sword works too, as does just waving it about.
+
+ - Eventually, you'll also learn a magic word that you can use to defeat
+   them.
+
+
+A pirate stole my treasure. How can I get it back?
+
+ - Actually, you need this to happen, or you won't be able to get his
+   treasure chest.
+ 
+ - After he steals from you, go find his chest in the 'all alike' maze.
+   He won't steal from you after you get it.
+
+
+What should I do with the dwarf's horn?
+
+ - A bunch of dwarves attack you when you blow it.
+
+ - The right magic word might get rid of them.
+
+ - It's handy for getting back any treasure stolen by the dwarves.
+
+ - It's easier if you wear some protection.
+
+ - And a magic way to get rid of the dwarves helps too, just be
+   careful you follow the instructions.
+
+ - Then again, you could call the owl instead.
+
+
+B. Above Ground
+---------------
+
+What am I doing here?
+ 
+ - As an adventurer of some ambition, you are trying to collect a bunch 
+   of treasures in the small brick building without getting killed.
+
+ - If you do, you might get a nice reward.
+
+ - You may be looking for something in which to carry water.
+
+ - Follow the path that leads away from the house.
+
+ _ I said "the path", not "the road"!
+
+
+How do I get into the cave?
+	
+ - There are two ways.
+
+ - The obvious way is to unlock the grate with the keys from the building.
+
+ - You will also learn a couple of magic words that will let you teleport
+   in and out from the building.
+
+
+How do I get past the wizard's gate?
+
+ - The gate is hinged on both sides.
+
+ - First, you have to undo the hinges with some sort of screwdriver.
+
+ - A certain treasure would make a good screwdriver.
+
+ - I'm lying -- there's no way past.
+
+
+What's the meaning of the wooden notice?
+
+ - I would read it as 'To those who come after me: this is the place to
+   ---- the s--'.
+
+ - It's not important until much later in the game. I'd better not reveal
+   the answer just yet.
+
+
+C. Hall of Mists and Vicinity
+-----------------------------
+
+How do I get past the snake?
+
+ - You can't subdue it yourself.
+
+ - You need the help of another being.
+
+ - Catch the bird in the cage, then 'drop bird' or 'free bird' in the 
+   Hall of Mt King.
+
+
+How can I keep the bird from being frightened?
+
+ - Read carefully what the game tells you when you first ask for help.
+
+ - The bird is afraid of something about you.
+
+ - Did you read the instructions offered to you when you entered the game?
+   It is written: "Some objects have side-effects; for instance, rods
+   scare birds."
+
+ - It's afraid of your black rod. Drop it before trying to catch the bird.
+
+
+How do I get past the dragon?
+
+ - Just attack it.
+
+ - Yes, with your bare hands.
+
+ - Don't you wish all the monsters were this wimpy?
+
+
+How do I get the Persian rug?
+
+ - Roll it up first.
+
+
+How do I get the gold nugget out of the cave?
+
+ - You could try throwing it to that passage above the dome.
+
+ - But the result is not very convenient.
+
+ - Rather than carrying it up the steps, use a magic-word exit.
+
+
+What does the hollow voice mean?
+
+ - It's saying a magic word.
+
+ - The word will teleport you between the Y2 room and the building.
+   This is usually the quickest way to get from the cave to the building
+   and back.
+
+
+How do I get across the fissure?
+
+ - Wave the rod. (Nothing really suggests this specifically, but it
+   stands to reason that magic wands are made for waving.)
+
+
+How do I navigate the maze of passages, all different?
+
+ - The names of the locations are subtly different.
+
+ - By making a grid and noting where each direction leads from
+   each location, you can build a map. It's a hassle, though.
+
+ - Actually, you don't need to go into this maze to finish the game with
+   all the points.
+
+ - I haven't mapped it all out myself. From the west end of long hall,
+   you can go 'south, up, up, south' to get to the vending machine.
+
+ - 'north, down, down, down' should get you back out.
+
+
+How do I navigate the maze of passages, all alike?
+
+ - This is probably the most famous maze in all of computer gaming. You
+   should feel honored just to be lost in it. 
+
+ - To distinguish the rooms from each other, drop various objects in them.
+
+ - To distinguish the rooms from each other, drop various objects in them.
+   Then you can make a grid and chart out which directions go from where
+   to where.
+
+ - Or you can ask the game to cheat and show you the list of exits from
+   every location, which makes them very much less alike.
+
+ - The main thing is to get the pirate's treasure chest and any treasures
+   he's stolen from you.
+
+ - From the west end of the Hall of Mists, you can go south, east, south,
+   south, south, north, east, east, northwest to get to the chest. Then go
+   southeast, north, down to get out of the maze.
+
+
+What does the message in the sandstone chamber mean?
+
+ - It's a favourite quote from technical manuals.
+
+ - It's in Dwarvish. Surely you can read Dwarvish!
+
+ - Translate it by moving each letter back one in the alphabet.
+
+ - This method works for translating the dwarves' speech, too.
+
+
+How do I get the flute from the shadowy figure?
+
+ - Is the figure trying to attract your attention?
+
+ - Have you seen it in more than one place?
+
+ - It seems familiar.
+
+ - It looks a lot like you.
+
+ - It is you. Go to the mirror canyon for an explanation.
+
+ - There is no flute, of course. I made that up.
+
+ - But you could try 'reflect' and see what happens.
+
+ - Reflecting gets you to the other side of the mirror, though it is
+   not at all obvious.
+
+
+D. Anteroom and Vicinity
+------------------------
+
+What are the magazines for?
+
+ - They are traditionally associated with a last lousy point.
+  
+ - Leaving them at Witt's End gives you that point. 
+
+ - Why at Witt's End? I haven't the faintest idea.
+
+
+How do I get out of Witt's End?
+
+ - If you go west sixty-five times, you'll get to the anteroom. It 
+   always feels longer on the way back.
+
+ - Wait -- maybe it's 165 times.
+
+ - Actually, just wander around, going any direction except west.
+   After a few moves, you should get out.
+
+
+How do I get the tusk out of the very low room?
+
+ - There's no way to get it through the slit.
+
+ - The only way out is down into the sewer, although you seem to die
+   when you go there.
+
+ - Perhaps you should wait till the sewage level drops.
+
+ - Actually, if you go back up from the shaft and then down again, you'll
+   be able to get into the sewers.
+
+ - You'll find anything you lost down the shaft (or in the cellar), plus a
+   spoon.
+
+ - Make sure to find your way out before you drown, and before
+   the rats get you.
+
+
+How do I navigate the maze of passages with streams?
+
+ - I must say, I roll my eyes at the solution to this one.
+
+ - The game's hint suggests that you're somehow offending the dwarves,
+   I guess.
+
+ - You've just left the sewers. Maybe it's that nasty smell.
+
+ - 'wash', then wander up until you get out.
+
+
+How do I turn the spoon into a treasure?
+
+ - 'epns' seems like it ought to be a magic word.
+
+ - But it's not. 
+
+ - Did you try polishing it?
+
+ - I guess the spoon is just worthless.
+
+
+What is the rope in the chapel for?
+
+ - Climb it.
+
+
+How can I get out of the giant's dungeon?
+
+ - 'lift flagstone', then go south, then climb up.
+
+ - Of course, you probably lost some stuff when you got thrown in, and
+   the trick is getting it back.
+
+
+What do I do in the giant's living quarters?
+
+ - You could bring the food with you. Then he'll eat it and kick you
+   back out. But that doesn't get you anywhere.
+
+ - What else might the giant enjoy?
+
+ - Bring the nest with you. While he's eating the eggs, you can do what you
+   like. Of course, the nest is a treasure, so you'll need to get it back
+   somehow. See the troll question for more help.
+
+ - The room description doesn't actually say so, but you can go south, too.
+
+
+How do I get past the spider?
+
+ - Kill it with the sword.
+
+ - But surely you don't have the sword yet.
+
+ - You'll have to engage the help of a nearby friend.
+
+ - The owl will eat the spider for you. Summon him with 'hoot'.
+
+ - Your light scares him away. Turn it off first.
+
+ - To get the documents, just cut the web with your axe.
+
+
+How do I get the mask in the thieves den?
+
+ - The game says you can't. And it tells the truth.
+
+
+How do I get the orb from the cellar?
+
+ - If you could only get past the portcullis.
+
+ - Or the slab.
+
+ - Or the drain. Which is it?
+
+ - It's none of these. The actual solution seems obscure, frankly.
+
+ - Get the orb, then drop something else. If it goes down the drain,
+   get it later in the sewer.
+
+ - If you drop anything large, e.g. the sword, the wizard kicks it out
+   with you. 
+
+ - Of course, you may be able to get the orb without going into the
+   cellar.
+
+ - A portcullis is not the same thing as a solid door, and the drain
+   has its uses.
+
+ - No, you'll have to work out the rest for yourself. Or go into
+   the cellar, like everybody else does.
+
+
+
+What do the images in the orb mean?
+
+ - They're visions of things that will happen as you play the game.
+
+ - They can be used as a guide in a particular chain of problems.
+
+ - You'll have to work out for yourself how to know whether the
+   vision you see indicates your next task, or some random future
+   one.
+
+ - You don't need to use the visions, so you don't need to be told
+   how to do that.
+
+
+What is the crypt for?
+
+ - That's where the vampire shows up. I hope you found the crucifix and the
+   holy water.
+
+ - To summon the vampire, you need the wizard's help.
+
+ - There are several ways to invoke the wizard's help. One of them involves
+   the little bird. Read the description carefully.
+
+ - Sorry, I'm lying again. The vampire doesn't move into the crypt until
+   Adventure 770. In this game the crypt is just scenery.
+
+
+How do I get into the storage room in the tower?
+
+ - No way to do that in this version.
+
+
+
+How do I get past the dwarves at the top of the stairs?
+
+ - You could attack them from above.
+
+ - First you'd need to get on top of the tower from the outside.
+
+ - But you can't. There is no way to get past them. At least not in
+   this version of the game.
+
+
+What is special about the chalice?
+
+ - If you fill the chalice and then drink, some strange things happen.
+  
+ - But whatever you do, you end up losing the chalice, which is a treasure.
+
+ - It's fun to try, but I don't think you can help the princess 
+   successfully. Just treat the chalice like any other treasure.
+
+
+E. Bedquilt and Vicinity
+------------------------
+
+Can I get around the Bedquilt area more easily?
+
+ - In some places, you can type the name of an adjacent room
+   to get to it. That can help avoid the problem of crawling around and
+   winding up back where you started from.
+
+
+How do I keep the vase from shattering?
+
+ - You need to cushion its fall.
+
+ - Before you drop it, drop the pillow from the soft room.
+
+
+How do I get a light source into the room past the emerald?
+
+ - If you could carry a light source into the plover room, that would do
+   it. But nothing will fit in from the west. 
+
+ - Are there any other ways to get to the plover room?
+
+ - Yes, actually. Pay attention to the bad pun in the plover room hint.
+
+ - "Why to plover" means "Y2, plover". Typing 'plover' in the Y2 room
+   will get you there. 'Plover' will get you back too, but you can't get
+   the emerald out that way. This is not something you could figure out,
+   but you can stumble across the solution by trying to refer to the 
+   plover-egg-sized emerald as "plover".
+
+ - There is actually a way to get a light source into the plover room
+   from the alcove, as the hint suggests.
+
+ - It's something that can be in two places at once.
+
+ - But you need to ignite it first.
+
+
+
+What do I do with the clam?
+
+ - You can pick it up.
+
+ - You can open it.
+
+ - What would be a good tool for clam prying? Think of sea-related things.
+
+ - 'open clam' while you're carrying the trident.
+
+ - A pearl rolled out. Go down to the cul-de-sac and get it.
+
+
+How do I get past the quicksand?
+
+ - Create a bridge.
+
+ - Read the game's responses carefully.
+
+ - When you wave the rod here, although nothing obvious happens, you
+   temporarily solidify the quicksand. You have to wave the rod again
+   to get back.
+
+
+How do I cross the reservoir?
+
+ - A full-sized yacht would help.
+
+ - Could you magick the "Ruby Yacht" (my, what an awful pun!) to grow
+   in size? Or maybe shrink yourself enough to use the yacht?
+
+ - No dice. You can't get across it from the south.
+
+ - Read the game's hint.
+
+ - You can get to the north side by going down the whirlpool in the 
+   waterfall cavern. Make sure not to take anything but your lamp.
+
+ - Hit the gong to summon Darwin, whom you can ride south.
+
+
+How do I get the sword in the stone?
+
+ - Like the game's hint says, you're just not strong enough.
+
+ - Someone with bulging muscles could probably pull it out.
+
+ - Eat the mushroom from the dank cave.
+
+
+How can I keep from losing objects in the valuation room?
+
+ - Don't drop them there.
+
+
+F. The Plant and Beyond
+-----------------------
+
+What do I do with the little plant?
+
+ - It seems to want water.
+
+ - Bring water in your bottle, then 'water plant'.
+
+ - Do it once more for good measure. Now you can climb up to the hole.
+
+ - Maybe you should try watering it a third time?
+
+
+How do I get past the rusted door?
+
+ - It just needs a little oil.
+
+ - Fill your bottle with oil from the east pit in the Twopit room,
+   then 'oil door'.
+
+
+How do I get past the ogre?
+
+ - The game's hint warns against hand-to-hand combat. 
+
+ - Throw something.
+
+ - The axe isn't good enough.
+
+ - Throw the sword. Its name is 'Thrower', after all.
+
+
+Is there anything to do in the Sorcerer's Lair?
+
+ - Remember the magic words on the wall.
+
+ - You might have seen or will see something that emits blue light.
+   Maybe it is at home here?
+
+ - Try dropping the starstone here.
+
+ - Yes, the effect can be handy in some special circumstances, but you 
+   don't really need to do this.
+
+
+How do I get past the sheets of slime?
+
+ - Fight the green slime with something green.
+
+ - Throw the vial from the spherical room.
+
+
+How do I get out of the maze of ice tunnels?
+
+ - Map the maze. The passages are all either straight, or bend only
+   a little.
+
+ - Don't miss the sculpture.
+
+ - Look at your map upside down. It spells a five-letter word.
+
+ - Go to the 'This way out' room and use that word.
+
+
+G. The Troll and Beyond
+-----------------------
+
+How do I get past the troll?
+
+ - Throw him a treasure.
+
+ - You'll need one you can reclaim.
+
+ - Throw him the nest.
+
+ - Remember the words in the Giant room?
+
+ - Type them, one after another. You should get the response 'Done!' at the
+   end.
+
+ - The eggs then return to the Giant room.
+
+ - Make sure you don't reclaim them until you've finished with the area
+   past the bridge. Otherwise the troll will take revenge on you.
+
+
+How do I get back across the wooden bridge?
+
+ - You need help. Something scary.
+
+ - The bear can help.
+
+ - Free him, then 'get bear'.
+
+ - Use the keys to unlock the chain.
+
+ - Feed the bear first.
+
+ - Try to cross the bridge, then 'free bear'.
+
+
+Is there anything to do in the volcano room?
+
+ - Not in the original 350-point version of Adventure.
+
+ - Here, yes.
+
+ - Make a bridge. You know the routine.
+
+ - You need something to protect you from the fumes. How about a
+   mithril ring?
+
+ - You can turn the sword into a ring. Use a magic word.
+
+ - It's the word written on the stone you found the sword in.
+
+
+What do I do at the minotaur statue?
+
+ - There's a hint at a dead end elsewhere in the cave.
+
+ - You need to use the proper tool.
+
+ - The proper tool can be found in the tool room.
+
+ - Not the rags. The proper tool is a magic word.
+
+
+How do I get away from the gooseberry goblins?
+
+ - Are you familiar with the myth of Cadmus?
+
+ - I think he sowed something and grew an army of soldiers, although his
+   soldiers ended up fighting each other.
+
+ - He sowed dragon's teeth, as I recall. You can just throw them.
+
+
+How do I get through the fog?
+
+ - The game's hint suggests a question that is answered differently in
+   different places.
+
+ - 'Do I need to have my lamp on?' is a good question.
+
+ - The answer to the question is 'Not here'.
+
+
+What is the pentagram for?
+
+ - Use it to imprison summoned beings.
+
+ - You can imprison the London Dry Djinn in it.
+
+ - Drop the flask here, then open it, then free the Djinn.
+
+
+How can I get the starstone after I drop it?
+
+ - It has strange spatial properties.
+
+ - It's sort of in two places at once. One location (the one not where you
+   drop it) is where it's real.
+
+ - So when you drop it in the building, it's not really there. Note that
+   you don't get points when you drop it there.
+
+ - You need to drop it somewhere else outside.
+
+ - Remember the wooden notice? The last word was 'starstone'.
+
+ - Luckily, the Djinn will take care of the giant for you.
+
+
+How can I get back past the basilisk?
+
+ - Use the old mirror trick.
+
+ - That metal plate ought to do fine.
+
+ - But it needs polishing.
+
+ - 'rub plate' while you're carrying the rags. Then carry the
+   mirror past the basilisk.
+
+
+How do I get out of the catacombs?
+
+ - They're hard to map, since they change from game to game.
+
+ - It works like this. The first time you go through the catacombs, any
+   sequence of eighteen moves will get you back to 'Y2?'. That sequence
+   determines the layout of the catacombs. When you reenter, you have to
+   move the same way, or you end up kind of going backward. If you like,
+   you can play around with dropping objects and see what I mean. I usually
+   just go straight west the first time. Then I reenter, go west eleven or 
+   twelve times, then wander around a little until I get to the portal.
+
+ - After I leave the area past the portal, I just go straight west until
+   I'm back at 'Y2?'.
+
+
+How do I get the skeleton's sceptre past the bridge?
+
+ - You need to leave it behind and get it later.
+
+ - Leave it in the safe. You can also enter the safe from the room with 
+   vaulted ceiling.
+
+ - How do you open the safe? The game's hint suggests a skeleton key.
+
+ - Use the magic word the skeleton gave you.
+
+ - The word changes from game to game.  Make sure you use the right one.
+   (There are four of them, and you'll need to know all four to finish
+   the game.)
+
+
+How do I learn all skeleton magic words?
+
+ - You don't need them yet.
+
+ - But you will.
+
+ - Try wearing the crown.
+
+ - Can't hear anything intelligible? Maybe you should try listening.
+
+ - Just make sure you don't wind up dead.
+
+
+What is the Djinn's word for?
+
+ - It defeats dwarves. Of course, it also sometimes destroys your
+   weapons and even gets you killed. Make sure you follow the Djinn's
+   advice.
+
+
+H. The End Game
+---------------
+
+The cave is closing! What should I do?
+
+ - You should feel happy, since it means you've found all the treasures and
+   are preparing to head to the end game.
+
+ - Just wander around until the cave closes.
+
+
+The cave has closed. What's going on here?
+
+ - You need to get out of the repository.
+
+ - Breaking the mirror doesn't work.
+
+ - There's one kind of object here you haven't seen before.
+
+ - The rods with red marks (not stars) are actually dynamite.
+
+ - Blow up the northeast area.
+
+ - Drop one of the red-mark rods in the northeast area, then go southwest,
+   then 'blast'.
+
+ - If you could get one of those lamps lit, you could go through the hole.
+
+ - There's no way to light them.
+
+ - Just ride the unicorn. 
+
+
+I'm surrounded by gray mist. What do I do?
+
+ - That's it! You've won!
+
+ - Not really. You need to magic-word your way out of here.
+
+ - There are sixteen magic words in the game. Note that 'plover' is a
+   'travel option' -- it is not considered a magic word.
+
+ - Just say them in the right order. The game will respond 'Ok.' after
+   each one.
+
+ - Remember the Djinn's story about Ralph Witt?
+
+ - Ralph Witt liked the idea of reverse alphabetical order.
+
+ - Say the words in reverse alphabetical order.
+
+ - Still no luck? That's because the magic word given to you by the
+   skeleton changes from game to game, and you need to know all its
+   possible versions.
+
+ - Perhaps you should have worn the crown, which you found in the safe.
+
+
+I'm back at end of road again. What do I do?
+
+ - First, you'll notice that the locations are connected backward.
+
+ - There are other small changes.
+
+ - The notice at the view has changed.
+
+ - But it doesn't say anything useful.
+
+ - The five-inch slit is now a five-foot slit.
+
+ - Go ahead. Go on in.
+
+
+I. Super Spoilers
+-----------------
+
+What are all the magic words?
+
+ - I just can't bring myself to reveal them here. I think the hints in
+   this file tell you all you need to find them, though. Remember, there
+   are sixteen individual words, and 'plover' is not one of them.
+
+
+What are all the treasures?
+
+ - There are thirty-two treasures in all:
+
+   bag of pieces of eight (beach)
+   crown (safe)
+   nugget (nugget of gold room)
+   diamonds (west side of fissure)
+   silver (N/S passage)
+   jewelry (south side chamber)
+   coins (west side chamber)
+   treasure chest (dead end in maze of passages, all alike)
+   nest of golden eggs (Giant room)
+   trident (cavern with waterfall)
+   helmet (Morion room)
+   vase (Oriental room)
+   emerald (plover room)
+   sceptre (east end of Audience Hall)
+   yacht (southern edge of reservoir)
+   pyramid (Dark room)
+   pearl (cul-de-sac)
+   rug (secret canyon)
+   spices (chamber of boulders)
+   beads (balcony above treasure chamber)
+   chain (barren room)
+   spyglass (south end of Jonah room)
+   sculpture (ice tunnels)
+   bracelet (room with translucent walls)
+   casket of opals (very small chamber)
+   orb (cellar)
+   tusk (bones room)
+   chalice (recess in the beams)
+   sapphire (living quarters)
+   crucifix (thieves den)
+   starstone (narrow basalt shelf)
+   ring (created by player)
+ 
+
+How do I get all the points?
+
+ - Points are gained as follows:
+
+    20 for getting into a dark area of the cave for the first time
+    10 for getting to beach
+    10 for getting to Sorcerer's Lair
+    10 for getting to Valley of the Stone Faces
+     8 for freeing Djinn
+    15 for getting to Audience Hall
+     7 for discovering each treasure (224 total -- Note that the tusk is
+       not considered discovered until you drop it in the building.)
+     8 for leaving each treasure in the building (256 total)
+    16 shortly before 'cave closing' notice
+    16 for getting 'cave closing' notice
+    19 for getting to repository
+    16 for getting to gray mist
+    23 for getting to end of road in the end game
+    16 for winning
+
+   659 total? Oh, yes, the last lousy point...
+
+     1 for getting magazines at Witt's End
+
+   660 total. 
+
+ - Points can be lost as follows:
+
+    10 lost for reincarnation
+    20 lost for taking a hint
+
+###################################
+
