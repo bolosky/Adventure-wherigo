@@ -21,7 +21,7 @@ int n13(); extern int m9(); extern int bedquilt_207(); extern int command_swiss_
 j18(); extern int i18(); extern int y12(); extern int f5(); extern int v14();
 extern int d18(); extern int t14(); extern int w14(); extern int d19();
 extern int v15(); extern int q13(); extern int v16(); extern int o8(); extern
-int s13(); extern int v17(); extern int e11(); extern int b15(); extern
+int s13(); extern int v17(); extern int command_waterfall_224(); extern int b15(); extern
 int l18(); extern int t15(); extern int t16(); extern int e12(); extern
 int s14(); extern int i19(); extern int p17(); extern int f6(); extern int
 m10(); extern int e13(); extern int q14(); extern int e14(); extern int
@@ -339,7 +339,7 @@ int (*command_by_location_dispatch_table[])()= {
 	o8,	// 221
 	s13,	// 222
 	v17,	// 223
-	e11,	// 224
+	command_waterfall_224,	// 224
 	b15,	// 225
 	l18,	// 226
 	t15,	// 227
@@ -796,7 +796,7 @@ command_noop,command_noop,command_noop,command_noop,command_outside_building_136
 c17,hall_of_mt_king_155,q10,m7,n10,c18,a10,s12,j13,n11,v11, k6,a11,g13,z7,p15,j14,r10,k7,d16,o5,r11,
 r12,g14,v12,v13,z8,c19,q11,w12,h10,p16,i17, n12,q12,j15,g15,e10,j16,j17,z9,h11,w13,m8,
 o6,l17,x13,y11,r13,k8,n13,m9,command_noop,bedquilt_207,command_swiss_cheese_208, j18,i18,y12,f5,v14,d18,t14,w14,d19,v15,q13,
-v16,o8,s13,v17,e11,b15,l18,t15,t16,e12,s14, i19,p17,f6,m10,e13,q14,e14,n14,s15,u10,c20,
+v16,o8,s13,v17,command_waterfall_224,b15,l18,t15,t16,e12,s14, i19,p17,f6,m10,e13,q14,e14,n14,s15,u10,c20,
 y13,g16,c21,r14,l19,f7,i20,p18,y14,q15,k9, a12,x14,m11,x15,a13,i21,k10,t17,x16,n15,o9,
 m12,m13,o10,a14,s16,q16,b16,d20,i22,a15,u11, g17,i23,t18,c22,w15,n16,q17,r15,a16,d21,x17,
 v18,o11,j19,p19,u12,g18,w16,k11,e15,g19,b17, r16,h12,h13,t19,q18,o12,q19,c23,q20,t20,m14,

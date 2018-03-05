@@ -62,29 +62,56 @@ int t37() {
 	{
 		printMessage(0, 1091, 0); set_object_location(118, 485); die();
 	}
-} int t39() {
-	b26(); if (object_type_3_buffer[699] == 0)
+} 
+
+int t39() {
+	b26(); 
+
+	if (object_type_3_buffer[699] == 0)
 	{
-		l12(1, 700, 134); object_type_3_buffer[700] += 2; object_type_3_buffer[700] = cheezy_rand(object_type_3_buffer[700]); object_type_3_buffer[700] -= 1; if
-			(object_type_3_buffer[700] < 1) {
+		l12(1, 700, 134); 
+		object_type_3_buffer[700] += 2; 
+		object_type_3_buffer[700] = cheezy_rand(object_type_3_buffer[700]); 
+		object_type_3_buffer[700] -= 1; 
+		if (object_type_3_buffer[700] < 1) {
 			return 0;
-		} printMessage(13, 784, 700); l12(1, 701, 721); object_type_3_buffer[701] -= object_type_3_buffer[705];
-		object_type_3_buffer[701] *= 5; if (isObjectFlagSet(134, 14)) { object_type_3_buffer[701] -= 20; } object_type_3_buffer[728] += object_type_3_buffer[701]; object_type_3_buffer[728]
-			+= 35; object_type_3_buffer[728] /= object_type_3_buffer[700]; if (object_type_3_buffer[64] == 2) {
-			object_type_3_buffer[701] = cheezy_rand(5); if (object_type_3_buffer[701] > 0)
+		} 
+		
+		printMessage(13, 784, 700); 
+		l12(1, 701, 721); 
+		object_type_3_buffer[701] -= object_type_3_buffer[705];
+		object_type_3_buffer[701] *= 5; 
+		
+		if (isObjectFlagSet(134, 14)) { 
+			object_type_3_buffer[701] -= 20; 
+		} 
+		
+		object_type_3_buffer[728] += object_type_3_buffer[701]; 
+		object_type_3_buffer[728] += 35; 
+		object_type_3_buffer[728] /= object_type_3_buffer[700]; 
+		
+		if (object_type_3_buffer[64] == 2) {
+			object_type_3_buffer[701] = cheezy_rand(5); 
+			if (object_type_3_buffer[701] > 0)
 			{
-				f3(677, 786); object_type_3_buffer[677] += object_type_3_buffer[701]; printMessage(15, 677, 700); return 0;
+				f3(677, 786); 
+				object_type_3_buffer[677] += object_type_3_buffer[701]; 
+				printMessage(15, 677, 700); 
+				return 0;
 			}
-		} if (cheezy_rand(100) < object_type_3_buffer[728]
-			|| isObjectFlagSet(134, 13)) {
-			printMessage(13, 785, 700); modifyObjectFlag('c', 134, 13);
-		}
-		else {
-			printMessage(13, 786, 700);
-			die();
+		} 
+		
+		if (cheezy_rand(100) < object_type_3_buffer[728] || isObjectFlagSet(134, 13)) {
+			printMessage(13, 785, 700); 
+			modifyObjectFlag('c', 134, 13); // They miss you!
+		} else {
+			printMessage(13, 786, 700); // One of them gets you!
+			// BJB - this is too annoying die();
 		}
 	}
-} int o21() {
+} 
+
+int o21() {
 	if (isItemAtLocation(t11(object_type_3_buffer[670]), -1)) {
 		if (currentCommandContains(557)) {
 			set_object_location(object_type_3_buffer[670], PLAYER_LOCATION);
@@ -1131,26 +1158,52 @@ v40() { processMoveCommand(159, 0, COMMAND_EAST, COMMAND_DOWN, -COMMAND_CLIMB); 
 		(object_type_3_buffer[6] == 0) {
 		printMessage(64, 916, 0);
 	} processMoveCommand(224, -2);
-} int e11() {
+} 
+
+int command_waterfall_224() {
 	processMoveCommand(223, 0, COMMAND_SOUTH, -COMMAND_EXIT);
-	processMoveCommand(221, 0, COMMAND_WEST, -221); if (!currentCommandIsOneOf(COMMAND_DOWN, COMMAND_JUMP, -1)) return 0; if (y10(1166)) {
+	processMoveCommand(221, 0, COMMAND_WEST, -221); 
+
+	if (!currentCommandIsOneOf(COMMAND_DOWN, COMMAND_JUMP, -1)) 
+		return 0; 
+	
+	if (y10(1166)) {
 		modifyObjectFlag('c', 239, 8);
-		l12(0, 701, 0); if (isItemAtLocation(ITEM_BIRD, -1)) { set_object_location(101, 485); } *getObjectPointer(675) = -1; object_type_3_buffer[675] = OBJECT_TYPE_0_MIN_ID - 1;
+		l12(0, 701, 0); 
+		if (isItemAtLocation(ITEM_BIRD, -1)) { 
+			set_object_location(ITEM_BIRD, 485);
+		} 
+		
+		*getObjectPointer(675) = -1; 
+		object_type_3_buffer[675] = OBJECT_TYPE_0_MIN_ID - 1;
+		
 		while (++object_type_3_buffer[675] <= OBJECT_TYPE_0_MAX_ID) {
-			if (isItemAtLocation(t11(object_type_3_buffer[675]), -1) && !(isObjectFlagSet(t11(675), 12)) &&
-				object_type_3_buffer[675] != 99) {
-				set_object_location(object_type_3_buffer[675], 485); object_type_3_buffer[701] += 1;
+			if (isItemAtLocation(t11(object_type_3_buffer[675]), -1) && !(isObjectFlagSet(t11(675), 12)) &&	object_type_3_buffer[675] != ITEM_LAMP) {
+				set_object_location(object_type_3_buffer[675], 485); 
+				object_type_3_buffer[701] += 1;
 			}
-		} if (isItemAtLocation(99, -1)) {
+		} 
+		
+		if (isItemAtLocation(ITEM_LAMP, -1)) {
 			l12(0, 705, 1);
 			l12(0, 701, 1);
-		}
-		else { l12(0, 705, 0); } printMessage(12, 1167, 705); if (object_type_3_buffer[701] > 0) {
+		} else { 
+			l12(0, 705, 0); 
+		} 
+		
+		printMessage(12, 1167, 705); 
+		
+		if (object_type_3_buffer[701] > 0) {
 			printMessage(12, 1168, 705);
-		}
-		else { printBlankLine(); } processMoveCommand(240, -1169);
-	} printMessage(66, 719, 0);
-} int c30() {
+		} else { 
+			printBlankLine(); 
+		} 
+		processMoveCommand(240, -1169);
+	} 
+	printMessage(66, 719, 0);
+} 
+
+int c30() {
 	processMoveCommand(429, 0, -COMMAND_EAST); processMoveCommand(392, 0, -COMMAND_SOUTHEAST); processMoveCommand(208, 0, COMMAND_WEST, COMMAND_EXIT, -208); if
 		(!currentCommandIsOneOf(COMMAND_NORTH, COMMAND_SOUTH, COMMAND_SOUTHWEST, COMMAND_NORTHWEST, COMMAND_NORTHEAST, -1)) return 0; printMessage(64, 1248, 0);
 } int s32() {
