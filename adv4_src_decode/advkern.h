@@ -125,6 +125,7 @@ extern v0;
 #define LOCATION_MT_KING		155
 #define LOCATION_Y2				163
 #define LOCATION_ORIENTAL		226
+#define LOCATION_ROCK_IN_MIST	434
 
 #define COMMAND_BUILDING		141	// interestingly, same as LOCATION_BUILDING
 

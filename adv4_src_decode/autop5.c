@@ -106,10 +106,17 @@ int t31() {
 } int b15() { c30(); s32(); return; } int x24() {
 	j43();
 	h33(); return;
-} int v23() { l34(); v41(); return; } int t24() {
+} int v23() { l34(); v41(); return; } 
+
+int lost_in_mist_432() {
 	k24();
-	g34(); i47(); n28(); return;
-} int w21() {
+	g34(); 
+	i47(); 
+	n28(); 
+	return;
+} 
+
+int w21() {
 	t42(); t43(); v42(); x33(); w29();
 	v43(); c32(); return;
 } int r8() { f23(); t41(); return; } int x11() {

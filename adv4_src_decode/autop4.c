@@ -523,12 +523,12 @@ g31() { f3(700, 1471); f3(701, 1473); c28(); longjmp(done_with_command, 1); } in
 	set_object_location(48, 162); set_object_location(50, 222); set_object_location(51, 224); set_object_location(53, LOCATION_ORIENTAL); set_object_location(55, 228); set_object_location(58, 229);
 	set_object_location(124, 229); set_object_location(61, 296); set_object_location(63, 299); set_object_location(65, 374); set_object_location(42, 377); set_object_location(41, 377);
 	set_object_location(52, 313); set_object_location(118, 321); set_object_location(119, 433); set_object_location(66, 346); set_object_location(68, 369); set_object_location(35, 314);
-	set_object_location(32, 370); set_object_location(33, 367); set_object_location(116, 434); set_object_location(24, 323); set_object_location(36, 291); set_object_location(37, 291);
+	set_object_location(32, 370); set_object_location(33, 367); set_object_location(116, LOCATION_ROCK_IN_MIST); set_object_location(24, 323); set_object_location(36, 291); set_object_location(37, 291);
 	set_object_location(56, 291); set_object_location(43, 462); set_object_location(31, 254); set_object_location(14, 256); set_object_location(57, 239); set_object_location(67, 295);
 	set_object_location(114, 294); set_object_location(25, 263); set_object_location(103, 268); set_object_location(62, 242); set_object_location(26, 240); set_object_location(ITEM_ORB, 393);
 	set_object_location(79, 394); set_object_location(86, 388); set_object_location(87, 388); set_object_location(92, 411); set_object_location(89, 419); set_object_location(91, 421);
 	set_object_location(135, 383); set_object_location(80, 416); set_object_location(85, 205); set_object_location(81, 204); set_object_location(75, 203); set_object_location(76, 419);
-	set_object_location(77, 393); set_object_location(70, 312); set_object_location(120, 140); set_object_location(71, 434); set_object_location(90, 435); set_object_location(95, 463);
+	set_object_location(77, 393); set_object_location(70, 312); set_object_location(120, 140); set_object_location(71, LOCATION_ROCK_IN_MIST); set_object_location(90, 435); set_object_location(95, 463);
 	set_object_location(72, 393); set_object_location(120, 140); set_object_location(93, 137); set_object_location(123, 318); set_object_location(121, 484); set_object_location(113, 158);
 	modifyObjectFlag('s', 4, 6); modifyObjectFlag('s', 5, 6); modifyObjectFlag('s', 8, 6); modifyObjectFlag('s', 12, 6); modifyObjectFlag('s', 16, 6); modifyObjectFlag('s', 20, 6);
 	modifyObjectFlag('s', 21, 6); modifyObjectFlag('s', 22, 6); modifyObjectFlag('s', 23, 6); modifyObjectFlag('s', 32, 6); modifyObjectFlag('s', 35, 6); modifyObjectFlag('s', 14, 6);
@@ -713,7 +713,7 @@ int s34() {
 			l12(0, 701, 2);
 		} else {
 			l12(0, 701, 3); 
-			if (object_type_3_buffer[PLAYER_LOCATION] == 434) {
+			if (object_type_3_buffer[PLAYER_LOCATION] == LOCATION_ROCK_IN_MIST) {
 				printMessage(0, 1335, 0); // Funny...  some of that pattern looks almost like an inscription...
 			}
 		} 
