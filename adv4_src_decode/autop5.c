@@ -109,7 +109,7 @@ int t31() {
 } int v23() { l34(); v41(); return; } 
 
 int lost_in_mist_432() {
-	k24();
+	lost_in_mist_move_command();
 	g34(); 
 	i47(); 
 	n28(); 

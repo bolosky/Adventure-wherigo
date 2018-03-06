@@ -19,7 +19,7 @@ h11(); extern int w13(); extern int m8(); extern int o6(); extern int l17();
 extern int x13(); extern int y11(); extern int r13(); extern int k8(); extern
 int n13(); extern int m9(); extern int bedquilt_207(); extern int command_swiss_cheese_208(); extern int
 j18(); extern int i18(); extern int y12(); extern int f5(); extern int v14();
-extern int d18(); extern int t14(); extern int w14(); extern int d19();
+extern int d18(); extern int t14(); extern int w14(); extern int too_tight_canyon_217();
 extern int v15(); extern int q13(); extern int v16(); extern int o8(); extern
 int s13(); extern int v17(); extern int command_waterfall_224(); extern int b15(); extern
 int l18(); extern int t15(); extern int t16(); extern int e12(); extern
@@ -81,7 +81,7 @@ int KilobyteInputBuffer3(); extern int g26(); extern int p26(); extern int s24()
 int m21(); extern int g27(); extern int d26(); extern int e19(); extern
 int f17(); extern int f18(); extern int y17(); extern int f19(); extern
 int u16(); extern int command_lost_in_woods_461(); extern int KilobyteInputBuffer4(); extern int v27(); extern
-int l23(); extern int q31(); extern int KilobyteInputBuffer5(); extern int d27(); extern
+int l23(); extern int command_valuation_room_483(); extern int KilobyteInputBuffer5(); extern int d27(); extern
 int b21(); extern int i32(); extern int KilobyteInputBuffer6(); extern int z19(); extern
 int y18(); extern int t27(); extern int KilobyteInputBuffer7(); extern int o17(); extern
 int d28(); extern int r21(); extern int n21(); extern int y19(); extern
@@ -332,7 +332,7 @@ int (*command_by_location_dispatch_table[])()= {
 	d18,	// 214
 	t14,	// 215
 	w14,	// 216
-	d19,	// 217
+	too_tight_canyon_217,	// 217
 	v15,	// 218
 	q13,	// 219
 	v16,	// 220
@@ -598,7 +598,7 @@ int (*command_by_location_dispatch_table[])()= {
 	command_noop,	// 480
 	command_noop,	// 481
 	l23,	// 482
-	q31,	// 483
+	command_valuation_room_483,	// 483
 	KilobyteInputBuffer5,	// 484
 	command_noop,	// 485
 	command_noop,	// 486
@@ -795,7 +795,7 @@ command_noop,command_noop,x11,e9,command_noop,command_noop,command_noop,command_
 command_noop,command_noop,command_noop,command_noop,command_outside_building_136,d14,s11,i16,d15,n9,r8, j11,r9,p13,j12,t13,l16,h9,command_top_of_small_pit_150,u9,x12,p14,
 c17,hall_of_mt_king_155,q10,m7,n10,c18,a10,s12,j13,n11,v11, k6,a11,g13,z7,p15,j14,r10,k7,d16,o5,r11,
 r12,g14,v12,v13,z8,c19,q11,w12,h10,p16,i17, n12,q12,j15,g15,e10,j16,j17,z9,h11,w13,m8,
-o6,l17,x13,y11,r13,k8,n13,m9,command_noop,bedquilt_207,command_swiss_cheese_208, j18,i18,y12,f5,v14,d18,t14,w14,d19,v15,q13,
+o6,l17,x13,y11,r13,k8,n13,m9,command_noop,bedquilt_207,command_swiss_cheese_208, j18,i18,y12,f5,v14,d18,t14,w14,too_tight_canyon_217,v15,q13,
 v16,o8,s13,v17,command_waterfall_224,b15,l18,t15,t16,e12,s14, i19,p17,f6,m10,e13,q14,e14,n14,s15,u10,c20,
 y13,g16,c21,r14,l19,f7,i20,p18,y14,q15,k9, a12,x14,m11,x15,a13,i21,k10,t17,x16,n15,o9,
 m12,m13,o10,a14,s16,q16,b16,d20,i22,a15,u11, g17,i23,t18,c22,w15,n16,q17,r15,a16,d21,x17,
@@ -807,7 +807,7 @@ o15,f12,v21,KilobyteInputBuffer2,q24,i27,q25,h17,q26,t21,w19, f13,k13,u15,z13,t2
 west_of_causeway_396,east_of_causeway_397,a20,k14,z15,p24,h19,g23,k15,s22,k16, i29,z16,m19,m20,q27,q28,k17,x22,t23,d24,y16,
 i30,f14,g24,p25,x23,q29,h20,z17,z18,v23,x24, f15,i31,h21,lost_in_mist_432,v24,rock_in_mist_434,r20,f16,t25,l21,v25,
 d25,g25,l22,n20,v26,t26,q30,s23,KilobyteInputBuffer3,g26,p26, s24,m21,g27,d26,e19,f17,f18,y17,f19,u16,command_lost_in_woods_461,
-KilobyteInputBuffer4,v27,command_noop,command_noop,command_noop,command_noop,command_noop,command_noop,command_noop,command_noop,command_noop, command_noop,command_noop,command_noop,command_noop,command_noop,command_noop,command_noop,command_noop,command_noop,l23,q31,
+KilobyteInputBuffer4,v27,command_noop,command_noop,command_noop,command_noop,command_noop,command_noop,command_noop,command_noop,command_noop, command_noop,command_noop,command_noop,command_noop,command_noop,command_noop,command_noop,command_noop,command_noop,l23,command_valuation_room_483,
 KilobyteInputBuffer5,command_noop,command_noop,command_noop,command_noop,d27,b21,i32,KilobyteInputBuffer6,z19,command_noop, command_noop,y18,t27,KilobyteInputBuffer7,o17,d28,r21,n21,y19,m23,z20,
 v28,o18,b22,g28,a21,i33,command_noop,command_noop,d29,i34,t28, v29,d30,i35,x25,a22,command_noop,l24,k18,command_noop,p27,d31,
 t29,command_noop,u17,p28,q32,command_noop,b23,e20,m24,KilobyteInputBuffer8,z21, KilobyteInputBuffer9,v30,j30,o19,s25,p29,j31,f20,o20,p30,n22,

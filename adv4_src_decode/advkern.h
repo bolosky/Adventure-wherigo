@@ -129,6 +129,8 @@ extern v0;
 
 #define COMMAND_BUILDING		141	// interestingly, same as LOCATION_BUILDING
 
+#define LOCATION_LIMBO			485	// Not a real place, where objects get set to when they're gone
+
 #define COMMAND_SAVE			489
 #define COMMAND_RESTORE			490
 #define COMMAND_REST			491

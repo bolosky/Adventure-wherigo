@@ -38,7 +38,7 @@ int d34() {
 			l12(0, 699, 0);
 		}
 	}
-} int b27() { set_object_location(101, 485); if (item_location[7] == 155) { modifyObjectFlag('s', 155, 8); } } int a25()
+} int b27() { set_object_location(101, LOCATION_LIMBO); if (item_location[7] == 155) { modifyObjectFlag('s', 155, 8); } } int a25()
 {
 	if (object_type_3_buffer[759] < 135) { printMessage(0, 868, 0); }
 	else { printMessage(2, 699, 0); } object_type_3_buffer[699] = cheezy_rand(150);
@@ -131,7 +131,7 @@ int e25() {
 		printMessage(76, 1490, 670);
 	} f3(677, 1228); if (cheezy_rand(100) < 10 && item_location[ITEM_ORB] == 393) {
 		f3(677, 1229);
-		set_object_location(ITEM_ORB, 419); set_object_location(79, 485);
+		set_object_location(ITEM_ORB, 419); set_object_location(79, LOCATION_LIMBO);
 	} printMessage(12, 1544, 670); if (isObjectFlagSet(t11(670), 11)) {
 		printMessage(11, 677, 1);
 	}
@@ -169,7 +169,7 @@ y20() {
 	else
 	{
 		if (g10(87, -1)) {
-			printMessage(0, 1301, 0); l12(0, 733, 4); set_object_location(87, 485); l12(0, 86, 1);
+			printMessage(0, 1301, 0); l12(0, 733, 4); set_object_location(87, LOCATION_LIMBO); l12(0, 86, 1);
 			if (object_type_3_buffer[115] == 2) { l12(0, 115, 0); }
 		}
 		else {
@@ -179,7 +179,7 @@ y20() {
 			}
 			else {
 				if (g10(20, 0)) {
-					printMessage(0, 1467, 0); set_object_location(85, 485);
+					printMessage(0, 1467, 0); set_object_location(85, LOCATION_LIMBO);
 				}
 				else { printMessage(0, 1300, 0); }
 			}
@@ -199,7 +199,7 @@ y20() {
 	if (isObjectFlagSet(t11(671), 7))
 	{
 		f3(699, 1695); l12(0, 700, 200); a25();
-	} object_type_3_buffer[759] = cheezy_rand(750 - 600 + 1) + 600; set_object_location(81, 485);
+	} object_type_3_buffer[759] = cheezy_rand(750 - 600 + 1) + 600; set_object_location(81, LOCATION_LIMBO);
 	modifyObjectFlag('s', t11(710), 10); if (isObjectFlagSet(64, 4)) { printMessage(64, 1360, 0); } printMessage(0, 1271, 0); if (y10(1272))
 	{
 		set_object_location(82, object_type_3_buffer[671]); printMessage(64, 1276, 0);
@@ -216,7 +216,7 @@ y20() {
 	object_type_3_buffer[756] -= 1; if (object_type_3_buffer[756] < 1 &&
 		cheezy_rand(100) < 25) {
 		x28(); if (object_type_3_buffer[701] == 1) { return 0; } l12(0, 755, -1); if (!(isObjectFlagSet(t11(755), 0)
-			|| cheezy_rand(100) < 75 || item_location[81] == 485 || isObjectFlagSet(64, 4))) {
+			|| cheezy_rand(100) < 75 || item_location[81] == LOCATION_LIMBO || isObjectFlagSet(64, 4))) {
 			l12(0, 755, 0); modifyObjectFlag('s', t11(755), 0);
 		} if (object_type_3_buffer[755] == -1) {
 			if (!(isObjectFlagSet(t11(755), 1) || cheezy_rand(100) < 75 || isObjectFlagSet(385, 4))) {
@@ -568,11 +568,11 @@ int die() {
 	} 
 	
 	if (object_type_3_buffer[PLAYER_LOCATION] == 432 || object_type_3_buffer[PLAYER_LOCATION] == 256) {
-		processMoveCommand(485, -1);
+		processMoveCommand(LOCATION_LIMBO, -1);
 	} 
 	l12(0, 17, 0); 
 	set_object_location(17, 484); 
-	if (!(item_location[121] == 485)) { 
+	if (!(item_location[121] == LOCATION_LIMBO)) { 
 		set_object_location(121, 484); 
 	} 
 	
@@ -619,7 +619,7 @@ int die() {
 		f3(700, 894); 
 		if (object_type_3_buffer[677] < object_type_3_buffer[700]) {
 			if (isItemAtLocation(53, -1)) {
-				set_object_location(53, 485); 
+				set_object_location(53, LOCATION_LIMBO); 
 				set_object_location(54, r5);
 			} 
 			
@@ -655,7 +655,7 @@ int die() {
 				{
 					t10(676, 39); 
 					if (object_type_3_buffer[39] == 3 || !(isObjectFlagSet(t11(676), 7))) { 
-						set_object_location(99, 485); 
+						set_object_location(99, LOCATION_LIMBO); 
 					}
 				}
 			} 
@@ -798,7 +798,7 @@ int e28() {
 	if (q8(ITEM_ORB, -1))
 	{
 		if (object_type_3_buffer[705] < object_type_3_buffer[721]) {
-			set_object_location(ITEM_ORB, r5); set_object_location(79, 485); printMessage(12, 1489, 669); printMessage(76, 1490, 670);
+			set_object_location(ITEM_ORB, r5); set_object_location(79, LOCATION_LIMBO); printMessage(12, 1489, 669); printMessage(76, 1490, 670);
 		} g12(); printMessage(64, 897, 0);
 	}
 } int p35() {
@@ -838,7 +838,7 @@ int e28() {
 } int s27() {
 	if (!isItemAtLocation(ITEM_BIRD, -1)) return
 		0; set_object_location(101, PLAYER_LOCATION); l12(0, 101, 0); if (g10(7, -1)) {
-		set_object_location(7, 485); modifyObjectFlag('c', 155, 8);
+		set_object_location(7, LOCATION_LIMBO); modifyObjectFlag('c', 155, 8);
 		printMessage(64, 819, 0);
 	} if (g10(20, -1)) {
 		if (object_type_3_buffer[20] == 0) {
@@ -856,7 +856,7 @@ int e28() {
 	{
 		b27(); printMessage(64, 964, 0);
 	} if (object_type_3_buffer[PLAYER_LOCATION] == 379) {
-		if (!(item_location[104] == 485)) {
+		if (!(item_location[104] == LOCATION_LIMBO)) {
 			printMessage(0, 1384, 0);
 			printMessage(0, 1372, 0); die();
 		}
@@ -882,11 +882,11 @@ int e28() {
 	}
 	else {
 		if (object_type_3_buffer[PLAYER_LOCATION] == 204) {
-			printMessage(0, 1216, 0); set_object_location(53, 485); set_object_location(54, 203);
+			printMessage(0, 1216, 0); set_object_location(53, LOCATION_LIMBO); set_object_location(54, 203);
 		}
 		else {
 			if (isItemAtLocation(105, -1) || !g10(105, -1)) {
-				l12(0, 53, 2); printMessage(0, 53, 0); set_object_location(53, 485);
+				l12(0, 53, 2); printMessage(0, 53, 0); set_object_location(53, LOCATION_LIMBO);
 				set_object_location(54, object_type_3_buffer[671]);
 			}
 			else { l12(0, 53, 1); printMessage(0, 53, 0); l12(0, 53, 0); }
@@ -1030,7 +1030,7 @@ int s28() {
 				}
 				else { f3(683, 499); }
 			}
-		} set_object_location(37, 485); if (object_type_3_buffer[35] == 0) {
+		} set_object_location(37, LOCATION_LIMBO); if (object_type_3_buffer[35] == 0) {
 			printMessage(76, 1132, 683);
 		} printMessage(64, 1133, 0);
 	}
@@ -1067,16 +1067,16 @@ int s28() {
 	while (++object_type_3_buffer[675] <= OBJECT_TYPE_0_MAX_ID) {
 		if (isObjectFlagSet(t11(675), 5)) {
 			if (!(item_location[object_type_3_buffer[675]] == 141 ||
-				item_location[object_type_3_buffer[675]] == 485)) {
+				item_location[object_type_3_buffer[675]] == LOCATION_LIMBO)) {
 				return 0;
 			}
 		}
-	} if (!(item_location[95] == 141 || item_location[95] == 140 || item_location[95] == 485))
+	} if (!(item_location[95] == 141 || item_location[95] == 140 || item_location[95] == LOCATION_LIMBO))
 	{
 		return 0;
-	} if (!(isItemAtLocation(64, -1) || item_location[64] == 141 || item_location[64] == 485)) {
+	} if (!(isItemAtLocation(64, -1) || item_location[64] == 141 || item_location[64] == LOCATION_LIMBO)) {
 		return 0;
-	} if (item_location[80] == 141 || item_location[80] == 485) { l12(0, 717, 1); }
+	} if (item_location[80] == 141 || item_location[80] == LOCATION_LIMBO) { l12(0, 717, 1); }
 } int w26() {
 	modifyObjectFlag('s', t11(697), 7);
 	if (object_type_3_buffer[43] > 1) { return 0; } if (object_type_3_buffer[717] == 0) {
@@ -1092,7 +1092,7 @@ int s28() {
 			object_type_3_buffer[723] -= object_type_3_buffer[724];
 			if (object_type_3_buffer[723] < 0) { l12(0, 20, 2); }
 		} if (!(item_location[82] == 484 || g10(82, -1))) {
-			set_object_location(82, 485);
+			set_object_location(82, LOCATION_LIMBO);
 		} if (isObjectFlagSet(27, 13) && !(isObjectFlagSet(27, 14)) && !g10(134, -1)) {
 			modifyObjectFlag('s', 27, 14); printMessage(0, 1170, 0);
 			l12(0, 716, 5); l12(1, 724, 716); return 0;
@@ -1172,8 +1172,8 @@ int s28() {
 			l12(0, 717, 2);
 			l12(0, 4, 0); printMessage(0, 933, 0); if (g10(134, -1)) { printMessage(13, 1039, 134); } set_object_location(134, 484);
 			l12(0, 134, 0); l12(0, 715, 0); l12(0, 760, 0); l12(0, 686, 0); l12(0, 8, 0); l12(0, 30, 0);
-			set_object_location(22, 485); set_object_location(20, 485); l12(0, 22, 4); set_object_location(23, 244); modifyObjectFlag('s', 8, 10); modifyObjectFlag('s', 30, 10);
-			set_object_location(82, 485); l12(0, 716, 30);
+			set_object_location(22, LOCATION_LIMBO); set_object_location(20, LOCATION_LIMBO); l12(0, 22, 4); set_object_location(23, 244); modifyObjectFlag('s', 8, 10); modifyObjectFlag('s', 30, 10);
+			set_object_location(82, LOCATION_LIMBO); l12(0, 716, 30);
 		}
 		else {
 			if (isObjectFlagSet(t11(710), 4)) {
@@ -1316,7 +1316,7 @@ int p36() {
 			}
 		}
 		else { 
-			if (item_location[101] == 485) { 
+			if (item_location[101] == LOCATION_LIMBO) { 
 				f3(677, 810); 
 			} else { 
 				f3(677, 808); 

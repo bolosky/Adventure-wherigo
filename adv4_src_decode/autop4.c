@@ -15,7 +15,7 @@ int i40() {
 
 int r24() {
 	if (object_type_3_buffer[697] == 1) {
-		if (item_location[85] == 485)
+		if (item_location[85] == LOCATION_LIMBO)
 		{
 			printMessage(64, 1520, 0); // Your hoot echoes in the distance, but otherwise nothing happens.
 		} 
@@ -130,7 +130,7 @@ int p29() {
 
 int blast_command() {
 	if (object_type_3_buffer[717] == 3 && isObjectFlagSet(104, 4)) {
-		if (item_location[104] == 485) { 
+		if (item_location[104] == LOCATION_LIMBO) { 
 			printMessage(64, 1401, 0); // I think enough is enough.
 		} 
 		
@@ -146,8 +146,8 @@ int blast_command() {
 		
 		modifyObjectFlag('s', 381, 4); 
 		f3(672, 380);
-		set_object_location(104, 485); 
-		set_object_location(134, 485); 
+		set_object_location(104, LOCATION_LIMBO); 
+		set_object_location(134, LOCATION_LIMBO); 
 		set_object_location(82, object_type_3_buffer[671]); 
 		printMessage(64, 1376, 0); // There  is  a  loud  explosion  at  the  other end of the repository and a section of the far wall collapses, burying the  dwarves  in  the  rubble. The  settling dust reveals a dark hole leading northeast. When the air is finally clear, a snow-white golden-horned unicorn walks out of  the  hole and,  gracefully  picking  its  way  through  the heaps of rubble, calmly approaches you.
 	} 
@@ -665,7 +665,7 @@ int s34() {
 		h23(); 
 	} 
 	
-	if (!(item_location[121] == 484 || item_location[121] == 485)) {
+	if (!(item_location[121] == 484 || item_location[121] == LOCATION_LIMBO)) {
 		set_object_location(121, object_type_3_buffer[671]); 
 		if (object_type_3_buffer[121] > 0) {
 			b26(); 
@@ -789,7 +789,7 @@ int s34() {
 		t39();
 	} 
 	
-	if (item_location[99] == 485 && object_type_3_buffer[PLAYER_LOCATION] == 136 && object_type_3_buffer[717] < 4) {
+	if (item_location[99] == LOCATION_LIMBO && object_type_3_buffer[PLAYER_LOCATION] == 136 && object_type_3_buffer[717] < 4) {
 		printMessage(0, 997, 0);  // There's  not  much  point  in  wandering  around  out here, and you can't explore the cave without a lamp.  So let's just call it a day.
 		l12(0, 718, 1);
 		a29();

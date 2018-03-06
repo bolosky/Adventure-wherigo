@@ -424,7 +424,7 @@ int h34()
 int u31() {
 	if (!currentCommandContains(259)) return; if (object_type_3_buffer[PLAYER_LOCATION] == 259) {
 		if (g10(27, -1)) {
-			set_object_location(27, 485);
+			set_object_location(27, LOCATION_LIMBO);
 			modifyObjectFlag('s', 27, 13); printMessage(64, 1154, 0);
 		} printMessage(64, 1156, 0);
 	} printMessage(76, 818, 670);
@@ -757,7 +757,7 @@ a33() { l12(0, 714, 1); printMessage(66, 719, 0); } int g28() {
 } int b25() {
 	printMessage(64, 949, 0);
 } int y24() {
-	if (!currentCommandContains(53)) return; if (!g10(53, -1)) return 0; set_object_location(53, 485);
+	if (!currentCommandContains(53)) return; if (!g10(53, -1)) return 0; set_object_location(53, LOCATION_LIMBO);
 	set_object_location(54, object_type_3_buffer[671]); printMessage(64, 1011, 0);
 } int v46() {
 	if (!currentCommandContains(118)) return; if (!g10(118, -1))
@@ -774,7 +774,7 @@ a33() { l12(0, 714, 1); printMessage(66, 719, 0); } int g28() {
 	if
 		(!currentCommandContains(53)) return; if (g10(53, -1)) {
 		if (isObjectFlagSet(t11(671), 9) || object_type_3_buffer[PLAYER_LOCATION] == 158) {
-			if (isItemAtLocation(53, -1)) { object_type_3_buffer[705] -= 1; } set_object_location(53, 485); set_object_location(54, object_type_3_buffer[671]); printMessage(64, 947, 0);
+			if (isItemAtLocation(53, -1)) { object_type_3_buffer[705] -= 1; } set_object_location(53, LOCATION_LIMBO); set_object_location(54, object_type_3_buffer[671]); printMessage(64, 947, 0);
 		} printMessage(64, 946, 0);
 	}
 } int z29() {
@@ -887,7 +887,7 @@ int n31() {
 	{
 		if (currentCommandContains(119) || object_type_3_buffer[697] == 1) {
 			l12(0, 722, 30); object_type_3_buffer[722] += object_type_3_buffer[724]; l12(0, 721, 12);
-			modifyObjectFlag('c', 434, 8); l12(0, 119, 2); set_object_location(119, 485); printMessage(64, 119, 0);
+			modifyObjectFlag('c', 434, 8); l12(0, 119, 2); set_object_location(119, LOCATION_LIMBO); printMessage(64, 119, 0);
 		}
 	} if (object_type_3_buffer[697] == 1)
 	{
@@ -1126,7 +1126,7 @@ int m27() {
 	if (g10(31, 0)) {
 		l12(0, 31, 1); modifyObjectFlag('c', 254, 8); l12(0, 733, 9); if (object_type_3_buffer[135] < 4)
 		{
-			set_object_location(135, 485); l12(0, 135, 0);
+			set_object_location(135, LOCATION_LIMBO); l12(0, 135, 0);
 		} printMessage(64, 1139, 0);
 	} printMessage(64, 828, 0);
 } int y19()
@@ -1140,7 +1140,7 @@ int m27() {
 } int d28() {
 	if (isObjectFlagSet(t11(710), 9)) {
 		if (isItemAtLocation(99, -1)) { printMessage(0, 1085, 0); die(); } if (object_type_3_buffer[698] > 40) {
-			set_object_location(99, 485); l12(0, 39, 3);
+			set_object_location(99, LOCATION_LIMBO); l12(0, 39, 3);
 			l12(0, 99, 0); l12(0, 698, 0); if (cheezy_rand(100) < 50) {
 				printMessage(0, 1086, 0); b26(); if (object_type_3_buffer[699] == 1)
 				{
@@ -1164,7 +1164,7 @@ int m27() {
 		if (isItemAtLocation(116, -1)) { printMessage(8, 1334, 0); }
 		else {
 			printMessage(8, 1334, 1);
-		} if (isObjectFlagSet(t11(710), 10)) { printMessage(0, 1336, 0); } set_object_location(116, 485); set_object_location(64, object_type_3_buffer[671]); modifyObjectFlag('s', 64, 4);
+		} if (isObjectFlagSet(t11(710), 10)) { printMessage(0, 1336, 0); } set_object_location(116, LOCATION_LIMBO); set_object_location(64, object_type_3_buffer[671]); modifyObjectFlag('s', 64, 4);
 		l12(0, 733, 7);
 	} longjmp(done_with_command, 1);
 } int z20() { r30(); } int v28() {
@@ -1179,7 +1179,7 @@ int m27() {
 			*getObjectPointer(675) =
 				-1; object_type_3_buffer[675] = OBJECT_TYPE_0_MIN_ID - 1; while (++object_type_3_buffer[675] <= OBJECT_TYPE_0_MAX_ID) {
 				if (isItemAtLocation(t11(object_type_3_buffer[675]), -1)) {
-					set_object_location(object_type_3_buffer[675], 485);
+					set_object_location(object_type_3_buffer[675], LOCATION_LIMBO);
 				}
 			} l12(0, 717, 4); modifyObjectFlag('s', 243, 4); processMoveCommand(243, -1380);
 		} printMessage(0, 1274, 0); r7();
@@ -1205,10 +1205,10 @@ int n21() {
 			if (g10(115, -1) || g10(116, -1)) {
 				if
 					(g10(115, -1)) {
-					printMessage(0, 1175, 0); set_object_location(115, 485);
+					printMessage(0, 1175, 0); set_object_location(115, LOCATION_LIMBO);
 				} if (g10(116, -1)) {
 					printMessage(0, 1176, 0);
-					set_object_location(116, 485);
+					set_object_location(116, LOCATION_LIMBO);
 				}
 			}
 			else {
