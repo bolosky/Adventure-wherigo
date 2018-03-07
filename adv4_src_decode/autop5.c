@@ -14,9 +14,11 @@ int u6() {
 	return; 
 } 
 
-int KilobyteInputBuffer2()
+int beach_377()
 {
-	w27(); z28(); return;
+	w27(); 
+	z28(); 
+	return;
 } 
 
 int command_break() { 

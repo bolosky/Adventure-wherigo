@@ -353,14 +353,32 @@ a19() { processMoveCommand(358, 0, -COMMAND_NORTH); processMoveCommand(360, 0, -
 } int v21() {
 	if (currentCommandContains(COMMAND_LOOK)) { return 0; } processMoveCommand(375, 0, -COMMAND_WEST); processMoveCommand(377, 0, COMMAND_DOWN, -5);
 	x32();
-} int w27() {
-	l12(0, 41, 1); if (!currentCommandIsOneOf(COMMAND_UP, 376, 5, COMMAND_WEST, -1)) return 0; processMoveCommand(376, -2);
-} int z28() {
-	x32(); if (!currentCommandIsOneOf(112, 560, 555, -1)) return 0; if (currentCommandContains(112) || currentCommandContains(555))
+} 
+
+int w27() {
+	l12(0, 41, 1); 
+	if (!currentCommandIsOneOf(COMMAND_UP, 376, 5, COMMAND_WEST, -1)) 
+		return 0; 
+	processMoveCommand(376, -2);
+} 
+
+int z28() {
+	x32(); 
+	
+	if (!currentCommandIsOneOf(ITEM_WATER, COMMAND_FILL, COMMAND_DRINK, -1))
+		return 0; 
+	
+	if (currentCommandContains(ITEM_WATER) || currentCommandContains(COMMAND_DRINK))
 	{
-		if (isItemAtLocation(114, 3) || isItemAtLocation(111, 3)) { return 0; }
-	} printMessage(64, 870, 0);
-} int u14() {
+		if (isItemAtLocation(ITEM_FLASK, 3) || isItemAtLocation(ITEM_BOTTLE, 3)) {
+			return 0; 
+		}
+	} 
+
+	printMessage(64, 870, 0); // I'm afraid that all that's available here is salt water, which isn't good for anything much...  you'd better try elsewhere.
+} 
+
+int u14() {
 	processMoveCommand(374, 0, -COMMAND_SOUTH); processMoveCommand(372, 0, -COMMAND_WEST);
 } int o15() {
 	processMoveCommand(373, 0, COMMAND_NORTH, -COMMAND_EXIT); if (currentCommandContains(13))

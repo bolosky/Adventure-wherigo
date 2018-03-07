@@ -516,10 +516,16 @@ int v39() { object_type_3_buffer[677] = cheezy_rand(852 - 847 + 1) + 847; printM
 		(currentCommandContains(209)) {
 		if (currentCommandContains(COMMAND_LOOK)) { printMessage(64, 1640, 0); } printMessage(64, 915, 0);
 	}
-} int x32()
+} 
+
+int x32()
 {
-	if (currentCommandContains(5)) { printMessage(76, 1546, 5); }
-} int h31() {
+	if (currentCommandContains(ITEM_STEPS)) {
+		printMessage(76, 1546, 5); 
+	}
+} 
+
+int h31() {
 	if (object_type_3_buffer[717] == 5) {
 		if (isObjectFlagSet(t11(717), 0))
 		{
@@ -939,13 +945,25 @@ int q10() {
 	} processMoveCommand(199, 0, COMMAND_EAST, -627); processMoveCommand(160, 0, COMMAND_UP, -621); processMoveCommand(201, 0, -COMMAND_WEST); processMoveCommand(207, 0, -207);
 } int l17() {
 	if (currentCommandContains(COMMAND_LOOK)) { return 0; } processMoveCommand(198, 0, COMMAND_WEST, -627); processMoveCommand(200, 0, COMMAND_DOWN, COMMAND_CLIMB, -150);
-} int x13() {
-	processMoveCommand(199, 0, COMMAND_UP, COMMAND_EXIT, -COMMAND_CLIMB); if (!currentCommandIsOneOf(143, 626, COMMAND_DOWN, COMMAND_UPSTREAM, COMMAND_DOWNSTREAM, -1)) return
-		0; printMessage(64, 901, 0);
-} int y11() {
-	if (currentCommandContains(COMMAND_LOOK)) { return 0; } processMoveCommand(198, 0, COMMAND_EAST, -625);
-	processMoveCommand(202, 0, COMMAND_DOWN, -621); processMoveCommand(207, 0, -207);
-} int g13() {
+}
+
+int bottom_of_pit_with_stream_200() {
+	processMoveCommand(199, 0, COMMAND_UP, COMMAND_EXIT, -COMMAND_CLIMB); 
+	if (!currentCommandIsOneOf(143, 626, COMMAND_DOWN, COMMAND_UPSTREAM, COMMAND_DOWNSTREAM, -1)) 
+		return 0; 
+	printMessage(64, 901, 0);
+} 
+
+int dusty_rock_room_201() {
+	if (currentCommandContains(COMMAND_LOOK)) { 
+		return 0; 
+	} 
+	processMoveCommand(198, 0, COMMAND_EAST, -625);
+	processMoveCommand(202, 0, COMMAND_DOWN, -621); 
+	processMoveCommand(207, 0, -207);
+} 
+
+int g13() {
 	if (currentCommandContains(COMMAND_LOOK)) {
 		return
 			0;
@@ -1019,6 +1037,7 @@ int bedquilt_207() {
 	} 
 	
 	processMoveCommand(235, 0, -COMMAND_DOWN); 
+
 	if (cheezy_rand(100) < 75) {
 		processMoveCommand(213, 0, -COMMAND_NORTH); // Large low room (80)
 		processMoveCommand(201, 0, -COMMAND_UP);	// Dusty rock room (27)
@@ -1324,11 +1343,20 @@ int c30() {
 } int f6() { processMoveCommand(232, 0, COMMAND_UP, -232); processMoveCommand(234, 0, -COMMAND_DOWN); } int m10()
 {
 	if (currentCommandContains(COMMAND_LOOK)) { return 0; } processMoveCommand(233, 0, COMMAND_UP, COMMAND_EXIT, -249); processMoveCommand(232, 0, -232);
-} int
-e13() {
-	processMoveCommand(413, 0, -COMMAND_NORTHEAST); processMoveCommand(203, 0, -COMMAND_SOUTH); processMoveCommand(202, 0, -COMMAND_UP); processMoveCommand(207, 0, -COMMAND_WEST);
-	if (currentCommandContains(COMMAND_EAST)) { modifyObjectFlag('c', t11(735), 2); processMoveCommand(236, -2); } u28();
-} int t19() {
+} 
+
+int anteroom_235() {
+	processMoveCommand(413, 0, -COMMAND_NORTHEAST); 
+	processMoveCommand(203, 0, -COMMAND_SOUTH); 
+	processMoveCommand(202, 0, -COMMAND_UP); 
+	processMoveCommand(207, 0, -COMMAND_WEST);
+	if (currentCommandContains(COMMAND_EAST)) { 
+		modifyObjectFlag('c', t11(735), 2); processMoveCommand(236, -2); 
+	} 
+	u28();
+} 
+
+int t19() {
 	processMoveCommand(302, 0, -COMMAND_SOUTH);
 	processMoveCommand(303, 0, -COMMAND_SOUTHWEST); processMoveCommand(304, 0, -COMMAND_NORTHEAST); processMoveCommand(305, 0, -COMMAND_SOUTHEAST); processMoveCommand(306, 0, -COMMAND_UP); processMoveCommand(307, 0, -COMMAND_NORTHWEST);
 	processMoveCommand(308, 0, -COMMAND_EAST); processMoveCommand(309, 0, -COMMAND_WEST); processMoveCommand(310, 0, -COMMAND_NORTH); processMoveCommand(195, 0, -COMMAND_DOWN);
