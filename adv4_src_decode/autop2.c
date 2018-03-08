@@ -671,10 +671,19 @@ s21() {
 k8() {
 	processMoveCommand(204, 0, -COMMAND_CLIMB); processMoveCommand(235, 0, -COMMAND_NORTH); processMoveCommand(205, 0, -COMMAND_WEST); processMoveCommand(408, 0, -COMMAND_UP); processMoveCommand(407, 0, -COMMAND_DOWN);
 	x32();
-} int m9() { processMoveCommand(203, 0, COMMAND_EAST, -COMMAND_EXIT); } int t21() {
-	processMoveCommand(384, 0, -COMMAND_NORTH); processMoveCommand(385, 0, -COMMAND_SOUTH);
-	processMoveCommand(412, 0, -COMMAND_EAST); if (!currentCommandIsNotOneOf(634, -1)) return 0; printMessage(72, 1546, 634);
-} int n13()
+} int m9() { processMoveCommand(203, 0, COMMAND_EAST, -COMMAND_EXIT); } 
+
+int living_quarters_383() {
+	processMoveCommand(384, 0, -COMMAND_NORTH); 
+	processMoveCommand(385, 0, -COMMAND_SOUTH);
+	processMoveCommand(412, 0, -COMMAND_EAST); 
+	if (!currentCommandIsNotOneOf(634, -1)) 
+		return 0; 
+	
+	printMessage(72, 1546, 634);
+} 
+
+int n13()
 {
 	processMoveCommand(203, 0, COMMAND_EXIT, -COMMAND_DOWN);
 } int w19() {
@@ -935,9 +944,13 @@ int i47() {
 } int n28() {
 	if (!currentCommandIsOneOf(COMMAND_NORTH, COMMAND_NORTHEAST, COMMAND_NORTHWEST, -1))
 		return 0; if (cheezy_rand(100) < 33) { processMoveCommand(396, -2); } a27();
-} int v24() {
+} 
+
+int small_dank_cave_433() {
 	if (!currentCommandIsOneOf(COMMAND_NORTH, COMMAND_RETREAT, COMMAND_EXIT, -1))
-		return 0; processMoveCommand(388, -2);
+		return 0; 
+	
+	processMoveCommand(388, -2);
 } 
 
 int rock_in_mist_434() {

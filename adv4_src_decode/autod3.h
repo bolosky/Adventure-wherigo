@@ -60,7 +60,7 @@ int q22(); extern int k12(); extern int s20(); extern int c26(); extern
 int z12(); extern int r18(); extern int r19(); extern int q23(); extern
 int n19(); extern int u14(); extern int o15(); extern int f12(); extern
 int v21(); extern int beach_377(); extern int q24(); extern int i27(); extern
-int q25(); extern int h17(); extern int q26(); extern int t21(); extern
+int q25(); extern int h17(); extern int q26(); extern int living_quarters_383(); extern
 int w19(); extern int f13(); extern int k13(); extern int u15(); extern
 int z13(); extern int t22(); extern int h18(); extern int i28(); extern
 int m18(); extern int v22(); extern int s21(); extern int o16(); extern
@@ -73,7 +73,7 @@ int d24(); extern int y16(); extern int i30(); extern int f14(); extern
 int g24(); extern int p25(); extern int x23(); extern int q29(); extern
 int h20(); extern int z17(); extern int z18(); extern int v23(); extern
 int x24(); extern int f15(); extern int i31(); extern int h21(); extern
-int lost_in_mist_432(); extern int v24(); extern int rock_in_mist_434(); extern int r20(); extern
+int lost_in_mist_432(); extern int small_dank_cave_433(); extern int rock_in_mist_434(); extern int r20(); extern
 int f16(); extern int t25(); extern int l21(); extern int v25(); extern
 int d25(); extern int g25(); extern int l22(); extern int n20(); extern
 int v26(); extern int t26(); extern int q30(); extern int s23(); extern
@@ -498,7 +498,7 @@ int (*command_by_location_dispatch_table[])()= {
 	q25,	// 380
 	h17,	// 381
 	q26,	// 382
-	t21,	// 383
+	living_quarters_383,	// 383
 	w19,	// 384
 	f13,	// 385
 	k13,	// 386
@@ -548,7 +548,7 @@ int (*command_by_location_dispatch_table[])()= {
 	i31,	// 430
 	h21,	// 431
 	lost_in_mist_432,	// 432
-	v24,	// 433
+	small_dank_cave_433,	// 433
 	rock_in_mist_434,	// 434
 	r20,	// 435
 	f16,	// 436
@@ -803,9 +803,9 @@ v18,o11,j19,p19,u12,g18,w16,k11,e15,g19,b17, r16,h12,h13,t19,q18,o12,q19,c23,q20
 d22,g20,p20,v19,h14,m15,command_vaulted_ceiling_316,y15,x18,x19,KilobyteInputBuffer0, f8,i24,m16,a17,x20,h15,v20,p21,o13,h16,b18,
 w17,KilobyteInputBuffer1,e16,n17,f9,x21,c24,l20,a18,o14,s17, c25,f10,q21,w18,e17,d23,s18,b19,f11,z10,s19,
 u13,i25,r17,p22,m17,z11,n18,a19,b20,i26,p23, g22,q22,k12,s20,c26,z12,r18,r19,q23,n19,u14,
-o15,f12,v21,beach_377,q24,i27,q25,h17,q26,t21,w19, f13,k13,u15,z13,t22,h18,i28,m18,v22,s21,o16,
+o15,f12,v21,beach_377,q24,i27,q25,h17,q26,living_quarters_383,w19, f13,k13,u15,z13,t22,h18,i28,m18,v22,s21,o16,
 west_of_causeway_396,east_of_causeway_397,a20,k14,z15,p24,h19,g23,k15,s22,k16, i29,z16,m19,m20,q27,q28,k17,x22,t23,d24,y16,
-i30,f14,g24,p25,x23,q29,h20,z17,z18,v23,x24, f15,i31,h21,lost_in_mist_432,v24,rock_in_mist_434,r20,f16,t25,l21,v25,
+i30,f14,g24,p25,x23,q29,h20,z17,z18,v23,x24, f15,i31,h21,lost_in_mist_432,small_dank_cave_433,rock_in_mist_434,r20,f16,t25,l21,v25,
 d25,g25,l22,n20,v26,t26,q30,s23,KilobyteInputBuffer3,g26,p26, s24,m21,g27,d26,e19,f17,f18,y17,f19,u16,command_lost_in_woods_461,
 KilobyteInputBuffer4,v27,command_noop,command_noop,command_noop,command_noop,command_noop,command_noop,command_noop,command_noop,command_noop, command_noop,command_noop,command_noop,command_noop,command_noop,command_noop,command_noop,command_noop,command_noop,l23,command_valuation_room_483,
 KilobyteInputBuffer5,command_noop,command_noop,command_noop,command_noop,d27,b21,i32,KilobyteInputBuffer6,z19,command_noop, command_noop,y18,t27,KilobyteInputBuffer7,o17,d28,r21,n21,y19,m23,z20,
