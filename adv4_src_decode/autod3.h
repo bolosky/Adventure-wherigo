@@ -22,11 +22,11 @@ j18(); extern int i18(); extern int y12(); extern int f5(); extern int v14();
 extern int d18(); extern int t14(); extern int w14(); extern int too_tight_canyon_217();
 extern int v15(); extern int q13(); extern int v16(); extern int o8(); extern
 int s13(); extern int v17(); extern int command_waterfall_224(); extern int b15(); extern
-int l18(); extern int t15(); extern int t16(); extern int e12(); extern
+int l18(); extern int alcove_227(); extern int t16(); extern int e12(); extern
 int s14(); extern int i19(); extern int p17(); extern int f6(); extern int
 m10(); extern int anteroom_235(); extern int q14(); extern int e14(); extern int
 n14(); extern int s15(); extern int u10(); extern int c20(); extern int
-y13(); extern int g16(); extern int c21(); extern int r14(); extern int
+balcony_above_treasure_chamber_242(); extern int g16(); extern int c21(); extern int r14(); extern int
 l19(); extern int f7(); extern int i20(); extern int p18(); extern int y14();
 extern int q15(); extern int k9(); extern int a12(); extern int x14(); extern
 int m11(); extern int x15(); extern int a13(); extern int i21(); extern
@@ -62,8 +62,8 @@ int n19(); extern int u14(); extern int o15(); extern int f12(); extern
 int v21(); extern int beach_377(); extern int q24(); extern int i27(); extern
 int q25(); extern int h17(); extern int q26(); extern int living_quarters_383(); extern
 int w19(); extern int f13(); extern int k13(); extern int u15(); extern
-int z13(); extern int t22(); extern int h18(); extern int i28(); extern
-int m18(); extern int v22(); extern int s21(); extern int o16(); extern
+int z13(); extern int t22(); extern int h18(); extern int basement_391(); extern
+int m18(); extern int cellar_393(); extern int s21(); extern int o16(); extern
 int west_of_causeway_396(); extern int east_of_causeway_397(); extern int a20(); extern int k14(); extern
 int z15(); extern int p24(); extern int h19(); extern int g23(); extern
 int k15(); extern int s22(); extern int k16(); extern int i29(); extern
@@ -342,7 +342,7 @@ int (*command_by_location_dispatch_table[])()= {
 	command_waterfall_224,	// 224
 	b15,	// 225
 	l18,	// 226
-	t15,	// 227
+	alcove_227,	// 227
 	t16,	// 228
 	e12,	// 229
 	s14,	// 230
@@ -357,7 +357,7 @@ int (*command_by_location_dispatch_table[])()= {
 	s15,	// 239
 	u10,	// 240
 	c20,	// 241
-	y13,	// 242
+	balcony_above_treasure_chamber_242,	// 242
 	g16,	// 243
 	c21,	// 244
 	r14,	// 245
@@ -506,9 +506,9 @@ int (*command_by_location_dispatch_table[])()= {
 	z13,	// 388
 	t22,	// 389
 	h18,	// 390
-	i28,	// 391
+	basement_391,	// 391
 	m18,	// 392
-	v22,	// 393
+	cellar_393,	// 393
 	s21,	// 394
 	o16,	// 395
 	west_of_causeway_396,	// 396
@@ -796,14 +796,14 @@ command_noop,command_noop,command_noop,command_noop,command_outside_building_136
 c17,hall_of_mt_king_155,q10,m7,n10,c18,a10,s12,j13,n11,v11, k6,a11,g13,z7,p15,j14,r10,k7,d16,o5,r11,
 r12,g14,v12,v13,z8,c19,q11,w12,h10,p16,i17, n12,q12,j15,g15,e10,j16,j17,z9,h11,w13,m8,
 o6,l17,bottom_of_pit_with_stream_200,dusty_rock_room_201,r13,k8,n13,m9,command_noop,bedquilt_207,command_swiss_cheese_208, j18,i18,y12,f5,v14,d18,t14,w14,too_tight_canyon_217,v15,q13,
-v16,o8,s13,v17,command_waterfall_224,b15,l18,t15,t16,e12,s14, i19,p17,f6,m10,anteroom_235,q14,e14,n14,s15,u10,c20,
-y13,g16,c21,r14,l19,f7,i20,p18,y14,q15,k9, a12,x14,m11,x15,a13,i21,k10,t17,x16,n15,o9,
+v16,o8,s13,v17,command_waterfall_224,b15,l18,alcove_227,t16,e12,s14, i19,p17,f6,m10,anteroom_235,q14,e14,n14,s15,u10,c20,
+balcony_above_treasure_chamber_242,g16,c21,r14,l19,f7,i20,p18,y14,q15,k9, a12,x14,m11,x15,a13,i21,k10,t17,x16,n15,o9,
 m12,m13,o10,a14,s16,q16,b16,d20,i22,a15,u11, g17,i23,t18,c22,w15,n16,q17,r15,a16,d21,x17,
 v18,o11,j19,p19,u12,g18,w16,k11,e15,g19,b17, r16,h12,h13,t19,q18,o12,q19,c23,q20,t20,m14,
 d22,g20,p20,v19,h14,m15,command_vaulted_ceiling_316,y15,x18,x19,KilobyteInputBuffer0, f8,i24,m16,a17,x20,h15,v20,p21,o13,h16,b18,
 w17,KilobyteInputBuffer1,e16,n17,f9,x21,c24,l20,a18,o14,s17, c25,f10,q21,w18,e17,d23,s18,b19,f11,z10,s19,
 u13,i25,r17,p22,m17,z11,n18,a19,b20,i26,p23, g22,q22,k12,s20,c26,z12,r18,r19,q23,n19,u14,
-o15,f12,v21,beach_377,q24,i27,q25,h17,q26,living_quarters_383,w19, f13,k13,u15,z13,t22,h18,i28,m18,v22,s21,o16,
+o15,f12,v21,beach_377,q24,i27,q25,h17,q26,living_quarters_383,w19, f13,k13,u15,z13,t22,h18,basement_391,m18,cellar_393,s21,o16,
 west_of_causeway_396,east_of_causeway_397,a20,k14,z15,p24,h19,g23,k15,s22,k16, i29,z16,m19,m20,q27,q28,k17,x22,t23,d24,y16,
 i30,f14,g24,p25,x23,q29,h20,z17,z18,v23,x24, f15,i31,h21,lost_in_mist_432,small_dank_cave_433,rock_in_mist_434,r20,f16,t25,l21,v25,
 d25,g25,l22,n20,v26,t26,q30,s23,KilobyteInputBuffer3,g26,p26, s24,m21,g27,d26,e19,f17,f18,y17,f19,u16,command_lost_in_woods_461,

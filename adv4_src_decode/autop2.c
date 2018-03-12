@@ -13,10 +13,18 @@ int s15() {
 		return 0;
 	} processMoveCommand(241, 0, COMMAND_NORTH, 241, -625); processMoveCommand(242, 0, -242); if (!currentCommandIsOneOf(COMMAND_SOUTH, COMMAND_CROSS, -1))
 		return 0; if (g10(28, -1)) { set_object_location(28, 484); processMoveCommand(239, -1163); } printMessage(64, 1162, 0);
-} int c20() { processMoveCommand(240, 0, COMMAND_SOUTH, -239); processMoveCommand(242, 0, COMMAND_NORTHEAST, -242); } int y13() {
+} int c20() { processMoveCommand(240, 0, COMMAND_SOUTH, -239); processMoveCommand(242, 0, COMMAND_NORTHEAST, -242); } 
+
+int balcony_above_treasure_chamber_242() {
 	processMoveCommand(241, 0, COMMAND_WEST, COMMAND_EXIT, -241);
-	processMoveCommand(240, 0, -239); if (!currentCommandIsNotOneOf(COMMAND_JUMP, -1)) return 0; processMoveCommand(LOCATION_LIMBO, -1); v37();
-} int j16()
+	processMoveCommand(240, 0, -239); 
+	if (!currentCommandIsNotOneOf(COMMAND_JUMP, -1)) 
+		return 0; 
+	processMoveCommand(LOCATION_LIMBO, -1); 
+	v37();
+} 
+
+int j16()
 {
 	processMoveCommand(180, 0, -COMMAND_SOUTHEAST);
 } int c21() {
@@ -727,11 +735,18 @@ o27() {
 } int h18() {
 	processMoveCommand(389, 0, COMMAND_WEST, -COMMAND_NORTH); processMoveCommand(385, 0, -COMMAND_EAST);
 	processMoveCommand(388, 0, -COMMAND_SOUTH); processMoveCommand(389, 0, -COMMAND_UP); processMoveCommand(386, 0, -COMMAND_DOWN);
-} int i28() {
-	processMoveCommand(392, 0, COMMAND_UP, -5);
-	u28(); x31(); x32(); processMoveCommand(393, 1233, COMMAND_ENTER, -COMMAND_SOUTH);
 } 
-int v22() {
+
+int basement_391() {
+	processMoveCommand(392, 0, COMMAND_UP, -5);
+	
+	u28(); 
+	x31(); 
+	x32(); 
+	processMoveCommand(393, 1233, COMMAND_ENTER, -COMMAND_SOUTH);
+} 
+
+int cellar_393() {
 	if (currentCommandContains(ITEM_PORTCULLIS)) {
 		if (!(currentCommandContains(113) || currentCommandContains(COMMAND_LOOK))) { 
 			printMessage(64, 1226, 0); // If  you  are  trying  to  open the rusty portcullis, you are wasting your time.
