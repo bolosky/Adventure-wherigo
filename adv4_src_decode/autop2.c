@@ -64,10 +64,19 @@ int j16()
 		set_object_location(22, 244); set_object_location(23, 484); printMessage(64, 1447, 0);
 	} if (object_type_3_buffer[22] == 1) { l12(0, 22, 2); }
 	processMoveCommand(245, -2);
-} int l19() {
-	if (currentCommandContains(COMMAND_LOOK)) { return 0; } processMoveCommand(213, 0, COMMAND_DOWN, COMMAND_SOUTHWEST, COMMAND_EXIT, -213);
-	processMoveCommand(244, 0, COMMAND_UP, COMMAND_NORTHEAST, -21);
-} int f7() {
+} 
+
+int sloping_corridor_246() {
+	if (currentCommandContains(COMMAND_LOOK)) { 
+		return 0; 
+	} 
+	
+
+	processMoveCommand(213, 0, COMMAND_DOWN, COMMAND_SOUTHWEST, COMMAND_EXIT, -213);
+	processMoveCommand(244, 0, COMMAND_UP, COMMAND_NORTHEAST , -21);
+} 
+
+int f7() {
 	processMoveCommand(210, 0, COMMAND_NORTH, -COMMAND_EXIT); if (currentCommandContains(60)) {
 		if
 			(object_type_3_buffer[20] == 0) {
