@@ -179,23 +179,41 @@ int o21() {
 			}
 		}
 	} printMessage(64, 828, 0);
-} int j42()
+} 
+
+int j42()
 {
 	if (object_type_3_buffer[17] > 0) {
-		object_type_3_buffer[17] += 1; if (object_type_3_buffer[17] > 15) { set_object_location(17, object_type_3_buffer[671]); } f3(677, 1521);
-		object_type_3_buffer[677] += object_type_3_buffer[17]; object_type_3_buffer[677] -= 2; printMessage(2, 677, 0); if (object_type_3_buffer[17] == 18) { die(); }
+		object_type_3_buffer[17] += 1; 
+		if (object_type_3_buffer[17] > 15) { 
+			set_object_location(17, object_type_3_buffer[671]); 
+		} 
+		f3(677, 1521);
+		object_type_3_buffer[677] += object_type_3_buffer[17]; 
+		object_type_3_buffer[677] -= 2; 
+		printMessage(2, 677, 0); 
+		if (object_type_3_buffer[17] == 18) { 
+			die(); 
+		}
 	}
 } 
 
-int s30() { if (object_type_3_buffer[697] > 1) { printMessage(12, 1040, 670); } } int z26() {
+int s30() { 
+	if (object_type_3_buffer[697] > 1) { 
+		printMessage(12, 1040, 670); 
+	} 
+} 
+
+int z26() {
 	processMoveCommand(LOCATION_LIMBO, -1);
 	if (object_type_3_buffer[99] == 1) {
-		l12(0, 698, 0); if (isItemAtLocation(99, -1)) { printMessage(0, 1158, 0); }
-		else {
+		l12(0, 698, 0); 
+		if (isItemAtLocation(99, -1)) { 
+			printMessage(0, 1158, 0); 
+		} else {
 			printMessage(0, 1159, 0); // You have jumped into a bottomless pit.  Eventually, you die of thirst.
 		}
-	}
-	else { 
+	} else { 
 		printMessage(0, 1159, 0); // You have jumped into a bottomless pit.  Eventually, you die of thirst.
 	} 
 	die();
@@ -204,7 +222,7 @@ int s30() { if (object_type_3_buffer[697] > 1) { printMessage(12, 1040, 670); } 
 int n24() {
 	if (currentCommandContains(101) || currentCommandContains(38)) {
 		return 0;
-	} l12(0, 677, 0); if (object_type_3_buffer[PLAYER_LOCATION] == 140) {
+	} l12(0, 677, 0); if (object_type_3_buffer[PLAYER_LOCATION] == LOCATION_MAGNIFICENT_VIEW) {
 		f3(677, 1200); f3(676, LOCATION_LIMBO);
 	} if (object_type_3_buffer[PLAYER_LOCATION] == 150) { f3(677, 1201); f3(676, 151); } if (object_type_3_buffer[PLAYER_LOCATION] == 152) {
 		f3(677, 1202);
@@ -337,7 +355,7 @@ int n24() {
 } int u27() {
 	if (object_type_3_buffer[135] > 3)
 	{
-		if ((isItemAtLocation(95, -1) || isObjectFlagSet(135, 14)) && isObjectFlagSet(27, 14)) {
+		if ((isItemAtLocation(ITEM_STARSTONE, -1) || isObjectFlagSet(135, 14)) && isObjectFlagSet(27, 14)) {
 			printMessage(0, 1365, 0); set_object_location(135, LOCATION_LIMBO);
 			l12(0, 135, 0);
 		}
@@ -348,7 +366,7 @@ int n24() {
 		} return 0;
 	} if (isItemAtLocation(88, -1)) {
 		printMessage(0, 1306, 0);
-		if (!(isObjectFlagSet(27, 14))) { printMessage(0, 1307, 0); } set_object_location(83, object_type_3_buffer[671]); set_object_location(135, 140); l12(0, 135, 4);
+		if (!(isObjectFlagSet(27, 14))) { printMessage(0, 1307, 0); } set_object_location(83, object_type_3_buffer[671]); set_object_location(135, LOCATION_MAGNIFICENT_VIEW); l12(0, 135, 4);
 		set_object_location(88, LOCATION_LIMBO); return 0;
 	} if (isItemAtLocation(50, -1)) {
 		l12(0, 135, 2); object_type_3_buffer[757] = cheezy_rand(60 - 40 + 1) + 40;
@@ -364,7 +382,7 @@ int n24() {
 			}
 			else {
 				l12(0, 701, 0);
-				*getObjectPointer(675) = -1; object_type_3_buffer[675] = OBJECT_TYPE_0_MIN_ID - 1; while (++object_type_3_buffer[675] <= OBJECT_TYPE_0_MAX_ID) {
+				*getObjectPointer(675) = -1; object_type_3_buffer[675] = ITEM_MIN_ID - 1; while (++object_type_3_buffer[675] <= ITEM_MAX_ID) {
 					if (isItemAtLocation(t11(object_type_3_buffer[675]), -1)
 						&& object_type_3_buffer[675] != 99) {
 						if (isObjectFlagSet(t11(675), 16)) {
@@ -591,13 +609,13 @@ int h31() {
 
 int command_outside_building_136() {
 	if (currentCommandContains(COMMAND_LOOK)) {
-		if (currentCommandContains(141)) {
+		if (currentCommandContains(LOCATION_BUILDING)) {
 			printMessage(64, 1639, 0);
 		} 
 		return 0;
 	} 
 	processMoveCommand(137, 0, 136, COMMAND_WEST, -COMMAND_UP); 
-	processMoveCommand(LOCATION_BUILDING, 0, COMMAND_ENTER, 141, -COMMAND_EAST); 
+	processMoveCommand(LOCATION_BUILDING, 0, COMMAND_ENTER, LOCATION_BUILDING, -COMMAND_EAST); 
 	processMoveCommand(142, 0, COMMAND_DOWNSTREAM, 626, COMMAND_SOUTH, -COMMAND_DOWN);
 	processMoveCommand(440, 0, COMMAND_NORTH, -622); 
 	processMoveCommand(458, 0, -COMMAND_NORTHEAST); 
@@ -610,7 +628,7 @@ int command_outside_building_136() {
 		if (currentCommandContains(144)) {
 			f3(678, 144);
 		} else { 
-			f3(678, 140); 
+			f3(678, LOCATION_MAGNIFICENT_VIEW); 
 		} 
 		h31();
 	} 
@@ -622,7 +640,7 @@ int command_outside_building_136() {
 
 int r32()
 {
-	if (currentCommandContains(COMMAND_LOOK)) { return 0; } processMoveCommand(LOCATION_END_OF_ROAD, 0, 136, 141, -COMMAND_EAST); processMoveCommand(457, 0, -COMMAND_NORTH); processMoveCommand(440, 0, COMMAND_NORTHEAST, -622);
+	if (currentCommandContains(COMMAND_LOOK)) { return 0; } processMoveCommand(LOCATION_END_OF_ROAD, 0, 136, LOCATION_BUILDING, -COMMAND_EAST); processMoveCommand(457, 0, -COMMAND_NORTH); processMoveCommand(440, 0, COMMAND_NORTHEAST, -622);
 	processMoveCommand(142, 0, -COMMAND_SOUTHEAST); processMoveCommand(450, 0, -COMMAND_SOUTH); processMoveCommand(461, 0, -COMMAND_SOUTHWEST); processMoveCommand(438, 0, -COMMAND_NORTHWEST); if (!currentCommandIsOneOf(COMMAND_WEST, 529, COMMAND_CLIMB, -1))
 		return 0; if (y10(1264)) { printMessage(0, 1265, 0); r7(); } printMessage(64, 1253, 0);
 } int o26()
@@ -644,7 +662,7 @@ int f22() {
 		printMessage(64, 1585, 0); // No,  no...  a misunderstanding.  "Well house" does not imply a "well". It just means that the spring wells out within the house.  There is no  well to be seen here.  I hope I am making myself clear enough for you.
 	} 
 	
-	if (!currentCommandIsNotOneOf(COMMAND_LOOK, 141, -1)) 
+	if (!currentCommandIsNotOneOf(COMMAND_LOOK, LOCATION_BUILDING, -1)) 
 		return 0; 
 	
 	printMessage(64, 1639, 0);  // It's  no  architectural  miracle  - just a simple brick structure with no windows, serving as a well house for a large spring.
@@ -675,7 +693,7 @@ int f23() {
 		{
 			processMoveCommand(450, -2);
 		} processMoveCommand(460, -2);
-	} if (currentCommandContains(141)) {
+	} if (currentCommandContains(LOCATION_BUILDING)) {
 		f3(679, 143); f3(678, 136); h31();
 	} if (currentCommandContains(144)) { f3(679, 440); f3(678, 144); h31(); } if (!currentCommandIsNotOneOf(COMMAND_GO, 626, -1))
 		return 0; f3(678, 136); f3(679, 143); n25();
@@ -685,12 +703,12 @@ int f23() {
 } int j11() {
 	if (currentCommandContains(COMMAND_LOOK)) { return 0; } if (object_type_3_buffer[143] > 0)
 	{
-		if (currentCommandContains(141)) { f3(679, 436); f3(678, 136); h31(); } if (currentCommandContains(144)) {
+		if (currentCommandContains(LOCATION_BUILDING)) { f3(679, 436); f3(678, 136); h31(); } if (currentCommandContains(144)) {
 			f3(679, 142);
 			f3(678, 144); h31();
 		}
 	}
-	else { processMoveCommand(LOCATION_END_OF_ROAD, 0, -141); processMoveCommand(144, 0, -144); } processMoveCommand(142, 0, COMMAND_UPSTREAM, -COMMAND_NORTH);
+	else { processMoveCommand(LOCATION_END_OF_ROAD, 0, -LOCATION_BUILDING); processMoveCommand(144, 0, -144); } processMoveCommand(142, 0, COMMAND_UPSTREAM, -COMMAND_NORTH);
 	processMoveCommand(144, 0, COMMAND_DOWNSTREAM, 640, COMMAND_SOUTH, -144); processMoveCommand(460, 0, -COMMAND_NORTHEAST); processMoveCommand(454, 0, -COMMAND_EAST); processMoveCommand(455, 0, -COMMAND_SOUTHEAST);
 	processMoveCommand(452, 0, -COMMAND_SOUTHWEST); processMoveCommand(451, 0, COMMAND_WEST, -622); processMoveCommand(450, 0, -COMMAND_NORTHWEST); if (currentCommandContains(COMMAND_UP)) {
 		if (cheezy_rand(100) < 50)
@@ -700,7 +718,7 @@ int f23() {
 	} if (!currentCommandIsOneOf(143, 626, COMMAND_DOWN, COMMAND_ENTER, -1)) return 0; if
 		(object_type_3_buffer[143] == 0) {
 		printMessage(64, 901, 0);
-	} l12(0, 717, 6); e27(); printMessage(0, 1390, 0); if (y10(1391))
+	} l12(0, 717, 6); compute_score(); printMessage(0, 1390, 0); if (y10(1391))
 	{
 		printMessage(0, 1392, 0); if (y10(1391)) {
 			if (object_type_3_buffer[708] > 658) { printMessage(0, 1394, 0); }
@@ -715,7 +733,7 @@ int f23() {
 		return
 			0;
 	} processMoveCommand(454, 0, -COMMAND_NORTHEAST); processMoveCommand(455, 0, -COMMAND_EAST); processMoveCommand(456, 0, -COMMAND_SOUTHEAST); processMoveCommand(436, 0, -COMMAND_SOUTH); processMoveCommand(453, 0, -COMMAND_SOUTHWEST);
-	processMoveCommand(452, 0, COMMAND_WEST, -622); processMoveCommand(451, 0, -COMMAND_NORTHWEST); if (currentCommandContains(141)) {
+	processMoveCommand(452, 0, COMMAND_WEST, -622); processMoveCommand(451, 0, -COMMAND_NORTHWEST); if (currentCommandContains(LOCATION_BUILDING)) {
 		f3(679, 436); f3(678, 136);
 		h31();
 	} if (currentCommandContains(COMMAND_UP)) { if (cheezy_rand(100) < 50) { processMoveCommand(455, -2); } processMoveCommand(452, -2); } processMoveCommand(143, 0, COMMAND_UPSTREAM, COMMAND_NORTH, -143);
@@ -1263,9 +1281,9 @@ int command_waterfall_224() {
 		} 
 		
 		*getObjectPointer(675) = -1; 
-		object_type_3_buffer[675] = OBJECT_TYPE_0_MIN_ID - 1;
+		object_type_3_buffer[675] = ITEM_MIN_ID - 1;
 		
-		while (++object_type_3_buffer[675] <= OBJECT_TYPE_0_MAX_ID) {
+		while (++object_type_3_buffer[675] <= ITEM_MAX_ID) {
 			if (isItemAtLocation(t11(object_type_3_buffer[675]), -1) && !(isObjectFlagSet(t11(675), 12)) &&	object_type_3_buffer[675] != ITEM_LAMP) {
 				set_object_location(object_type_3_buffer[675], LOCATION_LIMBO); 
 				object_type_3_buffer[701] += 1;
@@ -1330,8 +1348,8 @@ int alcove_227()
 	} 
 	
 	*getObjectPointer(675) = -1; 
-	object_type_3_buffer[675] = OBJECT_TYPE_0_MIN_ID - 1; 
-	while (++object_type_3_buffer[675] <= OBJECT_TYPE_0_MAX_ID) {
+	object_type_3_buffer[675] = ITEM_MIN_ID - 1; 
+	while (++object_type_3_buffer[675] <= ITEM_MAX_ID) {
 		if (isItemAtLocation(t11(object_type_3_buffer[675]), -1) && !(isObjectFlagSet(t11(675), 12))) {
 			printMessage(64, 922, 0);
 		}
@@ -1352,7 +1370,7 @@ int t16() {
 	if (isItemAtLocation(55, -1)) { object_type_3_buffer[699] -= 1; } if (isItemAtLocation(58, -1)) { object_type_3_buffer[699] -= 1; } if (object_type_3_buffer[699] == 0)
 	{
 		processMoveCommand(227, -2);
-	} *getObjectPointer(675) = -1; object_type_3_buffer[675] = OBJECT_TYPE_0_MIN_ID - 1; while (++object_type_3_buffer[675] <= OBJECT_TYPE_0_MAX_ID) {
+	} *getObjectPointer(675) = -1; object_type_3_buffer[675] = ITEM_MIN_ID - 1; while (++object_type_3_buffer[675] <= ITEM_MAX_ID) {
 		if (isItemAtLocation(t11(object_type_3_buffer[675]), -1)
 			&& !(isObjectFlagSet(t11(675), 12))) {
 			printMessage(64, 922, 0);
@@ -1393,7 +1411,7 @@ int t19() {
 {
 	if (currentCommandContains(COMMAND_WEST)) { modifyObjectFlag('c', t11(735), 2); processMoveCommand(236, -2); } if (!currentCommandIsOneOf(COMMAND_NORTH, COMMAND_SOUTH, COMMAND_EAST, COMMAND_UP, COMMAND_DOWN, COMMAND_NORTHEAST, COMMAND_NORTHWEST, COMMAND_SOUTHEAST, COMMAND_SOUTHWEST, -1))
 		return 0; if (isObjectFlagSet(t11(735), 2)) { l12(0, 700, 50); }
-		else { l12(0, 700, 95); }
+		else { l12(0, 700, ITEM_STARSTONE); }
 		if (cheezy_rand(100) < object_type_3_buffer[700]) { processMoveCommand(236, -2); } processMoveCommand(235, -2);
 } int e14() {
 	processMoveCommand(210, 0, -COMMAND_SOUTH);

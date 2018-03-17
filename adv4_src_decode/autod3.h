@@ -106,7 +106,7 @@ int r23(); extern int e22(); extern int j33(); extern int t33(); extern
 int g30(); extern int v33(); extern int d33(); extern int b25(); extern
 int z23(); extern int x26(); extern int k20(); extern int p33(); extern
 int s26(); extern int r24(); extern int l28(); extern int w23(); extern
-int l29(); extern int t34(); extern int blast_command(); extern int v35(); extern
+int command_score_595(); extern int t34(); extern int blast_command(); extern int v35(); extern
 int l30(); extern int u18(); extern int i39(); extern int g31(); extern
 int u19(); extern int i40(); extern int u20(); extern int u21(); extern
 int a24(); extern int j34(); extern int u22(); extern int l31(); extern
@@ -710,7 +710,7 @@ int (*command_by_location_dispatch_table[])()= {
 	r24,	// 592
 	l28,	// 593
 	w23,	// 594
-	l29,	// 595
+	command_score_595,	// 595
 	t34,	// 596
 	blast_command,	// 597
 	v35,	// 598
@@ -813,7 +813,7 @@ v28,o18,b22,g28,a21,i33,command_noop,command_noop,d29,i34,t28, v29,d30,i35,x25,a
 t29,command_noop,u17,p28,q32,command_noop,b23,e20,m24,KilobyteInputBuffer8,z21, KilobyteInputBuffer9,v30,j30,o19,s25,p29,j31,f20,o20,p30,n22,
 i36,d32,j32,l25,i37,k19,c27,w21,w22,e21,t30, r22,t31,g29,command_break,p31,t32,i38,l26,b24,command_noop,q34,
 p32,l27,v31,v32,z22,q35,a23,r23,e22,j33,t33, g30,v33,d33,b25,z23,x26,k20,p33,s26,r24,l28,
-w23,l29,t34,blast_command,v35,command_noop,command_noop,command_noop,l30,u18,i39, g31,u19,i40,u20,u21,a24,j34,u22,l31,n23,command_noop,
+w23,command_score_595,t34,blast_command,v35,command_noop,command_noop,command_noop,l30,u18,i39, g31,u19,i40,u20,u21,a24,j34,u22,l31,n23,command_noop,
 command_noop,f21,command_noop,command_noop,command_noop,command_noop,v36,command_noop,command_noop,command_noop,command_noop, command_noop,command_noop,command_noop,command_noop,command_noop,command_noop,command_noop,command_noop,command_noop,command_noop,command_noop,
 command_noop,command_noop,command_noop,command_noop,command_noop,command_noop,command_noop,command_noop,command_noop,command_noop,command_noop, command_noop,command_noop,command_noop,command_noop,command_noop,command_noop,command_noop,command_noop,command_noop,command_noop,command_noop,
 command_noop,command_noop,command_noop,command_noop,j35,x27,r25,e23,h22,command_noop 

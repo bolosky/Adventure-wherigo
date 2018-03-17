@@ -526,7 +526,7 @@ int g16()
 		printMessage(64, 1599, 0); // As  could be plainly inferred from the description by anybody with even a very modest amount of  intelligence,  this  strange  place  has  no  such conventional  features  as  walls.   Before you ask, no, it has no floor, ceiling, doors or windows either.  I hope, the fact does not  come  as  a surprise.
 	}
 
-	processMoveCommand(243, 0, COMMAND_NORTH, COMMAND_NORTHEAST, COMMAND_EAST, COMMAND_SOUTHEAST, COMMAND_SOUTH, COMMAND_SOUTHWEST, COMMAND_WEST, COMMAND_NORTHWEST, COMMAND_UP, -COMMAND_DOWN);
+	processMoveCommand(LOCATION_GRAY_NOWHERE, 0, COMMAND_NORTH, COMMAND_NORTHEAST, COMMAND_EAST, COMMAND_SOUTHEAST, COMMAND_SOUTH, COMMAND_SOUTHWEST, COMMAND_WEST, COMMAND_NORTHWEST, COMMAND_UP, -COMMAND_DOWN);
 
 	if (!currentCommandIsOneOf(496, COMMAND_XYZZY, 498, 499, 500, COMMAND_PLUGH, 502, 503, 504, 505, 506, 507, 508, 509, COMMAND_FEE, 511, -1))
 		return 0; 
@@ -552,20 +552,20 @@ int g16()
 			if (object_type_3_buffer[699] == object_type_3_buffer[700])
 			{
 				l12(0, 717, 5); 
-				if (item_location[95] == 140) { 
-					set_object_location(95, 243); 
+				if (item_location[ITEM_STARSTONE] == LOCATION_MAGNIFICENT_VIEW) { 
+					set_object_location(ITEM_STARSTONE, LOCATION_GRAY_NOWHERE); 
 				} else { 
-					set_object_location(95, LOCATION_LIMBO); 
+					set_object_location(ITEM_STARSTONE, LOCATION_LIMBO); 
 				} 
 				
-				modifyObjectFlag('c', 95, 3);
-				*getObjectPointer(675) = -1; object_type_3_buffer[675] = OBJECT_TYPE_0_MIN_ID - 1; 
+				modifyObjectFlag('c', ITEM_STARSTONE, 3);
+				*getObjectPointer(675) = -1; object_type_3_buffer[675] = ITEM_MIN_ID - 1; 
 				
-				while (++object_type_3_buffer[675] <= OBJECT_TYPE_0_MAX_ID) {
+				while (++object_type_3_buffer[675] <= ITEM_MAX_ID) {
 					if (isObjectFlagSet(t11(675), 3))
 					{
-						if (item_location[object_type_3_buffer[675]] == 141) { 
-							set_object_location(object_type_3_buffer[675], 243); 
+						if (item_location[object_type_3_buffer[675]] == LOCATION_BUILDING) { 
+							set_object_location(object_type_3_buffer[675], LOCATION_GRAY_NOWHERE); 
 						} else { 
 							set_object_location(object_type_3_buffer[675], LOCATION_LIMBO); 
 						}
@@ -847,7 +847,7 @@ int a20() {
 		else { printMessage(64, 1253, 0); }
 	}
 		else { object_type_3_buffer[730] += 1; } printMessage(2, 677, 0);
-		if (isItemAtLocation(ITEM_LAMP, -1)) { set_object_location(ITEM_LAMP, PLAYER_LOCATION); } *getObjectPointer(675) = -1; object_type_3_buffer[675] = OBJECT_TYPE_0_MIN_ID - 1; while (++object_type_3_buffer[675] <= OBJECT_TYPE_0_MAX_ID)
+		if (isItemAtLocation(ITEM_LAMP, -1)) { set_object_location(ITEM_LAMP, PLAYER_LOCATION); } *getObjectPointer(675) = -1; object_type_3_buffer[675] = ITEM_MIN_ID - 1; while (++object_type_3_buffer[675] <= ITEM_MAX_ID)
 		{
 			if (isItemAtLocation(t11(object_type_3_buffer[675]), -1)) { set_object_location(object_type_3_buffer[675], LOCATION_LIMBO); }
 		} die();
@@ -1022,7 +1022,7 @@ int s11() {
 	processMoveCommand(457, 0, -COMMAND_SOUTHEAST); 
 	
 	if (currentCommandContains(COMMAND_BUILDING)) {
-		f3(679, 140); f3(678, 136);
+		f3(679, LOCATION_MAGNIFICENT_VIEW); f3(678, 136);
 		h31();
 	} 
 	
@@ -1035,15 +1035,15 @@ int s11() {
 } 
 
 int i16() {
-	processMoveCommand(138, 0, -COMMAND_EAST); processMoveCommand(140, 0, -COMMAND_NORTHWEST); if (currentCommandContains(COMMAND_BUILDING)) {
-		f3(679, 140);
+	processMoveCommand(138, 0, -COMMAND_EAST); processMoveCommand(LOCATION_MAGNIFICENT_VIEW, 0, -COMMAND_NORTHWEST); if (currentCommandContains(COMMAND_BUILDING)) {
+		f3(679, LOCATION_MAGNIFICENT_VIEW);
 		f3(678, 136); h31();
-	} if (!currentCommandIsNotOneOf(COMMAND_GO, 457, -1)) return 0; f3(678, 138); f3(679, 140);
+	} if (!currentCommandIsNotOneOf(COMMAND_GO, 457, -1)) return 0; f3(678, 138); f3(679, LOCATION_MAGNIFICENT_VIEW);
 	n25();
 } int f18() {
 	if (currentCommandContains(COMMAND_LOOK)) { return 0; } processMoveCommand(138, 0, COMMAND_NORTHWEST, -138); processMoveCommand(437, 0, COMMAND_NORTH, -622);
 	processMoveCommand(441, 0, -COMMAND_NORTHEAST); processMoveCommand(440, 0, -COMMAND_EAST); processMoveCommand(136, 0, -COMMAND_SOUTHEAST); processMoveCommand(137, 0, -COMMAND_SOUTH); processMoveCommand(438, 0, COMMAND_SOUTHWEST, -COMMAND_WEST);
-	if (currentCommandContains(COMMAND_BUILDING)) { f3(679, 140); f3(678, 136); h31(); } if (!currentCommandIsNotOneOf(COMMAND_GO, 457, -1)) return
+	if (currentCommandContains(COMMAND_BUILDING)) { f3(679, LOCATION_MAGNIFICENT_VIEW); f3(678, 136); h31(); } if (!currentCommandIsNotOneOf(COMMAND_GO, 457, -1)) return
 		0; f3(678, 136); f3(679, 138); n25();
 } int y17() {
 	if (currentCommandContains(COMMAND_LOOK)) {
@@ -1286,7 +1286,7 @@ int o28() {
 	} 
 	
 	e6(0, object_type_3_buffer[PLAYER_LOCATION], 3); 
-	if (!currentCommandIsOneOf(101, 100, 113, 112, 63, 38, 106, 116, 56, 109, ITEM_ORB, 95, 82, -1))
+	if (!currentCommandIsOneOf(101, 100, 113, 112, 63, 38, 106, 116, 56, 109, ITEM_ORB, ITEM_STARSTONE, 82, -1))
 		return 0; 
 	
 	if (currentCommandContains(ITEM_BIRD)) { 
@@ -1320,7 +1320,7 @@ int o28() {
 									if (currentCommandContains(ITEM_ORB)) { 
 										e28(); 
 									} else {
-										if (currentCommandContains(95))
+										if (currentCommandContains(ITEM_STARSTONE))
 										{
 											p35();
 										} else { 
@@ -1369,7 +1369,7 @@ int c31() {
 
 int b31() {
 	e6(0, 486, -1); if (currentCommandContains(3)) { e6(1, 486, -1); } if (!currentCommandIsOneOf(101, 100, 111, 113, 112, 53, 118, 27, 38,
-		97, 95, -1)) return 0; if (currentCommandContains(101)) { s27(); }
+		97, ITEM_STARSTONE, -1)) return 0; if (currentCommandContains(101)) { s27(); }
 		else {
 			if (currentCommandContains(100)) {
 				g33();
@@ -1396,7 +1396,7 @@ int b31() {
 									}
 								}
 								else {
-									if (currentCommandContains(95)) { k22(); }
+									if (currentCommandContains(ITEM_STARSTONE)) { k22(); }
 									else {
 										if
 											(currentCommandContains(97)) {

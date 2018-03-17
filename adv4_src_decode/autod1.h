@@ -8,8 +8,8 @@
 #define d13 775
 #define o3 669
 #define l14 487
-#define OBJECT_TYPE_0_MIN_ID 3
-#define OBJECT_TYPE_0_MAX_ID 135
+#define ITEM_MIN_ID 3
+#define ITEM_MAX_ID 135
 #define OBJECT_TYPE_1_MIN_ID 136
 #define OBJECT_TYPE_1_MAX_ID 486
 #define OBJECT_TYPE_2_MIN_ID 487

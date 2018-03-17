@@ -34,8 +34,8 @@ char *u0 = NULL;
 #include "advkern.h"
 int v0; jmp_buf done_with_command; 
 int object_type_3_buffer[OBJECT_TYPE_3_MAX_ID]; 
-int item_location[OBJECT_TYPE_0_MAX_ID + 1]; 
-short object_type_0_buffer[OBJECT_TYPE_0_SIZE_IN_SHORTS * (OBJECT_TYPE_0_MAX_ID - OBJECT_TYPE_0_MIN_ID+ 1)]; 
+int item_location[ITEM_MAX_ID + 1]; 
+short object_type_0_buffer[OBJECT_TYPE_0_SIZE_IN_SHORTS * (ITEM_MAX_ID - ITEM_MIN_ID+ 1)]; 
 short object_type_1_buffer[OBJECT_TYPE_1_SIZE_IN_SHORTS * (OBJECT_TYPE_1_MAX_ID - OBJECT_TYPE_1_MIN_ID + 1)]; 
 short object_type_2_buffer[OBJECT_TYPE_2_SIZE_IN_SHORTS * (OBJECT_TYPE_3_MAX_ID - OBJECT_TYPE_2_MIN_ID + 1)]; 
 char command[161] = "\n"; 
@@ -328,7 +328,7 @@ void printMessage(flags, y4, c7) int flags; int y4; int c7;
 	else if (t6) 
 		dataFileOffset = c10[y4];
 #endif
-	else if (y4 > OBJECT_TYPE_0_MAX_ID || item_location[y4] == r5) 
+	else if (y4 > ITEM_MAX_ID || item_location[y4] == r5) 
 		dataFileOffset = y8[y4]; 
 	else 
 		dataFileOffset = i10[y4]; 
@@ -715,8 +715,8 @@ int y10(g5) int g5; { char s5[10]; char
 			object_type_3_buffer[c14] = 1; return
 				(1);
 		} (void)time(&g8); (void)fprintf(u5, "%s\n", TITLE); (void)fwrite
-		(&g8, sizeof(long), 1, u5); e7 = OBJECT_TYPE_0_MIN_ID; (void)fwrite(&e7, sizeof(int),
-			1, u5); e7 = OBJECT_TYPE_0_MAX_ID; (void)fwrite(&e7, sizeof(int), 1, u5); e7 = OBJECT_TYPE_1_MAX_ID; (void)
+		(&g8, sizeof(long), 1, u5); e7 = ITEM_MIN_ID; (void)fwrite(&e7, sizeof(int),
+			1, u5); e7 = ITEM_MAX_ID; (void)fwrite(&e7, sizeof(int), 1, u5); e7 = OBJECT_TYPE_1_MAX_ID; (void)
 			fwrite(&e7, sizeof(int), 1, u5); e7 = OBJECT_TYPE_2_MAX_ID; (void)fwrite(&e7, sizeof(int),
 				1, u5); e7 = OBJECT_TYPE_3_MAX_ID; (void)fwrite(&e7, sizeof(int), 1, u5); (void)fwrite
 				(object_type_3_buffer, sizeof(int), sizeof(object_type_3_buffer) / sizeof(int), u5); (void)fwrite(item_location, sizeof
@@ -730,7 +730,7 @@ int y10(g5) int g5; { char s5[10]; char
 			"%s", q6); (void)fgetc(u5); if (strcmp(q6, TITLE) == 0) {
 			(void)fread
 			(&g8, sizeof(long), 1, u5); (void)fread(&e7, sizeof(int), 1, u5); if
-				(e7 != OBJECT_TYPE_0_MIN_ID) z4++; (void)fread(&e7, sizeof(int), 1, u5); if (e7 != OBJECT_TYPE_0_MAX_ID)
+				(e7 != ITEM_MIN_ID) z4++; (void)fread(&e7, sizeof(int), 1, u5); if (e7 != ITEM_MAX_ID)
 				z4++; (void)fread(&e7, sizeof(int), 1, u5); if (e7 != OBJECT_TYPE_1_MAX_ID) z4++; (void)
 				fread(&e7, sizeof(int), 1, u5); if (e7 != OBJECT_TYPE_2_MAX_ID) z4++; (void)fread(&e7,
 					sizeof(int), 1, u5); if (e7 != OBJECT_TYPE_3_MAX_ID) z4++;
@@ -751,15 +751,15 @@ int y10(g5) int g5; { char s5[10]; char
 			(); return (0); case 6: t8 = object_type_3_buffer[c14]; return (0); case 7: object_type_3_buffer[c14] = t8;
 		return (0); case 8: (void)time(&g8); object_type_3_buffer[c14] = 1 + (g8 - i13) / 60; return
 			(0); case 9: case 10: object_type_3_buffer[(p4 == 9) ? i9 : o2] = object_type_3_buffer[c14]; return (0); case
-			11: if (OBJECT_TYPE_0_MIN_ID <= object_type_3_buffer[c14] && object_type_3_buffer[c14] <= OBJECT_TYPE_0_MAX_ID) object_type_3_buffer[c14] = 0; else object_type_3_buffer[c14] =
+			11: if (ITEM_MIN_ID <= object_type_3_buffer[c14] && object_type_3_buffer[c14] <= ITEM_MAX_ID) object_type_3_buffer[c14] = 0; else object_type_3_buffer[c14] =
 			1; return (0); case 12: object_type_3_buffer[c14] = adv_allowed(); return (0); case 13:
 				object_type_3_buffer[c14] = adv_still_allowed(); return (0); default: (void)printf_to_term_and_log("GLITCH! Bad special code: %d\n",
 					p4); return (1);
 	} } e6(p4, d8, q5) int p4; int d8; int q5; { int i6; int
 		k5; int a1; if (p4 == 0 && object_type_3_buffer[v5] != 1) return; k5 = -1;
 #ifdef b7
-	a1 = (p4 == 2) ? v0 + 1 : OBJECT_TYPE_0_MIN_ID; if (a1 > OBJECT_TYPE_0_MAX_ID) goto b11; for (i6 = a1; i6 <=
-		OBJECT_TYPE_0_MAX_ID; i6++)
+	a1 = (p4 == 2) ? v0 + 1 : ITEM_MIN_ID; if (a1 > ITEM_MAX_ID) goto b11; for (i6 = a1; i6 <=
+		ITEM_MAX_ID; i6++)
 #else 
 	for (i6 = r0; i6 <= n1; i6++)
 #endif 
@@ -825,7 +825,7 @@ int y10(g5) int g5; { char s5[10]; char
 		} 
 		commandTokens[0] = NULL; 
 
-		for (objectId = OBJECT_TYPE_0_MIN_ID; objectId <= OBJECT_TYPE_0_MAX_ID; objectId++)
+		for (objectId = ITEM_MIN_ID; objectId <= ITEM_MAX_ID; objectId++)
 			modifyObjectFlag('s', objectId, OBJECT_TYPE_0_FLAG);
 		
 		for (objectId = OBJECT_TYPE_1_MIN_ID; objectId <= OBJECT_TYPE_1_MAX_ID; objectId++)
@@ -885,9 +885,9 @@ int y10(g5) int g5; { char s5[10]; char
 		BJBMessage(64-64, 1369, 0);
 		BJBMessage(64-64, 910, 0);
 		BJBMessage(64-64, 1368, 0);
-		BJBMessage(13, 786, 700);
-		BJBMessage(13, 785, 700);
-		BJBMessage(15, 677, 700);
+		BJBMessage(13, 1034, 708);
+		BJBMessage(13, 1035, 709);
+		BJBMessage(0, 677, 0);
 
 #if 0	// Create the locations file.  You have to edit it by hand to take out the line breaks for the long descriptions and the empty string ones
 		log_file = fopen("c:\\adventure-wherigo\\locations.txt", "w");
@@ -1055,7 +1055,7 @@ int g10(int b2, int t4)
 			  
 int isItemAtLocation (int itemId, int location) 
 { 
-	if (itemId > OBJECT_TYPE_0_MAX_ID)
+	if (itemId > ITEM_MAX_ID)
 	return (0); 
 
 	if (item_location[itemId] != r5)
@@ -1075,7 +1075,7 @@ int isItemAtLocation (int itemId, int location)
 			  
 int q8(int b2, int t4)
 { 
-	if (b2 > OBJECT_TYPE_0_MAX_ID) 
+	if (b2 > ITEM_MAX_ID) 
 		return (0); 
 	
 	if (t4 != -1) 
@@ -1316,8 +1316,8 @@ t10(b2, t4) int b2, t4;
 			  { short *objectPointer; 
 				objectPointer = NULL;
 
-				if (objectId <= OBJECT_TYPE_0_MAX_ID)
-					objectPointer = &object_type_0_buffer[OBJECT_TYPE_0_SIZE_IN_SHORTS * (objectId - OBJECT_TYPE_0_MIN_ID)];
+				if (objectId <= ITEM_MAX_ID)
+					objectPointer = &object_type_0_buffer[OBJECT_TYPE_0_SIZE_IN_SHORTS * (objectId - ITEM_MIN_ID)];
 				else if (objectId <= OBJECT_TYPE_1_MAX_ID)
 					objectPointer = &object_type_1_buffer[OBJECT_TYPE_1_SIZE_IN_SHORTS * (objectId - OBJECT_TYPE_1_MIN_ID)];
 				else if (objectId <= OBJECT_TYPE_3_MAX_ID)
