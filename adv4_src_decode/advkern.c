@@ -889,6 +889,13 @@ int y10(g5) int g5; { char s5[10]; char
 		BJBMessage(13, 1035, 709);
 		BJBMessage(0, 677, 0);
 
+		{
+			int i;
+			for (i = 910; i <= 920; i++) {
+				BJBMessage(0, i, 0);
+			}
+		}
+
 #if 0	// Create the locations file.  You have to edit it by hand to take out the line breaks for the long descriptions and the empty string ones
 		log_file = fopen("c:\\adventure-wherigo\\locations.txt", "w");
 		for (int i = 136; i < 483; i++) {

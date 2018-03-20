@@ -126,6 +126,7 @@ extern v0;
 #define LOCATION_MT_KING		155
 #define LOCATION_Y2				163
 #define LOCATION_ORIENTAL		226
+#define LOCATION_WITTS_END		236
 #define LOCATION_GRAY_NOWHERE	243
 #define LOCATION_ROCK_IN_MIST	434
 
@@ -218,4 +219,15 @@ extern v0;
 #define COMMAND_WASH			610
 
 #define MESSAGE_CRAWLED_AROUND	843	// You  have  crawled around in some little passages and wound up back where you started from.
+#define MESSAGE_BOTTLE_FULL		910	// Your bottle is already full
+#define MESSAGE_NOTHING_TO_FILL	911	// There is nothing here to fill the 
+#define	MESSAGE_FULL			912	// Your bottle is now full of
+#define MESSAGE_FLASK_FULL		913	// Your flask is now full of
+#define MESSAGE_CANT_FILL		914	// You can't fill that
+#define MESSAGE_RIDICULOUS		915	// Don't be ridiculous
+#define MESSAGE_RUSTY			916	// The door is extremely rusty and refuses to open.
+#define MESSAGE_INDIGNANT		917	// The plant indignantly shakes the oil off its leaves and asks, "Water?"
+#define MESSAGE_RUSTED			918	// The hinges are quite thoroughly rusted now and won't budge.
+#define MESSAGE_DOOR_FREE		919	// The  oil has freed up the hinges so that the door will now move, although it requires some effort.
+#define MESSAGE_DEEP_ROOTS		920	// The plant has exceptionally deep roots and cannot be pulled free.
 

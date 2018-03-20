@@ -57,7 +57,7 @@ int p29() {
 		return 0;
 	} if (!(isItemAtLocation(116, -1) || isItemAtLocation(115, -1))) { printMessage(64, 1326, 0); } if (!(isObjectFlagSet(t11(670), 0)
 		|| currentCommandContains(122))) {
-		printMessage(64, 915, 0);
+		printMessage(64, MESSAGE_RIDICULOUS, 0);
 	} if (currentCommandContains(122)) { printMessage(64, 1345, 0); } if (currentCommandContains(75)
 		&& g10(75, -1)) {
 		printMessage(64, 1327, 0);
@@ -103,14 +103,14 @@ int p29() {
 	} if (!(object_type_3_buffer[697] == 2)) {
 		return
 			0;
-	} if (isObjectFlagSet(t11(670), 2)) { printMessage(64, 915, 0); } if (g10(t11(object_type_3_buffer[670]), -1)) {
+	} if (isObjectFlagSet(t11(670), 2)) { printMessage(64, MESSAGE_RIDICULOUS, 0); } if (g10(t11(object_type_3_buffer[670]), -1)) {
 		if
 			(currentCommandContains(134) && g10(134, -1)) {
 			if (object_type_3_buffer[717] == 3) { printMessage(0, 1373, 0); }
 			else {
 				printMessage(0, 835, 0);
 			} die();
-		} printMessage(64, 915, 0);
+		} printMessage(64, MESSAGE_RIDICULOUS, 0);
 	}
 } int g29() {
 	if (!currentCommandContains(39)) return; if (g10(39, -1)
@@ -123,7 +123,7 @@ int p29() {
 		if (g10(t11(object_type_3_buffer[670]), -1)) {
 			if (object_type_3_buffer[717] == 3 && currentCommandContains(134)) {
 				printMessage(0, 1373, 0); die();
-			} printMessage(64, 915, 0);
+			} printMessage(64, MESSAGE_RIDICULOUS, 0);
 		}
 	}
 } 
@@ -189,7 +189,7 @@ int u20() { printMessage(64, 1382, 0); } int KilobyteInputBuffer9() {
 	if (currentCommandContains(101) && isItemAtLocation(ITEM_BIRD, -1)) { s27(); longjmp(done_with_command, 1); } if
 		(object_type_3_buffer[697] == 1) {
 		return 0;
-	} if (!(isObjectFlagSet(t11(670), 16))) { printMessage(64, 915, 0); } z5(700, 670);
+	} if (!(isObjectFlagSet(t11(670), 16))) { printMessage(64, MESSAGE_RIDICULOUS, 0); } z5(700, 670);
 	if (object_type_3_buffer[700] < 2 || !isItemAtLocation(t11(object_type_3_buffer[670]), -1)) { printMessage(64, 1419, 0); } if (!(object_type_3_buffer[705] < object_type_3_buffer[721]))
 	{
 		printMessage(64, 897, 0);
@@ -220,11 +220,11 @@ int u20() { printMessage(64, 1382, 0); } int KilobyteInputBuffer9() {
 		} if (g10(10, -1)) {
 			printMessage(64, 1430, 0);
 		} printMessage(64, 1429, 0);
-	} printMessage(64, 915, 0);
+	} printMessage(64, MESSAGE_RIDICULOUS, 0);
 } int o19() {
 	if (object_type_3_buffer[697] == 2)
 	{
-		if (!(currentCommandContains(70) || currentCommandContains(108) || currentCommandContains(134) || currentCommandContains(88))) { printMessage(64, 915, 0); }
+		if (!(currentCommandContains(70) || currentCommandContains(108) || currentCommandContains(134) || currentCommandContains(88))) { printMessage(64, MESSAGE_RIDICULOUS, 0); }
 	} if (g10(88, -1))
 	{
 		if (object_type_3_buffer[697] == 1 || currentCommandContains(88)) { printMessage(64, 1054, 0); }
@@ -242,7 +242,7 @@ g31() { f3(700, 1471); f3(701, 1473); c28(); longjmp(done_with_command, 1); } in
 	if (object_type_3_buffer[PLAYER_LOCATION] == 136 || object_type_3_buffer[PLAYER_LOCATION] == 142 || object_type_3_buffer[PLAYER_LOCATION] == 143 || object_type_3_buffer[PLAYER_LOCATION] == 200 || object_type_3_buffer[PLAYER_LOCATION] == 425
 		|| object_type_3_buffer[PLAYER_LOCATION] == 427 || object_type_3_buffer[PLAYER_LOCATION] == 428) {
 		printMessage(64, 1476, 0);
-	} printMessage(64, 915, 0);
+	} printMessage(64, MESSAGE_RIDICULOUS, 0);
 } int j30()
 {
 	if (object_type_3_buffer[PLAYER_LOCATION] == 252 || object_type_3_buffer[PLAYER_LOCATION] == 253 || object_type_3_buffer[PLAYER_LOCATION] == 251) { printMessage(64, 1480, 0); } if (isItemAtLocation(43, -1)
@@ -269,17 +269,17 @@ g31() { f3(700, 1471); f3(701, 1473); c28(); longjmp(done_with_command, 1); } in
 		if (isObjectFlagSet(t11(670), 3)) {
 			if (!(g10(t11(object_type_3_buffer[670]), -1))) { printMessage(76, 818, 670); }
 			if (isObjectFlagSet(t11(671), 9)) {
-				if ((object_type_3_buffer[PLAYER_LOCATION] == 428 || object_type_3_buffer[PLAYER_LOCATION] == 427) && isObjectFlagSet(91, 14)) {
+				if ((object_type_3_buffer[PLAYER_LOCATION] == 428 || object_type_3_buffer[PLAYER_LOCATION] == 427) && isObjectFlagSet(ITEM_RAT, 14)) {
 					printMessage(64, 1658, 0);
 				} if (currentCommandContains(123) && object_type_3_buffer[123] == 2) { printMessage(64, 1657, 0); } printMessage(64, 1656, 0);
 			} printMessage(64, 1653, 0);
-		} printMessage(64, 915, 0);
-	} if ((object_type_3_buffer[PLAYER_LOCATION] == 427 || object_type_3_buffer[PLAYER_LOCATION] == 428) && isObjectFlagSet(91, 14)) {
-		if (isObjectFlagSet(91, 12))
+		} printMessage(64, MESSAGE_RIDICULOUS, 0);
+	} if ((object_type_3_buffer[PLAYER_LOCATION] == 427 || object_type_3_buffer[PLAYER_LOCATION] == 428) && isObjectFlagSet(ITEM_RAT, 14)) {
+		if (isObjectFlagSet(ITEM_RAT, 12))
 		{
 			printMessage(0, 1663, 0);
 		}
-		else { printMessage(0, 1649, 0); modifyObjectFlag('s', 91, 12); } modifyObjectFlag('c', 91, 14); modifyObjectFlag('c', 428, 8);
+		else { printMessage(0, 1649, 0); modifyObjectFlag('s', ITEM_RAT, 12); } modifyObjectFlag('c', ITEM_RAT, 14); modifyObjectFlag('c', 428, 8);
 		modifyObjectFlag('c', 427, 8); longjmp(done_with_command, 1);
 	} if ((419 <= object_type_3_buffer[671] && object_type_3_buffer[671] <= 426)) {
 		printMessage(64, 1650, 0);
@@ -424,7 +424,7 @@ int j47() {
 	modifyObjectFlag('s', 302, 6); modifyObjectFlag('s', 303, 6); modifyObjectFlag('s', 304, 6); modifyObjectFlag('s', 305, 6); modifyObjectFlag('s', 306, 6);
 	modifyObjectFlag('s', 307, 6); modifyObjectFlag('s', 308, 6); modifyObjectFlag('s', 309, 6); modifyObjectFlag('s', 310, 6); modifyObjectFlag('s', 311, 6);
 	modifyObjectFlag('s', 232, 6); modifyObjectFlag('s', 370, 6); modifyObjectFlag('s', 371, 6); modifyObjectFlag('s', 240, 6); modifyObjectFlag('s', 221, 6);
-	modifyObjectFlag('s', 238, 6); modifyObjectFlag('s', 244, 6); modifyObjectFlag('s', 245, 6); modifyObjectFlag('s', 236, 6); modifyObjectFlag('s', 227, 6);
+	modifyObjectFlag('s', 238, 6); modifyObjectFlag('s', 244, 6); modifyObjectFlag('s', 245, 6); modifyObjectFlag('s', LOCATION_WITTS_END, 6); modifyObjectFlag('s', 227, 6);
 	modifyObjectFlag('s', 228, 6); modifyObjectFlag('s', 229, 6); modifyObjectFlag('s', 216, 6); modifyObjectFlag('s', 329, 6); modifyObjectFlag('s', 331, 6);
 	modifyObjectFlag('s', 333, 6); modifyObjectFlag('s', 335, 6); modifyObjectFlag('s', 336, 6); modifyObjectFlag('s', 337, 6); modifyObjectFlag('s', 338, 6);
 	modifyObjectFlag('s', 339, 6); modifyObjectFlag('s', 340, 6); modifyObjectFlag('s', 341, 6); modifyObjectFlag('s', 342, 6); modifyObjectFlag('s', 343, 6);
@@ -466,7 +466,7 @@ int j47() {
 	modifyObjectFlag('s', 13, 10); modifyObjectFlag('s', 18, 10); modifyObjectFlag('s', 19, 10); modifyObjectFlag('s', 31, 10); modifyObjectFlag('s', 30, 10);
 	modifyObjectFlag('s', 32, 10); modifyObjectFlag('s', 36, 10); modifyObjectFlag('s', 40, 10); modifyObjectFlag('s', 134, 10); modifyObjectFlag('s', 109, 10);
 	modifyObjectFlag('s', 14, 10); modifyObjectFlag('s', 12, 10); modifyObjectFlag('s', 135, 10); modifyObjectFlag('s', 75, 10); modifyObjectFlag('s', 70, 10);
-	modifyObjectFlag('s', 85, 10); modifyObjectFlag('s', 91, 10); modifyObjectFlag('s', 122, 10); modifyObjectFlag('s', 17, 10); modifyObjectFlag('s', 9, 10);
+	modifyObjectFlag('s', 85, 10); modifyObjectFlag('s', ITEM_RAT, 10); modifyObjectFlag('s', 122, 10); modifyObjectFlag('s', 17, 10); modifyObjectFlag('s', 9, 10);
 	modifyObjectFlag('s', 93, 10); modifyObjectFlag('s', 8, 10); *getObjectPointer(676) = -1; object_type_3_buffer[676] = 167; while (++object_type_3_buffer[676] <= 193)
 	{
 		modifyObjectFlag('s', t11(676), 8);
@@ -477,7 +477,7 @@ int j47() {
 	{
 		modifyObjectFlag('s', t11(676), 8);
 	} modifyObjectFlag('s', 149, 8); modifyObjectFlag('s', 144, 8); modifyObjectFlag('s', 155, 8); modifyObjectFlag('s', 165, 8);
-	modifyObjectFlag('s', 166, 8); modifyObjectFlag('s', 236, 8); modifyObjectFlag('s', 228, 8); modifyObjectFlag('s', 227, 8); modifyObjectFlag('s', 229, 8);
+	modifyObjectFlag('s', 166, 8); modifyObjectFlag('s', LOCATION_WITTS_END, 8); modifyObjectFlag('s', 228, 8); modifyObjectFlag('s', 227, 8); modifyObjectFlag('s', 229, 8);
 	modifyObjectFlag('s', 328, 8); modifyObjectFlag('s', 256, 8); modifyObjectFlag('s', 239, 8); modifyObjectFlag('s', 434, 8); modifyObjectFlag('s', 252, 8);
 	modifyObjectFlag('s', 254, 8); modifyObjectFlag('s', 323, 8); modifyObjectFlag('s', 259, 8); modifyObjectFlag('s', 314, 8); modifyObjectFlag('s', 315, 8);
 	modifyObjectFlag('s', 264, 8); modifyObjectFlag('s', 427, 8); modifyObjectFlag('s', 428, 8); modifyObjectFlag('s', 141, 9); modifyObjectFlag('s', 136, 9);
@@ -513,7 +513,7 @@ int j47() {
 	modifyObjectFlag('s', 22, 8); modifyObjectFlag('s', 134, 8); modifyObjectFlag('s', 20, 8); modifyObjectFlag('s', 7, 8); modifyObjectFlag('s', 17, 8); modifyObjectFlag('s', 38, 8);
 	modifyObjectFlag('s', 106, 8); modifyObjectFlag('s', 107, 8); modifyObjectFlag('s', 24, 8); modifyObjectFlag('s', 101, 8); modifyObjectFlag('s', 27, 8);
 	modifyObjectFlag('s', 28, 8); modifyObjectFlag('s', 121, 8); modifyObjectFlag('s', 25, 8); modifyObjectFlag('s', 135, 8); modifyObjectFlag('s', 82, 8);
-	modifyObjectFlag('s', 87, 8); modifyObjectFlag('s', 91, 8); modifyObjectFlag('s', 43, 16); modifyObjectFlag('s', 62, 16); modifyObjectFlag('s', 67, 16);
+	modifyObjectFlag('s', 87, 8); modifyObjectFlag('s', ITEM_RAT, 8); modifyObjectFlag('s', 43, 16); modifyObjectFlag('s', 62, 16); modifyObjectFlag('s', 67, 16);
 	modifyObjectFlag('s', 64, 16); modifyObjectFlag('s', 47, 16); modifyObjectFlag('s', 52, 16); modifyObjectFlag('s', 38, 15); modifyObjectFlag('s', 63, 15);
 	modifyObjectFlag('s', 85, 15); modifyObjectFlag('s', 84, 15); modifyObjectFlag('s', 88, 15); modifyObjectFlag('s', 101, 15); modifyObjectFlag('s', 106, 15);
 	modifyObjectFlag('s', 107, 15); modifyObjectFlag('s', 100, 15); modifyObjectFlag('s', 105, 15); modifyObjectFlag('s', 49, 15); modifyObjectFlag('s', 50, 15);
@@ -544,7 +544,7 @@ int j47() {
 	set_object_location(102, 147); 
 	set_object_location(5, 150); 
 	set_object_location(101, 149);
-	set_object_location(6, 223); set_object_location(105, 225); set_object_location(7, 155); set_object_location(8, 152); set_object_location(106, 232); set_object_location(108, 236);
+	set_object_location(6, 223); set_object_location(105, 225); set_object_location(7, 155); set_object_location(8, 152); set_object_location(106, 232); set_object_location(108, LOCATION_WITTS_END);
 	set_object_location(110, 484); set_object_location(111, LOCATION_MAGNIFICENT_VIEW); set_object_location(11, 159); set_object_location(12, 156); set_object_location(13, 238); set_object_location(16, 165);
 	set_object_location(18, LOCATION_ORIENTAL); set_object_location(20, 247); set_object_location(21, 244); set_object_location(22, 244); set_object_location(38, 299); set_object_location(30, 252);
 	set_object_location(34, 311); set_object_location(40, 225); set_object_location(44, 154); set_object_location(45, 153); set_object_location(46, 160); set_object_location(47, 161);
@@ -554,7 +554,7 @@ int j47() {
 	set_object_location(32, 370); set_object_location(33, 367); set_object_location(116, LOCATION_ROCK_IN_MIST); set_object_location(24, 323); set_object_location(36, 291); set_object_location(37, 291);
 	set_object_location(56, 291); set_object_location(43, 462); set_object_location(31, 254); set_object_location(14, 256); set_object_location(57, 239); set_object_location(67, 295);
 	set_object_location(114, 294); set_object_location(25, 263); set_object_location(103, 268); set_object_location(62, 242); set_object_location(26, 240); set_object_location(ITEM_ORB, 393);
-	set_object_location(79, 394); set_object_location(86, 388); set_object_location(87, 388); set_object_location(92, 411); set_object_location(89, 419); set_object_location(91, 421);
+	set_object_location(79, 394); set_object_location(86, 388); set_object_location(87, 388); set_object_location(92, 411); set_object_location(89, 419); set_object_location(ITEM_RAT, 421);
 	set_object_location(135, 383); set_object_location(80, 416); set_object_location(85, 205); set_object_location(81, 204); set_object_location(75, 203); set_object_location(76, 419);
 	set_object_location(77, 393); set_object_location(70, 312); set_object_location(120, LOCATION_MAGNIFICENT_VIEW); set_object_location(71, LOCATION_ROCK_IN_MIST); set_object_location(90, 435); set_object_location(ITEM_STARSTONE, 463);
 	set_object_location(72, 393); set_object_location(120, LOCATION_MAGNIFICENT_VIEW); set_object_location(93, 137); set_object_location(123, 318); set_object_location(121, 484); set_object_location(113, 158);
@@ -838,13 +838,13 @@ int s35() {
 		l12(0, 720, 0); 
 	} 
 	
-	if (g10(91, -1)) {
-		object_type_3_buffer[91] += 1; 
-		if (object_type_3_buffer[91] < 6)
+	if (g10(ITEM_RAT, -1)) {
+		object_type_3_buffer[ITEM_RAT] += 1; 
+		if (object_type_3_buffer[ITEM_RAT] < 6)
 		{
-			if (object_type_3_buffer[91] > 1) {
+			if (object_type_3_buffer[ITEM_RAT] > 1) {
 				f3(699, 1496); 
-				object_type_3_buffer[699] += object_type_3_buffer[91]; 
+				object_type_3_buffer[699] += object_type_3_buffer[ITEM_RAT]; 
 				object_type_3_buffer[699] -= 2; 
 				printMessage(2, 699, 0);
 			}
@@ -854,7 +854,7 @@ int s35() {
 			if (isItemAtLocation(110, -1)) { 
 				set_object_location(110, 484); 
 			} 
-			l12(0, 91, 0);
+			l12(0, ITEM_RAT, 0);
 			die();
 		}
 	} 
