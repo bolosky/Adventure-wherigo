@@ -36,7 +36,7 @@ int v0; jmp_buf done_with_command;
 int object_type_3_buffer[OBJECT_TYPE_3_MAX_ID]; 
 int item_location[ITEM_MAX_ID + 1]; 
 short object_type_0_buffer[OBJECT_TYPE_0_SIZE_IN_SHORTS * (ITEM_MAX_ID - ITEM_MIN_ID+ 1)]; 
-short object_type_1_buffer[OBJECT_TYPE_1_SIZE_IN_SHORTS * (OBJECT_TYPE_1_MAX_ID - OBJECT_TYPE_1_MIN_ID + 1)]; 
+short object_type_1_buffer[OBJECT_TYPE_1_SIZE_IN_SHORTS * (MAX_LOCATION_ID - MIN_LOCATION_ID + 1)]; 
 short object_type_2_buffer[OBJECT_TYPE_2_SIZE_IN_SHORTS * (OBJECT_TYPE_3_MAX_ID - OBJECT_TYPE_2_MIN_ID + 1)]; 
 char command[161] = "\n"; 
 char h1[161] = "\n"; 
@@ -224,7 +224,7 @@ void errorReadingDataFile() {
 	(void)fclose(data_file); if (log_file) (void)fclose(log_file); exit(1);
 } 
 
-void printMessage(flags, y4, c7) int flags; int y4; int c7; 
+void printMessage(int flags, int messageNumber, int messageParameter) 
 { 
 	int i6; 
 	int y5; 
@@ -234,14 +234,13 @@ void printMessage(flags, y4, c7) int flags; int y4; int c7;
 	int e5; 
 	int endCommandWhenDone;
 #ifdef x5
-	int n3;
+	int verbose;
 #endif 
 #ifdef l7
 	int t6;
 #endif 
 	int z2;
 	int c8; 
-	int y7; 
 	char n4[20]; 
 	char c9; 
 	char b5; 
@@ -258,11 +257,11 @@ void printMessage(flags, y4, c7) int flags; int y4; int c7;
 	b5 = '\376'; // -2
 	w4 = '\375'; // -3
 	
-	if (flags < 64)
+	if (flags < PRINT_MESSAGE_END_COMMAND)
 		endCommandWhenDone = 0;
 	else { 
 		endCommandWhenDone = 1;
-		flags -= 64;
+		flags -= PRINT_MESSAGE_END_COMMAND;
 	}
 #ifdef l7
 	if (flags < 32)
@@ -273,11 +272,11 @@ void printMessage(flags, y4, c7) int flags; int y4; int c7;
 	}
 #endif
 #ifdef x5
-	if (flags < 16)
-		n3 = 0; 
+	if (flags < PRINT_MESSAGE_VERBOSE)
+		verbose = 0; 
 	else { 
-		flags -= 16;
-		n3 = 1; 
+		flags -= PRINT_MESSAGE_VERBOSE;
+		verbose = 1; 
 	}
 #endif
 	if (flags < 8)
@@ -295,47 +294,49 @@ void printMessage(flags, y4, c7) int flags; int y4; int c7;
 		e5 = 1;
 	} 
 	
-	if (flags < 2)
+	if (flags < PRINT_MESSAGE_DEREFERENCE_MSG)
 		dereference_through_object_type_3 = 0; 
 	else { 
-		flags -= 2;
+		flags -= PRINT_MESSAGE_DEREFERENCE_MSG;
 		dereference_through_object_type_3 = 1; 
 	} 
+
 	b4 = flags;
 
 #ifdef x5
 	if (isObjectFlagSet(v5, x5)) 
-		n3 = 1;
+		verbose = 1;
 #endif 
 #ifdef l7
 	if (isObjectFlagSet(v5, l7)) 
 		t6 = 1;
 #endif 
 	if (dereference_through_object_type_3) 
-		y4 = object_type_3_buffer[y4]; 
-	c8 = c7; 
+		messageNumber = object_type_3_buffer[messageNumber]; 
 
-	if (e5 && ((c7 != i9 && c7 != o2) || b4))
-		c7 = object_type_3_buffer[c7]; 
+	c8 = messageParameter; 
 
-	if (y4 > OBJECT_TYPE_1_MAX_ID) 
-		dataFileOffset = h3[y4];
+	if (e5 && ((messageParameter != i9 && messageParameter != o2) || b4))
+		messageParameter = object_type_3_buffer[messageParameter]; 
+
+	if (messageNumber > MAX_LOCATION_ID) 
+		dataFileOffset = message_data_file_offset[messageNumber];
 #ifdef x5
-	else if (n3) 
-		dataFileOffset = i10[y4];
+	else if (verbose) 
+		dataFileOffset = verbose_description_data_file_offset[messageNumber];
 #endif
 #ifdef l7
 	else if (t6) 
-		dataFileOffset = c10[y4];
+		dataFileOffset = c10[messageNumber];
 #endif
-	else if (y4 > ITEM_MAX_ID || item_location[y4] == r5) 
-		dataFileOffset = y8[y4]; 
+	else if (messageNumber > ITEM_MAX_ID || item_location[messageNumber] == r5) 
+		dataFileOffset = terse_description_data_file_offset[messageNumber]; 
 	else 
-		dataFileOffset = i10[y4]; 
+		dataFileOffset = verbose_description_data_file_offset[messageNumber]; 
 
 
 	if ((i8 = getByteOfDataFile(dataFileOffset)) == '\0') 
-		goto l8; 
+		goto done; 
 	
 	while (i8 != '\0') {
 		if (i8 == c9) {
@@ -343,27 +344,21 @@ void printMessage(flags, y4, c7) int flags; int y4; int c7;
 			n5 = dataFileOffset + 2 * z2 - 1; 
 			
 			if (!a2) {
-				if (y4 <= OBJECT_TYPE_1_MAX_ID) 
-					c7 = object_type_3_buffer[y4];
+				if (messageNumber <= MAX_LOCATION_ID) 
+					messageParameter = object_type_3_buffer[messageNumber];
 				else 
-					c7 = y4;
+					messageParameter = messageNumber;
 			}
-#ifdef s2
-		if (c7 <= 1)
-#else 
-		if (c7 <= 0)
-#endif 
-			dataFileOffset = n5 + 1; 
-		else {
-			dataFileOffset = dataFileOffset - 1 + 2 *
-#ifdef s2
-			((c7 > z2) ? z2 - 1 : c7 - 1);
-#else 
-				((c7 >= z2) ? z2 - 1 : c7);
-#endif 
+
+			if (messageParameter <= 0)
+				dataFileOffset = n5 + 1; 
+			else {
+				dataFileOffset = dataFileOffset - 1 + 2 * ((messageParameter >= z2) ? z2 - 1 : messageParameter);
+
 			y5 = getByteOfDataFile(dataFileOffset + 1); 
 			if (y5 < 0) 
 				y5 += 256; 
+
 			dataFileOffset = n5 + 256 * getByteOfDataFile(dataFileOffset) + y5 + 1;
 		} 
 		
@@ -376,23 +371,23 @@ void printMessage(flags, y4, c7) int flags; int y4; int c7;
 		i8 = getByteOfDataFile(dataFileOffset = n5); 
 	else if (i8	== w4) {
 		if (flags) {
-			(void)sprintf(n4, "%d", c7); 
+			(void)sprintf(n4, "%d", messageParameter); 
 			j7 = n4 - 1; 
 			while (*(++j7)!= '\0') 
 				d5(*j7); 
 			goto x6;
-		} else if (c7 == i9 || c7 == o2) {
-			j7 = ((c7 == i9) ? b1 : x2) - 1; 
+		} else if (messageParameter == i9 || messageParameter == o2) {
+			j7 = ((messageParameter == i9) ? b1 : x2) - 1; 
 			while (*(++j7) != '\0') 
 				d5(*j7); 
 			goto x6;
 		}
 		else
 		{
-			i6 = (e5 && c8 <= OBJECT_TYPE_1_MAX_ID) ? c8 : c7; 
+			i6 = (e5 && c8 <= MAX_LOCATION_ID) ? c8 : messageParameter; 
 			d4 = dataFileOffset; 
 			nLocates++; 
-			dataFileOffset = h3[i6]; 
+			dataFileOffset = message_data_file_offset[i6]; 
 			i8 = getByteOfDataFile(dataFileOffset); 
 			
 			if (i8 == '!') 
@@ -408,7 +403,8 @@ void printMessage(flags, y4, c7) int flags; int y4; int c7;
 x6: 
 	i8 = getByteOfDataFile(++dataFileOffset);
 	} 
-l8: 
+
+done: 
 	if (endCommandWhenDone)
 		longjmp(done_with_command, 1); 
 	return; 
@@ -609,7 +605,7 @@ g7:
 		if (l1 = isObjectFlagSet(v5, f1)) { o1 = k1; (void)strncpy(v1, b1, 20); }
 	}
 #endif 
-	if (isObjectFlagSet(v5, f1) && k4 <= OBJECT_TYPE_1_MAX_ID || m2) {
+	if (isObjectFlagSet(v5, f1) && k4 <= MAX_LOCATION_ID || m2) {
 		object_type_3_buffer[i9] = k1; 
 		object_type_3_buffer[o2] = k4; 
 		if (k4 == i11 || k4 == c13) 
@@ -716,7 +712,7 @@ int y10(g5) int g5; { char s5[10]; char
 				(1);
 		} (void)time(&g8); (void)fprintf(u5, "%s\n", TITLE); (void)fwrite
 		(&g8, sizeof(long), 1, u5); e7 = ITEM_MIN_ID; (void)fwrite(&e7, sizeof(int),
-			1, u5); e7 = ITEM_MAX_ID; (void)fwrite(&e7, sizeof(int), 1, u5); e7 = OBJECT_TYPE_1_MAX_ID; (void)
+			1, u5); e7 = ITEM_MAX_ID; (void)fwrite(&e7, sizeof(int), 1, u5); e7 = MAX_LOCATION_ID; (void)
 			fwrite(&e7, sizeof(int), 1, u5); e7 = OBJECT_TYPE_2_MAX_ID; (void)fwrite(&e7, sizeof(int),
 				1, u5); e7 = OBJECT_TYPE_3_MAX_ID; (void)fwrite(&e7, sizeof(int), 1, u5); (void)fwrite
 				(object_type_3_buffer, sizeof(int), sizeof(object_type_3_buffer) / sizeof(int), u5); (void)fwrite(item_location, sizeof
@@ -731,7 +727,7 @@ int y10(g5) int g5; { char s5[10]; char
 			(void)fread
 			(&g8, sizeof(long), 1, u5); (void)fread(&e7, sizeof(int), 1, u5); if
 				(e7 != ITEM_MIN_ID) z4++; (void)fread(&e7, sizeof(int), 1, u5); if (e7 != ITEM_MAX_ID)
-				z4++; (void)fread(&e7, sizeof(int), 1, u5); if (e7 != OBJECT_TYPE_1_MAX_ID) z4++; (void)
+				z4++; (void)fread(&e7, sizeof(int), 1, u5); if (e7 != MAX_LOCATION_ID) z4++; (void)
 				fread(&e7, sizeof(int), 1, u5); if (e7 != OBJECT_TYPE_2_MAX_ID) z4++; (void)fread(&e7,
 					sizeof(int), 1, u5); if (e7 != OBJECT_TYPE_3_MAX_ID) z4++;
 		} if (z4) {
@@ -771,7 +767,7 @@ int y10(g5) int g5; { char s5[10]; char
 				(q5 < 0 || isObjectFlagSet(i6, q5))) {
 			if (k5 >= 0) return; k5 = i6; if (p4) break;
 		} if (k5 >= 0) {
-			object_type_3_buffer[o2] = k5; (void)c11(x2, h3[k5]); x2[19] = '\0';
+			object_type_3_buffer[o2] = k5; (void)c11(x2, message_data_file_offset[k5]); x2[19] = '\0';
 			object_type_3_buffer[v5] = 2;
 #ifdef b7
 			if (p4 > 0) v0 = k5; if (p4 == 1) { d1 = d8; m0 = q5; }
@@ -785,9 +781,7 @@ int y10(g5) int g5; { char s5[10]; char
 	
 	int initialize() {
 				  
-		long h5; 
 		int objectId; 
-		unsigned long c15; 
 		(void)write_string_to_term_and_log("[A-code kernel version 10.05; MLA, 01 Apr 94]\n");
 		adv_data_path(KilobyteInputBuffer); 
 		if ((data_file = fopen(KilobyteInputBuffer, Read_Binary)) == NULL) {
@@ -828,7 +822,7 @@ int y10(g5) int g5; { char s5[10]; char
 		for (objectId = ITEM_MIN_ID; objectId <= ITEM_MAX_ID; objectId++)
 			modifyObjectFlag('s', objectId, OBJECT_TYPE_0_FLAG);
 		
-		for (objectId = OBJECT_TYPE_1_MIN_ID; objectId <= OBJECT_TYPE_1_MAX_ID; objectId++)
+		for (objectId = MIN_LOCATION_ID; objectId <= MAX_LOCATION_ID; objectId++)
 			modifyObjectFlag('s', objectId, OBJECT_TYPE_1_FLAG);
 		
 		for (objectId = OBJECT_TYPE_2_MIN_ID; objectId <= OBJECT_TYPE_2_MAX_ID; objectId++)
@@ -879,22 +873,25 @@ int y10(g5) int g5; { char s5[10]; char
 
 		BJBMessage(0, 1014, 0); // BJB
 		BJBMessage(64-64, 1302, 0);
-		BJBMessage(0, 858, 0);
-		BJBMessage(64-64, 1376, 0);
-		BJBMessage(0, 1558, 0);
-		BJBMessage(64-64, 1369, 0);
-		BJBMessage(64-64, 910, 0);
-		BJBMessage(64-64, 1368, 0);
-		BJBMessage(13, 1034, 708);
-		BJBMessage(13, 1035, 709);
-		BJBMessage(0, 677, 0);
 
+
+
+		BJBMessage(0, 1068, 0);
+		BJBMessage(0, 828, 0);
+		f3(677, 1280);
+		object_type_3_buffer[677] += 9;
+		BJBMessage(0, 677, 0);
+//		BJBMessage(0, 1222, 0);
+
+		if (0)
 		{
 			int i;
-			for (i = 910; i <= 920; i++) {
+			for (i = 1440; i <= 1449; i++) {
 				BJBMessage(0, i, 0);
 			}
 		}
+
+
 
 #if 0	// Create the locations file.  You have to edit it by hand to take out the line breaks for the long descriptions and the empty string ones
 		log_file = fopen("c:\\adventure-wherigo\\locations.txt", "w");
@@ -1085,25 +1082,26 @@ int q8(int b2, int t4)
 	if (b2 > ITEM_MAX_ID) 
 		return (0); 
 	
-	if (t4 != -1) 
+	if (t4 != -1) {
 		if (t4 < 1024)
 		{
-			if (object_type_3_buffer[b2] != t4) 
+			if (object_type_3_buffer[b2] != t4)
 				return (0);
-		} else if (!(isObjectFlagSet(b2, t4 - 1024))) 
-			return (0); 
+		} else if (!(isObjectFlagSet(b2, t4 - 1024)))
+			return (0);
+	}
 		
-		if (item_location[b2] == object_type_3_buffer[PLAYER_LOCATION]) 
-			return (1);
+	if (item_location[b2] == object_type_3_buffer[PLAYER_LOCATION]) 
+		return (1);
 
 #ifdef m4
-		if (!(isObjectFlagSet(b2, m4))) 
-			return (0); 
-		
-		if (item_location[b2] + 1 == object_type_3_buffer[PLAYER_LOCATION]) 
-			return (1);
-#endif
+	if (!(isObjectFlagSet(b2, m4))) 
 		return (0); 
+		
+	if (item_location[b2] + 1 == object_type_3_buffer[PLAYER_LOCATION]) 
+		return (1);
+#endif
+	return (0); 
 }
 
 processMoveCommand(destinationLocation, messageIdToPrint, l10, u7, v8, l11, h7, s8, v9, p10, t9, h8, b13, v10, a8, b14) int destinationLocation, messageIdToPrint, l10, u7, v8, l11, h7, s8, v9, p10, t9, h8, b13, v10, a8, b14;
@@ -1250,7 +1248,7 @@ doMove:
 			  
 set_object_location(int objectId, int newLocationId)  
 { 
-	item_location[objectId] = (newLocationId <= OBJECT_TYPE_1_MAX_ID || newLocationId == r5) ? newLocationId : object_type_3_buffer[newLocationId];
+	item_location[objectId] = (newLocationId <= MAX_LOCATION_ID || newLocationId == r5) ? newLocationId : object_type_3_buffer[newLocationId];
 
 #if defined (g11) && defined (v5)
 	modifyObjectFlag('s', v5, g11);
@@ -1259,7 +1257,7 @@ set_object_location(int objectId, int newLocationId)
 	return; 
 } 
 			  
-l12(int b2, int t4, int j4) 
+set_value(int b2, int t4, int j4) 
 { 
 	object_type_3_buffer[t4] = b2 ? object_type_3_buffer[j4] : j4; 
 
@@ -1278,7 +1276,7 @@ f3(int b2, int t4)
 { 
 	object_type_3_buffer[b2] = t4; 
 	*getObjectPointer(b2) = -1; 
-	h3[b2] = h3[t4]; 
+	message_data_file_offset[b2] = message_data_file_offset[t4]; 
 	return; 
 } 
 
@@ -1293,10 +1291,11 @@ c16(b2, t4) int b2, t4; {
 	return; 
 } 
 
-t10(b2, t4) int b2, t4;
+copy_item_location_dereferencing_if_variable(int copy_into, int object_or_variable) 
 { 
-	object_type_3_buffer[b2] = item_location[(t4 < OBJECT_TYPE_3_MIN_ID || t4 > OBJECT_TYPE_3_MAX_ID) ? t4 : object_type_3_buffer[t4]]; 
-	*getObjectPointer(b2) = -1; 
+	object_type_3_buffer[copy_into] = item_location[
+		(object_or_variable < OBJECT_TYPE_3_MIN_ID || object_or_variable > OBJECT_TYPE_3_MAX_ID) ? object_or_variable : object_type_3_buffer[object_or_variable]];
+	*getObjectPointer(copy_into) = -1;
 	return;
 } 
 			  
@@ -1319,19 +1318,20 @@ t10(b2, t4) int b2, t4;
 				  if (log_file) (void)fclose(log_file); should_exit = 1; longjmp(done_with_command, 1);
 			  } 
 			  
-			  short *getObjectPointer(objectId) int objectId;
-			  { short *objectPointer; 
-				objectPointer = NULL;
+short *getObjectPointer(int objectId) 
+{ 
+	short *objectPointer; 
+	objectPointer = NULL;
 
-				if (objectId <= ITEM_MAX_ID)
-					objectPointer = &object_type_0_buffer[OBJECT_TYPE_0_SIZE_IN_SHORTS * (objectId - ITEM_MIN_ID)];
-				else if (objectId <= OBJECT_TYPE_1_MAX_ID)
-					objectPointer = &object_type_1_buffer[OBJECT_TYPE_1_SIZE_IN_SHORTS * (objectId - OBJECT_TYPE_1_MIN_ID)];
-				else if (objectId <= OBJECT_TYPE_3_MAX_ID)
-					objectPointer = &object_type_2_buffer[OBJECT_TYPE_2_SIZE_IN_SHORTS * (objectId - OBJECT_TYPE_2_MIN_ID)];
+	if (objectId <= ITEM_MAX_ID)
+		objectPointer = &object_type_0_buffer[OBJECT_TYPE_0_SIZE_IN_SHORTS * (objectId - ITEM_MIN_ID)];
+	else if (objectId <= MAX_LOCATION_ID)
+		objectPointer = &object_type_1_buffer[OBJECT_TYPE_1_SIZE_IN_SHORTS * (objectId - MIN_LOCATION_ID)];
+	else if (objectId <= OBJECT_TYPE_3_MAX_ID)
+		objectPointer = &object_type_2_buffer[OBJECT_TYPE_2_SIZE_IN_SHORTS * (objectId - OBJECT_TYPE_2_MIN_ID)];
 
-				return (objectPointer);
-			  } 
+	return (objectPointer);
+} 
 			  
 			  modifyObjectFlag(setFlag, objectId, whichFlag) char setFlag; int objectId; int whichFlag;
 			  { short *objectPtr; 
