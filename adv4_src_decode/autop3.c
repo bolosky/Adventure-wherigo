@@ -78,7 +78,7 @@ int p39() {
 			if (g10(t11(object_type_3_buffer[670]), -1))
 			{
 				printMessage(76, 1587, 670);
-			} printMessage(76, 818, 670);
+			} printMessage(76, MESSAGE_NO_X_HERE, 670);
 		} printMessage(PRINT_MESSAGE_END_COMMAND, 1516, 0);
 	}
 } int t33() {
@@ -99,11 +99,11 @@ int e9()
 	} if (object_type_3_buffer[697] > 1) {
 		if (object_type_3_buffer[669] == 113 && !g10(t11(object_type_3_buffer[670]), -1))
 		{
-			printMessage(76, 818, 670);
+			printMessage(76, MESSAGE_NO_X_HERE, 670);
 		}
 		else {
 			if (object_type_3_buffer[670] == 113 && !g10(t11(object_type_3_buffer[669]), -1)) {
-				printMessage(76, 818, 669);
+				printMessage(76, MESSAGE_NO_X_HERE, 669);
 			}
 		}
 	} if (currentCommandContains(6)) {
@@ -134,7 +134,7 @@ int f26() {
 			printMessage(12, 1027, 669);  // You have no !
 		}
 	} else { 
-		printMessage(12, 818, 670); // I see no  here.
+		printMessage(12, MESSAGE_NO_X_HERE, 670); // I see no  here.
 	} 
 	longjmp(done_with_command, 1);
 } 
@@ -146,7 +146,7 @@ int p40() {
 			if (isItemAtLocation(111, 3)) { set_value(0, 111, 2); }
 			else { set_value(0, 114, 2); } set_value(0, 6, 0); printMessage(PRINT_MESSAGE_END_COMMAND, MESSAGE_RUSTED, 0);
 		} printMessage(76, 1027, 112);
-	} printMessage(76, 818, 6);
+	} printMessage(76, MESSAGE_NO_X_HERE, 6);
 } int t42() {
 	if (!currentCommandIsOneOf(ITEM_AXE, ITEM_SWORD, -1)) return
 		0; b26(); if (object_type_3_buffer[699] == 0) { o21(); }
@@ -306,7 +306,7 @@ int h34()
 	} if (g10(118, -1)) { printMessage(PRINT_MESSAGE_END_COMMAND, 1421, 0); }
 } int n29() {
 	if (!currentCommandContains(11)) return;
-	if (g10(12, -1) && object_type_3_buffer[12] > 0 || g10(11, -1)) { printMessage(76, 1590, 11); } printMessage(76, 818, 670);
+	if (g10(12, -1) && object_type_3_buffer[12] > 0 || g10(11, -1)) { printMessage(76, 1590, 11); } printMessage(76, MESSAGE_NO_X_HERE, 670);
 } int a31() {
 	if (!currentCommandContains(112)) return; if (g10(111, 3) || isObjectFlagSet(t11(671), 9)) {
 		printMessage(PRINT_MESSAGE_END_COMMAND, 1588, 0);
@@ -315,7 +315,7 @@ int h34()
 	if (isObjectFlagSet(t11(670), 0)) {
 		if (!(g10(t11(object_type_3_buffer[670]), -1)))
 		{
-			printMessage(76, 818, 670);
+			printMessage(76, MESSAGE_NO_X_HERE, 670);
 		}
 	}
 	else {
@@ -364,7 +364,7 @@ int h34()
 				} printMessage(76, 1541, 670);
 			} if (currentCommandContains(660)) {
 				printMessage(PRINT_MESSAGE_END_COMMAND, 965, 0);
-			} printMessage(76, 818, 670);
+			} printMessage(76, MESSAGE_NO_X_HERE, 670);
 		} printMessage(PRINT_MESSAGE_END_COMMAND, MESSAGE_RIDICULOUS, 0);
 	}
 } int i39() {
@@ -401,7 +401,7 @@ int h34()
 			}
 		}
 		else {
-			if (currentCommandContains(99)) { printMessage(76, 818, 670); } printMessage(PRINT_MESSAGE_END_COMMAND, 824, 0);
+			if (currentCommandContains(99)) { printMessage(76, MESSAGE_NO_X_HERE, 670); } printMessage(PRINT_MESSAGE_END_COMMAND, 824, 0);
 		} longjmp(done_with_command, 1);
 	}
 } int f20() {
@@ -412,7 +412,7 @@ int h34()
 		}
 		else {
 			if (currentCommandContains(99)) {
-				printMessage(76, 818, 670);
+				printMessage(76, MESSAGE_NO_X_HERE, 670);
 			} return 0;
 		}
 	}
@@ -427,12 +427,12 @@ int u31() {
 			set_object_location(27, LOCATION_LIMBO);
 			modifyObjectFlag('s', 27, 13); printMessage(PRINT_MESSAGE_END_COMMAND, 1154, 0);
 		} printMessage(PRINT_MESSAGE_END_COMMAND, 1156, 0);
-	} printMessage(76, 818, 670);
+	} printMessage(76, MESSAGE_NO_X_HERE, 670);
 } int d36()
 {
 	if (currentCommandContains(579)) { printMessage(PRINT_MESSAGE_END_COMMAND, 837, 0); } e6(0, object_type_3_buffer[PLAYER_LOCATION], 9); if (object_type_3_buffer[697] == 2 && !g10(t11(object_type_3_buffer[670]), -1))
 	{
-		printMessage(76, 818, 670);
+		printMessage(76, MESSAGE_NO_X_HERE, 670);
 	} if (!currentCommandIsOneOf(111, 42, 49, 100, 106, 107, 118, ITEM_KEYS, 93, -1)) return
 		0; if (currentCommandContains(111)) { printMessage(PRINT_MESSAGE_END_COMMAND, 1465, 0); } if (currentCommandContains(42)) { printMessage(PRINT_MESSAGE_END_COMMAND, 1464, 0); } if (currentCommandContains(49))
 	{
@@ -491,7 +491,7 @@ int u31() {
 	{
 		j41();
 	} e6(0, object_type_3_buffer[PLAYER_LOCATION], 9); if (object_type_3_buffer[697] == 2 && !g10(t11(object_type_3_buffer[670]), -1)) {
-		printMessage(76, 818, 670);
+		printMessage(76, MESSAGE_NO_X_HERE, 670);
 	} if (!currentCommandIsOneOf(111, 6, 100, 114, -1)) return 0; if (currentCommandContains(111)) { printMessage(PRINT_MESSAGE_END_COMMAND, 1465, 0); } if
 		(currentCommandContains(6)) {
 		printMessage(PRINT_MESSAGE_END_COMMAND, 821, 0);
@@ -510,13 +510,13 @@ int u31() {
 	} printMessage(PRINT_MESSAGE_END_COMMAND, 983, 0);
 } int e22() {
 	if (object_type_3_buffer[PLAYER_LOCATION] == 461) {
-		printMessage(9, 1456, 20); if (y10(1457)) {
+		printMessage(9, 1456, 20); if (ask_user_yes_or_no_question(1457)) {
 			object_type_3_buffer[707] += 20; processMoveCommand(136, -object_type_3_buffer[685]);
 		} longjmp(done_with_command, 1);
 	} if (((168 <= object_type_3_buffer[671] && object_type_3_buffer[671] <= 193) || (300 <= object_type_3_buffer[671]
 		&& object_type_3_buffer[671] <= 311) || (328 <= object_type_3_buffer[671] && object_type_3_buffer[671] <= 364)) && !(isObjectFlagSet(t11(671), 8)))
 	{
-		compute_score(); if (object_type_3_buffer[708] > 99) { printMessage(PRINT_MESSAGE_END_COMMAND, 1648, 0); } printMessage(9, 1647, 20); if (y10(1457))
+		compute_score(); if (object_type_3_buffer[708] > 99) { printMessage(PRINT_MESSAGE_END_COMMAND, 1648, 0); } printMessage(9, 1647, 20); if (ask_user_yes_or_no_question(1457))
 		{
 			object_type_3_buffer[707] += 20; *getObjectPointer(675) = -1; object_type_3_buffer[675] = ITEM_MIN_ID - 1; while (++object_type_3_buffer[675] <= ITEM_MAX_ID) {
 				if
@@ -549,12 +549,12 @@ int u31() {
 	} longjmp(done_with_command, 1);
 } int d33() { f3(700, 940); f3(701, 943); c28(); longjmp(done_with_command, 1); } int p32()
 {
-	if (y10(945)) { set_value(0, 718, 1); a29(); } printMessage(PRINT_MESSAGE_END_COMMAND | PRINT_MESSAGE_DEREFERENCE_MSG, 719, 0);
+	if (ask_user_yes_or_no_question(945)) { set_value(0, 718, 1); a29(); } printMessage(PRINT_MESSAGE_END_COMMAND | PRINT_MESSAGE_DEREFERENCE_MSG, 719, 0);
 } int v31() {
 	modifyObjectFlag('s', t11(697), 1);
 	modifyObjectFlag('c', t11(697), 2); f3(719, 777); printMessage(PRINT_MESSAGE_END_COMMAND, 966, 0);
 } int z23() {
-	if (y10(1078))
+	if (ask_user_yes_or_no_question(1078))
 	{
 		w5(1079); object_type_3_buffer[707] += 10; printMessage(PRINT_MESSAGE_END_COMMAND, 1080, 0);
 	} printMessage(PRINT_MESSAGE_END_COMMAND | PRINT_MESSAGE_DEREFERENCE_MSG, 719, 0);
@@ -611,7 +611,7 @@ n22() {
 				} if (currentCommandContains(24)) { l33(); }
 				else {
 					if (currentCommandContains(135)) {
-						if (y10(836)) {
+						if (ask_user_yes_or_no_question(836)) {
 							printMessage(PRINT_MESSAGE_END_COMMAND, 1317, 0);
 						} printMessage(12, MESSAGE_JUST_AS_WELL, 669); printMessage(76, 1223, 670);
 					} if (currentCommandContains(27)) { printMessage(PRINT_MESSAGE_END_COMMAND, 1149, 0); } if
@@ -681,7 +681,7 @@ int x34() {
 				printMessage(PRINT_MESSAGE_END_COMMAND, 1279, 0);
 			} printMessage(PRINT_MESSAGE_END_COMMAND, 1278, 0);
 		}
-	} printMessage(76, 818, 670);
+	} printMessage(76, MESSAGE_NO_X_HERE, 670);
 } int u34() {
 	if (!(object_type_3_buffer[697] == 1))
 	{
@@ -820,14 +820,26 @@ int j33() { printMessage(PRINT_MESSAGE_END_COMMAND, 1468, 0); } int t27() {
 } int c33()
 {
 	if (!currentCommandContains(41)) return; if (g10(41, -1)) { printMessage(PRINT_MESSAGE_END_COMMAND, 948, 0); }
-} int b33() {
-	if
-		(!currentCommandContains(53)) return; if (g10(53, -1)) {
-		if (isObjectFlagSet(t11(671), 9) || object_type_3_buffer[PLAYER_LOCATION] == 158) {
-			if (isItemAtLocation(53, -1)) { object_type_3_buffer[705] -= 1; } set_object_location(53, LOCATION_LIMBO); set_object_location(54, object_type_3_buffer[671]); printMessage(PRINT_MESSAGE_END_COMMAND, 947, 0);
-		} printMessage(PRINT_MESSAGE_END_COMMAND, 946, 0);
+} 
+
+int b33() {
+	if (!currentCommandContains(ITEM_VASE))
+		return; 
+
+	if (g10(ITEM_VASE, -1)) {
+		if (isObjectFlagSet(t11(PLAYER_LOCATION), LOCATION_FLAG_WATER) || object_type_3_buffer[PLAYER_LOCATION] == 158) {	// 158 is east pit, where there's oil
+			if (isItemAtLocation(ITEM_VASE, -1)) {
+				object_type_3_buffer[CARRIED_ITEM_COUNT] -= 1; 
+			} 
+			set_object_location(ITEM_VASE, LOCATION_LIMBO);
+			set_object_location(ITEM_SHARDS, object_type_3_buffer[671]);
+			printMessage(PRINT_MESSAGE_END_COMMAND, 947, 0); // The sudden change in temperature has delicately shattered the vase.
+		} 
+		printMessage(PRINT_MESSAGE_END_COMMAND, 946, 0); // There is nothing here with which to fill the vase.
 	}
-} int z29() {
+} 
+
+int z29() {
 	if (!currentCommandContains(114)) return; if (isItemAtLocation(114, -1)) {
 		if (object_type_3_buffer[114] < 2) { printMessage(PRINT_MESSAGE_END_COMMAND, 1370, 0); } if (object_type_3_buffer[114] == 2) {
 			if (isObjectFlagSet(t11(671), 9))
@@ -929,22 +941,42 @@ int n31() {
 } int p30() {
 	if (!currentCommandIsOneOf(134, 7, 101, 20, 22, 38, 19, 24, 25, 121, 82, -1)) return
 		0; if (!g10(t11(object_type_3_buffer[670]), -1)) return 0; printMessage(PRINT_MESSAGE_END_COMMAND, 803, 0);
-} int b34() {
-	if (g10(110, -1))
+} 
+
+int b34() {
+	if (g10(ITEM_FOOD, -1))
 	{
-		if (currentCommandContains(110) || object_type_3_buffer[697] == 1) { set_object_location(110, 484); printMessage(PRINT_MESSAGE_END_COMMAND, 868, 0); }
-	} if (g10(119, -1))
-	{
-		if (currentCommandContains(119) || object_type_3_buffer[697] == 1) {
-			set_value(0, 722, 30); object_type_3_buffer[722] += object_type_3_buffer[724]; set_value(0, 721, 12);
-			modifyObjectFlag('c', 434, 8); set_value(0, 119, 2); set_object_location(119, LOCATION_LIMBO); printMessage(PRINT_MESSAGE_END_COMMAND, 119, 0);
+		if (currentCommandContains(ITEM_FOOD) || object_type_3_buffer[697] == 1) { 
+			set_object_location(ITEM_FOOD, 484); 
+			printMessage(PRINT_MESSAGE_END_COMMAND, 868, 0); 
 		}
-	} if (object_type_3_buffer[697] == 1)
+	} 
+	
+	if (g10(ITEM_MUSHROOM, -1))
+	{
+		if (currentCommandContains(ITEM_MUSHROOM) || object_type_3_buffer[697] == 1) {
+			set_value(0, 722, 30); 
+			object_type_3_buffer[722] += object_type_3_buffer[724]; 
+			set_value(0, MAX_CARRIED_ITEMS, 12);
+			modifyObjectFlag('c', 434, 8); 
+			set_value(0, ITEM_MUSHROOM, 2);
+			set_object_location(119, LOCATION_LIMBO); 
+			printMessage(PRINT_MESSAGE_END_COMMAND, 119, 0);
+		}
+	} 
+	
+	if (object_type_3_buffer[697] == 1)
 	{
 		printMessage(PRINT_MESSAGE_END_COMMAND, 984, 0);
-	} if (!currentCommandIsOneOf(134, 20, 101, 7, 38, 22, 11, 24, 25, 121, -1)) return 0;
+	} 
+	
+	if (!currentCommandIsOneOf(134, 20, 101, 7, 38, 22, 11, 24, 25, 121, -1)) 
+		return 0;
+
 	printMessage(PRINT_MESSAGE_END_COMMAND, 867, 0);
-} int j46() {
+} 
+
+int j46() {
 	if (isObjectFlagSet(t11(670), 0)) {
 		if (g10(t11(object_type_3_buffer[670]), -1))
 		{
@@ -968,7 +1000,7 @@ int n31() {
 	if (!currentCommandContains(259)) return; if (object_type_3_buffer[PLAYER_LOCATION] == 259)
 	{
 		printMessage(PRINT_MESSAGE_END_COMMAND, 873, 0);
-	} printMessage(76, 818, 259);
+	} printMessage(76, MESSAGE_NO_X_HERE, 259);
 } int c34() {
 	if (object_type_3_buffer[697] > 1) {
 		if (isObjectFlagSet(t11(670), 0))
@@ -983,9 +1015,9 @@ int n31() {
 	}
 } int u17() {
 	if (isObjectFlagSet(t11(671), 6)
-		|| isObjectFlagSet(t11(672), 6) || object_type_3_buffer[672] == 0) {
+		|| isObjectFlagSet(t11(PREVIOUS_LOCATION), 6) || object_type_3_buffer[PREVIOUS_LOCATION] == 0) {
 		printMessage(PRINT_MESSAGE_END_COMMAND, 896, 0);
-	} processMoveCommand(object_type_3_buffer[672], -2);
+	} processMoveCommand(object_type_3_buffer[PREVIOUS_LOCATION], -2);
 } int
 v33() {
 	if (object_type_3_buffer[PLAYER_LOCATION] == LOCATION_GRAY_NOWHERE) { printMessage(PRINT_MESSAGE_END_COMMAND, 1595, 0); } if (object_type_3_buffer[PLAYER_LOCATION] == 151 || object_type_3_buffer[PLAYER_LOCATION] == 150
@@ -993,16 +1025,25 @@ v33() {
 		|| object_type_3_buffer[PLAYER_LOCATION] == 239 || object_type_3_buffer[PLAYER_LOCATION] == 244 || object_type_3_buffer[PLAYER_LOCATION] == 431 || object_type_3_buffer[PLAYER_LOCATION] == 432 || object_type_3_buffer[PLAYER_LOCATION] == LOCATION_ROCK_IN_MIST
 		|| g10(21, -1)) {
 		printMessage(PRINT_MESSAGE_END_COMMAND, 866, 0);
-	} printMessage(72, 818, 584);
+	} printMessage(72, MESSAGE_NO_X_HERE, 584);
 } int s10() {
 	if (object_type_3_buffer[PLAYER_LOCATION] == 225
 		|| object_type_3_buffer[PLAYER_LOCATION] == 392 || object_type_3_buffer[PLAYER_LOCATION] == 429) {
 		printMessage(PRINT_MESSAGE_END_COMMAND, 1234, 0);
-	} printMessage(76, 818, 73);
-} int u8()
+	} printMessage(76, MESSAGE_NO_X_HERE, 73);
+} 
+
+int u8()
 {
-	if (object_type_3_buffer[PLAYER_LOCATION] == 408) { printMessage(PRINT_MESSAGE_END_COMMAND, 1435, 0); } if (g10(18, -1)) { printMessage(PRINT_MESSAGE_END_COMMAND, 780, 0); }
-	printMessage(76, 818, 18);
+	if (object_type_3_buffer[PLAYER_LOCATION] == 408) { 
+		printMessage(PRINT_MESSAGE_END_COMMAND, 1435, 0); 
+	} 
+	
+	if (g10(ITEM_DRAWINGS, -1)) {
+		printMessage(PRINT_MESSAGE_END_COMMAND, 780, 0); 
+	}
+	
+	printMessage(76, MESSAGE_NO_X_HERE, 18);
 } 
 
 int f4() {
@@ -1010,86 +1051,203 @@ int f4() {
 	{
 		printMessage(PRINT_MESSAGE_END_COMMAND, 1470, 0); //  A real pea-souper.  Dead easy to get lost in.
 	} 
-	printMessage(76, 818, 14); // I see no fog here.
+	printMessage(76, MESSAGE_NO_X_HERE, 14); // I see no fog here.
 } 
 
 int m27() {
-	if (!currentCommandIsOneOf(501, 497, 498, 504, 503, 500,
-		505, 496, 506, 499, 511, 502, 579, 510, 509, 508, 507, 581, -1)) return 0; (*command_by_location_dispatch_table[object_type_3_buffer[670]])();
+	if (!currentCommandIsOneOf(501, 497, 498, 504, 503, 500, 505, 496, 506, 499, 511, 502, 579, 510, 509, 508, 507, 581, -1)) 
+		return 0; 
+	
+	(*command_by_location_dispatch_table[object_type_3_buffer[670]])();
 	longjmp(done_with_command, 1);
-} int v47() { if (object_type_3_buffer[697] == 2) { longjmp(done_with_command, 1); } } int d27()
+} 
+
+int v47() { 
+	if (object_type_3_buffer[697] == 2) { 
+		longjmp(done_with_command, 1); 
+	} 
+} 
+
+int d27()
 {
-	if (isObjectFlagSet(t11(710), 0)) { printMessage(PRINT_MESSAGE_END_COMMAND, 1013, 0); } set_value(0, 699, 1); if (!(isObjectFlagSet(t11(710), 5)))
+	if (isObjectFlagSet(t11(710), 0)) { 
+		printMessage(PRINT_MESSAGE_END_COMMAND, 1013, 0); 
+	} 
+	
+	set_value(0, 699, 1); 
+	
+	if (!(isObjectFlagSet(t11(710), 5)))
 	{
-		printMessage(9, 1055, 30); if (!(y10(1012))) { set_value(0, 699, 0); }
-	} if (object_type_3_buffer[699] == 0) {
+		printMessage(9, 1055, 30); 
+		if (!(ask_user_yes_or_no_question(1012))) { 
+			set_value(0, 699, 0); 
+		}
+	} 
+	
+	if (object_type_3_buffer[699] == 0) {
 		printMessage(PRINT_MESSAGE_END_COMMAND | PRINT_MESSAGE_DEREFERENCE_MSG, 719, 0);
-	} set_value(0, 711, 1999); b10(1, 699); if (object_type_3_buffer[699] == 0) {
+	} 
+	
+	set_value(0, 711, 1999); 
+	special_action(SAVE_GAME, 699); 
+	if (object_type_3_buffer[699] == 0) {
 		if (isObjectFlagSet(t11(710), 5))
 		{
-			if (y10(1060)) { printMessage(PRINT_MESSAGE_DEREFERENCE_MSG, 719, 0); printMessage(PRINT_MESSAGE_END_COMMAND, 776, 0); }
-		} printMessage(PRINT_MESSAGE_DEREFERENCE_MSG, 719, 0); printBlankLine();
+			if (ask_user_yes_or_no_question(1060)) { 
+				printMessage(PRINT_MESSAGE_DEREFERENCE_MSG, 719, 0); 
+				printMessage(PRINT_MESSAGE_END_COMMAND, 776, 0); 
+			}
+		} 
+		printMessage(PRINT_MESSAGE_DEREFERENCE_MSG, 719, 0); 
+		printBlankLine();
 		r7();
+	} else { 
+		printMessage(PRINT_MESSAGE_END_COMMAND, 1056, 0); 
 	}
-	else { printMessage(PRINT_MESSAGE_END_COMMAND, 1056, 0); }
-} int b21() {
+} 
+
+int command_restore_490() {
+
 	if (isObjectFlagSet(t11(710), 5)) {
 		set_value(0, 699, 1);
+	} else { 
+		special_action(12, 699); 
+		if (object_type_3_buffer[699] > 0) { 
+			printMessage(PRINT_MESSAGE_END_COMMAND, 1074, 0); // I'm  afraid that I can't restore your saved game - it's prime time at the moment, and only demonstration Adventures are permitted.
+		} 
+		set_value(0, 699, 0); 
 	}
-	else { b10(12, 699); if (object_type_3_buffer[699] > 0) { printMessage(PRINT_MESSAGE_END_COMMAND, 1074, 0); } set_value(0, 699, 0); }
-	b10(6, 699); b10(2, 699); if (object_type_3_buffer[699] == 0) {
-		b10(7, 700); if (object_type_3_buffer[700] == 1) {
+
+	special_action(6, 699); 
+	special_action(LOAD_GAME, 699); 
+	
+	if (object_type_3_buffer[699] == 0) {
+		special_action(7, 700); 
+		if (object_type_3_buffer[700] == 1) {
 			modifyObjectFlag('s', t11(710), 5);
-		}
-		else { modifyObjectFlag('c', t11(710), 5); } b10(8, 699); if (isObjectFlagSet(t11(710), 5)
-			|| object_type_3_buffer[699] > 30) {
-			if (object_type_3_buffer[99] == 1) { object_type_3_buffer[698] += 1; } if (!(y10(1059))) {
-				b10(3, 699);
-			} processMoveCommand(object_type_3_buffer[671], -1); printMessage(PRINT_MESSAGE_DEREFERENCE_MSG, 719, 0); printBlankLine();
-		}
-		else {
-			printMessage(9, 1061, 30); printBlankLine();
+		} else { 
+			modifyObjectFlag('c', t11(710), 5); 
+		} 
+		
+		special_action(8, 699); 
+		if (isObjectFlagSet(t11(710), 5) || object_type_3_buffer[699] > 30) {
+			if (object_type_3_buffer[ITEM_LAMP] == 1) {
+				object_type_3_buffer[698] += 1; 
+			} 
+			
+			if (!(ask_user_yes_or_no_question(1059))) { // Do  you  want  me to keep the save-image?
+				special_action(3, 699);
+			} 
+			
+			processMoveCommand(object_type_3_buffer[671], -1); 
+			printMessage(PRINT_MESSAGE_DEREFERENCE_MSG, 719, 0); 
+			printBlankLine();
+		} else {
+			printMessage(9, 1061, 30); // I'm sorry - only a wizard can restart a game in less than * minutes.
+			printBlankLine();
 			r7();
 		}
-	}
-	else {
-		if (object_type_3_buffer[699] == 1) { printMessage(0, 1057, 0); object_type_3_buffer[712] -= 1; }
-		else {
-			if (y10(1058)) { b10(3, 699); } printMessage(PRINT_MESSAGE_DEREFERENCE_MSG, 719, 0);
+	} else {
+		if (object_type_3_buffer[699] == 1) { 
+			printMessage(0, 1057, 0); // I can't find any such saved game for you to restore.
+			object_type_3_buffer[712] -= 1; 
+		} else {
+			if (ask_user_yes_or_no_question(1058)) { // Um... looks like the cave got extensively renovated since you dumped that game.  'Fraid it's no good any more.
+				special_action(3, 699); 
+			} 
+			printMessage(PRINT_MESSAGE_DEREFERENCE_MSG, 719, 0);
 		}
-	} longjmp(done_with_command, 1);
-} int k19()
+	} 
+	longjmp(done_with_command, 1);
+} 
+
+int command_drink_555()
 {
-	if (currentCommandContains(81) && g10(81, -1)) { if (isObjectFlagSet(81, 13)) { j37(); } printMessage(PRINT_MESSAGE_END_COMMAND, 1270, 0); }
-	if (object_type_3_buffer[697] == 1 && g10(81, 1037)) { j37(); } if (currentCommandContains(113)) {
-		printMessage(PRINT_MESSAGE_END_COMMAND, 814, 0);
-	} if (object_type_3_buffer[697] == 1 || currentCommandContains(112) || currentCommandContains(111) || currentCommandContains(114)) {
-		if (isObjectFlagSet(t11(671), 9)
-			&& !currentCommandContains(111) && !currentCommandContains(114)) {
-			f3(699, 869); set_value(0, 700, 900); a25();
-		} if (currentCommandContains(111)
-			|| currentCommandContains(114)) {
+	if (currentCommandContains(ITEM_CHALICE) && g10(ITEM_CHALICE, -1)) {
+		if (isObjectFlagSet(ITEM_CHALICE, 13)) {
+			j37(); 
+		} 
+		printMessage(PRINT_MESSAGE_END_COMMAND, 1270, 0); // I am sorry, but it is already quite empty.
+	}
+
+	if (object_type_3_buffer[697] == 1 && g10(ITEM_CHALICE, 1037)) {
+		j37(); 
+	} 
+	
+	if (currentCommandContains(ITEM_OIL)) {
+		printMessage(PRINT_MESSAGE_END_COMMAND, 814, 0); // You can't be serious!
+	} 
+	
+	if (object_type_3_buffer[697] == 1 || currentCommandContains(ITEM_WATER) || currentCommandContains(ITEM_BOTTLE) || currentCommandContains(ITEM_FLASK)) {
+		if (isObjectFlagSet(t11(671), LOCATION_FLAG_WATER) && !currentCommandContains(ITEM_BOTTLE) && !currentCommandContains(ITEM_FLASK)) {
+			f3(699, 869); // You  have  taken  a  drink from the stream.  The water tastes strongly of minerals, but is not unpleasant.  It is extremely cold.
+			set_value(0, 700, 900); 
+			replenish_thirst();
+		} 
+		
+		if (currentCommandContains(ITEM_BOTTLE)	|| currentCommandContains(ITEM_FLASK)) {
 			if (!(isItemAtLocation(t11(object_type_3_buffer[670]), -1))) {
 				if (q8(t11(object_type_3_buffer[670]), -1)) {
-					printMessage(76, 1700, 670);
-				} printMessage(76, 818, 670);
-			} z5(699, 670); if (object_type_3_buffer[699] == 4) { printMessage(PRINT_MESSAGE_END_COMMAND, 1702, 0); } if (currentCommandContains(114)
-				&& object_type_3_buffer[114] < 2) {
-				printMessage(PRINT_MESSAGE_END_COMMAND, 1703, 0);
-			} if (object_type_3_buffer[699] == 2) { printMessage(76, 1701, 670); }
-		} if
-			(g10(111, 3) && !currentCommandContains(114)) {
-			f3(699, 871); set_value(0, 111, 2); set_value(0, 700, 600); a25();
-		} if (g10(114, 3)) { f3(699, 1367); set_value(0, 114, 2); set_value(0, 700, 400); a25(); }
-		if (currentCommandContains(112)) { printMessage(76, 818, 670); } printMessage(PRINT_MESSAGE_END_COMMAND, 1064, 0);
-	} if (isObjectFlagSet(t11(670), 0)) {
+					printMessage(76, 1700, 670); // You'll have to pick up the * first, lazybones!
+				} 
+				printMessage(76, MESSAGE_NO_X_HERE, 670); // I see no * here.
+			} 
+			
+			z5(699, 670); 
+			
+			if (object_type_3_buffer[699] == 4) { 
+				printMessage(PRINT_MESSAGE_END_COMMAND, 1702, 0); // I  am  most  dreadfully sorry, but I have this quite unreasoned prejudice against drinking oil.
+			} 
+			
+			if (currentCommandContains(ITEM_FLASK)	&& object_type_3_buffer[ITEM_FLASK] < 2) {
+				printMessage(PRINT_MESSAGE_END_COMMAND, 1703, 0); // I  can understand the sight of the flask clouding your wits, but in order to sample its contents, it just might be useful to open the flask first.
+			} 
+			
+			if (object_type_3_buffer[699] == 2) { 
+				printMessage(76, 1701, 670); // No  matter  how I examine the *, it appears to be quite empty. That being so, I am unclear how you propose to drink from it.
+			}
+		} 
+		
+		if (g10(ITEM_BOTTLE, 3) && !currentCommandContains(ITEM_FLASK)) {
+			f3(699, 871);		// The bottle of water is now empty.
+			set_value(0, ITEM_BOTTLE, 2);
+			set_value(0, 700, 600); 
+			replenish_thirst();
+		} 
+		
+		if (g10(ITEM_FLASK, 3)) {
+			f3(699, 1367);  // Your flask is now empty.
+			set_value(0, ITEM_FLASK, 2);
+			set_value(0, 700, 400); 
+			replenish_thirst(); 
+		}
+		
+		
+		if (currentCommandContains(ITEM_WATER)) {
+			printMessage(76, MESSAGE_NO_X_HERE, 670); // I see no * here.
+		} 
+		
+		printMessage(PRINT_MESSAGE_END_COMMAND, 1064, 0); // There is nothing here that I can drink!
+	} 
+	
+	if (isObjectFlagSet(t11(670), 0)) {
 		if (g10(t11(object_type_3_buffer[670]), -1)) {
-			if (currentCommandContains(118)) { printMessage(PRINT_MESSAGE_END_COMMAND, 1422, 0); } printMessage(PRINT_MESSAGE_END_COMMAND, MESSAGE_RIDICULOUS, 0);
-		} printMessage(76, 818, 670);
-	} printMessage(PRINT_MESSAGE_END_COMMAND, 814, 0);
-} int z22() { printMessage(PRINT_MESSAGE_END_COMMAND, 779, 0); } int q35()
+			if (currentCommandContains(ITEM_VIAL)) {
+				printMessage(PRINT_MESSAGE_END_COMMAND, 1422, 0); // The  liquid does not look particularly wholesome to me.  In any case, the 
+																  // vial is tightly sealed and if you do insist on sampling  that  alchemical
+																  // brew, you'll have to figure out how to get at it first.
+			} 
+			printMessage(PRINT_MESSAGE_END_COMMAND, MESSAGE_RIDICULOUS, 0);
+		} 
+		printMessage(76, MESSAGE_NO_X_HERE, 670); // // I see no * here.
+	} 
+
+	printMessage(PRINT_MESSAGE_END_COMMAND, 814, 0);
+} 
+
+int z22() { printMessage(PRINT_MESSAGE_END_COMMAND, 779, 0); } int q35()
 {
-	b10(4, 699); longjmp(done_with_command, 1);
+	special_action(4, 699); longjmp(done_with_command, 1);
 } int t34() {
 	if (g10(89, -1)) {
 		set_value(0, 89, 2);
@@ -1139,7 +1297,7 @@ int m27() {
 		else { printMessage(PRINT_MESSAGE_END_COMMAND, MESSAGE_RIDICULOUS, 0); }
 	}
 } int a23() {
-	printMessage(0, 1077, 0); b10(5, 699); longjmp(done_with_command, 1);
+	printMessage(0, 1077, 0); special_action(5, 699); longjmp(done_with_command, 1);
 } int j35() {
 	if (object_type_3_buffer[726] == 0) { set_value(0, 726, 1); }
 	else { set_value(0, 726, -1); }
@@ -1246,7 +1404,7 @@ int n21() {
 				printMessage(0, MESSAGE_NOTHING_HAPPENS, 0);
 			}
 			else {
-				if (cheezy_rand(100) < 95) { printMessage(0, 1171, 0); die(); } printMessage(0, 1172, 0); if (y10(1173))
+				if (cheezy_rand(100) < 95) { printMessage(0, 1171, 0); die(); } printMessage(0, 1172, 0); if (ask_user_yes_or_no_question(1173))
 				{
 					printMessage(0, 1174, 0);
 				} r7();

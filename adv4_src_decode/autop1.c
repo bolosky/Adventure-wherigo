@@ -77,9 +77,9 @@ int t39() {
 			return 0;
 		} 
 		
-		printMessage(13, 784, 700); 
-		set_value(SET_VALUE_DEREFERENCE, 701, 721); 
-		object_type_3_buffer[701] -= object_type_3_buffer[705];
+		printMessage(13, 784, 700); // * nasty sharp knives are thrown at you!
+		set_value(SET_VALUE_DEREFERENCE, 701, MAX_CARRIED_ITEMS); 
+		object_type_3_buffer[701] -= object_type_3_buffer[CARRIED_ITEM_COUNT];
 		object_type_3_buffer[701] *= 5; 
 		
 		if (isObjectFlagSet(134, 14)) { 
@@ -102,8 +102,8 @@ int t39() {
 		} 
 		
 		if (cheezy_rand(100) < object_type_3_buffer[728] || isObjectFlagSet(134, 13)) {
-			printMessage(13, 785, 700); 
-			modifyObjectFlag('c', 134, 13); // They miss you!
+			printMessage(13, 785, 700); // They miss you!
+			modifyObjectFlag('c', 134, 13); 
 		} else {
 			printMessage(13, 786, 700); // One of them gets you!
 			// BJB - this is too annoying die();
@@ -116,7 +116,7 @@ int o21() {
 		if (currentCommandContains(COMMAND_THROW)) {
 			set_object_location(object_type_3_buffer[670], PLAYER_LOCATION);
 		} if (g10(134, -1)) {
-			set_value(SET_VALUE_DEREFERENCE, 699, 721); object_type_3_buffer[699] -= object_type_3_buffer[705]; object_type_3_buffer[699] *= 5; set_value(SET_VALUE_DEREFERENCE, 700, 134);
+			set_value(SET_VALUE_DEREFERENCE, 699, MAX_CARRIED_ITEMS); object_type_3_buffer[699] -= object_type_3_buffer[CARRIED_ITEM_COUNT]; object_type_3_buffer[699] *= 5; set_value(SET_VALUE_DEREFERENCE, 700, 134);
 			object_type_3_buffer[700] += 2; object_type_3_buffer[700] *= 15; object_type_3_buffer[699] += object_type_3_buffer[700]; if (currentCommandContains(ITEM_AXE) || currentCommandContains(547))
 			{
 				if (!(currentCommandContains(ITEM_AXE) && currentCommandContains(547))) { object_type_3_buffer[699] += 15; }
@@ -337,7 +337,7 @@ int n24() {
 		if (isItemAtLocation(t11(object_type_3_buffer[670]), -1) || !(isObjectFlagSet(t11(670), 3)))
 		{
 			return 0;
-		} set_value(SET_VALUE_DEREFERENCE, 699, 705); object_type_3_buffer[699] -= object_type_3_buffer[721]; object_type_3_buffer[699] *= 5; object_type_3_buffer[699]
+		} set_value(SET_VALUE_DEREFERENCE, 699, CARRIED_ITEM_COUNT); object_type_3_buffer[699] -= object_type_3_buffer[MAX_CARRIED_ITEMS]; object_type_3_buffer[699] *= 5; object_type_3_buffer[699]
 			+= 60; if (cheezy_rand(100) < object_type_3_buffer[699]) { printMessage(12, 1220, 670); die(); } printMessage(76, 1221, 670);
 	}
 } int y22() {
@@ -425,24 +425,33 @@ int n24() {
 				}
 		}
 	}
-} int h28() {
-	object_type_3_buffer[759] -= object_type_3_buffer[705]; if (object_type_3_buffer[759] < 155 && object_type_3_buffer[759]>135)
+} 
+
+int update_thirst() {
+	object_type_3_buffer[THIRST_COUNTER] -= object_type_3_buffer[CARRIED_ITEM_COUNT]; 
+
+	if (object_type_3_buffer[THIRST_COUNTER] < 155 && object_type_3_buffer[THIRST_COUNTER]>135)
 	{
-		printMessage(0, 1341, 0); object_type_3_buffer[759] = cheezy_rand(135 - 110 + 1) + 110;
+		printMessage(0, 1341, 0); // Exploring  is a thirsty work.  You must soon take a drink or lighten your load.
+		object_type_3_buffer[THIRST_COUNTER] = cheezy_rand(135 - 110 + 1) + 110;
 	}
 	else {
-		if (object_type_3_buffer[759] < 60 &&
-			object_type_3_buffer[759]>40) {
-			printMessage(0, 1342, 0); object_type_3_buffer[759] = cheezy_rand(39 - 25 + 1) + 25;
-		}
-		else {
-			if (object_type_3_buffer[759] < 0)
+		if (object_type_3_buffer[THIRST_COUNTER] < 60 &&
+			object_type_3_buffer[THIRST_COUNTER]>40) {
+			printMessage(0, 1342, 0); // I cannot go much further without a drink.
+			object_type_3_buffer[THIRST_COUNTER] = cheezy_rand(39 - 25 + 1) + 25;
+		} else {
+			if (object_type_3_buffer[THIRST_COUNTER] < 0)
 			{
-				printMessage(0, 1343, 0); object_type_3_buffer[759] = cheezy_rand(650 - 550 + 1) + 550; die();
+				printMessage(0, 1343, 0); // You have collapsed and died of thirst!
+				object_type_3_buffer[THIRST_COUNTER] = cheezy_rand(650 - 550 + 1) + 550; 
+				die();
 			}
 		}
 	}
-} int r31() {
+} 
+
+int r31() {
 	if
 		(isObjectFlagSet(16, 14)) {
 		modifyObjectFlag('s', 16, 13); modifyObjectFlag('c', 16, 14);
@@ -477,10 +486,10 @@ int h29() {
 		}
 	}
 } int n25() {
-	if (object_type_3_buffer[678] == object_type_3_buffer[672])
+	if (object_type_3_buffer[678] == object_type_3_buffer[PREVIOUS_LOCATION])
 	{
 		processMoveCommand(object_type_3_buffer[679], -2);
-	} if (object_type_3_buffer[679] == object_type_3_buffer[672]) { processMoveCommand(object_type_3_buffer[678], -2); } printMessage(PRINT_MESSAGE_END_COMMAND, 799, 0);
+	} if (object_type_3_buffer[679] == object_type_3_buffer[PREVIOUS_LOCATION]) { processMoveCommand(object_type_3_buffer[678], -2); } printMessage(PRINT_MESSAGE_END_COMMAND, 799, 0);
 } int h30() {
 	if (isObjectFlagSet(8, 13)) { printMessage(0, 1488, 0); }
 	else {
@@ -492,7 +501,7 @@ int h29() {
 		{
 			printMessage(PRINT_MESSAGE_END_COMMAND, 1502, 0);
 		} printMessage(PRINT_MESSAGE_END_COMMAND, 1501, 0);
-	} printMessage(76, 818, ITEM_RAT);
+	} printMessage(76, MESSAGE_NO_X_HERE, ITEM_RAT);
 } int v38() {
 	set_value(0, 117, 0);
 	if (currentCommandContains(COMMAND_THROW) && object_type_3_buffer[PLAYER_LOCATION] != 393 && !g10(121, -1)) { n24(); } printMessage(0, 1510, 0); set_object_location(117, PLAYER_LOCATION);
@@ -511,7 +520,7 @@ int h29() {
 } int c28() {
 	object_type_3_buffer[699] = object_type_3_buffer[700] - 1; while (++object_type_3_buffer[699] <= object_type_3_buffer[701])
 	{
-		printMessage(PRINT_MESSAGE_DEREFERENCE_MSG, 699, 0); if (object_type_3_buffer[699] < object_type_3_buffer[701]) { if (!(y10(944))) { return 0; } }
+		printMessage(PRINT_MESSAGE_DEREFERENCE_MSG, 699, 0); if (object_type_3_buffer[699] < object_type_3_buffer[701]) { if (!(ask_user_yes_or_no_question(944))) { return 0; } }
 	}
 }
 int v39() { object_type_3_buffer[677] = cheezy_rand(852 - 847 + 1) + 847; printMessage(78, 677, 669); } int o23() {
@@ -608,13 +617,13 @@ int o24() {
 	else { printMessage(76, 1027, 113); }
 } int t40() {
 	if (!(g10(66, -1))) {
-		printMessage(76, 818, 670);
+		printMessage(76, MESSAGE_NO_X_HERE, 670);
 	} set_value(SET_VALUE_DEREFERENCE, 699, 670); f3(702, 642); object_type_3_buffer[699] -= object_type_3_buffer[702]; if (object_type_3_buffer[66] == 0 && object_type_3_buffer[699] == 1
 		|| object_type_3_buffer[66] == object_type_3_buffer[699]) {
-		f3(702, 66); b10(10, 702);
+		f3(702, 66); special_action(10, 702);
 	}
 	else {
-		printMessage(76, 818, 670);
+		printMessage(76, MESSAGE_NO_X_HERE, 670);
 	} if (!currentCommandIsOneOf(643, 644, 645, 646, 647, 648, 649, 650, 651, 652, 653, 654, 655, 656, 657, -1))
 		return 0; printMessage(PRINT_MESSAGE_END_COMMAND, 776, 0);
 } 
@@ -654,7 +663,7 @@ int r32()
 {
 	if (currentCommandContains(COMMAND_LOOK)) { return 0; } processMoveCommand(LOCATION_END_OF_ROAD, 0, 136, LOCATION_BUILDING, -COMMAND_EAST); processMoveCommand(457, 0, -COMMAND_NORTH); processMoveCommand(440, 0, COMMAND_NORTHEAST, -622);
 	processMoveCommand(142, 0, -COMMAND_SOUTHEAST); processMoveCommand(450, 0, -COMMAND_SOUTH); processMoveCommand(461, 0, -COMMAND_SOUTHWEST); processMoveCommand(438, 0, -COMMAND_NORTHWEST); if (!currentCommandIsOneOf(COMMAND_WEST, 529, COMMAND_CLIMB, -1))
-		return 0; if (y10(1264)) { printMessage(0, 1265, 0); r7(); } printMessage(PRINT_MESSAGE_END_COMMAND, 1253, 0);
+		return 0; if (ask_user_yes_or_no_question(1264)) { printMessage(0, 1265, 0); r7(); } printMessage(PRINT_MESSAGE_END_COMMAND, 1253, 0);
 } int o26()
 {
 	u28(); if (!currentCommandIsNotOneOf(COMMAND_CLOSE, 93, -1)) return 0; printMessage(76, 1129, 670);
@@ -730,9 +739,9 @@ int f23() {
 	} if (!currentCommandIsOneOf(143, 626, COMMAND_DOWN, COMMAND_ENTER, -1)) return 0; if
 		(object_type_3_buffer[143] == 0) {
 		printMessage(PRINT_MESSAGE_END_COMMAND, 901, 0);
-	} set_value(0, 717, 6); compute_score(); printMessage(0, 1390, 0); if (y10(1391))
+	} set_value(0, 717, 6); compute_score(); printMessage(0, 1390, 0); if (ask_user_yes_or_no_question(1391))
 	{
-		printMessage(0, 1392, 0); if (y10(1391)) {
+		printMessage(0, 1392, 0); if (ask_user_yes_or_no_question(1391)) {
 			if (object_type_3_buffer[708] > 658) { printMessage(0, 1394, 0); }
 			else
 			{
@@ -1304,7 +1313,7 @@ int command_waterfall_224() {
 	if (!currentCommandIsOneOf(COMMAND_DOWN, COMMAND_JUMP, -1)) 
 		return 0; 
 	
-	if (y10(1166)) {
+	if (ask_user_yes_or_no_question(1166)) {
 		modifyObjectFlag('c', 239, 8);
 		set_value(0, 701, 0); 
 		if (isItemAtLocation(ITEM_BIRD, -1)) { 
@@ -1322,16 +1331,16 @@ int command_waterfall_224() {
 		} 
 		
 		if (isItemAtLocation(ITEM_LAMP, -1)) {
-			set_value(0, 705, 1);
+			set_value(0, CARRIED_ITEM_COUNT, 1);
 			set_value(0, 701, 1);
 		} else { 
-			set_value(0, 705, 0); 
+			set_value(0, CARRIED_ITEM_COUNT, 0); 
 		} 
 		
-		printMessage(12, 1167, 705); 
+		printMessage(12, 1167, CARRIED_ITEM_COUNT); // You  plunge  into  the water and are sucked down by the whirlpool.
 		
 		if (object_type_3_buffer[701] > 0) {
-			printMessage(12, 1168, 705);
+			printMessage(12, 1168, CARRIED_ITEM_COUNT); // The  current  is incredibly strong, and you barely manage to hold onto your lamp; everything else is pulled from your grasp and is lost  in  the swirling waters.
 		} else { 
 			printBlankLine(); 
 		} 
@@ -1364,7 +1373,7 @@ int alcove_227()
 	if (!currentCommandIsOneOf(COMMAND_EAST, 625, 228, -1)) 
 		return 0; 
 	
-	set_value(SET_VALUE_DEREFERENCE, 699, 705);
+	set_value(SET_VALUE_DEREFERENCE, 699, CARRIED_ITEM_COUNT);
 	if (isItemAtLocation(ITEM_EMERALD, -1)) {
 		object_type_3_buffer[699] -= 1; 
 	} 
@@ -1397,7 +1406,7 @@ int t16() {
 			set_object_location(55, PLAYER_LOCATION);
 			printMessage(0, 1581, 0);
 		} processMoveCommand(LOCATION_Y2, -2);
-	} if (!currentCommandIsOneOf(COMMAND_WEST, 625, 227, -1)) return 0; set_value(SET_VALUE_DEREFERENCE, 699, 705);
+	} if (!currentCommandIsOneOf(COMMAND_WEST, 625, 227, -1)) return 0; set_value(SET_VALUE_DEREFERENCE, 699, CARRIED_ITEM_COUNT);
 	if (isItemAtLocation(55, -1)) { object_type_3_buffer[699] -= 1; } if (isItemAtLocation(58, -1)) { object_type_3_buffer[699] -= 1; } if (object_type_3_buffer[699] == 0)
 	{
 		processMoveCommand(227, -2);

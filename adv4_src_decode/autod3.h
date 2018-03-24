@@ -82,7 +82,7 @@ int m21(); extern int g27(); extern int d26(); extern int e19(); extern
 int f17(); extern int f18(); extern int y17(); extern int f19(); extern
 int u16(); extern int command_lost_in_woods_461(); extern int KilobyteInputBuffer4(); extern int v27(); extern
 int l23(); extern int command_valuation_room_483(); extern int KilobyteInputBuffer5(); extern int d27(); extern
-int b21(); extern int i32(); extern int KilobyteInputBuffer6(); extern int z19(); extern
+int command_restore_490(); extern int i32(); extern int KilobyteInputBuffer6(); extern int z19(); extern
 int command_zorton_496(); extern int t27(); extern int KilobyteInputBuffer7(); extern int o17(); extern
 int d28(); extern int r21(); extern int n21(); extern int y19(); extern
 int m23(); extern int z20(); extern int v28(); extern int command_foo_507(); extern
@@ -96,7 +96,7 @@ int z21(); extern int KilobyteInputBuffer9(); extern int v30(); extern int j30()
 int o19(); extern int s25(); extern int command_cut_544(); extern int j31(); extern
 int f20(); extern int o20(); extern int p30(); extern int n22(); extern
 int i36(); extern int d32(); extern int j32(); extern int l25(); extern
-int i37(); extern int k19(); extern int c27(); extern int w21(); extern
+int i37(); extern int command_drink_555(); extern int c27(); extern int w21(); extern
 int w22(); extern int e21(); extern int t30(); extern int r22(); extern
 int t31(); extern int g29(); extern int command_break(); extern int p31(); extern
 int t32(); extern int i38(); extern int l26(); extern int b24(); extern
@@ -605,7 +605,7 @@ int (*command_by_location_dispatch_table[])()= {
 	command_noop,	// 487
 	command_noop,	// 488
 	d27,	// 489
-	b21,	// 490
+	command_restore_490,	// 490
 	i32,	// 491
 	KilobyteInputBuffer6,	// 492
 	z19,	// 493
@@ -670,7 +670,7 @@ int (*command_by_location_dispatch_table[])()= {
 	j32,	// 552
 	l25,	// 553
 	i37,	// 554
-	k19,	// 555
+	command_drink_555,	// 555
 	c27,	// 556
 	w21,	// 557
 	w22,	// 558
@@ -808,10 +808,10 @@ west_of_causeway_396,east_of_causeway_397,a20,k14,z15,p24,h19,g23,k15,s22,k16, i
 i30,f14,g24,p25,x23,q29,h20,z17,z18,v23,x24, f15,i31,h21,lost_in_mist_432,small_dank_cave_433,rock_in_mist_434,dwarves_stores_435,f16,t25,l21,v25,
 d25,g25,l22,n20,v26,t26,q30,s23,KilobyteInputBuffer3,g26,p26, s24,m21,g27,d26,e19,f17,f18,y17,f19,u16,command_lost_in_woods_461,
 KilobyteInputBuffer4,v27,command_noop,command_noop,command_noop,command_noop,command_noop,command_noop,command_noop,command_noop,command_noop, command_noop,command_noop,command_noop,command_noop,command_noop,command_noop,command_noop,command_noop,command_noop,l23,command_valuation_room_483,
-KilobyteInputBuffer5,command_noop,command_noop,command_noop,command_noop,d27,b21,i32,KilobyteInputBuffer6,z19,command_noop, command_noop,command_zorton_496,t27,KilobyteInputBuffer7,o17,d28,r21,n21,y19,m23,z20,
+KilobyteInputBuffer5,command_noop,command_noop,command_noop,command_noop,d27,command_restore_490,i32,KilobyteInputBuffer6,z19,command_noop, command_noop,command_zorton_496,t27,KilobyteInputBuffer7,o17,d28,r21,n21,y19,m23,z20,
 v28,command_foo_507,b22,g28,a21,i33,command_noop,command_noop,d29,i34,t28, v29,d30,i35,x25,a22,command_noop,l24,k18,command_noop,p27,d31,
 t29,command_noop,u17,p28,q32,command_noop,b23,e20,m24,KilobyteInputBuffer8,z21, KilobyteInputBuffer9,v30,j30,o19,s25,command_cut_544,j31,f20,o20,p30,n22,
-i36,d32,j32,l25,i37,k19,c27,w21,w22,e21,t30, r22,t31,g29,command_break,p31,t32,i38,l26,b24,command_noop,q34,
+i36,d32,j32,l25,i37,command_drink_555,c27,w21,w22,e21,t30, r22,t31,g29,command_break,p31,t32,i38,l26,b24,command_noop,q34,
 p32,l27,v31,command_verbose_575,z22,q35,a23,r23,e22,j33,t33, g30,v33,d33,b25,z23,x26,k20,p33,s26,r24,l28,
 w23,command_score_595,t34,blast_command,v35,command_noop,command_noop,command_noop,l30,u18,i39, g31,u19,i40,u20,u21,a24,j34,u22,l31,n23,command_noop,
 command_noop,f21,command_noop,command_noop,command_noop,command_noop,v36,command_noop,command_noop,command_noop,command_noop, command_noop,command_noop,command_noop,command_noop,command_noop,command_noop,command_noop,command_noop,command_noop,command_noop,command_noop,

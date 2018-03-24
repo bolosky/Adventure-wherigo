@@ -19,14 +19,14 @@ int d34() {
 	{
 		if (g10(114, 4) || g10(111, 4) || q8(113, -1)) {
 			modifyObjectFlag('s', t11(697), 5); printMessage(76, 1023, 113);
-		} printMessage(76, 818, 113);
+		} printMessage(76, MESSAGE_NO_X_HERE, 113);
 	} printMessage(PRINT_MESSAGE_END_COMMAND, MESSAGE_RIDICULOUS, 0);
 } int r26() {
 	if (object_type_3_buffer[697] == 1) {
 		if (g10(114, 3)
 			|| g10(111, 3) || isObjectFlagSet(t11(671), 9)) {
 			modifyObjectFlag('s', t11(697), 5); printMessage(76, 1023, 669);
-		} printMessage(76, 818, 669);
+		} printMessage(76, MESSAGE_NO_X_HERE, 669);
 	} printMessage(PRINT_MESSAGE_END_COMMAND, MESSAGE_RIDICULOUS, 0);
 } int b26() {
 	set_value(0, 699, 1); if (g10(99, 1)
@@ -47,21 +47,20 @@ int b27() {
 	} 
 } 
 
-int a25()
+int replenish_thirst()
 {
-	if (object_type_3_buffer[759] < 135) { 
-		printMessage(0, 868, 0); 
-	}
-	else { 
+	if (object_type_3_buffer[THIRST_COUNTER] < 135) { 
+		printMessage(0, 868, 0); // Thank you, it was delicious!
+	} else { 
 		printMessage(PRINT_MESSAGE_DEREFERENCE_MSG, 699, 0); 
 	} 
 	
 	object_type_3_buffer[699] = cheezy_rand(150);
-	object_type_3_buffer[759] += object_type_3_buffer[700]; 
-	object_type_3_buffer[759] += object_type_3_buffer[699]; 
+	object_type_3_buffer[THIRST_COUNTER] += object_type_3_buffer[700]; 
+	object_type_3_buffer[THIRST_COUNTER] += object_type_3_buffer[699]; 
 
-	if (object_type_3_buffer[759] > 1500) {
-		set_value(0, 759, 1500);
+	if (object_type_3_buffer[THIRST_COUNTER] > 1500) {
+		set_value(0, THIRST_COUNTER, 1500);
 	} 
 	longjmp(done_with_command, 1);
 } 
@@ -265,15 +264,41 @@ y20() {
 			processMoveCommand(object_type_3_buffer[678], -2);
 		} processMoveCommand(object_type_3_buffer[679], -2);
 	}
-} int j37() {
+} 
+
+int j37() {
 	if (isObjectFlagSet(t11(671), 7))
 	{
-		f3(699, 1695); set_value(0, 700, 200); a25();
-	} object_type_3_buffer[759] = cheezy_rand(750 - 600 + 1) + 600; set_object_location(81, LOCATION_LIMBO);
-	modifyObjectFlag('s', t11(710), 10); if (isObjectFlagSet(64, 4)) { printMessage(PRINT_MESSAGE_END_COMMAND, 1360, 0); } printMessage(0, 1271, 0); if (y10(1272))
+		f3(699, 1695); 
+		set_value(0, 700, 200); 
+		replenish_thirst();
+	} 
+	
+	object_type_3_buffer[THIRST_COUNTER] = cheezy_rand(750 - 600 + 1) + 600; 
+	set_object_location(ITEM_CHALICE, LOCATION_LIMBO);
+	modifyObjectFlag('s', t11(710), 10); 
+	
+	if (isObjectFlagSet(ITEM_RING, 4)) {
+		printMessage(PRINT_MESSAGE_END_COMMAND, 1360, 0);	// As  you lift the chalice to your lips, there is a sharp plop and a horned creature with a pointed tail hurriedly steps  out  of  an  evil  smelling
+															// cloud  of smoke.  "Oh no you don't!..." he says and points at the chalice which crumples to dust in your hands.  The creature gives you a  sardonic
+															// salute,  screws its tail into a tight spiral and disappears in a dazzling shower of multicoloured sparks.
+
+	} 
+	
+	printMessage(0, 1271, 0); // A glowing figure of a beautiful woman appears.  In a distant voice she says, "You have drunk  pure  water  from the  sacred chalice, my brave adventurer.  
+							  // I come to you as the spirit of goodness, but my power is weak, for the wicked dwarves  have  stolen  the Ring  of  Orion  and  have  hidden  it deep in the Land of Mists, where I 
+							  // cannot go.  Return the ring to me and together we shall  drive  the  evil from the caves....."
+
+							  // A distant roll of thunder drowns the voice, and as the woman fades from a cloud of smoke steps a horned creature with a pointed tail.  "If you have
+							  // anything  more  to do with that wisp," he says "you will find yourself in infernal hot water.  Just you stick to pilfering a few treasures and  you
+						      // won't  come  to  much  harm!"  With  that he points to the chalice and it crumbles to dust, then with a flick of his tail he disappears.
+	
+	if (ask_user_yes_or_no_question(1272)) // A ringing in your ears seems to say "Will you help me, adventurer?".  What  do  you  reckon  -  will  you?
 	{
-		set_object_location(82, object_type_3_buffer[671]); printMessage(PRINT_MESSAGE_END_COMMAND, 1276, 0);
-	} printMessage(PRINT_MESSAGE_END_COMMAND, 1273, 0);
+		set_object_location(ITEM_UNICORN, object_type_3_buffer[671]);
+		printMessage(PRINT_MESSAGE_END_COMMAND, 1276, 0); //  swirl of mist rises from the floor.  Gosh!  It's turned into a unicorn!
+	} 
+	printMessage(PRINT_MESSAGE_END_COMMAND, 1273, 0); // The ringing is replaced by a distant laugh.
 } 
 
 int x28() {
@@ -513,8 +538,8 @@ int a28()
 		&& object_type_3_buffer[700] <= 522)) {
 		object_type_3_buffer[700] += 4; f3(701, 522); if (!(object_type_3_buffer[700] < object_type_3_buffer[701])) {
 			object_type_3_buffer[700] -= 8;
-		} if (object_type_3_buffer[697] == 1) { b10(9, 700); }
-		else { b10(10, 700); }
+		} if (object_type_3_buffer[697] == 1) { special_action(9, 700); }
+		else { special_action(10, 700); }
 	}
 }
 int g32() {
@@ -536,7 +561,7 @@ int g32() {
 	else { if (!(object_type_3_buffer[PLAYER_LOCATION] == 379)) { return 0; } } if (currentCommandContains(COMMAND_TAKE)) {
 		if (currentCommandContains(134)) {
 			printMessage(PRINT_MESSAGE_END_COMMAND, MESSAGE_RIDICULOUS, 0);
-		} if (isObjectFlagSet(t11(675), 4)) { printMessage(76, 1378, 670); } if (object_type_3_buffer[705] < object_type_3_buffer[721])
+		} if (isObjectFlagSet(t11(675), 4)) { printMessage(76, 1378, 670); } if (object_type_3_buffer[CARRIED_ITEM_COUNT] < object_type_3_buffer[MAX_CARRIED_ITEMS])
 		{
 			modifyObjectFlag('s', t11(675), 4);
 		}
@@ -570,7 +595,7 @@ int g32() {
 				}
 			}
 			else { return 0; }
-		} if (object_type_3_buffer[705] < object_type_3_buffer[721]) {
+		} if (object_type_3_buffer[CARRIED_ITEM_COUNT] < object_type_3_buffer[MAX_CARRIED_ITEMS]) {
 			set_object_location(104, r5); modifyObjectFlag('s', 104, 4);
 			set_value(0, 673, 0); printMessage(12, 1489, 669); printMessage(76, 1490, 670);
 		} g12(); printMessage(PRINT_MESSAGE_END_COMMAND, 897, 0);
@@ -597,7 +622,7 @@ int g32() {
 		printMessage(PRINT_MESSAGE_END_COMMAND, 1065, 0);
 	} if (!(isItemAtLocation(107, -1))) { printMessage(PRINT_MESSAGE_END_COMMAND, 1066, 0); } if (isObjectFlagSet(107, 15)) {
 		printMessage(PRINT_MESSAGE_END_COMMAND, 1397, 0);
-	} printMessage(9, 1387, 20); if (y10(1388)) {
+	} printMessage(9, 1387, 20); if (ask_user_yes_or_no_question(1388)) {
 		modifyObjectFlag('s', 107, 15); object_type_3_buffer[707] += 20; printMessage(PRINT_MESSAGE_END_COMMAND, 1389, 0);
 	} printMessage(PRINT_MESSAGE_END_COMMAND, 1398, 0);
 } 
@@ -850,7 +875,7 @@ int die() {
 	object_type_3_buffer[677] += object_type_3_buffer[706]; 
 	object_type_3_buffer[677] += object_type_3_buffer[706]; 
 	
-	if (y10(object_type_3_buffer[677])) {
+	if (ask_user_yes_or_no_question(object_type_3_buffer[677])) {
 		object_type_3_buffer[677] += 1; 
 		printMessage(PRINT_MESSAGE_DEREFERENCE_MSG, 677, 0); 
 		printBlankLine();
@@ -879,13 +904,13 @@ int die() {
 				}
 			} 
 			
-			set_value(0, 705, 0); 
+			set_value(0, CARRIED_ITEM_COUNT, 0); 
 			set_value(0, 99, 0); 
 			set_object_location(14, 255); 
 			set_value(0, 14, 8);
 			b28(); 
 			processMoveCommand(LOCATION_BUILDING, -1); 
-			set_value(0, 672, 0); 
+			set_value(0, PREVIOUS_LOCATION, 0); 
 			set_object_location(99, 136); 
 			
 			if (object_type_3_buffer[698] == 0) {
@@ -933,7 +958,7 @@ int t35() {
 			} if (object_type_3_buffer[701] == 20) {
 				set_value(0, 701, 0); f3(674, 134); if (object_type_3_buffer[675] < object_type_3_buffer[674])
 				{
-					if (!(y10(1589))) { f3(675, 134); }
+					if (!(ask_user_yes_or_no_question(1589))) { f3(675, 134); }
 				} object_type_3_buffer[675] -= 1;
 			}
 			else {
@@ -1036,12 +1061,12 @@ int t36() {
 int e28() {
 	if (q8(ITEM_ORB, -1))
 	{
-		if (object_type_3_buffer[705] < object_type_3_buffer[721]) {
+		if (object_type_3_buffer[CARRIED_ITEM_COUNT] < object_type_3_buffer[MAX_CARRIED_ITEMS]) {
 			set_object_location(ITEM_ORB, r5); set_object_location(79, LOCATION_LIMBO); printMessage(12, 1489, 669); printMessage(76, 1490, 670);
 		} g12(); printMessage(PRINT_MESSAGE_END_COMMAND, 897, 0);
 	}
 } int p35() {
-	if (g10(ITEM_STARSTONE, -1) && object_type_3_buffer[705] < object_type_3_buffer[721]
+	if (g10(ITEM_STARSTONE, -1) && object_type_3_buffer[CARRIED_ITEM_COUNT] < object_type_3_buffer[MAX_CARRIED_ITEMS]
 		&& !isItemAtLocation(ITEM_STARSTONE, -1)) {
 		if (object_type_3_buffer[ITEM_STARSTONE] == 0) {
 			set_value(0, ITEM_STARSTONE, 1); set_object_location(ITEM_STARSTONE, r5); printMessage(PRINT_MESSAGE_END_COMMAND, 1352, 0);
@@ -1216,7 +1241,7 @@ int s28() {
 		printMessage(PRINT_MESSAGE_END_COMMAND, MESSAGE_BOTTLE_FULL, 0);
 	} printMessage(PRINT_MESSAGE_END_COMMAND, 1369, 0);
 } int u25() {
-	if (object_type_3_buffer[20] > 0) { printMessage(PRINT_MESSAGE_END_COMMAND, 976, 0); } if (y10(836))
+	if (object_type_3_buffer[20] > 0) { printMessage(PRINT_MESSAGE_END_COMMAND, 976, 0); } if (ask_user_yes_or_no_question(836))
 	{
 		set_value(0, 20, 1); set_object_location(60, 247); set_object_location(117, 247); modifyObjectFlag('c', 20, 6); *getObjectPointer(675) = -1; object_type_3_buffer[675] = ITEM_MIN_ID - 1;
 		while (++object_type_3_buffer[675] <= ITEM_MAX_ID) { if (q8(t11(object_type_3_buffer[675]), -1)) { set_object_location(object_type_3_buffer[675], 247); } } processMoveCommand(247, -MESSAGE_DRAGON_DEAD);
@@ -1227,9 +1252,9 @@ int s28() {
 		printMessage(PRINT_MESSAGE_END_COMMAND, 831, 0);
 	} printMessage(PRINT_MESSAGE_END_COMMAND, 1399, 0);
 } int h25() {
-	if (y10(836)) {
-		set_value(SET_VALUE_DEREFERENCE, 699, 721);
-		object_type_3_buffer[699] -= object_type_3_buffer[705]; object_type_3_buffer[699] += 2; object_type_3_buffer[699] *= 10; if (cheezy_rand(100) < object_type_3_buffer[699]) {
+	if (ask_user_yes_or_no_question(836)) {
+		set_value(SET_VALUE_DEREFERENCE, 699, MAX_CARRIED_ITEMS);
+		object_type_3_buffer[699] -= object_type_3_buffer[CARRIED_ITEM_COUNT]; object_type_3_buffer[699] += 2; object_type_3_buffer[699] *= 10; if (cheezy_rand(100) < object_type_3_buffer[699]) {
 			set_value(0, 704, 1); printMessage(0, 833, 0); r27(); longjmp(done_with_command, 1);
 		} if (cheezy_rand(100) < object_type_3_buffer[699])
 		{
@@ -1237,7 +1262,7 @@ int s28() {
 		} printMessage(0, 835, 0); die();
 	} printMessage(12, MESSAGE_JUST_AS_WELL, 669); printMessage(76, 1223, 670);
 } int l33() {
-	if (y10(836)) {
+	if (ask_user_yes_or_no_question(836)) {
 		if (cheezy_rand(100) < 50) { printMessage(PRINT_MESSAGE_END_COMMAND, 1118, 0); } printMessage(0, 1119, 0);
 		die();
 	} printMessage(12, MESSAGE_JUST_AS_WELL, 669); printMessage(76, 1223, 670);
@@ -1249,14 +1274,14 @@ int s28() {
 	} set_object_location(38, r5); printMessage(PRINT_MESSAGE_END_COMMAND, 1696, 0);
 } int x29() {
 	if (!g10(ITEM_SWORD, -1))
-		return 0; if (object_type_3_buffer[ITEM_SWORD] == 0 && object_type_3_buffer[705] < object_type_3_buffer[721]) {
+		return 0; if (object_type_3_buffer[ITEM_SWORD] == 0 && object_type_3_buffer[CARRIED_ITEM_COUNT] < object_type_3_buffer[MAX_CARRIED_ITEMS]) {
 		if (object_type_3_buffer[119] == 2) {
 			set_value(0, 733, 5);
 			object_type_3_buffer[ITEM_SWORD] += 1; set_object_location(ITEM_SWORD, r5); modifyObjectFlag('c', 434, 8); printMessage(PRINT_MESSAGE_END_COMMAND, 1089, 0);
 		} printMessage(PRINT_MESSAGE_END_COMMAND, 1090, 0);
 	}
 } int s29() {
-	if (!g10(56, -1)) return 0; if (object_type_3_buffer[56] == 0 && object_type_3_buffer[705] < object_type_3_buffer[721])
+	if (!g10(56, -1)) return 0; if (object_type_3_buffer[56] == 0 && object_type_3_buffer[CARRIED_ITEM_COUNT] < object_type_3_buffer[MAX_CARRIED_ITEMS])
 	{
 		set_object_location(56, r5); set_value(0, 56, 1); object_type_3_buffer[699] = cheezy_rand(4); if (object_type_3_buffer[699] == 0) {
 			f3(683, 511);
@@ -1300,7 +1325,7 @@ int s28() {
 			modifyObjectFlag('c', t11(676), 4);
 		}
 	} modifyObjectFlag('s', 461, 4); modifyObjectFlag('s', LOCATION_GRAY_NOWHERE, 4); set_value(0, 717, 3); set_value(0, 143, 1);
-	set_value(0, 716, 999); set_value(0, 672, 0); processMoveCommand(378, -2);
+	set_value(0, 716, 999); set_value(0, PREVIOUS_LOCATION, 0); processMoveCommand(378, -2);
 } int i45() {
 	*getObjectPointer(675) = -1; object_type_3_buffer[675] = ITEM_MIN_ID - 1;
 	while (++object_type_3_buffer[675] <= ITEM_MAX_ID) {
@@ -1339,7 +1364,7 @@ int s28() {
 			object_type_3_buffer[722] -= object_type_3_buffer[724];
 			if (object_type_3_buffer[722] < 0) {
 				set_value(0, 119, 3); set_value(0, 722, 40); printMessage(0, 119, 0); set_value(0, 119, 0);
-				set_value(0, 721, 7); set_value(0, 716, 8); set_value(SET_VALUE_DEREFERENCE, 724, 716); return 0;
+				set_value(0, MAX_CARRIED_ITEMS, 7); set_value(0, 716, 8); set_value(SET_VALUE_DEREFERENCE, 724, 716); return 0;
 			}
 		} if (isObjectFlagSet(151, 4) ||
 			isObjectFlagSet(163, 4)) {
@@ -1437,7 +1462,7 @@ int s28() {
 		else {
 			if ((630 <= object_type_3_buffer[669] && object_type_3_buffer[669] <= 659))
 			{
-				printMessage(12, 818, 669);
+				printMessage(12, MESSAGE_NO_X_HERE, 669);
 			}
 			else { printMessage(0, 1503, 0); }
 		}
@@ -1449,14 +1474,14 @@ int s28() {
 			{
 				printMessage(12, 1504, 669); printMessage(12, 1505, 670);
 			}
-			else { printMessage(12, 818, 670); }
+			else { printMessage(12, MESSAGE_NO_X_HERE, 670); }
 		}
 		else {
 			if ((630 <= object_type_3_buffer[670] && object_type_3_buffer[670] <= 663)) {
 				if (currentCommandContains(550)) { printMessage(0, MESSAGE_RIDICULOUS, 0); }
 				else
 				{
-					if ((630 <= object_type_3_buffer[670] && object_type_3_buffer[670] <= 659)) { printMessage(12, 818, 670); }
+					if ((630 <= object_type_3_buffer[670] && object_type_3_buffer[670] <= 659)) { printMessage(12, MESSAGE_NO_X_HERE, 670); }
 					else {
 						printMessage(12, 1504, 669);
 						printMessage(12, 1505, 670);
@@ -1645,10 +1670,10 @@ int p36() {
 	
 	set_value(0, 720, 0); 
 	
-	if (y10(object_type_3_buffer[677])) {
+	if (ask_user_yes_or_no_question(object_type_3_buffer[677])) {
 		printMessage(9, 985, 20);  // I  can  give  you some advice that might help you solve your problem, but I'll have to charge you 20 points for it.  TANSTAAFL, y'know!
 		
-		if (y10(986)) {
+		if (ask_user_yes_or_no_question(986)) {
 			object_type_3_buffer[677]+= 1; 
 			printMessage(PRINT_MESSAGE_DEREFERENCE_MSG, 677, 0); 
 

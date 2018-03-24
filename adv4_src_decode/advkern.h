@@ -50,7 +50,7 @@ extern v0;
 #define ITEM_TRIDENT					51
 #define ITEM_HELMET						52
 #define ITEM_VASE						53
-#define ITEM_POTTERY					54
+#define ITEM_SHARDS						54
 #define ITEM_EMERALD					55
 #define ITEM_SCEPTRE					56
 #define ITEM_YACHT						57
@@ -225,9 +225,15 @@ extern v0;
 #define COMMAND_SCRY					604
 #define COMMAND_WASH					610
 
+#define PLAYER_LOCATION					671
+#define PREVIOUS_LOCATION				672
+#define CARRIED_ITEM_COUNT				705
 #define FEE_FIE_FOE_FOO_COUNT			714
+#define MAX_CARRIED_ITEMS				721
 #define LITTLE_FIGURE_HINT_COUNTER		756		// Counts down to see if you should get a chance at one of the little figure hints
+#define THIRST_COUNTER					759		// Counts down until you die of thirst.  Decremented by item count.
 
+#define MESSAGE_NO_X_HERE				818		// I see no * here
 #define MESSAGE_CRAWLED_AROUND			843		// You  have  crawled around in some little passages and wound up back where you started from.
 #define MESSAGE_NOTHING_HAPPENS			828		// Nothing happens.
 #define MESSAGE_HUH						858		// Huh??
@@ -261,4 +267,10 @@ extern v0;
 #define PRINT_MESSAGE_DEREFERENCE_MSG	2		// the second parameter is a variable containing the message number
 #define PRINT_MESSAGE_VERBOSE			16		// Always use the verbose description. Can also be done by setting flag 3 of 697
 #define PRINT_MESSAGE_END_COMMAND		64		// after printMessage, end the command and go to the next one
+
+#define LOCATION_FLAG_WATER				9
+
+// Parameters to load_save_game()
+#define SAVE_GAME						1
+#define	LOAD_GAME						2
 

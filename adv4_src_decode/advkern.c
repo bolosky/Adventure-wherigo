@@ -40,7 +40,7 @@ short object_type_1_buffer[OBJECT_TYPE_1_SIZE_IN_SHORTS * (MAX_LOCATION_ID - MIN
 short object_type_2_buffer[OBJECT_TYPE_2_SIZE_IN_SHORTS * (OBJECT_TYPE_3_MAX_ID - OBJECT_TYPE_2_MIN_ID + 1)]; 
 char command[161] = "\n"; 
 char h1[161] = "\n"; 
-char u1[161]; 
+char command_buffer[161]; 
 int k1, r2; 
 int o1;
 char b1[20]; 
@@ -81,15 +81,15 @@ long firstAddressAfterEndOfBuffer;
 #endif 
 char *commandTokens[100]; short commandTokenLength[100]; char z0[100]; 
 short nTokensInCommand;
-#define w1 73
+#define output_line_width 73
 long dataFileOffset; 
 long l3; 
 long nLocates;
 #ifdef y0
 long p0; long t1;
 #endif 
-char p1[w1 + 40]; 
-char *k2 = p1; 
+char pending_output_buffer[output_line_width + 40]; 
+char *k2 = pending_output_buffer; 
 int t2 = -1; 
 int c2[40]; 
 int q1[40];
@@ -374,12 +374,12 @@ void printMessage(int flags, int messageNumber, int messageParameter)
 			(void)sprintf(n4, "%d", messageParameter); 
 			j7 = n4 - 1; 
 			while (*(++j7)!= '\0') 
-				d5(*j7); 
+				queue_byte_for_output(*j7); 
 			goto x6;
 		} else if (messageParameter == i9 || messageParameter == o2) {
 			j7 = ((messageParameter == i9) ? b1 : x2) - 1; 
 			while (*(++j7) != '\0') 
-				d5(*j7); 
+				queue_byte_for_output(*j7); 
 			goto x6;
 		}
 		else
@@ -393,13 +393,13 @@ void printMessage(int flags, int messageNumber, int messageParameter)
 			if (i8 == '!') 
 				i8 = getByteOfDataFile(++dataFileOffset);
 			while (i8 != '\0') {
-				d5(i8); 
+				queue_byte_for_output(i8); 
 				i8 = getByteOfDataFile(++dataFileOffset);
 			} 
 			dataFileOffset = d4;
 		}
 	} else 
-		d5(i8); 
+		queue_byte_for_output(i8); 
 x6: 
 	i8 = getByteOfDataFile(++dataFileOffset);
 	} 
@@ -410,7 +410,7 @@ done:
 	return; 
 } 
 
-d5(int h4) 
+queue_byte_for_output(int h4) 
 { 
 	int a3; 
 	char *s3; 
@@ -424,7 +424,7 @@ d5(int h4)
 	
 	if (h4 == '\n') {
 		if (c3 > 0) { 
-			d6(c3); 
+			justify_and_write_pending_output_buffer(c3); 
 			(void)write_char_to_term_and_log('\n'); 
 		} else if (!j3) {
 			(void)write_char_to_term_and_log('\n');
@@ -437,10 +437,10 @@ d5(int h4)
 	if (h4 == ' ') {
 		if (t3 != ' ') 
 			c2[++t2] = c3; 
-		if (c3 >= w1) {
+		if (c3 >= output_line_width) {
 			while (getByteOfDataFile(++dataFileOffset) == ' ');
 			dataFileOffset--; 
-			d6(c2[t2]); 
+			justify_and_write_pending_output_buffer(c2[t2]); 
 			(void)write_char_to_term_and_log('\n'); 
 			j3 = 1; 
 			t3 = '\0'; 
@@ -451,17 +451,18 @@ d5(int h4)
 	
 	if (t3 == ' ') 
 		q1[t2] = c3; 
-	if (c3 >= w1) {
+
+	if (c3 >= output_line_width) {
 		*k2 = '\0'; 
 		if (t2 < 0) {
-			a3 = w1; d6(w1);
+			a3 = output_line_width; justify_and_write_pending_output_buffer(output_line_width);
 		} else {
 			a3 = q1[t2]; 
-			d6(c2[t2]); 
+			justify_and_write_pending_output_buffer(c2[t2]); 
 			(void)write_char_to_term_and_log('\n');
 			j3 = 1;
 		} 
-		s3 = &p1[a3]; 
+		s3 = &pending_output_buffer[a3]; 
 		while (*s3 != '\0') { 
 			*k2++ = *s3++; 
 			c3++; 
@@ -474,21 +475,50 @@ n6:
 	return; 
 } 
 
-d6(int v6) 
-{ char *s3; int i6;
-int j8; int a4; int n7; int a3; s3 = p1; if (c3 < w1 || v6 == w1 || t2 ==
-	0) while (v6-- > 0) { write_char_to_term_and_log_and_advance_pointer(*s3); }
-else {
-	a4 = w1 - v6; n7 = (a4 - v2) /
-		t2 + v2; j8 = 1 - 2 * v2; a3 = a4 % t2; if (!v2) a3 = t2 - a3; v2 = 1 -
-		v2; t3 = '\0'; while (v6-- > 0) {
-		if (t3 == ' ' && *s3 != ' ') {
-			i6 = n7;
-			while (i6-- > 0) { (void)write_char_to_term_and_log(' '); } if (--a3 == 0) n7 = n7 + j8;
-		} t3 =
-			*s3; write_char_to_term_and_log_and_advance_pointer(*s3);
-	}
-} c3 = 0; k2 = p1; t2 = -1; return; } 
+justify_and_write_pending_output_buffer(int bytes_used_in_pending_output_buffer) 
+{ 
+	char *s3; 
+	int i6;
+
+	int j8; 
+	int remaining_bytes_in_output_buffer; 
+	int n7; 
+	int a3; 
+	
+	s3 = pending_output_buffer; 
+	
+	if (c3 < output_line_width || bytes_used_in_pending_output_buffer == output_line_width || t2 == 0) 
+		while (bytes_used_in_pending_output_buffer-- > 0) { 
+			write_char_to_term_and_log_and_advance_pointer(*s3); 
+	} else {
+		remaining_bytes_in_output_buffer = output_line_width - bytes_used_in_pending_output_buffer; 
+		n7 = (remaining_bytes_in_output_buffer - v2) / t2 + v2; 
+		j8 = 1 - 2 * v2; 
+		a3 = remaining_bytes_in_output_buffer % t2; 
+			
+		if (!v2) 
+			a3 = t2 - a3; 
+			
+		v2 = 1 - v2; 
+		t3 = '\0'; 
+		while (bytes_used_in_pending_output_buffer-- > 0) {
+			if (t3 == ' ' && *s3 != ' ') {
+				i6 = n7;
+				while (i6-- > 0) { 
+					(void)write_char_to_term_and_log(' '); 
+				} 
+				if (--a3 == 0) 
+					n7 = n7 + j8;
+			} 
+			t3 = *s3; 
+			write_char_to_term_and_log_and_advance_pointer(*s3);
+		}
+	} 
+	c3 = 0; 
+	k2 = pending_output_buffer; 
+	t2 = -1; 
+	return; 
+} 
 
 c11(char *c12, long  g4) 
 { 
@@ -515,7 +545,8 @@ void w5(int g5)
 #ifdef b7
 	if (v0) { 
 		e6(2, d1, m0); 
-		if (v0) return; 
+		if (v0) 
+			return; 
 	} else {
 		k1 = object_type_3_buffer[i9]; 
 		r2 = object_type_3_buffer[o2];
@@ -532,8 +563,8 @@ void w5(int g5)
 
 g6: 
 	if (commandTokens[nTokensInCommand] == NULL) {
-		if (u1[0] != '\0' && u1[0] != '\n') 
-			(void) strncpy(h1, u1, 160); 
+		if (command_buffer[0] != '\0' && command_buffer[0] != '\n') 
+			(void) strncpy(h1, command_buffer, 160); 
 
 		command[0] = '\0'; 
 
@@ -550,17 +581,18 @@ g6:
 
 			if (c3 > 0) {
 				if (*(k2 - 1) != ' ') 
-					d5(' ');
-				d6(c3);
+					queue_byte_for_output(' ');
+				justify_and_write_pending_output_buffer(c3);
 			} else { 
 				(void)write_string_to_term_and_log("\n? "); 
 			} 
 			
 			(void)fgets(command, 160, stdin); 
+
 			if (log_file) 
 				(void)fprintf(log_file, command);
 
-			(void)strncpy(u1, command, 160);
+			(void)strncpy(command_buffer, command, 160);
 		} // while command[0] == '\0' || command[0] == '\n'
 		(void)write_char_to_term_and_log('\n'); 
 b8: 
@@ -572,7 +604,7 @@ b8:
 	} // if NULL
 g7: 
 	u4(&q5, &k4, &d7); 
-/*BJB*/ printf("k4 = %d\n", k4);
+///*BJB*/ printf("k4 = %d\n", k4);
 	nTokensInCommand++; 
 
 	if (q5 == w6 && (z0[nTokensInCommand] == ' ' || z0[nTokensInCommand] == ',')) 
@@ -590,7 +622,7 @@ g7:
 					modifyObjectFlag('s', v5, f1);
 			} 
 			(void)strncpy(command, h1, 160); 
-			(void)strncpy(u1, h1, 160); 
+			(void)strncpy(command_buffer, h1, 160); 
 			goto b8;
 		} else {
 			nTokensInCommand--; 
@@ -642,11 +674,9 @@ z3:
 	g2 = 0;
 #endif 
 	modifyObjectFlag('c', v5, f1); 
-	if (object_type_3_buffer[i9] == i11 || object_type_3_buffer[i9] == c13 || object_type_3_buffer[o2] == i11
-		|| object_type_3_buffer[o2] == c13) 
+	if (object_type_3_buffer[i9] == i11 || object_type_3_buffer[i9] == c13 || object_type_3_buffer[o2] == i11 || object_type_3_buffer[o2] == c13) 
 		commandTokens[nTokensInCommand] = NULL; 
-	else if (object_type_3_buffer[v5] == 2 && (isObjectFlagSet(object_type_3_buffer[o2],
-			OBJECT_TYPE_2_FLAG)) && !(isObjectFlagSet(object_type_3_buffer[i9], OBJECT_TYPE_2_FLAG))) {
+	else if (object_type_3_buffer[v5] == 2 && (isObjectFlagSet(object_type_3_buffer[o2], OBJECT_TYPE_2_FLAG)) && !(isObjectFlagSet(object_type_3_buffer[i9], OBJECT_TYPE_2_FLAG))) {
 		
 		k1 = object_type_3_buffer[i9]; 
 		object_type_3_buffer[i9] = object_type_3_buffer[o2];
@@ -668,90 +698,265 @@ z3:
 } 
 
 
-int y10(g5) int g5; { char s5[10]; char
-		*n8; int l9 = 0; if (g5 >= 0) printMessage(0, g5, 0); if (c3 > 0) {
-		if (*(k2 - 1)
-			!= ' ') d5(' '); d6(c3);
-	}
-		else { (void)write_string_to_term_and_log("? "); } m3: (void)fgets
-		(s5, 10, stdin); if (log_file) (void)fprintf(log_file, s5); n8 = s5; if
-		(*n8 == '\0' || *n8 == '\n') return (1); while (*n8 == ' ') n8++; if (*n8
-			== 'y' || *n8 == 'Y') return (1); if (*n8 == 'n' || *n8 == 'N') return (0);
-	if (l9) {
+int ask_user_yes_or_no_question(int question_message_id) 
+{ 
+	char input_buffer[10]; 
+	char *byte_to_process; 
+	int seen_a_nonsense_answer = 0; 
+	
+	if (question_message_id >= 0) 
+		printMessage(0, question_message_id, 0); 
+	
+	if (c3 > 0) {
+		if (*(k2 - 1) != ' ') 
+			queue_byte_for_output(' '); 
+		justify_and_write_pending_output_buffer(c3);
+	} else { 
+		(void)write_string_to_term_and_log("? "); 
+	} 
+
+retry: 
+	(void)fgets(input_buffer, 10, stdin); 
+	
+	if (log_file) 
+		(void)fprintf(log_file, input_buffer); 
+	
+	byte_to_process = input_buffer; 
+	if (*byte_to_process == '\0' || *byte_to_process == '\n') 
+		return (1); 
+	
+	while (*byte_to_process == ' ') 
+		byte_to_process++; 
+	
+	if (*byte_to_process	== 'y' || *byte_to_process == 'Y') return (1); 
+	if (*byte_to_process == 'n' || *byte_to_process == 'N') return (0);
+
+	if (seen_a_nonsense_answer) {
 		(void)write_string_to_term_and_log("(OK, smartass... I'll assume you mean YES - so there!)\n\n");
 		return (1);
-	} (void)write_string_to_term_and_log("Eh? Do me a favour and answer yes or no!\nWhich will it be? ");
-	l9 = 1; goto m3; } int b10(p4, c14) int p4; int c14; { static char i12
-		[80]; char r6[15]; char q6[32]; FILE *u5; int e7, z4; long g8; static
-		int t8; static long i13; void adv_hours(); void adv_news(); switch (p4)
+	} 
+	
+	(void)write_string_to_term_and_log("Eh? Do me a favour and answer yes or no!\nWhich will it be? ");
+	seen_a_nonsense_answer = 1; 
+	goto retry; 
+} 
+
+int special_action(int action_type, int return_location) 
+{
+	static char fully_qualified_filename[80]; 
+	char file_name[15]; 
+	char q6[32]; 
+	
+	FILE *save_file; 
+	int e7, z4; 
+	long g8; 
+	static int t8; 
+	static long i13; 
+	void adv_hours(); 
+	void adv_news(); 
+	
+	switch (action_type)
 	{
-		case 1: case 2: e7 = object_type_3_buffer[o2]; m3: if (e7 >= 0) (void) strncpy(r6, x2,
-			14); else {
-			if (p4 == 1) { (void)write_string_to_term_and_log("Name to save game under: "); }
+		case SAVE_GAME:
+		case LOAD_GAME:
+			e7 = object_type_3_buffer[o2]; 
+retry_get_filename: 
+			if (e7 >= 0) 
+				(void) strncpy(file_name, x2, 14); 
+			else {
+				if (action_type == 1) { 
+					(void)write_string_to_term_and_log("Name to save game under: "); 
+				}
 			else
 			{
 				(void)write_string_to_term_and_log("Name of saved game to restore: ");
-			} (void)fgets(r6, 14,
-				stdin); if (log_file) (void)fprintf(log_file, r6); if (r6[0] == '\0'
-					|| r6[0] == '\n') {
+			} 
+				
+			(void)fgets(file_name, 14,	stdin); 
+			
+			if (log_file) (void)fprintf(log_file, file_name); 
+			if (file_name[0] == '\0' || file_name[0] == '\n') {
 				(void)write_string_to_term_and_log("Changed your mind, eh?  Fine by me...\n");
-				object_type_3_buffer[c14] = 0; return (0);
+				object_type_3_buffer[return_location] = 0; 
+				return (0);
+				}
+			} 
+
+			adv_save_path(file_name, fully_qualified_filename); 
+
+			if ((save_file = fopen(fully_qualified_filename, Read_Binary)) != NULL) {
+				if (action_type == LOAD_GAME)
+					goto p6; 
+			
+				(void)fclose(save_file); 
+				(void)write_string_to_term_and_log("There's already a game dumped under that name.\n");
+				(void)write_string_to_term_and_log("Do you really mean to overwrite it?\n"); 
+			
+				if (!ask_user_yes_or_no_question(-1)) {
+					e7 = -1; 
+					goto retry_get_filename;
+				} 
+			
+				(void)write_string_to_term_and_log("As you wish...\n");
+			} 
+
+			if (action_type == LOAD_GAME) {	// Couldn't open load file
+				object_type_3_buffer[return_location] = 1; 
+				return (0);
+			} 
+			
+			if ((save_file = fopen(fully_qualified_filename, Write_Binary)) == NULL) {
+				object_type_3_buffer[return_location] = 1;  // Couldn't open save file
+				return (1);
+			} 
+			
+			(void)time(&g8); 
+			(void)fprintf(save_file, "%s\n", TITLE); 
+			(void)fwrite(&g8, sizeof(long), 1, save_file); 
+
+			e7 = ITEM_MIN_ID; 
+			(void)fwrite(&e7, sizeof(int), 1, save_file); 
+
+			e7 = ITEM_MAX_ID; 
+			(void)fwrite(&e7, sizeof(int), 1, save_file); 
+
+			e7 = MAX_LOCATION_ID; 
+			(void)fwrite(&e7, sizeof(int), 1, save_file); 
+			
+			e7 = OBJECT_TYPE_2_MAX_ID; 
+			(void)fwrite(&e7, sizeof(int), 1, save_file); 
+			
+			e7 = OBJECT_TYPE_3_MAX_ID; 
+			(void)fwrite(&e7, sizeof(int), 1, save_file); 
+			
+			(void)fwrite(object_type_3_buffer, sizeof(int), sizeof(object_type_3_buffer) / sizeof(int), save_file); 
+			
+			(void)fwrite(item_location, sizeof(int), sizeof(item_location) / sizeof(int), save_file); 
+			
+			(void)fwrite(object_type_0_buffer, sizeof(short), sizeof(object_type_0_buffer) / sizeof(short), save_file); 
+			
+			(void)fwrite(object_type_1_buffer, sizeof(short), sizeof(object_type_1_buffer) / sizeof(short), save_file); 
+			
+			(void)fwrite(object_type_2_buffer, sizeof(short), sizeof(object_type_2_buffer) / sizeof(short), save_file); 
+			
+			(void)fclose(save_file); 
+			
+			if (ferror(save_file)) {
+				object_type_3_buffer[return_location] =	1; 
+				return (1);
+			} 
+			
+			object_type_3_buffer[return_location] = 0; 
+			return (0); 
+
+p6:			
+			z4 = 0; 
+			
+			(void)fscanf(save_file,	"%s", q6); 
+			(void)fgetc(save_file); 
+			
+			if (strcmp(q6, TITLE) == 0) {
+				(void)fread(&g8, sizeof(long), 1, save_file); 
+				(void)fread(&e7, sizeof(int), 1, save_file); 
+				if (e7 != ITEM_MIN_ID) z4++; 
+				
+				(void)fread(&e7, sizeof(int), 1, save_file); 
+				
+				if (e7 != ITEM_MAX_ID)
+					z4++; 
+				
+				(void)fread(&e7, sizeof(int), 1, save_file); 
+				if (e7 != MAX_LOCATION_ID) 
+					z4++; 
+				
+				(void)fread(&e7, sizeof(int), 1, save_file); 
+				
+				if (e7 != OBJECT_TYPE_2_MAX_ID) 
+					z4++; 
+				
+				(void)fread(&e7, sizeof(int), 1, save_file); 
+				if (e7 != OBJECT_TYPE_3_MAX_ID) 
+					z4++;
+			} 
+			
+			if (z4) {
+				object_type_3_buffer[return_location] = 2; 
+				(void)fclose(save_file); 
+				return (0);
+			} 
+			
+			(void)fread(object_type_3_buffer, sizeof(int), sizeof(object_type_3_buffer) / sizeof(int), save_file); 
+			(void)fread(item_location, sizeof(int), sizeof(item_location) / sizeof(int), save_file); 
+			(void)fread(object_type_0_buffer, sizeof(short), sizeof(object_type_0_buffer) / sizeof(short), save_file); 
+			(void)fread(object_type_1_buffer, sizeof(short), sizeof(object_type_1_buffer) / sizeof(short), save_file);
+			(void)fread(object_type_2_buffer, sizeof(short), sizeof(object_type_2_buffer) / sizeof(short), save_file); 
+			
+			if (ferror(save_file)) {
+				(void)write_string_to_term_and_log("Oops!! Dump file incomplete! Sorry - got to crash...\n");
+				(void)fclose(save_file); 
+				
+				if (log_file) 
+					(void)fclose(log_file); 
+				
+				exit(1);
 			}
-		} adv_save_path(r6, i12); if ((u5 = fopen(i12,
-			Read_Binary)) != NULL) {
-			if (p4 == 2) goto p6; (void)fclose(u5); (void)write_string_to_term_and_log("There's already a game dumped under that name.\n");
-			(void)write_string_to_term_and_log("Do you really mean to overwrite it?\n"); if (!y10(-1)) {
-				e7
-					= -1; goto m3;
-			} (void)write_string_to_term_and_log("As you wish...\n");
-		} if (p4 == 2) {
-			object_type_3_buffer[c14]
-				= 1; return (0);
-		} if ((u5 = fopen(i12, Write_Binary)) == NULL) {
-			object_type_3_buffer[c14] = 1; return
-				(1);
-		} (void)time(&g8); (void)fprintf(u5, "%s\n", TITLE); (void)fwrite
-		(&g8, sizeof(long), 1, u5); e7 = ITEM_MIN_ID; (void)fwrite(&e7, sizeof(int),
-			1, u5); e7 = ITEM_MAX_ID; (void)fwrite(&e7, sizeof(int), 1, u5); e7 = MAX_LOCATION_ID; (void)
-			fwrite(&e7, sizeof(int), 1, u5); e7 = OBJECT_TYPE_2_MAX_ID; (void)fwrite(&e7, sizeof(int),
-				1, u5); e7 = OBJECT_TYPE_3_MAX_ID; (void)fwrite(&e7, sizeof(int), 1, u5); (void)fwrite
-				(object_type_3_buffer, sizeof(int), sizeof(object_type_3_buffer) / sizeof(int), u5); (void)fwrite(item_location, sizeof
-				(int), sizeof(item_location) / sizeof(int), u5); (void)fwrite(object_type_0_buffer, sizeof(short),
-					sizeof(object_type_0_buffer) / sizeof(short), u5); (void)fwrite(object_type_1_buffer, sizeof(short), sizeof
-					(object_type_1_buffer) / sizeof(short), u5); (void)fwrite(object_type_2_buffer, sizeof(short), sizeof(object_type_2_buffer)
-						/ sizeof(short), u5); (void)fclose(u5); if (ferror(u5)) {
-			object_type_3_buffer[c14] =
-				1; return (1);
-		} object_type_3_buffer[c14] = 0; return (0); p6: z4 = 0; (void)fscanf(u5,
-			"%s", q6); (void)fgetc(u5); if (strcmp(q6, TITLE) == 0) {
-			(void)fread
-			(&g8, sizeof(long), 1, u5); (void)fread(&e7, sizeof(int), 1, u5); if
-				(e7 != ITEM_MIN_ID) z4++; (void)fread(&e7, sizeof(int), 1, u5); if (e7 != ITEM_MAX_ID)
-				z4++; (void)fread(&e7, sizeof(int), 1, u5); if (e7 != MAX_LOCATION_ID) z4++; (void)
-				fread(&e7, sizeof(int), 1, u5); if (e7 != OBJECT_TYPE_2_MAX_ID) z4++; (void)fread(&e7,
-					sizeof(int), 1, u5); if (e7 != OBJECT_TYPE_3_MAX_ID) z4++;
-		} if (z4) {
-			object_type_3_buffer[c14] = 2; (void)
-				fclose(u5); return (0);
-		} (void)fread(object_type_3_buffer, sizeof(int), sizeof(object_type_3_buffer) /
-			sizeof(int), u5); (void)fread(item_location, sizeof(int), sizeof(item_location) / sizeof
-			(int), u5); (void)fread(object_type_0_buffer, sizeof(short), sizeof(object_type_0_buffer) / sizeof(short),
-				u5); (void)fread(object_type_1_buffer, sizeof(short), sizeof(object_type_1_buffer) / sizeof(short), u5);
-		(void)fread(object_type_2_buffer, sizeof(short), sizeof(object_type_2_buffer) / sizeof(short), u5); if
-			(ferror(u5)) {
-			(void)write_string_to_term_and_log("Oops!! Dump file incomplete! Sorry - got to crash...\n");
-			(void)fclose(u5); if (log_file) (void)fclose(log_file); exit(1);
-		}
-		(void)fclose(u5); i13 = g8; object_type_3_buffer[c14] = 0; return (0); case 3: object_type_3_buffer[c14]
-			= _unlink(i12); return (0); case 4: adv_news(); return (0); case 5: adv_hours
-			(); return (0); case 6: t8 = object_type_3_buffer[c14]; return (0); case 7: object_type_3_buffer[c14] = t8;
-		return (0); case 8: (void)time(&g8); object_type_3_buffer[c14] = 1 + (g8 - i13) / 60; return
-			(0); case 9: case 10: object_type_3_buffer[(p4 == 9) ? i9 : o2] = object_type_3_buffer[c14]; return (0); case
-			11: if (ITEM_MIN_ID <= object_type_3_buffer[c14] && object_type_3_buffer[c14] <= ITEM_MAX_ID) object_type_3_buffer[c14] = 0; else object_type_3_buffer[c14] =
-			1; return (0); case 12: object_type_3_buffer[c14] = adv_allowed(); return (0); case 13:
-				object_type_3_buffer[c14] = adv_still_allowed(); return (0); default: (void)printf_to_term_and_log("GLITCH! Bad special code: %d\n",
-					p4); return (1);
-	} } e6(p4, d8, q5) int p4; int d8; int q5; { int i6; int
+		
+			(void)fclose(save_file); 
+			
+			i13 = g8; 
+			object_type_3_buffer[return_location] = 0; 
+			return (0); 
+
+		case 3: 
+			object_type_3_buffer[return_location]	= _unlink(fully_qualified_filename); 
+				return (0); 
+		
+		case 4: adv_news(); 
+			return (0); 
+		
+		case 5: adv_hours(); 
+			return (0); 
+		
+		case 6: 
+			t8 = object_type_3_buffer[return_location]; 
+			return (0); 
+		
+		case 7: 
+			object_type_3_buffer[return_location] = t8;
+			return (0); 
+		
+		case 8: 
+			(void)time(&g8); 
+			object_type_3_buffer[return_location] = 1 + (g8 - i13) / 60; 
+			return (0); 
+		
+		case 9: 
+		case 10: 
+			object_type_3_buffer[(action_type == 9) ? i9 : o2] = object_type_3_buffer[return_location]; 
+			return (0); 
+			
+		case 11: 
+			if (ITEM_MIN_ID <= object_type_3_buffer[return_location] && object_type_3_buffer[return_location] <= ITEM_MAX_ID) 
+				object_type_3_buffer[return_location] = 0; 
+			else 
+				object_type_3_buffer[return_location] = 1; 
+			return (0); 
+		
+		case 12: 
+			object_type_3_buffer[return_location] = adv_allowed(); 
+			return (0); 
+		
+		case 13:
+				object_type_3_buffer[return_location] = adv_still_allowed(); 
+				return (0); 
+		
+		default: (void)printf_to_term_and_log("GLITCH! Bad special code: %d\n",	action_type); 
+			return (1);
+	} 
+} 
+
+
+e6(p4, d8, q5) int p4; int d8; int q5; { int i6; int
 		k5; int a1; if (p4 == 0 && object_type_3_buffer[v5] != 1) return; k5 = -1;
 #ifdef b7
 	a1 = (p4 == 2) ? v0 + 1 : ITEM_MIN_ID; if (a1 > ITEM_MAX_ID) goto b11; for (i6 = a1; i6 <=
@@ -871,17 +1076,15 @@ int y10(g5) int g5; { char s5[10]; char
 
 		x7();
 
-		BJBMessage(0, 1014, 0); // BJB
-		BJBMessage(64-64, 1302, 0);
+		BJBMessage(0, 1701, 0); // BJB
+		BJBMessage(64-64, 1058, 0);
 
 
 
-		BJBMessage(0, 1068, 0);
-		BJBMessage(0, 828, 0);
-		f3(677, 1280);
-		object_type_3_buffer[677] += 9;
-		BJBMessage(0, 677, 0);
-//		BJBMessage(0, 1222, 0);
+		BJBMessage(0, 1061, 0);
+		BJBMessage(0, 1059, 0);
+		BJBMessage(0, 1057, 0);
+		BJBMessage(0, 1074, 0);
 
 		if (0)
 		{
