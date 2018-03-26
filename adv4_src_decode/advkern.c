@@ -592,6 +592,19 @@ g6:
 			if (log_file) 
 				(void)fprintf(log_file, command);
 
+			if (!strcmp(command, "teleport\n")) {
+				printf("Where to? ");
+				char inputBuffer[100];
+				fgets(inputBuffer, 100, stdin);
+				int destination = atoi(inputBuffer);
+				if (destination < MIN_LOCATION_ID || destination > MAX_LOCATION_ID) {
+					printf("That's not a location.\n");
+				} else {
+					processMoveCommand(destination, -2);
+				}
+				longjmp(done_with_command, 1);
+			}
+
 			(void)strncpy(command_buffer, command, 160);
 		} // while command[0] == '\0' || command[0] == '\n'
 		(void)write_char_to_term_and_log('\n'); 
