@@ -1099,10 +1099,10 @@ e6(p4, d8, q5) int p4; int d8; int q5; { int i6; int
 		BJBMessage(0, 1057, 0);
 		BJBMessage(0, 1074, 0);
 
-		if (0)
+		if (1)
 		{
 			int i;
-			for (i = 1440; i <= 1449; i++) {
+			for (i = 1237; i <= 1237 + 7; i++) {
 				BJBMessage(0, i, 0);
 			}
 		}
@@ -1515,12 +1515,12 @@ copy_item_location_dereferencing_if_variable(int copy_into, int object_or_variab
 	return;
 } 
 			  
-			  int t11(b2) int b2; // Not quite sure about this, because I can't see how getObkjectPointer could return -1
-			  { 
-				  if (*getObjectPointer(b2) == -1) 
-					  return object_type_3_buffer[b2]; 
-				  else return b2; 
-			  } 
+int dereference(int b2)
+{ 
+	if (*getObjectPointer(b2) == -1) 
+		return object_type_3_buffer[b2]; 
+	else return b2; 
+} 
 			  
 			  r7() {
 #ifndef i2

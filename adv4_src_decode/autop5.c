@@ -109,10 +109,19 @@ int t31() {
 } int c27() { q40(); o29(); m26(); x36(); c34(); return; } int z19() {
 	m27();
 	v47(); return;
-} int b15() { c30(); s32(); return; } int x24() {
+} int b15() { c30(); s32(); return; } 
+
+int stream_maze_428() {
 	j43();
-	h33(); return;
-} int v23() { l34(); v41(); return; } 
+	h33(); 
+	return;
+} 
+
+int stream_maze_427() { 
+	l34(); 
+	v41(); 
+	return; 
+} 
 
 int lost_in_mist_432() {
 	lost_in_mist_move_command();

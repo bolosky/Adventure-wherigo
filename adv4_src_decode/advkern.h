@@ -230,6 +230,7 @@ extern v0;
 #define CARRIED_ITEM_COUNT				705
 #define FEE_FIE_FOE_FOO_COUNT			714
 #define MAX_CARRIED_ITEMS				721
+#define SEWAGE_COUNT					732
 #define LITTLE_FIGURE_HINT_COUNTER		756		// Counts down to see if you should get a chance at one of the little figure hints
 #define THIRST_COUNTER					759		// Counts down until you die of thirst.  Decremented by item count.
 
@@ -273,4 +274,7 @@ extern v0;
 // Parameters to load_save_game()
 #define SAVE_GAME						1
 #define	LOAD_GAME						2
+
+#define ITEM_FLAG_TREASURE				5
+#define LOCATION_FLAG_SEWAGE			13
 

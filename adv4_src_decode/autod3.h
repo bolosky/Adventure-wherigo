@@ -69,10 +69,10 @@ int z15(); extern int p24(); extern int h19(); extern int g23(); extern
 int k15(); extern int s22(); extern int k16(); extern int i29(); extern
 int z16(); extern int m19(); extern int m20(); extern int q27(); extern
 int q28(); extern int unsafe_passage_413(); extern int end_of_very_unsafe_tunnel_414(); extern int very_low_room_415(); extern
-int d24(); extern int inclined_shaft_417(); extern int i30(); extern int f14(); extern
-int g24(); extern int p25(); extern int x23(); extern int q29(); extern
-int h20(); extern int z17(); extern int z18(); extern int v23(); extern
-int x24(); extern int f15(); extern int i31(); extern int h21(); extern
+int d24(); extern int inclined_shaft_417(); extern int i30(); extern int sea_view_419(); extern
+int g24(); extern int south_end_of_culvert_421(); extern int x23(); extern int q29(); extern
+int h20(); extern int partially_collapsed_junction_425(); extern int dead_end_426(); extern int stream_maze_427(); extern
+int stream_maze_428(); extern int f15(); extern int i31(); extern int h21(); extern
 int lost_in_mist_432(); extern int small_dank_cave_433(); extern int rock_in_mist_434(); extern int dwarves_stores_435(); extern
 int f16(); extern int t25(); extern int l21(); extern int v25(); extern
 int d25(); extern int g25(); extern int l22(); extern int n20(); extern
@@ -534,16 +534,16 @@ int (*command_by_location_dispatch_table[])()= {
 	d24,	// 416
 	inclined_shaft_417,	// 417
 	i30,	// 418
-	f14,	// 419
+	sea_view_419,	// 419
 	g24,	// 420
-	p25,	// 421
+	south_end_of_culvert_421,	// 421
 	x23,	// 422
 	q29,	// 423
 	h20,	// 424
-	z17,	// 425
-	z18,	// 426
-	v23,	// 427
-	x24,	// 428
+	partially_collapsed_junction_425,	// 425
+	dead_end_426,	// 426
+	stream_maze_427,	// 427
+	stream_maze_428,	// 428
 	f15,	// 429
 	i31,	// 430
 	h21,	// 431
@@ -805,7 +805,7 @@ w17,KilobyteInputBuffer1,e16,n17,f9,x21,c24,l20,a18,o14,s17, c25,f10,q21,w18,e17
 u13,i25,r17,p22,m17,z11,n18,a19,b20,i26,p23, g22,q22,k12,s20,c26,z12,r18,r19,q23,n19,u14,
 o15,f12,v21,beach_377,q24,i27,q25,h17,q26,living_quarters_383,w19, f13,k13,u15,z13,t22,h18,basement_391,curtain_entrance_392,cellar_393,s21,o16,
 west_of_causeway_396,east_of_causeway_397,a20,k14,z15,p24,h19,g23,k15,s22,k16, i29,z16,m19,m20,q27,q28,unsafe_passage_413,end_of_very_unsafe_tunnel_414,very_low_room_415,d24,inclined_shaft_417,
-i30,f14,g24,p25,x23,q29,h20,z17,z18,v23,x24, f15,i31,h21,lost_in_mist_432,small_dank_cave_433,rock_in_mist_434,dwarves_stores_435,f16,t25,l21,v25,
+i30,sea_view_419,g24,south_end_of_culvert_421,x23,q29,h20,partially_collapsed_junction_425,dead_end_426,stream_maze_427,stream_maze_428, f15,i31,h21,lost_in_mist_432,small_dank_cave_433,rock_in_mist_434,dwarves_stores_435,f16,t25,l21,v25,
 d25,g25,l22,n20,v26,t26,q30,s23,KilobyteInputBuffer3,g26,p26, s24,m21,g27,d26,e19,f17,f18,y17,f19,u16,command_lost_in_woods_461,
 KilobyteInputBuffer4,v27,command_noop,command_noop,command_noop,command_noop,command_noop,command_noop,command_noop,command_noop,command_noop, command_noop,command_noop,command_noop,command_noop,command_noop,command_noop,command_noop,command_noop,command_noop,l23,command_valuation_room_483,
 KilobyteInputBuffer5,command_noop,command_noop,command_noop,command_noop,d27,command_restore_490,i32,KilobyteInputBuffer6,z19,command_noop, command_noop,command_zorton_496,t27,KilobyteInputBuffer7,o17,d28,r21,n21,y19,m23,z20,
