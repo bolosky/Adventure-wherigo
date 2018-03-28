@@ -1,0 +1,756 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Wherigo:WigoCartridge xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Wherigo="clr-namespace:YourSelf.Urwigo.Wherigo;assembly=Urwigo" xmlns:System="clr-namespace:System;assembly=mscorlib" xmlns:Actions="clr-namespace:YourSelf.Urwigo.Wherigo.Actions;assembly=Urwigo" key="key6">
+<Identifier>
+<System:String xsi:nil="true" />
+</Identifier>
+<Name>
+<System:String>Not Adventure</System:String>
+</Name>
+<Description>
+<System:String>Just to play around with urwigo</System:String>
+</Description>
+<Visible>
+<System:Boolean>True</System:Boolean>
+</Visible>
+<Image>
+<Wherigo:WigoMedia xsi:nil="true" />
+</Image>
+<Icon>
+<Wherigo:WigoMedia xsi:nil="true" />
+</Icon>
+<Activity>
+<Wherigo:WigoActivityType>TourGuide</Wherigo:WigoActivityType>
+</Activity>
+<StartingLocationDescription>
+<System:String>Head to the first visible zone to start your adventure.</System:String>
+</StartingLocationDescription>
+<StartingLocation>
+<Wherigo:WigoCoordinate>
+<Latitude>
+<System:Double>47.6807998451529</System:Double>
+</Latitude>
+<Longtitude>
+<System:Double>-122.247999861932</System:Double>
+</Longtitude>
+</Wherigo:WigoCoordinate>
+</StartingLocation>
+<Version>
+<System:String>0.01</System:String>
+</Version>
+<Company>
+<System:String>Odin Software</System:String>
+</Company>
+<Author>
+<System:String>Bill Bolosky</System:String>
+</Author>
+<CreateDate>
+<System:DateTime>03/27/2018 17:38:19</System:DateTime>
+</CreateDate>
+<UpdateDate>
+<System:DateTime>03/27/2018 17:52:01</System:DateTime>
+</UpdateDate>
+<Complete>
+<System:Boolean>False</System:Boolean>
+</Complete>
+<UseLogging>
+<System:Boolean>True</System:Boolean>
+</UseLogging>
+<InlineRequires>
+<System:Boolean>False</System:Boolean>
+</InlineRequires>
+<InlineRequireLuaPath>
+<System:String>?.lua; lua\?.lua; lua\?\init.lua; ?\init.lua</System:String>
+</InlineRequireLuaPath>
+<ObfuscateStrings>
+<System:Boolean>True</System:Boolean>
+</ObfuscateStrings>
+<HashInputAnswers>
+<System:Boolean>True</System:Boolean>
+</HashInputAnswers>
+<ObfuscateIdentifiers>
+<System:Boolean>True</System:Boolean>
+</ObfuscateIdentifiers>
+<ProtectEmulator>
+<System:Boolean>False</System:Boolean>
+</ProtectEmulator>
+<ProtectEmulatorText>
+<System:String xsi:nil="true" />
+</ProtectEmulatorText>
+<ProtectSimulation>
+<System:Boolean>False</System:Boolean>
+</ProtectSimulation>
+<ProtectSimulationText>
+<System:String xsi:nil="true" />
+</ProtectSimulationText>
+<Zones>
+<Wherigo:WigoZone key="key0">
+<Identifier>
+<System:String xsi:nil="true" />
+</Identifier>
+<Name>
+<System:String>End of the Road</System:String>
+</Name>
+<Description>
+<System:String>You  are  standing  at  the  end of a road before a small brick building. Around you is a forest.  A small stream flows out  of  the  building  and down a gully and a wide path leads northwest.</System:String>
+</Description>
+<Visible>
+<System:Boolean>True</System:Boolean>
+</Visible>
+<Image>
+<Wherigo:WigoMedia xsi:nil="true" />
+</Image>
+<Icon>
+<Wherigo:WigoMedia xsi:nil="true" />
+</Icon>
+<DistanceRange>
+<Wherigo:WigoDistance xsi:nil="true" />
+</DistanceRange>
+<ProximityRange>
+<Wherigo:WigoDistance>
+<Value>
+<System:Double>60</System:Double>
+</Value>
+<Unit>
+<Wherigo:WigoDistanceUnit>Meters</Wherigo:WigoDistanceUnit>
+</Unit>
+</Wherigo:WigoDistance>
+</ProximityRange>
+<ShowObjects>
+<Wherigo:WigoZoneShowObjects>OnEnter</Wherigo:WigoZoneShowObjects>
+</ShowObjects>
+<Active>
+<System:Boolean>True</System:Boolean>
+</Active>
+<OriginalPoint>
+<Wherigo:WigoCoordinate xsi:nil="true" />
+</OriginalPoint>
+<Points>
+<Wherigo:WigoCoordinate>
+<Latitude>
+<System:Double>47.6806944464632</System:Double>
+</Latitude>
+<Longtitude>
+<System:Double>-122.247255743423</System:Double>
+</Longtitude>
+</Wherigo:WigoCoordinate>
+</Points>
+<Points>
+<Wherigo:WigoCoordinate>
+<Latitude>
+<System:Double>47.6806985529096</System:Double>
+</Latitude>
+<Longtitude>
+<System:Double>-122.24700770392</System:Double>
+</Longtitude>
+</Wherigo:WigoCoordinate>
+</Points>
+<Points>
+<Wherigo:WigoCoordinate>
+<Latitude>
+<System:Double>47.6805822034686</System:Double>
+</Latitude>
+<Longtitude>
+<System:Double>-122.247021935695</System:Double>
+</Longtitude>
+</Wherigo:WigoCoordinate>
+</Points>
+<Points>
+<Wherigo:WigoCoordinate>
+<Latitude>
+<System:Double>47.6805794658316</System:Double>
+</Latitude>
+<Longtitude>
+<System:Double>-122.247225246763</System:Double>
+</Longtitude>
+</Wherigo:WigoCoordinate>
+</Points>
+<EnterAction>
+<Actions:EventAction>
+<Enabled>
+<System:Boolean>True</System:Boolean>
+</Enabled>
+<Owner>
+<Wherigo:WigoZone xsi:nil="true" ref="key0" />
+</Owner>
+</Actions:EventAction>
+</EnterAction>
+<ExitAction>
+<Actions:EventAction>
+<Enabled>
+<System:Boolean>True</System:Boolean>
+</Enabled>
+<Owner>
+<Wherigo:WigoZone xsi:nil="true" ref="key0" />
+</Owner>
+</Actions:EventAction>
+</ExitAction>
+<DistantAction>
+<Actions:EventAction>
+<Enabled>
+<System:Boolean>True</System:Boolean>
+</Enabled>
+<Owner>
+<Wherigo:WigoZone xsi:nil="true" ref="key0" />
+</Owner>
+</Actions:EventAction>
+</DistantAction>
+<ProximityAction>
+<Actions:EventAction>
+<Enabled>
+<System:Boolean>True</System:Boolean>
+</Enabled>
+<Owner>
+<Wherigo:WigoZone xsi:nil="true" ref="key0" />
+</Owner>
+</Actions:EventAction>
+</ProximityAction>
+<ActiveChangedAction>
+<Actions:EventAction>
+<Enabled>
+<System:Boolean>True</System:Boolean>
+</Enabled>
+<Owner>
+<Wherigo:WigoZone xsi:nil="true" ref="key0" />
+</Owner>
+</Actions:EventAction>
+</ActiveChangedAction>
+</Wherigo:WigoZone>
+</Zones>
+<Zones>
+<Wherigo:WigoZone key="key1">
+<Identifier>
+<System:String xsi:nil="true" />
+</Identifier>
+<Name>
+<System:String>Inside Building</System:String>
+</Name>
+<Description>
+<System:String>You are inside a building, a well house for a large spring</System:String>
+</Description>
+<Visible>
+<System:Boolean>True</System:Boolean>
+</Visible>
+<Image>
+<Wherigo:WigoMedia xsi:nil="true" />
+</Image>
+<Icon>
+<Wherigo:WigoMedia xsi:nil="true" />
+</Icon>
+<DistanceRange>
+<Wherigo:WigoDistance xsi:nil="true" />
+</DistanceRange>
+<ProximityRange>
+<Wherigo:WigoDistance>
+<Value>
+<System:Double>60</System:Double>
+</Value>
+<Unit>
+<Wherigo:WigoDistanceUnit>Meters</Wherigo:WigoDistanceUnit>
+</Unit>
+</Wherigo:WigoDistance>
+</ProximityRange>
+<ShowObjects>
+<Wherigo:WigoZoneShowObjects>OnEnter</Wherigo:WigoZoneShowObjects>
+</ShowObjects>
+<Active>
+<System:Boolean>False</System:Boolean>
+</Active>
+<OriginalPoint>
+<Wherigo:WigoCoordinate xsi:nil="true" />
+</OriginalPoint>
+<Points>
+<Wherigo:WigoCoordinate>
+<Latitude>
+<System:Double>47.6806670701453</System:Double>
+</Latitude>
+<Longtitude>
+<System:Double>-122.246940611268</System:Double>
+</Longtitude>
+</Wherigo:WigoCoordinate>
+</Points>
+<Points>
+<Wherigo:WigoCoordinate>
+<Latitude>
+<System:Double>47.6805917851971</System:Double>
+</Latitude>
+<Longtitude>
+<System:Double>-122.246755598196</System:Double>
+</Longtitude>
+</Wherigo:WigoCoordinate>
+</Points>
+<Points>
+<Wherigo:WigoCoordinate>
+<Latitude>
+<System:Double>47.6803714049969</System:Double>
+</Latitude>
+<Longtitude>
+<System:Double>-122.246950776821</System:Double>
+</Longtitude>
+</Wherigo:WigoCoordinate>
+</Points>
+<Points>
+<Wherigo:WigoCoordinate>
+<Latitude>
+<System:Double>47.6804549031947</System:Double>
+</Latitude>
+<Longtitude>
+<System:Double>-122.247119525007</System:Double>
+</Longtitude>
+</Wherigo:WigoCoordinate>
+</Points>
+<EnterAction>
+<Actions:EventAction>
+<Enabled>
+<System:Boolean>True</System:Boolean>
+</Enabled>
+<Owner>
+<Wherigo:WigoZone xsi:nil="true" ref="key1" />
+</Owner>
+</Actions:EventAction>
+</EnterAction>
+<ExitAction>
+<Actions:EventAction>
+<Enabled>
+<System:Boolean>True</System:Boolean>
+</Enabled>
+<Owner>
+<Wherigo:WigoZone xsi:nil="true" ref="key1" />
+</Owner>
+</Actions:EventAction>
+</ExitAction>
+<DistantAction>
+<Actions:EventAction>
+<Enabled>
+<System:Boolean>True</System:Boolean>
+</Enabled>
+<Owner>
+<Wherigo:WigoZone xsi:nil="true" ref="key1" />
+</Owner>
+</Actions:EventAction>
+</DistantAction>
+<ProximityAction>
+<Actions:EventAction>
+<Enabled>
+<System:Boolean>True</System:Boolean>
+</Enabled>
+<Owner>
+<Wherigo:WigoZone xsi:nil="true" ref="key1" />
+</Owner>
+</Actions:EventAction>
+</ProximityAction>
+<ActiveChangedAction>
+<Actions:EventAction>
+<Enabled>
+<System:Boolean>True</System:Boolean>
+</Enabled>
+<Owner>
+<Wherigo:WigoZone xsi:nil="true" ref="key1" />
+</Owner>
+</Actions:EventAction>
+</ActiveChangedAction>
+</Wherigo:WigoZone>
+</Zones>
+<Items>
+<Wherigo:WigoItem key="key2">
+<Identifier>
+<System:String xsi:nil="true" />
+</Identifier>
+<Name>
+<System:String>Keys</System:String>
+</Name>
+<Description>
+<System:String>There are a set of keys on the ground here.</System:String>
+</Description>
+<Visible>
+<System:Boolean>True</System:Boolean>
+</Visible>
+<Image>
+<Wherigo:WigoMedia xsi:nil="true" />
+</Image>
+<Icon>
+<Wherigo:WigoMedia xsi:nil="true" />
+</Icon>
+<ObjectLocation>
+<Wherigo:WigoObjectLocation>
+<Container>
+<Wherigo:WigoZone xsi:nil="true" ref="key1" />
+</Container>
+<Location>
+<Wherigo:WigoCoordinate xsi:nil="true" />
+</Location>
+</Wherigo:WigoObjectLocation>
+</ObjectLocation>
+<ClickAction>
+<Actions:EventAction>
+<Enabled>
+<System:Boolean>True</System:Boolean>
+</Enabled>
+<Owner>
+<Wherigo:WigoItem xsi:nil="true" ref="key2" />
+</Owner>
+</Actions:EventAction>
+</ClickAction>
+<Locked>
+<System:Boolean>False</System:Boolean>
+</Locked>
+<Opened>
+<System:Boolean>False</System:Boolean>
+</Opened>
+</Wherigo:WigoItem>
+</Items>
+<Items>
+<Wherigo:WigoItem key="key3">
+<Identifier>
+<System:String xsi:nil="true" />
+</Identifier>
+<Name>
+<System:String>Lamp</System:String>
+</Name>
+<Description>
+<System:String>Shiny brass lantern</System:String>
+</Description>
+<Visible>
+<System:Boolean>True</System:Boolean>
+</Visible>
+<Image>
+<Wherigo:WigoMedia xsi:nil="true" />
+</Image>
+<Icon>
+<Wherigo:WigoMedia xsi:nil="true" />
+</Icon>
+<ObjectLocation>
+<Wherigo:WigoObjectLocation xsi:nil="true" />
+</ObjectLocation>
+<Commands>
+<Wherigo:WigoCommand key="key5">
+<Identifier>
+<System:String xsi:nil="true" />
+</Identifier>
+<Enabled>
+<System:Boolean>True</System:Boolean>
+</Enabled>
+<Name>
+<System:String>Flip Switch</System:String>
+</Name>
+<EmptyTargetListText>
+<System:String>Nothing available</System:String>
+</EmptyTargetListText>
+<Targets>
+<Wherigo:WigoCommandTargets>List</Wherigo:WigoCommandTargets>
+</Targets>
+<WorksWith>
+<Wherigo:WigoItem xsi:nil="true" ref="key3" />
+</WorksWith>
+<ExecuteAction>
+<Actions:EventAction>
+<Enabled>
+<System:Boolean>True</System:Boolean>
+</Enabled>
+<Actions>
+<Actions:IfElseAction>
+<Enabled>
+<System:Boolean>True</System:Boolean>
+</Enabled>
+<Actions>
+<Actions:IfElseBranchAction>
+<Enabled>
+<System:Boolean>True</System:Boolean>
+</Enabled>
+<Actions>
+<Actions:SetAction>
+<Enabled>
+<System:Boolean>True</System:Boolean>
+</Enabled>
+<LeftContent>
+<Actions:ObjectReferenceExpressionAction>
+<Enabled>
+<System:Boolean>True</System:Boolean>
+</Enabled>
+<Target>
+<Wherigo:WigoVariable key="key4">
+<Identifier>
+<System:String xsi:nil="true" />
+</Identifier>
+<Name>
+<System:String>LampOn</System:String>
+</Name>
+<Description>
+<System:String>Is the lamp on?</System:String>
+</Description>
+<Type>
+<Wherigo:WigoVariableType>Flag</Wherigo:WigoVariableType>
+</Type>
+<Value>
+<System:Boolean>False</System:Boolean>
+</Value>
+</Wherigo:WigoVariable>
+</Target>
+</Actions:ObjectReferenceExpressionAction>
+</LeftContent>
+<RightContent>
+<Actions:ValueExpressionAction>
+<Enabled>
+<System:Boolean>True</System:Boolean>
+</Enabled>
+<Value>
+<System:Boolean>False</System:Boolean>
+</Value>
+</Actions:ValueExpressionAction>
+</RightContent>
+</Actions:SetAction>
+</Actions>
+<Condition>
+<Actions:CompareExpressionAction>
+<Enabled>
+<System:Boolean>True</System:Boolean>
+</Enabled>
+<Operator>
+<Actions:CompareExpressionOperator>Equal</Actions:CompareExpressionOperator>
+</Operator>
+<LeftContent>
+<Actions:ObjectReferenceExpressionAction>
+<Enabled>
+<System:Boolean>True</System:Boolean>
+</Enabled>
+<Target>
+<Wherigo:WigoVariable xsi:nil="true" ref="key4" />
+</Target>
+</Actions:ObjectReferenceExpressionAction>
+</LeftContent>
+<RightContent>
+<Actions:ValueExpressionAction>
+<Enabled>
+<System:Boolean>True</System:Boolean>
+</Enabled>
+<Value>
+<System:Boolean>True</System:Boolean>
+</Value>
+</Actions:ValueExpressionAction>
+</RightContent>
+<IgnoreCase>
+<System:Boolean>True</System:Boolean>
+</IgnoreCase>
+</Actions:CompareExpressionAction>
+</Condition>
+</Actions:IfElseBranchAction>
+</Actions>
+<Actions>
+<Actions:IfElseBranchAction>
+<Enabled>
+<System:Boolean>True</System:Boolean>
+</Enabled>
+<Actions>
+<Actions:SetAction>
+<Enabled>
+<System:Boolean>True</System:Boolean>
+</Enabled>
+<LeftContent>
+<Actions:ObjectReferenceExpressionAction>
+<Enabled>
+<System:Boolean>True</System:Boolean>
+</Enabled>
+<Target>
+<Wherigo:WigoVariable xsi:nil="true" ref="key4" />
+</Target>
+</Actions:ObjectReferenceExpressionAction>
+</LeftContent>
+<RightContent>
+<Actions:ValueExpressionAction>
+<Enabled>
+<System:Boolean>True</System:Boolean>
+</Enabled>
+<Value>
+<System:Boolean>True</System:Boolean>
+</Value>
+</Actions:ValueExpressionAction>
+</RightContent>
+</Actions:SetAction>
+</Actions>
+<Condition>
+<Actions:IExpressionAction xsi:nil="true" />
+</Condition>
+</Actions:IfElseBranchAction>
+</Actions>
+</Actions:IfElseAction>
+</Actions>
+<Owner>
+<Wherigo:WigoCommand xsi:nil="true" ref="key5" />
+</Owner>
+</Actions:EventAction>
+</ExecuteAction>
+</Wherigo:WigoCommand>
+</Commands>
+<ClickAction>
+<Actions:EventAction>
+<Enabled>
+<System:Boolean>True</System:Boolean>
+</Enabled>
+<Owner>
+<Wherigo:WigoItem xsi:nil="true" ref="key3" />
+</Owner>
+</Actions:EventAction>
+</ClickAction>
+<Locked>
+<System:Boolean>False</System:Boolean>
+</Locked>
+<Opened>
+<System:Boolean>False</System:Boolean>
+</Opened>
+</Wherigo:WigoItem>
+</Items>
+<Variables>
+<Wherigo:WigoVariable xsi:nil="true" ref="key4" />
+</Variables>
+<Player>
+<Wherigo:WigoPlayer>
+<Identifier>
+<System:String>Player</System:String>
+</Identifier>
+</Wherigo:WigoPlayer>
+</Player>
+<CurrentZone>
+<Wherigo:WigoCurrentZone>
+<Identifier>
+<System:String xsi:nil="true" />
+</Identifier>
+</Wherigo:WigoCurrentZone>
+</CurrentZone>
+<CurrentCharacter>
+<Wherigo:WigoCurrentCharacter>
+<Identifier>
+<System:String xsi:nil="true" />
+</Identifier>
+</Wherigo:WigoCurrentCharacter>
+</CurrentCharacter>
+<CurrentItem>
+<Wherigo:WigoCurrentItem>
+<Identifier>
+<System:String xsi:nil="true" />
+</Identifier>
+</Wherigo:WigoCurrentItem>
+</CurrentItem>
+<CurrentTask>
+<Wherigo:WigoCurrentTask>
+<Identifier>
+<System:String xsi:nil="true" />
+</Identifier>
+</Wherigo:WigoCurrentTask>
+</CurrentTask>
+<CurrentInput>
+<Wherigo:WigoCurrentInput>
+<Identifier>
+<System:String xsi:nil="true" />
+</Identifier>
+</Wherigo:WigoCurrentInput>
+</CurrentInput>
+<CurrentTimer>
+<Wherigo:WigoCurrentTimer>
+<Identifier>
+<System:String xsi:nil="true" />
+</Identifier>
+</Wherigo:WigoCurrentTimer>
+</CurrentTimer>
+<Environment>
+<Wherigo:WigoEnvironment>
+<Identifier>
+<System:String>Env</System:String>
+</Identifier>
+</Wherigo:WigoEnvironment>
+</Environment>
+<StartAction>
+<Actions:EventAction>
+<Enabled>
+<System:Boolean>True</System:Boolean>
+</Enabled>
+<Owner>
+<Wherigo:WigoCartridge xsi:nil="true" ref="key6" />
+</Owner>
+</Actions:EventAction>
+</StartAction>
+<EndAction>
+<Actions:EventAction>
+<Enabled>
+<System:Boolean>True</System:Boolean>
+</Enabled>
+<Owner>
+<Wherigo:WigoCartridge xsi:nil="true" ref="key6" />
+</Owner>
+</Actions:EventAction>
+</EndAction>
+<ResumeAction>
+<Actions:EventAction>
+<Enabled>
+<System:Boolean>True</System:Boolean>
+</Enabled>
+<Owner>
+<Wherigo:WigoCartridge xsi:nil="true" ref="key6" />
+</Owner>
+</Actions:EventAction>
+</ResumeAction>
+<SaveAction>
+<Actions:EventAction>
+<Enabled>
+<System:Boolean>True</System:Boolean>
+</Enabled>
+<Owner>
+<Wherigo:WigoCartridge xsi:nil="true" ref="key6" />
+</Owner>
+</Actions:EventAction>
+</SaveAction>
+<GlobalZoneEnterAction>
+<Actions:GlobalEventAction>
+<Enabled>
+<System:Boolean>True</System:Boolean>
+</Enabled>
+<Owner>
+<Wherigo:WigoCartridge xsi:nil="true" ref="key6" />
+</Owner>
+</Actions:GlobalEventAction>
+</GlobalZoneEnterAction>
+<GlobalZoneExitAction>
+<Actions:GlobalEventAction>
+<Enabled>
+<System:Boolean>True</System:Boolean>
+</Enabled>
+<Owner>
+<Wherigo:WigoCartridge xsi:nil="true" ref="key6" />
+</Owner>
+</Actions:GlobalEventAction>
+</GlobalZoneExitAction>
+<GlobalZoneDistantAction>
+<Actions:GlobalEventAction>
+<Enabled>
+<System:Boolean>True</System:Boolean>
+</Enabled>
+<Owner>
+<Wherigo:WigoCartridge xsi:nil="true" ref="key6" />
+</Owner>
+</Actions:GlobalEventAction>
+</GlobalZoneDistantAction>
+<GlobalZoneProximityAction>
+<Actions:GlobalEventAction>
+<Enabled>
+<System:Boolean>True</System:Boolean>
+</Enabled>
+<Owner>
+<Wherigo:WigoCartridge xsi:nil="true" ref="key6" />
+</Owner>
+</Actions:GlobalEventAction>
+</GlobalZoneProximityAction>
+<GlobalZoneActiveChangedAction>
+<Actions:GlobalEventAction>
+<Enabled>
+<System:Boolean>True</System:Boolean>
+</Enabled>
+<Owner>
+<Wherigo:WigoCartridge xsi:nil="true" ref="key6" />
+</Owner>
+</Actions:GlobalEventAction>
+</GlobalZoneActiveChangedAction>
+<UserDirectives>
+<System:String xsi:nil="true" />
+</UserDirectives>
+<UserFunctions>
+<System:String xsi:nil="true" />
+</UserFunctions>
+</Wherigo:WigoCartridge>
