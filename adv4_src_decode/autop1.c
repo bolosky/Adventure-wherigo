@@ -204,12 +204,13 @@ int s30() {
 	} 
 } 
 
-int z26() {
+int jump_into_bottomless_pit() {
 	processMoveCommand(LOCATION_LIMBO, -1);
-	if (object_type_3_buffer[99] == 1) {
+
+	if (object_type_3_buffer[ITEM_LAMP] == 1) {
 		set_value(0, 698, 0); 
-		if (isItemAtLocation(99, -1)) { 
-			printMessage(0, 1158, 0); 
+		if (isItemAtLocation(ITEM_LAMP, -1)) {
+			printMessage(0, 1158, 0); // You  have  jumped into a bottomless pit.  You continue to fall for a very long time.  First, your lamp runs out of power and goes dead.  Later, you die of hunger and thirst.
 		} else {
 			printMessage(0, 1159, 0); // You have jumped into a bottomless pit.  Eventually, you die of thirst.
 		}

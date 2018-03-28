@@ -1097,9 +1097,9 @@ e6(p4, d8, q5) int p4; int d8; int q5; { int i6; int
 		BJBMessage(0, 1061, 0);
 		BJBMessage(0, 1059, 0);
 		BJBMessage(0, 1057, 0);
-		BJBMessage(0, 1074, 0);
+		BJBMessage(0, 1158, 0);
 
-		if (1)
+		if (0)
 		{
 			int i;
 			for (i = 1237; i <= 1237 + 7; i++) {
