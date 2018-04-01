@@ -56,7 +56,7 @@ int b19(); extern int f11(); extern int z10(); extern int s19(); extern
 int u13(); extern int i25(); extern int r17(); extern int p22(); extern
 int m17(); extern int z11(); extern int n18(); extern int a19(); extern
 int b20(); extern int i26(); extern int p23(); extern int g22(); extern
-int q22(); extern int k12(); extern int s20(); extern int north_end_of_tight_passage_367(); extern
+int small_icy_chamber_364(); extern int k12(); extern int s20(); extern int north_end_of_tight_passage_367(); extern
 int z12(); extern int r18(); extern int r19(); extern int q23(); extern
 int n19(); extern int u14(); extern int o15(); extern int f12(); extern
 int v21(); extern int beach_377(); extern int q24(); extern int i27(); extern
@@ -479,7 +479,7 @@ int (*command_by_location_dispatch_table[])()= {
 	i26,	// 361
 	p23,	// 362
 	g22,	// 363
-	q22,	// 364
+	small_icy_chamber_364,	// 364
 	k12,	// 365
 	s20,	// 366
 	north_end_of_tight_passage_367,	// 367
@@ -802,7 +802,7 @@ m12,m13,o10,a14,s16,q16,b16,d20,i22,a15,u11, g17,i23,t18,c22,w15,n16,q17,r15,a16
 v18,o11,j19,p19,u12,g18,w16,k11,e15,g19,b17, r16,h12,h13,t19,q18,o12,q19,c23,q20,t20,m14,
 d22,g20,p20,v19,h14,m15,command_vaulted_ceiling_316,y15,x18,x19,KilobyteInputBuffer0, f8,i24,m16,a17,x20,h15,brink_of_bottomless_pit_325,p21,o13,h16,b18,
 w17,KilobyteInputBuffer1,e16,n17,f9,x21,c24,l20,a18,o14,s17, c25,f10,q21,w18,e17,d23,s18,b19,f11,z10,s19,
-u13,i25,r17,p22,m17,z11,n18,a19,b20,i26,p23, g22,q22,k12,s20,north_end_of_tight_passage_367,z12,r18,r19,q23,n19,u14,
+u13,i25,r17,p22,m17,z11,n18,a19,b20,i26,p23, g22,small_icy_chamber_364,k12,s20,north_end_of_tight_passage_367,z12,r18,r19,q23,n19,u14,
 o15,f12,v21,beach_377,q24,i27,q25,h17,q26,living_quarters_383,w19, f13,k13,u15,z13,t22,h18,basement_391,curtain_entrance_392,cellar_393,s21,o16,
 west_of_causeway_396,east_of_causeway_397,a20,k14,z15,p24,h19,g23,k15,s22,k16, i29,z16,m19,m20,q27,q28,unsafe_passage_413,end_of_very_unsafe_tunnel_414,very_low_room_415,d24,inclined_shaft_417,
 i30,sea_view_419,g24,south_end_of_culvert_421,x23,q29,h20,partially_collapsed_junction_425,dead_end_426,stream_maze_427,stream_maze_428, f15,i31,h21,lost_in_mist_432,small_dank_cave_433,rock_in_mist_434,dwarves_stores_435,f16,t25,l21,v25,

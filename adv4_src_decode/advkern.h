@@ -129,9 +129,11 @@ extern v0;
 #define LOCATION_SLAB_ROOM				209
 #define LOCATION_GIANT_ROOM				222
 #define LOCATION_ORIENTAL				226
+#define LOCATION_PLOVER					228
 #define LOCATION_WITTS_END				236
 #define LOCATION_GRAY_NOWHERE			243
 #define LOCATION_SOUTH_END_STONE_FACES	253	// South end of the valley of the stone faces
+#define LOCATION_CELLAR					393
 #define LOCATION_ROCK_IN_MIST			434
 #define LOCATION_PANTRY					412
 

@@ -370,11 +370,18 @@ a19() { processMoveCommand(358, 0, -COMMAND_NORTH); processMoveCommand(360, 0, -
 	processMoveCommand(363, 0, -COMMAND_NORTH);
 } int g22() {
 	processMoveCommand(357, 0, -COMMAND_EAST); processMoveCommand(362, 0, -COMMAND_SOUTH); processMoveCommand(364, 0, -COMMAND_NORTHWEST);
-} int q22() {
-	processMoveCommand(363, 0, -COMMAND_EAST); processMoveCommand(327, object_type_3_buffer[685], -498); if (currentCommandContains(120)) {
-		printMessage(76, 1645, 670);
+} 
+
+int small_icy_chamber_364() {
+	processMoveCommand(363, 0, -COMMAND_EAST); 
+	processMoveCommand(327, object_type_3_buffer[685], -COMMAND_THURB);
+
+	if (currentCommandContains(ITEM_NOTICE)) {
+		printMessage(76, 1645, 670); // There is no "notice" here.  Just insubstantial glowing letters hanging in mid-air.   They  spell "This way out", just as they did the last time you looked.
 	}
-} int k12() {
+} 
+
+int k12() {
 	processMoveCommand(325, 0, -COMMAND_NORTH); processMoveCommand(366, 0, COMMAND_NORTHEAST, -616); if (!currentCommandIsNotOneOf(COMMAND_JUMP, -1)) return
 		0; jump_into_bottomless_pit();
 } int s20() { processMoveCommand(365, 0, -COMMAND_SOUTHWEST); processMoveCommand(367, 0, -COMMAND_SOUTHEAST); } 
@@ -549,9 +556,20 @@ int u14() {
 	check_command_steps();
 } int s16() {
 	if (currentCommandContains(COMMAND_LOOK)) { return 0; } processMoveCommand(267, 0, COMMAND_UP, -5); check_command_steps();
-} int q16() {
-	processMoveCommand(267, 0, -COMMAND_SOUTH); processMoveCommand(271, 0, -COMMAND_WEST); processMoveCommand(270, 0, -COMMAND_EAST); if (!currentCommandIsOneOf(COMMAND_PLUGH, 228, -1))
-		return 0; if (isObjectFlagSet(dereference(710), 3)) { printMessage(PRINT_MESSAGE_END_COMMAND, MESSAGE_NOTHING_HAPPENS, 0); } processMoveCommand(382, -object_type_3_buffer[685]);
+} 
+
+int q16() {
+	processMoveCommand(267, 0, -COMMAND_SOUTH); 
+	processMoveCommand(271, 0, -COMMAND_WEST); 
+	processMoveCommand(270, 0, -COMMAND_EAST); 
+	if (!currentCommandIsOneOf(COMMAND_PLUGH, LOCATION_PLOVER, -1))
+		return 0; 
+	
+	if (isObjectFlagSet(dereference(710), 3)) { 
+		printMessage(PRINT_MESSAGE_END_COMMAND, MESSAGE_NOTHING_HAPPENS, 0); 
+	} 
+	
+	processMoveCommand(382, -object_type_3_buffer[685]);
 } int
 b16() { processMoveCommand(269, 0, COMMAND_WEST, -COMMAND_DOWN); processMoveCommand(271, 0, -COMMAND_UP); } int u12() {
 	processMoveCommand(291, 0, -COMMAND_EAST);
@@ -565,7 +583,7 @@ b16() { processMoveCommand(269, 0, COMMAND_WEST, -COMMAND_DOWN); processMoveComm
 	if (!currentCommandIsOneOf(COMMAND_EXIT, COMMAND_EAST, COMMAND_RETREAT, -1))
 		return 0; if (item_location[121] == 484) { set_object_location(121, object_type_3_buffer[PLAYER_LOCATION]); set_value(0, 121, 0); } processMoveCommand(293, -2);
 } int q26() {
-	processMoveCommand(269, object_type_3_buffer[685], COMMAND_PLUGH, -228); if (!currentCommandIsOneOf(COMMAND_DOWN, COMMAND_CLIMB, COMMAND_NORTH, COMMAND_SOUTH, COMMAND_EAST, COMMAND_WEST, COMMAND_NORTHEAST,
+	processMoveCommand(269, object_type_3_buffer[685], COMMAND_PLUGH, -LOCATION_PLOVER); if (!currentCommandIsOneOf(COMMAND_DOWN, COMMAND_CLIMB, COMMAND_NORTH, COMMAND_SOUTH, COMMAND_EAST, COMMAND_WEST, COMMAND_NORTHEAST,
 		COMMAND_NORTHWEST, COMMAND_SOUTHEAST, COMMAND_SOUTHWEST, COMMAND_JUMP, -1)) return 0; printMessage(0, 1136, 0); processMoveCommand(LOCATION_LIMBO, -1); die();
 } 
 
@@ -725,7 +743,7 @@ int d20() {
 } int o16() { processMoveCommand(161, 0, -COMMAND_UP); processMoveCommand(394, 0, -COMMAND_DOWN); check_command_steps(); } int
 s21() {
 	if (currentCommandContains(COMMAND_CLIMB)) { printMessage(PRINT_MESSAGE_END_COMMAND, 1660, 0); } if (currentCommandContains(77)) { printMessage(PRINT_MESSAGE_END_COMMAND, 1659, 0); } if
-		((currentCommandContains(ITEM_ORB) || currentCommandContains(604)) && item_location[ITEM_ORB] == 393) {
+		((currentCommandContains(ITEM_ORB) || currentCommandContains(604)) && item_location[ITEM_ORB] == LOCATION_CELLAR) {
 		printMessage(PRINT_MESSAGE_END_COMMAND, 1227, 0);
 	} if (currentCommandContains(72)) {
 		if
@@ -801,7 +819,7 @@ int basement_391() {
 	u28(); 
 	maybe_look_at_slab(); 
 	check_command_steps(); 
-	processMoveCommand(393, 1233, COMMAND_ENTER, -COMMAND_SOUTH);
+	processMoveCommand(LOCATION_CELLAR, 1233, COMMAND_ENTER, -COMMAND_SOUTH);
 } 
 
 int cellar_393() {

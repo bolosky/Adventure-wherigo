@@ -109,13 +109,13 @@ int j32() {
 				+= object_type_3_buffer[700]; if (object_type_3_buffer[715] > 9) { set_value(0, 715, 9); } if (object_type_3_buffer[730] == 0) {
 				set_value(0, 730, 1);
 			}
-		} if (isObjectFlagSet(dereference(PLAYER_LOCATION), 5) || object_type_3_buffer[715] == 0) { printMessage(PRINT_MESSAGE_END_COMMAND, 1340, 0); } if (object_type_3_buffer[134] < object_type_3_buffer[715])
+		} if (isObjectFlagSet(dereference(PLAYER_LOCATION), 5) || object_type_3_buffer[715] == 0) { printMessage(PRINT_MESSAGE_END_COMMAND, 1340, 0); } if (object_type_3_buffer[ITEM_DWARF] < object_type_3_buffer[715])
 		{
-			set_value(SET_VALUE_DEREFERENCE, 700, 715); object_type_3_buffer[700] -= object_type_3_buffer[134]; printMessage(13, 1339, 700); set_object_location(134, object_type_3_buffer[PLAYER_LOCATION]);
-			set_value(SET_VALUE_DEREFERENCE, 134, 715); b26(); if (object_type_3_buffer[699] == 0) { modifyObjectFlag('s', 134, 14); printMessage(0, 134, 0); }
+			set_value(SET_VALUE_DEREFERENCE, 700, 715); object_type_3_buffer[700] -= object_type_3_buffer[ITEM_DWARF]; printMessage(13, 1339, 700); set_object_location(ITEM_DWARF, object_type_3_buffer[PLAYER_LOCATION]);
+			set_value(SET_VALUE_DEREFERENCE, ITEM_DWARF, 715); b26(); if (object_type_3_buffer[699] == 0) { modifyObjectFlag('s', ITEM_DWARF, 14); printMessage(0, ITEM_DWARF, 0); }
 		}
 		else {
-			printMessage(13, 1363, 134); modifyObjectFlag('s', 134, 14); set_value(0, 728, 0); set_value(0, 727, 100);
+			printMessage(13, 1363, ITEM_DWARF); modifyObjectFlag('s', ITEM_DWARF, 14); set_value(0, 728, 0); set_value(0, 727, 100);
 		}
 	}
 	else { printMessage(12, 1027, 670); } longjmp(done_with_command, 1);
@@ -131,7 +131,7 @@ int j32() {
 			0;
 	} if (isObjectFlagSet(dereference(670), 2)) { printMessage(PRINT_MESSAGE_END_COMMAND, MESSAGE_RIDICULOUS, 0); } if (g10(dereference(object_type_3_buffer[670]), -1)) {
 		if
-			(currentCommandContains(134) && g10(134, -1)) {
+			(currentCommandContains(ITEM_DWARF) && g10(ITEM_DWARF, -1)) {
 			if (object_type_3_buffer[717] == 3) { printMessage(0, 1373, 0); }
 			else {
 				printMessage(0, 835, 0);
@@ -147,7 +147,7 @@ int j32() {
 	if
 		(object_type_3_buffer[697] == 2) {
 		if (g10(dereference(object_type_3_buffer[670]), -1)) {
-			if (object_type_3_buffer[717] == 3 && currentCommandContains(134)) {
+			if (object_type_3_buffer[717] == 3 && currentCommandContains(ITEM_DWARF)) {
 				printMessage(0, 1373, 0); die();
 			} printMessage(PRINT_MESSAGE_END_COMMAND, MESSAGE_RIDICULOUS, 0);
 		}
@@ -173,7 +173,7 @@ int blast_command() {
 		modifyObjectFlag('s', 381, 4); 
 		f3(PREVIOUS_LOCATION, 380);
 		set_object_location(104, LOCATION_LIMBO); 
-		set_object_location(134, LOCATION_LIMBO); 
+		set_object_location(ITEM_DWARF, LOCATION_LIMBO); 
 		set_object_location(82, object_type_3_buffer[PLAYER_LOCATION]); 
 		printMessage(PRINT_MESSAGE_END_COMMAND, 1376, 0); // There  is  a  loud  explosion  at  the  other end of the repository and a section of the far wall collapses, burying the  dwarves  in  the  rubble. The  settling dust reveals a dark hole leading northeast. When the air is finally clear, a snow-white golden-horned unicorn walks out of  the  hole and,  gracefully  picking  its  way  through  the heaps of rubble, calmly approaches you.
 	} 
@@ -250,12 +250,12 @@ int u20() { printMessage(PRINT_MESSAGE_END_COMMAND, 1382, 0); } int KilobyteInpu
 } int o19() {
 	if (object_type_3_buffer[697] == 2)
 	{
-		if (!(currentCommandContains(70) || currentCommandContains(108) || currentCommandContains(134) || currentCommandContains(88))) { printMessage(PRINT_MESSAGE_END_COMMAND, MESSAGE_RIDICULOUS, 0); }
+		if (!(currentCommandContains(70) || currentCommandContains(108) || currentCommandContains(ITEM_DWARF) || currentCommandContains(88))) { printMessage(PRINT_MESSAGE_END_COMMAND, MESSAGE_RIDICULOUS, 0); }
 	} if (g10(88, -1))
 	{
 		if (object_type_3_buffer[697] == 1 || currentCommandContains(88)) { printMessage(PRINT_MESSAGE_END_COMMAND, 1054, 0); }
 	} if (g10(70, -1) || g10(108, -1)
-		|| g10(134, -1)) {
+		|| g10(ITEM_DWARF, -1)) {
 		printMessage(PRINT_MESSAGE_END_COMMAND, 1433, 0);
 	} printMessage(76, 1434, 669);
 } int u19() {
@@ -276,7 +276,7 @@ g31() { f3(700, 1471); f3(701, 1473); c28(); longjmp(done_with_command, 1); } in
 		if (!(isObjectFlagSet(43, 13))) { object_type_3_buffer[43] += 1; } if (object_type_3_buffer[43] < 9) {
 			printMessage(PRINT_MESSAGE_END_COMMAND, 1612, 0);
 		} printMessage(PRINT_MESSAGE_END_COMMAND, 1613, 0);
-	} if (g10(134, -1) || g10(121, -1) || object_type_3_buffer[17] > 0) {
+	} if (g10(ITEM_DWARF, -1) || g10(121, -1) || object_type_3_buffer[17] > 0) {
 		printMessage(PRINT_MESSAGE_END_COMMAND, 1481, 0);
 	} if (q8(101, -1)) { printMessage(76, 1478, 101); } if (g10(ITEM_SWORD, -1)) {
 		printMessage(76, 1478, ITEM_SWORD);
@@ -404,7 +404,7 @@ int j47() {
 	modifyObjectFlag('s', 456, 3); modifyObjectFlag('s', 461, 3); modifyObjectFlag('s', 460, 3); modifyObjectFlag('s', 459, 3); modifyObjectFlag('s', 458, 3);
 	modifyObjectFlag('s', 138, 3); modifyObjectFlag('s', 139, 3); modifyObjectFlag('s', LOCATION_MAGNIFICENT_VIEW, 3); modifyObjectFlag('s', 457, 3); modifyObjectFlag('s', 141, 3);
 	modifyObjectFlag('s', 142, 3); modifyObjectFlag('s', 143, 3); modifyObjectFlag('s', LOCATION_OUTSIDE_GRATE, 3); modifyObjectFlag('s', 436, 3); modifyObjectFlag('s', 145, 3);
-	modifyObjectFlag('s', 146, 3); modifyObjectFlag('s', 228, 3); modifyObjectFlag('s', 252, 3); modifyObjectFlag('s', 324, 3); modifyObjectFlag('s', 376, 3);
+	modifyObjectFlag('s', 146, 3); modifyObjectFlag('s', LOCATION_PLOVER, 3); modifyObjectFlag('s', 252, 3); modifyObjectFlag('s', 324, 3); modifyObjectFlag('s', 376, 3);
 	modifyObjectFlag('s', 377, 3); modifyObjectFlag('s', 256, 3); modifyObjectFlag('s', 257, 3); modifyObjectFlag('s', 463, 3); modifyObjectFlag('s', LOCATION_SOUTH_END_STONE_FACES, 3);
 	modifyObjectFlag('s', 254, 3); modifyObjectFlag('s', 290, 3); modifyObjectFlag('s', 291, 3); modifyObjectFlag('s', 295, 3); modifyObjectFlag('s', 382, 3);
 	modifyObjectFlag('s', LOCATION_GRAY_NOWHERE, 3); modifyObjectFlag('s', 242, 3); modifyObjectFlag('s', 419, 3); modifyObjectFlag('s', 399, 3); modifyObjectFlag('s', 400, 3);
@@ -412,7 +412,7 @@ int j47() {
 	modifyObjectFlag('s', 483, 3); modifyObjectFlag('s', 378, 3); modifyObjectFlag('s', 380, 3); modifyObjectFlag('s', 379, 3); 
 	modifyObjectFlag('s', 145, 5);
 	modifyObjectFlag('s', 146, 5); modifyObjectFlag('s', 227, 5); modifyObjectFlag('s', 244, 5); modifyObjectFlag('s', 245, 5); modifyObjectFlag('s', 249, 5);
-	modifyObjectFlag('s', 228, 5); modifyObjectFlag('s', 229, 5); modifyObjectFlag('s', 250, 5); modifyObjectFlag('s', 251, 5); modifyObjectFlag('s', 252, 5);
+	modifyObjectFlag('s', LOCATION_PLOVER, 5); modifyObjectFlag('s', 229, 5); modifyObjectFlag('s', 250, 5); modifyObjectFlag('s', 251, 5); modifyObjectFlag('s', 252, 5);
 	modifyObjectFlag('s', 296, 5); modifyObjectFlag('s', 297, 5); modifyObjectFlag('s', 298, 5); modifyObjectFlag('s', 299, 5); modifyObjectFlag('s', 192, 5);
 	modifyObjectFlag('s', 158, 5); modifyObjectFlag('s', 159, 5); modifyObjectFlag('s', 200, 5); modifyObjectFlag('s', 377, 5); modifyObjectFlag('s', 376, 5);
 	modifyObjectFlag('s', LOCATION_SOUTH_END_STONE_FACES, 5); modifyObjectFlag('s', 254, 5); modifyObjectFlag('s', 255, 5); modifyObjectFlag('s', 256, 5); modifyObjectFlag('s', 257, 5);
@@ -428,7 +428,7 @@ int j47() {
 	
 	modifyObjectFlag('s', 290, 5); modifyObjectFlag('s', 291, 5); modifyObjectFlag('s', 292, 5); modifyObjectFlag('s', 293, 5); modifyObjectFlag('s', 294, 5);
 	modifyObjectFlag('s', 295, 5); modifyObjectFlag('s', 240, 5); modifyObjectFlag('s', 241, 5); modifyObjectFlag('s', 242, 5); modifyObjectFlag('s', 462, 5);
-	modifyObjectFlag('s', 323, 5); modifyObjectFlag('s', 393, 5); modifyObjectFlag('s', 388, 5); modifyObjectFlag('s', 433, 5); modifyObjectFlag('s', 383, 5);
+	modifyObjectFlag('s', 323, 5); modifyObjectFlag('s', LOCATION_CELLAR, 5); modifyObjectFlag('s', 388, 5); modifyObjectFlag('s', 433, 5); modifyObjectFlag('s', 383, 5);
 	modifyObjectFlag('s', 384, 5); modifyObjectFlag('s', 405, 5); modifyObjectFlag('s', 406, 5); modifyObjectFlag('s', 432, 5); modifyObjectFlag('s', 420, 5);
 	modifyObjectFlag('s', 421, 5); modifyObjectFlag('s', 428, 5); modifyObjectFlag('s', 419, 5); modifyObjectFlag('s', 422, 5); modifyObjectFlag('s', 423, 5);
 	modifyObjectFlag('s', 424, 5); modifyObjectFlag('s', 425, 5); modifyObjectFlag('s', 426, 5); modifyObjectFlag('s', 418, 5); modifyObjectFlag('s', 417, 5);
@@ -451,7 +451,7 @@ int j47() {
 	modifyObjectFlag('s', 307, 6); modifyObjectFlag('s', 308, 6); modifyObjectFlag('s', 309, 6); modifyObjectFlag('s', 310, 6); modifyObjectFlag('s', 311, 6);
 	modifyObjectFlag('s', 232, 6); modifyObjectFlag('s', 370, 6); modifyObjectFlag('s', 371, 6); modifyObjectFlag('s', 240, 6); modifyObjectFlag('s', 221, 6);
 	modifyObjectFlag('s', 238, 6); modifyObjectFlag('s', 244, 6); modifyObjectFlag('s', 245, 6); modifyObjectFlag('s', LOCATION_WITTS_END, 6); modifyObjectFlag('s', 227, 6);
-	modifyObjectFlag('s', 228, 6); modifyObjectFlag('s', 229, 6); modifyObjectFlag('s', 216, 6); modifyObjectFlag('s', 329, 6); modifyObjectFlag('s', 331, 6);
+	modifyObjectFlag('s', LOCATION_PLOVER, 6); modifyObjectFlag('s', 229, 6); modifyObjectFlag('s', 216, 6); modifyObjectFlag('s', 329, 6); modifyObjectFlag('s', 331, 6);
 	modifyObjectFlag('s', 333, 6); modifyObjectFlag('s', 335, 6); modifyObjectFlag('s', 336, 6); modifyObjectFlag('s', 337, 6); modifyObjectFlag('s', 338, 6);
 	modifyObjectFlag('s', 339, 6); modifyObjectFlag('s', 340, 6); modifyObjectFlag('s', 341, 6); modifyObjectFlag('s', 342, 6); modifyObjectFlag('s', 343, 6);
 	modifyObjectFlag('s', 345, 6); modifyObjectFlag('s', 346, 6); modifyObjectFlag('s', 347, 6); modifyObjectFlag('s', 349, 6); modifyObjectFlag('s', 350, 6);
@@ -467,7 +467,7 @@ int j47() {
 	modifyObjectFlag('s', LOCATION_SOUTH_END_STONE_FACES, 6); modifyObjectFlag('s', 255, 6); modifyObjectFlag('s', 256, 6); modifyObjectFlag('s', 263, 6); modifyObjectFlag('s', LOCATION_GRAY_NOWHERE, 6);
 	modifyObjectFlag('s', 382, 6); *getObjectPointer(676) = -1; object_type_3_buffer[676] = 384; while (++object_type_3_buffer[676] <= 390) {
 		modifyObjectFlag('s', dereference(676), 6);
-	} modifyObjectFlag('s', 428, 6); modifyObjectFlag('s', 393, 6); modifyObjectFlag('s', 432, 6); modifyObjectFlag('s', 164, 6); modifyObjectFlag('s', 270, 6);
+	} modifyObjectFlag('s', 428, 6); modifyObjectFlag('s', LOCATION_CELLAR, 6); modifyObjectFlag('s', 432, 6); modifyObjectFlag('s', 164, 6); modifyObjectFlag('s', 270, 6);
 	modifyObjectFlag('s', 461, 6); *getObjectPointer(676) = -1; object_type_3_buffer[676] = 167; while (++object_type_3_buffer[676] <= 193) {
 		modifyObjectFlag('s', dereference(676), 10);
 	} *getObjectPointer(676) = -1; object_type_3_buffer[676] = 299; while (++object_type_3_buffer[676] <= 311) {
@@ -490,7 +490,7 @@ int j47() {
 	modifyObjectFlag('s', 49, 9); modifyObjectFlag('s', 73, 9); modifyObjectFlag('s', 93, 9); modifyObjectFlag('s', 113, 10); modifyObjectFlag('s', 112, 10);
 	modifyObjectFlag('s', 5, 10); modifyObjectFlag('s', 73, 10); modifyObjectFlag('s', 8, 10); modifyObjectFlag('s', 10, 10); modifyObjectFlag('s', 16, 10);
 	modifyObjectFlag('s', 13, 10); modifyObjectFlag('s', 18, 10); modifyObjectFlag('s', 19, 10); modifyObjectFlag('s', 31, 10); modifyObjectFlag('s', 30, 10);
-	modifyObjectFlag('s', 32, 10); modifyObjectFlag('s', 36, 10); modifyObjectFlag('s', 40, 10); modifyObjectFlag('s', 134, 10); modifyObjectFlag('s', 109, 10);
+	modifyObjectFlag('s', 32, 10); modifyObjectFlag('s', 36, 10); modifyObjectFlag('s', 40, 10); modifyObjectFlag('s', ITEM_DWARF, 10); modifyObjectFlag('s', 109, 10);
 	modifyObjectFlag('s', 14, 10); modifyObjectFlag('s', 12, 10); modifyObjectFlag('s', 135, 10); modifyObjectFlag('s', 75, 10); modifyObjectFlag('s', 70, 10);
 	modifyObjectFlag('s', 85, 10); modifyObjectFlag('s', ITEM_RAT, 10); modifyObjectFlag('s', 122, 10); modifyObjectFlag('s', 17, 10); modifyObjectFlag('s', 9, 10);
 	modifyObjectFlag('s', 93, 10); modifyObjectFlag('s', 8, 10); *getObjectPointer(676) = -1; object_type_3_buffer[676] = 167; while (++object_type_3_buffer[676] <= 193)
@@ -503,7 +503,7 @@ int j47() {
 	{
 		modifyObjectFlag('s', dereference(676), 8);
 	} modifyObjectFlag('s', 149, 8); modifyObjectFlag('s', LOCATION_OUTSIDE_GRATE, 8); modifyObjectFlag('s', 155, 8); modifyObjectFlag('s', 165, 8);
-	modifyObjectFlag('s', 166, 8); modifyObjectFlag('s', LOCATION_WITTS_END, 8); modifyObjectFlag('s', 228, 8); modifyObjectFlag('s', 227, 8); modifyObjectFlag('s', 229, 8);
+	modifyObjectFlag('s', 166, 8); modifyObjectFlag('s', LOCATION_WITTS_END, 8); modifyObjectFlag('s', LOCATION_PLOVER, 8); modifyObjectFlag('s', 227, 8); modifyObjectFlag('s', 229, 8);
 	modifyObjectFlag('s', 328, 8); modifyObjectFlag('s', 256, 8); modifyObjectFlag('s', 239, 8); modifyObjectFlag('s', 434, 8); modifyObjectFlag('s', 252, 8);
 	modifyObjectFlag('s', 254, 8); modifyObjectFlag('s', 323, 8); modifyObjectFlag('s', 259, 8); modifyObjectFlag('s', 314, 8); modifyObjectFlag('s', 315, 8);
 	modifyObjectFlag('s', 264, 8); modifyObjectFlag('s', 427, 8); modifyObjectFlag('s', 428, 8); modifyObjectFlag('s', 141, LOCATION_FLAG_WATER); modifyObjectFlag('s', 136, LOCATION_FLAG_WATER);
@@ -540,7 +540,7 @@ int j47() {
 	modifyObjectFlag('s', 66, 7); modifyObjectFlag('s', 100, 7); modifyObjectFlag('s', 68, 7); modifyObjectFlag('s', 117, 7); modifyObjectFlag('s', 119, 7);
 	modifyObjectFlag('s', 42, 7); modifyObjectFlag('s', 43, 7); modifyObjectFlag('s', 57, 7); modifyObjectFlag('s', 103, 7); modifyObjectFlag('s', 62, 7); modifyObjectFlag('s', 92, 7);
 	modifyObjectFlag('s', 111, 7); modifyObjectFlag('s', ITEM_STARSTONE, 7); modifyObjectFlag('s', 39, 7); modifyObjectFlag('s', 123, 7); modifyObjectFlag('s', 97, 7);
-	modifyObjectFlag('s', 22, 8); modifyObjectFlag('s', 134, 8); modifyObjectFlag('s', 20, 8); modifyObjectFlag('s', 7, 8); modifyObjectFlag('s', 17, 8); modifyObjectFlag('s', 38, 8);
+	modifyObjectFlag('s', 22, 8); modifyObjectFlag('s', ITEM_DWARF, 8); modifyObjectFlag('s', 20, 8); modifyObjectFlag('s', 7, 8); modifyObjectFlag('s', 17, 8); modifyObjectFlag('s', 38, 8);
 	modifyObjectFlag('s', 106, 8); modifyObjectFlag('s', 107, 8); modifyObjectFlag('s', 24, 8); modifyObjectFlag('s', 101, 8); modifyObjectFlag('s', 27, 8);
 	modifyObjectFlag('s', 28, 8); modifyObjectFlag('s', 121, 8); modifyObjectFlag('s', 25, 8); modifyObjectFlag('s', 135, 8); modifyObjectFlag('s', 82, 8);
 	modifyObjectFlag('s', 87, 8); modifyObjectFlag('s', ITEM_RAT, 8); modifyObjectFlag('s', 43, 16); modifyObjectFlag('s', 62, 16); modifyObjectFlag('s', 67, 16);
@@ -578,16 +578,16 @@ int j47() {
 	set_object_location(110, 484); set_object_location(111, LOCATION_MAGNIFICENT_VIEW); set_object_location(11, 159); set_object_location(12, 156); set_object_location(13, 238); set_object_location(16, 165);
 	set_object_location(18, LOCATION_ORIENTAL); set_object_location(20, 247); set_object_location(21, 244); set_object_location(22, 244); set_object_location(38, 299); set_object_location(30, 252);
 	set_object_location(34, 311); set_object_location(40, 225); set_object_location(44, 154); set_object_location(45, 153); set_object_location(46, 160); set_object_location(47, 161);
-	set_object_location(48, 162); set_object_location(50, LOCATION_GIANT_ROOM); set_object_location(51, 224); set_object_location(53, LOCATION_ORIENTAL); set_object_location(55, 228); set_object_location(58, 229);
+	set_object_location(48, 162); set_object_location(50, LOCATION_GIANT_ROOM); set_object_location(51, 224); set_object_location(53, LOCATION_ORIENTAL); set_object_location(55, LOCATION_PLOVER); set_object_location(58, 229);
 	set_object_location(124, 229); set_object_location(61, 296); set_object_location(63, 299); set_object_location(65, 374); set_object_location(42, 377); set_object_location(41, 377);
 	set_object_location(52, 313); set_object_location(118, 321); set_object_location(119, 433); set_object_location(66, 346); set_object_location(68, 369); set_object_location(35, 314);
 	set_object_location(32, 370); set_object_location(33, 367); set_object_location(ITEM_SWORD, LOCATION_ROCK_IN_MIST); set_object_location(24, 323); set_object_location(36, 291); set_object_location(37, 291);
 	set_object_location(56, 291); set_object_location(43, 462); set_object_location(31, 254); set_object_location(14, 256); set_object_location(57, 239); set_object_location(67, 295);
-	set_object_location(114, 294); set_object_location(25, 263); set_object_location(103, 268); set_object_location(62, 242); set_object_location(26, 240); set_object_location(ITEM_ORB, 393);
+	set_object_location(114, 294); set_object_location(25, 263); set_object_location(103, 268); set_object_location(62, 242); set_object_location(26, 240); set_object_location(ITEM_ORB, LOCATION_CELLAR);
 	set_object_location(79, 394); set_object_location(86, 388); set_object_location(87, 388); set_object_location(92, 411); set_object_location(89, 419); set_object_location(ITEM_RAT, 421);
 	set_object_location(135, 383); set_object_location(80, 416); set_object_location(85, 205); set_object_location(81, 204); set_object_location(75, 203); set_object_location(76, 419);
-	set_object_location(77, 393); set_object_location(70, 312); set_object_location(120, LOCATION_MAGNIFICENT_VIEW); set_object_location(71, LOCATION_ROCK_IN_MIST); set_object_location(90, LOCATION_DWARVES_STORES); set_object_location(ITEM_STARSTONE, 463);
-	set_object_location(72, 393); set_object_location(120, LOCATION_MAGNIFICENT_VIEW); set_object_location(93, 137); set_object_location(123, 318); set_object_location(121, 484); set_object_location(113, 158);
+	set_object_location(77, LOCATION_CELLAR); set_object_location(70, 312); set_object_location(120, LOCATION_MAGNIFICENT_VIEW); set_object_location(71, LOCATION_ROCK_IN_MIST); set_object_location(90, LOCATION_DWARVES_STORES); set_object_location(ITEM_STARSTONE, 463);
+	set_object_location(72, LOCATION_CELLAR); set_object_location(120, LOCATION_MAGNIFICENT_VIEW); set_object_location(93, 137); set_object_location(123, 318); set_object_location(121, 484); set_object_location(113, 158);
 	modifyObjectFlag('s', 4, 6); modifyObjectFlag('s', 5, 6); modifyObjectFlag('s', 8, 6); modifyObjectFlag('s', 12, 6); modifyObjectFlag('s', 16, 6); modifyObjectFlag('s', 20, 6);
 	modifyObjectFlag('s', 21, 6); modifyObjectFlag('s', 22, 6); modifyObjectFlag('s', 23, 6); modifyObjectFlag('s', 32, 6); modifyObjectFlag('s', 35, 6); modifyObjectFlag('s', 14, 6);
 	modifyObjectFlag('s', 30, 6); modifyObjectFlag('s', 25, 6); modifyObjectFlag('s', 75, 6); modifyObjectFlag('s', ITEM_STARSTONE, 6); modifyObjectFlag('s', 72, 6); set_value(0, 114, 1);
@@ -612,7 +612,7 @@ int j47() {
 
 int s34() {
 	object_type_3_buffer[699] = cheezy_rand(100); 
-	if (isObjectFlagSet(dereference(697), 6) && object_type_3_buffer[PLAYER_LOCATION] == 393) {
+	if (isObjectFlagSet(dereference(697), 6) && object_type_3_buffer[PLAYER_LOCATION] == LOCATION_CELLAR) {
 		if (currentCommandContains(535) || currentCommandContains(COMMAND_THROW)) { 
 			e24(); 
 		}
@@ -633,22 +633,22 @@ int s34() {
 			set_value(SET_VALUE_DEREFERENCE, 681, PREVIOUS_LOCATION); 
 		} 
 		
-		if ((437 <= object_type_3_buffer[PLAYER_LOCATION] && object_type_3_buffer[PLAYER_LOCATION] <= 461)) {
-			set_object_location(122, object_type_3_buffer[PLAYER_LOCATION]);
+		if ((437 <= object_type_3_buffer[PLAYER_LOCATION] && object_type_3_buffer[PLAYER_LOCATION] <= 461)) {	// Forest locations
+			set_object_location(ITEM_TREE, object_type_3_buffer[PLAYER_LOCATION]);
 		} 
 		
-		if (object_type_3_buffer[134] > 0) {
+		if (object_type_3_buffer[ITEM_DWARF] > 0) {
 			if (isObjectFlagSet(dereference(PLAYER_LOCATION), 7) || isObjectFlagSet(dereference(PLAYER_LOCATION), 5)) {
 				if (cheezy_rand(100) < 15) {
-					object_type_3_buffer[134] -= 1; 
-					if (object_type_3_buffer[134] == 0) {
-						set_object_location(134, 484);
+					object_type_3_buffer[ITEM_DWARF] -= 1; 
+					if (object_type_3_buffer[ITEM_DWARF] == 0) {
+						set_object_location(ITEM_DWARF, 484);
 					}
 				}
 			} else {
-				if (!(item_location[134] == object_type_3_buffer[PLAYER_LOCATION] || item_location[134] == object_type_3_buffer[PREVIOUS_LOCATION])) {
-					set_value(0, 134, 0);
-					set_object_location(134, 484);
+				if (!(item_location[ITEM_DWARF] == object_type_3_buffer[PLAYER_LOCATION] || item_location[ITEM_DWARF] == object_type_3_buffer[PREVIOUS_LOCATION])) {
+					set_value(0, ITEM_DWARF, 0);
+					set_object_location(ITEM_DWARF, 484);
 				}
 			}
 		} 
@@ -678,7 +678,7 @@ int s34() {
 			}
 		}
 		
-		if (isObjectFlagSet(dereference(PREVIOUS_LOCATION), 11) && item_location[134] == object_type_3_buffer[PREVIOUS_LOCATION] && !(isObjectFlagSet(dereference(710), ITEM_FLAG_TREASURE))) {
+		if (isObjectFlagSet(dereference(PREVIOUS_LOCATION), 11) && item_location[ITEM_DWARF] == object_type_3_buffer[PREVIOUS_LOCATION] && !(isObjectFlagSet(dereference(710), ITEM_FLAG_TREASURE))) {
 			if (cheezy_rand(100) < 97) {
 				processMoveCommand(object_type_3_buffer[PREVIOUS_LOCATION], -1); 
 				modifyObjectFlag('c', dereference(697), 0);
@@ -690,7 +690,7 @@ int s34() {
 			}
 		}
 	} else {
-		if (g10(134, -1) && cheezy_rand(100) < object_type_3_buffer[727])
+		if (g10(ITEM_DWARF, -1) && cheezy_rand(100) < object_type_3_buffer[727])
 		{
 			t39();
 		} 
@@ -781,15 +781,15 @@ int s34() {
 		} 
 		
 		modifyObjectFlag('s', dereference(PLAYER_LOCATION), 4); 
-		if (!(object_type_3_buffer[134] < 1)) {
+		if (!(object_type_3_buffer[ITEM_DWARF] < 1)) {
 			if (!(isObjectFlagSet(dereference(PLAYER_LOCATION), 7) || isObjectFlagSet(dereference(PLAYER_LOCATION), 5))) {
-				set_object_location(134, object_type_3_buffer[PLAYER_LOCATION]);
+				set_object_location(ITEM_DWARF, object_type_3_buffer[PLAYER_LOCATION]);
 			}
 		} 
 		
 		j39(); 
 		
-		if (g10(134, -1) && object_type_3_buffer[134] == 1 && object_type_3_buffer[686] != 0 && cheezy_rand(100) < 67) {
+		if (g10(ITEM_DWARF, -1) && object_type_3_buffer[ITEM_DWARF] == 1 && object_type_3_buffer[686] != 0 && cheezy_rand(100) < 67) {
 			printMessage(0, 1337, 0); // He is clutching his bulging coat and muttering angrily.
 		} 
 		
@@ -842,7 +842,7 @@ int s34() {
 		}
 	} 
 	
-	if (g10(134, -1)) {
+	if (g10(ITEM_DWARF, -1)) {
 		set_value(0, 728, 50);
 		t39();
 	} 
