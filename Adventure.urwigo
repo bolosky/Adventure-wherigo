@@ -47,7 +47,7 @@
 <System:DateTime>04/01/2018 21:27:11</System:DateTime>
 </CreateDate>
 <UpdateDate>
-<System:DateTime>04/03/2018 09:22:08</System:DateTime>
+<System:DateTime>04/03/2018 13:47:50</System:DateTime>
 </UpdateDate>
 <Complete>
 <System:Boolean>False</System:Boolean>
@@ -10008,6 +10008,36 @@
 </RightContent>
 </Actions:SetAction>
 </Actions>
+<Actions>
+<Actions:SetAction>
+<Enabled>
+<System:Boolean>True</System:Boolean>
+</Enabled>
+<LeftContent>
+<Actions:ObjectPropertyReferenceExpressionAction>
+<Enabled>
+<System:Boolean>True</System:Boolean>
+</Enabled>
+<Target>
+<Wherigo:WigoItem xsi:nil="true" ref="key52" />
+</Target>
+<Property>
+<System:String>Visible</System:String>
+</Property>
+</Actions:ObjectPropertyReferenceExpressionAction>
+</LeftContent>
+<RightContent>
+<Actions:ValueExpressionAction>
+<Enabled>
+<System:Boolean>True</System:Boolean>
+</Enabled>
+<Value>
+<System:Boolean>True</System:Boolean>
+</Value>
+</Actions:ValueExpressionAction>
+</RightContent>
+</Actions:SetAction>
+</Actions>
 <Owner>
 <Wherigo:WigoCommand xsi:nil="true" ref="key54" />
 </Owner>
@@ -10571,6 +10601,36 @@
 </Target>
 <Property>
 <System:String>Enabled</System:String>
+</Property>
+</Actions:ObjectPropertyReferenceExpressionAction>
+</LeftContent>
+<RightContent>
+<Actions:ValueExpressionAction>
+<Enabled>
+<System:Boolean>True</System:Boolean>
+</Enabled>
+<Value>
+<System:Boolean>True</System:Boolean>
+</Value>
+</Actions:ValueExpressionAction>
+</RightContent>
+</Actions:SetAction>
+</Actions>
+<Actions>
+<Actions:SetAction>
+<Enabled>
+<System:Boolean>True</System:Boolean>
+</Enabled>
+<LeftContent>
+<Actions:ObjectPropertyReferenceExpressionAction>
+<Enabled>
+<System:Boolean>True</System:Boolean>
+</Enabled>
+<Target>
+<Wherigo:WigoItem xsi:nil="true" ref="key57" />
+</Target>
+<Property>
+<System:String>Visible</System:String>
 </Property>
 </Actions:ObjectPropertyReferenceExpressionAction>
 </LeftContent>
