@@ -953,7 +953,7 @@ int move_from_mt_king() {
 		return 0;
 	} 
 	
-	if (g10(7, -1) && object_type_3_buffer[676] != object_type_3_buffer[681]) {
+	if (g10(ITEM_SNAKE, -1) && object_type_3_buffer[676] != object_type_3_buffer[681]) {
 		w25(); 
 		if (object_type_3_buffer[ITEM_SNAKE] == 1) {
 			printMessage(0, 1426, 0); // The  snake attempts to block your way, but its movements are sluggish and you manage to slip past.  The snake,  now  fully  awake,  hisses  angrily after you.

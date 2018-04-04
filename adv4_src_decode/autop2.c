@@ -172,27 +172,65 @@ int f7() {
 q15() {
 	if (currentCommandContains(COMMAND_LOOK)) { return 0; } processMoveCommand(250, 0, COMMAND_SOUTH, -250); processMoveCommand(252, 0, COMMAND_NORTH, -619);
 	processMoveCommand(296, 0, COMMAND_EAST, -627);
-} int k9() {
-	if (currentCommandContains(COMMAND_LOOK)) { return 0; } processMoveCommand(251, 0, COMMAND_SOUTH, COMMAND_EXIT, -625);
-	processMoveCommand(250, 0, -250); if (currentCommandContains(COMMAND_JUMP)) { processMoveCommand(LOCATION_LIMBO, -1); v37(); } if (currentCommandContains(9) && object_type_3_buffer[30] == 2)
+} 
+
+int breath_taking_view_252() {
+	if (currentCommandContains(COMMAND_LOOK)) { 
+		return 0; 
+	} 
+	
+	processMoveCommand(251, 0, COMMAND_SOUTH, COMMAND_EXIT, -625);
+	processMoveCommand(250, 0, -250); 
+	
+	if (currentCommandContains(COMMAND_JUMP)) { 
+		processMoveCommand(LOCATION_LIMBO, -1); 
+		v37(); 
+	} 
+	
+	if (currentCommandContains(9) && object_type_3_buffer[30] == 2)
 	{
 		set_object_location(9, object_type_3_buffer[PLAYER_LOCATION]);
-	} if (!currentCommandIsOneOf(142, COMMAND_CROSS, COMMAND_NORTH, -1)) return 0; if (object_type_3_buffer[30] == 0) {
+	} 
+	
+	if (!currentCommandIsOneOf(142, COMMAND_CROSS, COMMAND_NORTH, -1)) 
+		return 0; 
+	
+	if (object_type_3_buffer[30] == 0) {
 		printMessage(PRINT_MESSAGE_END_COMMAND, 1120, 0);
-	} if (isItemAtLocation(64, 2)) {
-		if (isItemAtLocation(38, -1)) { printMessage(0, 1124, 0); set_object_location(38, LOCATION_LIMBO); }
+	} 
+	
+	if (isItemAtLocation(64, 2)) {
+		if (isItemAtLocation(38, -1)) { 
+			printMessage(0, 1124, 0); set_object_location(38, LOCATION_LIMBO); }
 		else {
-			if
-				(!(isObjectFlagSet(LOCATION_SOUTH_END_STONE_FACES, 4))) {
+			if (!(isObjectFlagSet(LOCATION_SOUTH_END_STONE_FACES, 4))) {
 				modifyObjectFlag('c', 252, 8); printMessage(0, 1122, 0);
 			}
-		} if (!(isObjectFlagSet(LOCATION_SOUTH_END_STONE_FACES, 4))) {
+		} 
+		
+		if (!(isObjectFlagSet(LOCATION_SOUTH_END_STONE_FACES, 4))) {
 			set_value(0, 733, 8);
-		} processMoveCommand(LOCATION_SOUTH_END_STONE_FACES, -2);
-	} if (isItemAtLocation(38, -1)) { printMessage(0, 1123, 0); }
-	else { printMessage(0, 1121, 0); }
-	if (isItemAtLocation(64, -1)) { printMessage(0, 1424, 0); } processMoveCommand(LOCATION_LIMBO, -1); die();
-} int b17() {
+		} 
+		
+		processMoveCommand(LOCATION_SOUTH_END_STONE_FACES, -2);
+	} 
+	
+	if (isItemAtLocation(38, -1)) { 
+		printMessage(0, 1123, 0); 
+	}
+	else { 
+		printMessage(0, 1121, 0); 
+	}
+
+	if (isItemAtLocation(64, -1)) { 
+		printMessage(0, 1424, 0); 
+	} 
+	
+	processMoveCommand(LOCATION_LIMBO, -1); 
+	die();
+} 
+
+int b17() {
 	if (currentCommandContains(COMMAND_LOOK))
 	{
 		return 0;
@@ -579,10 +617,21 @@ b16() { processMoveCommand(269, 0, COMMAND_WEST, -COMMAND_DOWN); processMoveComm
 	processMoveCommand(293, 0, -COMMAND_NORTH);
 } int k11() {
 	processMoveCommand(294, 0, COMMAND_NORTHEAST, -294); processMoveCommand(295, 0, COMMAND_NORTHWEST, -295); processMoveCommand(292, 0, -COMMAND_SOUTH);
-} int e15() { processMoveCommand(293, 0, COMMAND_SOUTH, -COMMAND_EXIT); } int g19() {
+} int e15() { processMoveCommand(293, 0, COMMAND_SOUTH, -COMMAND_EXIT); } 
+
+int room_with_translucent_walls_295() {
 	if (!currentCommandIsOneOf(COMMAND_EXIT, COMMAND_EAST, COMMAND_RETREAT, -1))
-		return 0; if (item_location[121] == 484) { set_object_location(121, object_type_3_buffer[PLAYER_LOCATION]); set_value(0, 121, 0); } processMoveCommand(293, -2);
-} int q26() {
+		return 0; 
+	
+	if (item_location[ITEM_GOBLINS] == 484) {
+		set_object_location(ITEM_GOBLINS, object_type_3_buffer[PLAYER_LOCATION]);
+		set_value(0, 121, 0); 
+	} 
+	
+	processMoveCommand(293, -2);
+} 
+
+int q26() {
 	processMoveCommand(269, object_type_3_buffer[685], COMMAND_PLUGH, -LOCATION_PLOVER); if (!currentCommandIsOneOf(COMMAND_DOWN, COMMAND_CLIMB, COMMAND_NORTH, COMMAND_SOUTH, COMMAND_EAST, COMMAND_WEST, COMMAND_NORTHEAST,
 		COMMAND_NORTHWEST, COMMAND_SOUTHEAST, COMMAND_SOUTHWEST, COMMAND_JUMP, -1)) return 0; printMessage(0, 1136, 0); processMoveCommand(LOCATION_LIMBO, -1); die();
 } 

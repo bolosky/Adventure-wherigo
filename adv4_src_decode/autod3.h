@@ -28,7 +28,7 @@ m10(); extern int anteroom_235(); extern int command_witts_end_236(); extern int
 n14(); extern int s15(); extern int u10(); extern int c20(); extern int
 balcony_above_treasure_chamber_242(); extern int g16(); extern int c21(); extern int r14(); extern int
 sloping_corridor_246(); extern int f7(); extern int i20(); extern int p18(); extern int y14();
-extern int q15(); extern int k9(); extern int a12(); extern int x14(); extern
+extern int q15(); extern int breath_taking_view_252(); extern int a12(); extern int x14(); extern
 int m11(); extern int x15(); extern int a13(); extern int i21(); extern
 int k10(); extern int t17(); extern int x16(); extern int n15(); extern
 int o9(); extern int m12(); extern int m13(); extern int o10(); extern int
@@ -39,7 +39,7 @@ w15(); extern int n16(); extern int q17(); extern int r15(); extern int
 a16(); extern int d21(); extern int x17(); extern int v18(); extern int
 o11(); extern int j19(); extern int p19(); extern int u12(); extern int
 g18(); extern int w16(); extern int k11(); extern int e15(); extern int
-g19(); extern int b17(); extern int r16(); extern int h12(); extern int
+room_with_translucent_walls_295(); extern int b17(); extern int r16(); extern int h12(); extern int
 h13(); extern int t19(); extern int q18(); extern int o12(); extern int
 q19(); extern int c23(); extern int q20(); extern int t20(); extern int
 m14(); extern int d22(); extern int g20(); extern int p20(); extern int
@@ -367,7 +367,7 @@ int (*command_by_location_dispatch_table[])()= {
 	p18,	// 249
 	y14,	// 250
 	q15,	// 251
-	k9,	// 252
+	breath_taking_view_252,	// 252
 	a12,	// 253
 	x14,	// 254
 	m11,	// 255
@@ -410,7 +410,7 @@ int (*command_by_location_dispatch_table[])()= {
 	w16,	// 292
 	k11,	// 293
 	e15,	// 294
-	g19,	// 295
+	room_with_translucent_walls_295,	// 295
 	b17,	// 296
 	r16,	// 297
 	h12,	// 298
@@ -797,9 +797,9 @@ c17,hall_of_mt_king_155,q10,m7,n10,c18,a10,s12,j13,n11,v11, k6,a11,g13,z7,p15,j1
 r12,g14,v12,v13,z8,c19,q11,w12,h10,p16,i17, n12,q12,j15,g15,e10,j16,j17,z9,h11,w13,m8,
 o6,l17,bottom_of_pit_with_stream_200,dusty_rock_room_201,r13,k8,n13,m9,command_noop,bedquilt_207,command_swiss_cheese_208, slab_room_209,i18,y12,f5,v14,d18,t14,w14,too_tight_canyon_217,v15,q13,
 v16,o8,s13,v17,command_waterfall_224,b15,l18,alcove_227,t16,e12,s14, i19,p17,f6,m10,anteroom_235,command_witts_end_236,e14,n14,s15,u10,c20,
-balcony_above_treasure_chamber_242,g16,c21,r14,sloping_corridor_246,f7,i20,p18,y14,q15,k9, a12,x14,m11,x15,a13,i21,k10,t17,x16,n15,o9,
+balcony_above_treasure_chamber_242,g16,c21,r14,sloping_corridor_246,f7,i20,p18,y14,q15,breath_taking_view_252, a12,x14,m11,x15,a13,i21,k10,t17,x16,n15,o9,
 m12,m13,o10,a14,s16,q16,b16,d20,i22,a15,u11, g17,i23,t18,c22,w15,n16,q17,r15,a16,d21,x17,
-v18,o11,j19,p19,u12,g18,w16,k11,e15,g19,b17, r16,h12,h13,t19,q18,o12,q19,c23,q20,t20,m14,
+v18,o11,j19,p19,u12,g18,w16,k11,e15,room_with_translucent_walls_295,b17, r16,h12,h13,t19,q18,o12,q19,c23,q20,t20,m14,
 d22,g20,p20,v19,h14,m15,command_vaulted_ceiling_316,y15,x18,x19,KilobyteInputBuffer0, f8,i24,m16,a17,x20,h15,brink_of_bottomless_pit_325,p21,o13,h16,b18,
 w17,KilobyteInputBuffer1,e16,n17,f9,x21,c24,l20,a18,o14,s17, c25,f10,q21,w18,e17,d23,s18,b19,f11,z10,s19,
 u13,i25,r17,p22,m17,z11,n18,a19,b20,i26,p23, g22,small_icy_chamber_364,k12,s20,north_end_of_tight_passage_367,z12,r18,r19,q23,n19,u14,
