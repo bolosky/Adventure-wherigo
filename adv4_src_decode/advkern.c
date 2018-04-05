@@ -1089,15 +1089,14 @@ e6(p4, d8, q5) int p4; int d8; int q5; { int i6; int
 
 		x7();
 
-		BJBMessage(0, 1701, 0); // BJB
-		BJBMessage(64-64, 1058, 0);
+		BJBMessage(64-64, 1424, 0);
 
 
 
-		BJBMessage(0, 1061, 0);
-		BJBMessage(0, 1059, 0);
-		BJBMessage(0, 1057, 0);
-		BJBMessage(0, 1158, 0);
+		BJBMessage(0, 1121, 0);
+		BJBMessage(0, 1122, 0);
+		BJBMessage(0, 1123, 0);
+		BJBMessage(0, 1139, 0);
 
 		if (0)
 		{

@@ -192,19 +192,25 @@ int breath_taking_view_252() {
 		set_object_location(9, object_type_3_buffer[PLAYER_LOCATION]);
 	} 
 	
-	if (!currentCommandIsOneOf(142, COMMAND_CROSS, COMMAND_NORTH, -1)) 
+	if (!currentCommandIsOneOf(LOCATION_VALLEY, COMMAND_CROSS, COMMAND_NORTH, -1))
 		return 0; 
 	
 	if (object_type_3_buffer[30] == 0) {
-		printMessage(PRINT_MESSAGE_END_COMMAND, 1120, 0);
+		printMessage(PRINT_MESSAGE_END_COMMAND, 1120, 0); // I'm  afraid  I can't go that way - walking on red-hot lava is contrary to union regulations (and is bad for your health anyhow).
 	} 
 	
-	if (isItemAtLocation(64, 2)) {
-		if (isItemAtLocation(38, -1)) { 
-			printMessage(0, 1124, 0); set_object_location(38, LOCATION_LIMBO); }
-		else {
+	if (isItemAtLocation(ITEM_RING, 2)) {
+		if (isItemAtLocation(ITEM_BEAR, -1)) {
+			printMessage(0, 1124, 0); // As  you  approach  the  center  of the archway, hot vapors saturated with brimstone drift up from the lava in the gorge  beneath  your  feet.   The
+									  // mithril  ring  on your finger quivers and glows, and a swirling vortex of white vapor encircles you and protects you from the fumes.  The  bear  is
+									  // not  so  lucky,  though,  since  the  vortex is rather small; the noxious gasses choke it and it staggers off of the side of the arch and  plummets
+									  // into the gorge below.
+			set_object_location(ITEM_BEAR, LOCATION_LIMBO); 
+		} else {
 			if (!(isObjectFlagSet(LOCATION_SOUTH_END_STONE_FACES, 4))) {
-				modifyObjectFlag('c', 252, 8); printMessage(0, 1122, 0);
+				modifyObjectFlag('c', 252, 8); 
+				printMessage(0, 1122, 0); // As  you  approach  the  center  of the archway, hot vapors saturated with brimstone drift up from the lava in the gorge  beneath  your  feet.   The
+										  // mithril  ring  on  your finger quivers and glows, and the fumes eddy away from the bridge without harming you.
 			}
 		} 
 		
@@ -215,15 +221,16 @@ int breath_taking_view_252() {
 		processMoveCommand(LOCATION_SOUTH_END_STONE_FACES, -2);
 	} 
 	
-	if (isItemAtLocation(38, -1)) { 
-		printMessage(0, 1123, 0); 
-	}
-	else { 
-		printMessage(0, 1121, 0); 
+	if (isItemAtLocation(ITEM_BEAR, -1)) {
+		printMessage(0, 1123, 0); // As  you  approach  the  center  of the archway, hot vapors saturated with brimstone drift up from the lava in the gorge beneath your feet.  You and
+								  // the bear are both overcome by the noxious gasses  and,  with  your  lungs burned out, slip off of the bridge and plummet into the gorge.
+	} else { 
+		printMessage(0, 1121, 0); // As  you  approach  the  center  of the archway, hot vapors saturated with brimstone drift up from the lava in the gorge beneath your feet.  You are
+							      // swiftly overcome by the foul gasses and, with your lungs burned out, fall off of the bridge and into the gorge.
 	}
 
-	if (isItemAtLocation(64, -1)) { 
-		printMessage(0, 1424, 0); 
+	if (isItemAtLocation(ITEM_RING, -1)) {
+		printMessage(0, 1424, 0); // (Perhaps  you should have worn some sort of protection before taking that nonchalant stroll).
 	} 
 	
 	processMoveCommand(LOCATION_LIMBO, -1); 
@@ -508,12 +515,19 @@ int u14() {
 			die();
 		} processMoveCommand(252, -2);
 	} printMessage(0, 1121, 0); processMoveCommand(LOCATION_LIMBO, -1); die();
-} int x14() {
-	if
-		(object_type_3_buffer[31] == 1) {
-		processMoveCommand(255, 0, -COMMAND_NORTHWEST); processMoveCommand(263, 0, -COMMAND_NORTH); processMoveCommand(292, 0, -COMMAND_NORTHEAST);
-	} processMoveCommand(LOCATION_SOUTH_END_STONE_FACES, 0, -COMMAND_SOUTH);
-} int m11() {
+} 
+
+int north_end_stone_faces_254() 
+{
+	if (object_type_3_buffer[31] == 1) {
+		processMoveCommand(255, 0, -COMMAND_NORTHWEST); 
+		processMoveCommand(263, 0, -COMMAND_NORTH); 
+		processMoveCommand(292, 0, -COMMAND_NORTHEAST);
+	} 
+	processMoveCommand(LOCATION_SOUTH_END_STONE_FACES, 0, -COMMAND_SOUTH);
+} 
+
+int m11() {
 	processMoveCommand(254, 0, -COMMAND_SOUTH); if (!currentCommandIsNotOneOf(COMMAND_NORTH, -1)) return 0; set_value(0, 14, 0); set_object_location(14, 256);
 	processMoveCommand(256, -2);
 } int x15() {
@@ -558,32 +572,52 @@ int u14() {
 	{
 		object_type_3_buffer[25] += 1; if (object_type_3_buffer[25] == 1) { printMessage(0, 1142, 0); } processMoveCommand(264, -2);
 	}
-} int m12()
+} 
+
+int north_of_basilisk_264()
 {
-	processMoveCommand(265, 0, -COMMAND_NORTH); if (currentCommandContains(COMMAND_SOUTH)) {
-		object_type_3_buffer[25] -= 1; if (object_type_3_buffer[25] == 0) {
-			w25(); if
-				(isItemAtLocation(103, 2)) {
-				printMessage(0, 1143, 0); set_value(0, 25, 2); modifyObjectFlag('c', 264, 8);
-			}
-			else {
+	processMoveCommand(265, 0, -COMMAND_NORTH); 
+	if (currentCommandContains(COMMAND_SOUTH)) {
+		object_type_3_buffer[25] -= 1; 
+		if (object_type_3_buffer[25] == 0) {
+			w25(); 
+			if (isItemAtLocation(ITEM_PLATE, 2)) {
+				printMessage(0, 1143, 0); 
+				set_value(0, 25, 2); 
+				modifyObjectFlag('c', 264, 8);
+			} else {
 				printMessage(0, 1144, 0);
 				die();
 			}
-		} processMoveCommand(263, -2);
+		} 
+		processMoveCommand(263, -2);
 	}
-} int m13() {
+} 
+
+int m13() {
 	if (currentCommandContains(COMMAND_LOOK)) { return 0; } processMoveCommand(315, 0, COMMAND_NORTH, -315);
 	processMoveCommand(264, 0, -COMMAND_SOUTH); processMoveCommand(266, 0, COMMAND_DOWN, -5); check_command_steps();
-} int y15() {
+} 
+
+int peelgrunt_room_315() {
 	if (currentCommandContains(COMMAND_ENTER)) {
-		if
-			(object_type_3_buffer[35] == 1) {
-			set_value(SET_VALUE_DEREFERENCE, 680, PLAYER_LOCATION); processMoveCommand(462, -2);
-		} printMessage(PRINT_MESSAGE_END_COMMAND, 1160, 0);
-	} if (!currentCommandIsOneOf(COMMAND_SOUTH, COMMAND_EXIT, 250, -1))
-		return 0; if (object_type_3_buffer[35] == 1) { printMessage(PRINT_MESSAGE_END_COMMAND, 1135, 0); } processMoveCommand(265, -2);
-} int o10() {
+		if	(object_type_3_buffer[35] == 1) {
+			set_value(SET_VALUE_DEREFERENCE, 680, PLAYER_LOCATION); 
+			processMoveCommand(462, -2);
+		} 
+		printMessage(PRINT_MESSAGE_END_COMMAND, 1160, 0); // The safe's door is closed, and you can't get in!
+	} 
+	
+	if (!currentCommandIsOneOf(COMMAND_SOUTH, COMMAND_EXIT, 250, -1))
+		return 0; 
+	
+	if (object_type_3_buffer[35] == 1) { 
+		printMessage(PRINT_MESSAGE_END_COMMAND, 1135, 0); 
+	} 
+	processMoveCommand(265, -2);
+} 
+
+int o10() {
 	if
 		(currentCommandContains(COMMAND_LOOK)) {
 		return 0;
@@ -625,7 +659,7 @@ int room_with_translucent_walls_295() {
 	
 	if (item_location[ITEM_GOBLINS] == 484) {
 		set_object_location(ITEM_GOBLINS, object_type_3_buffer[PLAYER_LOCATION]);
-		set_value(0, 121, 0); 
+		set_value(0, ITEM_GOBLINS, 0); 
 	} 
 	
 	processMoveCommand(293, -2);

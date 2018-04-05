@@ -848,8 +848,8 @@ int die() {
 	} 
 	set_value(0, 17, 0); 
 	set_object_location(17, 484); 
-	if (!(item_location[121] == LOCATION_LIMBO)) { 
-		set_object_location(121, 484); 
+	if (!(item_location[ITEM_GOBLINS] == LOCATION_LIMBO)) { 
+		set_object_location(ITEM_GOBLINS, 484); 
 	} 
 	
 	if (object_type_3_buffer[25] == 1)
@@ -952,12 +952,18 @@ int w25() {
 	}
 } 
 
-int t35() {
-	if (g10(121, -1))
+int update_goblin_count() {
+	if (g10(ITEM_GOBLINS, -1))
 	{
-		if (object_type_3_buffer[121] == 6) { die(); } object_type_3_buffer[121] += 1;
+		if (object_type_3_buffer[ITEM_GOBLINS] == 6) { 
+			die(); 
+		} 
+		
+		object_type_3_buffer[ITEM_GOBLINS] += 1;
 	}
-} int j39() {
+} 
+
+int j39() {
 	set_value(0, 701, 0);
 	set_value(0, 700, 1); 
 	*getObjectPointer(675) = -1; 
@@ -1013,7 +1019,7 @@ int y21() {
 		printMessage(0, 939, 0); // You are being followed by a very large, tame bear.
 	} 
 
-	t35();
+	update_goblin_count();
 } 
 
 int takeBird()
