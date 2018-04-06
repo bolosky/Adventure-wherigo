@@ -50,7 +50,7 @@ int t37() {
 		} if (g10(27, -1)) { set_value(0, 118, 10); } if (g10(25, -1) && object_type_3_buffer[25] < 2)
 		{
 			set_value(0, 118, 11);
-		} if (g10(121, -1)) { set_value(0, 118, 12); set_object_location(121, 484); } if (g10(87, -1))
+		} if (g10(ITEM_GOBLINS, -1)) { set_value(0, 118, 12); set_object_location(ITEM_GOBLINS, 484); } if (g10(87, -1))
 		{
 			set_value(0, 118, 13);
 		} if (g10(24, -1)) { set_value(0, 118, 14); }
@@ -157,7 +157,7 @@ int o21() {
 				} printMessage(12, 1146, 670); die();
 			} if (g10(27, -1)) {
 				printMessage(76, 1147, 670);
-			} if (g10(121, -1)) { printMessage(12, 1148, 670); die(); } if (g10(135, -1)) {
+			} if (g10(ITEM_GOBLINS, -1)) { printMessage(12, 1148, 670); die(); } if (g10(135, -1)) {
 				printMessage(12, 1314, 670);
 				die();
 			} if (currentCommandContains(COMMAND_THROW)) { set_object_location(object_type_3_buffer[670], r5); return 0; } printMessage(12, 1489, 669); printMessage(76, 1490, 670);
@@ -537,9 +537,9 @@ int h29() {
 	} printMessage(76, MESSAGE_NO_X_HERE, ITEM_RAT);
 } int v38() {
 	set_value(0, 117, 0);
-	if (currentCommandContains(COMMAND_THROW) && object_type_3_buffer[PLAYER_LOCATION] != LOCATION_CELLAR && !g10(121, -1)) { n24(); } printMessage(0, 1510, 0); set_object_location(117, PLAYER_LOCATION);
-	if (object_type_3_buffer[PLAYER_LOCATION] == LOCATION_CELLAR) { e24(); } if (g10(121, -1)) {
-		set_object_location(117, LOCATION_LIMBO); set_object_location(121, LOCATION_LIMBO);
+	if (currentCommandContains(COMMAND_THROW) && object_type_3_buffer[PLAYER_LOCATION] != LOCATION_CELLAR && !g10(ITEM_GOBLINS, -1)) { n24(); } printMessage(0, 1510, 0); set_object_location(117, PLAYER_LOCATION);
+	if (object_type_3_buffer[PLAYER_LOCATION] == LOCATION_CELLAR) { e24(); } if (g10(ITEM_GOBLINS, -1)) {
+		set_object_location(117, LOCATION_LIMBO); set_object_location(ITEM_GOBLINS, LOCATION_LIMBO);
 		printMessage(PRINT_MESSAGE_END_COMMAND, 1151, 0);
 	} longjmp(done_with_command, 1);
 } int s31() {
@@ -953,7 +953,7 @@ int move_from_mt_king() {
 		return 0;
 	} 
 	
-	if (g10(7, -1) && object_type_3_buffer[676] != object_type_3_buffer[681]) {
+	if (g10(ITEM_SNAKE, -1) && object_type_3_buffer[676] != object_type_3_buffer[681]) {
 		w25(); 
 		if (object_type_3_buffer[ITEM_SNAKE] == 1) {
 			printMessage(0, 1426, 0); // The  snake attempts to block your way, but its movements are sluggish and you manage to slip past.  The snake,  now  fully  awake,  hisses  angrily after you.

@@ -28,10 +28,10 @@ m10(); extern int anteroom_235(); extern int command_witts_end_236(); extern int
 n14(); extern int s15(); extern int u10(); extern int c20(); extern int
 balcony_above_treasure_chamber_242(); extern int g16(); extern int c21(); extern int r14(); extern int
 sloping_corridor_246(); extern int f7(); extern int i20(); extern int p18(); extern int y14();
-extern int q15(); extern int k9(); extern int a12(); extern int x14(); extern
-int m11(); extern int x15(); extern int a13(); extern int i21(); extern
+extern int q15(); extern int breath_taking_view_252(); extern int a12(); extern int north_end_stone_faces_254(); extern
+int south_end_fog_filled_room_255(); extern int in_fog_256(); extern int a13(); extern int i21(); extern
 int k10(); extern int t17(); extern int x16(); extern int n15(); extern
-int o9(); extern int m12(); extern int m13(); extern int o10(); extern int
+int o9(); extern int north_of_basilisk_264(); extern int m13(); extern int o10(); extern int
 a14(); extern int s16(); extern int q16(); extern int b16(); extern int
 d20(); extern int i22(); extern int a15(); extern int u11(); extern int
 g17(); extern int i23(); extern int t18(); extern int c22(); extern int
@@ -39,12 +39,12 @@ w15(); extern int n16(); extern int q17(); extern int r15(); extern int
 a16(); extern int d21(); extern int x17(); extern int v18(); extern int
 o11(); extern int j19(); extern int p19(); extern int u12(); extern int
 g18(); extern int w16(); extern int k11(); extern int e15(); extern int
-g19(); extern int b17(); extern int r16(); extern int h12(); extern int
+room_with_translucent_walls_295(); extern int b17(); extern int r16(); extern int h12(); extern int
 h13(); extern int t19(); extern int q18(); extern int o12(); extern int
 q19(); extern int c23(); extern int q20(); extern int t20(); extern int
 m14(); extern int d22(); extern int g20(); extern int p20(); extern int
 v19(); extern int h14(); extern int m15(); extern int command_vaulted_ceiling_316(); extern int
-y15(); extern int x18(); extern int x19(); extern int KilobyteInputBuffer0(); extern int
+peelgrunt_room_315(); extern int x18(); extern int x19(); extern int KilobyteInputBuffer0(); extern int
 f8(); extern int i24(); extern int m16(); extern int a17(); extern int x20();
 extern int h15(); extern int brink_of_bottomless_pit_325(); extern int p21(); extern int o13();
 extern int h16(); extern int b18(); extern int w17(); extern int KilobyteInputBuffer1();
@@ -85,7 +85,7 @@ int l23(); extern int command_valuation_room_483(); extern int KilobyteInputBuff
 int command_restore_490(); extern int i32(); extern int KilobyteInputBuffer6(); extern int z19(); extern
 int command_zorton_496(); extern int t27(); extern int command_thurb_498(); extern int o17(); extern
 int d28(); extern int r21(); extern int n21(); extern int y19(); extern
-int m23(); extern int z20(); extern int v28(); extern int command_foo_507(); extern
+int command_melinkurion_504(); extern int z20(); extern int v28(); extern int command_foo_507(); extern
 int b22(); extern int g28(); extern int a21(); extern int i33(); extern
 int d29(); extern int i34(); extern int t28(); extern int v29(); extern
 int d30(); extern int i35(); extern int x25(); extern int a22(); extern
@@ -367,11 +367,11 @@ int (*command_by_location_dispatch_table[])()= {
 	p18,	// 249
 	y14,	// 250
 	q15,	// 251
-	k9,	// 252
+	breath_taking_view_252,	// 252
 	a12,	// 253
-	x14,	// 254
-	m11,	// 255
-	x15,	// 256
+	north_end_stone_faces_254,	// 254
+	south_end_fog_filled_room_255,	// 255
+	in_fog_256,	// 256
 	a13,	// 257
 	i21,	// 258
 	k10,	// 259
@@ -379,7 +379,7 @@ int (*command_by_location_dispatch_table[])()= {
 	x16,	// 261
 	n15,	// 262
 	o9,	// 263
-	m12,	// 264
+	north_of_basilisk_264,	// 264
 	m13,	// 265
 	o10,	// 266
 	a14,	// 267
@@ -410,7 +410,7 @@ int (*command_by_location_dispatch_table[])()= {
 	w16,	// 292
 	k11,	// 293
 	e15,	// 294
-	g19,	// 295
+	room_with_translucent_walls_295,	// 295
 	b17,	// 296
 	r16,	// 297
 	h12,	// 298
@@ -430,7 +430,7 @@ int (*command_by_location_dispatch_table[])()= {
 	h14,	// 312
 	m15,	// 313
 	command_vaulted_ceiling_316,	// 314
-	y15,	// 315
+	peelgrunt_room_315,	// 315
 	x18,	// 316
 	x19,	// 317
 	KilobyteInputBuffer0,	// 318
@@ -619,7 +619,7 @@ int (*command_by_location_dispatch_table[])()= {
 	r21,	// 501
 	n21,	// 502
 	y19,	// 503
-	m23,	// 504
+	command_melinkurion_504,	// 504
 	z20,	// 505
 	v28,	// 506
 	command_foo_507,	// 507
@@ -797,10 +797,10 @@ c17,hall_of_mt_king_155,q10,m7,n10,c18,a10,s12,j13,n11,v11, k6,a11,g13,z7,p15,j1
 r12,g14,v12,v13,z8,c19,q11,w12,h10,p16,i17, n12,q12,j15,g15,e10,j16,j17,z9,h11,w13,m8,
 o6,l17,bottom_of_pit_with_stream_200,dusty_rock_room_201,r13,k8,n13,m9,command_noop,bedquilt_207,command_swiss_cheese_208, slab_room_209,i18,y12,f5,v14,d18,t14,w14,too_tight_canyon_217,v15,q13,
 v16,o8,s13,v17,command_waterfall_224,b15,l18,alcove_227,t16,e12,s14, i19,p17,f6,m10,anteroom_235,command_witts_end_236,e14,n14,s15,u10,c20,
-balcony_above_treasure_chamber_242,g16,c21,r14,sloping_corridor_246,f7,i20,p18,y14,q15,k9, a12,x14,m11,x15,a13,i21,k10,t17,x16,n15,o9,
-m12,m13,o10,a14,s16,q16,b16,d20,i22,a15,u11, g17,i23,t18,c22,w15,n16,q17,r15,a16,d21,x17,
-v18,o11,j19,p19,u12,g18,w16,k11,e15,g19,b17, r16,h12,h13,t19,q18,o12,q19,c23,q20,t20,m14,
-d22,g20,p20,v19,h14,m15,command_vaulted_ceiling_316,y15,x18,x19,KilobyteInputBuffer0, f8,i24,m16,a17,x20,h15,brink_of_bottomless_pit_325,p21,o13,h16,b18,
+balcony_above_treasure_chamber_242,g16,c21,r14,sloping_corridor_246,f7,i20,p18,y14,q15,breath_taking_view_252, a12,north_end_stone_faces_254,south_end_fog_filled_room_255,in_fog_256,a13,i21,k10,t17,x16,n15,o9,
+north_of_basilisk_264,m13,o10,a14,s16,q16,b16,d20,i22,a15,u11, g17,i23,t18,c22,w15,n16,q17,r15,a16,d21,x17,
+v18,o11,j19,p19,u12,g18,w16,k11,e15,room_with_translucent_walls_295,b17, r16,h12,h13,t19,q18,o12,q19,c23,q20,t20,m14,
+d22,g20,p20,v19,h14,m15,command_vaulted_ceiling_316,peelgrunt_room_315,x18,x19,KilobyteInputBuffer0, f8,i24,m16,a17,x20,h15,brink_of_bottomless_pit_325,p21,o13,h16,b18,
 w17,KilobyteInputBuffer1,e16,n17,f9,x21,c24,l20,a18,o14,s17, c25,f10,q21,w18,e17,d23,s18,b19,f11,z10,s19,
 u13,i25,r17,p22,m17,z11,n18,a19,b20,i26,p23, g22,small_icy_chamber_364,k12,s20,north_end_of_tight_passage_367,z12,r18,r19,q23,n19,u14,
 o15,f12,v21,beach_377,q24,i27,q25,h17,q26,living_quarters_383,w19, f13,k13,u15,z13,t22,h18,basement_391,curtain_entrance_392,cellar_393,s21,o16,
@@ -808,7 +808,7 @@ west_of_causeway_396,east_of_causeway_397,a20,k14,z15,p24,h19,g23,k15,s22,k16, i
 i30,sea_view_419,g24,south_end_of_culvert_421,x23,q29,h20,partially_collapsed_junction_425,dead_end_426,stream_maze_427,stream_maze_428, f15,i31,h21,lost_in_mist_432,small_dank_cave_433,rock_in_mist_434,dwarves_stores_435,f16,t25,l21,v25,
 d25,g25,l22,n20,v26,t26,q30,s23,KilobyteInputBuffer3,g26,p26, s24,m21,g27,d26,e19,f17,f18,y17,f19,u16,command_lost_in_woods_461,
 KilobyteInputBuffer4,v27,command_noop,command_noop,command_noop,command_noop,command_noop,command_noop,command_noop,command_noop,command_noop, command_noop,command_noop,command_noop,command_noop,command_noop,command_noop,command_noop,command_noop,command_noop,l23,command_valuation_room_483,
-KilobyteInputBuffer5,command_noop,command_noop,command_noop,command_noop,d27,command_restore_490,i32,KilobyteInputBuffer6,z19,command_noop, command_noop,command_zorton_496,t27,command_thurb_498,o17,d28,r21,n21,y19,m23,z20,
+KilobyteInputBuffer5,command_noop,command_noop,command_noop,command_noop,d27,command_restore_490,i32,KilobyteInputBuffer6,z19,command_noop, command_noop,command_zorton_496,t27,command_thurb_498,o17,d28,r21,n21,y19,command_melinkurion_504,z20,
 v28,command_foo_507,b22,g28,a21,i33,command_noop,command_noop,d29,i34,t28, v29,d30,i35,x25,a22,command_noop,l24,k18,command_noop,p27,d31,
 t29,command_noop,u17,p28,q32,command_noop,b23,e20,m24,KilobyteInputBuffer8,z21, KilobyteInputBuffer9,v30,j30,o19,s25,command_cut_544,j31,f20,o20,p30,n22,
 i36,d32,j32,l25,i37,command_drink_555,c27,w21,w22,e21,t30, r22,t31,g29,command_break,p31,t32,i38,l26,b24,command_noop,q34,
