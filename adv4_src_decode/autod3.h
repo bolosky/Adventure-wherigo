@@ -29,7 +29,7 @@ n14(); extern int s15(); extern int u10(); extern int c20(); extern int
 balcony_above_treasure_chamber_242(); extern int g16(); extern int c21(); extern int r14(); extern int
 sloping_corridor_246(); extern int f7(); extern int i20(); extern int p18(); extern int y14();
 extern int q15(); extern int breath_taking_view_252(); extern int a12(); extern int north_end_stone_faces_254(); extern
-int m11(); extern int x15(); extern int a13(); extern int i21(); extern
+int south_end_fog_filled_room_255(); extern int in_fog_256(); extern int a13(); extern int i21(); extern
 int k10(); extern int t17(); extern int x16(); extern int n15(); extern
 int o9(); extern int north_of_basilisk_264(); extern int m13(); extern int o10(); extern int
 a14(); extern int s16(); extern int q16(); extern int b16(); extern int
@@ -370,8 +370,8 @@ int (*command_by_location_dispatch_table[])()= {
 	breath_taking_view_252,	// 252
 	a12,	// 253
 	north_end_stone_faces_254,	// 254
-	m11,	// 255
-	x15,	// 256
+	south_end_fog_filled_room_255,	// 255
+	in_fog_256,	// 256
 	a13,	// 257
 	i21,	// 258
 	k10,	// 259
@@ -797,7 +797,7 @@ c17,hall_of_mt_king_155,q10,m7,n10,c18,a10,s12,j13,n11,v11, k6,a11,g13,z7,p15,j1
 r12,g14,v12,v13,z8,c19,q11,w12,h10,p16,i17, n12,q12,j15,g15,e10,j16,j17,z9,h11,w13,m8,
 o6,l17,bottom_of_pit_with_stream_200,dusty_rock_room_201,r13,k8,n13,m9,command_noop,bedquilt_207,command_swiss_cheese_208, slab_room_209,i18,y12,f5,v14,d18,t14,w14,too_tight_canyon_217,v15,q13,
 v16,o8,s13,v17,command_waterfall_224,b15,l18,alcove_227,t16,e12,s14, i19,p17,f6,m10,anteroom_235,command_witts_end_236,e14,n14,s15,u10,c20,
-balcony_above_treasure_chamber_242,g16,c21,r14,sloping_corridor_246,f7,i20,p18,y14,q15,breath_taking_view_252, a12,north_end_stone_faces_254,m11,x15,a13,i21,k10,t17,x16,n15,o9,
+balcony_above_treasure_chamber_242,g16,c21,r14,sloping_corridor_246,f7,i20,p18,y14,q15,breath_taking_view_252, a12,north_end_stone_faces_254,south_end_fog_filled_room_255,in_fog_256,a13,i21,k10,t17,x16,n15,o9,
 north_of_basilisk_264,m13,o10,a14,s16,q16,b16,d20,i22,a15,u11, g17,i23,t18,c22,w15,n16,q17,r15,a16,d21,x17,
 v18,o11,j19,p19,u12,g18,w16,k11,e15,room_with_translucent_walls_295,b17, r16,h12,h13,t19,q18,o12,q19,c23,q20,t20,m14,
 d22,g20,p20,v19,h14,m15,command_vaulted_ceiling_316,peelgrunt_room_315,x18,x19,KilobyteInputBuffer0, f8,i24,m16,a17,x20,h15,brink_of_bottomless_pit_325,p21,o13,h16,b18,

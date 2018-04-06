@@ -527,17 +527,39 @@ int north_end_stone_faces_254()
 	processMoveCommand(LOCATION_SOUTH_END_STONE_FACES, 0, -COMMAND_SOUTH);
 } 
 
-int m11() {
-	processMoveCommand(254, 0, -COMMAND_SOUTH); if (!currentCommandIsNotOneOf(COMMAND_NORTH, -1)) return 0; set_value(0, 14, 0); set_object_location(14, 256);
+int south_end_fog_filled_room_255() {
+	processMoveCommand(254, 0, -COMMAND_SOUTH); 
+	if (!currentCommandIsNotOneOf(COMMAND_NORTH, -1)) 
+		return 0; 
+	
+	set_value(0, 14, 0); 
+	set_object_location(14, 256);
 	processMoveCommand(256, -2);
-} int x15() {
-	if (!currentCommandIsOneOf(COMMAND_NORTH, COMMAND_EAST, COMMAND_SOUTH, COMMAND_WEST, COMMAND_NORTHEAST, COMMAND_NORTHWEST, COMMAND_SOUTHEAST, COMMAND_SOUTHWEST, -1)) return
-		0; f3(676, LOCATION_LIMBO); j36(); f3(699, COMMAND_NORTH); object_type_3_buffer[699] += object_type_3_buffer[15]; if ((object_type_3_buffer[699] == object_type_3_buffer[670]
+} 
+
+int in_fog_256() {
+	if (!currentCommandIsOneOf(COMMAND_NORTH, COMMAND_EAST, COMMAND_SOUTH, COMMAND_WEST, COMMAND_NORTHEAST, COMMAND_NORTHWEST, COMMAND_SOUTHEAST, COMMAND_SOUTHWEST, -1)) 
+		return 0; 
+	
+	f3(676, LOCATION_LIMBO); 
+	j36(); 
+	
+	f3(699, COMMAND_NORTH); 
+	
+	object_type_3_buffer[699] += object_type_3_buffer[15]; 
+	
+	if ((object_type_3_buffer[699] == object_type_3_buffer[670]
 			&& object_type_3_buffer[697] == 2 || object_type_3_buffer[699] == object_type_3_buffer[669]) && g10(15, -1)) {
-		set_value(0, 14, 8); object_type_3_buffer[684]
-			= cheezy_rand(1351 - 1348 + 1) + 1348; processMoveCommand(257, -2);
-	} processMoveCommand(256, -2);
-} int a13() {
+		
+		set_value(0, 14, 8); 
+		object_type_3_buffer[684] = cheezy_rand(1351 - 1348 + 1) + 1348; 
+		processMoveCommand(257, -2);
+	} 
+	
+	processMoveCommand(256, -2);
+} 
+
+int a13() {
 	if (currentCommandContains(COMMAND_DOWN))
 	{
 		set_object_location(14, 255); processMoveCommand(258, -2);
