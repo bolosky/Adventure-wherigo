@@ -845,18 +845,32 @@ int d20() {
 	if (currentCommandContains(COMMAND_EAST)) { if (!(isObjectFlagSet(290, 4))) { set_value(0, 733, 10); } processMoveCommand(290, -2); } if (!currentCommandIsOneOf(COMMAND_NORTH, COMMAND_NORTHEAST, COMMAND_SOUTHEAST, COMMAND_SOUTH, COMMAND_SOUTHWEST, COMMAND_WEST, COMMAND_NORTHWEST, COMMAND_UP, COMMAND_DOWN, -1))
 		return 0; set_value(SET_VALUE_DEREFERENCE, 701, 754); f3(678, 280); f3(679, 281); z24(); set_value(SET_VALUE_DEREFERENCE, 754, 702);
 	longjmp(done_with_command, 1);
-} int o16() { processMoveCommand(161, 0, -COMMAND_UP); processMoveCommand(394, 0, -COMMAND_DOWN); check_command_steps(); } int
-s21() {
-	if (currentCommandContains(COMMAND_CLIMB)) { printMessage(PRINT_MESSAGE_END_COMMAND, 1660, 0); } if (currentCommandContains(77)) { printMessage(PRINT_MESSAGE_END_COMMAND, 1659, 0); } if
-		((currentCommandContains(ITEM_ORB) || currentCommandContains(604)) && item_location[ITEM_ORB] == LOCATION_CELLAR) {
+} int o16() { processMoveCommand(161, 0, -COMMAND_UP); processMoveCommand(394, 0, -COMMAND_DOWN); check_command_steps(); } 
+
+int cellar_view_394() {
+	if (currentCommandContains(COMMAND_CLIMB)) { 
+		printMessage(PRINT_MESSAGE_END_COMMAND, 1660, 0); 
+	} 
+	
+	if (currentCommandContains(77)) {
+		printMessage(PRINT_MESSAGE_END_COMMAND, 1659, 0); 
+	} 
+	
+	if	((currentCommandContains(ITEM_ORB) || currentCommandContains(604)) && item_location[ITEM_ORB] == LOCATION_CELLAR) {
 		printMessage(PRINT_MESSAGE_END_COMMAND, 1227, 0);
-	} if (currentCommandContains(72)) {
-		if
-			(!(currentCommandContains(113) || currentCommandContains(COMMAND_LOOK))) {
+	} 
+	
+	if (currentCommandContains(72)) {
+		if (!(currentCommandContains(113) || currentCommandContains(COMMAND_LOOK))) {
 			printMessage(PRINT_MESSAGE_END_COMMAND, 1226, 0);
 		}
-	} processMoveCommand(395, 0, COMMAND_UP, -5); check_command_steps();
-} int
+	} 
+	
+	processMoveCommand(395, 0, COMMAND_UP, -5); 
+	check_command_steps();
+} 
+
+int
 k8() {
 	processMoveCommand(204, 0, -COMMAND_CLIMB); processMoveCommand(235, 0, -COMMAND_NORTH); processMoveCommand(205, 0, -COMMAND_WEST); processMoveCommand(408, 0, -COMMAND_UP); processMoveCommand(407, 0, -COMMAND_DOWN);
 	check_command_steps();

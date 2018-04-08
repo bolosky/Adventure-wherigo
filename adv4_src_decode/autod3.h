@@ -17,7 +17,7 @@ int n12(); extern int q12(); extern int j15(); extern int g15(); extern
 int e10(); extern int j16(); extern int j17(); extern int z9(); extern int
 h11(); extern int w13(); extern int m8(); extern int o6(); extern int l17();
 extern int bottom_of_pit_with_stream_200(); extern int dusty_rock_room_201(); extern int r13(); extern int k8(); extern
-int n13(); extern int m9(); extern int bedquilt_207(); extern int command_swiss_cheese_208(); extern int
+int n13(); extern int m9(); extern int bedquilt_207(); extern int swiss_cheese_room_208(); extern int
 slab_room_209(); extern int i18(); extern int y12(); extern int f5(); extern int v14();
 extern int d18(); extern int t14(); extern int w14(); extern int too_tight_canyon_217();
 extern int v15(); extern int q13(); extern int v16(); extern int o8(); extern
@@ -63,7 +63,7 @@ int v21(); extern int beach_377(); extern int q24(); extern int i27(); extern
 int q25(); extern int h17(); extern int q26(); extern int living_quarters_383(); extern
 int w19(); extern int f13(); extern int k13(); extern int u15(); extern
 int z13(); extern int t22(); extern int h18(); extern int basement_391(); extern
-int curtain_entrance_392(); extern int cellar_393(); extern int s21(); extern int o16(); extern
+int curtain_entrance_392(); extern int cellar_393(); extern int cellar_view_394(); extern int o16(); extern
 int west_of_causeway_396(); extern int east_of_causeway_397(); extern int a20(); extern int k14(); extern
 int z15(); extern int p24(); extern int h19(); extern int g23(); extern
 int k15(); extern int s22(); extern int k16(); extern int i29(); extern
@@ -323,7 +323,7 @@ int (*command_by_location_dispatch_table[])()= {
 	m9,	// 205
 	command_noop,	// 206
 	bedquilt_207,	// 207
-	command_swiss_cheese_208,	// 208
+	swiss_cheese_room_208,	// 208
 	slab_room_209,	// 209
 	i18,	// 210
 	y12,	// 211
@@ -509,7 +509,7 @@ int (*command_by_location_dispatch_table[])()= {
 	basement_391,	// 391
 	curtain_entrance_392,	// 392
 	cellar_393,	// 393
-	s21,	// 394
+	cellar_view_394,	// 394
 	o16,	// 395
 	west_of_causeway_396,	// 396
 	east_of_causeway_397,	// 397
@@ -795,7 +795,7 @@ command_noop,command_noop,x11,e9,command_noop,command_noop,command_noop,command_
 command_noop,command_noop,command_noop,command_noop,command_outside_building_136,d14,s11,i16,d15,n9,r8, j11,r9,p13,j12,t13,l16,h9,command_top_of_small_pit_150,u9,x12,p14,
 c17,hall_of_mt_king_155,q10,m7,n10,c18,a10,s12,j13,n11,v11, k6,a11,g13,z7,p15,j14,r10,k7,d16,o5,r11,
 r12,g14,v12,v13,z8,c19,q11,w12,h10,p16,i17, n12,q12,j15,g15,e10,j16,j17,z9,h11,w13,m8,
-o6,l17,bottom_of_pit_with_stream_200,dusty_rock_room_201,r13,k8,n13,m9,command_noop,bedquilt_207,command_swiss_cheese_208, slab_room_209,i18,y12,f5,v14,d18,t14,w14,too_tight_canyon_217,v15,q13,
+o6,l17,bottom_of_pit_with_stream_200,dusty_rock_room_201,r13,k8,n13,m9,command_noop,bedquilt_207,swiss_cheese_room_208, slab_room_209,i18,y12,f5,v14,d18,t14,w14,too_tight_canyon_217,v15,q13,
 v16,o8,s13,v17,command_waterfall_224,b15,l18,alcove_227,t16,e12,s14, i19,p17,f6,m10,anteroom_235,command_witts_end_236,e14,n14,s15,u10,c20,
 balcony_above_treasure_chamber_242,g16,c21,r14,sloping_corridor_246,f7,i20,p18,y14,q15,breath_taking_view_252, a12,north_end_stone_faces_254,south_end_fog_filled_room_255,in_fog_256,a13,i21,k10,t17,x16,n15,o9,
 north_of_basilisk_264,m13,o10,a14,s16,q16,b16,d20,i22,a15,u11, g17,i23,t18,c22,w15,n16,q17,r15,a16,d21,x17,
@@ -803,7 +803,7 @@ v18,o11,j19,p19,u12,g18,w16,k11,e15,room_with_translucent_walls_295,b17, r16,h12
 d22,g20,p20,v19,h14,m15,command_vaulted_ceiling_316,peelgrunt_room_315,x18,x19,KilobyteInputBuffer0, f8,i24,m16,a17,x20,h15,brink_of_bottomless_pit_325,p21,o13,h16,b18,
 w17,KilobyteInputBuffer1,e16,n17,f9,x21,c24,l20,a18,o14,s17, c25,f10,q21,w18,e17,d23,s18,b19,f11,z10,s19,
 u13,i25,r17,p22,m17,z11,n18,a19,b20,i26,p23, g22,small_icy_chamber_364,k12,s20,north_end_of_tight_passage_367,z12,r18,r19,q23,n19,u14,
-o15,f12,v21,beach_377,q24,i27,q25,h17,q26,living_quarters_383,w19, f13,k13,u15,z13,t22,h18,basement_391,curtain_entrance_392,cellar_393,s21,o16,
+o15,f12,v21,beach_377,q24,i27,q25,h17,q26,living_quarters_383,w19, f13,k13,u15,z13,t22,h18,basement_391,curtain_entrance_392,cellar_393,cellar_view_394,o16,
 west_of_causeway_396,east_of_causeway_397,a20,k14,z15,p24,h19,g23,k15,s22,k16, i29,z16,m19,m20,q27,q28,unsafe_passage_413,end_of_very_unsafe_tunnel_414,very_low_room_415,d24,inclined_shaft_417,
 i30,sea_view_419,g24,south_end_of_culvert_421,x23,q29,h20,partially_collapsed_junction_425,dead_end_426,stream_maze_427,stream_maze_428, f15,i31,h21,lost_in_mist_432,small_dank_cave_433,rock_in_mist_434,dwarves_stores_435,f16,t25,l21,v25,
 d25,g25,l22,n20,v26,t26,q30,s23,KilobyteInputBuffer3,g26,p26, s24,m21,g27,d26,e19,f17,f18,y17,f19,u16,command_lost_in_woods_461,

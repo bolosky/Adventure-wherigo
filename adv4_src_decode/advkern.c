@@ -1093,10 +1093,10 @@ e6(p4, d8, q5) int p4; int d8; int q5; { int i6; int
 
 
 
-		BJBMessage(0, 1121, 0);
-		BJBMessage(0, 1122, 0);
-		BJBMessage(0, 1123, 0);
-		BJBMessage(0, 1139, 0);
+		BJBMessage(0, 1227, 0);
+		BJBMessage(0, 1226, 0);
+		BJBMessage(0, 1659, 0);
+		BJBMessage(0, 1660, 0);
 
 		if (0)
 		{

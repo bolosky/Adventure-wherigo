@@ -1140,7 +1140,7 @@ int bedquilt_207() {
 	}
 } // bedquilt
 
-int command_swiss_cheese_208() {
+int swiss_cheese_room_208() {
 	processMoveCommand(207, 0, -COMMAND_NORTHEAST); 
 	processMoveCommand(157, 0, -COMMAND_WEST); 
 	processMoveCommand(218, 0, -148); 
