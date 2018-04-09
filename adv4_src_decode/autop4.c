@@ -819,6 +819,7 @@ int s34() {
 	
 	modifyObjectFlag('c', dereference(697), 3); 
 	modifyObjectFlag('c', dereference(710), 6); 
+
 	if (object_type_3_buffer[PLAYER_LOCATION] == LOCATION_Y2)
 	{
 		if (cheezy_rand(100) < 35) { 
