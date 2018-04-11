@@ -578,7 +578,7 @@ int g32() {
 		{
 			modifyObjectFlag('s', dereference(675), 4);
 		}
-		else { g12(); printMessage(PRINT_MESSAGE_END_COMMAND, 897, 0); }
+		else { clear_command(); printMessage(PRINT_MESSAGE_END_COMMAND, 897, 0); }
 	} copy_item_location_dereferencing_if_variable(673, 675); set_object_location(object_type_3_buffer[675], object_type_3_buffer[PLAYER_LOCATION]);
 } int i42() {
 	if (!(object_type_3_buffer[673] == 0)) {
@@ -611,7 +611,7 @@ int g32() {
 		} if (object_type_3_buffer[CARRIED_ITEM_COUNT] < object_type_3_buffer[MAX_CARRIED_ITEMS]) {
 			set_object_location(104, r5); modifyObjectFlag('s', 104, 4);
 			set_value(0, 673, 0); printMessage(12, 1489, 669); printMessage(76, 1490, 670);
-		} g12(); printMessage(PRINT_MESSAGE_END_COMMAND, 897, 0);
+		} clear_command(); printMessage(PRINT_MESSAGE_END_COMMAND, 897, 0);
 	}
 	if (currentCommandContains(535) || currentCommandContains(COMMAND_THROW)) {
 		if (isItemAtLocation(ITEM_ROD,-1)) { return 0; } if (isItemAtLocation(104, -1))
@@ -735,61 +735,61 @@ int compute_score() {
 	}
 } 
 
-int a29() {
+int print_score_and_rank_and_exit_game() {
 	compute_score(); 
 	printMessage(13, 1033, 708); 
 	printMessage(13, 1035, 709);
-	printMessage(13, 1036, 712); 
+	printMessage(13, 1036, 712); // You  have  scored  ASW]_OSB#0p  of  a  possible  maximum of ASW]_OSB#0p points, using , using   turns.
 	printBlankLine();
 	set_value(SET_VALUE_DEREFERENCE, 700, 708); 
 	
 	if (object_type_3_buffer[708] < 30) {
-		printMessage(0, 1041, 0);
+		printMessage(0, 1041, 0); // You are obviously a rank amateur.  Better luck next time.
 		object_type_3_buffer[700] -= 30;
 	}
 	else {
 		if (object_type_3_buffer[708] < 100) {
-			printMessage(0, 1042, 0); 
+			printMessage(0, 1042, 0); // Your score qualifies you as a Novice Adventurer.
 			object_type_3_buffer[700] -= 100;
 		}
 		else {
 			if (object_type_3_buffer[708] < 200) { 
-				printMessage(0, 1043, 0); 
+				printMessage(0, 1043, 0); // You are now an Apprentice Adventurer.
 				object_type_3_buffer[700] -= 200; }
 			else {
 				if (object_type_3_buffer[708] < 300)
 				{
-					printMessage(0, 1044, 0); 
+					printMessage(0, 1044, 0); // You have achieved the rating of Experienced Adventurer.
 					object_type_3_buffer[700] -= 300;
 				}
 				else {
 					if (object_type_3_buffer[708] < 400) {
-						printMessage(0, 1045, 0);
+						printMessage(0, 1045, 0); // You may now consider yourself a Seasoned Adventurer.
 						object_type_3_buffer[700] -= 400;
 					}
 					else {
 						if (object_type_3_buffer[708] < 500) {
-							printMessage(0, 1046, 0); 
+							printMessage(0, 1046, 0); // You have reached the Junior Master status.
 							object_type_3_buffer[700] -= 500;
 						}
 						else {
 							if (object_type_3_buffer[708] < 600) { 
-								printMessage(0, 1047, 0); 
+								printMessage(0, 1047, 0); // Your score puts you in the Master Adventurer class.
 								object_type_3_buffer[700] -= 600; 
 							}
 							else {
 								if (object_type_3_buffer[708] < 650)
 								{
-									printMessage(0, 1048, 0); 
+									printMessage(0, 1048, 0); // You are now a Senior Master Adventurer.
 									object_type_3_buffer[700] -= 650;
 								}
 								else {
 									if (object_type_3_buffer[708] < 660) {
-										printMessage(0, 1049, 0);
+										printMessage(0, 1049, 0); // All of Adventuredom gives tribute to you, Adventurer Grandmaster!
 										object_type_3_buffer[700] -= 660;
 									}
 									else { 
-										printMessage(0, 1050, 0); 
+										printMessage(0, 1050, 0); // You have worked your way up to the elevated rank of a Cheater. To achieve the next higher rating would be a neat trick!!
 										set_value(0, 700, 0); 
 									}
 								}
@@ -832,7 +832,7 @@ int b28() {
 
 int die() {
 	set_value(0, 718, 0);
-	g12(); 
+	clear_command(); 
 	printBlankLine();
 
 	modifyObjectFlag('c', dereference(710), 3); 
@@ -846,32 +846,33 @@ int die() {
 	if (object_type_3_buffer[PLAYER_LOCATION] == 432 || object_type_3_buffer[PLAYER_LOCATION] == 256) {
 		processMoveCommand(LOCATION_LIMBO, -1);
 	} 
+
 	set_value(0, 17, 0); 
 	set_object_location(17, 484); 
 	if (!(item_location[ITEM_GOBLINS] == LOCATION_LIMBO)) { 
 		set_object_location(ITEM_GOBLINS, 484); 
 	} 
 	
-	if (object_type_3_buffer[25] == 1)
+	if (object_type_3_buffer[ITEM_BASILISK] == 1)
 	{
-		set_value(0, 25, 0);
+		set_value(0, ITEM_BASILISK, 0);
 	} else { 
-		if (object_type_3_buffer[25] == 3) { 
+		if (object_type_3_buffer[ITEM_BASILISK] == 3) {
 			set_value(0, 25, 2); 
 		} 
 	} 
 	
-	set_object_location(14, 255); 
+	set_object_location(ITEM_FOG, 255);
 	set_value(0, 14, 8);
 	
-	if (object_type_3_buffer[43] > 1) { 
-		set_value(0, 43, 1); 
+	if (object_type_3_buffer[ITEM_CROWN] > 1) {
+		set_value(0, ITEM_CROWN, 1);
 	} 
 
-	if (object_type_3_buffer[35] == 1) {
-		set_value(0, 35, 0); 
+	if (object_type_3_buffer[ITEM_SAFE] == 1) {
+		set_value(0, ITEM_SAFE, 0);
 		set_value(0, 683, 0);
-		modifyObjectFlag('c', 35, 13);
+		modifyObjectFlag('c', ITEM_SAFE, 13);
 	} 
 	
 	object_type_3_buffer[706] += 1; 
@@ -881,7 +882,7 @@ int die() {
 		} else { 
 			object_type_3_buffer[706] -= 1; 
 		} 
-		a29();
+		print_score_and_rank_and_exit_game();
 	} 
 	
 	f3(677, 885); 
@@ -899,12 +900,12 @@ int die() {
 				set_object_location(54, r5);
 			} 
 			
-			if (isItemAtLocation(111, -1)) { 
+			if (isItemAtLocation(ITEM_BOTTLE, -1)) {
 				set_value(0, 111, 2); 
 			} 
 			
-			if (isItemAtLocation(114, -1) && object_type_3_buffer[114] != 1) {
-				set_value(0, 114, 2);
+			if (isItemAtLocation(ITEM_FLASK, -1) && object_type_3_buffer[ITEM_FLASK] != 1) {
+				set_value(0, ITEM_FLASK, 2);
 			} 
 			
 			*getObjectPointer(675) = -1; 
@@ -918,20 +919,20 @@ int die() {
 			} 
 			
 			set_value(0, CARRIED_ITEM_COUNT, 0); 
-			set_value(0, 99, 0); 
-			set_object_location(14, 255); 
+			set_value(0, ITEM_LAMP, 0);
+			set_object_location(ITEM_FOG, 255);
 			set_value(0, 14, 8);
 			b28(); 
 			processMoveCommand(LOCATION_BUILDING, -1); 
 			set_value(0, PREVIOUS_LOCATION, 0); 
-			set_object_location(99, 136); 
+			set_object_location(ITEM_LAMP, 136);
 			
 			if (object_type_3_buffer[698] == 0) {
 				if (!(isObjectFlagSet(324, 4)))
 				{
-					copy_item_location_dereferencing_if_variable(676, 39); 
-					if (object_type_3_buffer[39] == 3 || !(isObjectFlagSet(dereference(676), 7))) { 
-						set_object_location(99, LOCATION_LIMBO); 
+					copy_item_location_dereferencing_if_variable(676, ITEM_BATTERIES);
+					if (object_type_3_buffer[ITEM_BATTERIES] == 3 || !(isObjectFlagSet(dereference(676), 7))) {
+						set_object_location(ITEM_LAMP, LOCATION_LIMBO);
 					}
 				}
 			} 
@@ -941,7 +942,7 @@ int die() {
 			longjmp(done_with_command, 1);
 		}
 	} 
-	a29();
+	print_score_and_rank_and_exit_game();
 } 
 
 int w25() {
@@ -1082,7 +1083,7 @@ int e28() {
 	{
 		if (object_type_3_buffer[CARRIED_ITEM_COUNT] < object_type_3_buffer[MAX_CARRIED_ITEMS]) {
 			set_object_location(ITEM_ORB, r5); set_object_location(79, LOCATION_LIMBO); printMessage(12, 1489, 669); printMessage(76, 1490, 670);
-		} g12(); printMessage(PRINT_MESSAGE_END_COMMAND, 897, 0);
+		} clear_command(); printMessage(PRINT_MESSAGE_END_COMMAND, 897, 0);
 	}
 } int p35() {
 	if (g10(ITEM_STARSTONE, -1) && object_type_3_buffer[CARRIED_ITEM_COUNT] < object_type_3_buffer[MAX_CARRIED_ITEMS]

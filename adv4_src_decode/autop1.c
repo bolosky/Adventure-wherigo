@@ -754,35 +754,142 @@ int f23() {
 } int t41() {
 	if (!currentCommandIsOneOf(COMMAND_SOUTH, COMMAND_DOWN, COMMAND_DOWNSTREAM, -1))
 		return 0; processMoveCommand(143, -2);
-} int j11() {
-	if (currentCommandContains(COMMAND_LOOK)) { return 0; } if (object_type_3_buffer[143] > 0)
+} 
+
+int slit_in_streambed_143() {
+	if (currentCommandContains(COMMAND_LOOK)) { 
+		return 0; 
+	} 
+	
+	if (object_type_3_buffer[143] > 0)
 	{
-		if (currentCommandContains(LOCATION_BUILDING)) { f3(679, 436); f3(678, 136); h31(); } if (currentCommandContains(LOCATION_OUTSIDE_GRATE)) {
+		if (currentCommandContains(LOCATION_BUILDING)) { 
+			f3(679, 436); 
+			f3(678, 136); 
+			h31(); 
+		} 
+		
+		if (currentCommandContains(LOCATION_OUTSIDE_GRATE)) {
 			f3(679, 142);
-			f3(678, LOCATION_OUTSIDE_GRATE); h31();
+			f3(678, LOCATION_OUTSIDE_GRATE); 
+			h31();
 		}
-	}
-	else { processMoveCommand(LOCATION_END_OF_ROAD, 0, -LOCATION_BUILDING); processMoveCommand(LOCATION_OUTSIDE_GRATE, 0, -LOCATION_OUTSIDE_GRATE); } processMoveCommand(142, 0, COMMAND_UPSTREAM, -COMMAND_NORTH);
-	processMoveCommand(LOCATION_OUTSIDE_GRATE, 0, COMMAND_DOWNSTREAM, 640, COMMAND_SOUTH, -LOCATION_OUTSIDE_GRATE); processMoveCommand(460, 0, -COMMAND_NORTHEAST); processMoveCommand(454, 0, -COMMAND_EAST); processMoveCommand(455, 0, -COMMAND_SOUTHEAST);
-	processMoveCommand(452, 0, -COMMAND_SOUTHWEST); processMoveCommand(451, 0, COMMAND_WEST, -622); processMoveCommand(450, 0, -COMMAND_NORTHWEST); if (currentCommandContains(COMMAND_UP)) {
+	} else { 
+		processMoveCommand(LOCATION_END_OF_ROAD, 0, -LOCATION_BUILDING); 
+		processMoveCommand(LOCATION_OUTSIDE_GRATE, 0, -LOCATION_OUTSIDE_GRATE); 
+	} 
+	
+	processMoveCommand(142, 0, COMMAND_UPSTREAM, -COMMAND_NORTH);
+	processMoveCommand(LOCATION_OUTSIDE_GRATE, 0, COMMAND_DOWNSTREAM, 640, COMMAND_SOUTH, -LOCATION_OUTSIDE_GRATE); 
+	processMoveCommand(460, 0, -COMMAND_NORTHEAST); 
+	processMoveCommand(454, 0, -COMMAND_EAST); 
+	processMoveCommand(455, 0, -COMMAND_SOUTHEAST);
+	processMoveCommand(452, 0, -COMMAND_SOUTHWEST); 
+	processMoveCommand(451, 0, COMMAND_WEST, -622); 
+	processMoveCommand(450, 0, -COMMAND_NORTHWEST); 
+	
+	if (currentCommandContains(COMMAND_UP)) {
 		if (cheezy_rand(100) < 50)
 		{
 			processMoveCommand(451, -2);
-		} processMoveCommand(454, -2);
-	} if (!currentCommandIsOneOf(143, 626, COMMAND_DOWN, COMMAND_ENTER, -1)) return 0; if
-		(object_type_3_buffer[143] == 0) {
+		} 
+		processMoveCommand(454, -2);
+	} 
+	
+	if (!currentCommandIsOneOf(143, 626, COMMAND_DOWN, COMMAND_ENTER, -1)) 
+		return 0; 
+	
+	if (object_type_3_buffer[143] == 0) {
 		printMessage(PRINT_MESSAGE_END_COMMAND, 901, 0);
-	} set_value(0, 717, 6); compute_score(); printMessage(0, 1390, 0); if (ask_user_yes_or_no_question(1391))
+	} 
+	
+	set_value(0, 717, 6); 
+	compute_score(); 
+	printMessage(0, 1390, 0); 
+	/* You  plunge  into  the  stream and are carried down into total blackness. 
+	Deeper
+	and deeper
+	you go
+	down into
+	the
+	very
+	bowels of
+	the earth,
+	until
+	your lungs
+	are aching
+	with
+	the need
+	for fresh
+	Suddenly,                                      air.
+	with a violent
+	>SPLASH!<
+
+	you find yourself sitting on the edge of  a  pool  of  water  in  a  vast
+	chamber lit by dozens of flaring torches.
+	*/
+	
+	if (ask_user_yes_or_no_question(1391)) // Shall I continue with the good news?
 	{
-		printMessage(0, 1392, 0); if (ask_user_yes_or_no_question(1391)) {
-			if (object_type_3_buffer[708] > 658) { printMessage(0, 1394, 0); }
-			else
-			{
+		printMessage(0, 1392, 0); 
+		/*
+		The floor is covered with thick layers of precious Persian rugs!
+
+		Rare  coins,  bars  of  silver, and lumps of gold and platinum are strewn
+		carelessly about!
+
+		There are diamonds,  rubies,  sapphires,  emeralds,  opals,  pearls,  and
+		fabulous  sculptures  and  ornaments  carved out of jade and imperishable
+		crystal resting on display  shelves,  along  with  rare  Ming  vases  and
+		ancient Indian turquoise beads!
+
+		A  flotilla  of ruby-encrusted toy boats is floating in the pool of water
+		beside you!
+
+		A network of golden chains supports a fantastic Iridium crown! There is a
+		display case on the  wall  filled  with  a  mind-boggling  collection  of
+		magical  swords,  which  are  singing  "Hail  to  the  Chief"  in perfect
+		multivoice harmony.
+
+
+		*/
+		if (ask_user_yes_or_no_question(1391)) {
+			if (object_type_3_buffer[708] > 658) { 
+				printMessage(0, 1394, 0); 
+				/*
+				A multitude  of  elves  raise  from  tables  laden with a mouth-watering
+				selection of delicacies and with great joy proclaim  you  to  be  an  all
+				conquering adventurer grandmaster.
+
+				It  is  time  for  this  your humble servant to take leave of you in your
+				moment of glory.  It has been a pleasure and a privilege to be your guide
+				and if any harsh words have been spoken between us, let there be no  hard
+				feelings.
+
+				Hail and ferwell,
+				oh indomitable one!
+
+
+				*/
+			} else	{
 				printMessage(0, 1393, 0);
+				/*
+				A  multitude of friendly elves raise from tables prepared for a feast and
+				greet you with a heart-warming cheer.
+
+				Well, I suppose I'll leave you to all this merry-making.  I have  another
+				nutcase to guide around the cave.  Boy, the problems I have!...
+
+				Anyway...
+				*/
 			}
 		}
-	} set_value(0, 718, 0); a29();
-} int r9() {
+	} 
+	set_value(0, 718, 0); 
+	print_score_and_rank_and_exit_game();
+} 
+
+int r9() {
 	if (currentCommandContains(COMMAND_LOOK)) {
 		return
 			0;

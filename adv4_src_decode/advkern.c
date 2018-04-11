@@ -1089,19 +1089,21 @@ e6(p4, d8, q5) int p4; int d8; int q5; { int i6; int
 
 		x7();
 
-		BJBMessage(64-64, 1424, 0);
+		BJBMessage(64-64, 901, 0);
 
 
 
-		BJBMessage(0, 1227, 0);
-		BJBMessage(0, 1226, 0);
-		BJBMessage(0, 1659, 0);
-		BJBMessage(0, 1660, 0);
+		BJBMessage(0, 1390, 0);
+		BJBMessage(0, 1391, 0);
+		BJBMessage(0, 1392, 0);
+		BJBMessage(0, 1393, 0);
+		BJBMessage(0, 1394, 0);
+
 
 		if (0)
 		{
 			int i;
-			for (i = 1237; i <= 1237 + 7; i++) {
+			for (i = 1041; i <= 1050; i++) {
 				BJBMessage(0, i, 0);
 			}
 		}
@@ -1521,17 +1523,20 @@ int dereference(int b2)
 	else return b2; 
 } 
 			  
-			  r7() {
+r7() {
 #ifndef i2
-				  (void) fclose(data_file);
+	(void) fclose(data_file);
 #endif 
 #ifdef y0
-				  (void) printf("\n(Locates: demanded %ld (+%ld), faults %ld (+%ld))\n",
-					  n2, n2 - t1, l3, l3 - p0); (void)printf("(Locate ratio %ld%%)\n", (((1000
-						  * l3) / n2) + 5) / 10);
+	(void) printf("\n(Locates: demanded %ld (+%ld), faults %ld (+%ld))\n",
+		n2, n2 - t1, l3, l3 - p0); (void)printf("(Locate ratio %ld%%)\n", (((1000
+			* l3) / n2) + 5) / 10);
 #endif 
-				  if (log_file) (void)fclose(log_file); should_exit = 1; longjmp(done_with_command, 1);
-			  } 
+	if (log_file) (void)fclose(log_file); 
+	should_exit = 1; 
+	longjmp(done_with_command, 1);
+			  
+} 
 			  
 short *getObjectPointer(int objectId) 
 { 
@@ -1572,7 +1577,8 @@ short *getObjectPointer(int objectId)
 				return (*objectPtr & 1 << whichFlag);
 			  } 
 			  
-			  void g12() {
-				  v0 = 0; commandTokens[nTokensInCommand]
-					  = NULL; return;
+			  void clear_command() {
+				  v0 = 0; 
+				  commandTokens[nTokensInCommand] = NULL; 
+				  return;
 			  }

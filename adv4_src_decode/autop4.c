@@ -851,7 +851,7 @@ int s34() {
 	if (item_location[99] == LOCATION_LIMBO && object_type_3_buffer[PLAYER_LOCATION] == 136 && object_type_3_buffer[717] < 4) {
 		printMessage(0, 997, 0);  // There's  not  much  point  in  wandering  around  out here, and you can't explore the cave without a lamp.  So let's just call it a day.
 		set_value(0, 718, 1);
-		a29();
+		print_score_and_rank_and_exit_game();
 	}
 } 
 
@@ -980,7 +980,7 @@ int s35() {
 	
 	if (!(object_type_3_buffer[712] < object_type_3_buffer[699])) { 
 		printMessage(0, 1073, 0); 
-		a29(); 
+		print_score_and_rank_and_exit_game(); 
 	}
 	
 	modifyObjectFlag('c', 43, 13); 

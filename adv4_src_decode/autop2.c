@@ -849,20 +849,20 @@ int d20() {
 
 int cellar_view_394() {
 	if (currentCommandContains(COMMAND_CLIMB)) { 
-		printMessage(PRINT_MESSAGE_END_COMMAND, 1660, 0); 
+		printMessage(PRINT_MESSAGE_END_COMMAND, 1660, 0); // Climb the portcullis?  You'd only get rusty all over.  There is no way to get to the other side up there either
 	} 
 	
 	if (currentCommandContains(77)) {
-		printMessage(PRINT_MESSAGE_END_COMMAND, 1659, 0); 
+		printMessage(PRINT_MESSAGE_END_COMMAND, 1659, 0); // The drain is on the other side of the portcullis, too far from here
 	} 
 	
 	if	((currentCommandContains(ITEM_ORB) || currentCommandContains(604)) && item_location[ITEM_ORB] == LOCATION_CELLAR) {
-		printMessage(PRINT_MESSAGE_END_COMMAND, 1227, 0);
+		printMessage(PRINT_MESSAGE_END_COMMAND, 1227, 0); // The globe lies out of reach on the cellar floor.
 	} 
 	
 	if (currentCommandContains(72)) {
 		if (!(currentCommandContains(113) || currentCommandContains(COMMAND_LOOK))) {
-			printMessage(PRINT_MESSAGE_END_COMMAND, 1226, 0);
+			printMessage(PRINT_MESSAGE_END_COMMAND, 1226, 0); // If  you  are  trying  to  open the rusty portcullis, you are wasting your time.
 		}
 	} 
 	
@@ -1666,7 +1666,7 @@ int c31() {
 			set_value(0, 107, 1);
 		} h29();
 	}
-	else { printMessage(0, 897, 0); g12(); } longjmp(done_with_command, 1);
+	else { printMessage(0, 897, 0); clear_command(); } longjmp(done_with_command, 1);
 } 
 
 int b31() {

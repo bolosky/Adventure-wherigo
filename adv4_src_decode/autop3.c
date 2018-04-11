@@ -549,7 +549,7 @@ int u31() {
 	} longjmp(done_with_command, 1);
 } int d33() { f3(700, 940); f3(701, 943); c28(); longjmp(done_with_command, 1); } int p32()
 {
-	if (ask_user_yes_or_no_question(945)) { set_value(0, 718, 1); a29(); } printMessage(PRINT_MESSAGE_END_COMMAND | PRINT_MESSAGE_DEREFERENCE_MSG, 719, 0);
+	if (ask_user_yes_or_no_question(945)) { set_value(0, 718, 1); print_score_and_rank_and_exit_game(); } printMessage(PRINT_MESSAGE_END_COMMAND | PRINT_MESSAGE_DEREFERENCE_MSG, 719, 0);
 } int v31() {
 	modifyObjectFlag('s', dereference(697), 1);
 	modifyObjectFlag('c', dereference(697), 2); f3(719, 777); printMessage(PRINT_MESSAGE_END_COMMAND, 966, 0);

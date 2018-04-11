@@ -2,12 +2,12 @@
 extern int command_noop(); extern int x7(); extern int u6(); extern int f4(); extern
 int u8(); extern int s10(); extern int x11(); extern int e9(); extern int
 command_outside_building_136(); extern int d14(); extern int s11(); extern int i16(); extern int d15();
-extern int command_in_building_141(); extern int r8(); extern int j11(); extern int r9(); extern
+extern int command_in_building_141(); extern int r8(); extern int slit_in_streambed_143(); extern int r9(); extern
 int p13(); extern int j12(); extern int t13(); extern int l16(); extern
 int h9(); extern int command_top_of_small_pit_150(); extern int u9(); extern int x12(); extern int
 p14(); extern int c17(); extern int hall_of_mt_king_155(); extern int q10(); extern int
 m7(); extern int n10(); extern int c18(); extern int a10(); extern int s12();
-extern int j13(); extern int n11(); extern int v11(); extern int k6(); extern
+extern int j13(); extern int y2_163(); extern int v11(); extern int k6(); extern
 int a11(); extern int g13(); extern int z7(); extern int p15(); extern int
 j14(); extern int r10(); extern int k7(); extern int d16(); extern int o5();
 extern int r11(); extern int r12(); extern int g14(); extern int v12();
@@ -258,7 +258,7 @@ int (*command_by_location_dispatch_table[])()= {
 	d15,	// 140
 	command_in_building_141,	// 141
 	r8,	// 142
-	j11,	// 143
+	slit_in_streambed_143,	// 143
 	r9,	// 144
 	p13,	// 145
 	j12,	// 146
@@ -278,7 +278,7 @@ int (*command_by_location_dispatch_table[])()= {
 	a10,	// 160
 	s12,	// 161
 	j13,	// 162
-	n11,	// 163
+	y2_163,	// 163
 	v11,	// 164
 	k6,	// 165
 	a11,	// 166
@@ -792,8 +792,8 @@ command_noop,command_noop,command_noop,command_noop,command_noop,command_noop,co
 command_noop,command_noop,command_noop,command_noop,command_noop,command_noop,command_noop,s10,command_noop,command_noop,command_noop, command_noop,command_noop,command_noop,command_noop,command_noop,command_noop,command_noop,command_noop,command_noop,command_noop,command_noop,
 command_noop,command_noop,command_noop,command_noop,command_noop,command_noop,command_noop,command_noop,command_noop,command_noop,command_noop, command_noop,command_noop,command_noop,command_noop,command_noop,command_noop,command_noop,command_noop,command_noop,command_noop,command_noop,
 command_noop,command_noop,x11,e9,command_noop,command_noop,command_noop,command_noop,command_noop,command_noop,command_noop, command_noop,command_noop,command_noop,command_noop,command_noop,command_noop,command_noop,command_noop,command_noop,command_noop,command_noop,
-command_noop,command_noop,command_noop,command_noop,command_outside_building_136,d14,s11,i16,d15,n9,r8, j11,r9,p13,j12,t13,l16,h9,command_top_of_small_pit_150,u9,x12,p14,
-c17,hall_of_mt_king_155,q10,m7,n10,c18,a10,s12,j13,n11,v11, k6,a11,g13,z7,p15,j14,r10,k7,d16,o5,r11,
+command_noop,command_noop,command_noop,command_noop,command_outside_building_136,d14,s11,i16,d15,n9,r8, slit_in_streambed_143,r9,p13,j12,t13,l16,h9,command_top_of_small_pit_150,u9,x12,p14,
+c17,hall_of_mt_king_155,q10,m7,n10,c18,a10,s12,j13,y2_163,v11, k6,a11,g13,z7,p15,j14,r10,k7,d16,o5,r11,
 r12,g14,v12,v13,z8,c19,q11,w12,h10,p16,i17, n12,q12,j15,g15,e10,j16,j17,z9,h11,w13,m8,
 o6,l17,bottom_of_pit_with_stream_200,dusty_rock_room_201,r13,k8,n13,m9,command_noop,bedquilt_207,swiss_cheese_room_208, slab_room_209,i18,y12,f5,v14,d18,t14,w14,too_tight_canyon_217,v15,q13,
 v16,o8,s13,v17,command_waterfall_224,b15,l18,alcove_227,t16,e12,s14, i19,p17,f6,m10,anteroom_235,command_witts_end_236,e14,n14,s15,u10,c20,
