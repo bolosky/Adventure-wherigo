@@ -92,7 +92,7 @@ int p39() {
 
 int e9()
 {
-	if (!(g10(111, 4) || g10(114, 4) || g10(113, -1))) {
+	if (!(g10(ITEM_BOTTLE, 4) || g10(114, 4) || g10(113, -1))) {
 		if (isItemAtLocation(118, -1)) {
 			printMessage(PRINT_MESSAGE_END_COMMAND, 1421, 0);
 		} printMessage(76, 1027, 113);
@@ -123,12 +123,12 @@ int f26() {
 		return; 
 
 	if (g10(11, -1)) {
-		if (isItemAtLocation(114, 3) || isItemAtLocation(111, 3)) {
-			if (!(isItemAtLocation(111, 3))) { 
+		if (isItemAtLocation(114, 3) || isItemAtLocation(ITEM_BOTTLE, 3)) {
+			if (!(isItemAtLocation(ITEM_BOTTLE, 3))) { 
 				set_value(0, 114, 2); 
 				printMessage(PRINT_MESSAGE_END_COMMAND, 1366, 0); // Your flask is now empty, but I don't think that trickle of water is going to do anything much.
 			} 
-			set_value(0, 111, 2);
+			set_value(0, ITEM_BOTTLE, 2);
 			o23();
 		} else { 
 			printMessage(12, 1027, 669);  // You have no !
@@ -141,9 +141,9 @@ int f26() {
 
 int p40() {
 	if (!currentCommandContains(6)) return; if (g10(6, -1)) {
-		if (isItemAtLocation(114, 3) || isItemAtLocation(111, 3))
+		if (isItemAtLocation(114, 3) || isItemAtLocation(ITEM_BOTTLE, 3))
 		{
-			if (isItemAtLocation(111, 3)) { set_value(0, 111, 2); }
+			if (isItemAtLocation(ITEM_BOTTLE, 3)) { set_value(0, ITEM_BOTTLE, 2); }
 			else { set_value(0, 114, 2); } set_value(0, 6, 0); printMessage(PRINT_MESSAGE_END_COMMAND, MESSAGE_RUSTED, 0);
 		} printMessage(76, 1027, 112);
 	} printMessage(76, MESSAGE_NO_X_HERE, 6);
@@ -152,10 +152,10 @@ int p40() {
 		0; b26(); if (object_type_3_buffer[699] == 0) { o21(); }
 } int t43() {
 	if (!currentCommandContains(112)) return;
-	if (isItemAtLocation(114, 3) || isItemAtLocation(111, 3)) { h24(); longjmp(done_with_command, 1); } printMessage(76, 1027, 670);
+	if (isItemAtLocation(114, 3) || isItemAtLocation(ITEM_BOTTLE, 3)) { h24(); longjmp(done_with_command, 1); } printMessage(76, 1027, 670);
 }
 int v42() {
-	if (!currentCommandContains(113)) return; if (isItemAtLocation(114, 4) || isItemAtLocation(111, 4)) {
+	if (!currentCommandContains(113)) return; if (isItemAtLocation(114, 4) || isItemAtLocation(ITEM_BOTTLE, 4)) {
 		h24(); longjmp(done_with_command, 1);
 	} printMessage(76, 1027, 670);
 } int x33() {
@@ -301,14 +301,14 @@ int h34()
 {
 	if (!currentCommandIsOneOf(120, 88, 71, 108, 70, -1)) return 0; (*command_by_location_dispatch_table[562])(); longjmp(done_with_command, 1);
 } int s33() {
-	if (!currentCommandContains(113)) return; if (g10(111, 4) || g10(113, -1)) {
+	if (!currentCommandContains(113)) return; if (g10(ITEM_BOTTLE, 4) || g10(113, -1)) {
 		printMessage(PRINT_MESSAGE_END_COMMAND, 1451, 0);
 	} if (g10(118, -1)) { printMessage(PRINT_MESSAGE_END_COMMAND, 1421, 0); }
 } int n29() {
 	if (!currentCommandContains(11)) return;
 	if (g10(12, -1) && object_type_3_buffer[12] > 0 || g10(11, -1)) { printMessage(76, 1590, 11); } printMessage(76, MESSAGE_NO_X_HERE, 670);
 } int a31() {
-	if (!currentCommandContains(112)) return; if (g10(111, 3) || isObjectFlagSet(dereference(PLAYER_LOCATION), 9)) {
+	if (!currentCommandContains(112)) return; if (g10(ITEM_BOTTLE, 3) || isObjectFlagSet(dereference(PLAYER_LOCATION), 9)) {
 		printMessage(PRINT_MESSAGE_END_COMMAND, 1588, 0);
 	}
 } int j44() {
@@ -433,8 +433,8 @@ int u31() {
 	if (currentCommandContains(579)) { printMessage(PRINT_MESSAGE_END_COMMAND, 837, 0); } e6(0, object_type_3_buffer[PLAYER_LOCATION], 9); if (object_type_3_buffer[697] == 2 && !g10(dereference(object_type_3_buffer[670]), -1))
 	{
 		printMessage(76, MESSAGE_NO_X_HERE, 670);
-	} if (!currentCommandIsOneOf(111, 42, 49, 100, 106, 107, 118, ITEM_KEYS, 93, -1)) return
-		0; if (currentCommandContains(111)) { printMessage(PRINT_MESSAGE_END_COMMAND, 1465, 0); } if (currentCommandContains(42)) { printMessage(PRINT_MESSAGE_END_COMMAND, 1464, 0); } if (currentCommandContains(49))
+	} if (!currentCommandIsOneOf(ITEM_BOTTLE, 42, 49, 100, 106, 107, 118, ITEM_KEYS, 93, -1)) return
+		0; if (currentCommandContains(ITEM_BOTTLE)) { printMessage(PRINT_MESSAGE_END_COMMAND, 1465, 0); } if (currentCommandContains(42)) { printMessage(PRINT_MESSAGE_END_COMMAND, 1464, 0); } if (currentCommandContains(49))
 	{
 		printMessage(PRINT_MESSAGE_END_COMMAND, 1383, 0);
 	} if (currentCommandContains(100)) { printMessage(PRINT_MESSAGE_END_COMMAND | PRINT_MESSAGE_DEREFERENCE_MSG, 719, 0); } if (currentCommandContains(106) || currentCommandContains(107))
@@ -492,7 +492,7 @@ int u31() {
 		j41();
 	} e6(0, object_type_3_buffer[PLAYER_LOCATION], 9); if (object_type_3_buffer[697] == 2 && !g10(dereference(object_type_3_buffer[670]), -1)) {
 		printMessage(76, MESSAGE_NO_X_HERE, 670);
-	} if (!currentCommandIsOneOf(111, 6, 100, 114, -1)) return 0; if (currentCommandContains(111)) { printMessage(PRINT_MESSAGE_END_COMMAND, 1465, 0); } if
+	} if (!currentCommandIsOneOf(ITEM_BOTTLE, 6, 100, 114, -1)) return 0; if (currentCommandContains(ITEM_BOTTLE)) { printMessage(PRINT_MESSAGE_END_COMMAND, 1465, 0); } if
 		(currentCommandContains(6)) {
 		printMessage(PRINT_MESSAGE_END_COMMAND, 821, 0);
 	} if (currentCommandContains(100)) { printMessage(PRINT_MESSAGE_END_COMMAND | PRINT_MESSAGE_DEREFERENCE_MSG, 719, 0); } if (currentCommandContains(114)) {
@@ -822,7 +822,7 @@ int j33() { printMessage(PRINT_MESSAGE_END_COMMAND, 1468, 0); } int t27() {
 	if (!currentCommandContains(41)) return; if (g10(41, -1)) { printMessage(PRINT_MESSAGE_END_COMMAND, 948, 0); }
 } 
 
-int b33() {
+int fill_vase() {
 	if (!currentCommandContains(ITEM_VASE))
 		return; 
 
@@ -839,63 +839,95 @@ int b33() {
 	}
 } 
 
-int z29() {
+int fill_flask() {
 	if (!currentCommandContains(ITEM_FLASK))
 		return; 
 	
 	if (isItemAtLocation(ITEM_FLASK, -1)) {
-		if (object_type_3_buffer[ITEM_FLASK] < 2) { printMessage(PRINT_MESSAGE_END_COMMAND, 1370, 0); } if (object_type_3_buffer[ITEM_FLASK] == 2) {
-			if (isObjectFlagSet(dereference(PLAYER_LOCATION), 9))
+		if (object_type_3_buffer[ITEM_FLASK] < 2) { 
+			printMessage(PRINT_MESSAGE_END_COMMAND, 1370, 0); 
+		} 
+
+		if (object_type_3_buffer[ITEM_FLASK] == 2) {
+			if (isObjectFlagSet(dereference(PLAYER_LOCATION), LOCATION_FLAG_WATER))
 			{
-				set_value(0, 114, 3); 
-				printMessage(76, MESSAGE_FLASK_FULL, 112);
+				set_value(0, ITEM_FLASK, 3);
+				printMessage(76, MESSAGE_FLASK_FULL, ITEM_WATER);
 			} 
 			
 			if (object_type_3_buffer[PLAYER_LOCATION] == 158) {
-				set_value(0, 114, 4); 
-				printMessage(76, MESSAGE_FLASK_FULL, 113);
+				set_value(0, ITEM_FLASK, 4);
+				printMessage(76, MESSAGE_FLASK_FULL, ITEM_OIL);
 			} 
 			
 			if (isObjectFlagSet(dereference(PLAYER_LOCATION), LOCATION_FLAG_SEWAGE)) { 
 				printMessage(PRINT_MESSAGE_END_COMMAND, 874, 0); 
 			} 
-			printMessage(76, MESSAGE_NOTHING_TO_FILL, 114);
+			printMessage(76, MESSAGE_NOTHING_TO_FILL, ITEM_FLASK);
 		} 
 		printMessage(PRINT_MESSAGE_END_COMMAND, 1369, 0);
 	} 
 	printMessage(76, 1027, 670);
 } 
 
-int p42() {
-	if (!currentCommandContains(111)) return; if (isItemAtLocation(111, -1)) {
-		if (object_type_3_buffer[111] == 2) {
-			if (isObjectFlagSet(dereference(PLAYER_LOCATION), 9)) { set_value(0, 111, 3); printMessage(76, MESSAGE_FULL, 112); }
-			if (object_type_3_buffer[PLAYER_LOCATION] == 158) { set_value(0, 111, 4); printMessage(76, MESSAGE_FULL, 113); } printMessage(76, MESSAGE_NOTHING_TO_FILL, 111);
-		} printMessage(PRINT_MESSAGE_END_COMMAND, MESSAGE_BOTTLE_FULL, 0);
-	} printMessage(76, 1027, 670);
-} int p43() {
-	if (!currentCommandContains(81)) return; if (isItemAtLocation(81, -1)) {
-		if
-			(isObjectFlagSet(dereference(PLAYER_LOCATION), 9)) {
-			if (object_type_3_buffer[PLAYER_LOCATION] == LOCATION_PANTRY) { printMessage(PRINT_MESSAGE_END_COMMAND, 1268, 0); } modifyObjectFlag('s', 81, 13); modifyObjectFlag('s', 81, 14);
+int fill_bottle() {
+	if (!currentCommandContains(ITEM_BOTTLE)) 
+		return; 
+	
+	if (isItemAtLocation(ITEM_BOTTLE, -1)) {
+		if (object_type_3_buffer[ITEM_BOTTLE] == 2) {
+			if (isObjectFlagSet(dereference(PLAYER_LOCATION), LOCATION_FLAG_WATER)) {
+				set_value(0, ITEM_BOTTLE, 3); 
+				printMessage(76, MESSAGE_FULL, ITEM_WATER);
+			}
+			
+			if (object_type_3_buffer[PLAYER_LOCATION] == 158) { // east pit
+				set_value(0, ITEM_BOTTLE, 4); 
+				printMessage(76, MESSAGE_FULL, ITEM_OIL);
+			} 
+			
+			printMessage(76, MESSAGE_NOTHING_TO_FILL, ITEM_BOTTLE);
+		} 
+		printMessage(PRINT_MESSAGE_END_COMMAND, MESSAGE_BOTTLE_FULL, 0);
+	} 
+
+	printMessage(76, 1027, 670);
+} 
+
+int fill_chalice() {
+	if (!currentCommandContains(ITEM_CHALICE))
+		return; 
+	
+	if (isItemAtLocation(ITEM_CHALICE, -1)) {
+		if (isObjectFlagSet(dereference(PLAYER_LOCATION), 9)) {
+			if (object_type_3_buffer[PLAYER_LOCATION] == LOCATION_PANTRY) { 
+				printMessage(PRINT_MESSAGE_END_COMMAND, 1268, 0); 
+			} 
+			modifyObjectFlag('s', ITEM_CHALICE, 13);
+			modifyObjectFlag('s', ITEM_CHALICE, 14);
 			printMessage(PRINT_MESSAGE_END_COMMAND, 1269, 0);
-		} printMessage(76, MESSAGE_NOTHING_TO_FILL, 81);
-	} printMessage(76, 1027, 670);
-} int z30() {
-	if (object_type_3_buffer[697] > 1
-		&& g10(dereference(object_type_3_buffer[670]), -1)) {
+		} 
+		printMessage(76, MESSAGE_NOTHING_TO_FILL, ITEM_CHALICE);
+	} 
+	printMessage(76, 1027, 670);
+} 
+
+int try_to_fill_unfillable() {
+	if (object_type_3_buffer[697] > 1 && g10(dereference(object_type_3_buffer[670]), -1)) {
 		printMessage(PRINT_MESSAGE_END_COMMAND, MESSAGE_CANT_FILL, 0);
 	}
-} int l35() {
-	if (!currentCommandIsOneOf(111, 114, 81, 118, -1))
+} 
+
+int l35() {
+	if (!currentCommandIsOneOf(ITEM_BOTTLE, 114, 81, 118, -1))
 		return 0; if (!(isItemAtLocation(dereference(object_type_3_buffer[670]), -1))) { printMessage(76, 1027, 670); }
 } int e33() {
 	if (!currentCommandContains(81)) return; if (isObjectFlagSet(81, 13)) { printMessage(PRINT_MESSAGE_END_COMMAND, 1322, 0); } printMessage(PRINT_MESSAGE_END_COMMAND, 1270, 0);
 }
 int n31() {
-	if (!currentCommandContains(111)) return; if (g10(111, 4) || g10(111, 3)) {
+	if (!currentCommandContains(ITEM_BOTTLE)) return; if (g10(ITEM_BOTTLE, 4) || g10(ITEM_BOTTLE, 3)) {
 		f3(670, 112);
-		if (g10(111, 4)) { f3(670, 113); } (*command_by_location_dispatch_table[553])();
+		if (g10(ITEM_BOTTLE, 4)) { f3(670, 113); } (*command_by_location_dispatch_table[553])();
 	}
 	else { printMessage(0, 1270, 0); }
 	longjmp(done_with_command, 1);
@@ -915,8 +947,8 @@ int n31() {
 	}
 } int l25() {
 	if (object_type_3_buffer[670] == 112) {
-		if (g10(111, 3)) {
-			set_value(0, 111, 2);
+		if (g10(ITEM_BOTTLE, 3)) {
+			set_value(0, ITEM_BOTTLE, 2);
 			if (g10(11, -1)) { o23(); }
 			else {
 				if (g10(6, -1)) {
@@ -933,9 +965,9 @@ int n31() {
 			else { printMessage(12, 1027, 112); }
 		} longjmp(done_with_command, 1);
 	} if (object_type_3_buffer[670] == 113) {
-		if (!(g10(114, 4) || g10(111, 4))) {
+		if (!(g10(114, 4) || g10(ITEM_BOTTLE, 4))) {
 			printMessage(76, 1027, 113);
-		} if (g10(111, 4)) { set_value(0, 111, 2); set_value(0, 700, 1); }
+		} if (g10(ITEM_BOTTLE, 4)) { set_value(0, ITEM_BOTTLE, 2); set_value(0, 700, 1); }
 		else {
 			set_value(0, 114, 2); set_value(0, 700, 2);
 		} if (g10(11, -1)) { printMessage(0, MESSAGE_INDIGNANT, 0); }
@@ -1264,7 +1296,9 @@ int command_drink_555()
 int z22() { printMessage(PRINT_MESSAGE_END_COMMAND, 779, 0); } int q35()
 {
 	special_action(4, 699); longjmp(done_with_command, 1);
-} int t34() {
+} 
+
+int t34() {
 	if (g10(89, -1)) {
 		set_value(0, 89, 2);
 		printMessage(PRINT_MESSAGE_END_COMMAND, 1256, 0);
@@ -1446,7 +1480,7 @@ int n21() {
 		printMessage(0, MESSAGE_NOTHING_HAPPENS, 0);
 	}
 	else {
-		if (g10(111, 3) || isObjectFlagSet(dereference(PLAYER_LOCATION), 9)) {
+		if (g10(ITEM_BOTTLE, 3) || isObjectFlagSet(dereference(PLAYER_LOCATION), 9)) {
 			if (cheezy_rand(100) < 85) {
 				printMessage(0, MESSAGE_NOTHING_HAPPENS, 0);
 			}

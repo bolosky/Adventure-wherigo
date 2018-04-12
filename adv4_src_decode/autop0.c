@@ -17,14 +17,14 @@ int d34() {
 } int w24() {
 	if (object_type_3_buffer[697] == 1)
 	{
-		if (g10(114, 4) || g10(111, 4) || q8(113, -1)) {
+		if (g10(114, 4) || g10(ITEM_BOTTLE, 4) || q8(113, -1)) {
 			modifyObjectFlag('s', dereference(697), 5); printMessage(76, 1023, 113);
 		} printMessage(76, MESSAGE_NO_X_HERE, 113);
 	} printMessage(PRINT_MESSAGE_END_COMMAND, MESSAGE_RIDICULOUS, 0);
 } int r26() {
 	if (object_type_3_buffer[697] == 1) {
 		if (g10(114, 3)
-			|| g10(111, 3) || isObjectFlagSet(dereference(PLAYER_LOCATION), 9)) {
+			|| g10(ITEM_BOTTLE, 3) || isObjectFlagSet(dereference(PLAYER_LOCATION), 9)) {
 			modifyObjectFlag('s', dereference(697), 5); printMessage(76, 1023, 669);
 		} printMessage(76, MESSAGE_NO_X_HERE, 669);
 	} printMessage(PRINT_MESSAGE_END_COMMAND, MESSAGE_RIDICULOUS, 0);
@@ -901,7 +901,7 @@ int die() {
 			} 
 			
 			if (isItemAtLocation(ITEM_BOTTLE, -1)) {
-				set_value(0, 111, 2); 
+				set_value(0, ITEM_BOTTLE, 2); 
 			} 
 			
 			if (isItemAtLocation(ITEM_FLASK, -1) && object_type_3_buffer[ITEM_FLASK] != 1) {
@@ -1183,8 +1183,8 @@ int e28() {
 	if (object_type_3_buffer[670] == object_type_3_buffer[112]) {
 		set_value(0, 700, 3);
 	}
-	else { set_value(0, 700, 4); } if (isItemAtLocation(111, dereference(object_type_3_buffer[700]))) {
-		set_value(0, 111, 2); if (g10(ITEM_DWARF, -1)
+	else { set_value(0, 700, 4); } if (isItemAtLocation(ITEM_BOTTLE, dereference(object_type_3_buffer[700]))) {
+		set_value(0, ITEM_BOTTLE, 2); if (g10(ITEM_DWARF, -1)
 			&& currentCommandContains(COMMAND_THROW)) {
 			modifyObjectFlag('s', ITEM_DWARF, 14); if (object_type_3_buffer[ITEM_DWARF] == 1) { printMessage(76, 1062, 670); } printMessage(76, 1063, 670);
 		} printMessage(76, 875, 670);
@@ -1192,32 +1192,32 @@ int e28() {
 		set_value(0, 114, 2); printMessage(PRINT_MESSAGE_END_COMMAND, 1367, 0);
 	}
 } int a30() {
-	if (!isItemAtLocation(111, -1)) return 0; set_object_location(111, PLAYER_LOCATION); set_value(0, 111, 2); if
+	if (!isItemAtLocation(ITEM_BOTTLE, -1)) return 0; set_object_location(ITEM_BOTTLE, PLAYER_LOCATION); set_value(0, ITEM_BOTTLE, 2); if
 		(object_type_3_buffer[PLAYER_LOCATION] == LOCATION_CELLAR) {
-		printMessage(12, 1544, 670); printMessage(9, 1601, 0); set_object_location(111, 419); e24();
+		printMessage(12, 1544, 670); printMessage(9, 1601, 0); set_object_location(ITEM_BOTTLE, 419); e24();
 	} if
 		(object_type_3_buffer[PLAYER_LOCATION] == 415) {
-		set_object_location(111, 419); printMessage(12, 1544, 670); printMessage(72, 1263, 0);
+		set_object_location(ITEM_BOTTLE, 419); printMessage(12, 1544, 670); printMessage(72, 1263, 0);
 	} if (object_type_3_buffer[PLAYER_LOCATION] == 204
 		|| object_type_3_buffer[PLAYER_LOCATION] == 418 || object_type_3_buffer[PLAYER_LOCATION] == 417) {
 		printMessage(12, 1544, 670); if (object_type_3_buffer[PLAYER_LOCATION] == 204) {
-			set_object_location(111, 203);
+			set_object_location(ITEM_BOTTLE, 203);
 			modifyObjectFlag('s', 203, 15); printMessage(72, 1076, 0);
-		} set_object_location(111, 419); printMessage(72, 1295, 0);
+		} set_object_location(ITEM_BOTTLE, 419); printMessage(72, 1295, 0);
 	} printMessage(12, 1489, 669);
-	printMessage(12, 1491, 670); if (object_type_3_buffer[111] == 3) {
+	printMessage(12, 1491, 670); if (object_type_3_buffer[ITEM_BOTTLE] == 3) {
 		modifyObjectFlag('s', dereference(PLAYER_LOCATION), 15); printMessage(76, 1493, 112);
-	} if (object_type_3_buffer[111] == 4) { modifyObjectFlag('s', dereference(PLAYER_LOCATION), 15); printMessage(76, 1493, 113); } printMessage(PRINT_MESSAGE_END_COMMAND, 776, 0);
+	} if (object_type_3_buffer[ITEM_BOTTLE] == 4) { modifyObjectFlag('s', dereference(PLAYER_LOCATION), 15); printMessage(76, 1493, 113); } printMessage(PRINT_MESSAGE_END_COMMAND, 776, 0);
 } 
 
 int fill_with_oil() {
 	if (q8(113, -1)) {
-		if (!(isItemAtLocation(111, -1) || isItemAtLocation(114, -1))) {
+		if (!(isItemAtLocation(ITEM_BOTTLE, -1) || isItemAtLocation(114, -1))) {
 			printMessage(76, 909, 113); // You have nothing suitable for carrying oil.
 		} 
 		
-		if (isItemAtLocation(111, 2)) { // Check if bottle is empty
-			set_value(0, 111, 4); 
+		if (isItemAtLocation(ITEM_BOTTLE, 2)) { // Check if bottle is empty
+			set_value(0, ITEM_BOTTLE, 4); 
 			printMessage(76, MESSAGE_FULL, 113); // Your bottle is now full of oil.
 		} 
 		
@@ -1226,11 +1226,11 @@ int fill_with_oil() {
 			printMessage(76, MESSAGE_FLASK_FULL, 113); // Your flask is now full of oil.
 		} 
 		
-		if (isItemAtLocation(111, -1) && isItemAtLocation(114, -1)) { 
+		if (isItemAtLocation(ITEM_BOTTLE, -1) && isItemAtLocation(114, -1)) { 
 			printMessage(PRINT_MESSAGE_END_COMMAND, 1368, 0); // Both the flask and the bottle are already full.
 		} 
 		
-		if (isItemAtLocation(111, -1))
+		if (isItemAtLocation(ITEM_BOTTLE, -1))
 		{
 			printMessage(PRINT_MESSAGE_END_COMMAND, MESSAGE_BOTTLE_FULL, 0); // Your bottle is already full.
 		} 
@@ -1245,7 +1245,7 @@ int s28() {
 		return 0;
 	} if (isItemAtLocation(81, -1)) {
 		if (object_type_3_buffer[PLAYER_LOCATION] == LOCATION_PANTRY) {
-			if (!(isItemAtLocation(111, -1) || isItemAtLocation(114, -1)))
+			if (!(isItemAtLocation(ITEM_BOTTLE, -1) || isItemAtLocation(114, -1)))
 			{
 				printMessage(PRINT_MESSAGE_END_COMMAND, 1268, 0);
 			}
@@ -1253,11 +1253,11 @@ int s28() {
 		else {
 			modifyObjectFlag('s', 81, 13); modifyObjectFlag('s', 81, 14); printMessage(PRINT_MESSAGE_END_COMMAND, 1269, 0);
 		}
-	} if (!(isItemAtLocation(111, -1) || isItemAtLocation(114, -1))) { printMessage(76, 909, 112); } if (isItemAtLocation(111, 2)) {
-		set_value(0, 111, 3); printMessage(76, MESSAGE_FULL, 112);
+	} if (!(isItemAtLocation(ITEM_BOTTLE, -1) || isItemAtLocation(114, -1))) { printMessage(76, 909, 112); } if (isItemAtLocation(ITEM_BOTTLE, 2)) {
+		set_value(0, ITEM_BOTTLE, 3); printMessage(76, MESSAGE_FULL, 112);
 	} if (isItemAtLocation(114, 2)) {
 		set_value(0, 114, 3); printMessage(76, MESSAGE_FLASK_FULL, 112);
-	} if (isItemAtLocation(114, -1) && isItemAtLocation(111, -1)) { printMessage(PRINT_MESSAGE_END_COMMAND, 1368, 0); } if (isItemAtLocation(111, -1)) {
+	} if (isItemAtLocation(114, -1) && isItemAtLocation(ITEM_BOTTLE, -1)) { printMessage(PRINT_MESSAGE_END_COMMAND, 1368, 0); } if (isItemAtLocation(ITEM_BOTTLE, -1)) {
 		printMessage(PRINT_MESSAGE_END_COMMAND, MESSAGE_BOTTLE_FULL, 0);
 	} printMessage(PRINT_MESSAGE_END_COMMAND, 1369, 0);
 } int u25() {
@@ -1335,7 +1335,7 @@ int s28() {
 			modifyObjectFlag('c', dereference(675), 13); modifyObjectFlag('c', dereference(675), 14);
 		} if (isObjectFlagSet(dereference(675), 3)) { if (isItemAtLocation(dereference(object_type_3_buffer[675]), -1)) { set_object_location(object_type_3_buffer[675], PLAYER_LOCATION); } }
 	} set_object_location(10, 379);
-	modifyObjectFlag('s', 111, 13); set_value(0, 111, 2); modifyObjectFlag('s', 11, 13); modifyObjectFlag('s', 107, 13); set_value(0, 107, 0);
+	modifyObjectFlag('s', ITEM_BOTTLE, 13); set_value(0, ITEM_BOTTLE, 2); modifyObjectFlag('s', 11, 13); modifyObjectFlag('s', 107, 13); set_value(0, 107, 0);
 	modifyObjectFlag('s', 107, 7); modifyObjectFlag('c', 107, 15); modifyObjectFlag('s', 102, 13); modifyObjectFlag('s', 99, 13); set_value(0, 99, 0);
 	set_value(0, 698, 0); modifyObjectFlag('s', ITEM_DWARF, 13); set_value(0, ITEM_DWARF, 0); modifyObjectFlag('s', 104, 14); modifyObjectFlag('s', 7, 14);
 	modifyObjectFlag('s', 100, 14); set_value(0, 100, 1); modifyObjectFlag('s', 101, 14); set_value(0, 101, 1); modifyObjectFlag('s', 105, 14);

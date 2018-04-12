@@ -97,7 +97,7 @@ int o19(); extern int s25(); extern int command_cut_544(); extern int j31(); ext
 int f20(); extern int o20(); extern int p30(); extern int n22(); extern
 int i36(); extern int d32(); extern int j32(); extern int l25(); extern
 int i37(); extern int command_drink_555(); extern int c27(); extern int w21(); extern
-int w22(); extern int e21(); extern int t30(); extern int r22(); extern
+int w22(); extern int e21(); extern int command_fill_560(); extern int r22(); extern
 int t31(); extern int g29(); extern int command_break(); extern int p31(); extern
 int t32(); extern int i38(); extern int l26(); extern int b24(); extern
 int q34(); extern int p32(); extern int l27(); extern int v31(); extern
@@ -675,7 +675,7 @@ int (*command_by_location_dispatch_table[])()= {
 	w21,	// 557
 	w22,	// 558
 	e21,	// 559
-	t30,	// 560
+	command_fill_560,	// 560
 	r22,	// 561
 	t31,	// 562
 	g29,	// 563
@@ -811,7 +811,7 @@ KilobyteInputBuffer4,v27,command_noop,command_noop,command_noop,command_noop,com
 KilobyteInputBuffer5,command_noop,command_noop,command_noop,command_noop,d27,command_restore_490,i32,KilobyteInputBuffer6,z19,command_noop, command_noop,command_zorton_496,t27,command_thurb_498,o17,d28,r21,n21,y19,command_melinkurion_504,z20,
 v28,command_foo_507,b22,g28,a21,i33,command_noop,command_noop,d29,i34,t28, v29,d30,i35,x25,a22,command_noop,l24,k18,command_noop,p27,d31,
 t29,command_noop,u17,p28,q32,command_noop,b23,e20,m24,KilobyteInputBuffer8,z21, KilobyteInputBuffer9,v30,j30,o19,s25,command_cut_544,j31,f20,o20,p30,n22,
-i36,d32,j32,l25,i37,command_drink_555,c27,w21,w22,e21,t30, r22,t31,g29,command_break,p31,t32,i38,l26,b24,command_noop,q34,
+i36,d32,j32,l25,i37,command_drink_555,c27,w21,w22,e21,command_fill_560, r22,t31,g29,command_break,p31,t32,i38,l26,b24,command_noop,q34,
 p32,l27,v31,command_verbose_575,z22,q35,a23,r23,e22,j33,t33, g30,v33,d33,b25,z23,x26,k20,p33,s26,r24,l28,
 w23,command_score_595,t34,blast_command,v35,command_noop,command_noop,command_noop,l30,u18,i39, g31,u19,i40,u20,u21,a24,j34,u22,l31,n23,command_noop,
 command_noop,f21,command_noop,command_noop,command_noop,command_noop,v36,command_noop,command_noop,command_noop,command_noop, command_noop,command_noop,command_noop,command_noop,command_noop,command_noop,command_noop,command_noop,command_noop,command_noop,command_noop,

@@ -305,14 +305,14 @@ int n24() {
 	} if (object_type_3_buffer[PLAYER_LOCATION] == 151)
 	{
 		if (currentCommandContains(44)) { set_value(0, 154, 1); set_value(0, 7, 1); printMessage(PRINT_MESSAGE_END_COMMAND, 1682, 0); }
-	} if (currentCommandContains(111))
+	} if (currentCommandContains(ITEM_BOTTLE))
 	{
-		if (object_type_3_buffer[111] == 3 || object_type_3_buffer[111] == 4) { modifyObjectFlag('s', dereference(676), 15); }
+		if (object_type_3_buffer[ITEM_BOTTLE] == 3 || object_type_3_buffer[ITEM_BOTTLE] == 4) { modifyObjectFlag('s', dereference(676), 15); }
 	} if (currentCommandContains(113) ||
 		currentCommandContains(112)) {
-		set_value(0, 700, 3); if (currentCommandContains(113)) { set_value(0, 700, 4); } if (isItemAtLocation(111, dereference(object_type_3_buffer[700])))
+		set_value(0, 700, 3); if (currentCommandContains(113)) { set_value(0, 700, 4); } if (isItemAtLocation(ITEM_BOTTLE, dereference(object_type_3_buffer[700])))
 		{
-			set_value(0, 111, 2);
+			set_value(0, ITEM_BOTTLE, 2);
 		}
 		else { if (isItemAtLocation(114, dereference(object_type_3_buffer[700]))) { set_value(0, 114, 2); } }
 	} if
@@ -511,9 +511,9 @@ int h29() {
 		}
 	} if (isObjectFlagSet(dereference(670), 7)) {
 		z5(700, 670); if (object_type_3_buffer[700] == 0) {
-			if (object_type_3_buffer[670] == 111)
+			if (object_type_3_buffer[670] == ITEM_BOTTLE)
 			{
-				set_value(0, 111, 2);
+				set_value(0, ITEM_BOTTLE, 2);
 			}
 			else { c16(670, 1); }
 		}
@@ -643,8 +643,8 @@ int o24() {
 	} printMessage(12, 1483, 669); printMessage(76, 1484, 670);
 } int o25() {
 	if (isItemAtLocation(114, 4)
-		|| isItemAtLocation(111, 4)) {
-		if (isItemAtLocation(111, 4)) { set_value(0, 111, 2); }
+		|| isItemAtLocation(ITEM_BOTTLE, 4)) {
+		if (isItemAtLocation(ITEM_BOTTLE, 4)) { set_value(0, ITEM_BOTTLE, 2); }
 		else { set_value(0, 114, 2); }
 	}
 	else { printMessage(76, 1027, 113); }
@@ -1419,8 +1419,8 @@ int command_valuation_room_483() {
 		}
 
 		set_object_location(object_type_3_buffer[670], LOCATION_LIMBO); 
-		if (currentCommandContains(111)) { 
-			set_value(0, 111, 2); 
+		if (currentCommandContains(ITEM_BOTTLE)) { 
+			set_value(0, ITEM_BOTTLE, 2); 
 		} 
 		
 		if (currentCommandContains(114)) {

@@ -47,7 +47,18 @@ int z21() { e32(); u33(); return; } int e20()
 } int a21() { v45(); a33(); return; } int e21() {
 	x34(); u34();
 	return;
-} int t30() { b33(); z29(); p42(); p43(); z30(); return; } int w22()
+} 
+
+int command_fill_560() { 
+	fill_vase(); 
+	fill_flask(); 
+	fill_bottle(); 
+	fill_chalice(); 
+	try_to_fill_unfillable(); 
+	return; 
+} 
+
+int w22()
 {
 	d37(); d38(); return;
 } int t32() { j45(); c33(); return; } 

@@ -309,7 +309,7 @@ g31() { f3(700, 1471); f3(701, 1473); c28(); longjmp(done_with_command, 1); } in
 		modifyObjectFlag('c', 427, 8); longjmp(done_with_command, 1);
 	} if ((419 <= object_type_3_buffer[PLAYER_LOCATION] && object_type_3_buffer[PLAYER_LOCATION] <= 426)) {
 		printMessage(PRINT_MESSAGE_END_COMMAND, 1650, 0);
-	} if (isObjectFlagSet(dereference(PLAYER_LOCATION), 9)) { printMessage(PRINT_MESSAGE_END_COMMAND, 1651, 0); } if (isItemAtLocation(114, 3) || isItemAtLocation(111, 3)) {
+	} if (isObjectFlagSet(dereference(PLAYER_LOCATION), 9)) { printMessage(PRINT_MESSAGE_END_COMMAND, 1651, 0); } if (isItemAtLocation(114, 3) || isItemAtLocation(ITEM_BOTTLE, 3)) {
 		printMessage(PRINT_MESSAGE_END_COMMAND, 1652, 0);
 	} printMessage(PRINT_MESSAGE_END_COMMAND, 1653, 0);
 } int s26() {
@@ -382,7 +382,7 @@ int j47() {
 	modifyObjectFlag('s', 108, 3); 
 	modifyObjectFlag('s', 109, 3); 
 	modifyObjectFlag('s', 110, 3);
-	modifyObjectFlag('s', 111, 3);
+	modifyObjectFlag('s', ITEM_BOTTLE, 3);
 	modifyObjectFlag('s', ITEM_AXE, 3);
 	modifyObjectFlag('s', 38, 3); 
 	modifyObjectFlag('s', 39, 3); 
@@ -539,7 +539,7 @@ int j47() {
 	modifyObjectFlag('s', 49, 7);
 	modifyObjectFlag('s', 66, 7); modifyObjectFlag('s', 100, 7); modifyObjectFlag('s', 68, 7); modifyObjectFlag('s', 117, 7); modifyObjectFlag('s', 119, 7);
 	modifyObjectFlag('s', 42, 7); modifyObjectFlag('s', 43, 7); modifyObjectFlag('s', 57, 7); modifyObjectFlag('s', ITEM_PLATE, 7); modifyObjectFlag('s', 62, 7); modifyObjectFlag('s', 92, 7);
-	modifyObjectFlag('s', 111, 7); modifyObjectFlag('s', ITEM_STARSTONE, 7); modifyObjectFlag('s', 39, 7); modifyObjectFlag('s', ITEM_RAGS, 7); modifyObjectFlag('s', 97, 7);
+	modifyObjectFlag('s', ITEM_BOTTLE, 7); modifyObjectFlag('s', ITEM_STARSTONE, 7); modifyObjectFlag('s', 39, 7); modifyObjectFlag('s', ITEM_RAGS, 7); modifyObjectFlag('s', 97, 7);
 	modifyObjectFlag('s', 22, 8); modifyObjectFlag('s', ITEM_DWARF, 8); modifyObjectFlag('s', 20, 8); modifyObjectFlag('s', 7, 8); modifyObjectFlag('s', 17, 8); modifyObjectFlag('s', 38, 8);
 	modifyObjectFlag('s', 106, 8); modifyObjectFlag('s', 107, 8); modifyObjectFlag('s', 24, 8); modifyObjectFlag('s', 101, 8); modifyObjectFlag('s', 27, 8);
 	modifyObjectFlag('s', 28, 8); modifyObjectFlag('s', ITEM_GOBLINS, 8); modifyObjectFlag('s', 25, 8); modifyObjectFlag('s', 135, 8); modifyObjectFlag('s', 82, 8);
@@ -575,7 +575,7 @@ int j47() {
 	set_object_location(5, 150); 
 	set_object_location(101, 149);
 	set_object_location(6, 223); set_object_location(105, 225); set_object_location(7, 155); set_object_location(8, 152); set_object_location(106, 232); set_object_location(108, LOCATION_WITTS_END);
-	set_object_location(110, 484); set_object_location(111, LOCATION_MAGNIFICENT_VIEW); set_object_location(11, 159); set_object_location(12, 156); set_object_location(13, 238); set_object_location(16, 165);
+	set_object_location(110, 484); set_object_location(ITEM_BOTTLE, LOCATION_MAGNIFICENT_VIEW); set_object_location(11, 159); set_object_location(12, 156); set_object_location(13, 238); set_object_location(16, 165);
 	set_object_location(18, LOCATION_ORIENTAL); set_object_location(20, 247); set_object_location(21, 244); set_object_location(22, 244); set_object_location(38, 299); set_object_location(30, 252);
 	set_object_location(34, 311); set_object_location(40, 225); set_object_location(44, 154); set_object_location(45, 153); set_object_location(46, 160); set_object_location(47, 161);
 	set_object_location(48, 162); set_object_location(50, LOCATION_GIANT_ROOM); set_object_location(51, 224); set_object_location(53, LOCATION_ORIENTAL); set_object_location(55, LOCATION_PLOVER); set_object_location(58, 229);

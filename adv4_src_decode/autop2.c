@@ -1013,10 +1013,10 @@ int a20() {
 		{
 			printMessage(76, 1129, 670);
 		} if (currentCommandContains(113)) {
-			if (isItemAtLocation(114, 4) || isItemAtLocation(111, 4)) {
-				if (isItemAtLocation(111, 4))
+			if (isItemAtLocation(114, 4) || isItemAtLocation(ITEM_BOTTLE, 4)) {
+				if (isItemAtLocation(ITEM_BOTTLE, 4))
 				{
-					set_value(0, 111, 2);
+					set_value(0, ITEM_BOTTLE, 2);
 				}
 				else { set_value(0, 114, 2); } printMessage(12, 1489, 113); printMessage(76, 1490, 6);
 			} printMessage(76, 1027, 669);
@@ -1670,14 +1670,14 @@ int c31() {
 } 
 
 int b31() {
-	e6(0, 486, -1); if (currentCommandContains(3)) { e6(1, 486, -1); } if (!currentCommandIsOneOf(101, 100, 111, 113, 112, 53, 118, 27, 38,
+	e6(0, 486, -1); if (currentCommandContains(3)) { e6(1, 486, -1); } if (!currentCommandIsOneOf(101, 100, ITEM_BOTTLE, 113, 112, 53, 118, 27, 38,
 		97, ITEM_STARSTONE, -1)) return 0; if (currentCommandContains(101)) { s27(); }
 		else {
 			if (currentCommandContains(100)) {
 				g33();
 			}
 			else {
-				if (currentCommandContains(111)) { a30(); }
+				if (currentCommandContains(ITEM_BOTTLE)) { a30(); }
 				else {
 					if (currentCommandContains(113) || currentCommandContains(112)) {
 						h24();
