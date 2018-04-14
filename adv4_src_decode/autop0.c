@@ -555,43 +555,91 @@ int a28()
 		else { special_action(10, 700); }
 	}
 }
+
 int g32() {
-	set_value(0, 673, 0); if (object_type_3_buffer[697] == 1) { set_value(SET_VALUE_DEREFERENCE, 675, 669); }
-	else {
+	set_value(0, 673, 0); 
+
+	if (object_type_3_buffer[697] == 1) { 
+		set_value(SET_VALUE_DEREFERENCE, 675, 669); 
+	} else {
 		set_value(SET_VALUE_DEREFERENCE, 675, 670);
-	} if (!(isObjectFlagSet(dereference(675), 0))) { return 0; } if (g10(dereference(object_type_3_buffer[675]), -1)) {
-		return
-			0;
-	} if (currentCommandContains(102)) {
-		if (isObjectFlagSet(102, 4) && g10(104, -1) && !g10(102, -1)) {
-			return
-				0;
+	} 
+	
+	if (!(isObjectFlagSet(dereference(675), 0))) { 
+		return 0; 
+	} 
+	
+	if (g10(dereference(object_type_3_buffer[675]), -1)) {
+		return 0;
+	} 
+	
+	if (currentCommandContains(ITEM_ROD)) {
+		if (isObjectFlagSet(ITEM_ROD, 4) && g10(ITEM_ROD_WITH_MARK, -1) && !g10(ITEM_ROD, -1)) {
+			return 0;
 		}
-	} if (!(isObjectFlagSet(dereference(675), 13) || isObjectFlagSet(dereference(675), 14))) { return 0; } if (currentCommandContains(27))
+	} 
+	
+	if (!(isObjectFlagSet(dereference(675), 13) || isObjectFlagSet(dereference(675), 14))) { 
+		return 0; 
+	} 
+	
+	if (currentCommandContains(ITEM_DJINN))
 	{
 		return 0;
-	} if (isObjectFlagSet(dereference(675), 13)) { if (!(object_type_3_buffer[PLAYER_LOCATION] == 378)) { return 0; } }
-	else { if (!(object_type_3_buffer[PLAYER_LOCATION] == 379)) { return 0; } } if (currentCommandContains(COMMAND_TAKE)) {
+	} 
+	
+	if (isObjectFlagSet(dereference(675), 13)) { 
+		if (!(object_type_3_buffer[PLAYER_LOCATION] == 378)) { // Northeast end of the repository
+			return 0; 
+		} 
+	} else { 
+		if (!(object_type_3_buffer[PLAYER_LOCATION] == 379)) { // Southwest end of the repository
+			return 0; 
+		} 
+	} 
+	
+	if (currentCommandContains(COMMAND_TAKE)) {
 		if (currentCommandContains(ITEM_DWARF)) {
 			printMessage(PRINT_MESSAGE_END_COMMAND, MESSAGE_RIDICULOUS, 0);
-		} if (isObjectFlagSet(dereference(675), 4)) { printMessage(76, 1378, 670); } if (object_type_3_buffer[CARRIED_ITEM_COUNT] < object_type_3_buffer[MAX_CARRIED_ITEMS])
+		} 
+		
+		if (isObjectFlagSet(dereference(675), 4)) { 
+			printMessage(76, 1378, 670); 
+		} 
+		
+		if (object_type_3_buffer[CARRIED_ITEM_COUNT] < object_type_3_buffer[MAX_CARRIED_ITEMS])
 		{
 			modifyObjectFlag('s', dereference(675), 4);
+		} else { 
+			clear_command(); 
+			printMessage(PRINT_MESSAGE_END_COMMAND, 897, 0); 
 		}
-		else { clear_command(); printMessage(PRINT_MESSAGE_END_COMMAND, 897, 0); }
-	} copy_item_location_dereferencing_if_variable(673, 675); set_object_location(object_type_3_buffer[675], object_type_3_buffer[PLAYER_LOCATION]);
-} int i42() {
+	} 
+	
+	copy_item_location_dereferencing_if_variable(673, 675); 
+	set_object_location(object_type_3_buffer[675], object_type_3_buffer[PLAYER_LOCATION]);
+} 
+
+int i42() {
 	if (!(object_type_3_buffer[673] == 0)) {
-		if (object_type_3_buffer[697] == 1) { set_value(SET_VALUE_DEREFERENCE, 675, 669); }
-		else
-		{
+		if (object_type_3_buffer[697] == 1) { 
+			set_value(SET_VALUE_DEREFERENCE, 675, 669); 
+		} else {
 			set_value(SET_VALUE_DEREFERENCE, 675, 670);
-		} if (!(isObjectFlagSet(dereference(675), 0))) { return 0; } if (!(isItemAtLocation(dereference(object_type_3_buffer[675]), -1)))
+		}
+		
+		if (!(isObjectFlagSet(dereference(675), 0))) { 
+			return 0; 
+		} 
+		
+		if (!(isItemAtLocation(dereference(object_type_3_buffer[675]), -1)))
 		{
 			set_object_location(object_type_3_buffer[675], object_type_3_buffer[673]);
 		}
 	}
-} int r28() {
+} 
+
+int r28() {
 	if (object_type_3_buffer[PLAYER_LOCATION] == 147 || object_type_3_buffer[PLAYER_LOCATION] == 419 ||
 		object_type_3_buffer[PLAYER_LOCATION] == 370 || object_type_3_buffer[PLAYER_LOCATION] == 380) {
 		printMessage(PRINT_MESSAGE_END_COMMAND, 1377, 0);
@@ -599,34 +647,34 @@ int g32() {
 } int u24()
 {
 	if (currentCommandContains(COMMAND_TAKE)) {
-		if (q8(102, -1)) { return 0; } if (isItemAtLocation(104, -1)) {
+		if (q8(102, -1)) { return 0; } if (isItemAtLocation(ITEM_ROD_WITH_MARK, -1)) {
 			printMessage(76, 813, 670);
-		} if (!(g10(104, -1))) {
+		} if (!(g10(ITEM_ROD_WITH_MARK, -1))) {
 			if (object_type_3_buffer[PLAYER_LOCATION] == 379) {
-				if (isObjectFlagSet(104, 4)) {
+				if (isObjectFlagSet(ITEM_ROD_WITH_MARK, 4)) {
 					printMessage(76, 1378, 670);
 				}
 			}
 			else { return 0; }
 		} if (object_type_3_buffer[CARRIED_ITEM_COUNT] < object_type_3_buffer[MAX_CARRIED_ITEMS]) {
-			set_object_location(104, r5); modifyObjectFlag('s', 104, 4);
+			set_object_location(ITEM_ROD_WITH_MARK, r5); modifyObjectFlag('s', ITEM_ROD_WITH_MARK, 4);
 			set_value(0, 673, 0); printMessage(12, 1489, 669); printMessage(76, 1490, 670);
 		} clear_command(); printMessage(PRINT_MESSAGE_END_COMMAND, 897, 0);
 	}
 	if (currentCommandContains(535) || currentCommandContains(COMMAND_THROW)) {
-		if (isItemAtLocation(ITEM_ROD,-1)) { return 0; } if (isItemAtLocation(104, -1))
+		if (isItemAtLocation(ITEM_ROD,-1)) { return 0; } if (isItemAtLocation(ITEM_ROD_WITH_MARK, -1))
 		{
-			set_object_location(104, PLAYER_LOCATION); printMessage(12, 1489, 669); printMessage(76, 1490, 670);
+			set_object_location(ITEM_ROD_WITH_MARK, PLAYER_LOCATION); printMessage(12, 1489, 669); printMessage(76, 1490, 670);
 		} printMessage(76, 1027, 670);
 	} if
 		(currentCommandContains(547)) {
-		if (isItemAtLocation(ITEM_ROD,-1) || isItemAtLocation(104, -1)) { printMessage(PRINT_MESSAGE_END_COMMAND, MESSAGE_NOTHING_HAPPENS, 0); } printMessage(76, 1027, 670);
+		if (isItemAtLocation(ITEM_ROD,-1) || isItemAtLocation(ITEM_ROD_WITH_MARK, -1)) { printMessage(PRINT_MESSAGE_END_COMMAND, MESSAGE_NOTHING_HAPPENS, 0); } printMessage(76, 1027, 670);
 	} if (currentCommandContains(COMMAND_LOOK)) {
-		if (g10(102, -1) && !isItemAtLocation(104, -1) || isItemAtLocation(ITEM_ROD,-1)) {
+		if (g10(102, -1) && !isItemAtLocation(ITEM_ROD_WITH_MARK, -1) || isItemAtLocation(ITEM_ROD,-1)) {
 			printMessage(76, 1541, 670);
 		}
 		else {
-			modifyObjectFlag('s', dereference(697), 4); printMessage(0, 104, 0); modifyObjectFlag('c', dereference(697), 4); longjmp(done_with_command, 1);
+			modifyObjectFlag('s', dereference(697), 4); printMessage(0, ITEM_ROD_WITH_MARK, 0); modifyObjectFlag('c', dereference(697), 4); longjmp(done_with_command, 1);
 		}
 	}
 	else { printMessage(PRINT_MESSAGE_END_COMMAND, 1396, 0); }
@@ -843,7 +891,7 @@ int die() {
 		set_value(0, ITEM_STARSTONE, 3); 
 	} 
 	
-	if (object_type_3_buffer[PLAYER_LOCATION] == 432 || object_type_3_buffer[PLAYER_LOCATION] == 256) {
+	if (object_type_3_buffer[PLAYER_LOCATION] == 432 || object_type_3_buffer[PLAYER_LOCATION] == 256) { // 432 is swirling mist
 		processMoveCommand(LOCATION_LIMBO, -1);
 	} 
 
@@ -858,12 +906,12 @@ int die() {
 		set_value(0, ITEM_BASILISK, 0);
 	} else { 
 		if (object_type_3_buffer[ITEM_BASILISK] == 3) {
-			set_value(0, 25, 2); 
+			set_value(0, ITEM_BASILISK, 2);
 		} 
 	} 
 	
 	set_object_location(ITEM_FOG, 255);
-	set_value(0, 14, 8);
+	set_value(0, ITEM_FOG, 8);
 	
 	if (object_type_3_buffer[ITEM_CROWN] > 1) {
 		set_value(0, ITEM_CROWN, 1);
@@ -1140,7 +1188,7 @@ int e28() {
 	{
 		b27(); printMessage(PRINT_MESSAGE_END_COMMAND, 964, 0);
 	} if (object_type_3_buffer[PLAYER_LOCATION] == 379) {
-		if (!(item_location[104] == LOCATION_LIMBO)) {
+		if (!(item_location[ITEM_ROD_WITH_MARK] == LOCATION_LIMBO)) {
 			printMessage(0, 1384, 0);
 			printMessage(0, 1372, 0); die();
 		}
@@ -1337,7 +1385,7 @@ int s28() {
 	} set_object_location(10, 379);
 	modifyObjectFlag('s', ITEM_BOTTLE, 13); set_value(0, ITEM_BOTTLE, 2); modifyObjectFlag('s', 11, 13); modifyObjectFlag('s', 107, 13); set_value(0, 107, 0);
 	modifyObjectFlag('s', 107, 7); modifyObjectFlag('c', 107, 15); modifyObjectFlag('s', 102, 13); modifyObjectFlag('s', 99, 13); set_value(0, 99, 0);
-	set_value(0, 698, 0); modifyObjectFlag('s', ITEM_DWARF, 13); set_value(0, ITEM_DWARF, 0); modifyObjectFlag('s', 104, 14); modifyObjectFlag('s', 7, 14);
+	set_value(0, 698, 0); modifyObjectFlag('s', ITEM_DWARF, 13); set_value(0, ITEM_DWARF, 0); modifyObjectFlag('s', ITEM_ROD_WITH_MARK, 14); modifyObjectFlag('s', 7, 14);
 	modifyObjectFlag('s', 100, 14); set_value(0, 100, 1); modifyObjectFlag('s', 101, 14); set_value(0, 101, 1); modifyObjectFlag('s', 105, 14);
 	set_value(0, 120, 2); *getObjectPointer(676) = -1; object_type_3_buffer[676] = MIN_LOCATION_ID - 1; while (++object_type_3_buffer[676] <= MAX_LOCATION_ID) {
 		if (isObjectFlagSet(dereference(676), 7))

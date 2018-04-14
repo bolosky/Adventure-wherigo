@@ -145,10 +145,15 @@ int lost_in_mist_432() {
 int w21() {
 	t42(); t43(); v42(); x33(); w29();
 	v43(); c32(); return;
-} int r8() { f23(); t41(); return; } int x11() {
+} int r8() { f23(); t41(); return; } 
+
+int command_water_112() {
 	f26();
-	p40(); return;
-} int z13() { o27(); f25(); return; } 
+	p40(); 
+	return;
+} 
+
+int z13() { o27(); f25(); return; } 
 
 command_noop() 
 { 

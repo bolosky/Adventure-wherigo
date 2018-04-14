@@ -18,30 +18,37 @@ extern v0;
 #define ITEM_PLANT						11
 #define ITEM_STALACTITE					13
 #define ITEM_FOG						14
-#define ITEM_DRAWINGS					18	// Fish and drawings are intentionally the same
+#define ITEM_DRAWINGS					18 // Fish and drawings are intentionally the same
 #define ITEM_FISH						18
 #define ITEM_PIRATE						19
 #define ITEM_DRAGON						20
 #define ITEM_CHASM						21
 #define ITEM_TROLL						22
+#define MESSAGE_NO_TROLL				23 // The troll is nowhere to be seen.
 #define ITEM_OGRE						24
 #define ITEM_BASILISK					25
 #define ITEM_GONG						26
 #define ITEM_DJINN						27
 #define ITEM_TORTOISE					28
+#define MESSAGE_NOT_PIRATE				29 // There is a message scrawled in the dust in a flowery script, reading: "This is not the maze where the pirate leaves his treasure chest."
 #define ITEM_STATUE						31
-#define ITEM_SLIME						33
-#define ITEM_MACHINE					34
-#define ITEM_SAFE						35
-#define ITEM_THRONE						36
-#define ITEM_SKELETON					37
-#define ITEM_BEAR						38
-#define ITEM_BATTERIES					39
-#define ITEM_DINGHY						41
-#define ITEM_BAG						42
-#define ITEM_CROWN						43
-#define ITEM_GOLD						44
-#define ITEM_DIAMONDS					45
+#define ITEM_SLIME						33 // The  passage  to  the  south is swathed with sheets of evil-looking green slime, which twitches and flows as if aware of your presence.
+#define ITEM_MACHINE					34 // There is a massive vending machine here.  The instructions on it read: "Drop coins here to receive fresh batteries."
+#define ITEM_SAFE						35 // A  massive  walk-in safe takes up one entire wall.  It is tightly closed, and has no handle, lock, nor keyhole.
+#define ITEM_THRONE						36 
+#define ITEM_SKELETON					37 // Resting  on  the  throne  ("sitting"  isn't  really the right word) is an incredible skeleton.  It is fairly humanoid from the waist up 
+										   // (except for its incredible size and four extra arms);  below that, it  resembles  the body of a giant python, and is wrapped in and around 
+										   // the bars and rods of the  throne.   Clutched  in  one  bony  hand  is a long sceptre, ornately encrusted with sapphires!!
+#define ITEM_BEAR						38 // There is a ferocious cave bear eying you from the far end of the room!
+#define ITEM_BATTERIES					39 // There is a pair of brand-new batteries in the goods tray.
+#define ITEM_DINGHY						41 // Lying  upon  the  beach  are the shattered remains of what must once have
+										   // been a dinghy.The remains consist of little  more  than  a  few  broken
+										   // boards, upon  one of which may be seen a crude sketch of a skull and two
+										   // crossed thighbones(perhaps this dinghy was once owned by a cook ? ).
+#define ITEM_BAG						42 // There is a bag (obviously filled with pieces of eight) in the dinghy!
+#define ITEM_CROWN						43 // There is a massive crown made of solid iridium floating in midair!
+#define ITEM_GOLD						44 // There is a large sparkling nugget of gold here!
+#define ITEM_DIAMONDS					45 // There are diamonds here!
 #define ITEM_SILVER						46
 #define ITEM_JEWELRY					47
 #define ITEM_COINS						48
@@ -73,6 +80,7 @@ extern v0;
 #define ITEM_GRILL						76
 #define ITEM_DRAIN						77
 #define ITEM_ORB						78
+#define MESSAGE_GLOBE_IN_DEPRESSION		79 // A glistening globe lies in a small depression on the sloping cellar floor.
 #define ITEM_TUSK						80
 #define ITEM_CHALICE					81
 #define ITEM_UNICORN					82
@@ -96,8 +104,10 @@ extern v0;
 #define ITEM_BIRD						101
 #define ITEM_ROD						102
 #define ITEM_PLATE						103
+#define ITEM_ROD_WITH_MARK				104 // A three foot black rod with a rusty mark on an end lies nearby.
 #define ITEM_PILLOW						105
 #define ITEM_CLAM						106
+#define ITEM_OYSTER						107 // There is an enormous oyster here with its shell tightly closed.
 #define ITEM_MAGAZINE					108
 #define ITEM_FOOD						110
 #define ITEM_BOTTLE						111

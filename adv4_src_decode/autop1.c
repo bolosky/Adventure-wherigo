@@ -542,27 +542,59 @@ int h29() {
 		set_object_location(117, LOCATION_LIMBO); set_object_location(ITEM_GOBLINS, LOCATION_LIMBO);
 		printMessage(PRINT_MESSAGE_END_COMMAND, 1151, 0);
 	} longjmp(done_with_command, 1);
-} int s31() {
+} 
+
+int s31() {
 	if (g10(8, -1)) {
 		printMessage(PRINT_MESSAGE_END_COMMAND, 1538, 0);
-	} if (g10(30, -1)) { printMessage(PRINT_MESSAGE_END_COMMAND, 1549, 0); } if (g10(21, -1)) {
+	} 
+	
+	if (g10(30, -1)) { 
+		printMessage(PRINT_MESSAGE_END_COMMAND, 1549, 0); 
+	} 
+	
+	if (g10(21, -1)) {
 		if (object_type_3_buffer[21] == 0) {
 			printMessage(PRINT_MESSAGE_END_COMMAND, 1539, 0);
-		} printMessage(PRINT_MESSAGE_END_COMMAND, 1540, 0);
+		} 
+		printMessage(PRINT_MESSAGE_END_COMMAND, 1540, 0);
 	}
-} int c28() {
-	object_type_3_buffer[699] = object_type_3_buffer[700] - 1; while (++object_type_3_buffer[699] <= object_type_3_buffer[701])
+} 
+
+int c28() {
+	object_type_3_buffer[699] = object_type_3_buffer[700] - 1; 
+	
+	while (++object_type_3_buffer[699] <= object_type_3_buffer[701])
 	{
-		printMessage(PRINT_MESSAGE_DEREFERENCE_MSG, 699, 0); if (object_type_3_buffer[699] < object_type_3_buffer[701]) { if (!(ask_user_yes_or_no_question(944))) { return 0; } }
+		printMessage(PRINT_MESSAGE_DEREFERENCE_MSG, 699, 0); 
+		if (object_type_3_buffer[699] < object_type_3_buffer[701]) { 
+			if (!(ask_user_yes_or_no_question(944))) { 
+				return 0; 
+			} 
+		}
 	}
 }
-int v39() { object_type_3_buffer[677] = cheezy_rand(852 - 847 + 1) + 847; printMessage(78, 677, 669); } int o23() {
+int v39() { object_type_3_buffer[677] = cheezy_rand(852 - 847 + 1) + 847; printMessage(78, 677, 669); } 
+
+int pour_water_on_plant() {
 	f3(677, 1591);
-	object_type_3_buffer[677] += object_type_3_buffer[11]; printMessage(PRINT_MESSAGE_DEREFERENCE_MSG, 677, 0); object_type_3_buffer[11] += 1; if (object_type_3_buffer[11] > 2) {
+	object_type_3_buffer[677] += object_type_3_buffer[11]; 
+	// The plant spurts into furious growth for a few seconds.
+	// The plant grows explosively, almost filling the bottom of the pit.
+	// You've over-watered the plant!  It's shriveling up!  It's, it's...
+	printMessage(PRINT_MESSAGE_DEREFERENCE_MSG, 677, 0);
+	object_type_3_buffer[11] += 1; 
+	
+	if (object_type_3_buffer[11] > 2) {
 		set_value(0, 11, 0);
 		modifyObjectFlag('s', 12, 10);
-	}
-	else { modifyObjectFlag('c', 12, 10); } printBlankLine(); printMessage(0, 11, 0); set_value(SET_VALUE_DEREFERENCE, 12, 11);
+	} else { 
+		modifyObjectFlag('c', 12, 10); 
+	} 
+	
+	printBlankLine(); 
+	printMessage(0, 11, 0); 
+	set_value(SET_VALUE_DEREFERENCE, 12, 11);
 } 
 
 int u28() {

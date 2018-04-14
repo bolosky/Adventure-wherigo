@@ -118,18 +118,19 @@ int e9()
 		f3(701, 1704); if (object_type_3_buffer[ITEM_SWORD] == 0) { object_type_3_buffer[701] += 1; } printMessage(PRINT_MESSAGE_END_COMMAND | PRINT_MESSAGE_DEREFERENCE_MSG, 701, 0);
 	}
 } 
+
 int f26() {
-	if (!currentCommandContains(11)) 
+	if (!currentCommandContains(ITEM_PLANT))
 		return; 
 
-	if (g10(11, -1)) {
-		if (isItemAtLocation(114, 3) || isItemAtLocation(ITEM_BOTTLE, 3)) {
+	if (g10(ITEM_PLANT, -1)) {
+		if (isItemAtLocation(ITEM_FLASK, 3) || isItemAtLocation(ITEM_BOTTLE, 3)) {
 			if (!(isItemAtLocation(ITEM_BOTTLE, 3))) { 
-				set_value(0, 114, 2); 
+				set_value(0, ITEM_FLASK, 2);
 				printMessage(PRINT_MESSAGE_END_COMMAND, 1366, 0); // Your flask is now empty, but I don't think that trickle of water is going to do anything much.
 			} 
 			set_value(0, ITEM_BOTTLE, 2);
-			o23();
+			pour_water_on_plant();
 		} else { 
 			printMessage(12, 1027, 669);  // You have no !
 		}
@@ -945,48 +946,72 @@ int n31() {
 	{
 		printMessage(PRINT_MESSAGE_END_COMMAND, MESSAGE_RIDICULOUS, 0);
 	}
-} int l25() {
-	if (object_type_3_buffer[670] == 112) {
+} 
+
+int command_pour_553() {
+	if (object_type_3_buffer[670] == ITEM_WATER) {
 		if (g10(ITEM_BOTTLE, 3)) {
 			set_value(0, ITEM_BOTTLE, 2);
-			if (g10(11, -1)) { o23(); }
-			else {
-				if (g10(6, -1)) {
-					printMessage(0, MESSAGE_RUSTED, 0); set_value(0, 6, 0);
-				}
-				else { printMessage(12, 875, 112); } modifyObjectFlag('s', dereference(PLAYER_LOCATION), 15);
+			if (g10(ITEM_PLANT, -1)) {
+				pour_water_on_plant(); 
+			} else {
+				if (g10(ITEM_DOOR, -1)) {
+					printMessage(0, MESSAGE_RUSTED, 0); 
+					set_value(0, ITEM_DOOR, 0);
+				} else { 
+					printMessage(12, 875, ITEM_WATER); // The water pours out, making a wet patch on the ground.
+				} 
+				modifyObjectFlag('s', dereference(PLAYER_LOCATION), 15);
 			}
-		}
-		else {
-			if (g10(114, 3))
+		} else {
+			if (g10(ITEM_FLASK, 3))
 			{
-				set_value(0, 114, 2); printMessage(0, 1367, 0);
+				set_value(0, 114, 2); 
+				printMessage(0, 1367, 0);
+			} else { 
+				printMessage(12, 1027, 112); 
 			}
-			else { printMessage(12, 1027, 112); }
-		} longjmp(done_with_command, 1);
-	} if (object_type_3_buffer[670] == 113) {
+		} 
+		longjmp(done_with_command, 1);
+	} 
+	
+	if (object_type_3_buffer[670] == ITEM_OIL) {
 		if (!(g10(114, 4) || g10(ITEM_BOTTLE, 4))) {
 			printMessage(76, 1027, 113);
-		} if (g10(ITEM_BOTTLE, 4)) { set_value(0, ITEM_BOTTLE, 2); set_value(0, 700, 1); }
-		else {
-			set_value(0, 114, 2); set_value(0, 700, 2);
-		} if (g10(11, -1)) { printMessage(0, MESSAGE_INDIGNANT, 0); }
-		else {
+		} 
+		
+		if (g10(ITEM_BOTTLE, 4)) { 
+			set_value(0, ITEM_BOTTLE, 2); 
+			set_value(0, 700, 1); 
+		} else {
+			set_value(0, 114, 2); 
+			set_value(0, 700, 2);
+		} 
+		
+		if (g10(11, -1)) { 
+			printMessage(0, MESSAGE_INDIGNANT, 0); 
+		} else {
 			if (g10(6, -1)) {
 				printMessage(0, MESSAGE_DOOR_FREE, 0);
 				set_value(0, 6, 1);
-			}
-			else {
+			} else {
 				if (object_type_3_buffer[700] == 1) {
-					printMessage(12, 875, 112); modifyObjectFlag('s', dereference(PLAYER_LOCATION), 15);
+					printMessage(12, 875, 112); 
+					modifyObjectFlag('s', dereference(PLAYER_LOCATION), 15);
+				} else { 
+					printMessage(0, 1367, 0); 
 				}
-				else { printMessage(0, 1367, 0); }
 			}
-		} longjmp(done_with_command, 1);
-	} if (object_type_3_buffer[697] > 1) {
+		} 
+		longjmp(done_with_command, 1);
+	} 
+	
+	if (object_type_3_buffer[697] > 1) {
 		printMessage(PRINT_MESSAGE_END_COMMAND, 877, 0);
 	}
-} int p30() {
+} 
+
+int p30() {
 	if (!currentCommandIsOneOf(ITEM_DWARF, 7, 101, 20, 22, 38, 19, 24, 25, ITEM_GOBLINS, 82, -1)) return
 		0; if (!g10(dereference(object_type_3_buffer[670]), -1)) return 0; printMessage(PRINT_MESSAGE_END_COMMAND, 803, 0);
 } 

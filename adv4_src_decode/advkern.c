@@ -1089,21 +1089,21 @@ e6(p4, d8, q5) int p4; int d8; int q5; { int i6; int
 
 		x7();
 
-		BJBMessage(64-64, 901, 0);
+		BJBMessage(64-64, 944, 0);
 
 
 
-		BJBMessage(0, 1390, 0);
-		BJBMessage(0, 1391, 0);
-		BJBMessage(0, 1392, 0);
-		BJBMessage(0, 1393, 0);
-		BJBMessage(0, 1394, 0);
+		BJBMessage(0, 1591, 0);
+		BJBMessage(0, 1592, 0);
+		BJBMessage(0, 1593, 0);
+		BJBMessage(0, 1594, 0);
+		BJBMessage(12, 875, ITEM_WATER);
 
 
-		if (0)
+		if (1)
 		{
 			int i;
-			for (i = 1041; i <= 1050; i++) {
+			for (i = 885; i <= 896; i++) {
 				BJBMessage(0, i, 0);
 			}
 		}

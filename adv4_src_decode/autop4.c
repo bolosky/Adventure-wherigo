@@ -155,12 +155,12 @@ int j32() {
 } 
 
 int blast_command() {
-	if (object_type_3_buffer[717] == 3 && isObjectFlagSet(104, 4)) {
-		if (item_location[104] == LOCATION_LIMBO) { 
+	if (object_type_3_buffer[717] == 3 && isObjectFlagSet(ITEM_ROD_WITH_MARK, 4)) {
+		if (item_location[ITEM_ROD_WITH_MARK] == LOCATION_LIMBO) { 
 			printMessage(PRINT_MESSAGE_END_COMMAND, 1401, 0); // I think enough is enough.
 		} 
 		
-		if (g10(104, -1)) {
+		if (g10(ITEM_ROD_WITH_MARK, -1)) {
 			printMessage(0, 1374, 0); // There  is  a  loud  explosion.   Being  foolishly near its epicentre, you suddenly find yourself splashed across the walls of the cave.
 			die();
 		} 
@@ -172,7 +172,7 @@ int blast_command() {
 		
 		modifyObjectFlag('s', 381, 4); 
 		f3(PREVIOUS_LOCATION, 380);
-		set_object_location(104, LOCATION_LIMBO); 
+		set_object_location(ITEM_ROD_WITH_MARK, LOCATION_LIMBO); 
 		set_object_location(ITEM_DWARF, LOCATION_LIMBO); 
 		set_object_location(82, object_type_3_buffer[PLAYER_LOCATION]); 
 		printMessage(PRINT_MESSAGE_END_COMMAND, 1376, 0); // There  is  a  loud  explosion  at  the  other end of the repository and a section of the far wall collapses, burying the  dwarves  in  the  rubble. The  settling dust reveals a dark hole leading northeast. When the air is finally clear, a snow-white golden-horned unicorn walks out of  the  hole and,  gracefully  picking  its  way  through  the heaps of rubble, calmly approaches you.
@@ -374,7 +374,7 @@ int j47() {
 	modifyObjectFlag('s', 99, 3);
 	modifyObjectFlag('s', 100, 3); 
 	modifyObjectFlag('s', 102, 3); 
-	modifyObjectFlag('s', 104, 3); 
+	modifyObjectFlag('s', ITEM_ROD_WITH_MARK, 3); 
 	modifyObjectFlag('s', 101, 3); 
 	modifyObjectFlag('s', 105, 3);
 	modifyObjectFlag('s', 106, 3); 

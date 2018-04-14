@@ -1,6 +1,6 @@
 /* Adventure4+ - copyleft @ M.L.Arnautov 1991 */
 extern int command_noop(); extern int x7(); extern int u6(); extern int f4(); extern
-int u8(); extern int s10(); extern int x11(); extern int e9(); extern int
+int u8(); extern int s10(); extern int command_water_112(); extern int e9(); extern int
 command_outside_building_136(); extern int d14(); extern int s11(); extern int i16(); extern int d15();
 extern int command_in_building_141(); extern int r8(); extern int slit_in_streambed_143(); extern int r9(); extern
 int p13(); extern int j12(); extern int t13(); extern int l16(); extern
@@ -95,7 +95,7 @@ int b23(); extern int e20(); extern int m24(); extern int KilobyteInputBuffer8()
 int z21(); extern int KilobyteInputBuffer9(); extern int v30(); extern int j30(); extern
 int o19(); extern int s25(); extern int command_cut_544(); extern int j31(); extern
 int f20(); extern int o20(); extern int p30(); extern int n22(); extern
-int i36(); extern int d32(); extern int j32(); extern int l25(); extern
+int i36(); extern int d32(); extern int j32(); extern int command_pour_553(); extern
 int i37(); extern int command_drink_555(); extern int c27(); extern int w21(); extern
 int w22(); extern int e21(); extern int command_fill_560(); extern int r22(); extern
 int t31(); extern int g29(); extern int command_break(); extern int p31(); extern
@@ -227,7 +227,7 @@ int (*command_by_location_dispatch_table[])()= {
 	command_noop,	// 109
 	command_noop,	// 110
 	command_noop,	// 111
-	x11,	// 112
+	command_water_112,	// 112
 	e9,	// 113
 	command_noop,	// 114
 	command_noop,	// 115
@@ -668,7 +668,7 @@ int (*command_by_location_dispatch_table[])()= {
 	i36,	// 550
 	d32,	// 551
 	j32,	// 552
-	l25,	// 553
+	command_pour_553,	// 553
 	i37,	// 554
 	command_drink_555,	// 555
 	c27,	// 556
@@ -791,7 +791,7 @@ command_noop,command_noop,command_noop,command_noop,command_noop,command_noop,co
 command_noop,command_noop,command_noop,command_noop,command_noop,command_noop,command_noop,command_noop,command_noop,command_noop,command_noop, command_noop,command_noop,command_noop,command_noop,command_noop,command_noop,command_noop,command_noop,command_noop,command_noop,command_noop,
 command_noop,command_noop,command_noop,command_noop,command_noop,command_noop,command_noop,s10,command_noop,command_noop,command_noop, command_noop,command_noop,command_noop,command_noop,command_noop,command_noop,command_noop,command_noop,command_noop,command_noop,command_noop,
 command_noop,command_noop,command_noop,command_noop,command_noop,command_noop,command_noop,command_noop,command_noop,command_noop,command_noop, command_noop,command_noop,command_noop,command_noop,command_noop,command_noop,command_noop,command_noop,command_noop,command_noop,command_noop,
-command_noop,command_noop,x11,e9,command_noop,command_noop,command_noop,command_noop,command_noop,command_noop,command_noop, command_noop,command_noop,command_noop,command_noop,command_noop,command_noop,command_noop,command_noop,command_noop,command_noop,command_noop,
+command_noop,command_noop,command_water_112,e9,command_noop,command_noop,command_noop,command_noop,command_noop,command_noop,command_noop, command_noop,command_noop,command_noop,command_noop,command_noop,command_noop,command_noop,command_noop,command_noop,command_noop,command_noop,
 command_noop,command_noop,command_noop,command_noop,command_outside_building_136,d14,s11,i16,d15,n9,r8, slit_in_streambed_143,r9,p13,j12,t13,l16,h9,command_top_of_small_pit_150,u9,x12,p14,
 c17,hall_of_mt_king_155,q10,m7,n10,c18,a10,s12,j13,y2_163,v11, k6,a11,g13,z7,p15,j14,r10,k7,d16,o5,r11,
 r12,g14,v12,v13,z8,c19,q11,w12,h10,p16,i17, n12,q12,j15,g15,e10,j16,j17,z9,h11,w13,m8,
@@ -811,7 +811,7 @@ KilobyteInputBuffer4,v27,command_noop,command_noop,command_noop,command_noop,com
 KilobyteInputBuffer5,command_noop,command_noop,command_noop,command_noop,d27,command_restore_490,i32,KilobyteInputBuffer6,z19,command_noop, command_noop,command_zorton_496,t27,command_thurb_498,o17,d28,r21,n21,y19,command_melinkurion_504,z20,
 v28,command_foo_507,b22,g28,a21,i33,command_noop,command_noop,d29,i34,t28, v29,d30,i35,x25,a22,command_noop,l24,k18,command_noop,p27,d31,
 t29,command_noop,u17,p28,q32,command_noop,b23,e20,m24,KilobyteInputBuffer8,z21, KilobyteInputBuffer9,v30,j30,o19,s25,command_cut_544,j31,f20,o20,p30,n22,
-i36,d32,j32,l25,i37,command_drink_555,c27,w21,w22,e21,command_fill_560, r22,t31,g29,command_break,p31,t32,i38,l26,b24,command_noop,q34,
+i36,d32,j32,command_pour_553,i37,command_drink_555,c27,w21,w22,e21,command_fill_560, r22,t31,g29,command_break,p31,t32,i38,l26,b24,command_noop,q34,
 p32,l27,v31,command_verbose_575,z22,q35,a23,r23,e22,j33,t33, g30,v33,d33,b25,z23,x26,k20,p33,s26,r24,l28,
 w23,command_score_595,t34,blast_command,v35,command_noop,command_noop,command_noop,l30,u18,i39, g31,u19,i40,u20,u21,a24,j34,u22,l31,n23,command_noop,
 command_noop,f21,command_noop,command_noop,command_noop,command_noop,v36,command_noop,command_noop,command_noop,command_noop, command_noop,command_noop,command_noop,command_noop,command_noop,command_noop,command_noop,command_noop,command_noop,command_noop,command_noop,

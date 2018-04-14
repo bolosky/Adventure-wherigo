@@ -1658,7 +1658,7 @@ int c31() {
 		else { modifyObjectFlag('s', dereference(735), 6); set_value(0, 699, 1); } printMessage(76, 1692, 699);
 	} if (object_type_3_buffer[CARRIED_ITEM_COUNT] < object_type_3_buffer[MAX_CARRIED_ITEMS])
 	{
-		set_object_location(object_type_3_buffer[670], r5); printMessage(12, 1489, 669); if (currentCommandContains(104) && object_type_3_buffer[701] > 0) {
+		set_object_location(object_type_3_buffer[670], r5); printMessage(12, 1489, 669); if (currentCommandContains(ITEM_ROD_WITH_MARK) && object_type_3_buffer[701] > 0) {
 			printMessage(12, 1490, 102);
 		}
 		else { printMessage(12, 1490, 670); } if (currentCommandContains(107) && object_type_3_buffer[717] == 3 && object_type_3_buffer[107] == 0) {
