@@ -943,8 +943,8 @@ int die() {
 		printBlankLine();
 		f3(700, 894); 
 		if (object_type_3_buffer[677] < object_type_3_buffer[700]) {
-			if (isItemAtLocation(53, -1)) {
-				set_object_location(53, LOCATION_LIMBO); 
+			if (isItemAtLocation(ITEM_VASE, -1)) {
+				set_object_location(ITEM_VASE, LOCATION_LIMBO);
 				set_object_location(54, r5);
 			} 
 			
