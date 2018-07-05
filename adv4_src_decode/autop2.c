@@ -21,7 +21,7 @@ int balcony_above_treasure_chamber_242() {
 	if (!currentCommandIsNotOneOf(COMMAND_JUMP, -1)) 
 		return 0; 
 	processMoveCommand(LOCATION_LIMBO, -1); 
-	v37();
+	die_from_jumping();
 } 
 
 int j16()
@@ -73,7 +73,7 @@ int c21() {
 	
 	if (currentCommandContains(COMMAND_JUMP)) {
 		if (object_type_3_buffer[21] == 0) { printMessage(PRINT_MESSAGE_END_COMMAND, 902, 0); } processMoveCommand(LOCATION_LIMBO, -1);
-		v37();
+		die_from_jumping();
 	} if (currentCommandContains(9)) { set_object_location(9, object_type_3_buffer[PLAYER_LOCATION]); } if (currentCommandContains(120)) {
 		if (currentCommandContains(562) || currentCommandContains(COMMAND_LOOK))
 		{
@@ -142,7 +142,7 @@ int f7() {
 		}
 	} if (currentCommandContains(COMMAND_JUMP)) {
 		if (object_type_3_buffer[21] == 0) { printMessage(PRINT_MESSAGE_END_COMMAND, 902, 0); } processMoveCommand(LOCATION_LIMBO, -1);
-		v37();
+		die_from_jumping();
 	} if (currentCommandContains(COMMAND_LOOK)) { return 0; } processMoveCommand(249, 0, COMMAND_NORTHEAST, -249); processMoveCommand(250, 0, -250);
 	processMoveCommand(252, 0, -619); processMoveCommand(298, 0, -298); if (currentCommandContains(9)) { set_object_location(9, object_type_3_buffer[PLAYER_LOCATION]); } if (!currentCommandIsOneOf(COMMAND_CROSS, COMMAND_SOUTHWEST, -1))
 		return 0; if (object_type_3_buffer[21] > 0) { printMessage(PRINT_MESSAGE_END_COMMAND, 971, 0); } if (object_type_3_buffer[22] == 0) {
@@ -184,7 +184,7 @@ int breath_taking_view_252() {
 	
 	if (currentCommandContains(COMMAND_JUMP)) { 
 		processMoveCommand(LOCATION_LIMBO, -1); 
-		v37(); 
+		die_from_jumping(); 
 	} 
 	
 	if (currentCommandContains(9) && object_type_3_buffer[30] == 2)
@@ -1299,7 +1299,7 @@ int d15() {
 	
 	if (currentCommandContains(COMMAND_JUMP)) {
 		processMoveCommand(LOCATION_LIMBO, -1);
-		v37();
+		die_from_jumping();
 	} 
 	
 	if (!currentCommandIsOneOf(635, 636, -1)) 
@@ -1512,7 +1512,7 @@ int v27() {
 	if (!currentCommandIsNotOneOf(COMMAND_JUMP, -1)) 
 		return 0; 
 	
-	processMoveCommand(LOCATION_LIMBO, -1); v37();
+	processMoveCommand(LOCATION_LIMBO, -1); die_from_jumping();
 } 
 
 int q24() {
