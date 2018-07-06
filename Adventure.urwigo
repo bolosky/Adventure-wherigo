@@ -4,7 +4,7 @@
 <System:String xsi:nil="true" />
 </Identifier>
 <Name>
-<System:String>Colossal Cave</System:String>
+<System:String>Not So Colossal Cave</System:String>
 </Name>
 <Description>
 <System:String>Explore Not So Colossal Cave in this adaptation of the original text adventure by Crowther and Woods</System:String>
@@ -19,7 +19,7 @@
 <Wherigo:WigoMedia xsi:nil="true" />
 </Icon>
 <Activity>
-<Wherigo:WigoActivityType>Geocache</Wherigo:WigoActivityType>
+<Wherigo:WigoActivityType>Puzzle</Wherigo:WigoActivityType>
 </Activity>
 <StartingLocationDescription>
 <System:String>To begin your adventure, proceed to the end of the road zone.</System:String>
@@ -47,7 +47,7 @@
 <System:DateTime>04/01/2018 21:27:11</System:DateTime>
 </CreateDate>
 <UpdateDate>
-<System:DateTime>07/05/2018 11:49:03</System:DateTime>
+<System:DateTime>07/05/2018 17:31:26</System:DateTime>
 </UpdateDate>
 <Complete>
 <System:Boolean>False</System:Boolean>
@@ -227,8 +227,8 @@
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Value>
-<System:String>-- local allZones = objColossalCave:GetAllOfType("Zone")
-for _,zone in ipairs(objColossalCave.AllZObjects) do
+<System:String>-- local allZones = objNotSoColossalCave:GetAllOfType("Zone")
+for _,zone in ipairs(objNotSoColossalCave.AllZObjects) do
    if Wherigo.NoCaseEquals(tostring(zone),"a zone instance") and
                                zone ~= _G[currentZone] then
       zone.Active = false
@@ -724,6 +724,36 @@ _G[currentZone].Active = true</System:String>
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
+<Wherigo:WigoZone xsi:nil="true" ref="key7" />
+</Target>
+<Property>
+<System:String>Description</System:String>
+</Property>
+</Actions:ObjectPropertyReferenceExpressionAction>
+</LeftContent>
+<RightContent>
+<Actions:ValueExpressionAction>
+<Enabled>
+<System:Boolean>True</System:Boolean>
+</Enabled>
+<Value>
+<System:String>You  are  standing  at  the  end of a road before a small brick building. Around you is a forest.  A small stream flows out  of  the  building  and down a gully and a wide path leads northeast.</System:String>
+</Value>
+</Actions:ValueExpressionAction>
+</RightContent>
+</Actions:SetAction>
+</Actions>
+<Actions>
+<Actions:SetAction>
+<Enabled>
+<System:Boolean>True</System:Boolean>
+</Enabled>
+<LeftContent>
+<Actions:ObjectPropertyReferenceExpressionAction>
+<Enabled>
+<System:Boolean>True</System:Boolean>
+</Enabled>
+<Target>
 <Wherigo:WigoZone key="key8">
 <Identifier>
 <System:String xsi:nil="true" />
@@ -826,6 +856,36 @@ _G[currentZone].Active = true</System:String>
 </Actions:ObjectExpressionAction>
 </FunctionContent>
 </Actions:FunctionCallAction>
+</Actions>
+<Actions>
+<Actions:SetAction>
+<Enabled>
+<System:Boolean>True</System:Boolean>
+</Enabled>
+<LeftContent>
+<Actions:ObjectPropertyReferenceExpressionAction>
+<Enabled>
+<System:Boolean>True</System:Boolean>
+</Enabled>
+<Target>
+<Wherigo:WigoZone xsi:nil="true" ref="key8" />
+</Target>
+<Property>
+<System:String>Description</System:String>
+</Property>
+</Actions:ObjectPropertyReferenceExpressionAction>
+</LeftContent>
+<RightContent>
+<Actions:ValueExpressionAction>
+<Enabled>
+<System:Boolean>True</System:Boolean>
+</Enabled>
+<Value>
+<System:String>You are inside a building, a well house for a large spring.</System:String>
+</Value>
+</Actions:ValueExpressionAction>
+</RightContent>
+</Actions:SetAction>
 </Actions>
 <Actions>
 <Actions:SetAction>
@@ -943,7 +1003,7 @@ _G[currentZone].Active = true</System:String>
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoVariable key="key23">
+<Wherigo:WigoVariable key="key24">
 <Identifier>
 <System:String xsi:nil="true" />
 </Identifier>
@@ -1048,7 +1108,7 @@ _G[objActiveItem]:MoveTo(_G[currentZone])
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoCurrentZone key="key27">
+<Wherigo:WigoCurrentZone key="key28">
 <Identifier>
 <System:String xsi:nil="true" />
 </Identifier>
@@ -1550,6 +1610,36 @@ _G[objActiveItem]:MoveTo(_G[currentZone])
 <Wherigo:WigoZone xsi:nil="true" ref="key11" />
 </Target>
 <Property>
+<System:String>Description</System:String>
+</Property>
+</Actions:ObjectPropertyReferenceExpressionAction>
+</LeftContent>
+<RightContent>
+<Actions:ValueExpressionAction>
+<Enabled>
+<System:Boolean>True</System:Boolean>
+</Enabled>
+<Value>
+<System:String>You  are at one end of a vast hall stretching forward out of sight to the west, filled with wisps of white mist that sway to and fro almost  as  if alive.  Rough stone steps lead up to a passage at the top of a dome above you.  There is a small passage to the south and a crack in the wall leads east.  North of you a wide staircase runs down into the  darkness;  chill wind blows up from below.</System:String>
+</Value>
+</Actions:ValueExpressionAction>
+</RightContent>
+</Actions:SetAction>
+</Actions>
+<Actions>
+<Actions:SetAction>
+<Enabled>
+<System:Boolean>True</System:Boolean>
+</Enabled>
+<LeftContent>
+<Actions:ObjectPropertyReferenceExpressionAction>
+<Enabled>
+<System:Boolean>True</System:Boolean>
+</Enabled>
+<Target>
+<Wherigo:WigoZone xsi:nil="true" ref="key11" />
+</Target>
+<Property>
 <System:String>Active</System:String>
 </Property>
 </Actions:ObjectPropertyReferenceExpressionAction>
@@ -1585,7 +1675,7 @@ _G[objActiveItem]:MoveTo(_G[currentZone])
 <System:String>Nugget of Gold Room</System:String>
 </Name>
 <Description>
-<System:String>This is a low room with a crude note on the wall.  The note says "You won't get it up the steps"</System:String>
+<System:String>This is a low room with a pedestal for a treasure.</System:String>
 </Description>
 <Visible>
 <System:Boolean>True</System:Boolean>
@@ -2531,6 +2621,36 @@ _G[objActiveItem]:MoveTo(_G[currentZone])
 <Wherigo:WigoZone xsi:nil="true" ref="key17" />
 </Target>
 <Property>
+<System:String>Description</System:String>
+</Property>
+</Actions:ObjectPropertyReferenceExpressionAction>
+</LeftContent>
+<RightContent>
+<Actions:ValueExpressionAction>
+<Enabled>
+<System:Boolean>True</System:Boolean>
+</Enabled>
+<Value>
+<System:String>At  your  feet  is  a  small  pit breathing traces of white mist. An east passage ends here except for a small crack leading on.</System:String>
+</Value>
+</Actions:ValueExpressionAction>
+</RightContent>
+</Actions:SetAction>
+</Actions>
+<Actions>
+<Actions:SetAction>
+<Enabled>
+<System:Boolean>True</System:Boolean>
+</Enabled>
+<LeftContent>
+<Actions:ObjectPropertyReferenceExpressionAction>
+<Enabled>
+<System:Boolean>True</System:Boolean>
+</Enabled>
+<Target>
+<Wherigo:WigoZone xsi:nil="true" ref="key17" />
+</Target>
+<Property>
 <System:String>Active</System:String>
 </Property>
 </Actions:ObjectPropertyReferenceExpressionAction>
@@ -2675,6 +2795,36 @@ _G[objActiveItem]:MoveTo(_G[currentZone])
 <Wherigo:WigoZone xsi:nil="true" ref="key18" />
 </Target>
 <Property>
+<System:String>Description</System:String>
+</Property>
+</Actions:ObjectPropertyReferenceExpressionAction>
+</LeftContent>
+<RightContent>
+<Actions:ValueExpressionAction>
+<Enabled>
+<System:Boolean>True</System:Boolean>
+</Enabled>
+<Value>
+<System:String>You  are  in  a  splendid chamber thirty feet high.  The walls are frozen rivers of orange stone.  An awkward canyon and a good passage  exit  from east and west sides of the chamber.</System:String>
+</Value>
+</Actions:ValueExpressionAction>
+</RightContent>
+</Actions:SetAction>
+</Actions>
+<Actions>
+<Actions:SetAction>
+<Enabled>
+<System:Boolean>True</System:Boolean>
+</Enabled>
+<LeftContent>
+<Actions:ObjectPropertyReferenceExpressionAction>
+<Enabled>
+<System:Boolean>True</System:Boolean>
+</Enabled>
+<Target>
+<Wherigo:WigoZone xsi:nil="true" ref="key18" />
+</Target>
+<Property>
 <System:String>Active</System:String>
 </Property>
 </Actions:ObjectPropertyReferenceExpressionAction>
@@ -2702,7 +2852,7 @@ _G[objActiveItem]:MoveTo(_G[currentZone])
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoZone key="key28">
+<Wherigo:WigoZone key="key19">
 <Identifier>
 <System:String xsi:nil="true" />
 </Identifier>
@@ -2710,7 +2860,7 @@ _G[objActiveItem]:MoveTo(_G[currentZone])
 <System:String>Debris room</System:String>
 </Name>
 <Description>
-<System:String>You are in a debris room filled with stuff washed in from the surface.  A low  wide  passage with cobbles becomes plugged with mud and debris here, but an awkward canyon leads upward and west.  A note on the wall says "Magic word XYZZY".</System:String>
+<System:String>You are in a debris room filled with stuff washed in from the surface.  A low  wide  passage with cobbles becomes plugged with mud and debris here, but an awkward canyon leads upward and west. </System:String>
 </Description>
 <Visible>
 <System:Boolean>True</System:Boolean>
@@ -2816,7 +2966,37 @@ _G[objActiveItem]:MoveTo(_G[currentZone])
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoZone key="key19">
+<Wherigo:WigoZone xsi:nil="true" ref="key19" />
+</Target>
+<Property>
+<System:String>Description</System:String>
+</Property>
+</Actions:ObjectPropertyReferenceExpressionAction>
+</LeftContent>
+<RightContent>
+<Actions:ValueExpressionAction>
+<Enabled>
+<System:Boolean>True</System:Boolean>
+</Enabled>
+<Value>
+<System:String>You are in a debris room filled with stuff washed in from the surface.  A low  wide  passage with cobbles becomes plugged with mud and debris here, but an awkward canyon leads upward and west. </System:String>
+</Value>
+</Actions:ValueExpressionAction>
+</RightContent>
+</Actions:SetAction>
+</Actions>
+<Actions>
+<Actions:SetAction>
+<Enabled>
+<System:Boolean>True</System:Boolean>
+</Enabled>
+<LeftContent>
+<Actions:ObjectPropertyReferenceExpressionAction>
+<Enabled>
+<System:Boolean>True</System:Boolean>
+</Enabled>
+<Target>
+<Wherigo:WigoZone key="key20">
 <Identifier>
 <System:String xsi:nil="true" />
 </Identifier>
@@ -2930,7 +3110,37 @@ _G[objActiveItem]:MoveTo(_G[currentZone])
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoZone xsi:nil="true" ref="key19" />
+<Wherigo:WigoZone xsi:nil="true" ref="key20" />
+</Target>
+<Property>
+<System:String>Description</System:String>
+</Property>
+</Actions:ObjectPropertyReferenceExpressionAction>
+</LeftContent>
+<RightContent>
+<Actions:ValueExpressionAction>
+<Enabled>
+<System:Boolean>True</System:Boolean>
+</Enabled>
+<Value>
+<System:String>You  are crawling over cobbles in a low passage.  There is a dim light at the east end of the passage.</System:String>
+</Value>
+</Actions:ValueExpressionAction>
+</RightContent>
+</Actions:SetAction>
+</Actions>
+<Actions>
+<Actions:SetAction>
+<Enabled>
+<System:Boolean>True</System:Boolean>
+</Enabled>
+<LeftContent>
+<Actions:ObjectPropertyReferenceExpressionAction>
+<Enabled>
+<System:Boolean>True</System:Boolean>
+</Enabled>
+<Target>
+<Wherigo:WigoZone xsi:nil="true" ref="key20" />
 </Target>
 <Property>
 <System:String>Active</System:String>
@@ -2960,7 +3170,7 @@ _G[objActiveItem]:MoveTo(_G[currentZone])
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoZone key="key22">
+<Wherigo:WigoZone key="key21">
 <Identifier>
 <System:String xsi:nil="true" />
 </Identifier>
@@ -3074,7 +3284,37 @@ _G[objActiveItem]:MoveTo(_G[currentZone])
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoZone xsi:nil="true" ref="key19" />
+<Wherigo:WigoZone xsi:nil="true" ref="key21" />
+</Target>
+<Property>
+<System:String>Description</System:String>
+</Property>
+</Actions:ObjectPropertyReferenceExpressionAction>
+</LeftContent>
+<RightContent>
+<Actions:ValueExpressionAction>
+<Enabled>
+<System:Boolean>True</System:Boolean>
+</Enabled>
+<Value>
+<System:String>You  are  in a small chamber beneath a 3x3 steel grate to the surface.  A low crawl over cobbles leads inward to the west.</System:String>
+</Value>
+</Actions:ValueExpressionAction>
+</RightContent>
+</Actions:SetAction>
+</Actions>
+<Actions>
+<Actions:SetAction>
+<Enabled>
+<System:Boolean>True</System:Boolean>
+</Enabled>
+<LeftContent>
+<Actions:ObjectPropertyReferenceExpressionAction>
+<Enabled>
+<System:Boolean>True</System:Boolean>
+</Enabled>
+<Target>
+<Wherigo:WigoZone xsi:nil="true" ref="key20" />
 </Target>
 <Property>
 <System:String>Active</System:String>
@@ -3104,7 +3344,7 @@ _G[objActiveItem]:MoveTo(_G[currentZone])
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoItem key="key21">
+<Wherigo:WigoItem key="key23">
 <Identifier>
 <System:String xsi:nil="true" />
 </Identifier>
@@ -3126,7 +3366,7 @@ _G[objActiveItem]:MoveTo(_G[currentZone])
 <ObjectLocation>
 <Wherigo:WigoObjectLocation>
 <Container>
-<Wherigo:WigoZone key="key20">
+<Wherigo:WigoZone key="key22">
 <Identifier>
 <System:String xsi:nil="true" />
 </Identifier>
@@ -3240,7 +3480,37 @@ _G[objActiveItem]:MoveTo(_G[currentZone])
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoZone xsi:nil="true" ref="key20" />
+<Wherigo:WigoZone xsi:nil="true" ref="key22" />
+</Target>
+<Property>
+<System:String>Description</System:String>
+</Property>
+</Actions:ObjectPropertyReferenceExpressionAction>
+</LeftContent>
+<RightContent>
+<Actions:ValueExpressionAction>
+<Enabled>
+<System:Boolean>True</System:Boolean>
+</Enabled>
+<Value>
+<System:String>You  are  in  a  20-foot depression floored with bare dirt.  Set into the dirt is a strong steel grate mounted in concrete.  A dry streambed  leads into the depression.</System:String>
+</Value>
+</Actions:ValueExpressionAction>
+</RightContent>
+</Actions:SetAction>
+</Actions>
+<Actions>
+<Actions:SetAction>
+<Enabled>
+<System:Boolean>True</System:Boolean>
+</Enabled>
+<LeftContent>
+<Actions:ObjectPropertyReferenceExpressionAction>
+<Enabled>
+<System:Boolean>True</System:Boolean>
+</Enabled>
+<Target>
+<Wherigo:WigoZone xsi:nil="true" ref="key22" />
 </Target>
 <Property>
 <System:String>Active</System:String>
@@ -3300,7 +3570,7 @@ _G[objActiveItem]:MoveTo(_G[currentZone])
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoItem xsi:nil="true" ref="key21" />
+<Wherigo:WigoItem xsi:nil="true" ref="key23" />
 </Target>
 </Actions:ObjectExpressionAction>
 </ItemContent>
@@ -3310,7 +3580,7 @@ _G[objActiveItem]:MoveTo(_G[currentZone])
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoZone xsi:nil="true" ref="key20" />
+<Wherigo:WigoZone xsi:nil="true" ref="key22" />
 </Target>
 </Actions:ObjectExpressionAction>
 </ContainerContent>
@@ -3337,7 +3607,7 @@ _G[objActiveItem]:MoveTo(_G[currentZone])
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoZone xsi:nil="true" ref="key22" />
+<Wherigo:WigoZone xsi:nil="true" ref="key21" />
 </Target>
 <Property>
 <System:String>Active</System:String>
@@ -3370,7 +3640,7 @@ _G[objActiveItem]:MoveTo(_G[currentZone])
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoItem xsi:nil="true" ref="key21" />
+<Wherigo:WigoItem xsi:nil="true" ref="key23" />
 </Target>
 <Property>
 <System:String>Locked</System:String>
@@ -3407,7 +3677,7 @@ _G[objActiveItem]:MoveTo(_G[currentZone])
 </Actions:IfElseAction>
 </Actions>
 <Owner>
-<Wherigo:WigoZone xsi:nil="true" ref="key20" />
+<Wherigo:WigoZone xsi:nil="true" ref="key22" />
 </Owner>
 </Actions:EventAction>
 </EnterAction>
@@ -3417,7 +3687,7 @@ _G[objActiveItem]:MoveTo(_G[currentZone])
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Owner>
-<Wherigo:WigoZone xsi:nil="true" ref="key20" />
+<Wherigo:WigoZone xsi:nil="true" ref="key22" />
 </Owner>
 </Actions:EventAction>
 </ExitAction>
@@ -3427,7 +3697,7 @@ _G[objActiveItem]:MoveTo(_G[currentZone])
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Owner>
-<Wherigo:WigoZone xsi:nil="true" ref="key20" />
+<Wherigo:WigoZone xsi:nil="true" ref="key22" />
 </Owner>
 </Actions:EventAction>
 </DistantAction>
@@ -3437,7 +3707,7 @@ _G[objActiveItem]:MoveTo(_G[currentZone])
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Owner>
-<Wherigo:WigoZone xsi:nil="true" ref="key20" />
+<Wherigo:WigoZone xsi:nil="true" ref="key22" />
 </Owner>
 </Actions:EventAction>
 </ProximityAction>
@@ -3447,7 +3717,7 @@ _G[objActiveItem]:MoveTo(_G[currentZone])
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Owner>
-<Wherigo:WigoZone xsi:nil="true" ref="key20" />
+<Wherigo:WigoZone xsi:nil="true" ref="key22" />
 </Owner>
 </Actions:EventAction>
 </ActiveChangedAction>
@@ -3459,7 +3729,7 @@ _G[objActiveItem]:MoveTo(_G[currentZone])
 </Wherigo:WigoObjectLocation>
 </ObjectLocation>
 <Commands>
-<Wherigo:WigoCommand key="key25">
+<Wherigo:WigoCommand key="key26">
 <Identifier>
 <System:String xsi:nil="true" />
 </Identifier>
@@ -3537,7 +3807,7 @@ _G[objActiveItem]:MoveTo(_G[currentZone])
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoCommand key="key24">
+<Wherigo:WigoCommand key="key25">
 <Identifier>
 <System:String xsi:nil="true" />
 </Identifier>
@@ -3569,7 +3839,7 @@ _G[objActiveItem]:MoveTo(_G[currentZone])
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoVariable xsi:nil="true" ref="key23" />
+<Wherigo:WigoVariable xsi:nil="true" ref="key24" />
 </Target>
 </Actions:ObjectReferenceExpressionAction>
 </LeftContent>
@@ -3603,7 +3873,7 @@ _G[objActiveItem]:MoveTo(_G[currentZone])
 </Actions:FunctionCallAction>
 </Actions>
 <Owner>
-<Wherigo:WigoCommand xsi:nil="true" ref="key24" />
+<Wherigo:WigoCommand xsi:nil="true" ref="key25" />
 </Owner>
 </Actions:EventAction>
 </ExecuteAction>
@@ -3647,7 +3917,7 @@ _G[objActiveItem]:MoveTo(_G[currentZone])
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoItem xsi:nil="true" ref="key21" />
+<Wherigo:WigoItem xsi:nil="true" ref="key23" />
 </Target>
 <Property>
 <System:String>Locked</System:String>
@@ -3677,7 +3947,7 @@ _G[objActiveItem]:MoveTo(_G[currentZone])
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoCommand xsi:nil="true" ref="key25" />
+<Wherigo:WigoCommand xsi:nil="true" ref="key26" />
 </Target>
 <Property>
 <System:String>Enabled</System:String>
@@ -3707,7 +3977,7 @@ _G[objActiveItem]:MoveTo(_G[currentZone])
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoCommand key="key26">
+<Wherigo:WigoCommand key="key27">
 <Identifier>
 <System:String xsi:nil="true" />
 </Identifier>
@@ -3739,40 +4009,10 @@ _G[objActiveItem]:MoveTo(_G[currentZone])
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoItem xsi:nil="true" ref="key21" />
+<Wherigo:WigoItem xsi:nil="true" ref="key23" />
 </Target>
 <Property>
 <System:String>Locked</System:String>
-</Property>
-</Actions:ObjectPropertyReferenceExpressionAction>
-</LeftContent>
-<RightContent>
-<Actions:ValueExpressionAction>
-<Enabled>
-<System:Boolean>True</System:Boolean>
-</Enabled>
-<Value>
-<System:Boolean>True</System:Boolean>
-</Value>
-</Actions:ValueExpressionAction>
-</RightContent>
-</Actions:SetAction>
-</Actions>
-<Actions>
-<Actions:SetAction>
-<Enabled>
-<System:Boolean>True</System:Boolean>
-</Enabled>
-<LeftContent>
-<Actions:ObjectPropertyReferenceExpressionAction>
-<Enabled>
-<System:Boolean>True</System:Boolean>
-</Enabled>
-<Target>
-<Wherigo:WigoCommand xsi:nil="true" ref="key25" />
-</Target>
-<Property>
-<System:String>Enabled</System:String>
 </Property>
 </Actions:ObjectPropertyReferenceExpressionAction>
 </LeftContent>
@@ -3803,6 +4043,66 @@ _G[objActiveItem]:MoveTo(_G[currentZone])
 </Target>
 <Property>
 <System:String>Enabled</System:String>
+</Property>
+</Actions:ObjectPropertyReferenceExpressionAction>
+</LeftContent>
+<RightContent>
+<Actions:ValueExpressionAction>
+<Enabled>
+<System:Boolean>True</System:Boolean>
+</Enabled>
+<Value>
+<System:Boolean>True</System:Boolean>
+</Value>
+</Actions:ValueExpressionAction>
+</RightContent>
+</Actions:SetAction>
+</Actions>
+<Actions>
+<Actions:SetAction>
+<Enabled>
+<System:Boolean>True</System:Boolean>
+</Enabled>
+<LeftContent>
+<Actions:ObjectPropertyReferenceExpressionAction>
+<Enabled>
+<System:Boolean>True</System:Boolean>
+</Enabled>
+<Target>
+<Wherigo:WigoCommand xsi:nil="true" ref="key27" />
+</Target>
+<Property>
+<System:String>Enabled</System:String>
+</Property>
+</Actions:ObjectPropertyReferenceExpressionAction>
+</LeftContent>
+<RightContent>
+<Actions:ValueExpressionAction>
+<Enabled>
+<System:Boolean>True</System:Boolean>
+</Enabled>
+<Value>
+<System:Boolean>False</System:Boolean>
+</Value>
+</Actions:ValueExpressionAction>
+</RightContent>
+</Actions:SetAction>
+</Actions>
+<Actions>
+<Actions:SetAction>
+<Enabled>
+<System:Boolean>True</System:Boolean>
+</Enabled>
+<LeftContent>
+<Actions:ObjectPropertyReferenceExpressionAction>
+<Enabled>
+<System:Boolean>True</System:Boolean>
+</Enabled>
+<Target>
+<Wherigo:WigoZone xsi:nil="true" ref="key21" />
+</Target>
+<Property>
+<System:String>Active</System:String>
 </Property>
 </Actions:ObjectPropertyReferenceExpressionAction>
 </LeftContent>
@@ -3859,37 +4159,7 @@ _G[objActiveItem]:MoveTo(_G[currentZone])
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoZone xsi:nil="true" ref="key20" />
-</Target>
-<Property>
-<System:String>Active</System:String>
-</Property>
-</Actions:ObjectPropertyReferenceExpressionAction>
-</LeftContent>
-<RightContent>
-<Actions:ValueExpressionAction>
-<Enabled>
-<System:Boolean>True</System:Boolean>
-</Enabled>
-<Value>
-<System:Boolean>False</System:Boolean>
-</Value>
-</Actions:ValueExpressionAction>
-</RightContent>
-</Actions:SetAction>
-</Actions>
-<Actions>
-<Actions:SetAction>
-<Enabled>
-<System:Boolean>True</System:Boolean>
-</Enabled>
-<LeftContent>
-<Actions:ObjectPropertyReferenceExpressionAction>
-<Enabled>
-<System:Boolean>True</System:Boolean>
-</Enabled>
-<Target>
-<Wherigo:WigoCurrentZone xsi:nil="true" ref="key27" />
+<Wherigo:WigoCurrentZone xsi:nil="true" ref="key28" />
 </Target>
 <Property>
 <System:String>Active</System:String>
@@ -3942,7 +4212,7 @@ _G[objActiveItem]:MoveTo(_G[currentZone])
 </Actions:MessageBoxAction>
 </Actions>
 <Owner>
-<Wherigo:WigoCommand xsi:nil="true" ref="key26" />
+<Wherigo:WigoCommand xsi:nil="true" ref="key27" />
 </Owner>
 </Actions:EventAction>
 </ExecuteAction>
@@ -3976,7 +4246,7 @@ _G[objActiveItem]:MoveTo(_G[currentZone])
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoZone xsi:nil="true" ref="key20" />
+<Wherigo:WigoZone xsi:nil="true" ref="key22" />
 </Target>
 <Property>
 <System:String>Active</System:String>
@@ -4006,7 +4276,7 @@ _G[objActiveItem]:MoveTo(_G[currentZone])
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoZone xsi:nil="true" ref="key22" />
+<Wherigo:WigoZone xsi:nil="true" ref="key21" />
 </Target>
 <Property>
 <System:String>Active</System:String>
@@ -4066,14 +4336,14 @@ _G[objActiveItem]:MoveTo(_G[currentZone])
 </Actions:IfElseAction>
 </Actions>
 <Owner>
-<Wherigo:WigoCommand xsi:nil="true" ref="key25" />
+<Wherigo:WigoCommand xsi:nil="true" ref="key26" />
 </Owner>
 </Actions:EventAction>
 </ExecuteAction>
 </Wherigo:WigoCommand>
 </Commands>
 <Commands>
-<Wherigo:WigoCommand xsi:nil="true" ref="key26" />
+<Wherigo:WigoCommand xsi:nil="true" ref="key27" />
 </Commands>
 <ClickAction>
 <Actions:EventAction>
@@ -4081,7 +4351,7 @@ _G[objActiveItem]:MoveTo(_G[currentZone])
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Owner>
-<Wherigo:WigoItem xsi:nil="true" ref="key21" />
+<Wherigo:WigoItem xsi:nil="true" ref="key23" />
 </Owner>
 </Actions:EventAction>
 </ClickAction>
@@ -4101,7 +4371,7 @@ _G[objActiveItem]:MoveTo(_G[currentZone])
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoZone xsi:nil="true" ref="key22" />
+<Wherigo:WigoZone xsi:nil="true" ref="key21" />
 </Target>
 </Actions:ObjectExpressionAction>
 </ContainerContent>
@@ -4128,7 +4398,7 @@ _G[objActiveItem]:MoveTo(_G[currentZone])
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoZone xsi:nil="true" ref="key20" />
+<Wherigo:WigoZone xsi:nil="true" ref="key22" />
 </Target>
 <Property>
 <System:String>Active</System:String>
@@ -4161,7 +4431,7 @@ _G[objActiveItem]:MoveTo(_G[currentZone])
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoItem xsi:nil="true" ref="key21" />
+<Wherigo:WigoItem xsi:nil="true" ref="key23" />
 </Target>
 <Property>
 <System:String>Locked</System:String>
@@ -4198,7 +4468,7 @@ _G[objActiveItem]:MoveTo(_G[currentZone])
 </Actions:IfElseAction>
 </Actions>
 <Owner>
-<Wherigo:WigoZone xsi:nil="true" ref="key22" />
+<Wherigo:WigoZone xsi:nil="true" ref="key21" />
 </Owner>
 </Actions:EventAction>
 </EnterAction>
@@ -4208,7 +4478,7 @@ _G[objActiveItem]:MoveTo(_G[currentZone])
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Owner>
-<Wherigo:WigoZone xsi:nil="true" ref="key22" />
+<Wherigo:WigoZone xsi:nil="true" ref="key21" />
 </Owner>
 </Actions:EventAction>
 </ExitAction>
@@ -4218,7 +4488,7 @@ _G[objActiveItem]:MoveTo(_G[currentZone])
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Owner>
-<Wherigo:WigoZone xsi:nil="true" ref="key22" />
+<Wherigo:WigoZone xsi:nil="true" ref="key21" />
 </Owner>
 </Actions:EventAction>
 </DistantAction>
@@ -4228,7 +4498,7 @@ _G[objActiveItem]:MoveTo(_G[currentZone])
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Owner>
-<Wherigo:WigoZone xsi:nil="true" ref="key22" />
+<Wherigo:WigoZone xsi:nil="true" ref="key21" />
 </Owner>
 </Actions:EventAction>
 </ProximityAction>
@@ -4238,7 +4508,7 @@ _G[objActiveItem]:MoveTo(_G[currentZone])
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Owner>
-<Wherigo:WigoZone xsi:nil="true" ref="key22" />
+<Wherigo:WigoZone xsi:nil="true" ref="key21" />
 </Owner>
 </Actions:EventAction>
 </ActiveChangedAction>
@@ -4272,7 +4542,7 @@ _G[objActiveItem]:MoveTo(_G[currentZone])
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoZone xsi:nil="true" ref="key28" />
+<Wherigo:WigoZone xsi:nil="true" ref="key19" />
 </Target>
 <Property>
 <System:String>Active</System:String>
@@ -4292,7 +4562,7 @@ _G[objActiveItem]:MoveTo(_G[currentZone])
 </Actions:SetAction>
 </Actions>
 <Owner>
-<Wherigo:WigoZone xsi:nil="true" ref="key19" />
+<Wherigo:WigoZone xsi:nil="true" ref="key20" />
 </Owner>
 </Actions:EventAction>
 </EnterAction>
@@ -4302,7 +4572,7 @@ _G[objActiveItem]:MoveTo(_G[currentZone])
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Owner>
-<Wherigo:WigoZone xsi:nil="true" ref="key19" />
+<Wherigo:WigoZone xsi:nil="true" ref="key20" />
 </Owner>
 </Actions:EventAction>
 </ExitAction>
@@ -4312,7 +4582,7 @@ _G[objActiveItem]:MoveTo(_G[currentZone])
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Owner>
-<Wherigo:WigoZone xsi:nil="true" ref="key19" />
+<Wherigo:WigoZone xsi:nil="true" ref="key20" />
 </Owner>
 </Actions:EventAction>
 </DistantAction>
@@ -4322,7 +4592,7 @@ _G[objActiveItem]:MoveTo(_G[currentZone])
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Owner>
-<Wherigo:WigoZone xsi:nil="true" ref="key19" />
+<Wherigo:WigoZone xsi:nil="true" ref="key20" />
 </Owner>
 </Actions:EventAction>
 </ProximityAction>
@@ -4332,7 +4602,7 @@ _G[objActiveItem]:MoveTo(_G[currentZone])
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Owner>
-<Wherigo:WigoZone xsi:nil="true" ref="key19" />
+<Wherigo:WigoZone xsi:nil="true" ref="key20" />
 </Owner>
 </Actions:EventAction>
 </ActiveChangedAction>
@@ -4386,7 +4656,7 @@ _G[objActiveItem]:MoveTo(_G[currentZone])
 </Actions:SetAction>
 </Actions>
 <Owner>
-<Wherigo:WigoZone xsi:nil="true" ref="key28" />
+<Wherigo:WigoZone xsi:nil="true" ref="key19" />
 </Owner>
 </Actions:EventAction>
 </EnterAction>
@@ -4396,7 +4666,7 @@ _G[objActiveItem]:MoveTo(_G[currentZone])
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Owner>
-<Wherigo:WigoZone xsi:nil="true" ref="key28" />
+<Wherigo:WigoZone xsi:nil="true" ref="key19" />
 </Owner>
 </Actions:EventAction>
 </ExitAction>
@@ -4406,7 +4676,7 @@ _G[objActiveItem]:MoveTo(_G[currentZone])
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Owner>
-<Wherigo:WigoZone xsi:nil="true" ref="key28" />
+<Wherigo:WigoZone xsi:nil="true" ref="key19" />
 </Owner>
 </Actions:EventAction>
 </DistantAction>
@@ -4416,7 +4686,7 @@ _G[objActiveItem]:MoveTo(_G[currentZone])
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Owner>
-<Wherigo:WigoZone xsi:nil="true" ref="key28" />
+<Wherigo:WigoZone xsi:nil="true" ref="key19" />
 </Owner>
 </Actions:EventAction>
 </ProximityAction>
@@ -4426,7 +4696,7 @@ _G[objActiveItem]:MoveTo(_G[currentZone])
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Owner>
-<Wherigo:WigoZone xsi:nil="true" ref="key28" />
+<Wherigo:WigoZone xsi:nil="true" ref="key19" />
 </Owner>
 </Actions:EventAction>
 </ActiveChangedAction>
@@ -4638,7 +4908,7 @@ _G[objActiveItem]:MoveTo(_G[currentZone])
 <System:String>Nugget of Gold</System:String>
 </Name>
 <Description>
-<System:String>A large, sparkling nugget of gold.</System:String>
+<System:String>A large, sparkling nugget of gold.  Attached to it is a crude note saying "you won't get it up the stairs."</System:String>
 </Description>
 <Visible>
 <System:Boolean>True</System:Boolean>
@@ -4692,7 +4962,7 @@ _G[objActiveItem]:MoveTo(_G[currentZone])
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoVariable xsi:nil="true" ref="key23" />
+<Wherigo:WigoVariable xsi:nil="true" ref="key24" />
 </Target>
 </Actions:ObjectReferenceExpressionAction>
 </LeftContent>
@@ -6230,7 +6500,7 @@ _G[objActiveItem]:MoveTo(Player)</System:String>
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoCurrentZone xsi:nil="true" ref="key27" />
+<Wherigo:WigoCurrentZone xsi:nil="true" ref="key28" />
 </Target>
 </Actions:ObjectExpressionAction>
 </ContainerContent>
@@ -6356,7 +6626,7 @@ _G[objActiveItem]:MoveTo(Player)</System:String>
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoVariable xsi:nil="true" ref="key23" />
+<Wherigo:WigoVariable xsi:nil="true" ref="key24" />
 </Target>
 </Actions:ObjectReferenceExpressionAction>
 </LeftContent>
@@ -6439,7 +6709,7 @@ _G[objActiveItem]:MoveTo(Player)</System:String>
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoVariable xsi:nil="true" ref="key23" />
+<Wherigo:WigoVariable xsi:nil="true" ref="key24" />
 </Target>
 </Actions:ObjectReferenceExpressionAction>
 </LeftContent>
@@ -6522,7 +6792,7 @@ _G[objActiveItem]:MoveTo(Player)</System:String>
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoVariable xsi:nil="true" ref="key23" />
+<Wherigo:WigoVariable xsi:nil="true" ref="key24" />
 </Target>
 </Actions:ObjectReferenceExpressionAction>
 </LeftContent>
@@ -6648,7 +6918,7 @@ _G[objActiveItem]:MoveTo(Player)</System:String>
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoZone xsi:nil="true" ref="key20" />
+<Wherigo:WigoZone xsi:nil="true" ref="key22" />
 </Target>
 <Property>
 <System:String>Active</System:String>
@@ -7024,7 +7294,7 @@ _G[objActiveItem]:MoveTo(Player)</System:String>
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoZone xsi:nil="true" ref="key28" />
+<Wherigo:WigoZone xsi:nil="true" ref="key19" />
 </Target>
 <Property>
 <System:String>Active</System:String>
@@ -7151,7 +7421,7 @@ _G[objActiveItem]:MoveTo(Player)</System:String>
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoCurrentZone xsi:nil="true" ref="key27" />
+<Wherigo:WigoCurrentZone xsi:nil="true" ref="key28" />
 </Target>
 </Actions:ObjectExpressionAction>
 </LeftContent>
@@ -7195,7 +7465,7 @@ _G[objActiveItem]:MoveTo(Player)</System:String>
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoZone xsi:nil="true" ref="key22" />
+<Wherigo:WigoZone xsi:nil="true" ref="key21" />
 </Target>
 <Property>
 <System:String>Active</System:String>
@@ -7228,7 +7498,7 @@ _G[objActiveItem]:MoveTo(Player)</System:String>
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoCurrentZone xsi:nil="true" ref="key27" />
+<Wherigo:WigoCurrentZone xsi:nil="true" ref="key28" />
 </Target>
 </Actions:ObjectExpressionAction>
 </LeftContent>
@@ -7238,7 +7508,7 @@ _G[objActiveItem]:MoveTo(Player)</System:String>
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoZone xsi:nil="true" ref="key22" />
+<Wherigo:WigoZone xsi:nil="true" ref="key21" />
 </Target>
 </Actions:ObjectExpressionAction>
 </RightContent>
@@ -7869,7 +8139,7 @@ _G[objActiveItem]:MoveTo(Player)</System:String>
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoCurrentZone xsi:nil="true" ref="key27" />
+<Wherigo:WigoCurrentZone xsi:nil="true" ref="key28" />
 </Target>
 </Actions:ObjectExpressionAction>
 </LeftContent>
@@ -7946,7 +8216,7 @@ _G[objActiveItem]:MoveTo(Player)</System:String>
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoCurrentZone xsi:nil="true" ref="key27" />
+<Wherigo:WigoCurrentZone xsi:nil="true" ref="key28" />
 </Target>
 </Actions:ObjectExpressionAction>
 </LeftContent>
@@ -10516,7 +10786,7 @@ _G[objActiveItem]:MoveTo(Player)</System:String>
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoCurrentZone xsi:nil="true" ref="key27" />
+<Wherigo:WigoCurrentZone xsi:nil="true" ref="key28" />
 </Target>
 </Actions:ObjectExpressionAction>
 </LeftContent>
@@ -10593,7 +10863,7 @@ _G[objActiveItem]:MoveTo(Player)</System:String>
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoCurrentZone xsi:nil="true" ref="key27" />
+<Wherigo:WigoCurrentZone xsi:nil="true" ref="key28" />
 </Target>
 </Actions:ObjectExpressionAction>
 </LeftContent>
@@ -11056,7 +11326,7 @@ _G[objActiveItem]:MoveTo(Player)</System:String>
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoCurrentZone xsi:nil="true" ref="key27" />
+<Wherigo:WigoCurrentZone xsi:nil="true" ref="key28" />
 </Target>
 </Actions:ObjectExpressionAction>
 </LeftContent>
@@ -11100,7 +11370,7 @@ _G[objActiveItem]:MoveTo(Player)</System:String>
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoZone xsi:nil="true" ref="key19" />
+<Wherigo:WigoZone xsi:nil="true" ref="key20" />
 </Target>
 <Property>
 <System:String>Active</System:String>
@@ -11133,7 +11403,7 @@ _G[objActiveItem]:MoveTo(Player)</System:String>
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoCurrentZone xsi:nil="true" ref="key27" />
+<Wherigo:WigoCurrentZone xsi:nil="true" ref="key28" />
 </Target>
 </Actions:ObjectExpressionAction>
 </LeftContent>
@@ -11143,7 +11413,7 @@ _G[objActiveItem]:MoveTo(Player)</System:String>
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoZone xsi:nil="true" ref="key19" />
+<Wherigo:WigoZone xsi:nil="true" ref="key20" />
 </Target>
 </Actions:ObjectExpressionAction>
 </RightContent>
@@ -11177,7 +11447,7 @@ _G[objActiveItem]:MoveTo(Player)</System:String>
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoZone xsi:nil="true" ref="key28" />
+<Wherigo:WigoZone xsi:nil="true" ref="key19" />
 </Target>
 <Property>
 <System:String>Active</System:String>
@@ -11210,7 +11480,7 @@ _G[objActiveItem]:MoveTo(Player)</System:String>
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoCurrentZone xsi:nil="true" ref="key27" />
+<Wherigo:WigoCurrentZone xsi:nil="true" ref="key28" />
 </Target>
 </Actions:ObjectExpressionAction>
 </LeftContent>
@@ -11220,7 +11490,7 @@ _G[objActiveItem]:MoveTo(Player)</System:String>
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoZone xsi:nil="true" ref="key28" />
+<Wherigo:WigoZone xsi:nil="true" ref="key19" />
 </Target>
 </Actions:ObjectExpressionAction>
 </RightContent>
@@ -11465,7 +11735,7 @@ _G[objActiveItem]:MoveTo(Player)</System:String>
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoCurrentZone xsi:nil="true" ref="key27" />
+<Wherigo:WigoCurrentZone xsi:nil="true" ref="key28" />
 </Target>
 </Actions:ObjectExpressionAction>
 </LeftContent>
@@ -11542,7 +11812,7 @@ _G[objActiveItem]:MoveTo(Player)</System:String>
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoCurrentZone xsi:nil="true" ref="key27" />
+<Wherigo:WigoCurrentZone xsi:nil="true" ref="key28" />
 </Target>
 </Actions:ObjectExpressionAction>
 </LeftContent>
@@ -11619,7 +11889,7 @@ _G[objActiveItem]:MoveTo(Player)</System:String>
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoCurrentZone xsi:nil="true" ref="key27" />
+<Wherigo:WigoCurrentZone xsi:nil="true" ref="key28" />
 </Target>
 </Actions:ObjectExpressionAction>
 </LeftContent>
@@ -11696,7 +11966,7 @@ _G[objActiveItem]:MoveTo(Player)</System:String>
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoCurrentZone xsi:nil="true" ref="key27" />
+<Wherigo:WigoCurrentZone xsi:nil="true" ref="key28" />
 </Target>
 </Actions:ObjectExpressionAction>
 </LeftContent>
@@ -11773,7 +12043,7 @@ _G[objActiveItem]:MoveTo(Player)</System:String>
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoCurrentZone xsi:nil="true" ref="key27" />
+<Wherigo:WigoCurrentZone xsi:nil="true" ref="key28" />
 </Target>
 </Actions:ObjectExpressionAction>
 </LeftContent>
@@ -11850,7 +12120,7 @@ _G[objActiveItem]:MoveTo(Player)</System:String>
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoCurrentZone xsi:nil="true" ref="key27" />
+<Wherigo:WigoCurrentZone xsi:nil="true" ref="key28" />
 </Target>
 </Actions:ObjectExpressionAction>
 </LeftContent>
@@ -11927,7 +12197,7 @@ _G[objActiveItem]:MoveTo(Player)</System:String>
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoCurrentZone xsi:nil="true" ref="key27" />
+<Wherigo:WigoCurrentZone xsi:nil="true" ref="key28" />
 </Target>
 </Actions:ObjectExpressionAction>
 </LeftContent>
@@ -12004,7 +12274,7 @@ _G[objActiveItem]:MoveTo(Player)</System:String>
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoCurrentZone xsi:nil="true" ref="key27" />
+<Wherigo:WigoCurrentZone xsi:nil="true" ref="key28" />
 </Target>
 </Actions:ObjectExpressionAction>
 </LeftContent>
@@ -12081,7 +12351,7 @@ _G[objActiveItem]:MoveTo(Player)</System:String>
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoCurrentZone xsi:nil="true" ref="key27" />
+<Wherigo:WigoCurrentZone xsi:nil="true" ref="key28" />
 </Target>
 </Actions:ObjectExpressionAction>
 </LeftContent>
@@ -12289,7 +12559,7 @@ _G[objActiveItem]:MoveTo(Player)</System:String>
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoCurrentZone xsi:nil="true" ref="key27" />
+<Wherigo:WigoCurrentZone xsi:nil="true" ref="key28" />
 </Target>
 </Actions:ObjectExpressionAction>
 </LeftContent>
@@ -12735,7 +13005,7 @@ _G[objActiveItem]:MoveTo(Player)</System:String>
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoCurrentZone xsi:nil="true" ref="key27" />
+<Wherigo:WigoCurrentZone xsi:nil="true" ref="key28" />
 </Target>
 </Actions:ObjectExpressionAction>
 </LeftContent>
@@ -12990,7 +13260,7 @@ _G[objActiveItem]:MoveTo(Player)</System:String>
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoCurrentZone xsi:nil="true" ref="key27" />
+<Wherigo:WigoCurrentZone xsi:nil="true" ref="key28" />
 </Target>
 </Actions:ObjectExpressionAction>
 </LeftContent>
@@ -13067,7 +13337,7 @@ _G[objActiveItem]:MoveTo(Player)</System:String>
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoCurrentZone xsi:nil="true" ref="key27" />
+<Wherigo:WigoCurrentZone xsi:nil="true" ref="key28" />
 </Target>
 </Actions:ObjectExpressionAction>
 </LeftContent>
@@ -13111,7 +13381,7 @@ _G[objActiveItem]:MoveTo(Player)</System:String>
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoZone xsi:nil="true" ref="key20" />
+<Wherigo:WigoZone xsi:nil="true" ref="key22" />
 </Target>
 <Property>
 <System:String>Active</System:String>
@@ -13144,7 +13414,7 @@ _G[objActiveItem]:MoveTo(Player)</System:String>
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoCurrentZone xsi:nil="true" ref="key27" />
+<Wherigo:WigoCurrentZone xsi:nil="true" ref="key28" />
 </Target>
 </Actions:ObjectExpressionAction>
 </LeftContent>
@@ -13154,7 +13424,7 @@ _G[objActiveItem]:MoveTo(Player)</System:String>
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoZone xsi:nil="true" ref="key20" />
+<Wherigo:WigoZone xsi:nil="true" ref="key22" />
 </Target>
 </Actions:ObjectExpressionAction>
 </RightContent>
@@ -13399,7 +13669,7 @@ _G[objActiveItem]:MoveTo(Player)</System:String>
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoCurrentZone xsi:nil="true" ref="key27" />
+<Wherigo:WigoCurrentZone xsi:nil="true" ref="key28" />
 </Target>
 </Actions:ObjectExpressionAction>
 </LeftContent>
@@ -13684,7 +13954,7 @@ _G[objActiveItem]:MoveTo(Player)</System:String>
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoCurrentZone xsi:nil="true" ref="key27" />
+<Wherigo:WigoCurrentZone xsi:nil="true" ref="key28" />
 </Target>
 </Actions:ObjectExpressionAction>
 </LeftContent>
@@ -13969,7 +14239,7 @@ _G[objActiveItem]:MoveTo(Player)</System:String>
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoCurrentZone xsi:nil="true" ref="key27" />
+<Wherigo:WigoCurrentZone xsi:nil="true" ref="key28" />
 </Target>
 </Actions:ObjectExpressionAction>
 </LeftContent>
@@ -14046,7 +14316,7 @@ _G[objActiveItem]:MoveTo(Player)</System:String>
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoCurrentZone xsi:nil="true" ref="key27" />
+<Wherigo:WigoCurrentZone xsi:nil="true" ref="key28" />
 </Target>
 </Actions:ObjectExpressionAction>
 </LeftContent>
@@ -14361,7 +14631,7 @@ _G[objActiveItem]:MoveTo(Player)</System:String>
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoCurrentZone xsi:nil="true" ref="key27" />
+<Wherigo:WigoCurrentZone xsi:nil="true" ref="key28" />
 </Target>
 </Actions:ObjectExpressionAction>
 </LeftContent>
@@ -14438,7 +14708,7 @@ _G[objActiveItem]:MoveTo(Player)</System:String>
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoCurrentZone xsi:nil="true" ref="key27" />
+<Wherigo:WigoCurrentZone xsi:nil="true" ref="key28" />
 </Target>
 </Actions:ObjectExpressionAction>
 </LeftContent>
@@ -14515,7 +14785,7 @@ _G[objActiveItem]:MoveTo(Player)</System:String>
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoCurrentZone xsi:nil="true" ref="key27" />
+<Wherigo:WigoCurrentZone xsi:nil="true" ref="key28" />
 </Target>
 </Actions:ObjectExpressionAction>
 </LeftContent>
@@ -14703,7 +14973,7 @@ _G[objActiveItem]:MoveTo(Player)</System:String>
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoZone xsi:nil="true" ref="key20" />
+<Wherigo:WigoZone xsi:nil="true" ref="key22" />
 </Target>
 <Property>
 <System:String>Active</System:String>
@@ -14800,7 +15070,7 @@ _G[objActiveItem]:MoveTo(Player)</System:String>
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoCurrentZone xsi:nil="true" ref="key27" />
+<Wherigo:WigoCurrentZone xsi:nil="true" ref="key28" />
 </Target>
 </Actions:ObjectExpressionAction>
 </LeftContent>
@@ -14877,7 +15147,7 @@ _G[objActiveItem]:MoveTo(Player)</System:String>
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoCurrentZone xsi:nil="true" ref="key27" />
+<Wherigo:WigoCurrentZone xsi:nil="true" ref="key28" />
 </Target>
 </Actions:ObjectExpressionAction>
 </LeftContent>
@@ -15132,7 +15402,7 @@ _G[objActiveItem]:MoveTo(Player)</System:String>
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoCurrentZone xsi:nil="true" ref="key27" />
+<Wherigo:WigoCurrentZone xsi:nil="true" ref="key28" />
 </Target>
 </Actions:ObjectExpressionAction>
 </LeftContent>
@@ -15209,7 +15479,7 @@ _G[objActiveItem]:MoveTo(Player)</System:String>
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoCurrentZone xsi:nil="true" ref="key27" />
+<Wherigo:WigoCurrentZone xsi:nil="true" ref="key28" />
 </Target>
 </Actions:ObjectExpressionAction>
 </LeftContent>
@@ -15286,7 +15556,7 @@ _G[objActiveItem]:MoveTo(Player)</System:String>
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoCurrentZone xsi:nil="true" ref="key27" />
+<Wherigo:WigoCurrentZone xsi:nil="true" ref="key28" />
 </Target>
 </Actions:ObjectExpressionAction>
 </LeftContent>
@@ -15363,7 +15633,7 @@ _G[objActiveItem]:MoveTo(Player)</System:String>
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoCurrentZone xsi:nil="true" ref="key27" />
+<Wherigo:WigoCurrentZone xsi:nil="true" ref="key28" />
 </Target>
 </Actions:ObjectExpressionAction>
 </LeftContent>
@@ -15440,7 +15710,7 @@ _G[objActiveItem]:MoveTo(Player)</System:String>
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoCurrentZone xsi:nil="true" ref="key27" />
+<Wherigo:WigoCurrentZone xsi:nil="true" ref="key28" />
 </Target>
 </Actions:ObjectExpressionAction>
 </LeftContent>
@@ -15517,7 +15787,7 @@ _G[objActiveItem]:MoveTo(Player)</System:String>
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoCurrentZone xsi:nil="true" ref="key27" />
+<Wherigo:WigoCurrentZone xsi:nil="true" ref="key28" />
 </Target>
 </Actions:ObjectExpressionAction>
 </LeftContent>
@@ -15594,7 +15864,7 @@ _G[objActiveItem]:MoveTo(Player)</System:String>
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoCurrentZone xsi:nil="true" ref="key27" />
+<Wherigo:WigoCurrentZone xsi:nil="true" ref="key28" />
 </Target>
 </Actions:ObjectExpressionAction>
 </LeftContent>
@@ -15671,7 +15941,7 @@ _G[objActiveItem]:MoveTo(Player)</System:String>
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoCurrentZone xsi:nil="true" ref="key27" />
+<Wherigo:WigoCurrentZone xsi:nil="true" ref="key28" />
 </Target>
 </Actions:ObjectExpressionAction>
 </LeftContent>
@@ -15926,7 +16196,7 @@ _G[objActiveItem]:MoveTo(Player)</System:String>
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoCurrentZone xsi:nil="true" ref="key27" />
+<Wherigo:WigoCurrentZone xsi:nil="true" ref="key28" />
 </Target>
 </Actions:ObjectExpressionAction>
 </LeftContent>
@@ -16003,7 +16273,7 @@ _G[objActiveItem]:MoveTo(Player)</System:String>
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoCurrentZone xsi:nil="true" ref="key27" />
+<Wherigo:WigoCurrentZone xsi:nil="true" ref="key28" />
 </Target>
 </Actions:ObjectExpressionAction>
 </LeftContent>
@@ -16258,7 +16528,7 @@ _G[objActiveItem]:MoveTo(Player)</System:String>
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoCurrentZone xsi:nil="true" ref="key27" />
+<Wherigo:WigoCurrentZone xsi:nil="true" ref="key28" />
 </Target>
 </Actions:ObjectExpressionAction>
 </LeftContent>
@@ -16335,7 +16605,7 @@ _G[objActiveItem]:MoveTo(Player)</System:String>
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoCurrentZone xsi:nil="true" ref="key27" />
+<Wherigo:WigoCurrentZone xsi:nil="true" ref="key28" />
 </Target>
 </Actions:ObjectExpressionAction>
 </LeftContent>
@@ -16412,7 +16682,7 @@ _G[objActiveItem]:MoveTo(Player)</System:String>
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoCurrentZone xsi:nil="true" ref="key27" />
+<Wherigo:WigoCurrentZone xsi:nil="true" ref="key28" />
 </Target>
 </Actions:ObjectExpressionAction>
 </LeftContent>
@@ -16489,7 +16759,7 @@ _G[objActiveItem]:MoveTo(Player)</System:String>
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoCurrentZone xsi:nil="true" ref="key27" />
+<Wherigo:WigoCurrentZone xsi:nil="true" ref="key28" />
 </Target>
 </Actions:ObjectExpressionAction>
 </LeftContent>
@@ -16697,7 +16967,7 @@ _G[objActiveItem]:MoveTo(Player)</System:String>
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoCurrentZone xsi:nil="true" ref="key27" />
+<Wherigo:WigoCurrentZone xsi:nil="true" ref="key28" />
 </Target>
 </Actions:ObjectExpressionAction>
 </LeftContent>
@@ -16774,7 +17044,7 @@ _G[objActiveItem]:MoveTo(Player)</System:String>
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoCurrentZone xsi:nil="true" ref="key27" />
+<Wherigo:WigoCurrentZone xsi:nil="true" ref="key28" />
 </Target>
 </Actions:ObjectExpressionAction>
 </LeftContent>
@@ -16808,7 +17078,7 @@ _G[objActiveItem]:MoveTo(Player)</System:String>
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoCurrentZone xsi:nil="true" ref="key27" />
+<Wherigo:WigoCurrentZone xsi:nil="true" ref="key28" />
 </Target>
 <Property>
 <System:String>Active</System:String>
@@ -16949,16 +17219,16 @@ _G[objActiveItem]:MoveTo(Player)</System:String>
 <Wherigo:WigoZone xsi:nil="true" ref="key73" />
 </Zones>
 <Zones>
-<Wherigo:WigoZone xsi:nil="true" ref="key20" />
-</Zones>
-<Zones>
 <Wherigo:WigoZone xsi:nil="true" ref="key22" />
 </Zones>
 <Zones>
-<Wherigo:WigoZone xsi:nil="true" ref="key19" />
+<Wherigo:WigoZone xsi:nil="true" ref="key21" />
 </Zones>
 <Zones>
-<Wherigo:WigoZone xsi:nil="true" ref="key28" />
+<Wherigo:WigoZone xsi:nil="true" ref="key20" />
+</Zones>
+<Zones>
+<Wherigo:WigoZone xsi:nil="true" ref="key19" />
 </Zones>
 <Zones>
 <Wherigo:WigoZone xsi:nil="true" ref="key45" />
@@ -18998,7 +19268,7 @@ _G[objActiveItem]:MoveTo(Player)</System:String>
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoVariable xsi:nil="true" ref="key23" />
+<Wherigo:WigoVariable xsi:nil="true" ref="key24" />
 </Target>
 </Actions:ObjectReferenceExpressionAction>
 </LeftContent>
@@ -19039,7 +19309,7 @@ _G[objActiveItem]:MoveTo(Player)</System:String>
 </Wherigo:WigoCommand>
 </Commands>
 <Commands>
-<Wherigo:WigoCommand xsi:nil="true" ref="key24" />
+<Wherigo:WigoCommand xsi:nil="true" ref="key25" />
 </Commands>
 <ClickAction>
 <Actions:EventAction>
@@ -19125,7 +19395,7 @@ _G[objActiveItem]:MoveTo(Player)</System:String>
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoVariable xsi:nil="true" ref="key23" />
+<Wherigo:WigoVariable xsi:nil="true" ref="key24" />
 </Target>
 </Actions:ObjectReferenceExpressionAction>
 </LeftContent>
@@ -19514,7 +19784,7 @@ _G[objActiveItem]:MoveTo(Player)</System:String>
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoVariable xsi:nil="true" ref="key23" />
+<Wherigo:WigoVariable xsi:nil="true" ref="key24" />
 </Target>
 </Actions:ObjectReferenceExpressionAction>
 </LeftContent>
@@ -19579,7 +19849,7 @@ _G[objActiveItem]:MoveTo(Player)</System:String>
 <Wherigo:WigoItem xsi:nil="true" ref="key32" />
 </Items>
 <Items>
-<Wherigo:WigoItem xsi:nil="true" ref="key21" />
+<Wherigo:WigoItem xsi:nil="true" ref="key23" />
 </Items>
 <Items>
 <Wherigo:WigoItem key="key94">
@@ -19652,7 +19922,7 @@ _G[objActiveItem]:MoveTo(Player)</System:String>
 <ObjectLocation>
 <Wherigo:WigoObjectLocation>
 <Container>
-<Wherigo:WigoZone xsi:nil="true" ref="key28" />
+<Wherigo:WigoZone xsi:nil="true" ref="key19" />
 </Container>
 <Location>
 <Wherigo:WigoCoordinate xsi:nil="true" />
@@ -19801,7 +20071,7 @@ _G[objActiveItem]:MoveTo(Player)</System:String>
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoCurrentZone xsi:nil="true" ref="key27" />
+<Wherigo:WigoCurrentZone xsi:nil="true" ref="key28" />
 </Target>
 </Actions:ObjectExpressionAction>
 </ContainerContent>
@@ -20086,7 +20356,7 @@ _G[objActiveItem]:MoveTo(Player)</System:String>
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoCurrentZone xsi:nil="true" ref="key27" />
+<Wherigo:WigoCurrentZone xsi:nil="true" ref="key28" />
 </Target>
 </Actions:ObjectExpressionAction>
 </LeftContent>
@@ -20119,7 +20389,7 @@ _G[objActiveItem]:MoveTo(Player)</System:String>
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoCurrentZone xsi:nil="true" ref="key27" />
+<Wherigo:WigoCurrentZone xsi:nil="true" ref="key28" />
 </Target>
 </Actions:ObjectExpressionAction>
 </LeftContent>
@@ -20526,7 +20796,7 @@ _G[objActiveItem]:MoveTo(Player)</System:String>
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoVariable xsi:nil="true" ref="key23" />
+<Wherigo:WigoVariable xsi:nil="true" ref="key24" />
 </Target>
 </Actions:ObjectReferenceExpressionAction>
 </LeftContent>
@@ -20779,7 +21049,7 @@ _G[objActiveItem]:MoveTo(Player)</System:String>
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoCurrentZone xsi:nil="true" ref="key27" />
+<Wherigo:WigoCurrentZone xsi:nil="true" ref="key28" />
 </Target>
 </Actions:ObjectExpressionAction>
 </ContainerContent>
@@ -21093,7 +21363,7 @@ _G[objActiveItem]:MoveTo(Player)</System:String>
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoCurrentZone xsi:nil="true" ref="key27" />
+<Wherigo:WigoCurrentZone xsi:nil="true" ref="key28" />
 </Target>
 </Actions:ObjectExpressionAction>
 </LeftContent>
@@ -21303,7 +21573,7 @@ _G[objActiveItem]:MoveTo(Player)</System:String>
 <ObjectLocation>
 <Wherigo:WigoObjectLocation>
 <Container>
-<Wherigo:WigoZone xsi:nil="true" ref="key19" />
+<Wherigo:WigoZone xsi:nil="true" ref="key20" />
 </Container>
 <Location>
 <Wherigo:WigoCoordinate xsi:nil="true" />
@@ -21343,7 +21613,7 @@ _G[objActiveItem]:MoveTo(Player)</System:String>
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoVariable xsi:nil="true" ref="key23" />
+<Wherigo:WigoVariable xsi:nil="true" ref="key24" />
 </Target>
 </Actions:ObjectReferenceExpressionAction>
 </LeftContent>
@@ -21518,7 +21788,7 @@ _G[objActiveItem]:MoveTo(Player)</System:String>
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoVariable xsi:nil="true" ref="key23" />
+<Wherigo:WigoVariable xsi:nil="true" ref="key24" />
 </Target>
 </Actions:ObjectReferenceExpressionAction>
 </LeftContent>
@@ -21642,7 +21912,7 @@ _G[objActiveItem]:MoveTo(Player)</System:String>
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoVariable xsi:nil="true" ref="key23" />
+<Wherigo:WigoVariable xsi:nil="true" ref="key24" />
 </Target>
 </Actions:ObjectReferenceExpressionAction>
 </LeftContent>
@@ -21715,7 +21985,7 @@ _G[objActiveItem]:MoveTo(Player)</System:String>
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoVariable xsi:nil="true" ref="key23" />
+<Wherigo:WigoVariable xsi:nil="true" ref="key24" />
 </Target>
 </Actions:ObjectReferenceExpressionAction>
 </LeftContent>
@@ -21836,7 +22106,7 @@ _G[objActiveItem]:MoveTo(Player)</System:String>
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoVariable xsi:nil="true" ref="key23" />
+<Wherigo:WigoVariable xsi:nil="true" ref="key24" />
 </Target>
 </Actions:ObjectReferenceExpressionAction>
 </LeftContent>
@@ -21909,7 +22179,7 @@ _G[objActiveItem]:MoveTo(Player)</System:String>
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoVariable xsi:nil="true" ref="key23" />
+<Wherigo:WigoVariable xsi:nil="true" ref="key24" />
 </Target>
 </Actions:ObjectReferenceExpressionAction>
 </LeftContent>
@@ -22030,7 +22300,7 @@ _G[objActiveItem]:MoveTo(Player)</System:String>
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoVariable xsi:nil="true" ref="key23" />
+<Wherigo:WigoVariable xsi:nil="true" ref="key24" />
 </Target>
 </Actions:ObjectReferenceExpressionAction>
 </LeftContent>
@@ -22103,7 +22373,7 @@ _G[objActiveItem]:MoveTo(Player)</System:String>
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoVariable xsi:nil="true" ref="key23" />
+<Wherigo:WigoVariable xsi:nil="true" ref="key24" />
 </Target>
 </Actions:ObjectReferenceExpressionAction>
 </LeftContent>
@@ -22336,7 +22606,7 @@ _G[objActiveItem]:MoveTo(Player)</System:String>
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoVariable xsi:nil="true" ref="key23" />
+<Wherigo:WigoVariable xsi:nil="true" ref="key24" />
 </Target>
 </Actions:ObjectReferenceExpressionAction>
 </LeftContent>
@@ -22728,7 +22998,7 @@ _G[objActiveItem]:MoveTo(Player)</System:String>
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoVariable xsi:nil="true" ref="key23" />
+<Wherigo:WigoVariable xsi:nil="true" ref="key24" />
 </Target>
 </Actions:ObjectReferenceExpressionAction>
 </LeftContent>
@@ -22801,7 +23071,7 @@ _G[objActiveItem]:MoveTo(Player)</System:String>
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoVariable xsi:nil="true" ref="key23" />
+<Wherigo:WigoVariable xsi:nil="true" ref="key24" />
 </Target>
 </Actions:ObjectReferenceExpressionAction>
 </LeftContent>
@@ -22922,7 +23192,7 @@ _G[objActiveItem]:MoveTo(Player)</System:String>
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoVariable xsi:nil="true" ref="key23" />
+<Wherigo:WigoVariable xsi:nil="true" ref="key24" />
 </Target>
 </Actions:ObjectReferenceExpressionAction>
 </LeftContent>
@@ -23134,7 +23404,7 @@ Add: bottom of pit with stream; cavern with waterfall;  southern edge of reservo
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoCurrentZone xsi:nil="true" ref="key27" />
+<Wherigo:WigoCurrentZone xsi:nil="true" ref="key28" />
 </Target>
 </Actions:ObjectExpressionAction>
 </LeftContent>
@@ -23167,7 +23437,7 @@ Add: bottom of pit with stream; cavern with waterfall;  southern edge of reservo
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoCurrentZone xsi:nil="true" ref="key27" />
+<Wherigo:WigoCurrentZone xsi:nil="true" ref="key28" />
 </Target>
 </Actions:ObjectExpressionAction>
 </LeftContent>
@@ -23200,7 +23470,7 @@ Add: bottom of pit with stream; cavern with waterfall;  southern edge of reservo
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoCurrentZone xsi:nil="true" ref="key27" />
+<Wherigo:WigoCurrentZone xsi:nil="true" ref="key28" />
 </Target>
 </Actions:ObjectExpressionAction>
 </LeftContent>
@@ -23233,7 +23503,7 @@ Add: bottom of pit with stream; cavern with waterfall;  southern edge of reservo
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoCurrentZone xsi:nil="true" ref="key27" />
+<Wherigo:WigoCurrentZone xsi:nil="true" ref="key28" />
 </Target>
 </Actions:ObjectExpressionAction>
 </LeftContent>
@@ -23942,7 +24212,7 @@ Add: bottom of pit with stream; cavern with waterfall;  southern edge of reservo
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoCurrentZone xsi:nil="true" ref="key27" />
+<Wherigo:WigoCurrentZone xsi:nil="true" ref="key28" />
 </Target>
 </Actions:ObjectExpressionAction>
 </LeftContent>
@@ -24586,7 +24856,7 @@ Add: bottom of pit with stream; cavern with waterfall;  southern edge of reservo
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoCurrentZone xsi:nil="true" ref="key27" />
+<Wherigo:WigoCurrentZone xsi:nil="true" ref="key28" />
 </Target>
 </Actions:ObjectExpressionAction>
 </LeftContent>
@@ -24953,7 +25223,7 @@ Add: bottom of pit with stream; cavern with waterfall;  southern edge of reservo
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoVariable xsi:nil="true" ref="key23" />
+<Wherigo:WigoVariable xsi:nil="true" ref="key24" />
 </Target>
 </Actions:ObjectReferenceExpressionAction>
 </LeftContent>
@@ -25415,7 +25685,7 @@ I'd teleport you there, but I'm only a phone and I don't have that power, so you
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoCurrentZone xsi:nil="true" ref="key27" />
+<Wherigo:WigoCurrentZone xsi:nil="true" ref="key28" />
 </Target>
 </Actions:ObjectExpressionAction>
 </LeftContent>
@@ -25448,7 +25718,7 @@ I'd teleport you there, but I'm only a phone and I don't have that power, so you
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoCurrentZone xsi:nil="true" ref="key27" />
+<Wherigo:WigoCurrentZone xsi:nil="true" ref="key28" />
 </Target>
 </Actions:ObjectExpressionAction>
 </LeftContent>
@@ -25524,7 +25794,7 @@ I'd teleport you there, but I'm only a phone and I don't have that power, so you
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoZone xsi:nil="true" ref="key28" />
+<Wherigo:WigoZone xsi:nil="true" ref="key19" />
 </Target>
 <Property>
 <System:String>Active</System:String>
@@ -25694,7 +25964,7 @@ I'd teleport you there, but I'm only a phone and I don't have that power, so you
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoCurrentZone xsi:nil="true" ref="key27" />
+<Wherigo:WigoCurrentZone xsi:nil="true" ref="key28" />
 </Target>
 </Actions:ObjectExpressionAction>
 </LeftContent>
@@ -25727,7 +25997,7 @@ I'd teleport you there, but I'm only a phone and I don't have that power, so you
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoCurrentZone xsi:nil="true" ref="key27" />
+<Wherigo:WigoCurrentZone xsi:nil="true" ref="key28" />
 </Target>
 </Actions:ObjectExpressionAction>
 </LeftContent>
@@ -25737,7 +26007,7 @@ I'd teleport you there, but I'm only a phone and I don't have that power, so you
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoZone xsi:nil="true" ref="key28" />
+<Wherigo:WigoZone xsi:nil="true" ref="key19" />
 </Target>
 </Actions:ObjectExpressionAction>
 </RightContent>
@@ -25906,7 +26176,7 @@ I'd teleport you there, but I'm only a phone and I don't have that power, so you
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoVariable xsi:nil="true" ref="key23" />
+<Wherigo:WigoVariable xsi:nil="true" ref="key24" />
 </Target>
 </Actions:ObjectReferenceExpressionAction>
 </LeftContent>
@@ -26367,7 +26637,7 @@ dragon, you might be well advised to use a weapon of some sort.</System:String>
 <Wherigo:WigoVariable xsi:nil="true" ref="key4" />
 </Variables>
 <Variables>
-<Wherigo:WigoVariable xsi:nil="true" ref="key23" />
+<Wherigo:WigoVariable xsi:nil="true" ref="key24" />
 </Variables>
 <Variables>
 <Wherigo:WigoVariable xsi:nil="true" ref="key120" />
@@ -27502,7 +27772,7 @@ Come on, own up... DO YOU???</System:String>
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoCurrentZone xsi:nil="true" ref="key27" />
+<Wherigo:WigoCurrentZone xsi:nil="true" ref="key28" />
 </Target>
 <Property>
 <System:String>Active</System:String>
@@ -27593,7 +27863,7 @@ Come on, own up... DO YOU???</System:String>
 <Wherigo:WigoPlayer xsi:nil="true" ref="key37" />
 </Player>
 <CurrentZone>
-<Wherigo:WigoCurrentZone xsi:nil="true" ref="key27" />
+<Wherigo:WigoCurrentZone xsi:nil="true" ref="key28" />
 </CurrentZone>
 <CurrentCharacter>
 <Wherigo:WigoCurrentCharacter>
