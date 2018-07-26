@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Wherigo:WigoCartridge xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Wherigo="clr-namespace:YourSelf.Urwigo.Wherigo;assembly=Urwigo" xmlns:System="clr-namespace:System;assembly=mscorlib" xmlns:Actions="clr-namespace:YourSelf.Urwigo.Wherigo.Actions;assembly=Urwigo" key="key163">
+<Wherigo:WigoCartridge xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Wherigo="clr-namespace:YourSelf.Urwigo.Wherigo;assembly=Urwigo" xmlns:System="clr-namespace:System;assembly=mscorlib" xmlns:Actions="clr-namespace:YourSelf.Urwigo.Wherigo.Actions;assembly=Urwigo" key="key167">
 <Identifier>
 <System:String xsi:nil="true" />
 </Identifier>
@@ -47,7 +47,7 @@
 <System:DateTime>04/01/2018 21:27:11</System:DateTime>
 </CreateDate>
 <UpdateDate>
-<System:DateTime>07/16/2018 16:59:17</System:DateTime>
+<System:DateTime>07/26/2018 16:13:53</System:DateTime>
 </UpdateDate>
 <Complete>
 <System:Boolean>False</System:Boolean>
@@ -83,7 +83,7 @@
 <System:String xsi:nil="true" />
 </ProtectSimulationText>
 <Media>
-<Wherigo:WigoMedia>
+<Wherigo:WigoMedia key="key150">
 <Identifier>
 <System:String xsi:nil="true" />
 </Identifier>
@@ -123,7 +123,7 @@
 <System:String>End of road</System:String>
 </Name>
 <Description>
-<System:String>You  are  standing  at  the  end of a road before a small brick building. Around you is a forest.  A small stream flows out  of  the  building  and down a gully and a wide path leads northeast.</System:String>
+<System:String>Enter this location to see its description.</System:String>
 </Description>
 <Visible>
 <System:Boolean>True</System:Boolean>
@@ -202,6 +202,16 @@
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Actions>
+<Actions:IfElseAction>
+<Enabled>
+<System:Boolean>True</System:Boolean>
+</Enabled>
+<Actions>
+<Actions:IfElseBranchAction>
+<Enabled>
+<System:Boolean>True</System:Boolean>
+</Enabled>
+<Actions>
 <Actions:FunctionCallAction>
 <Enabled>
 <System:Boolean>True</System:Boolean>
@@ -264,7 +274,7 @@ for _,zone in ipairs(objNotSoColossalCave.AllZObjects) do
    if Wherigo.NoCaseEquals(tostring(zone),"a zone instance") and
                                zone ~= _G[currentZone] then
       zone.Active = false
-      zone.Description = "Enter this zone to see its description."
+      zone.Description = "Enter this location to see its description."
   end
 end
 
@@ -4179,6 +4189,92 @@ _G[objActiveItem]:MoveTo(_G[currentZone])
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
+<Wherigo:WigoVariable key="key26">
+<Identifier>
+<System:String xsi:nil="true" />
+</Identifier>
+<Name>
+<System:String>Crystal Bridge Exists</System:String>
+</Name>
+<Description>
+<System:String xsi:nil="true" />
+</Description>
+<Type>
+<Wherigo:WigoVariableType>Flag</Wherigo:WigoVariableType>
+</Type>
+<Value>
+<System:Boolean>False</System:Boolean>
+</Value>
+</Wherigo:WigoVariable>
+</Target>
+</Actions:ObjectReferenceExpressionAction>
+</LeftContent>
+<RightContent>
+<Actions:ValueExpressionAction>
+<Enabled>
+<System:Boolean>True</System:Boolean>
+</Enabled>
+<Value>
+<System:Boolean>False</System:Boolean>
+</Value>
+</Actions:ValueExpressionAction>
+</RightContent>
+<IgnoreCase>
+<System:Boolean>True</System:Boolean>
+</IgnoreCase>
+</Actions:CompareExpressionAction>
+</Condition>
+</Actions:IfElseBranchAction>
+</Actions>
+<Actions>
+<Actions:IfElseBranchAction>
+<Enabled>
+<System:Boolean>True</System:Boolean>
+</Enabled>
+<Actions>
+<Actions:SetAction>
+<Enabled>
+<System:Boolean>True</System:Boolean>
+</Enabled>
+<LeftContent>
+<Actions:ObjectPropertyReferenceExpressionAction>
+<Enabled>
+<System:Boolean>True</System:Boolean>
+</Enabled>
+<Target>
+<Wherigo:WigoZone xsi:nil="true" ref="key24" />
+</Target>
+<Property>
+<System:String>Description</System:String>
+</Property>
+</Actions:ObjectPropertyReferenceExpressionAction>
+</LeftContent>
+<RightContent>
+<Actions:ValueExpressionAction>
+<Enabled>
+<System:Boolean>True</System:Boolean>
+</Enabled>
+<Value>
+<System:String>You  are on the east bank of a fissure slicing clear across the hall. The mist is quite thick here.  A crystal bridge spans the fissure.  You can just barely make out something sparkling on the far side of the fissure.</System:String>
+</Value>
+</Actions:ValueExpressionAction>
+</RightContent>
+</Actions:SetAction>
+</Actions>
+<Condition>
+<Actions:CompareExpressionAction>
+<Enabled>
+<System:Boolean>True</System:Boolean>
+</Enabled>
+<Operator>
+<Actions:CompareExpressionOperator>Equal</Actions:CompareExpressionOperator>
+</Operator>
+<LeftContent>
+<Actions:ObjectReferenceExpressionAction>
+<Enabled>
+<System:Boolean>True</System:Boolean>
+</Enabled>
+<Target>
 <Wherigo:WigoVariable key="key108">
 <Identifier>
 <System:String xsi:nil="true" />
@@ -4245,7 +4341,7 @@ _G[objActiveItem]:MoveTo(_G[currentZone])
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Value>
-<System:String>You  are on the east bank of a fissure slicing clear across the hall. The mist is quite thick here, and the fissure is too wide to jump.</System:String>
+<System:String>You  are on the east bank of a fissure slicing clear across the hall. The mist is quite thick here.  A crystal bridge spans the fissure.  </System:String>
 </Value>
 </Actions:ValueExpressionAction>
 </RightContent>
@@ -4526,23 +4622,7 @@ _G[objActiveItem]:MoveTo(_G[currentZone])
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoVariable key="key26">
-<Identifier>
-<System:String xsi:nil="true" />
-</Identifier>
-<Name>
-<System:String>Crystal Bridge Exists</System:String>
-</Name>
-<Description>
-<System:String xsi:nil="true" />
-</Description>
-<Type>
-<Wherigo:WigoVariableType>Flag</Wherigo:WigoVariableType>
-</Type>
-<Value>
-<System:Boolean>False</System:Boolean>
-</Value>
-</Wherigo:WigoVariable>
+<Wherigo:WigoVariable xsi:nil="true" ref="key26" />
 </Target>
 </Actions:ObjectReferenceExpressionAction>
 </LeftContent>
@@ -4923,7 +5003,7 @@ _G[objActiveItem]:MoveTo(_G[currentZone])
 <System:String>Y2</System:String>
 </Name>
 <Description>
-<System:String>You  are  in  a large room, with a passage to the south, a passage to the west, and a wall of broken rock to the east.  There is a shimmering force field over the western passage with glowing letters saying "Reserved for future expansion."  There is a large "Y2" on  a rock in the room's center.</System:String>
+<System:String>You  are  in  a large room, with a passage to the south, a passage to the west, and a wall of broken rock to the east.  There is a shimmering force field over the western passage with glowing letters saying "Reserved for future expansion."  There is a large "Y2" on  a rock in the room's center.  There are some maps here (in the real world, not on your phone!)  Please take only one and leave the rest for other players.</System:String>
 </Description>
 <Visible>
 <System:Boolean>True</System:Boolean>
@@ -5072,7 +5152,7 @@ _G[objActiveItem]:MoveTo(_G[currentZone])
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Value>
-<System:String>You  are  in  a large room, with a passage to the south, a passage to the west, and a wall of broken rock to the east.  There is a shimmering force field over the western passage with glowing letters saying "Reserved for future expansion."  There is a large "Y2" on  a rock in the room's center.</System:String>
+<System:String>You  are  in  a large room, with a passage to the south, a passage to the west, and a wall of broken rock to the east.  There is a shimmering force field over the western passage with glowing letters saying "Reserved for future expansion."  There is a large "Y2" on  a rock in the room's center.  There are some maps here (in the real world, not on your phone!)  Please take only one and leave the rest for other players.</System:String>
 </Value>
 </Actions:ValueExpressionAction>
 </RightContent>
@@ -6598,7 +6678,7 @@ _G[objActiveItem]:MoveTo(Player)</System:String>
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoVariable key="key153">
+<Wherigo:WigoVariable key="key157">
 <Identifier>
 <System:String xsi:nil="true" />
 </Identifier>
@@ -7883,6 +7963,134 @@ _G[objActiveItem]:MoveTo(Player)</System:String>
 <Actions:WigoScreen>Location</Actions:WigoScreen>
 </Screen>
 </Actions:ShowScreenAction>
+</Actions>
+<Condition>
+<Actions:CompareExpressionAction>
+<Enabled>
+<System:Boolean>True</System:Boolean>
+</Enabled>
+<Operator>
+<Actions:CompareExpressionOperator>Equal</Actions:CompareExpressionOperator>
+</Operator>
+<LeftContent>
+<Actions:ObjectReferenceExpressionAction>
+<Enabled>
+<System:Boolean>True</System:Boolean>
+</Enabled>
+<Target>
+<Wherigo:WigoVariable key="key140">
+<Identifier>
+<System:String xsi:nil="true" />
+</Identifier>
+<Name>
+<System:String>End of Road Entered</System:String>
+</Name>
+<Description>
+<System:String xsi:nil="true" />
+</Description>
+<Type>
+<Wherigo:WigoVariableType>Flag</Wherigo:WigoVariableType>
+</Type>
+<Value>
+<System:Boolean>False</System:Boolean>
+</Value>
+</Wherigo:WigoVariable>
+</Target>
+</Actions:ObjectReferenceExpressionAction>
+</LeftContent>
+<RightContent>
+<Actions:ValueExpressionAction>
+<Enabled>
+<System:Boolean>True</System:Boolean>
+</Enabled>
+<Value>
+<System:Boolean>True</System:Boolean>
+</Value>
+</Actions:ValueExpressionAction>
+</RightContent>
+<IgnoreCase>
+<System:Boolean>True</System:Boolean>
+</IgnoreCase>
+</Actions:CompareExpressionAction>
+</Condition>
+</Actions:IfElseBranchAction>
+</Actions>
+<Actions>
+<Actions:IfElseBranchAction>
+<Enabled>
+<System:Boolean>True</System:Boolean>
+</Enabled>
+<Actions>
+<Actions:SetAction>
+<Enabled>
+<System:Boolean>True</System:Boolean>
+</Enabled>
+<LeftContent>
+<Actions:ObjectPropertyReferenceExpressionAction>
+<Enabled>
+<System:Boolean>True</System:Boolean>
+</Enabled>
+<Target>
+<Wherigo:WigoZone xsi:nil="true" ref="key7" />
+</Target>
+<Property>
+<System:String>Description</System:String>
+</Property>
+</Actions:ObjectPropertyReferenceExpressionAction>
+</LeftContent>
+<RightContent>
+<Actions:ValueExpressionAction>
+<Enabled>
+<System:Boolean>True</System:Boolean>
+</Enabled>
+<Value>
+<System:String>You  are  standing  at  the  end of a road before a small brick building. Around you is a forest.  A small stream flows out  of  the  building  and down a gully and a wide path leads northeast.</System:String>
+</Value>
+</Actions:ValueExpressionAction>
+</RightContent>
+</Actions:SetAction>
+</Actions>
+<Actions>
+<Actions:MessageBoxAction>
+<Enabled>
+<System:Boolean>True</System:Boolean>
+</Enabled>
+<Text>
+<Actions:ValueExpressionAction>
+<Enabled>
+<System:Boolean>True</System:Boolean>
+</Enabled>
+<Value>
+<System:String>You have just entered the End of Road location.  To see its description, click on the locations section in the main screen, and then click on "End of Road."  You should be sure to do this with every location you enter so you can see its description.
+
+Then get back to the main screen using your phone's back button.  The "You See" section includes things you can see and interact with.  You should always check this for each location.  In this case, you see a "Magic Wand".  Click on it, and then select "Take" from the bottom of the Magic Wand screen to put it in your inventory.</System:String>
+</Value>
+</Actions:ValueExpressionAction>
+</Text>
+<Media>
+<Wherigo:WigoMedia xsi:nil="true" />
+</Media>
+<Button1Text>
+<System:String xsi:nil="true" />
+</Button1Text>
+<Button2Text>
+<System:String xsi:nil="true" />
+</Button2Text>
+<ButtonClickedAction>
+<Actions:DoAction>
+<Enabled>
+<System:Boolean>True</System:Boolean>
+</Enabled>
+</Actions:DoAction>
+</ButtonClickedAction>
+</Actions:MessageBoxAction>
+</Actions>
+<Condition>
+<Actions:IExpressionAction xsi:nil="true" />
+</Condition>
+</Actions:IfElseBranchAction>
+</Actions>
+</Actions:IfElseAction>
 </Actions>
 <Owner>
 <Wherigo:WigoZone xsi:nil="true" ref="key7" />
@@ -21214,6 +21422,36 @@ _G[objActiveItem]:MoveTo(Player)</System:String>
 </Actions:SetAction>
 </Actions>
 <Actions>
+<Actions:SetAction>
+<Enabled>
+<System:Boolean>True</System:Boolean>
+</Enabled>
+<LeftContent>
+<Actions:ObjectPropertyReferenceExpressionAction>
+<Enabled>
+<System:Boolean>True</System:Boolean>
+</Enabled>
+<Target>
+<Wherigo:WigoZone xsi:nil="true" ref="key24" />
+</Target>
+<Property>
+<System:String>Description</System:String>
+</Property>
+</Actions:ObjectPropertyReferenceExpressionAction>
+</LeftContent>
+<RightContent>
+<Actions:ValueExpressionAction>
+<Enabled>
+<System:Boolean>True</System:Boolean>
+</Enabled>
+<Value>
+<System:String>You  are on the east bank of a fissure slicing clear across the hall. The mist is quite thick here.  A crystal bridge spans the fissure.  You can just barely make out something sparkling on the far side of the fissure.</System:String>
+</Value>
+</Actions:ValueExpressionAction>
+</RightContent>
+</Actions:SetAction>
+</Actions>
+<Actions>
 <Actions:MessageBoxAction>
 <Enabled>
 <System:Boolean>True</System:Boolean>
@@ -22151,7 +22389,7 @@ _G[objActiveItem]:MoveTo(Player)</System:String>
 <System:String>Snake</System:String>
 </Name>
 <Description>
-<System:String>A huge green fierce snake!</System:String>
+<System:String>A huge green fierce snake is blocking your way.  If you got rid of it, you can see many more places you can go from here.</System:String>
 </Description>
 <Visible>
 <System:Boolean>True</System:Boolean>
@@ -26341,7 +26579,7 @@ Add: bottom of pit with stream; cavern with waterfall;  southern edge of reservo
 <Wherigo:WigoItem xsi:nil="true" ref="key132" />
 </Items>
 <Items>
-<Wherigo:WigoItem key="key142">
+<Wherigo:WigoItem key="key145">
 <Identifier>
 <System:String xsi:nil="true" />
 </Identifier>
@@ -26371,12 +26609,12 @@ Add: bottom of pit with stream; cavern with waterfall;  southern edge of reservo
 </Wherigo:WigoObjectLocation>
 </ObjectLocation>
 <Commands>
-<Wherigo:WigoCommand key="key141">
+<Wherigo:WigoCommand key="key143">
 <Identifier>
 <System:String xsi:nil="true" />
 </Identifier>
 <Enabled>
-<System:Boolean>True</System:Boolean>
+<System:Boolean>False</System:Boolean>
 </Enabled>
 <Name>
 <System:String>Cast</System:String>
@@ -26403,7 +26641,7 @@ Add: bottom of pit with stream; cavern with waterfall;  southern edge of reservo
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoInput key="key140">
+<Wherigo:WigoInput key="key142">
 <Identifier>
 <System:String xsi:nil="true" />
 </Identifier>
@@ -26455,7 +26693,8 @@ Add: bottom of pit with stream; cavern with waterfall;  southern edge of reservo
 </Enabled>
 <Value>
 <System:String>There is a brilliant flash of light and a sudden fanfare of trumpets!
-When your eyes recover from the flash you find that you can now go directly somwhere.  Look in your locations list.  
+When your eyes recover from the flash you find that you can now go directly between Y2 and the building.  Look in your locations list.  
+
 I'd teleport you there, but I'm only a phone and I don't have that power, so you'll just have to walk on your own.</System:String>
 </Value>
 </Actions:ValueExpressionAction>
@@ -26733,8 +26972,13 @@ I'd teleport you there, but I'm only a phone and I don't have that power, so you
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Value>
-<System:String>There is a brilliant flash of light and a sudden fanfare of trumpets!
-When your eyes recover from the flash you find that you can now go directly somwhere.  Look in your locations list.  
+<System:String>Now where would you learn a thing like that?
+
+Well, given that you do, OK, it works here just like you thought it might.
+
+There is a brilliant flash of light and a sudden fanfare of trumpets!
+When your eyes recover from the flash you find that you can now go directly beween the Debris Room and the building.  Look in your locations list.  
+
 I'd teleport you there, but I'm only a phone and I don't have that power, so you'll just have to walk on your own.</System:String>
 </Value>
 </Actions:ValueExpressionAction>
@@ -27011,6 +27255,477 @@ I'd teleport you there, but I'm only a phone and I don't have that power, so you
 <Enabled>
 <System:Boolean>True</System:Boolean>
 </Enabled>
+<Actions>
+<Actions:MessageBoxAction>
+<Enabled>
+<System:Boolean>True</System:Boolean>
+</Enabled>
+<Text>
+<Actions:ValueExpressionAction>
+<Enabled>
+<System:Boolean>True</System:Boolean>
+</Enabled>
+<Value>
+<System:String>OK!  You're all ready to go.  Remember to look at the main screen for every location, check what you see, and use the map to navigate.  You will now see two new location on your map, I'd suggest heading to "Inside Building," but that's up to you.
+
+Don't be afraid to try things.  You cannot die or get yourself stuck.
+
+Remember that birds are afraid of some strange objects, but conversely some scary monsters are afraid of birds!  Just saying...</System:String>
+</Value>
+</Actions:ValueExpressionAction>
+</Text>
+<Media>
+<Wherigo:WigoMedia xsi:nil="true" />
+</Media>
+<Button1Text>
+<System:String xsi:nil="true" />
+</Button1Text>
+<Button2Text>
+<System:String xsi:nil="true" />
+</Button2Text>
+<ButtonClickedAction>
+<Actions:DoAction>
+<Enabled>
+<System:Boolean>True</System:Boolean>
+</Enabled>
+</Actions:DoAction>
+</ButtonClickedAction>
+</Actions:MessageBoxAction>
+</Actions>
+<Condition>
+<Actions:CompareExpressionAction>
+<Enabled>
+<System:Boolean>True</System:Boolean>
+</Enabled>
+<Operator>
+<Actions:CompareExpressionOperator>Equal</Actions:CompareExpressionOperator>
+</Operator>
+<LeftContent>
+<Actions:ObjectReferenceExpressionAction>
+<Enabled>
+<System:Boolean>True</System:Boolean>
+</Enabled>
+<Target>
+<Wherigo:WigoVariable key="key141">
+<Identifier>
+<System:String xsi:nil="true" />
+</Identifier>
+<Name>
+<System:String>Begin Cast</System:String>
+</Name>
+<Description>
+<System:String xsi:nil="true" />
+</Description>
+<Type>
+<Wherigo:WigoVariableType>Flag</Wherigo:WigoVariableType>
+</Type>
+<Value>
+<System:Boolean>False</System:Boolean>
+</Value>
+</Wherigo:WigoVariable>
+</Target>
+</Actions:ObjectReferenceExpressionAction>
+</LeftContent>
+<RightContent>
+<Actions:ValueExpressionAction>
+<Enabled>
+<System:Boolean>True</System:Boolean>
+</Enabled>
+<Value>
+<System:Boolean>False</System:Boolean>
+</Value>
+</Actions:ValueExpressionAction>
+</RightContent>
+<IgnoreCase>
+<System:Boolean>True</System:Boolean>
+</IgnoreCase>
+</Actions:CompareExpressionAction>
+</Condition>
+</Actions:IfElseBranchAction>
+</Actions>
+<Actions>
+<Actions:IfElseBranchAction>
+<Enabled>
+<System:Boolean>True</System:Boolean>
+</Enabled>
+<Actions>
+<Actions:MessageBoxAction>
+<Enabled>
+<System:Boolean>True</System:Boolean>
+</Enabled>
+<Text>
+<Actions:ValueExpressionAction>
+<Enabled>
+<System:Boolean>True</System:Boolean>
+</Enabled>
+<Value>
+<System:String>Sorry, that only works once.  However, just because I'm nice, I'll show you the hints again.
+
+Don't be afraid to try things.  You cannot die or get yourself stuck.
+
+Remember that birds are afraid of some strange objects, but conversely some scary monsters are afraid of birds!  Just saying...</System:String>
+</Value>
+</Actions:ValueExpressionAction>
+</Text>
+<Media>
+<Wherigo:WigoMedia xsi:nil="true" />
+</Media>
+<Button1Text>
+<System:String xsi:nil="true" />
+</Button1Text>
+<Button2Text>
+<System:String xsi:nil="true" />
+</Button2Text>
+<ButtonClickedAction>
+<Actions:DoAction>
+<Enabled>
+<System:Boolean>True</System:Boolean>
+</Enabled>
+</Actions:DoAction>
+</ButtonClickedAction>
+</Actions:MessageBoxAction>
+</Actions>
+<Condition>
+<Actions:IExpressionAction xsi:nil="true" />
+</Condition>
+</Actions:IfElseBranchAction>
+</Actions>
+</Actions:IfElseAction>
+</Actions>
+<Actions>
+<Actions:SetAction>
+<Enabled>
+<System:Boolean>True</System:Boolean>
+</Enabled>
+<LeftContent>
+<Actions:ObjectReferenceExpressionAction>
+<Enabled>
+<System:Boolean>True</System:Boolean>
+</Enabled>
+<Target>
+<Wherigo:WigoVariable xsi:nil="true" ref="key140" />
+</Target>
+</Actions:ObjectReferenceExpressionAction>
+</LeftContent>
+<RightContent>
+<Actions:ValueExpressionAction>
+<Enabled>
+<System:Boolean>True</System:Boolean>
+</Enabled>
+<Value>
+<System:Boolean>True</System:Boolean>
+</Value>
+</Actions:ValueExpressionAction>
+</RightContent>
+</Actions:SetAction>
+</Actions>
+<Actions>
+<Actions:SetAction>
+<Enabled>
+<System:Boolean>True</System:Boolean>
+</Enabled>
+<LeftContent>
+<Actions:ObjectPropertyReferenceExpressionAction>
+<Enabled>
+<System:Boolean>True</System:Boolean>
+</Enabled>
+<Target>
+<Wherigo:WigoZone xsi:nil="true" ref="key8" />
+</Target>
+<Property>
+<System:String>Active</System:String>
+</Property>
+</Actions:ObjectPropertyReferenceExpressionAction>
+</LeftContent>
+<RightContent>
+<Actions:ValueExpressionAction>
+<Enabled>
+<System:Boolean>True</System:Boolean>
+</Enabled>
+<Value>
+<System:Boolean>True</System:Boolean>
+</Value>
+</Actions:ValueExpressionAction>
+</RightContent>
+</Actions:SetAction>
+</Actions>
+<Actions>
+<Actions:SetAction>
+<Enabled>
+<System:Boolean>True</System:Boolean>
+</Enabled>
+<LeftContent>
+<Actions:ObjectPropertyReferenceExpressionAction>
+<Enabled>
+<System:Boolean>True</System:Boolean>
+</Enabled>
+<Target>
+<Wherigo:WigoZone xsi:nil="true" ref="key15" />
+</Target>
+<Property>
+<System:String>Active</System:String>
+</Property>
+</Actions:ObjectPropertyReferenceExpressionAction>
+</LeftContent>
+<RightContent>
+<Actions:ValueExpressionAction>
+<Enabled>
+<System:Boolean>True</System:Boolean>
+</Enabled>
+<Value>
+<System:Boolean>True</System:Boolean>
+</Value>
+</Actions:ValueExpressionAction>
+</RightContent>
+</Actions:SetAction>
+</Actions>
+<Actions>
+<Actions:SetAction>
+<Enabled>
+<System:Boolean>True</System:Boolean>
+</Enabled>
+<LeftContent>
+<Actions:ObjectReferenceExpressionAction>
+<Enabled>
+<System:Boolean>True</System:Boolean>
+</Enabled>
+<Target>
+<Wherigo:WigoVariable xsi:nil="true" ref="key141" />
+</Target>
+</Actions:ObjectReferenceExpressionAction>
+</LeftContent>
+<RightContent>
+<Actions:ValueExpressionAction>
+<Enabled>
+<System:Boolean>True</System:Boolean>
+</Enabled>
+<Value>
+<System:Boolean>True</System:Boolean>
+</Value>
+</Actions:ValueExpressionAction>
+</RightContent>
+</Actions:SetAction>
+</Actions>
+<Condition>
+<Actions:OrExpressionAction>
+<Enabled>
+<System:Boolean>True</System:Boolean>
+</Enabled>
+<Actions>
+<Actions:CompareExpressionAction>
+<Enabled>
+<System:Boolean>True</System:Boolean>
+</Enabled>
+<Operator>
+<Actions:CompareExpressionOperator>Equal</Actions:CompareExpressionOperator>
+</Operator>
+<LeftContent>
+<Actions:InputAnswerExpressionAction>
+<Enabled>
+<System:Boolean>True</System:Boolean>
+</Enabled>
+</Actions:InputAnswerExpressionAction>
+</LeftContent>
+<RightContent>
+<Actions:ValueExpressionAction>
+<Enabled>
+<System:Boolean>True</System:Boolean>
+</Enabled>
+<Value>
+<System:String>Begin</System:String>
+</Value>
+</Actions:ValueExpressionAction>
+</RightContent>
+<IgnoreCase>
+<System:Boolean>True</System:Boolean>
+</IgnoreCase>
+</Actions:CompareExpressionAction>
+</Actions>
+<Actions>
+<Actions:CompareExpressionAction>
+<Enabled>
+<System:Boolean>True</System:Boolean>
+</Enabled>
+<Operator>
+<Actions:CompareExpressionOperator>Equal</Actions:CompareExpressionOperator>
+</Operator>
+<LeftContent>
+<Actions:InputAnswerExpressionAction>
+<Enabled>
+<System:Boolean>True</System:Boolean>
+</Enabled>
+</Actions:InputAnswerExpressionAction>
+</LeftContent>
+<RightContent>
+<Actions:ValueExpressionAction>
+<Enabled>
+<System:Boolean>True</System:Boolean>
+</Enabled>
+<Value>
+<System:String>begin</System:String>
+</Value>
+</Actions:ValueExpressionAction>
+</RightContent>
+<IgnoreCase>
+<System:Boolean>True</System:Boolean>
+</IgnoreCase>
+</Actions:CompareExpressionAction>
+</Actions>
+<Actions>
+<Actions:CompareExpressionAction>
+<Enabled>
+<System:Boolean>True</System:Boolean>
+</Enabled>
+<Operator>
+<Actions:CompareExpressionOperator>Equal</Actions:CompareExpressionOperator>
+</Operator>
+<LeftContent>
+<Actions:InputAnswerExpressionAction>
+<Enabled>
+<System:Boolean>True</System:Boolean>
+</Enabled>
+</Actions:InputAnswerExpressionAction>
+</LeftContent>
+<RightContent>
+<Actions:ValueExpressionAction>
+<Enabled>
+<System:Boolean>True</System:Boolean>
+</Enabled>
+<Value>
+<System:String>BEGIN</System:String>
+</Value>
+</Actions:ValueExpressionAction>
+</RightContent>
+<IgnoreCase>
+<System:Boolean>True</System:Boolean>
+</IgnoreCase>
+</Actions:CompareExpressionAction>
+</Actions>
+</Actions:OrExpressionAction>
+</Condition>
+</Actions:IfElseBranchAction>
+</Actions>
+<Actions>
+<Actions:IfElseBranchAction>
+<Enabled>
+<System:Boolean>True</System:Boolean>
+</Enabled>
+<Actions>
+<Actions:MessageBoxAction>
+<Enabled>
+<System:Boolean>True</System:Boolean>
+</Enabled>
+<Text>
+<Actions:ValueExpressionAction>
+<Enabled>
+<System:Boolean>True</System:Boolean>
+</Enabled>
+<Value>
+<System:String>The spell you need to cast first is "Begin" (without the quote marks).</System:String>
+</Value>
+</Actions:ValueExpressionAction>
+</Text>
+<Media>
+<Wherigo:WigoMedia xsi:nil="true" />
+</Media>
+<Button1Text>
+<System:String xsi:nil="true" />
+</Button1Text>
+<Button2Text>
+<System:String xsi:nil="true" />
+</Button2Text>
+<ButtonClickedAction>
+<Actions:DoAction>
+<Enabled>
+<System:Boolean>True</System:Boolean>
+</Enabled>
+</Actions:DoAction>
+</ButtonClickedAction>
+</Actions:MessageBoxAction>
+</Actions>
+<Condition>
+<Actions:CompareExpressionAction>
+<Enabled>
+<System:Boolean>True</System:Boolean>
+</Enabled>
+<Operator>
+<Actions:CompareExpressionOperator>Equal</Actions:CompareExpressionOperator>
+</Operator>
+<LeftContent>
+<Actions:ObjectReferenceExpressionAction>
+<Enabled>
+<System:Boolean>True</System:Boolean>
+</Enabled>
+<Target>
+<Wherigo:WigoVariable xsi:nil="true" ref="key141" />
+</Target>
+</Actions:ObjectReferenceExpressionAction>
+</LeftContent>
+<RightContent>
+<Actions:ValueExpressionAction>
+<Enabled>
+<System:Boolean>True</System:Boolean>
+</Enabled>
+<Value>
+<System:Boolean>False</System:Boolean>
+</Value>
+</Actions:ValueExpressionAction>
+</RightContent>
+<IgnoreCase>
+<System:Boolean>True</System:Boolean>
+</IgnoreCase>
+</Actions:CompareExpressionAction>
+</Condition>
+</Actions:IfElseBranchAction>
+</Actions>
+<Actions>
+<Actions:IfElseBranchAction>
+<Enabled>
+<System:Boolean>True</System:Boolean>
+</Enabled>
+<Actions>
+<Actions:IfElseAction>
+<Enabled>
+<System:Boolean>True</System:Boolean>
+</Enabled>
+<Actions>
+<Actions:IfElseBranchAction>
+<Enabled>
+<System:Boolean>True</System:Boolean>
+</Enabled>
+<Actions>
+<Actions:MessageBoxAction>
+<Enabled>
+<System:Boolean>True</System:Boolean>
+</Enabled>
+<Text>
+<Actions:ValueExpressionAction>
+<Enabled>
+<System:Boolean>True</System:Boolean>
+</Enabled>
+<Value>
+<System:String>Nothing happens (here).</System:String>
+</Value>
+</Actions:ValueExpressionAction>
+</Text>
+<Media>
+<Wherigo:WigoMedia xsi:nil="true" />
+</Media>
+<Button1Text>
+<System:String xsi:nil="true" />
+</Button1Text>
+<Button2Text>
+<System:String xsi:nil="true" />
+</Button2Text>
+<ButtonClickedAction>
+<Actions:DoAction>
+<Enabled>
+<System:Boolean>True</System:Boolean>
+</Enabled>
+</Actions:DoAction>
+</ButtonClickedAction>
+</Actions:MessageBoxAction>
+</Actions>
 <Condition>
 <Actions:OrExpressionAction>
 <Enabled>
@@ -27155,6 +27870,123 @@ I'd teleport you there, but I'm only a phone and I don't have that power, so you
 </Actions>
 </Actions:IfElseAction>
 </Actions>
+<Condition>
+<Actions:IExpressionAction xsi:nil="true" />
+</Condition>
+</Actions:IfElseBranchAction>
+</Actions>
+</Actions:IfElseAction>
+</Actions>
+<Owner>
+<Wherigo:WigoInput xsi:nil="true" ref="key142" />
+</Owner>
+</Actions:EventAction>
+</GetInputAction>
+<ErrorAction>
+<Actions:EventAction>
+<Enabled>
+<System:Boolean>True</System:Boolean>
+</Enabled>
+<Owner>
+<Wherigo:WigoInput xsi:nil="true" ref="key142" />
+</Owner>
+</Actions:EventAction>
+</ErrorAction>
+</Wherigo:WigoInput>
+</Target>
+</Actions:ObjectExpressionAction>
+</InputContent>
+</Actions:InputAction>
+</Actions>
+<Owner>
+<Wherigo:WigoCommand xsi:nil="true" ref="key143" />
+</Owner>
+</Actions:EventAction>
+</ExecuteAction>
+</Wherigo:WigoCommand>
+</Commands>
+<Commands>
+<Wherigo:WigoCommand key="key144">
+<Identifier>
+<System:String xsi:nil="true" />
+</Identifier>
+<Enabled>
+<System:Boolean>True</System:Boolean>
+</Enabled>
+<Name>
+<System:String>Take</System:String>
+</Name>
+<EmptyTargetListText>
+<System:String>Nothing available</System:String>
+</EmptyTargetListText>
+<Targets>
+<Wherigo:WigoCommandTargets>None</Wherigo:WigoCommandTargets>
+</Targets>
+<ExecuteAction>
+<Actions:EventAction>
+<Enabled>
+<System:Boolean>True</System:Boolean>
+</Enabled>
+<Actions>
+<Actions:SetAction>
+<Enabled>
+<System:Boolean>True</System:Boolean>
+</Enabled>
+<LeftContent>
+<Actions:ObjectPropertyReferenceExpressionAction>
+<Enabled>
+<System:Boolean>True</System:Boolean>
+</Enabled>
+<Target>
+<Wherigo:WigoCommand xsi:nil="true" ref="key144" />
+</Target>
+<Property>
+<System:String>Enabled</System:String>
+</Property>
+</Actions:ObjectPropertyReferenceExpressionAction>
+</LeftContent>
+<RightContent>
+<Actions:ValueExpressionAction>
+<Enabled>
+<System:Boolean>True</System:Boolean>
+</Enabled>
+<Value>
+<System:Boolean>False</System:Boolean>
+</Value>
+</Actions:ValueExpressionAction>
+</RightContent>
+</Actions:SetAction>
+</Actions>
+<Actions>
+<Actions:SetAction>
+<Enabled>
+<System:Boolean>True</System:Boolean>
+</Enabled>
+<LeftContent>
+<Actions:ObjectPropertyReferenceExpressionAction>
+<Enabled>
+<System:Boolean>True</System:Boolean>
+</Enabled>
+<Target>
+<Wherigo:WigoCommand xsi:nil="true" ref="key143" />
+</Target>
+<Property>
+<System:String>Enabled</System:String>
+</Property>
+</Actions:ObjectPropertyReferenceExpressionAction>
+</LeftContent>
+<RightContent>
+<Actions:ValueExpressionAction>
+<Enabled>
+<System:Boolean>True</System:Boolean>
+</Enabled>
+<Value>
+<System:Boolean>True</System:Boolean>
+</Value>
+</Actions:ValueExpressionAction>
+</RightContent>
+</Actions:SetAction>
+</Actions>
 <Actions>
 <Actions:MessageBoxAction>
 <Enabled>
@@ -27166,7 +27998,9 @@ I'd teleport you there, but I'm only a phone and I don't have that power, so you
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Value>
-<System:String>Nothing happens (here).</System:String>
+<System:String>Congratulations on picking up the magic wand.  You must now use it to cast a spell to proceed to the rest of your adventure.  From the main screen, click on Inventory, then on Magic Wand then on Cast (or possibly Actions then Cast). 
+
+Cast the spell "Begin" (without the quotes) to start your adventure.</System:String>
 </Value>
 </Actions:ValueExpressionAction>
 </Text>
@@ -27188,36 +28022,8 @@ I'd teleport you there, but I'm only a phone and I don't have that power, so you
 </ButtonClickedAction>
 </Actions:MessageBoxAction>
 </Actions>
-<Condition>
-<Actions:IExpressionAction xsi:nil="true" />
-</Condition>
-</Actions:IfElseBranchAction>
-</Actions>
-</Actions:IfElseAction>
-</Actions>
 <Owner>
-<Wherigo:WigoInput xsi:nil="true" ref="key140" />
-</Owner>
-</Actions:EventAction>
-</GetInputAction>
-<ErrorAction>
-<Actions:EventAction>
-<Enabled>
-<System:Boolean>True</System:Boolean>
-</Enabled>
-<Owner>
-<Wherigo:WigoInput xsi:nil="true" ref="key140" />
-</Owner>
-</Actions:EventAction>
-</ErrorAction>
-</Wherigo:WigoInput>
-</Target>
-</Actions:ObjectExpressionAction>
-</InputContent>
-</Actions:InputAction>
-</Actions>
-<Owner>
-<Wherigo:WigoCommand xsi:nil="true" ref="key141" />
+<Wherigo:WigoCommand xsi:nil="true" ref="key144" />
 </Owner>
 </Actions:EventAction>
 </ExecuteAction>
@@ -27229,7 +28035,7 @@ I'd teleport you there, but I'm only a phone and I don't have that power, so you
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Owner>
-<Wherigo:WigoItem xsi:nil="true" ref="key142" />
+<Wherigo:WigoItem xsi:nil="true" ref="key145" />
 </Owner>
 </Actions:EventAction>
 </ClickAction>
@@ -27242,7 +28048,7 @@ I'd teleport you there, but I'm only a phone and I don't have that power, so you
 </Wherigo:WigoItem>
 </Items>
 <Items>
-<Wherigo:WigoItem key="key144">
+<Wherigo:WigoItem key="key147">
 <Identifier>
 <System:String xsi:nil="true" />
 </Identifier>
@@ -27272,7 +28078,7 @@ I'd teleport you there, but I'm only a phone and I don't have that power, so you
 </Wherigo:WigoObjectLocation>
 </ObjectLocation>
 <Commands>
-<Wherigo:WigoCommand key="key143">
+<Wherigo:WigoCommand key="key146">
 <Identifier>
 <System:String xsi:nil="true" />
 </Identifier>
@@ -27338,7 +28144,7 @@ I'd teleport you there, but I'm only a phone and I don't have that power, so you
 </Actions:FunctionCallAction>
 </Actions>
 <Owner>
-<Wherigo:WigoCommand xsi:nil="true" ref="key143" />
+<Wherigo:WigoCommand xsi:nil="true" ref="key146" />
 </Owner>
 </Actions:EventAction>
 </ExecuteAction>
@@ -27353,7 +28159,7 @@ I'd teleport you there, but I'm only a phone and I don't have that power, so you
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Owner>
-<Wherigo:WigoItem xsi:nil="true" ref="key144" />
+<Wherigo:WigoItem xsi:nil="true" ref="key147" />
 </Owner>
 </Actions:EventAction>
 </ClickAction>
@@ -27366,7 +28172,7 @@ I'd teleport you there, but I'm only a phone and I don't have that power, so you
 </Wherigo:WigoItem>
 </Items>
 <Items>
-<Wherigo:WigoItem key="key146">
+<Wherigo:WigoItem key="key149">
 <Identifier>
 <System:String xsi:nil="true" />
 </Identifier>
@@ -27389,7 +28195,7 @@ I'd teleport you there, but I'm only a phone and I don't have that power, so you
 <Wherigo:WigoObjectLocation xsi:nil="true" />
 </ObjectLocation>
 <Commands>
-<Wherigo:WigoCommand key="key145">
+<Wherigo:WigoCommand key="key148">
 <Identifier>
 <System:String xsi:nil="true" />
 </Identifier>
@@ -27444,200 +28250,6 @@ I'd teleport you there, but I'm only a phone and I don't have that power, so you
 </Actions:MessageBoxAction>
 </Actions>
 <Owner>
-<Wherigo:WigoCommand xsi:nil="true" ref="key145" />
-</Owner>
-</Actions:EventAction>
-</ExecuteAction>
-</Wherigo:WigoCommand>
-</Commands>
-<ClickAction>
-<Actions:EventAction>
-<Enabled>
-<System:Boolean>True</System:Boolean>
-</Enabled>
-<Owner>
-<Wherigo:WigoItem xsi:nil="true" ref="key146" />
-</Owner>
-</Actions:EventAction>
-</ClickAction>
-<Locked>
-<System:Boolean>False</System:Boolean>
-</Locked>
-<Opened>
-<System:Boolean>False</System:Boolean>
-</Opened>
-</Wherigo:WigoItem>
-</Items>
-<Items>
-<Wherigo:WigoItem key="key149">
-<Identifier>
-<System:String xsi:nil="true" />
-</Identifier>
-<Name>
-<System:String>Map</System:String>
-</Name>
-<Description>
-<System:String>A map of the cave</System:String>
-</Description>
-<Visible>
-<System:Boolean>True</System:Boolean>
-</Visible>
-<Image>
-<Wherigo:WigoMedia xsi:nil="true" />
-</Image>
-<Icon>
-<Wherigo:WigoMedia xsi:nil="true" />
-</Icon>
-<ObjectLocation>
-<Wherigo:WigoObjectLocation>
-<Container>
-<Wherigo:WigoZone xsi:nil="true" ref="key28" />
-</Container>
-<Location>
-<Wherigo:WigoCoordinate xsi:nil="true" />
-</Location>
-</Wherigo:WigoObjectLocation>
-</ObjectLocation>
-<Commands>
-<Wherigo:WigoCommand key="key147">
-<Identifier>
-<System:String xsi:nil="true" />
-</Identifier>
-<Enabled>
-<System:Boolean>True</System:Boolean>
-</Enabled>
-<Name>
-<System:String>Take</System:String>
-</Name>
-<EmptyTargetListText>
-<System:String>Nothing available</System:String>
-</EmptyTargetListText>
-<Targets>
-<Wherigo:WigoCommandTargets>None</Wherigo:WigoCommandTargets>
-</Targets>
-<ExecuteAction>
-<Actions:EventAction>
-<Enabled>
-<System:Boolean>True</System:Boolean>
-</Enabled>
-<Actions>
-<Actions:SetAction>
-<Enabled>
-<System:Boolean>True</System:Boolean>
-</Enabled>
-<LeftContent>
-<Actions:ObjectReferenceExpressionAction>
-<Enabled>
-<System:Boolean>True</System:Boolean>
-</Enabled>
-<Target>
-<Wherigo:WigoVariable xsi:nil="true" ref="key17" />
-</Target>
-</Actions:ObjectReferenceExpressionAction>
-</LeftContent>
-<RightContent>
-<Actions:ValueExpressionAction>
-<Enabled>
-<System:Boolean>True</System:Boolean>
-</Enabled>
-<Value>
-<System:String>objMap</System:String>
-</Value>
-</Actions:ValueExpressionAction>
-</RightContent>
-</Actions:SetAction>
-</Actions>
-<Actions>
-<Actions:FunctionCallAction>
-<Enabled>
-<System:Boolean>True</System:Boolean>
-</Enabled>
-<FunctionContent>
-<Actions:ObjectExpressionAction>
-<Enabled>
-<System:Boolean>True</System:Boolean>
-</Enabled>
-<Target>
-<Wherigo:WigoFunction xsi:nil="true" ref="key33" />
-</Target>
-</Actions:ObjectExpressionAction>
-</FunctionContent>
-</Actions:FunctionCallAction>
-</Actions>
-<Owner>
-<Wherigo:WigoCommand xsi:nil="true" ref="key147" />
-</Owner>
-</Actions:EventAction>
-</ExecuteAction>
-</Wherigo:WigoCommand>
-</Commands>
-<Commands>
-<Wherigo:WigoCommand key="key148">
-<Identifier>
-<System:String xsi:nil="true" />
-</Identifier>
-<Enabled>
-<System:Boolean>False</System:Boolean>
-</Enabled>
-<Name>
-<System:String>Drop</System:String>
-</Name>
-<EmptyTargetListText>
-<System:String>Nothing available</System:String>
-</EmptyTargetListText>
-<Targets>
-<Wherigo:WigoCommandTargets>None</Wherigo:WigoCommandTargets>
-</Targets>
-<ExecuteAction>
-<Actions:EventAction>
-<Enabled>
-<System:Boolean>True</System:Boolean>
-</Enabled>
-<Actions>
-<Actions:SetAction>
-<Enabled>
-<System:Boolean>True</System:Boolean>
-</Enabled>
-<LeftContent>
-<Actions:ObjectReferenceExpressionAction>
-<Enabled>
-<System:Boolean>True</System:Boolean>
-</Enabled>
-<Target>
-<Wherigo:WigoVariable xsi:nil="true" ref="key17" />
-</Target>
-</Actions:ObjectReferenceExpressionAction>
-</LeftContent>
-<RightContent>
-<Actions:ValueExpressionAction>
-<Enabled>
-<System:Boolean>True</System:Boolean>
-</Enabled>
-<Value>
-<System:String>objMap</System:String>
-</Value>
-</Actions:ValueExpressionAction>
-</RightContent>
-</Actions:SetAction>
-</Actions>
-<Actions>
-<Actions:FunctionCallAction>
-<Enabled>
-<System:Boolean>True</System:Boolean>
-</Enabled>
-<FunctionContent>
-<Actions:ObjectExpressionAction>
-<Enabled>
-<System:Boolean>True</System:Boolean>
-</Enabled>
-<Target>
-<Wherigo:WigoFunction xsi:nil="true" ref="key9" />
-</Target>
-</Actions:ObjectExpressionAction>
-</FunctionContent>
-</Actions:FunctionCallAction>
-</Actions>
-<Owner>
 <Wherigo:WigoCommand xsi:nil="true" ref="key148" />
 </Owner>
 </Actions:EventAction>
@@ -27662,11 +28274,291 @@ I'd teleport you there, but I'm only a phone and I don't have that power, so you
 </Opened>
 </Wherigo:WigoItem>
 </Items>
+<Items>
+<Wherigo:WigoItem key="key151">
+<Identifier>
+<System:String xsi:nil="true" />
+</Identifier>
+<Name>
+<System:String>Map</System:String>
+</Name>
+<Description>
+<System:String>A map of the cave</System:String>
+</Description>
+<Visible>
+<System:Boolean>True</System:Boolean>
+</Visible>
+<Image>
+<Wherigo:WigoMedia xsi:nil="true" ref="key150" />
+</Image>
+<Icon>
+<Wherigo:WigoMedia xsi:nil="true" />
+</Icon>
+<ObjectLocation>
+<Wherigo:WigoObjectLocation>
+<Container>
+<Wherigo:WigoZone xsi:nil="true" ref="key65" />
+</Container>
+<Location>
+<Wherigo:WigoCoordinate xsi:nil="true" />
+</Location>
+</Wherigo:WigoObjectLocation>
+</ObjectLocation>
+<Commands>
+<Wherigo:WigoCommand key="key152">
+<Identifier>
+<System:String xsi:nil="true" />
+</Identifier>
+<Enabled>
+<System:Boolean>True</System:Boolean>
+</Enabled>
+<Name>
+<System:String>Take</System:String>
+</Name>
+<EmptyTargetListText>
+<System:String>Nothing available</System:String>
+</EmptyTargetListText>
+<Targets>
+<Wherigo:WigoCommandTargets>None</Wherigo:WigoCommandTargets>
+</Targets>
+<ExecuteAction>
+<Actions:EventAction>
+<Enabled>
+<System:Boolean>True</System:Boolean>
+</Enabled>
+<Actions>
+<Actions:MoveAction>
+<Enabled>
+<System:Boolean>True</System:Boolean>
+</Enabled>
+<ItemContent>
+<Actions:ObjectExpressionAction>
+<Enabled>
+<System:Boolean>True</System:Boolean>
+</Enabled>
+<Target>
+<Wherigo:WigoItem xsi:nil="true" ref="key151" />
+</Target>
+</Actions:ObjectExpressionAction>
+</ItemContent>
+<ContainerContent>
+<Actions:ObjectExpressionAction>
+<Enabled>
+<System:Boolean>True</System:Boolean>
+</Enabled>
+<Target>
+<Wherigo:WigoPlayer xsi:nil="true" ref="key37" />
+</Target>
+</Actions:ObjectExpressionAction>
+</ContainerContent>
+</Actions:MoveAction>
+</Actions>
+<Actions>
+<Actions:SetAction>
+<Enabled>
+<System:Boolean>True</System:Boolean>
+</Enabled>
+<LeftContent>
+<Actions:ObjectPropertyReferenceExpressionAction>
+<Enabled>
+<System:Boolean>True</System:Boolean>
+</Enabled>
+<Target>
+<Wherigo:WigoCommand xsi:nil="true" ref="key152" />
+</Target>
+<Property>
+<System:String>Enabled</System:String>
+</Property>
+</Actions:ObjectPropertyReferenceExpressionAction>
+</LeftContent>
+<RightContent>
+<Actions:ValueExpressionAction>
+<Enabled>
+<System:Boolean>True</System:Boolean>
+</Enabled>
+<Value>
+<System:Boolean>False</System:Boolean>
+</Value>
+</Actions:ValueExpressionAction>
+</RightContent>
+</Actions:SetAction>
+</Actions>
+<Actions>
+<Actions:SetAction>
+<Enabled>
+<System:Boolean>True</System:Boolean>
+</Enabled>
+<LeftContent>
+<Actions:ObjectPropertyReferenceExpressionAction>
+<Enabled>
+<System:Boolean>True</System:Boolean>
+</Enabled>
+<Target>
+<Wherigo:WigoCommand key="key153">
+<Identifier>
+<System:String xsi:nil="true" />
+</Identifier>
+<Enabled>
+<System:Boolean>False</System:Boolean>
+</Enabled>
+<Name>
+<System:String>Drop</System:String>
+</Name>
+<EmptyTargetListText>
+<System:String>Nothing available</System:String>
+</EmptyTargetListText>
+<Targets>
+<Wherigo:WigoCommandTargets>None</Wherigo:WigoCommandTargets>
+</Targets>
+<ExecuteAction>
+<Actions:EventAction>
+<Enabled>
+<System:Boolean>True</System:Boolean>
+</Enabled>
+<Actions>
+<Actions:MoveAction>
+<Enabled>
+<System:Boolean>True</System:Boolean>
+</Enabled>
+<ItemContent>
+<Actions:ObjectExpressionAction>
+<Enabled>
+<System:Boolean>True</System:Boolean>
+</Enabled>
+<Target>
+<Wherigo:WigoItem xsi:nil="true" ref="key151" />
+</Target>
+</Actions:ObjectExpressionAction>
+</ItemContent>
+<ContainerContent>
+<Actions:ObjectExpressionAction>
+<Enabled>
+<System:Boolean>True</System:Boolean>
+</Enabled>
+<Target>
+<Wherigo:WigoCurrentZone xsi:nil="true" ref="key21" />
+</Target>
+</Actions:ObjectExpressionAction>
+</ContainerContent>
+</Actions:MoveAction>
+</Actions>
+<Actions>
+<Actions:SetAction>
+<Enabled>
+<System:Boolean>True</System:Boolean>
+</Enabled>
+<LeftContent>
+<Actions:ObjectPropertyReferenceExpressionAction>
+<Enabled>
+<System:Boolean>True</System:Boolean>
+</Enabled>
+<Target>
+<Wherigo:WigoCommand xsi:nil="true" ref="key152" />
+</Target>
+<Property>
+<System:String>Enabled</System:String>
+</Property>
+</Actions:ObjectPropertyReferenceExpressionAction>
+</LeftContent>
+<RightContent>
+<Actions:ValueExpressionAction>
+<Enabled>
+<System:Boolean>True</System:Boolean>
+</Enabled>
+<Value>
+<System:Boolean>True</System:Boolean>
+</Value>
+</Actions:ValueExpressionAction>
+</RightContent>
+</Actions:SetAction>
+</Actions>
+<Actions>
+<Actions:SetAction>
+<Enabled>
+<System:Boolean>True</System:Boolean>
+</Enabled>
+<LeftContent>
+<Actions:ObjectPropertyReferenceExpressionAction>
+<Enabled>
+<System:Boolean>True</System:Boolean>
+</Enabled>
+<Target>
+<Wherigo:WigoCommand xsi:nil="true" ref="key153" />
+</Target>
+<Property>
+<System:String>Enabled</System:String>
+</Property>
+</Actions:ObjectPropertyReferenceExpressionAction>
+</LeftContent>
+<RightContent>
+<Actions:ValueExpressionAction>
+<Enabled>
+<System:Boolean>True</System:Boolean>
+</Enabled>
+<Value>
+<System:Boolean>False</System:Boolean>
+</Value>
+</Actions:ValueExpressionAction>
+</RightContent>
+</Actions:SetAction>
+</Actions>
+<Owner>
+<Wherigo:WigoCommand xsi:nil="true" ref="key153" />
+</Owner>
+</Actions:EventAction>
+</ExecuteAction>
+</Wherigo:WigoCommand>
+</Target>
+<Property>
+<System:String>Enabled</System:String>
+</Property>
+</Actions:ObjectPropertyReferenceExpressionAction>
+</LeftContent>
+<RightContent>
+<Actions:ValueExpressionAction>
+<Enabled>
+<System:Boolean>True</System:Boolean>
+</Enabled>
+<Value>
+<System:Boolean>True</System:Boolean>
+</Value>
+</Actions:ValueExpressionAction>
+</RightContent>
+</Actions:SetAction>
+</Actions>
+<Owner>
+<Wherigo:WigoCommand xsi:nil="true" ref="key152" />
+</Owner>
+</Actions:EventAction>
+</ExecuteAction>
+</Wherigo:WigoCommand>
+</Commands>
+<Commands>
+<Wherigo:WigoCommand xsi:nil="true" ref="key153" />
+</Commands>
+<ClickAction>
+<Actions:EventAction>
+<Enabled>
+<System:Boolean>True</System:Boolean>
+</Enabled>
+<Owner>
+<Wherigo:WigoItem xsi:nil="true" ref="key151" />
+</Owner>
+</Actions:EventAction>
+</ClickAction>
+<Locked>
+<System:Boolean>False</System:Boolean>
+</Locked>
+<Opened>
+<System:Boolean>False</System:Boolean>
+</Opened>
+</Wherigo:WigoItem>
+</Items>
 <Characters>
 <Wherigo:WigoCharacter xsi:nil="true" ref="key104" />
 </Characters>
 <Characters>
-<Wherigo:WigoCharacter key="key150">
+<Wherigo:WigoCharacter key="key154">
 <Identifier>
 <System:String xsi:nil="true" />
 </Identifier>
@@ -27696,7 +28588,7 @@ I'd teleport you there, but I'm only a phone and I don't have that power, so you
 </Wherigo:WigoObjectLocation>
 </ObjectLocation>
 <Commands>
-<Wherigo:WigoCommand key="key152">
+<Wherigo:WigoCommand key="key156">
 <Identifier>
 <System:String xsi:nil="true" />
 </Identifier>
@@ -27728,7 +28620,7 @@ I'd teleport you there, but I'm only a phone and I don't have that power, so you
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoInput key="key151">
+<Wherigo:WigoInput key="key155">
 <Identifier>
 <System:String xsi:nil="true" />
 </Identifier>
@@ -27846,7 +28738,7 @@ I'd teleport you there, but I'm only a phone and I don't have that power, so you
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoCharacter xsi:nil="true" ref="key150" />
+<Wherigo:WigoCharacter xsi:nil="true" ref="key154" />
 </Target>
 </Actions:ObjectExpressionAction>
 </ItemContent>
@@ -27873,7 +28765,7 @@ I'd teleport you there, but I'm only a phone and I don't have that power, so you
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoItem xsi:nil="true" ref="key146" />
+<Wherigo:WigoItem xsi:nil="true" ref="key149" />
 </Target>
 </Actions:ObjectExpressionAction>
 </ItemContent>
@@ -28027,7 +28919,7 @@ I'd teleport you there, but I'm only a phone and I don't have that power, so you
 </Actions:IfElseAction>
 </Actions>
 <Owner>
-<Wherigo:WigoInput xsi:nil="true" ref="key151" />
+<Wherigo:WigoInput xsi:nil="true" ref="key155" />
 </Owner>
 </Actions:EventAction>
 </GetInputAction>
@@ -28037,7 +28929,7 @@ I'd teleport you there, but I'm only a phone and I don't have that power, so you
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Owner>
-<Wherigo:WigoInput xsi:nil="true" ref="key151" />
+<Wherigo:WigoInput xsi:nil="true" ref="key155" />
 </Owner>
 </Actions:EventAction>
 </ErrorAction>
@@ -28048,7 +28940,7 @@ I'd teleport you there, but I'm only a phone and I don't have that power, so you
 </Actions:InputAction>
 </Actions>
 <Owner>
-<Wherigo:WigoCommand xsi:nil="true" ref="key152" />
+<Wherigo:WigoCommand xsi:nil="true" ref="key156" />
 </Owner>
 </Actions:EventAction>
 </ExecuteAction>
@@ -28060,7 +28952,7 @@ I'd teleport you there, but I'm only a phone and I don't have that power, so you
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Owner>
-<Wherigo:WigoCharacter xsi:nil="true" ref="key150" />
+<Wherigo:WigoCharacter xsi:nil="true" ref="key154" />
 </Owner>
 </Actions:EventAction>
 </ClickAction>
@@ -28106,7 +28998,7 @@ I'd teleport you there, but I'm only a phone and I don't have that power, so you
 <Wherigo:WigoVariable xsi:nil="true" ref="key133" />
 </Variables>
 <Variables>
-<Wherigo:WigoVariable key="key160">
+<Wherigo:WigoVariable key="key164">
 <Identifier>
 <System:String xsi:nil="true" />
 </Identifier>
@@ -28125,7 +29017,7 @@ I'd teleport you there, but I'm only a phone and I don't have that power, so you
 </Wherigo:WigoVariable>
 </Variables>
 <Variables>
-<Wherigo:WigoVariable key="key155">
+<Wherigo:WigoVariable key="key159">
 <Identifier>
 <System:String xsi:nil="true" />
 </Identifier>
@@ -28147,10 +29039,16 @@ I'd teleport you there, but I'm only a phone and I don't have that power, so you
 <Wherigo:WigoVariable xsi:nil="true" ref="key108" />
 </Variables>
 <Variables>
-<Wherigo:WigoVariable xsi:nil="true" ref="key153" />
+<Wherigo:WigoVariable xsi:nil="true" ref="key157" />
+</Variables>
+<Variables>
+<Wherigo:WigoVariable xsi:nil="true" ref="key140" />
+</Variables>
+<Variables>
+<Wherigo:WigoVariable xsi:nil="true" ref="key141" />
 </Variables>
 <Tasks>
-<Wherigo:WigoTask key="key154">
+<Wherigo:WigoTask key="key158">
 <Identifier>
 <System:String xsi:nil="true" />
 </Identifier>
@@ -28184,7 +29082,7 @@ I'd teleport you there, but I'm only a phone and I don't have that power, so you
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Owner>
-<Wherigo:WigoTask xsi:nil="true" ref="key154" />
+<Wherigo:WigoTask xsi:nil="true" ref="key158" />
 </Owner>
 </Actions:EventAction>
 </ActiveChangedAction>
@@ -28194,7 +29092,7 @@ I'd teleport you there, but I'm only a phone and I don't have that power, so you
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Owner>
-<Wherigo:WigoTask xsi:nil="true" ref="key154" />
+<Wherigo:WigoTask xsi:nil="true" ref="key158" />
 </Owner>
 </Actions:EventAction>
 </CompleteChangedAction>
@@ -28204,7 +29102,7 @@ I'd teleport you there, but I'm only a phone and I don't have that power, so you
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Owner>
-<Wherigo:WigoTask xsi:nil="true" ref="key154" />
+<Wherigo:WigoTask xsi:nil="true" ref="key158" />
 </Owner>
 </Actions:EventAction>
 </CorrectStateChangedAction>
@@ -28214,17 +29112,17 @@ I'd teleport you there, but I'm only a phone and I don't have that power, so you
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Owner>
-<Wherigo:WigoTask xsi:nil="true" ref="key154" />
+<Wherigo:WigoTask xsi:nil="true" ref="key158" />
 </Owner>
 </Actions:EventAction>
 </ClickAction>
 </Wherigo:WigoTask>
 </Tasks>
 <Inputs>
-<Wherigo:WigoInput xsi:nil="true" ref="key151" />
+<Wherigo:WigoInput xsi:nil="true" ref="key155" />
 </Inputs>
 <Inputs>
-<Wherigo:WigoInput key="key156">
+<Wherigo:WigoInput key="key160">
 <Identifier>
 <System:String xsi:nil="true" />
 </Identifier>
@@ -28283,7 +29181,7 @@ Do you want me to try to reincarnate you?</System:String>
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoVariable xsi:nil="true" ref="key155" />
+<Wherigo:WigoVariable xsi:nil="true" ref="key159" />
 </Target>
 </Actions:ObjectReferenceExpressionAction>
 </LeftContent>
@@ -28347,7 +29245,7 @@ Do you want me to try to reincarnate you?</System:String>
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoVariable xsi:nil="true" ref="key155" />
+<Wherigo:WigoVariable xsi:nil="true" ref="key159" />
 </Target>
 </Actions:ObjectReferenceExpressionAction>
 </LeftContent>
@@ -28371,7 +29269,7 @@ Do you want me to try to reincarnate you?</System:String>
 </Actions:IfElseAction>
 </Actions>
 <Owner>
-<Wherigo:WigoInput xsi:nil="true" ref="key156" />
+<Wherigo:WigoInput xsi:nil="true" ref="key160" />
 </Owner>
 </Actions:EventAction>
 </GetInputAction>
@@ -28381,14 +29279,14 @@ Do you want me to try to reincarnate you?</System:String>
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Owner>
-<Wherigo:WigoInput xsi:nil="true" ref="key156" />
+<Wherigo:WigoInput xsi:nil="true" ref="key160" />
 </Owner>
 </Actions:EventAction>
 </ErrorAction>
 </Wherigo:WigoInput>
 </Inputs>
 <Inputs>
-<Wherigo:WigoInput key="key157">
+<Wherigo:WigoInput key="key161">
 <Identifier>
 <System:String xsi:nil="true" />
 </Identifier>
@@ -28447,7 +29345,7 @@ Want to try for three?</System:String>
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoVariable xsi:nil="true" ref="key155" />
+<Wherigo:WigoVariable xsi:nil="true" ref="key159" />
 </Target>
 </Actions:ObjectReferenceExpressionAction>
 </LeftContent>
@@ -28511,7 +29409,7 @@ Want to try for three?</System:String>
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoVariable xsi:nil="true" ref="key155" />
+<Wherigo:WigoVariable xsi:nil="true" ref="key159" />
 </Target>
 </Actions:ObjectReferenceExpressionAction>
 </LeftContent>
@@ -28535,7 +29433,7 @@ Want to try for three?</System:String>
 </Actions:IfElseAction>
 </Actions>
 <Owner>
-<Wherigo:WigoInput xsi:nil="true" ref="key157" />
+<Wherigo:WigoInput xsi:nil="true" ref="key161" />
 </Owner>
 </Actions:EventAction>
 </GetInputAction>
@@ -28545,14 +29443,14 @@ Want to try for three?</System:String>
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Owner>
-<Wherigo:WigoInput xsi:nil="true" ref="key157" />
+<Wherigo:WigoInput xsi:nil="true" ref="key161" />
 </Owner>
 </Actions:EventAction>
 </ErrorAction>
 </Wherigo:WigoInput>
 </Inputs>
 <Inputs>
-<Wherigo:WigoInput key="key158">
+<Wherigo:WigoInput key="key162">
 <Identifier>
 <System:String xsi:nil="true" />
 </Identifier>
@@ -28605,7 +29503,7 @@ Do you want me to try reincarnating you again?</System:String>
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoVariable xsi:nil="true" ref="key155" />
+<Wherigo:WigoVariable xsi:nil="true" ref="key159" />
 </Target>
 </Actions:ObjectReferenceExpressionAction>
 </LeftContent>
@@ -28669,7 +29567,7 @@ Do you want me to try reincarnating you again?</System:String>
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoVariable xsi:nil="true" ref="key155" />
+<Wherigo:WigoVariable xsi:nil="true" ref="key159" />
 </Target>
 </Actions:ObjectReferenceExpressionAction>
 </LeftContent>
@@ -28693,7 +29591,7 @@ Do you want me to try reincarnating you again?</System:String>
 </Actions:IfElseAction>
 </Actions>
 <Owner>
-<Wherigo:WigoInput xsi:nil="true" ref="key158" />
+<Wherigo:WigoInput xsi:nil="true" ref="key162" />
 </Owner>
 </Actions:EventAction>
 </GetInputAction>
@@ -28703,14 +29601,14 @@ Do you want me to try reincarnating you again?</System:String>
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Owner>
-<Wherigo:WigoInput xsi:nil="true" ref="key158" />
+<Wherigo:WigoInput xsi:nil="true" ref="key162" />
 </Owner>
 </Actions:EventAction>
 </ErrorAction>
 </Wherigo:WigoInput>
 </Inputs>
 <Inputs>
-<Wherigo:WigoInput key="key159">
+<Wherigo:WigoInput key="key163">
 <Identifier>
 <System:String xsi:nil="true" />
 </Identifier>
@@ -28763,7 +29661,7 @@ Come on, own up... DO YOU???</System:String>
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoVariable xsi:nil="true" ref="key155" />
+<Wherigo:WigoVariable xsi:nil="true" ref="key159" />
 </Target>
 </Actions:ObjectReferenceExpressionAction>
 </LeftContent>
@@ -28827,7 +29725,7 @@ Come on, own up... DO YOU???</System:String>
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoVariable xsi:nil="true" ref="key155" />
+<Wherigo:WigoVariable xsi:nil="true" ref="key159" />
 </Target>
 </Actions:ObjectReferenceExpressionAction>
 </LeftContent>
@@ -28851,7 +29749,7 @@ Come on, own up... DO YOU???</System:String>
 </Actions:IfElseAction>
 </Actions>
 <Owner>
-<Wherigo:WigoInput xsi:nil="true" ref="key159" />
+<Wherigo:WigoInput xsi:nil="true" ref="key163" />
 </Owner>
 </Actions:EventAction>
 </GetInputAction>
@@ -28861,14 +29759,14 @@ Come on, own up... DO YOU???</System:String>
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Owner>
-<Wherigo:WigoInput xsi:nil="true" ref="key159" />
+<Wherigo:WigoInput xsi:nil="true" ref="key163" />
 </Owner>
 </Actions:EventAction>
 </ErrorAction>
 </Wherigo:WigoInput>
 </Inputs>
 <Inputs>
-<Wherigo:WigoInput xsi:nil="true" ref="key140" />
+<Wherigo:WigoInput xsi:nil="true" ref="key142" />
 </Inputs>
 <Functions>
 <Wherigo:WigoFunction xsi:nil="true" ref="key78" />
@@ -28898,7 +29796,7 @@ Come on, own up... DO YOU???</System:String>
 <Wherigo:WigoFunction xsi:nil="true" ref="key130" />
 </Functions>
 <Functions>
-<Wherigo:WigoFunction key="key162">
+<Wherigo:WigoFunction key="key166">
 <Identifier>
 <System:String xsi:nil="true" />
 </Identifier>
@@ -28944,7 +29842,7 @@ Come on, own up... DO YOU???</System:String>
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoInput xsi:nil="true" ref="key156" />
+<Wherigo:WigoInput xsi:nil="true" ref="key160" />
 </Target>
 </Actions:ObjectExpressionAction>
 </InputContent>
@@ -28964,7 +29862,7 @@ Come on, own up... DO YOU???</System:String>
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoVariable xsi:nil="true" ref="key160" />
+<Wherigo:WigoVariable xsi:nil="true" ref="key164" />
 </Target>
 </Actions:ObjectReferenceExpressionAction>
 </LeftContent>
@@ -29001,7 +29899,7 @@ Come on, own up... DO YOU???</System:String>
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoInput xsi:nil="true" ref="key157" />
+<Wherigo:WigoInput xsi:nil="true" ref="key161" />
 </Target>
 </Actions:ObjectExpressionAction>
 </InputContent>
@@ -29021,7 +29919,7 @@ Come on, own up... DO YOU???</System:String>
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoVariable xsi:nil="true" ref="key160" />
+<Wherigo:WigoVariable xsi:nil="true" ref="key164" />
 </Target>
 </Actions:ObjectReferenceExpressionAction>
 </LeftContent>
@@ -29058,7 +29956,7 @@ Come on, own up... DO YOU???</System:String>
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoInput xsi:nil="true" ref="key158" />
+<Wherigo:WigoInput xsi:nil="true" ref="key162" />
 </Target>
 </Actions:ObjectExpressionAction>
 </InputContent>
@@ -29078,7 +29976,7 @@ Come on, own up... DO YOU???</System:String>
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoVariable xsi:nil="true" ref="key160" />
+<Wherigo:WigoVariable xsi:nil="true" ref="key164" />
 </Target>
 </Actions:ObjectReferenceExpressionAction>
 </LeftContent>
@@ -29115,7 +30013,7 @@ Come on, own up... DO YOU???</System:String>
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoInput xsi:nil="true" ref="key159" />
+<Wherigo:WigoInput xsi:nil="true" ref="key163" />
 </Target>
 </Actions:ObjectExpressionAction>
 </InputContent>
@@ -29135,7 +30033,7 @@ Come on, own up... DO YOU???</System:String>
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoVariable xsi:nil="true" ref="key160" />
+<Wherigo:WigoVariable xsi:nil="true" ref="key164" />
 </Target>
 </Actions:ObjectReferenceExpressionAction>
 </LeftContent>
@@ -29186,7 +30084,7 @@ Come on, own up... DO YOU???</System:String>
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoFunction key="key161">
+<Wherigo:WigoFunction key="key165">
 <Identifier>
 <System:String xsi:nil="true" />
 </Identifier>
@@ -29249,7 +30147,7 @@ Come on, own up... DO YOU???</System:String>
 </Actions:SetAction>
 </Actions>
 <Owner>
-<Wherigo:WigoFunction xsi:nil="true" ref="key161" />
+<Wherigo:WigoFunction xsi:nil="true" ref="key165" />
 </Owner>
 </Actions:EventAction>
 </CallAction>
@@ -29273,7 +30171,7 @@ Come on, own up... DO YOU???</System:String>
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoVariable xsi:nil="true" ref="key155" />
+<Wherigo:WigoVariable xsi:nil="true" ref="key159" />
 </Target>
 </Actions:ObjectReferenceExpressionAction>
 </LeftContent>
@@ -29307,14 +30205,14 @@ Come on, own up... DO YOU???</System:String>
 </Actions:IfElseAction>
 </Actions>
 <Owner>
-<Wherigo:WigoFunction xsi:nil="true" ref="key162" />
+<Wherigo:WigoFunction xsi:nil="true" ref="key166" />
 </Owner>
 </Actions:EventAction>
 </CallAction>
 </Wherigo:WigoFunction>
 </Functions>
 <Functions>
-<Wherigo:WigoFunction xsi:nil="true" ref="key161" />
+<Wherigo:WigoFunction xsi:nil="true" ref="key165" />
 </Functions>
 <Player>
 <Wherigo:WigoPlayer xsi:nil="true" ref="key37" />
@@ -29369,8 +30267,41 @@ Come on, own up... DO YOU???</System:String>
 <Enabled>
 <System:Boolean>True</System:Boolean>
 </Enabled>
+<Actions>
+<Actions:MessageBoxAction>
+<Enabled>
+<System:Boolean>True</System:Boolean>
+</Enabled>
+<Text>
+<Actions:ValueExpressionAction>
+<Enabled>
+<System:Boolean>True</System:Boolean>
+</Enabled>
+<Value>
+<System:String>Welcome to Not So Colossal Cave.  To start your adventure, after hitting OK to clear this dialog click on the "Map" button, which will show you as a blue arrow and a location as a purple outline.  Walk until you're in the location and more instructions will follow.</System:String>
+</Value>
+</Actions:ValueExpressionAction>
+</Text>
+<Media>
+<Wherigo:WigoMedia xsi:nil="true" />
+</Media>
+<Button1Text>
+<System:String xsi:nil="true" />
+</Button1Text>
+<Button2Text>
+<System:String xsi:nil="true" />
+</Button2Text>
+<ButtonClickedAction>
+<Actions:DoAction>
+<Enabled>
+<System:Boolean>True</System:Boolean>
+</Enabled>
+</Actions:DoAction>
+</ButtonClickedAction>
+</Actions:MessageBoxAction>
+</Actions>
 <Owner>
-<Wherigo:WigoCartridge xsi:nil="true" ref="key163" />
+<Wherigo:WigoCartridge xsi:nil="true" ref="key167" />
 </Owner>
 </Actions:EventAction>
 </StartAction>
@@ -29380,7 +30311,7 @@ Come on, own up... DO YOU???</System:String>
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Owner>
-<Wherigo:WigoCartridge xsi:nil="true" ref="key163" />
+<Wherigo:WigoCartridge xsi:nil="true" ref="key167" />
 </Owner>
 </Actions:EventAction>
 </EndAction>
@@ -29390,7 +30321,7 @@ Come on, own up... DO YOU???</System:String>
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Owner>
-<Wherigo:WigoCartridge xsi:nil="true" ref="key163" />
+<Wherigo:WigoCartridge xsi:nil="true" ref="key167" />
 </Owner>
 </Actions:EventAction>
 </ResumeAction>
@@ -29400,7 +30331,7 @@ Come on, own up... DO YOU???</System:String>
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Owner>
-<Wherigo:WigoCartridge xsi:nil="true" ref="key163" />
+<Wherigo:WigoCartridge xsi:nil="true" ref="key167" />
 </Owner>
 </Actions:EventAction>
 </SaveAction>
@@ -29410,7 +30341,7 @@ Come on, own up... DO YOU???</System:String>
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Owner>
-<Wherigo:WigoCartridge xsi:nil="true" ref="key163" />
+<Wherigo:WigoCartridge xsi:nil="true" ref="key167" />
 </Owner>
 </Actions:GlobalEventAction>
 </GlobalZoneEnterAction>
@@ -29420,7 +30351,7 @@ Come on, own up... DO YOU???</System:String>
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Owner>
-<Wherigo:WigoCartridge xsi:nil="true" ref="key163" />
+<Wherigo:WigoCartridge xsi:nil="true" ref="key167" />
 </Owner>
 </Actions:GlobalEventAction>
 </GlobalZoneExitAction>
@@ -29430,7 +30361,7 @@ Come on, own up... DO YOU???</System:String>
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Owner>
-<Wherigo:WigoCartridge xsi:nil="true" ref="key163" />
+<Wherigo:WigoCartridge xsi:nil="true" ref="key167" />
 </Owner>
 </Actions:GlobalEventAction>
 </GlobalZoneDistantAction>
@@ -29440,7 +30371,7 @@ Come on, own up... DO YOU???</System:String>
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Owner>
-<Wherigo:WigoCartridge xsi:nil="true" ref="key163" />
+<Wherigo:WigoCartridge xsi:nil="true" ref="key167" />
 </Owner>
 </Actions:GlobalEventAction>
 </GlobalZoneProximityAction>
@@ -29450,7 +30381,7 @@ Come on, own up... DO YOU???</System:String>
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Owner>
-<Wherigo:WigoCartridge xsi:nil="true" ref="key163" />
+<Wherigo:WigoCartridge xsi:nil="true" ref="key167" />
 </Owner>
 </Actions:GlobalEventAction>
 </GlobalZoneActiveChangedAction>
